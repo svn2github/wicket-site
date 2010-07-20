@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apache Wicket - Get Started</title>
+
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
+
+    <!--[if lt ie 7]>
+	<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen" />
+    <![endif]-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+	<link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div id="container">
+    <div id="content">
+        <div id="header"><a href="/"><h1 id="logo"><span>Apache Wicket</span></h1></a></div>
+		<div id="navigation">
+	<h5><a name="Navigation-Wicket"></a>Meet Wicket</h5>
+	<ul>
+		<li>
+			<a href="/" title="Index">Home</a>
+		</li>
+		<li>
+			<a href="/meet/introduction.html" title="Introduction">Introduction</a>
+		</li>
+		<li>
+			<a href="/meet/features.html" title="Features">Features</a>
+		</li>
+		<li>
+			<a href="/meet/buzz.html" title="Buzz">Buzz</a>
+		</li>
+		<li>
+			<a href="/meet/vision.html" title="Vision">Vision</a>
+		</li>
+		<li>
+			<a href="/meet/blogs.html" title="Blogs">Blogs</a>
+		</li>
+	</ul>
+	<h5>
+		<a name="Navigation-GettingStarted" id="Navigation-GettingStarted"></a>Get Started
+	</h5>
+	<ul>
+		<li>
+			<a href="/start/download.html" title="Download Wicket">Download Wicket</a>
+		</li>
+		<li>
+			<a href="/start/quickstart.html" title="Getting started via a Maven Archetype">Quickstart</a>
+		</li>
+		<li>
+			<a href="http://www.jweekend.com/dev/LegUp" rel="nofollow">More archetypes</a>
+		</li>
+	</ul>
+	<h5>
+		<a name="Navigation-Documentation" id="Navigation-Documentation"></a>Learn
+	</h5>
+	<ul>
+		<li>
+			<a href="/learn/examples" title="Examples">Examples</a>
+		</li>
+		<li>
+			<a href="http://wicketstuff.org/wicket14/compref/">Components</a>
+		</li>
+		<li>
+			<a href="/learn/projects/" title="Projects extending basic Wicket">Projects</a>
+		</li>
+		<li>
+			<a href="http://cwiki.apache.org/WICKET">Wiki</a>
+		</li>
+		<li>
+			<a href="http://cwiki.apache.org/WICKET/reference-library.html">Reference guide</a>
+		</li>
+		<li>
+			<a href="/learn/books" title="Books">Books</a>
+		</li>
+		<li>
+			<a href="/learn/ides.html" title="IDEs">IDE plugins</a>
+		</li>
+	</ul>
+	<h5>
+		<a name="Navigation-Releases" id="Navigation-Releases"></a>Releases
+	</h5>
+	<ul>
+		<li>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.9">Wicket 1.4</a>
+			(<a href="http://wicket.apache.org/docs/1.4" title="JavaDocs of the latest stable release - 1.4.9">docs</a>)
+		</li>
+		<li>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.3.7">Wicket 1.3</a>
+			(<a href="http://wicket.apache.org/docs/1.3" title="JavaDocs of Apache Wicket 1.3.x">docs</a>)
+		</li>
+		<li>
+			<a href="http://wicket.sf.net/wicket-1.2" class="external-link" rel="nofollow">Wicket 1.2</a>
+		</li>
+		<li>
+			<a href="http://wicket.sf.net/wicket-1.1" class="external-link" rel="nofollow">Wicket 1.1</a>
+		</li>
+		<li>
+			<a href="http://wicket.sf.net/wicket-1.0" class="external-link" rel="nofollow">Wicket 1.0</a>
+		</li>
+	</ul>
+	<h5>
+		<a name="Navigation-Developers" id="Navigation-Developers"></a>Contribute
+	</h5>
+	<ul>
+		<li>
+			<a href="/help/reportabug.html" "Report a bug">Report a bug</a>
+		</li>
+		<li>
+			<a href="/contribute/writing-documentation.html" title="Writing documentation">Writing docs</a>
+		</li>
+		<li>
+			<a href="/contribute/building-from-svn.html" title="Building from SVN">Source</a>
+		</li>
+		<li>
+			<a href="http://fisheye6.atlassian.com/browse/wicket" title="SVN Overview" class="external-link" rel="nofollow">Fisheye</a>
+		</li>
+	</ul>
+	<h5>
+		<a name="Navigation-Apache" id="Navigation-Apache"></a>Apache
+	</h5>
+	<ul>
+		<li>
+			<a href="http://www.apache.org/" class="external-link" rel="nofollow">Apache</a>
+		</li>
+		<li>
+			<a href="http://www.apache.org/licenses/" class="external-link" rel="nofollow">License</a>
+		</li>
+		<li>
+			<a href="http://www.apache.org/foundation/sponsorship.html" class="external-link" rel="nofollow">Sponsorship</a>
+		</li>
+		<li>
+			<a href="http://apache.org/foundation/thanks.html" class="external-link" rel="nofollow">Thanks</a>
+		</li>
+	</ul>
+</div>
+
+		<div id="contentbody">
+			<h1>Get Started</h1>
+			<p>This guide is intended to get you up and running &amp; using Wicket within minutes.</p>
+
+<p>It uses a Maven Archetype to create a Wicket QuickStart project, so requires that <a href='http://maven.apache.org'>Maven 2</a> be installed &amp; configured beforehand.</p>
+
+<p>This project provides a starting point for your Wicket project. If you are looking for examples, please refer to the <em>wicket-example</em> projects instead!</p>
+
+<h2 id='creating_the_project'>Creating the project</h2>
+
+<p>To create your project, copy and paste the command line generated after typing in the groupId, artifactId and version.</p>
+<style>		
+	#mvncmd label {
+		text-align: right;		
+		font-weight: bold;
+		width: 100px;
+		float: left;
+		margin: 0px 5px;		
+	}
+	#mvncmd input, #mvncmd select, #mvncm span { width: 180px; margin-bottom: 5px; float: left;}
+	#mvncmd textarea { width: 400px; height: 100px; }
+	#mvncmd br { clear: left; }	
+	#mvncmd div { float: left; }
+</style><script type='text/javascript'>
+	function changeIt()
+	{
+		var  groupId = document.getElementById("groupId").value;
+		var artifactId = document.getElementById("artifactId").value;
+		var version = document.getElementById("version").value;
+		var cmd = 'mvn archetype:create -DarchetypeGroupId=org.apache.wicket -DarchetypeArtifactId=wicket-archetype-quickstart -DarchetypeVersion=' + version + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId;						
+		if (version.match(/.*SNAPSHOT/)) cmd += ' -DremoteRepositories=http://wicketstuff.org/maven/repository/';
+		document.getElementById("cmdLine").value = cmd;
+	}
+</script><div id='mvncmd'>
+	<div>
+		<label title='Base Package' for='groupId'>GroupId:</label>
+		<input id='groupId' type='text' value='com.mycompany' onkeyup='changeIt();' /><span title='Base Package'>&nbsp;(?)</span><br />
+		<label title='Project Name' for='artifactId'>ArtifactId:</label> 
+		<input id='artifactId' type='text' value='myproject' onkeyup='changeIt();' /><span title='Project Name'>&nbsp;(?)</span><br />
+		<label title='Wicket Version' for='version'>Version:</label>
+		<select id='version' onchange='changeIt();'>
+
+		
+			<option value='1.5-SNAPSHOT'>1.5-SNAPSHOT</option>
+		
+
+		
+			<option value='1.4-SNAPSHOT'>1.4-SNAPSHOT</option>
+		
+
+		
+			<option selected='selected' value='1.4.9'>1.4.9</option>
+		
+
+		
+			<option value='1.4.8'>1.4.8</option>
+		
+
+		
+			<option value='1.4.7'>1.4.7</option>
+		
+
+		
+			<option value='1.3-SNAPSHOT'>1.3-SNAPSHOT</option>
+		
+
+		
+			<option value='1.3.7'>1.3.7</option>
+		
+
+		</select><span title='Wicket Version'>&nbsp;(?)</span>
+	</div>
+	<div>
+		<label id='cmdLabel' for='cmdLine'>Command Line:</label>
+		<textarea id='cmdLine' onfocus='this.select();'>
+		</textarea>
+		<script>changeIt();</script>
+	</div>
+	<br />
+</div>
+<h3 id='results'>Results</h3>
+
+<p>This will produce the following project structure/files</p>
+
+<pre><code>.\myproject
+    |   pom.xml
+    |
+    \---src
+        +---main
+        |   +---java
+        |   |   \---com
+        |   |       \---mycompany
+        |   |               HomePage.html
+        |   |               HomePage.java
+        |   |               WicketApplication.java
+        |   |
+        |   +---resources
+        |   |       log4j.properties
+        |   |
+        |   \---webapp
+        |       \---WEB-INF
+        |               web.xml
+        |
+        \---test
+            \---java
+                \---com
+                    \---mycompany
+                            Start.java</code></pre>
+
+<h2 id='use'>Use</h2>
+
+<p>Change into the project directory, then create a WAR file via <code>mvn package</code> or build the project and run it under Jetty via <code>mvn jetty:run</code>.</p>
+
+<h3 id='using_the_jetty_plugin'>Using the Jetty Plugin</h3>
+
+<p>This will compile the project then deploy it to an embeded instance of the Jetty servlet engine, which will be use on port 8080, by default. As a result, once running, your application will be available at <a href='http:localhost:8080/myproject'>http:localhost:8080/myproject</a>.</p>
+
+<p>See the <a href='http://www.mortbay.org/maven-plugin/index.html'>Jetty plugin</a> documentation for configuration options, etc.</p>
+
+<h3 id='using_with_a_specific_ide'>Using with a specific IDE</h3>
+
+<h4 id='eclipse'>Eclipse</h4>
+
+<p>To create an Eclipse project, use <code>mvn eclipse:eclipse</code> inside the project directory and import the project in your workspace (File -&gt; Import).</p>
+
+<p>Or alternatively install the <a href='http://m2eclipse.codehaus.org/'>m2eclipse</a> or <a href='http://www.eclipse.org/iam/'>Eclipse IAM</a> plugin and add the project directly.</p>
+
+<h4 id='idea'>IDEA</h4>
+
+<p>From within IDEA, just use &#8220;File/New Project/Import from external model/Maven&#8221;, choose the project directory and select the generated pom.xml.</p>
+
+<h4 id='netbeans'>NetBeans</h4>
+
+<p>To create a NetBeans project, just open the pom.xml directly.</p>
+
+<h3 id='more_examples'>More examples</h3>
+
+<p>Many more information and examples can be found on our Wiki or <a href='http://www.ralfebert.de/blog/wicket/wicket_eclipse_setup/'>here</a></p>
+		</div>
+        <div id="clearer"></div>
+		<div id="footer"><span>
+Copyright &copy; 2010 &mdash; The Apache Software Foundation. Apache Wicket,
+Wicket, Apache, the Apache feather logo, and the Apache Wicket project logo
+are trademarks of The Apache Software Foundation. All other marks mentioned
+may be trademarks or registered trademarks of their respective owners.
+</span></div>
+
+    </div>
+</div>
+</body>
+</html>
