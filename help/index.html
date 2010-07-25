@@ -51,6 +51,9 @@
 		<li>
 			<a href="http://www.jweekend.com/dev/LegUp" rel="nofollow">More archetypes</a>
 		</li>
+		<li>
+			<a href="/help" title="Get help">Get help</a>
+		</li>
 	</ul>
 	<h5>
 		<a name="Navigation-Documentation" id="Navigation-Documentation"></a>Learn
@@ -105,13 +108,16 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="/help/reportabug.html">Report a bug</a>
+			<a href="/contribute/write.html" title="Writing documentation">Writing docs</a>
 		</li>
 		<li>
-			<a href="/contribute/writing-documentation.html" title="Writing documentation">Writing docs</a>
+			<a href="/contribute/build.html" title="Building from SVN">Build Wicket</a>
 		</li>
 		<li>
-			<a href="/contribute/building-from-svn.html" title="Building from SVN">Source</a>
+			<a href="/contribute/release.html" title="Release Wicket">Release Wicket</a>
+		</li>
+		<li>
+			<a href="/contribute/patch.html" title="Provide a patch">Provide a patch</a>
 		</li>
 		<li>
 			<a href="http://fisheye6.atlassian.com/browse/wicket" title="SVN Overview" class="external-link" rel="nofollow">Fisheye</a>
@@ -141,13 +147,9 @@
 			<p>There are two types of help available for Apache Wicket:</p>
 
 <ol>
-<li>
-<p>Support from the Apache Wicket open source project</p>
-</li>
+<li>Support from the Apache Wicket open source project</li>
 
-<li>
-<p>Commercial Support</p>
-</li>
+<li>Commercial Support</li>
 </ol>
 
 <h2 id='support_from_the_apache_wicket_open_source_project'>Support From the Apache Wicket Open Source Project</h2>
@@ -155,43 +157,29 @@
 <p>If you are experiencing problems using Wicket please report your problem via the Issue Tracker. You may also find it useful to discuss your issues with the community on the Discussion Forums or join one of the Mailing Lists. Below are some resources to check before asking for help:</p>
 
 <ul>
-<li>Issue Tracker</li>
+<li><a href='https://issues.apache.org/jira/browse/WICKET'>Issue Tracker</a></li>
 
-<li>Discussion Forums</li>
+<li><a href='email.html'>Mailing Lists</a></li>
 
-<li>Mailing Lists</li>
-
-<li>FAQ</li>
-
-<li>IRC</li>
+<li><a href='irc://irc.freenode.net/%23%23wicket'>IRC</a></li>
 </ul>
 
-<p>Before asking for help with your issue, it&#8217;s a very good idea to search for your issue in the mailing list archives (via the Discussion Forums) and the FAQ. The majority of issues can be solved in this manner without having to send an email to the mailing list. If you don&#8217;t find an answer, use the guidelines below when writing the e-mail.</p>
+<p>Before asking for help with your issue, it&#8217;s a very good idea to search for your issue in the mailing list archives and the FAQ. The majority of issues can be solved in this manner without having to send an email to the mailing list. If you don&#8217;t find an answer, use the guidelines below when writing the e-mail.</p>
 
 <h3 id='how_to_get_help'>How to Get Help</h3>
 
 <p>Whenever you are reporting a problem, please be sure to include as much information as possible; the more we know, the better the chance of a quicker resolution.</p>
 
 <ul>
-<li>
-<p>which version of the software</p>
-</li>
+<li>which version of the software</li>
 
-<li>
-<p>what platform and JDK</p>
-</li>
+<li>what platform and JDK</li>
 
-<li>
-<p>any particular container being used - if so what version</p>
-</li>
+<li>any particular container being used - if so what version</li>
 
-<li>
-<p>stack traces generally really help! If in doubt include the whole thing; often exceptions get wrapped in other exceptions and the exception right near the bottom explains the actual error, not the first few lines at the top. Its very easy for us to skim-read past unnecessary parts of a stack trace.</p>
-</li>
+<li>stack traces generally really help! If in doubt include the whole thing; often exceptions get wrapped in other exceptions and the exception right near the bottom explains the actual error, not the first few lines at the top. Its very easy for us to skim-read past unnecessary parts of a stack trace.</li>
 
-<li>
-<p>log output can be useful too; sometimes enabling DEBUG logging can help your code &amp; configuration files are often useful</p>
-</li>
+<li>log output can be useful too; sometimes enabling DEBUG logging can help your code &amp; configuration files are often useful</li>
 </ul>
 
 <h3 id='how_to_get_help_faster'>How to get help faster</h3>
@@ -199,18 +187,16 @@
 <p>We can help you much quicker if you try the following</p>
 
 <ul>
-<li>
-<p>provide us with a JUnit test case that demonstrates your issue. e.g. if you think you&#8217;ve found a bug, can you create a test case to demonstrate the bug?</p>
-</li>
+<li>provide us with a JUnit test case that demonstrates your issue. e.g. if you think you&#8217;ve found a bug, can you create a test case to demonstrate the bug?</li>
 
-<li>
-<p>submit a patch fixing the bug! (We also buy you beer when we meet you if you submit bug fixes for memory leaks or performance related issues, if you can run a profiler on your test case and attach the output as a file (or zipped file if its huge) to the JIRA we can normally fix things much faster. e.g. run JProfiler or YourKit on your code and send us the output. To find memory leaks its quicker to resolve if you can tell us what classes are taking up all of the RAM; we can normally figure out whats wrong from that.</p>
-</li>
+<li>submit a patch fixing the bug! (We also buy you beer when we meet you if you submit bug fixes for memory leaks or performance related issues, if you can run a profiler on your test case and attach the output as a file (or zipped file if its huge) to the JIRA we can normally fix things much faster. e.g. run JProfiler or YourKit on your code and send us the output. To find memory leaks its quicker to resolve if you can tell us what classes are taking up all of the RAM; we can normally figure out whats wrong from that.</li>
 </ul>
 
 <h2 id='commerical_support'>Commerical Support</h2>
 
-<p>TODO</p>
+<p>The list of companies found at <a href='https://cwiki.apache.org/WICKET/companies-that-provide-services.html'>this wiki page</a> provide commercial services for Wicket which ranges from training courses, consultancy and even project development.</p>
+
+<p>Being mentioned here is not an indication of official &#8220;endorsement&#8221; by the Apache Software Foundation, but is instead provided as a public service. This list is in no way a complete listing of the many organizations providing either free or for cost support for ASF projects. If you would like to be added to this list, or removed, sign up for the wiki and add yourself to the list.</p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
