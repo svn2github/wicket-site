@@ -144,7 +144,159 @@
 
 		<div id="contentbody">
 			<h1>Build a release</h1>
-			<p>TODO</p>
+			<h2 id='releasing_apache_wicket_14x'>Releasing Apache Wicket 1.4.x</h2>
+
+<h3 id='building_the_release'>Building the release</h3>
+
+<ul>
+<li>query dev@ for any open issues, it helps to look at JIRA first</li>
+
+<li>create tag, create release branch</li>
+
+<li>check out release branch</li>
+
+<li>Set correct version in the pom files</li>
+
+<li>Linux</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/1.4-SNAPSHOT/1.4-m1/g&quot;</span>
+<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.4-m1/g&quot;</span>
+</code></pre>
+</div>
+<ul>
+<li>Mac OS X</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/1.4-SNAPSHOT/1.4-m1/g&quot;</span>
+<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.4-m1/g&quot;</span>
+</code></pre>
+</div>
+<ul>
+<li>add JIRA generated release notes to CHANGELOG-1.4</li>
+
+<li>commit to release branch</li>
+
+<li>call release.sh (see note)</li>
+
+<li>test the distribution (examples, rat, etc)</li>
+
+<li>upload m2-repo and dist directory from target/ to p.a.o (see below)</li>
+
+<li>upload commons/KEY into dist folder on p.a.o</li>
+
+<li>send vote message</li>
+
+<li>wait</li>
+
+<li>upload to mirrors (see below)</li>
+
+<li>release the version in JIRA</li>
+
+<li>wait 24 hours for mirrors to pick them up</li>
+
+<li>announce</li>
+</ul>
+
+<p>NOTE: If you get an error while generating javadocs like the one that follows, run a <code>mvn clean install</code> followed by a <code>mvn javadoc:jar</code>, then re-run <code>release.sh</code>. Example of error: <code>java.lang.ClassCastException:
+com.sun.tools.javadoc.ClassDocImpl</code></p>
+
+<h2 id='releasing_apache_wicket_13x'>Releasing Apache Wicket 1.3.x</h2>
+
+<h3 id='building_the_release'>Building the release</h3>
+
+<ul>
+<li>query dev@ for any open issues, it helps to look at JIRA first</li>
+
+<li>create tag, create release branch</li>
+
+<li>check out release branch</li>
+
+<li>Set correct version in the pom files:</li>
+
+<li>Linux:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/1.3-SNAPSHOT/1.3.2/g&quot;</span>
+<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.3.3/g&quot;</span>
+</code></pre>
+</div>
+<ul>
+<li>Mac OS X:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/1.3-SNAPSHOT/1.3.2/g&quot;</span>
+<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.3.3/g&quot;</span>
+</code></pre>
+</div>
+<ul>
+<li>add JIRA generated release notes to CHANGELOG-1.3</li>
+
+<li>commit to release branch</li>
+
+<li>call release.sh</li>
+
+<li>test the distribution (examples, rat, etc)</li>
+
+<li>upload m2-repo and dist directory from target/ to p.a.o</li>
+
+<li>upload commons/KEY into dist folder on p.a.o</li>
+
+<li>send vote message</li>
+
+<li>wait</li>
+
+<li>upload to mirrors (see below)</li>
+
+<li>release the version in JIRA</li>
+
+<li>wait 24 hours for mirrors to pick them up</li>
+
+<li>announce</li>
+</ul>
+
+<h2 id='uploading_to_the_mirror_system'>Uploading to the mirror system</h2>
+<div class='highlight'><pre><code class='console'><span class='go'>ssh people.apache.org</span>
+<span class='go'>mkdir /www/www.apache.org/dist/wicket/1.4.0</span>
+<span class='go'>mv ~/public_html/wicket-1.4.0/dist/* /www/www.apache.org/dist/wicket/1.4.0</span>
+<span class='go'>chown -R :wicket /www/www.apache.org/dist/wicket/1.4.0</span>
+</code></pre>
+</div>
+<p><code>chown</code> is very important, if files do not have the wicket group they will not be copied to mirrors Apache guide to mirros: http://apache.org/dev/mirror-step-by-step.html</p>
+
+<p>It is a good idea to clean up older releases from /www/www.apache.org/dist/wicket/</p>
+
+<h2 id='uploading_to_maven_repository'>Uploading to maven repository</h2>
+
+<p>I haven&#8217;t got any really good way to put them in the maven mirrors. The problem is that right now we override the meta xml files, so only the latest version is listed. If we really should do this perfect we would modify meta files like /org/apache/wicket/wicket/maven-metadata.xml and add the version to it (as well as create the hashes again).</p>
+
+<p>But for now this is sufficient:</p>
+<div class='highlight'><pre><code class='console'><span class='go'>cd into the directory you have the artifacts which has been voted on.</span>
+<span class='go'>cp -R m2-repo/org/apache/wicket/* /www/people.apache.org/repo/m2-ibiblio-rsync-repository/org/apache/wicket/</span>
+<span class='go'>chmod -R g+w * /www/people.apache.org/repo/m2-ibiblio-rsync-repository/org/apache/wicket</span>
+</code></pre>
+</div>
+<p>Further reading: README under /www/people.apache.org/repo/m2-ibiblio-rsync-repository/</p>
+
+<h2 id='announce'>Announce</h2>
+
+<p><strong>FIXME</strong> Announcing is easier with the new CMS in place. Describe these steps. I have tagged all the pages i usually update with a update-for-release tag, see here http://cwiki.apache.org/confluence/label/WICKETxSITE/update-for-release</p>
+
+<ul>
+<li>http://wicket.apache.org</li>
+
+<li>http://wicket.apache.org/getting-wicket.html</li>
+
+<li>http://wicket.apache.org/news.html</li>
+
+<li>Send email to: users@wicket.apache.org, dev@wicket.apache.org, announce@wicket.apache.org, announce@apache.org</li>
+
+<li>Misc. websites like javalobby, serverside, onjava etc.</li>
+</ul>
+
+<h2 id='additional_tasks'>Additional tasks</h2>
+
+<ul>
+<li />
+
+<li>upload the JavaDocs to the website at http://wicket.apache.org/docs/wicket-x.y.z/ and point JavaDocs link to it</li>
+</ul>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
