@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-07-30T00:38:48+02:00</updated>
+ <updated>2010-08-11T13:34:51-07:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -13,9 +13,165 @@
  
  
  <entry>
+   <title>Wicket 1.5-M1 released</title>
+   <link href="http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released.html"/>
+   <updated>2010-08-11T00:00:00-07:00</updated>
+   <id>http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released</id>
+   <content type="html">&lt;p&gt;This is the first milestone of the new 1.5.x Wicket series. The focus of 1.5.x is to provide our users with a more powerful and flexible request processing pipeline.&lt;/p&gt;
+
+&lt;p&gt;This release is NOT production-ready, it is more of a technology demo that should facilitate user-feedback we can fold into the next milestone.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+1.5'&gt;Migration notes&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.5-M1/'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5-M1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5-M1'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Wicket 1.4.10 released</title>
+   <link href="http://wicket.apache.org/2010/08/11/wicket-1.4.10-released.html"/>
+   <updated>2010-08-11T00:00:00-07:00</updated>
+   <id>http://wicket.apache.org/2010/08/11/wicket-1.4.10-released</id>
+   <content type="html">&lt;p&gt;This is the tenth maintenance release of the 1.4.x series and brings over thirty bug fixes and improvements.&lt;/p&gt;
+
+&lt;p&gt;As well as bringing bug fixes and small improvements, 1.4.10 brings two major new features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Delayed component initialization&lt;/li&gt;
+
+&lt;li&gt;Component configuration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Delayed component initialization allows developers to initialize their components outside of a constructor, when more environment is available to the component instance. From the javadoc:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Component&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+	&lt;span class='cm'&gt;/**&lt;/span&gt;
+&lt;span class='cm'&gt;	 * This method is meant to be used as an alternative to initialize components. Usually the&lt;/span&gt;
+&lt;span class='cm'&gt;	 * component&amp;#39;s constructor is used for this task, but sometimes a component cannot be&lt;/span&gt;
+&lt;span class='cm'&gt;	 * initialized in isolation, it may need to access its parent component or its markup in order&lt;/span&gt;
+&lt;span class='cm'&gt;	 * to fully initialize. This method is invoked once per component&amp;#39;s lifecycle when a path exists&lt;/span&gt;
+&lt;span class='cm'&gt;	 * from this component to the {@link Page} thus providing the component with an atomic callback&lt;/span&gt;
+&lt;span class='cm'&gt;	 * when the component&amp;#39;s environment is built out.&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * Overrides must call super#{@link #onInitialize()}. Usually this should be the first thing an&lt;/span&gt;
+&lt;span class='cm'&gt;	 * override does, much like a constructor.&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * Parent containers are guaranteed to be initialized before their children&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * It is safe to use {@link #getPage()} in this method&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * NOTE:The timing of this call is not precise, the contract is that it is called sometime&lt;/span&gt;
+&lt;span class='cm'&gt;	 * before {@link Component#onBeforeRender()}.&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &lt;/span&gt;
+&lt;span class='cm'&gt;	 */&lt;/span&gt;
+	&lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onInitialize&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{}&lt;/span&gt;
+&lt;span class='o'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Component configuration allows developers to easier configure component states such as visibility, enabled, etc. From the javadoc:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Component&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+	&lt;span class='cm'&gt;/**&lt;/span&gt;
+&lt;span class='cm'&gt;	 * Called once per request on components before they are about to be rendered. This method&lt;/span&gt;
+&lt;span class='cm'&gt;	 * should be used to configure such things as visibility and enabled flags.&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * Overrides must call {@code super.onConfigure()}, usually before any other code&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * NOTE: Component hierarchy should not be modified inside this method, instead it should be&lt;/span&gt;
+&lt;span class='cm'&gt;	 * done in {@link #onBeforeRender()}&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * NOTE: Why this method is preferrable to directly overriding {@link #isVisible()} and&lt;/span&gt;
+&lt;span class='cm'&gt;	 * {@link #isEnabled()}? Because those methods are called multiple times even for processing of&lt;/span&gt;
+&lt;span class='cm'&gt;	 * a single request. If they contain expensive logic they can slow down the response time of the&lt;/span&gt;
+&lt;span class='cm'&gt;	 * entire page. Further, overriding those methods directly on form components may lead to&lt;/span&gt;
+&lt;span class='cm'&gt;	 * inconsistent or unexpected state depending on when those methods are called in the form&lt;/span&gt;
+&lt;span class='cm'&gt;	 * processing workflow. It is a better practice to push changes to state rather than pull.&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * NOTE: If component&amp;#39;s visibility or another property depends on another component you may call&lt;/span&gt;
+&lt;span class='cm'&gt;	 * {@code other.configure()} followed by {@code other.isVisible()} as mentioned in&lt;/span&gt;
+&lt;span class='cm'&gt;	 * {@link #configure()} javadoc.&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * NOTE: Why should {@link #onBeforeRender()} not be used for this? Because if visibility of a&lt;/span&gt;
+&lt;span class='cm'&gt;	 * component is toggled inside {@link #onBeforeRender()} another method needs to be overridden&lt;/span&gt;
+&lt;span class='cm'&gt;	 * to make sure {@link #onBeforeRender()} will be invoked on ivisible components:&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;pre&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * class MyComponent extends WebComponent&lt;/span&gt;
+&lt;span class='cm'&gt;	 * {&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	protected void onBeforeRender()&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	{&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 		setVisible(Math.rand() &amp;amp;gt; 0.5f);&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 		super.onBeforeRender();&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	}&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	// if this override is forgotten, once invisible component will never become visible&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	protected boolean callOnBeforeRenderIfNotVisible()&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	{&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 		return true;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	}&lt;/span&gt;
+&lt;span class='cm'&gt;	 * }&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/pre&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &lt;/span&gt;
+&lt;span class='cm'&gt;	 * VS&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;pre&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 * class MyComponent extends WebComponent&lt;/span&gt;
+&lt;span class='cm'&gt;	 * {&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	protected void onConfigure()&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	{&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 		setVisible(Math.rand() &amp;amp;gt; 0.5f);&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 		super.onConfigure();&lt;/span&gt;
+&lt;span class='cm'&gt;	 * 	}&lt;/span&gt;
+&lt;span class='cm'&gt;	 * }&lt;/span&gt;
+&lt;span class='cm'&gt;	 * &amp;lt;/pre&amp;gt;&lt;/span&gt;
+&lt;span class='cm'&gt;	 */&lt;/span&gt;
+	&lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onConfigure&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{}&lt;/span&gt;
+&lt;span class='o'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.10/'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&amp;amp;mode=hide&amp;amp;sorter/order=DESC&amp;amp;sorter/field=priority&amp;amp;pid=12310561&amp;amp;fixfor=12315070'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.10&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.10'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Wicket 1.4.9 released</title>
    <link href="http://wicket.apache.org/2010/05/24/wicket-1.4.9-released.html"/>
-   <updated>2010-05-24T00:00:00+02:00</updated>
+   <updated>2010-05-24T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2010/05/24/wicket-1.4.9-released</id>
    <content type="html">&lt;p&gt;This is the ninth maintenance release of the 1.4.x series and brings over fifteen bug fixes and improvements.&lt;/p&gt;
 
@@ -83,7 +239,7 @@
  <entry>
    <title>Wicket 1.4.8 released</title>
    <link href="http://wicket.apache.org/2010/05/03/wicket-1.4.8-released.html"/>
-   <updated>2010-05-03T00:00:00+02:00</updated>
+   <updated>2010-05-03T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2010/05/03/wicket-1.4.8-released</id>
    <content type="html">&lt;p&gt;Wicket 1.4.8 is released!&lt;/p&gt;
 
@@ -111,7 +267,7 @@
  <entry>
    <title>Wicket 1.4.7 released</title>
    <link href="http://wicket.apache.org/2010/03/05/wicket-1.4.7-released.html"/>
-   <updated>2010-03-05T00:00:00+01:00</updated>
+   <updated>2010-03-05T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2010/03/05/wicket-1.4.7-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the seventh maintenance release of Apache Wicket 1.4. This releases brings over 30 improvements and bug fixes.&lt;/p&gt;
 
@@ -139,7 +295,7 @@
  <entry>
    <title>Wicket 1.4.6 released</title>
    <link href="http://wicket.apache.org/2010/02/01/wicket-1.4.6-released.html"/>
-   <updated>2010-02-01T00:00:00+01:00</updated>
+   <updated>2010-02-01T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2010/02/01/wicket-1.4.6-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the sixths maintenance release of Apache Wicket 1.4. This releases brings over 40 improvements and bug fixes that make Wicket 1.4 even more stable in production environments.&lt;/p&gt;
 
@@ -165,7 +321,7 @@
  <entry>
    <title>Wicket 1.4.5 released</title>
    <link href="http://wicket.apache.org/2009/12/21/wicket-1.4.5-released.html"/>
-   <updated>2009-12-21T00:00:00+01:00</updated>
+   <updated>2009-12-21T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2009/12/21/wicket-1.4.5-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the fifth maintenance release of Apache Wicket 1.4. This releases mainly fixes &lt;a href='https://issues.apache.org/jira/browse/WICKET-2613'&gt;WICKET-2613&lt;/a&gt; which has caused certain applications to stop functioning properly in production environments.&lt;/p&gt;
 
@@ -191,7 +347,7 @@
  <entry>
    <title>Wicket 1.4.4 released</title>
    <link href="http://wicket.apache.org/2009/12/13/wicket-1.4.4-released.html"/>
-   <updated>2009-12-13T00:00:00+01:00</updated>
+   <updated>2009-12-13T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2009/12/13/wicket-1.4.4-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the fourth maintenance release of Apache Wicket 1.4.&lt;/p&gt;
 
@@ -217,7 +373,7 @@
  <entry>
    <title>Wicket 1.4.3 released</title>
    <link href="http://wicket.apache.org/2009/10/24/wicket-1.4.3-released.html"/>
-   <updated>2009-10-24T00:00:00+02:00</updated>
+   <updated>2009-10-24T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2009/10/24/wicket-1.4.3-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the third maintenance release of Apache Wicket 1.4.&lt;/p&gt;
 
@@ -243,7 +399,7 @@
  <entry>
    <title>Wicket 1.4.2 released</title>
    <link href="http://wicket.apache.org/2009/10/12/wicket-1.4.2-released.html"/>
-   <updated>2009-10-12T00:00:00+02:00</updated>
+   <updated>2009-10-12T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2009/10/12/wicket-1.4.2-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the second maintenance release of Apache Wicket 1.4.&lt;/p&gt;
 
@@ -266,110 +422,6 @@
 &lt;p&gt;We thank you for your patience and support.&lt;/p&gt;
 
 &lt;p&gt;The Wicket Team&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.1 released</title>
-   <link href="http://wicket.apache.org/2009/08/21/wicket-1.4.1-released.html"/>
-   <updated>2009-08-21T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2009/08/21/wicket-1.4.1-released</id>
-   <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the first maintenance release of Apache Wicket 1.4.&lt;/p&gt;
-
-&lt;h3 id='download_apache_wicket_14'&gt;Download Apache Wicket 1.4&lt;/h3&gt;
-
-&lt;p&gt;You can download the release here: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.1'&gt;http://www.apache.org/dyn/closer.cgi/wicket/1.4.1&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Or use this in your Maven pom&amp;#8217;s to upgrade to the new version:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id='changes'&gt;Changes&lt;/h3&gt;
-
-&lt;p&gt;The most notable change in this release is the transparent support for multipart form submissions via Ajax. Wicket is now smart enough to submit a form using a hidden iframe rather then the standard XMLHttpRequest if the form contains file upload fields.&lt;/p&gt;
-
-&lt;p&gt;A complete list of changes can be found in our &lt;a href='https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&amp;amp;mode=hide&amp;amp;sorter/order=DESC&amp;amp;sorter/field=priority&amp;amp;pid=12310561&amp;amp;fixfor=12314113'&gt;Jira&lt;/a&gt; instance.&lt;/p&gt;
-
-&lt;p&gt;We thank you for your patience and support.&lt;/p&gt;
-
-&lt;p&gt;The Wicket Team&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Apache Wicket 1.4 takes typesafety to the next level</title>
-   <link href="http://wicket.apache.org/2009/07/30/wicket-1.4-takes-typesafety-to-the-next-level.html"/>
-   <updated>2009-07-30T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2009/07/30/wicket-1.4-takes-typesafety-to-the-next-level</id>
-   <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the release of Apache Wicket 1.4. Apache Wicket is an open source, component oriented Java web application framework. With overwhelming support from the user community, this release marks a departure from the past where we leave Java 1.4 behind and we require Java 5 as the minimum JDK version. By moving to Java 5 as the required minimum platform, we were able to utilize Java 5 idioms and increase the type safety of our APIs. Using Java generics you can now write typesafe web applications and create typesafe, self documenting, reusable custom components.&lt;/p&gt;
-
-&lt;h2 id='download_apache_wicket_14'&gt;Download Apache Wicket 1.4&lt;/h2&gt;
-
-&lt;p&gt;You can download the release here: http://www.apache.org/dyn/closer.cgi/wicket/1.4.0&lt;/p&gt;
-
-&lt;p&gt;Or use this in your Maven pom&amp;#8217;s to upgrade to the new version:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-  &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-  &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-  &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;You will need to upgrade all modules (i.e. wicket, wicket-extensions) to their 1.4 counterparts. It is not possible to mix Wicket 1.3 libraries with 1.4 libraries due to API changes.&lt;/p&gt;
-
-&lt;h2 id='most_notable_changes'&gt;Most notable changes&lt;/h2&gt;
-
-&lt;p&gt;From all the changes that went into this release, the following are the most important ones:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Generified &lt;code&gt;IModel&lt;/code&gt; interface and implementations increases type safety in your Wicket applications&lt;/li&gt;
-
-&lt;li&gt;&lt;code&gt;Component#getModel()&lt;/code&gt; and &lt;code&gt;Component#setModel()&lt;/code&gt; have been renamed to &lt;code&gt;getDefaultModel()&lt;/code&gt; and &lt;code&gt;setDefaultModel()&lt;/code&gt; to better support generified models&lt;/li&gt;
-
-&lt;li&gt;The Spring modules have been merged (wicket-spring-annot is now obsolete, all you need is wicket-spring)&lt;/li&gt;
-
-&lt;li&gt;Many API&amp;#8217;s have been altered to better work with Java 5&amp;#8217;s idioms&lt;/li&gt;
-
-&lt;li&gt;Wicket jars are now packaged with metadata that makes them OSGI bundles&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Apart from these changes, the release is mostly compatible with Wicket 1.3 and upgrading shouldn&amp;#8217;t take too long. Early adopters report about a days work to upgrade medium to large applications to Wicket 1.4. Read the migration guide to learn more about the changes in our APIs. To learn more about all the improvements and new features that went into this release, check the solved issue list in our JIRA instance.&lt;/p&gt;
-
-&lt;h2 id='increased_type_safety'&gt;Increased type safety&lt;/h2&gt;
-
-&lt;p&gt;Moving towards Java 5 has given us the opportunity to utilize generics and clarify our API&amp;#8217;s. For example, take a look at &lt;code&gt;DropDownChoice&lt;/code&gt;—one of the components with the most questions on our list prior to 1.4. A &lt;code&gt;DropDownChoice&lt;/code&gt; component is a form component that displays a list of available choices in a drop down box, and allows one selection to be made. DropDownChoice components are typically used to display a list of countries, nationalities, credit card processors, etc.&lt;/p&gt;
-
-&lt;p&gt;The signature of a constructor for the &lt;code&gt;DropDownChoice&lt;/code&gt; component in Wicket 1.3 was:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;DropDownChoice&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='o'&gt;...&lt;/span&gt;
-    &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='nf'&gt;DropDownChoice&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;String&lt;/span&gt; &lt;span class='n'&gt;id&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;IModel&lt;/span&gt; &lt;span class='n'&gt;model&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;IModel&lt;/span&gt; &lt;span class='n'&gt;choices&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;As you can see, this constructor doesn&amp;#8217;t give much insight into what goes where (other than the names of the parameters). The first parameter is the component identifier, the second parameter is the model that contains the selection, and the third parameter is a model that contains the list of choices from which the user can select one. You&amp;#8217;ll have to read the JavaDoc to assign the right IModel values to the right parameters. Now take a look at the same constructor, but now in Wicket 1.4. The signature for our generified constructor looks like the following example.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;T&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;DropDownChoice&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='o'&gt;...&lt;/span&gt;
-    &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='nf'&gt;DropDownChoice&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;String&lt;/span&gt; &lt;span class='n'&gt;id&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;IModel&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;T&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;model&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;IModel&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;?&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='n'&gt;List&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;?&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='n'&gt;T&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;choices&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Here we communicate that the first &lt;code&gt;IModel&lt;/code&gt; parameter is a &lt;code&gt;T&lt;/code&gt;, which is the single value that will be provided when the &lt;code&gt;DropDownChoice&lt;/code&gt; selects one value. The second parameter provides a &lt;code&gt;List&lt;/code&gt; of objects that extend &lt;code&gt;T&lt;/code&gt;, the choices from which to select one value. This was not apparent in the Wicket 1.3 API, and the type safety brought by generics make this much more clear, albeit much more verbose.&lt;/p&gt;
-
-&lt;h2 id='removal_of_default_model_from_component'&gt;Removal of default model from component&lt;/h2&gt;
-
-&lt;p&gt;In Wicket 1.3 each component had by default a model: a &lt;code&gt;Label&lt;/code&gt; had a model, a &lt;code&gt;Link&lt;/code&gt; and even &lt;code&gt;WebMarkupContainer&lt;/code&gt; had a model property (all because they extend &lt;code&gt;Component&lt;/code&gt; which has a model property). When we generified &lt;code&gt;IModel&lt;/code&gt;, this had averse effects on &lt;code&gt;Component&lt;/code&gt;: suddenly all components had to be generified and had to take the type parameter of the model that was associated with it. But that poses problems for components that either do not use a model or use two different model types: which one should be in the lead? We chose to generify only the components that clearly benefited from the extra type information, leading to clean code like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='n'&gt;ListView&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;Person&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;peopleListView&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='n'&gt;ListView&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;Person&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;people&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;people&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-        &lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;populateItem&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;ListItem&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;Person&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;item&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-            &lt;span class='n'&gt;item&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;add&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='n'&gt;Link&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;Person&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;editPerson&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;item&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;getModel&lt;/span&gt;&lt;span class='o'&gt;()){&lt;/span&gt;
-                &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onClick&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-                    &lt;span class='n'&gt;Person&lt;/span&gt; &lt;span class='n'&gt;p&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;getModelObject&lt;/span&gt;&lt;span class='o'&gt;();&lt;/span&gt;
-                    &lt;span class='n'&gt;setResponsePage&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='n'&gt;EditPersonPage&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;p&lt;/span&gt;&lt;span class='o'&gt;));&lt;/span&gt;
-                &lt;span class='o'&gt;}&lt;/span&gt;
-            &lt;span class='o'&gt;});&lt;/span&gt;
-        &lt;span class='o'&gt;}&lt;/span&gt;
-    &lt;span class='o'&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content>
  </entry>
  
 </feed>
