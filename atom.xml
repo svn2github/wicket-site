@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-08-11T13:34:51-07:00</updated>
+ <updated>2010-08-12T22:08:00+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -15,14 +15,14 @@
  <entry>
    <title>Wicket 1.5-M1 released</title>
    <link href="http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released.html"/>
-   <updated>2010-08-11T00:00:00-07:00</updated>
+   <updated>2010-08-11T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released</id>
    <content type="html">&lt;p&gt;This is the first milestone of the new 1.5.x Wicket series. The focus of 1.5.x is to provide our users with a more powerful and flexible request processing pipeline.&lt;/p&gt;
 
 &lt;p&gt;This release is NOT production-ready, it is more of a technology demo that should facilitate user-feedback we can fold into the next milestone.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+1.5'&gt;Migration notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='https://cwiki.apache.org/WICKET/migration-to-wicket-15.html'&gt;Migration notes&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.5-M1/'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
 
@@ -43,7 +43,7 @@
  <entry>
    <title>Wicket 1.4.10 released</title>
    <link href="http://wicket.apache.org/2010/08/11/wicket-1.4.10-released.html"/>
-   <updated>2010-08-11T00:00:00-07:00</updated>
+   <updated>2010-08-11T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2010/08/11/wicket-1.4.10-released</id>
    <content type="html">&lt;p&gt;This is the tenth maintenance release of the 1.4.x series and brings over thirty bug fixes and improvements.&lt;/p&gt;
 
@@ -171,7 +171,7 @@
  <entry>
    <title>Wicket 1.4.9 released</title>
    <link href="http://wicket.apache.org/2010/05/24/wicket-1.4.9-released.html"/>
-   <updated>2010-05-24T00:00:00-07:00</updated>
+   <updated>2010-05-24T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2010/05/24/wicket-1.4.9-released</id>
    <content type="html">&lt;p&gt;This is the ninth maintenance release of the 1.4.x series and brings over fifteen bug fixes and improvements.&lt;/p&gt;
 
@@ -239,7 +239,7 @@
  <entry>
    <title>Wicket 1.4.8 released</title>
    <link href="http://wicket.apache.org/2010/05/03/wicket-1.4.8-released.html"/>
-   <updated>2010-05-03T00:00:00-07:00</updated>
+   <updated>2010-05-03T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2010/05/03/wicket-1.4.8-released</id>
    <content type="html">&lt;p&gt;Wicket 1.4.8 is released!&lt;/p&gt;
 
@@ -267,7 +267,7 @@
  <entry>
    <title>Wicket 1.4.7 released</title>
    <link href="http://wicket.apache.org/2010/03/05/wicket-1.4.7-released.html"/>
-   <updated>2010-03-05T00:00:00-08:00</updated>
+   <updated>2010-03-05T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2010/03/05/wicket-1.4.7-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the seventh maintenance release of Apache Wicket 1.4. This releases brings over 30 improvements and bug fixes.&lt;/p&gt;
 
@@ -295,7 +295,7 @@
  <entry>
    <title>Wicket 1.4.6 released</title>
    <link href="http://wicket.apache.org/2010/02/01/wicket-1.4.6-released.html"/>
-   <updated>2010-02-01T00:00:00-08:00</updated>
+   <updated>2010-02-01T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2010/02/01/wicket-1.4.6-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the sixths maintenance release of Apache Wicket 1.4. This releases brings over 40 improvements and bug fixes that make Wicket 1.4 even more stable in production environments.&lt;/p&gt;
 
@@ -321,7 +321,7 @@
  <entry>
    <title>Wicket 1.4.5 released</title>
    <link href="http://wicket.apache.org/2009/12/21/wicket-1.4.5-released.html"/>
-   <updated>2009-12-21T00:00:00-08:00</updated>
+   <updated>2009-12-21T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2009/12/21/wicket-1.4.5-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the fifth maintenance release of Apache Wicket 1.4. This releases mainly fixes &lt;a href='https://issues.apache.org/jira/browse/WICKET-2613'&gt;WICKET-2613&lt;/a&gt; which has caused certain applications to stop functioning properly in production environments.&lt;/p&gt;
 
@@ -347,7 +347,7 @@
  <entry>
    <title>Wicket 1.4.4 released</title>
    <link href="http://wicket.apache.org/2009/12/13/wicket-1.4.4-released.html"/>
-   <updated>2009-12-13T00:00:00-08:00</updated>
+   <updated>2009-12-13T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2009/12/13/wicket-1.4.4-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the fourth maintenance release of Apache Wicket 1.4.&lt;/p&gt;
 
@@ -373,7 +373,7 @@
  <entry>
    <title>Wicket 1.4.3 released</title>
    <link href="http://wicket.apache.org/2009/10/24/wicket-1.4.3-released.html"/>
-   <updated>2009-10-24T00:00:00-07:00</updated>
+   <updated>2009-10-24T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2009/10/24/wicket-1.4.3-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the third maintenance release of Apache Wicket 1.4.&lt;/p&gt;
 
@@ -399,7 +399,7 @@
  <entry>
    <title>Wicket 1.4.2 released</title>
    <link href="http://wicket.apache.org/2009/10/12/wicket-1.4.2-released.html"/>
-   <updated>2009-10-12T00:00:00-07:00</updated>
+   <updated>2009-10-12T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2009/10/12/wicket-1.4.2-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the second maintenance release of Apache Wicket 1.4.&lt;/p&gt;
 
