@@ -87,7 +87,7 @@
 	<ul>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.10">Wicket 1.4</a>
-			(<a href="http://wicket.apache.org/apidocs/1.4" title="JavaDocs of the latest stable release - 1.4.10">docs</a>)
+			(<a href="http://wicket.apache.org/apidocs/1.4" title="JavaDocs of the latest stable release - 1.4.x">docs</a>)
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.3.7">Wicket 1.3</a>
@@ -144,7 +144,23 @@
 
 		<div id="contentbody">
 			<h1>Build a release</h1>
-			<h2 id='releasing_apache_wicket_14x'>Releasing Apache Wicket 1.4.x</h2>
+			<h2 id='contents'>Contents</h2>
+
+<ul>
+<li><a href='#release-14'>Releasing Apache Wicket 1.4.x</a></li>
+
+<li><a href='#release-13'>Releasing Apache Wicket 1.3.x</a></li>
+
+<li><a href='#mirrors'>Uploading to the mirror system</a></li>
+
+<li><a href='#mavencentral'>Uploading to maven repository</a></li>
+
+<li><a href='#announcing'>Announcing the release</a></li>
+
+<li><a href='#additional'>Additional tasks</a></li>
+</ul>
+
+<h2 id='release-14'>Releasing Apache Wicket 1.4.x</h2>
 
 <h3 id='building_the_release'>Building the release</h3>
 
@@ -198,8 +214,8 @@
 
 <p>NOTE: If you get an error while generating javadocs like the one that follows, run a <code>mvn clean install</code> followed by a <code>mvn javadoc:jar</code>, then re-run <code>release.sh</code>. Example of error: <code>java.lang.ClassCastException:
 com.sun.tools.javadoc.ClassDocImpl</code></p>
-
-<h2 id='releasing_apache_wicket_13x'>Releasing Apache Wicket 1.3.x</h2>
+<a name='release-1.3.x'>&nbsp;</a>
+<h2 id='release13'>Releasing Apache Wicket 1.3.x</h2>
 
 <h3 id='building_the_release'>Building the release</h3>
 
@@ -251,7 +267,7 @@ com.sun.tools.javadoc.ClassDocImpl</code></p>
 <li>announce</li>
 </ul>
 
-<h2 id='uploading_to_the_mirror_system'>Uploading to the mirror system</h2>
+<h2 id='mirrors'>Uploading to the mirror system</h2>
 <div class='highlight'><pre><code class='console'><span class='go'>ssh people.apache.org</span>
 <span class='go'>mkdir /www/www.apache.org/dist/wicket/1.4.0</span>
 <span class='go'>mv ~/public_html/wicket-1.4.0/dist/* /www/www.apache.org/dist/wicket/1.4.0</span>
@@ -262,7 +278,7 @@ com.sun.tools.javadoc.ClassDocImpl</code></p>
 
 <p>It is a good idea to clean up older releases from /www/www.apache.org/dist/wicket/</p>
 
-<h2 id='uploading_to_maven_repository'>Uploading to maven repository</h2>
+<h2 id='mavencentral'>Uploading to maven repository</h2>
 
 <p>I haven&#8217;t got any really good way to put them in the maven mirrors. The problem is that right now we override the meta xml files, so only the latest version is listed. If we really should do this perfect we would modify meta files like /org/apache/wicket/wicket/maven-metadata.xml and add the version to it (as well as create the hashes again).</p>
 
@@ -274,28 +290,31 @@ com.sun.tools.javadoc.ClassDocImpl</code></p>
 </div>
 <p>Further reading: README under /www/people.apache.org/repo/m2-ibiblio-rsync-repository/</p>
 
-<h2 id='announce'>Announce</h2>
+<h2 id='announcing'>Announcing the release</h2>
 
-<p><strong>FIXME</strong> Announcing is easier with the new CMS in place. Describe these steps. I have tagged all the pages i usually update with a update-for-release tag, see here http://cwiki.apache.org/confluence/label/WICKETxSITE/update-for-release</p>
+<p>Edit the _config.yaml file. This file contains a site wide configuration section specific to Wicket:</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>wicket</span><span class='p-Indicator'>:</span>
+    <span class='l-Scalar-Plain'>version</span><span class='p-Indicator'>:</span>    <span class='l-Scalar-Plain'>1.4.10</span>
+    <span class='l-Scalar-Plain'>released</span><span class='p-Indicator'>:</span>   <span class='l-Scalar-Plain'>2010-08-11</span>
+    <span class='l-Scalar-Plain'>versions</span><span class='p-Indicator'>:</span>   <span class='p-Indicator'>[</span><span class='nv'>1.3.7</span><span class='p-Indicator'>,</span> <span class='nv'>1.3-SNAPSHOT</span><span class='p-Indicator'>,</span> <span class='nv'>1.4.9</span><span class='p-Indicator'>,</span> <span class='nv'>1.4.10</span><span class='p-Indicator'>,</span> <span class='nv'>1.4-SNAPSHOT</span><span class='p-Indicator'>,</span> <span class='nv'>1.5-M1</span><span class='p-Indicator'>,</span> <span class='nv'>1.5-SNAPSHOT</span><span class='p-Indicator'>]</span>
+</code></pre>
+</div>
+<p>You&#8217;ll need to edit this part: modify the version, update the released date, and add the new version to the versions list (remove any stale releases, typically just leave the previous release as well).</p>
 
 <ul>
-<li>http://wicket.apache.org</li>
+<li>Write an announcement in the _posts directory</li>
 
-<li>http://wicket.apache.org/getting-wicket.html</li>
-
-<li>http://wicket.apache.org/news.html</li>
+<li>Restart jekyll to regenerate the pages: it will automatically generate the correct links in the navigation menu, quickstart and downloads page. It will update the doap.rdf file, atom.xml rss feed and index.html file so that it contains your announcement.</li>
 
 <li>Send email to: users@wicket.apache.org, dev@wicket.apache.org, announce@wicket.apache.org, announce@apache.org</li>
 
 <li>Misc. websites like javalobby, serverside, onjava etc.</li>
 </ul>
 
-<h2 id='additional_tasks'>Additional tasks</h2>
+<h2 id='additional'>Additional tasks</h2>
 
 <ul>
-<li />
-
-<li>upload the JavaDocs to the website at http://wicket.apache.org/docs/wicket-x.y.z/ and point JavaDocs link to it</li>
+<li>Commit the JavaDocs to <a href='https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4'>https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4</a> svnpubsub will push this directly to our website.</li>
 </ul>
 		</div>
         <div id="clearer"></div>
