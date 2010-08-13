@@ -171,7 +171,7 @@
 		var  groupId = document.getElementById("groupId").value;
 		var artifactId = document.getElementById("artifactId").value;
 		var version = document.getElementById("version").value;
-		var cmd = 'mvn archetype:create -DarchetypeGroupId=org.apache.wicket -DarchetypeArtifactId=wicket-archetype-quickstart -DarchetypeVersion=' + version + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId;						
+		var cmd = 'mvn archetype:generate -DarchetypeGroupId=org.apache.wicket -DarchetypeArtifactId=wicket-archetype-quickstart -DarchetypeVersion=' + version + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId;						
 		if (version.match(/.*SNAPSHOT/)) cmd += ' -DremoteRepositories=http://wicketstuff.org/maven/repository/';
 		document.getElementById("cmdLine").value = cmd;
 	}
