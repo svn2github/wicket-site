@@ -4,13 +4,23 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-08-24T09:27:33+02:00</updated>
+ <updated>2010-08-24T13:58:39+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Peter Ertl is a Wicket team member</title>
+   <link href="http://wicket.apache.org/2010/08/24/peter-ertl-committer.html"/>
+   <updated>2010-08-24T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2010/08/24/peter-ertl-committer</id>
+   <content type="html">&lt;p&gt;The Apache Wicket team is proud to have Peter Ertl as a new member to the team of developers. Peter has been active in our community for a long time now and has contributed many patches, reported many bugs as well as helping out on the user list.&lt;/p&gt;
+
+&lt;p&gt;Welcome Peter!&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.5-M1 released</title>
@@ -376,32 +386,6 @@
 &lt;h3 id='changes'&gt;Changes&lt;/h3&gt;
 
 &lt;p&gt;A complete list of changes can be found &lt;a href='https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&amp;amp;&amp;amp;pid=12310561&amp;amp;fixfor=12314323&amp;amp;sorter/field=priority&amp;amp;sorter/order=DESC'&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We thank you for your patience and support.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.3 released</title>
-   <link href="http://wicket.apache.org/2009/10/24/wicket-1.4.3-released.html"/>
-   <updated>2009-10-24T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2009/10/24/wicket-1.4.3-released</id>
-   <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the third maintenance release of Apache Wicket 1.4.&lt;/p&gt;
-
-&lt;h3 id='download_apache_wicket_143'&gt;Download Apache Wicket 1.4.3&lt;/h3&gt;
-
-&lt;p&gt;You can download the release here: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.3'&gt;http://www.apache.org/dyn/closer.cgi/wicket/1.4.3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Or use this in your Maven pom&amp;#8217;s to upgrade to the new version:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.3&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id='changes'&gt;Changes&lt;/h3&gt;
-
-&lt;p&gt;A complete list of changes can be found &lt;a href='https://issues.apache.org/jira/browse/WICKET/fixforversion/12314250'&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;We thank you for your patience and support.&lt;/p&gt;</content>
  </entry>
