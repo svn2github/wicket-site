@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-08-13T00:51:11+02:00</updated>
+ <updated>2010-08-24T09:27:33+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -166,6 +166,16 @@
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.10'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Martin Grigorov is a Wicket team member</title>
+   <link href="http://wicket.apache.org/2010/08/04/martin-grigorov-committer.html"/>
+   <updated>2010-08-04T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2010/08/04/martin-grigorov-committer</id>
+   <content type="html">&lt;p&gt;The Apache Wicket team is proud to have Martin Grigorov as a new member to the team of developers. Martin has provided many high quality patches and didn&amp;#8217;t just pick the easy bugs either. He&amp;#8217;s also very active on the user list and contributes to several &lt;a href='http://wicketstuff.org'&gt;Wicket Stuff projects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Welcome Martin!&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -394,34 +404,6 @@
 &lt;p&gt;A complete list of changes can be found &lt;a href='https://issues.apache.org/jira/browse/WICKET/fixforversion/12314250'&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;We thank you for your patience and support.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.2 released</title>
-   <link href="http://wicket.apache.org/2009/10/12/wicket-1.4.2-released.html"/>
-   <updated>2009-10-12T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2009/10/12/wicket-1.4.2-released</id>
-   <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the second maintenance release of Apache Wicket 1.4.&lt;/p&gt;
-
-&lt;h3 id='download_apache_wicket_142'&gt;Download Apache Wicket 1.4.2&lt;/h3&gt;
-
-&lt;p&gt;You can download the release here: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.2'&gt;http://www.apache.org/dyn/closer.cgi/wicket/1.4.2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Or use this in your Maven pom&amp;#8217;s to upgrade to the new version:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.2&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id='changes'&gt;Changes&lt;/h3&gt;
-
-&lt;p&gt;A complete list of changes can be found &lt;a href='https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&amp;amp;&amp;amp;pid=12310561&amp;amp;fixfor=12314163&amp;amp;sorter/field=priority&amp;amp;sorter/order=DESC'&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We thank you for your patience and support.&lt;/p&gt;
-
-&lt;p&gt;The Wicket Team&lt;/p&gt;</content>
  </entry>
  
 </feed>
