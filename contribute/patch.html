@@ -144,7 +144,34 @@
 
 		<div id="contentbody">
 			<h1>Submit a patch</h1>
-			
+			<h2 id='high_level'>High level:</h2>
+
+<p>The steps to submitting a patch for Wicket are:</p>
+
+<ul>
+<li>Identify an issue that you want to fix or improve</li>
+
+<li>Search JIRA and the mailing list to see if it&#8217;s already been discussed</li>
+
+<li>If it&#8217;s a bug or a feature request, open a <a href='https://issues.apache.org/jira/browse/WICKET'>JIRA issue</a></li>
+
+<li><a href='../start/quickstart.html'>Create a quickstart</a> that you can use for prototyping the feature or demonstrating the bug ** Attach this quickstart to the JIRA issue if it&#8217;s representing a bug report.</li>
+
+<li>Get Subversion running</li>
+
+<li><a href='../start/download.html#snapshots_and_latest_bleedingedge_code'>Checkout out the code</a></li>
+
+<li>Make your changes</li>
+
+<li>Create the patch:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>svn add &lt;any_files_you_created&gt;</span>
+<span class='go'>svn diff &gt; /tmp/fix-WICKET-NNNN.patch</span>
+</code></pre>
+</div>
+<ul>
+<li>Attach that file (/tmp/fix-WICKET-NNNN.patch) to the JIRA</li>
+</ul>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
