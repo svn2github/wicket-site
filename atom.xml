@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-09-17T08:40:59-07:00</updated>
+ <updated>2010-09-21T22:47:23-05:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Wicket 1.5-M2.1 released</title>
    <link href="http://wicket.apache.org/2010/09/17/wicket.1.5-M2.1-released.html"/>
-   <updated>2010-09-17T00:00:00-07:00</updated>
+   <updated>2010-09-17T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/09/17/wicket.1.5-M2.1-released</id>
    <content type="html">&lt;p&gt;This is the second milestone of the new 1.5.x Wicket series. The focus of 1.5.x is to provide our users with a more powerful and flexible request processing pipeline.&lt;/p&gt;
 
@@ -45,7 +45,7 @@
  <entry>
    <title>Wicket 1.4.12 released</title>
    <link href="http://wicket.apache.org/2010/09/17/wicket.1.4.12-released.html"/>
-   <updated>2010-09-17T00:00:00-07:00</updated>
+   <updated>2010-09-17T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/09/17/wicket.1.4.12-released</id>
    <content type="html">&lt;p&gt;This is the twelfth maintenance release of the 1.4.x series. This release brings a fix to a &lt;a href='https://issues.apache.org/jira/browse/WICKET-3040'&gt;critical bug&lt;/a&gt; which prevented ajax form submits in FireFox.&lt;/p&gt;
 
@@ -71,7 +71,7 @@
  <entry>
    <title>Wicket 1.4.11 released</title>
    <link href="http://wicket.apache.org/2010/09/09/wicket-1.4.11-released.html"/>
-   <updated>2010-09-09T00:00:00-07:00</updated>
+   <updated>2010-09-09T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/09/09/wicket-1.4.11-released</id>
    <content type="html">&lt;p&gt;This is the eleventh maintenance release of the 1.4.x series and brings over fifty bug fixes and improvements.&lt;/p&gt;
 
@@ -97,7 +97,7 @@
  <entry>
    <title>Peter Ertl is a Wicket team member</title>
    <link href="http://wicket.apache.org/2010/08/24/peter-ertl-committer.html"/>
-   <updated>2010-08-24T00:00:00-07:00</updated>
+   <updated>2010-08-24T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/08/24/peter-ertl-committer</id>
    <content type="html">&lt;p&gt;The Apache Wicket team is proud to have Peter Ertl as a new member to the team of developers. Peter has been active in our community for a long time now and has contributed many patches, reported many bugs as well as helping out on the user list.&lt;/p&gt;
 
@@ -107,7 +107,7 @@
  <entry>
    <title>Wicket 1.5-M1 released</title>
    <link href="http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released.html"/>
-   <updated>2010-08-11T00:00:00-07:00</updated>
+   <updated>2010-08-11T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released</id>
    <content type="html">&lt;p&gt;This is the first milestone of the new 1.5.x Wicket series. The focus of 1.5.x is to provide our users with a more powerful and flexible request processing pipeline.&lt;/p&gt;
 
@@ -135,7 +135,7 @@
  <entry>
    <title>Wicket 1.4.10 released</title>
    <link href="http://wicket.apache.org/2010/08/11/wicket-1.4.10-released.html"/>
-   <updated>2010-08-11T00:00:00-07:00</updated>
+   <updated>2010-08-11T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/08/11/wicket-1.4.10-released</id>
    <content type="html">&lt;p&gt;This is the tenth maintenance release of the 1.4.x series and brings over thirty bug fixes and improvements.&lt;/p&gt;
 
@@ -263,7 +263,7 @@
  <entry>
    <title>Martin Grigorov is a Wicket team member</title>
    <link href="http://wicket.apache.org/2010/08/04/martin-grigorov-committer.html"/>
-   <updated>2010-08-04T00:00:00-07:00</updated>
+   <updated>2010-08-04T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/08/04/martin-grigorov-committer</id>
    <content type="html">&lt;p&gt;The Apache Wicket team is proud to have Martin Grigorov as a new member to the team of developers. Martin has provided many high quality patches and didn&amp;#8217;t just pick the easy bugs either. He&amp;#8217;s also very active on the user list and contributes to several &lt;a href='http://wicketstuff.org'&gt;Wicket Stuff projects&lt;/a&gt;.&lt;/p&gt;
 
@@ -273,7 +273,7 @@
  <entry>
    <title>Wicket 1.4.9 released</title>
    <link href="http://wicket.apache.org/2010/05/24/wicket-1.4.9-released.html"/>
-   <updated>2010-05-24T00:00:00-07:00</updated>
+   <updated>2010-05-24T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/05/24/wicket-1.4.9-released</id>
    <content type="html">&lt;p&gt;This is the ninth maintenance release of the 1.4.x series and brings over fifteen bug fixes and improvements.&lt;/p&gt;
 
@@ -341,7 +341,7 @@
  <entry>
    <title>Wicket 1.4.8 released</title>
    <link href="http://wicket.apache.org/2010/05/03/wicket-1.4.8-released.html"/>
-   <updated>2010-05-03T00:00:00-07:00</updated>
+   <updated>2010-05-03T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/05/03/wicket-1.4.8-released</id>
    <content type="html">&lt;p&gt;Wicket 1.4.8 is released!&lt;/p&gt;
 
@@ -369,7 +369,7 @@
  <entry>
    <title>Wicket 1.4.7 released</title>
    <link href="http://wicket.apache.org/2010/03/05/wicket-1.4.7-released.html"/>
-   <updated>2010-03-05T00:00:00-08:00</updated>
+   <updated>2010-03-05T00:00:00-06:00</updated>
    <id>http://wicket.apache.org/2010/03/05/wicket-1.4.7-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket project is proud to announce the seventh maintenance release of Apache Wicket 1.4. This releases brings over 30 improvements and bug fixes.&lt;/p&gt;
 
