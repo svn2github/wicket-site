@@ -86,7 +86,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.12">Wicket 1.4</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.13">Wicket 1.4</a>
 			(<a href="http://wicket.apache.org/apidocs/1.4" title="JavaDocs of the latest stable release - 1.4.x">docs</a>)
 		</li>
 		<li>
@@ -330,8 +330,18 @@
 <h2 id='additional'>Additional tasks</h2>
 
 <ul>
-<li>Commit the JavaDocs to <a href='https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4'>https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4</a> svnpubsub will push this directly to our website.</li>
+<li>Commit the JavaDocs to <a href='https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4'>https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4</a> svnpubsub will push this directly to our website. (example script below)</li>
 </ul>
+<div class='highlight'><pre><code class='console'><span class='gp'>#</span> <span class='k'>do </span>this in your locally-checked-out release branch <span class='o'>(</span>i.e. svn.../releases/wicket-1.4.13<span class='o'>)</span>
+<span class='go'>mvn javadoc:aggregate</span>
+<span class='gp'>#</span> note that you may need to tweak these paths to fit your configuration:
+<span class='go'>cp -r target/site/apidocs/* ../wicket-common/site/apidocs/1.4/</span>
+<span class='go'>cd ../wicket-common/</span>
+<span class='gp'>#</span> call <span class='s2'>&quot;svn add&quot;</span> <span class='k'>for </span>files that are new <span class='o'>(</span>there<span class='err'>&#39;</span>s probably an easier way to <span class='k'>do </span>this<span class='o'>)</span>
+<span class='go'>svn stat | grep -e &#39;^?&#39; | sed &#39;s/\?\W*//&#39; | xargs svn add</span>
+<span class='go'>svn commit -m &quot;changes to update javadocs to latest release&quot;</span>
+</code></pre>
+</div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
