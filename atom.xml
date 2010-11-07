@@ -4,13 +4,39 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-11-02T00:05:25-05:00</updated>
+ <updated>2010-11-06T22:08:30-05:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Wicket 1.5-M3 released</title>
+   <link href="http://wicket.apache.org/2010/11/05/wicket-1.5-M3-released.html"/>
+   <updated>2010-11-05T00:00:00-05:00</updated>
+   <id>http://wicket.apache.org/2010/11/05/wicket-1.5-M3-released</id>
+   <content type="html">&lt;p&gt;This is another milestone release from trunk (in-development branch). This release includes several enhancments and fixes, which can be seen in the changelog (linked below).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.5-M3'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;styleName=Html&amp;amp;version=12315329'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5-M3&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5-M3'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.4.13 released</title>
@@ -361,34 +387,6 @@
 &lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2870'&gt;WICKET-2870&lt;/a&gt; - Fix hungarian translation for Wizard&lt;/li&gt;
 
 &lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2879'&gt;WICKET-2879&lt;/a&gt; - delegate isVisible in PanelCachingTab&lt;/li&gt;
-&lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.8 released</title>
-   <link href="http://wicket.apache.org/2010/05/03/wicket-1.4.8-released.html"/>
-   <updated>2010-05-03T00:00:00-05:00</updated>
-   <id>http://wicket.apache.org/2010/05/03/wicket-1.4.8-released</id>
-   <content type="html">&lt;p&gt;Wicket 1.4.8 is released!&lt;/p&gt;
-
-&lt;p&gt;This is the eighth maintenance release of 1.4.x series and brings over 20 bug fixes and improvements.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='https://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.8'&gt;SVN tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;Using Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.8&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.8'&gt;Download&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&amp;amp;pid=12310561&amp;amp;fixfor=12314811'&gt;Change log&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
