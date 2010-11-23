@@ -4,13 +4,23 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-11-11T17:19:24+01:00</updated>
+ <updated>2010-11-23T09:48:20+01:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Pedro Santos is a Wicket team member</title>
+   <link href="http://wicket.apache.org/2010/11/21/pedro-santos-committer.html"/>
+   <updated>2010-11-21T00:00:00+01:00</updated>
+   <id>http://wicket.apache.org/2010/11/21/pedro-santos-committer</id>
+   <content type="html">&lt;p&gt;Pedro Santos has been added as a committer and PMC member for Apache Wicket. Pedro has been increasingly active in the Wicket community in recent months, and his patches continue to improve in quality. Additionally, Pedro is always willing to do the &amp;#8220;grunt work&amp;#8221; of creating great test cases for his patches, or for JIRA issues that others have attached patches to. Test cases are invaluable to the development of Wicket because they help us not introduce regressions as we fix bugs and add features.&lt;/p&gt;
+
+&lt;p&gt;Thanks Pedro, and we look forward to working with you!&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.5-M3 released</title>
@@ -320,74 +330,6 @@
    <content type="html">&lt;p&gt;The Apache Wicket team is proud to have Martin Grigorov as a new member to the team of developers. Martin has provided many high quality patches and didn&amp;#8217;t just pick the easy bugs either. He&amp;#8217;s also very active on the user list and contributes to several &lt;a href='http://wicketstuff.org'&gt;Wicket Stuff projects&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Welcome Martin!&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.9 released</title>
-   <link href="http://wicket.apache.org/2010/05/24/wicket-1.4.9-released.html"/>
-   <updated>2010-05-24T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2010/05/24/wicket-1.4.9-released</id>
-   <content type="html">&lt;p&gt;This is the ninth maintenance release of the 1.4.x series and brings over fifteen bug fixes and improvements.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.9/'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;styleName=Html&amp;amp;version=12314962'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.9&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.9'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It is worth noting that &lt;a href='https://issues.apache.org/jira/browse/WICKET-2846'&gt;WICKET-2846&lt;/a&gt; will be reverted in the next release because the community has shown a preference for this. So, it would be wise not to take advantage of the &lt;code&gt;InheritableThreadLocal&lt;/code&gt; that was put into version 1.4.9.&lt;/p&gt;
-
-&lt;h2 id='release_notes__wicket__version_149'&gt;Release Notes - Wicket - Version 1.4.9&lt;/h2&gt;
-
-&lt;h3 id='bugs'&gt;Bugs&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2741'&gt;WICKET-2741&lt;/a&gt; - non-performant Collections.synchronizedMap() should be replaced with ConcurrentMap&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2843'&gt;WICKET-2843&lt;/a&gt; - Palette is incompatible with ListMultipleChoice in its use of the model&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2853'&gt;WICKET-2853&lt;/a&gt; - ListMultipleChoice/CheckBoxMultipleChoice do not retain selected but disabled items&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2856'&gt;WICKET-2856&lt;/a&gt; - PackageStringResourceLoader.loadStringResource() causes NullPointerException when used in a Class within the root package (i.e. it has no package declaration)&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2858'&gt;WICKET-2858&lt;/a&gt; - WicketSessionFilter: java.lang.IllegalArgumentException: Argument application can not be null&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2859'&gt;WICKET-2859&lt;/a&gt; - Wrong package names in Examples&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2860'&gt;WICKET-2860&lt;/a&gt; - Wrong name for swiss Application.properties&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2861'&gt;WICKET-2861&lt;/a&gt; - getConvertedInput() returns null and selectedValues.addAll tries adding it&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id='improvements'&gt;Improvements&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2790'&gt;WICKET-2790&lt;/a&gt; - wicketTester.executeAjaxEvent method does not check if form is multiPart&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2840'&gt;WICKET-2840&lt;/a&gt; - Remove final on AbstractRequestTargetUrlCodingStrategy#getMountPath()&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2846'&gt;WICKET-2846&lt;/a&gt; - Store Application in InheritableThreadLocal instead of ThreadLocal&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2855'&gt;WICKET-2855&lt;/a&gt; - Constructor of RedirectRequestTarget does not validate URL&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2869'&gt;WICKET-2869&lt;/a&gt; - RangeValidator should use getMinimum and getMaximum&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2870'&gt;WICKET-2870&lt;/a&gt; - Fix hungarian translation for Wizard&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-2879'&gt;WICKET-2879&lt;/a&gt; - delegate isVisible in PanelCachingTab&lt;/li&gt;
-&lt;/ul&gt;</content>
  </entry>
  
 </feed>
