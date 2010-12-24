@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2010-11-29T01:12:52-05:00</updated>
+ <updated>2010-12-24T09:09:32-06:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -13,9 +13,35 @@
  
  
  <entry>
+   <title>Wicket 1.4.15 released</title>
+   <link href="http://wicket.apache.org/2010/12/24/wicket-1.4.15-released.html"/>
+   <updated>2010-12-24T00:00:00-06:00</updated>
+   <id>http://wicket.apache.org/2010/12/24/wicket-1.4.15-released</id>
+   <content type="html">&lt;p&gt;This is fifteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.15'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;styleName=Html&amp;amp;version=12315900'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.15&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.15'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Wicket 1.4.14 released</title>
    <link href="http://wicket.apache.org/2010/11/29/wicket-1.4.14-released.html"/>
-   <updated>2010-11-29T00:00:00-05:00</updated>
+   <updated>2010-11-29T00:00:00-06:00</updated>
    <id>http://wicket.apache.org/2010/11/29/wicket-1.4.14-released</id>
    <content type="html">&lt;p&gt;This is fourteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -41,7 +67,7 @@
  <entry>
    <title>Pedro Santos is a Wicket team member</title>
    <link href="http://wicket.apache.org/2010/11/21/pedro-santos-committer.html"/>
-   <updated>2010-11-21T00:00:00-05:00</updated>
+   <updated>2010-11-21T00:00:00-06:00</updated>
    <id>http://wicket.apache.org/2010/11/21/pedro-santos-committer</id>
    <content type="html">&lt;p&gt;Pedro Santos has been added as a committer and PMC member for Apache Wicket. Pedro has been increasingly active in the Wicket community in recent months, and his patches continue to improve in quality. Additionally, Pedro is always willing to do the &amp;#8220;grunt work&amp;#8221; of creating great test cases for his patches, or for JIRA issues that others have attached patches to. Test cases are invaluable to the development of Wicket because they help us not introduce regressions as we fix bugs and add features.&lt;/p&gt;
 
@@ -51,7 +77,7 @@
  <entry>
    <title>Wicket 1.5-M3 released</title>
    <link href="http://wicket.apache.org/2010/11/05/wicket-1.5-M3-released.html"/>
-   <updated>2010-11-05T00:00:00-04:00</updated>
+   <updated>2010-11-05T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/11/05/wicket-1.5-M3-released</id>
    <content type="html">&lt;p&gt;This is another milestone release from trunk (in-development branch). This release includes several enhancments and fixes, which can be seen in the changelog (linked below).&lt;/p&gt;
 
@@ -77,7 +103,7 @@
  <entry>
    <title>Wicket 1.4.13 released</title>
    <link href="http://wicket.apache.org/2010/11/01/wicket-1.4.13-released.html"/>
-   <updated>2010-11-01T00:00:00-04:00</updated>
+   <updated>2010-11-01T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/11/01/wicket-1.4.13-released</id>
    <content type="html">&lt;p&gt;This is thirteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -103,7 +129,7 @@
  <entry>
    <title>Wicket 1.5-M2.1 released</title>
    <link href="http://wicket.apache.org/2010/09/17/wicket.1.5-M2.1-released.html"/>
-   <updated>2010-09-17T00:00:00-04:00</updated>
+   <updated>2010-09-17T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/09/17/wicket.1.5-M2.1-released</id>
    <content type="html">&lt;p&gt;This is the second milestone of the new 1.5.x Wicket series. The focus of 1.5.x is to provide our users with a more powerful and flexible request processing pipeline.&lt;/p&gt;
 
@@ -133,7 +159,7 @@
  <entry>
    <title>Wicket 1.4.12 released</title>
    <link href="http://wicket.apache.org/2010/09/17/wicket.1.4.12-released.html"/>
-   <updated>2010-09-17T00:00:00-04:00</updated>
+   <updated>2010-09-17T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/09/17/wicket.1.4.12-released</id>
    <content type="html">&lt;p&gt;This is the twelfth maintenance release of the 1.4.x series. This release brings a fix to a &lt;a href='https://issues.apache.org/jira/browse/WICKET-3040'&gt;critical bug&lt;/a&gt; which prevented ajax form submits in FireFox.&lt;/p&gt;
 
@@ -159,7 +185,7 @@
  <entry>
    <title>Wicket 1.4.11 released</title>
    <link href="http://wicket.apache.org/2010/09/09/wicket-1.4.11-released.html"/>
-   <updated>2010-09-09T00:00:00-04:00</updated>
+   <updated>2010-09-09T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/09/09/wicket-1.4.11-released</id>
    <content type="html">&lt;p&gt;This is the eleventh maintenance release of the 1.4.x series and brings over fifty bug fixes and improvements.&lt;/p&gt;
 
@@ -185,7 +211,7 @@
  <entry>
    <title>Peter Ertl is a Wicket team member</title>
    <link href="http://wicket.apache.org/2010/08/24/peter-ertl-committer.html"/>
-   <updated>2010-08-24T00:00:00-04:00</updated>
+   <updated>2010-08-24T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/08/24/peter-ertl-committer</id>
    <content type="html">&lt;p&gt;The Apache Wicket team is proud to have Peter Ertl as a new member to the team of developers. Peter has been active in our community for a long time now and has contributed many patches, reported many bugs as well as helping out on the user list.&lt;/p&gt;
 
@@ -195,7 +221,7 @@
  <entry>
    <title>Wicket 1.5-M1 released</title>
    <link href="http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released.html"/>
-   <updated>2010-08-11T00:00:00-04:00</updated>
+   <updated>2010-08-11T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2010/08/11/wicket-1.5-M1-released</id>
    <content type="html">&lt;p&gt;This is the first milestone of the new 1.5.x Wicket series. The focus of 1.5.x is to provide our users with a more powerful and flexible request processing pipeline.&lt;/p&gt;
 
@@ -217,134 +243,6 @@
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5-M1'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.10 released</title>
-   <link href="http://wicket.apache.org/2010/08/11/wicket-1.4.10-released.html"/>
-   <updated>2010-08-11T00:00:00-04:00</updated>
-   <id>http://wicket.apache.org/2010/08/11/wicket-1.4.10-released</id>
-   <content type="html">&lt;p&gt;This is the tenth maintenance release of the 1.4.x series and brings over thirty bug fixes and improvements.&lt;/p&gt;
-
-&lt;p&gt;As well as bringing bug fixes and small improvements, 1.4.10 brings two major new features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Delayed component initialization&lt;/li&gt;
-
-&lt;li&gt;Component configuration&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Delayed component initialization allows developers to initialize their components outside of a constructor, when more environment is available to the component instance. From the javadoc:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Component&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-	&lt;span class='cm'&gt;/**&lt;/span&gt;
-&lt;span class='cm'&gt;	 * This method is meant to be used as an alternative to initialize components. Usually the&lt;/span&gt;
-&lt;span class='cm'&gt;	 * component&amp;#39;s constructor is used for this task, but sometimes a component cannot be&lt;/span&gt;
-&lt;span class='cm'&gt;	 * initialized in isolation, it may need to access its parent component or its markup in order&lt;/span&gt;
-&lt;span class='cm'&gt;	 * to fully initialize. This method is invoked once per component&amp;#39;s lifecycle when a path exists&lt;/span&gt;
-&lt;span class='cm'&gt;	 * from this component to the {@link Page} thus providing the component with an atomic callback&lt;/span&gt;
-&lt;span class='cm'&gt;	 * when the component&amp;#39;s environment is built out.&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * Overrides must call super#{@link #onInitialize()}. Usually this should be the first thing an&lt;/span&gt;
-&lt;span class='cm'&gt;	 * override does, much like a constructor.&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * Parent containers are guaranteed to be initialized before their children&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * It is safe to use {@link #getPage()} in this method&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * NOTE:The timing of this call is not precise, the contract is that it is called sometime&lt;/span&gt;
-&lt;span class='cm'&gt;	 * before {@link Component#onBeforeRender()}.&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &lt;/span&gt;
-&lt;span class='cm'&gt;	 */&lt;/span&gt;
-	&lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onInitialize&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{}&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Component configuration allows developers to easier configure component states such as visibility, enabled, etc. From the javadoc:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Component&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-	&lt;span class='cm'&gt;/**&lt;/span&gt;
-&lt;span class='cm'&gt;	 * Called once per request on components before they are about to be rendered. This method&lt;/span&gt;
-&lt;span class='cm'&gt;	 * should be used to configure such things as visibility and enabled flags.&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * Overrides must call {@code super.onConfigure()}, usually before any other code&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * NOTE: Component hierarchy should not be modified inside this method, instead it should be&lt;/span&gt;
-&lt;span class='cm'&gt;	 * done in {@link #onBeforeRender()}&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * NOTE: Why this method is preferrable to directly overriding {@link #isVisible()} and&lt;/span&gt;
-&lt;span class='cm'&gt;	 * {@link #isEnabled()}? Because those methods are called multiple times even for processing of&lt;/span&gt;
-&lt;span class='cm'&gt;	 * a single request. If they contain expensive logic they can slow down the response time of the&lt;/span&gt;
-&lt;span class='cm'&gt;	 * entire page. Further, overriding those methods directly on form components may lead to&lt;/span&gt;
-&lt;span class='cm'&gt;	 * inconsistent or unexpected state depending on when those methods are called in the form&lt;/span&gt;
-&lt;span class='cm'&gt;	 * processing workflow. It is a better practice to push changes to state rather than pull.&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * NOTE: If component&amp;#39;s visibility or another property depends on another component you may call&lt;/span&gt;
-&lt;span class='cm'&gt;	 * {@code other.configure()} followed by {@code other.isVisible()} as mentioned in&lt;/span&gt;
-&lt;span class='cm'&gt;	 * {@link #configure()} javadoc.&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * NOTE: Why should {@link #onBeforeRender()} not be used for this? Because if visibility of a&lt;/span&gt;
-&lt;span class='cm'&gt;	 * component is toggled inside {@link #onBeforeRender()} another method needs to be overridden&lt;/span&gt;
-&lt;span class='cm'&gt;	 * to make sure {@link #onBeforeRender()} will be invoked on ivisible components:&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;pre&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * class MyComponent extends WebComponent&lt;/span&gt;
-&lt;span class='cm'&gt;	 * {&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	protected void onBeforeRender()&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	{&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 		setVisible(Math.rand() &amp;amp;gt; 0.5f);&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 		super.onBeforeRender();&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	}&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	// if this override is forgotten, once invisible component will never become visible&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	protected boolean callOnBeforeRenderIfNotVisible()&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	{&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 		return true;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	}&lt;/span&gt;
-&lt;span class='cm'&gt;	 * }&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/pre&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &lt;/span&gt;
-&lt;span class='cm'&gt;	 * VS&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;pre&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 * class MyComponent extends WebComponent&lt;/span&gt;
-&lt;span class='cm'&gt;	 * {&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	protected void onConfigure()&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	{&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 		setVisible(Math.rand() &amp;amp;gt; 0.5f);&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 		super.onConfigure();&lt;/span&gt;
-&lt;span class='cm'&gt;	 * 	}&lt;/span&gt;
-&lt;span class='cm'&gt;	 * }&lt;/span&gt;
-&lt;span class='cm'&gt;	 * &amp;lt;/pre&amp;gt;&lt;/span&gt;
-&lt;span class='cm'&gt;	 */&lt;/span&gt;
-	&lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onConfigure&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{}&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.10/'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&amp;amp;mode=hide&amp;amp;sorter/order=DESC&amp;amp;sorter/field=priority&amp;amp;pid=12310561&amp;amp;fixfor=12315070'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.10&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.10'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
