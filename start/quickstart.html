@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Apache Wicket - Get Started</title>
+    <title>Apache Wicket - Create a Wicket Quickstart</title>
 
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
 
@@ -143,14 +143,14 @@
 </div>
 
 		<div id="contentbody">
-			<h1>Get Started</h1>
-			<p>This guide is intended to get you up and running &amp; using Wicket within minutes.</p>
+			<h1>Create a Wicket Quickstart</h1>
+			<p>There are two really good reasons to create a Wicket quickstart. The first is if you just want to get started using Wicket quickly. The quickstart will set up a ready-to-use project in under a minute (depending on your bandwidth). Another great reason to create a quickstart is to accompany a bug report. If you report a bug in JIRA or on the mailing list, the core developers may not be able to recreate it easily. In most cases, you&#8217;ll be told &#8220;please create a quickstart and attach it to a JIRA issue&#8221;. If you don&#8217;t know how to do that, don&#8217;t worry - just follow the instructions below. (If you are submitting a quickstart for an issue report, please be sure to read the subheading below - &#8220;Submitting a quickstart for an issue report&#8221;</p>
 
-<p>It uses a Maven Archetype to create a Wicket QuickStart project, so requires that <a href='http://maven.apache.org'>Maven 2</a> be installed &amp; configured beforehand.</p>
+<p>Quickstarts are made from a Maven archetype. So, you will need to have <a href='http://maven.apache.org'>Maven 2</a> installed and working (from the command line) before following this.</p>
 
-<p>This project provides a starting point for your Wicket project. If you are looking for examples, please refer to the <em>wicket-example</em> projects instead!</p>
+<p>Creating a quickstart provides only a very basic starting point for your Wicket project. If you are looking for examples of how to use Wicket and its various features, please refer to the <em>wicket-example</em> projects instead!</p>
 
-<h2 id='creating_the_project'>Creating the project</h2>
+<h2 id='creating_the_project__with_maven'>Creating the project - with Maven</h2>
 
 <p>To create your project, copy and paste the command line generated after typing in the groupId, artifactId and version.</p>
 <style>		
@@ -222,50 +222,48 @@
 </div>
 <h3 id='results'>Results</h3>
 
-<p>This will produce the following project structure/files</p>
-
-<pre><code>.\myproject
-    |   pom.xml
-    |
-    \---src
-        +---main
-        |   +---java
-        |   |   \---com
-        |   |       \---mycompany
-        |   |               HomePage.html
-        |   |               HomePage.java
-        |   |               WicketApplication.java
-        |   |
-        |   +---resources
-        |   |       log4j.properties
-        |   |
-        |   \---webapp
-        |       \---WEB-INF
-        |               web.xml
+<p>This will produce the following project structure/files:</p>
+<div style='margin-left: 3em; border: 1px solid black'>
+<pre>
+    .\myproject
+        |   pom.xml
         |
-        \---test
-            \---java
-                \---com
-                    \---mycompany
-                            Start.java</code></pre>
+        \---src
+            +---main
+            |   +---java
+            |   |   \---com
+            |   |       \---mycompany
+            |   |               HomePage.html
+            |   |               HomePage.java
+            |   |               WicketApplication.java
+            |   |
+            |   +---resources
+            |   |       log4j.properties
+            |   |
+            |   \---webapp
+            |       \---WEB-INF
+            |               web.xml
+            |
+            \---test
+                \---java
+                    \---com
+                        \---mycompany
+                                Start.java
+</pre>
+</div>
+<h3 id='using_maven_quickstart_with_a_specific_ide'>Using Maven quickstart with a specific IDE</h3>
 
-<h2 id='use'>Use</h2>
-
-<p>Change into the project directory, then create a WAR file via <code>mvn package</code> or build the project and run it under Jetty via <code>mvn jetty:run</code>.</p>
-
-<h3 id='using_the_jetty_plugin'>Using the Jetty Plugin</h3>
-
-<p>This will compile the project then deploy it to an embeded instance of the Jetty servlet engine, which will be use on port 8080, by default. As a result, once running, your application will be available at <a href='http:localhost:8080/myproject'>http:localhost:8080/myproject</a>.</p>
-
-<p>See the <a href='http://www.mortbay.org/maven-plugin/index.html'>Jetty plugin</a> documentation for configuration options, etc.</p>
-
-<h3 id='using_with_a_specific_ide'>Using with a specific IDE</h3>
+<p>Maven has an integration with many IDEs. If you want to use your new Maven-based Wicket quickstart with your favorite IDE, see one of these instructions:</p>
 
 <h4 id='eclipse'>Eclipse</h4>
 
-<p>To create an Eclipse project, use <code>mvn eclipse:eclipse</code> inside the project directory and import the project in your workspace (File -&gt; Import).</p>
+<p>Change directory into the project that you just created. Now, run <code>mvn eclipse:eclipse</code>. This will set up the .project, .settings, and .classpath files that Eclipse requires.</p>
 
-<p>Or alternatively install the <a href='http://m2eclipse.codehaus.org/'>m2eclipse</a> or <a href='http://www.eclipse.org/iam/'>Eclipse IAM</a> plugin and add the project directly.</p>
+<p>Note that your workspace will have to have the classpath variable M2_REPO set to point to the directory where your local Maven repository exists. You can see this page for how to do that with Eclipse: <a href='http://maven.apache.org/plugins/maven-eclipse-plugin/usage.html'>http://maven.apache.org/plugins/maven-eclipse-plugin/usage.html</a></p>
+
+<p>Now, in Eclipse, you can choose &#8220;File&#8221; (menu), then &#8220;Import&#8221;, then &#8220;Existing project&#8221;. Navigate to the folder where your project exists and let Eclipse import it. The classpath should be fully configured.</p>
+
+<p>Alternatively install the <a href='http://m2eclipse.codehaus.org/'>m2eclipse</a> or <a href='http://www.eclipse.org/iam/'>Eclipse IAM</a> plugin and add the project directly.</p>
 
 <h4 id='idea'>IDEA</h4>
 
@@ -278,6 +276,28 @@
 <h3 id='more_examples'>More examples</h3>
 
 <p>Many more information and examples can be found on our Wiki or <a href='http://www.ralfebert.de/blog/wicket/wicket_eclipse_setup/'>here</a></p>
+
+<h2 id='using_your_new_project'>Using your new project</h2>
+
+<p>Wicket quickstart projects include a file named Start.java. If you open this file in your IDE (after configuring the project in your IDE), you can run it as a Java application. It will run an embedded Jetty instance that will run your app on <a href='http://localhost:8080'>http://localhost:8080</a> Navigate your browser to that address to see your app running.</p>
+
+<h3 id='using_the_jetty_plugin'>Using the Jetty Plugin</h3>
+
+<p>The Jetty plugin is also enabled by default in the quickstart. If you are using Maven, you can change directory into the project and run the &#8220;mvn jetty:run&#8221; command. This will compile the project and deploy it to an embeded instance of the Jetty servlet engine, which will run on port 8080, by default. As a result, once running, your application will be available at <a href='http:localhost:8080/myproject'>http:localhost:8080/myproject</a>.</p>
+
+<p>See the <a href='http://www.mortbay.org/maven-plugin/index.html'>Jetty plugin</a> documentation for configuration options, etc.</p>
+
+<h2 id='submitting_a_quickstart_for_an_issue_report'>Submitting a quickstart for an issue report</h2>
+
+<h3 id='reproduce_the_problem'>Reproduce the problem</h3>
+
+<p>Assuming you have followed the instructions above, the quickstart is now created and ready for you to develop. Now comes the &#8220;duplicate the problem&#8221; part. Try to create pages or components that reproduce the problem you were trying to report. You can run the Start.java class from your IDE and go to <a href='http://localhost:8080/'>http://localhost:8080/</a> to see your test application. If you run the Start.java class in your IDE&#8217;s debug mode, you should be able to attach breakpoints and have automatic class and markup reloading.</p>
+
+<p>If you can&#8217;t reproduce the problem - start looking at your own code. Keep adding pieces from your code until either you reproduce the problem, or else you&#8217;ve found the bug in your own code. A lot of times, you will find the bug in your code just by trying to create a quickstart that demonstrates the bug in ours.</p>
+
+<h3 id='clean_up_the_quickstart_and_submit_it'>Clean up the quickstart and submit it</h3>
+
+<p>Once you have reproduced the desired behavior in your quickstart, it would be best to make it as small as possible before submitting. The best way to do this is to run the &#8220;mvn clean&#8221; command from the project directory. Then zip (or tar and gzip) the whole directory up and submit the zip (or tgz) file. (The mvn clean command removes all of the compiled classes and generated artifacts, generally in your &#8220;target&#8221; directory, leaving only the actual source.)</p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
