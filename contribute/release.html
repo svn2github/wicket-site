@@ -151,9 +151,7 @@
 
 <li><a href='#release-13'>Releasing Apache Wicket 1.3.x</a></li>
 
-<li><a href='#mirrors'>Uploading to the mirror system</a></li>
-
-<li><a href='#mavencentral'>Uploading to maven repository</a></li>
+<li><a href='#nexus'>Staging Releases using the Apache Nexus Repository</a></li>
 
 <li><a href='#announcing'>Announcing the release</a></li>
 
@@ -162,14 +160,35 @@
 
 <h2 id='release-14'>Releasing Apache Wicket 1.4.x</h2>
 
-<h3 id='building_the_release'>Building the release</h3>
+<h3 id='building_the_release'>Building the Release</h3>
+
+<h4 id='preparing'>Preparing</h4>
 
 <ul>
 <li>Ask the dev@ mailing list if there are any issues that still need to be in the release (looking at JIRA is a good start)</li>
 
-<li>Assuming there are none, and you are now in build mode, update the CHANGELOG-1.4 file * you can use JIRA for this list: go to &#8220;releases&#8221;, and under &#8220;unreleased&#8221;, next to your version, there&#8217;s a release notes link</li>
+<li>Release the version in JIRA</li>
 
-<li>create a release branch to do your release work in (modifying poms, etc) * then checkout that release branch and cd into it</li>
+<li>Assuming there are none, and you are now in build mode, update the CHANGELOG-1.4 file (you can use JIRA for this list: go to &#8220;releases&#8221;, and under &#8220;unreleased&#8221;, next to your version, there&#8217;s a release notes link)</li>
+</ul>
+
+<p>Make sure your <code>~/.m2/settings.xml</code> contains the following definition</p>
+<div class='highlight'><pre><code class='console'><span class='go'>&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class='go'>&lt;settings&gt;</span>
+<span class='go'>&lt;servers&gt;</span>
+<span class='go'>	&lt;server&gt;</span>
+<span class='go'>	    &lt;id&gt;apache.releases.https&lt;/id&gt;</span>
+<span class='go'>	    &lt;username&gt;$your_apache_username&lt;/username&gt;</span>
+<span class='go'>	    &lt;password&gt;$your_apache_password&lt;/password&gt;</span>
+<span class='go'>	&lt;/server&gt;</span>
+<span class='go'>&lt;/servers&gt;</span>
+<span class='go'>&lt;/settings&gt;</span>
+</code></pre>
+</div>
+<ul>
+<li>create a release branch to do your release work in (modifying poms, etc)</li>
+
+<li>then checkout that release branch and cd into it</li>
 </ul>
 <div class='highlight'><pre><code class='console'><span class='gp'>$</span> svn cp https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.x <span class='se'>\</span>
 <span class='go'>https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.13 \</span>
@@ -183,32 +202,42 @@
 </code></pre>
 </div>
 <ul>
-<li>Set correct version in the pom files * Linux</li>
+<li>Set correct version in the pom files using the <a href='http://mojo.codehaus.org/versions-maven-plugin'>maven-versions-plugin</a>:</li>
 </ul>
-<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/1.4-SNAPSHOT/1.4.13/g&quot;</span>
-<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.4.13/g&quot;</span>
-</code></pre>
-</div>
-<pre><code>* Mac OS X</code></pre>
-<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/1.4-SNAPSHOT/1.4.13/g&quot;</span>
-<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.4.13/g&quot;</span>
+<div class='highlight'><pre><code class='console'><span class='go'>mvn versions:set -DnewVersion=1.4.13</span>
+<span class='go'>... list of all changed artifacts changed.</span>
+<span class='go'>mvn versions:commit </span>
+<span class='go'>removes all of the pom.xml.versionsBackup files.</span>
 </code></pre>
 </div>
 <ul>
-<li>Commit these modified pom files to the release branch</li>
+<li>Call release.sh (still from the checkout out release branch code) <strong>NOTE</strong> If you get an error while generating javadocs like &#8221;<code>java.lang.ClassCastException: com.sun.tools.javadoc.ClassDocImpl</code>&#8221;, run a <code>mvn clean install -Dmaven.test.skip=true</code> followed by a <code>mvn javadoc:jar</code>, then re-run <code>release.sh</code>.</li>
 
-<li>Call release.sh (still from the checkout out release branch code) * NOTE: If you get an error while generating javadocs like &#8221;<code>java.lang.ClassCastException: com.sun.tools.javadoc.ClassDocImpl</code>&#8221;, run a <code>mvn clean install -Dmaven.test.skip=true</code> followed by a <code>mvn javadoc:jar</code>, then re-run <code>release.sh</code>.</li>
+<li>Login to the Apache Nexus Repository on http://repository.apache.org; See <a href='#nexus'>Releasing with Apache Nexus</a> below.</li>
 
-<li>Test the distribution (examples, rat, etc)</li>
+<li>Select <strong>Staging Repositories</strong> from the left hand side, then select the repository and click <strong>Close</strong>.</li>
 
-<li>Upload artifacts (including signing keys) to your people.apache.org account:</li>
+<li>Test that the distribution (examples, rat, etc) is accessible from the staging repository url.</li>
+
+<li>upload non-maven artifacts to pao:</li>
 </ul>
-<div class='highlight'><pre><code class='console'><span class='go'>svn export http://svn.apache.org/repos/asf/wicket/common/KEYS target/dist/KEYS</span>
-<span class='go'>ssh people.apache.org mkdir public_html/wicket-1.4.13</span>
-<span class='go'>scp -r target/dist target/m2-repo people.apache.org:public_html/wicket-1.4.13</span>
+<div class='highlight'><pre><code class='console'><span class='go'>export wicketversion=&lt;version&gt;</span>
+<span class='go'>svn export http://svn.apache.org/repos/asf/wicket/common/KEYS target/dist/KEYS</span>
+<span class='go'>ssh people.apache.org mkdir public_html/wicket-$wicketversion</span>
+<span class='go'>scp -r target/dist target/m2-repo people.apache.org:public_html/wicket-$wicketversion</span>
 </code></pre>
 </div>
 <ul>
+<li>Commit these modified pom files to the release branch.</li>
+
+<li>Send vote message to dev@ mailing list. Include link to the closed repository for testing against.</li>
+
+<li>Wait requisite 72 hours for the vote to pass (we hope)</li>
+
+<li>Login to repository.apache.org, select the closed repository and click <strong>Release</strong>. It will be accessible immediately through the apache release repo and then within 1-2 hours through maven central.</li>
+
+<li>If the release is voted down you can <strong>Drop</strong> the staged release and then restage later after incorporating the necessary changes.</li>
+
 <li>Tag the release in SVN:</li>
 </ul>
 <div class='highlight'><pre><code class='console'><span class='gp'>$</span> svn cp https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.13 <span class='se'>\</span>
@@ -218,93 +247,57 @@
 </code></pre>
 </div>
 <ul>
-<li>Send vote message to dev@ mailing list</li>
+<li>Wait until repo1.maven.org has picked up the release artifacts.</li>
 
-<li>Wait requisite 72 hours for the vote to pass (we hope)</li>
+<li>Wait 24 hours until mirrors picked up release artifacts</li>
 
-<li>Upload to mirrors (see below)</li>
-
-<li>Release the version in JIRA</li>
-
-<li>Wait 24 hours for mirrors to pick them up</li>
-
-<li>Announce (see below)</li>
+<li>Announce (see <a href='#announcing'>below</a>)</li>
 </ul>
-<a name='release-1.3.x'>&nbsp;</a>
-<h2 id='release13'>Releasing Apache Wicket 1.3.x</h2>
 
-<h3 id='building_the_release'>Building the release</h3>
+<h2 id='nexus'>Staging Releases using the Apache Nexus Repository</h2>
+
+<p>The key to stage and manage repositories on https://repository.apache.org are your Apache Commiter credentials.</p>
+
+<h3 id='staging_artifacts'>Staging Artifacts</h3>
+
+<p>When you run <strong>mvn -P release deploy</strong> the generated artifacts will be uploaded into a Nexus staging repository.</p>
+
+<p>Maven sends a username/password when attempting to upload the artifacts.</p>
+
+<p>The <code>&lt;id&gt;</code> of the staging repository is: <strong>apache.releases.https</strong>.</p>
+
+<p>Place a <code>&lt;server&gt;</code> definition in your <code>~/.m2/settings.xml</code> file like this:</p>
+<div class='highlight'><pre><code class='console'><span class='go'>&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class='go'>&lt;settings&gt;</span>
+<span class='go'>&lt;servers&gt;</span>
+<span class='go'>	&lt;server&gt;</span>
+<span class='go'>	    &lt;id&gt;apache.releases.https&lt;/id&gt;</span>
+<span class='go'>	    &lt;username&gt;$username&lt;/username&gt;</span>
+<span class='go'>	    &lt;password&gt;$password&lt;/password&gt;</span>
+<span class='go'>	&lt;/server&gt;</span>
+<span class='go'>&lt;/servers&gt;</span>
+<span class='go'>&lt;/settings&gt;</span>
+</code></pre>
+</div>
+<p>This works if you can deploy artifacts into the repository.apache.org properly (i.e. you don&#8217;t see failures mentioning 401 errors).</p>
+
+<h3 id='managing_staged_artifacts'>Managing Staged Artifacts</h3>
+
+<p>By logging in with your Apache committer credentials to https://repository.apache.org you can access the management interface for the staged artifacts.</p>
+
+<p>The interface will allow you to:</p>
 
 <ul>
-<li>query dev@ for any open issues, it helps to look at JIRA first</li>
+<li>View the staging repositories.</li>
 
-<li>create tag, create release branch</li>
+<li>Close staging repositories.</li>
 
-<li>check out release branch</li>
+<li>Release closed repository artifacts (into the release repo and after 1-2 hours into central as well).</li>
 
-<li>Set correct version in the pom files:</li>
-
-<li>Linux:</li>
-</ul>
-<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/1.3-SNAPSHOT/1.3.2/g&quot;</span>
-<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.3.3/g&quot;</span>
-</code></pre>
-</div>
-<ul>
-<li>Mac OS X:</li>
-</ul>
-<div class='highlight'><pre><code class='console'><span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/1.3-SNAPSHOT/1.3.2/g&quot;</span>
-<span class='go'>find . -name &quot;pom.xml&quot; | xargs sed -i &quot;&quot; -e &quot;s/wicket\/trunk/wicket\/releases\/wicket-1.3.3/g&quot;</span>
-</code></pre>
-</div>
-<ul>
-<li>add JIRA generated release notes to CHANGELOG-1.3</li>
-
-<li>commit to release branch</li>
-
-<li>call release.sh</li>
-
-<li>test the distribution (examples, rat, etc)</li>
-
-<li>upload m2-repo and dist directory from target/ to p.a.o</li>
-
-<li>upload commons/KEY into dist folder on p.a.o</li>
-
-<li>send vote message</li>
-
-<li>wait</li>
-
-<li>upload to mirrors (see below)</li>
-
-<li>release the version in JIRA</li>
-
-<li>wait 24 hours for mirrors to pick them up</li>
-
-<li>announce</li>
+<li>Drop open and closed staging repositories.</li>
 </ul>
 
-<h2 id='mirrors'>Uploading to the mirror system</h2>
-<div class='highlight'><pre><code class='console'><span class='go'>ssh people.apache.org</span>
-<span class='go'>mkdir /www/www.apache.org/dist/wicket/1.4.0</span>
-<span class='go'>mv ~/public_html/wicket-1.4.0/dist/* /www/www.apache.org/dist/wicket/1.4.0</span>
-<span class='go'>chown -R :wicket /www/www.apache.org/dist/wicket/1.4.0</span>
-</code></pre>
-</div>
-<p><code>chown</code> is very important, if files do not have the wicket group they will not be copied to mirrors Apache guide to mirros: http://apache.org/dev/mirror-step-by-step.html</p>
-
-<p>It is a good idea to clean up older releases from /www/www.apache.org/dist/wicket/</p>
-
-<h2 id='mavencentral'>Uploading to maven repository</h2>
-
-<p>I haven&#8217;t got any really good way to put them in the maven mirrors. The problem is that right now we override the meta xml files, so only the latest version is listed. If we really should do this perfect we would modify meta files like /org/apache/wicket/wicket/maven-metadata.xml and add the version to it (as well as create the hashes again).</p>
-
-<p>But for now this is sufficient:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>cd into the directory you have the artifacts which has been voted on.</span>
-<span class='go'>cp -R m2-repo/org/apache/wicket/* /www/people.apache.org/repo/m2-ibiblio-rsync-repository/org/apache/wicket/</span>
-<span class='go'>chmod -R g+w * /www/people.apache.org/repo/m2-ibiblio-rsync-repository/org/apache/wicket</span>
-</code></pre>
-</div>
-<p>Further reading: README under /www/people.apache.org/repo/m2-ibiblio-rsync-repository/</p>
+<p>More information is available at: <a href='http://www.apache.org/dev/publishing-maven-artifacts.html#staging-maven'>Publishing Maven Artifacts</a></p>
 
 <h2 id='announcing'>Announcing the release</h2>
 
