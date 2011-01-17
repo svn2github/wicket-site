@@ -177,7 +177,7 @@
 		else
 			cmd = 'mvn archetype:generate -DarchetypeGroupId=org.apache.wicket -DarchetypeArtifactId=wicket-archetype-quickstart -DarchetypeVersion=' + version + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId;						
 
-		if (version.match(/.*SNAPSHOT/)) cmd += ' -DarchetypeRepository=http://wicketstuff.org/maven/repository/'; 
+		if (version.match(/.*SNAPSHOT/)) cmd += ' -DarchetypeRepository=https://repository.apache.org/content/repositories/snapshots/'; 
 		cmd += ' -DinteractiveMode=false'; 
 		document.getElementById("cmdLine").value = cmd;
 	}
