@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2011-03-25T10:48:03-07:00</updated>
+ <updated>2011-03-25T11:08:16-07:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -17,7 +17,7 @@
    <link href="http://wicket.apache.org/2011/03/25/wicket-cookbook-published.html"/>
    <updated>2011-03-25T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2011/03/25/wicket-cookbook-published</id>
-   <content type="html">&lt;img title='Apache Wicket Cookbook' src='http://wicket.apache.org/learn/books/awc.jpg' height='222' alt='' style='float: left; margin-left: 10px; margin-right: 10px;' width='180' /&gt;
+   <content type="html">&lt;img title='Apache Wicket Cookbook' src='http://wicket.apache.org/learn/books/awc.png' height='222' alt='' style='float: left; margin-left: 10px; margin-right: 10px;' width='180' /&gt;
 &lt;p&gt;For the past nine months I have been quietly working on a book about Wicket. Unlike other books on the market this one does not attempt to teach you Wicket from the ground up. Instead, it is for developers who already know the basics and want to learn how to implement some of the more advanced use cases. Essentially, it contains recipes that show the reader how to implement solutions to some of, what I think are, the most commonly asked questions and stumbling blocks.&lt;/p&gt;
 
 &lt;p&gt;This morning I was informed that the book has been published! You can read more about it and pick up a copy on &lt;a href='https://www.packtpub.com/apache-wicket-cookbook/book'&gt;PACKT's Site&lt;/a&gt;.&lt;/p&gt;
