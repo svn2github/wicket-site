@@ -4,13 +4,26 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2011-03-25T09:32:57-07:00</updated>
+ <updated>2011-03-25T10:39:34-07:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Apache Wicket Cookbook Published!</title>
+   <link href="http://wicket.apache.org/2011/03/25/wicket-cookbook-published.html"/>
+   <updated>2011-03-25T00:00:00-07:00</updated>
+   <id>http://wicket.apache.org/2011/03/25/wicket-cookbook-published</id>
+   <content type="html">&lt;img title='Apache Wicket Cookbook' src='http://wicket.apache.org/learn/books/awc.jpg' height='222' alt='' style='float: left; margin-left: 10px; margin-right: 10px;' width='180' /&gt;
+&lt;p&gt;For the past nine months I have been quietly working on a book about Wicket. Unlike other books on the market this one does not attempt to teach you Wicket from the ground up. Instead, it is for developers who already know the basics and want to learn how to implement some of the more advanced use cases. Essentially, it contains recipes that show the reader how to implement solutions to some of, what I think are, the most commonly asked questions and stumbling blocks.&lt;/p&gt;
+
+&lt;p&gt;This morning I was informed that the book has been published! You can read more about it and pick up a copy on &lt;a href='https://www.packtpub.com/apache-wicket-cookbook/book'&gt;PACKT's Site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I hope you enjoy it, more details are available on &lt;a href='http://wicketinaction.com/2011/03/apache-wicket-cookbook-is-published/'&gt;Wicket In Action Blog Post&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.5-rc2 released</title>
@@ -250,32 +263,6 @@
 
 &lt;li&gt;
 &lt;p&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5-M2.1'&gt;full distribution&lt;/a&gt; (including source)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.12 released</title>
-   <link href="http://wicket.apache.org/2010/09/17/wicket.1.4.12-released.html"/>
-   <updated>2010-09-17T00:00:00-07:00</updated>
-   <id>http://wicket.apache.org/2010/09/17/wicket.1.4.12-released</id>
-   <content type="html">&lt;p&gt;This is the twelfth maintenance release of the 1.4.x series. This release brings a fix to a &lt;a href='https://issues.apache.org/jira/browse/WICKET-3040'&gt;critical bug&lt;/a&gt; which prevented ajax form submits in FireFox.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.12'&gt;Subversion tag&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&amp;amp;&amp;amp;pid=12310561&amp;amp;fixfor=12315312&amp;amp;sorter/field=priority&amp;amp;sorter/order=DESC'&gt;Changelog&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;To use in Maven:&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.12'&gt;full distribution&lt;/a&gt; (including source)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
