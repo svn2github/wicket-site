@@ -173,85 +173,75 @@
 </ul>
 
 <p>Make sure your <code>~/.m2/settings.xml</code> contains the following definition</p>
-<div class='highlight'><pre><code class='console'><span class='go'>&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class='go'>&lt;settings&gt;</span>
-<span class='go'>&lt;servers&gt;</span>
-<span class='go'>	&lt;server&gt;</span>
-<span class='go'>	    &lt;id&gt;apache.releases.https&lt;/id&gt;</span>
-<span class='go'>	    &lt;username&gt;$your_apache_username&lt;/username&gt;</span>
-<span class='go'>	    &lt;password&gt;$your_apache_password&lt;/password&gt;</span>
-<span class='go'>	&lt;/server&gt;</span>
-<span class='go'>&lt;/servers&gt;</span>
-<span class='go'>&lt;/settings&gt;</span>
-</code></pre>
-</div>
+
 <ul>
-<li>create a release branch to do your release work in (modifying poms, etc)</li>
+<li>
+<p>create a release branch to do your release work in (modifying poms, etc)</p>
+</li>
 
-<li>then checkout that release branch and cd into it</li>
-</ul>
-<div class='highlight'><pre><code class='console'><span class='gp'>$</span> svn cp https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.x <span class='se'>\</span>
-<span class='go'>https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.13 \</span>
-<span class='go'>-m &quot;creating 1.4.13 release branch&quot;</span>
-<span class='go'>Committed revision 1027818.</span>
-<span class='gp'>$</span> <span class='nb'>cd</span> ..
-<span class='gp'>$</span> svn co https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.13
-<span class='go'>... lots of output ...</span>
-<span class='go'>Checked out revision 1027818.</span>
-<span class='gp'>$</span> <span class='nb'>cd </span>wicket-1.4.13
-</code></pre>
-</div>
-<ul>
-<li>Set correct version in the pom files using the <a href='http://mojo.codehaus.org/versions-maven-plugin'>maven-versions-plugin</a>:</li>
-</ul>
-<div class='highlight'><pre><code class='console'><span class='go'>mvn versions:set -DnewVersion=1.4.13</span>
-<span class='go'>... list of all changed artifacts changed.</span>
-<span class='go'>mvn versions:commit </span>
-<span class='go'>removes all of the pom.xml.versionsBackup files.</span>
-</code></pre>
-</div>
-<ul>
-<li>Call release.sh (still from the checkout out release branch code) <strong>NOTE</strong> If you get an error while generating javadocs like &#8221;<code>java.lang.ClassCastException: com.sun.tools.javadoc.ClassDocImpl</code>&#8221;, run a <code>mvn clean install -Dmaven.test.skip=true</code> followed by a <code>mvn javadoc:jar</code>, then re-run <code>release.sh</code>.</li>
+<li>
+<p>then checkout that release branch and cd into it</p>
+</li>
 
-<li>Login to the Apache Nexus Repository on http://repository.apache.org; See <a href='#nexus'>Releasing with Apache Nexus</a> below.</li>
+<li>
+<p>Set correct version in the pom files using the <a href='http://mojo.codehaus.org/versions-maven-plugin'>maven-versions-plugin</a>:</p>
+</li>
 
-<li>Select <strong>Staging Repositories</strong> from the left hand side, then select the repository and click <strong>Close</strong>.</li>
+<li>
+<p>Call release.sh (still from the checkout out release branch code) <strong>NOTE</strong> If you get an error while generating javadocs like &#8221;<code>java.lang.ClassCastException: com.sun.tools.javadoc.ClassDocImpl</code>&#8221;, run a <code>mvn clean install -Dmaven.test.skip=true</code> followed by a <code>mvn javadoc:jar</code>, then re-run <code>release.sh</code>.</p>
+</li>
 
-<li>Test that the distribution (examples, rat, etc) is accessible from the staging repository url.</li>
+<li>
+<p>Login to the Apache Nexus Repository on http://repository.apache.org; See <a href='#nexus'>Releasing with Apache Nexus</a> below.</p>
+</li>
 
-<li>upload non-maven artifacts to pao:</li>
-</ul>
-<div class='highlight'><pre><code class='console'><span class='go'>export wicketversion=&lt;version&gt;</span>
-<span class='go'>svn export http://svn.apache.org/repos/asf/wicket/common/KEYS target/dist/KEYS</span>
-<span class='go'>ssh people.apache.org mkdir public_html/wicket-$wicketversion</span>
-<span class='go'>scp -r target/dist target/m2-repo people.apache.org:public_html/wicket-$wicketversion</span>
-</code></pre>
-</div>
-<ul>
-<li>Commit these modified pom files to the release branch.</li>
+<li>
+<p>Select <strong>Staging Repositories</strong> from the left hand side, then select the repository and click <strong>Close</strong>.</p>
+</li>
 
-<li>Send vote message to dev@ mailing list. Include link to the closed repository for testing against.</li>
+<li>
+<p>Test that the distribution (examples, rat, etc) is accessible from the staging repository url.</p>
+</li>
 
-<li>Wait requisite 72 hours for the vote to pass (we hope)</li>
+<li>
+<p>upload non-maven artifacts to pao:</p>
+</li>
 
-<li>Login to repository.apache.org, select the closed repository and click <strong>Release</strong>. It will be accessible immediately through the apache release repo and then within 1-2 hours through maven central.</li>
+<li>
+<p>Commit these modified pom files to the release branch.</p>
+</li>
 
-<li>If the release is voted down you can <strong>Drop</strong> the staged release and then restage later after incorporating the necessary changes.</li>
+<li>
+<p>Send vote message to dev@ mailing list. Include link to the closed repository for testing against.</p>
+</li>
 
-<li>Tag the release in SVN:</li>
-</ul>
-<div class='highlight'><pre><code class='console'><span class='gp'>$</span> svn cp https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.13 <span class='se'>\</span>
-<span class='go'>https://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.13 \</span>
-<span class='go'>-m &quot;tag release 1.4.13&quot;</span>
-<span class='go'>Committed revision 1027826.</span>
-</code></pre>
-</div>
-<ul>
-<li>Wait until repo1.maven.org has picked up the release artifacts.</li>
+<li>
+<p>Wait requisite 72 hours for the vote to pass (we hope)</p>
+</li>
 
-<li>Wait 24 hours until mirrors picked up release artifacts</li>
+<li>
+<p>Login to repository.apache.org, select the closed repository and click <strong>Release</strong>. It will be accessible immediately through the apache release repo and then within 1-2 hours through maven central.</p>
+</li>
 
-<li>Announce (see <a href='#announcing'>below</a>)</li>
+<li>
+<p>If the release is voted down you can <strong>Drop</strong> the staged release and then restage later after incorporating the necessary changes.</p>
+</li>
+
+<li>
+<p>Tag the release in SVN:</p>
+</li>
+
+<li>
+<p>Wait until repo1.maven.org has picked up the release artifacts.</p>
+</li>
+
+<li>
+<p>Wait 24 hours until mirrors picked up release artifacts</p>
+</li>
+
+<li>
+<p>Announce (see <a href='#announcing'>below</a>)</p>
+</li>
 </ul>
 
 <h2 id='nexus'>Staging Releases using the Apache Nexus Repository</h2>
@@ -267,18 +257,7 @@
 <p>The <code>&lt;id&gt;</code> of the staging repository is: <strong>apache.releases.https</strong>.</p>
 
 <p>Place a <code>&lt;server&gt;</code> definition in your <code>~/.m2/settings.xml</code> file like this:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class='go'>&lt;settings&gt;</span>
-<span class='go'>&lt;servers&gt;</span>
-<span class='go'>	&lt;server&gt;</span>
-<span class='go'>	    &lt;id&gt;apache.releases.https&lt;/id&gt;</span>
-<span class='go'>	    &lt;username&gt;$username&lt;/username&gt;</span>
-<span class='go'>	    &lt;password&gt;$password&lt;/password&gt;</span>
-<span class='go'>	&lt;/server&gt;</span>
-<span class='go'>&lt;/servers&gt;</span>
-<span class='go'>&lt;/settings&gt;</span>
-</code></pre>
-</div>
+
 <p>This works if you can deploy artifacts into the repository.apache.org properly (i.e. you don&#8217;t see failures mentioning 401 errors).</p>
 
 <h3 id='managing_staged_artifacts'>Managing Staged Artifacts</h3>
@@ -302,12 +281,7 @@
 <h2 id='announcing'>Announcing the release</h2>
 
 <p>Edit the _config.yaml file. This file contains a site wide configuration section specific to Wicket:</p>
-<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>wicket</span><span class='p-Indicator'>:</span>
-    <span class='l-Scalar-Plain'>version</span><span class='p-Indicator'>:</span>    <span class='l-Scalar-Plain'>1.4.10</span>
-    <span class='l-Scalar-Plain'>released</span><span class='p-Indicator'>:</span>   <span class='l-Scalar-Plain'>2010-08-11</span>
-    <span class='l-Scalar-Plain'>versions</span><span class='p-Indicator'>:</span>   <span class='p-Indicator'>[</span><span class='nv'>1.3.7</span><span class='p-Indicator'>,</span> <span class='nv'>1.3-SNAPSHOT</span><span class='p-Indicator'>,</span> <span class='nv'>1.4.9</span><span class='p-Indicator'>,</span> <span class='nv'>1.4.10</span><span class='p-Indicator'>,</span> <span class='nv'>1.4-SNAPSHOT</span><span class='p-Indicator'>,</span> <span class='nv'>1.5-M1</span><span class='p-Indicator'>,</span> <span class='nv'>1.5-SNAPSHOT</span><span class='p-Indicator'>]</span>
-</code></pre>
-</div>
+
 <p>You&#8217;ll need to edit this part: modify the version, update the released date, and add the new version to the versions list (remove any stale releases, typically just leave the previous release as well).</p>
 
 <ul>
@@ -325,16 +299,6 @@
 <ul>
 <li>Commit the JavaDocs to <a href='https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4'>https://svn.apache.org/repos/asf/wicket/common/site/apidocs/1.4</a> svnpubsub will push this directly to our website. (example script below)</li>
 </ul>
-<div class='highlight'><pre><code class='console'><span class='gp'>#</span> <span class='k'>do </span>this in your locally-checked-out release branch <span class='o'>(</span>i.e. svn.../releases/wicket-1.4.13<span class='o'>)</span>
-<span class='go'>mvn javadoc:aggregate</span>
-<span class='gp'>#</span> note that you may need to tweak these paths to fit your configuration:
-<span class='go'>cp -r target/site/apidocs/* ../wicket-common/site/apidocs/1.4/</span>
-<span class='go'>cd ../wicket-common/</span>
-<span class='gp'>#</span> call <span class='s2'>&quot;svn add&quot;</span> <span class='k'>for </span>files that are new <span class='o'>(</span>there<span class='err'>&#39;</span>s probably an easier way to <span class='k'>do </span>this<span class='o'>)</span>
-<span class='go'>svn stat | grep -e &#39;^?&#39; | sed &#39;s/\?\W*//&#39; | xargs svn add</span>
-<span class='go'>svn commit -m &quot;changes to update javadocs to latest release&quot;</span>
-</code></pre>
-</div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>

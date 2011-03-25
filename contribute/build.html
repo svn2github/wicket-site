@@ -163,20 +163,9 @@
 <h2 id='getting_your_wicket_version'>Getting your Wicket version</h2>
 
 <p>When you build from SVN you should check out the whole of trunk or the selected branch as the project consists of various modules that may depend on one another. For the current (1.4) development branch, you will need to check out:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>svn co http://svn.apache.org/repos/asf/wicket/trunk</span>
-</code></pre>
-</div>
+
 <p>This will give you a directory structure like the following directory tree:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>wicket-1.x</span>
-<span class='go'>wicket-1.x/wicket</span>
-<span class='go'>wicket-1.x/wicket-extensions</span>
-<span class='go'>wicket-1.x/wicket-spring</span>
-<span class='go'>wicket-1.x/wicket-auth-roles</span>
-<span class='go'>wicket-1.x/wicket-examples</span>
-<span class='go'>wicket-1.x/wicket-spring-annot</span>
-<span class='go'>...</span>
-</code></pre>
-</div>
+
 <p>In this document we focus at the maven project descriptor located in the top level directory, which enforces default settings for all Wicket projects such as plug-in settings, versioning of the Wicket projects, managing the various dependencies and more.</p>
 
 <p>The artifacts in this project are there only for having a consistent build. This top-level project doesn&#8217;t have sources for itself.</p>
@@ -184,15 +173,11 @@
 <h2 id='building_wicket_1x'>Building Wicket 1.x</h2>
 
 <p>The current development version of Wicket requires at least jdk 1.5.</p>
-<div class='highlight'><pre><code class='console'><span class='go'>svn co http://svn.apache.org/repos/asf/wicket/trunk</span>
-</code></pre>
-</div>
+
 <p>If you want to ensure that your Wicket version is built using JDK-1.5 and fully compatible with that Java version, you will need to build it with a Java 1.5 compiler and runtime library.</p>
 
 <p>Building all of Wicket is as simple as issuing the following command in the root directory:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>mvn install</span>
-</code></pre>
-</div>
+
 <p>This will compile, test, package and install all Wicket projects. Installation means putting the jar files into your local Maven repository, including the source, but without the javadoc jars (this is a Wicket specific configuration, because build javadoc takes a long time).</p>
 
 <p>The following commands are useful: <table>
@@ -209,26 +194,15 @@
 <h3 id='coping_with_test_failures'>Coping with test failures</h3>
 
 <p>As this is our main development you might/will encounter failing unit tests. These can be skipped using:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>mvn -Dmaven.test.skip=true install</span>
-</code></pre>
-</div>
+
 <p>Of course, all bets are off then and your mileage may vary if you use such a built jar.</p>
 
 <h3 id='using_your_own_built_artifacts'>Using your own built artifacts</h3>
 
 <p>Now you have built your own fresh Wicket jar you must be anxious to use it. This is now as simple as adding a snapshot dependency on the specific Wicket version. So in your pom.xml you can use:</p>
-<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
-    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
-    <span class='nt'>&lt;artifactId&gt;</span>wicket<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>1.4-SNAPSHOT<span class='nt'>&lt;/version&gt;</span>
-    <span class='nt'>&lt;scope&gt;</span>compile<span class='nt'>&lt;/scope&gt;</span>
-<span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+
 <p>And adding this to your Eclipse, NetBeans or IntelliJ IDEA project classpath is then as simple as:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>mvn eclipse:eclipse</span>
-</code></pre>
-</div>
+
 <p>or opening the project using Netbeans or IDEAs Maven integration.</p>
 
 <p>Maven will then add all the necessary JAR files to the project&#8217;s classpath.</p>
@@ -236,9 +210,6 @@
 <p>One thing you need to make sure is that you have set the <code>M2_REPO</code> classpath variable in Eclipse (or a similar construct in Netbeans), and point it to your local repository, typically found in <code>C:\Documents and Settings\username\.m2\repo</code> or (for unix buffs) <code>~/.m2/repo</code></p>
 
 <p>You can add this setting using maven:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>mvn -Declipse.workspace=&lt;path-to-eclipse-workspace&gt; eclipse:add-maven-repo</span>
-</code></pre>
-</div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>

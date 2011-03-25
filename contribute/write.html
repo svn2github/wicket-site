@@ -169,21 +169,15 @@
 <h2 id='install'>Install Jekyll</h2>
 
 <p>Follow the instructions available on the <a href='http://github.com/mojombo/jekyll'>Jekyll website</a>. Basically it boils down to:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>gem install jekyll</span>
-</code></pre>
-</div>
+
 <h2 id='checkout'>Check out from SVN</h2>
 
 <p>Before you can edit the site, you need to check it out from SVN:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>svn co https://svn.apache.org/repos/asf/wicket/common/site/trunk wicket-site</span>
-</code></pre>
-</div>
+
 <h2 id='run'>Run the site</h2>
 
 <p>You can run the website by starting jekyll in the checked out directory:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>jekyll --server --auto</span>
-</code></pre>
-</div>
+
 <p>This not only runs the server, but watches for modifications and regenerates any modified files.</p>
 
 <p>You can check out the website running at <a href='http://localhost:4000'>localhost, port 4000</a>.</p>
@@ -197,12 +191,7 @@
 <p>Each page needs to have a YAML preamble that specifies the rendered template and other variables. If it doesn&#8217;t include the YAML preamble, it won&#8217;t be rendered correctly.</p>
 
 <p>Example preamble (includes the <code>---</code>):</p>
-<div class='highlight'><pre><code class='yaml'><span class='nn'>---</span>
-<span class='l-Scalar-Plain'>layout</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>default</span>
-<span class='l-Scalar-Plain'>title</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Write documentation</span>
-<span class='nn'>---</span>
-</code></pre>
-</div>
+
 <h3 id='syntax_highlighting'>Syntax highlighting</h3>
 
 <p>If you have a need to render code in your templates and have it syntax highlighted, surround the code with {\% highlight java \%} (substitute java with the language you want highlighted.)</p>
@@ -216,12 +205,7 @@
 <p>For news items such as release announcements, new committers and other happenings, it is appriorate to create a blog post. The blog post is automatically added to the front page and the RSS feed.</p>
 
 <p>The blog items are written using the normal Jekyll syntax. The filename needs to be formatted as <code>yyyy-mm-dd-title.md</code> and the blog item should start with a YAML preamble, similar to normal pages:</p>
-<div class='highlight'><pre><code class='yaml'><span class='nn'>---</span>
-<span class='l-Scalar-Plain'>layout</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>post</span>
-<span class='l-Scalar-Plain'>title</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Wicket 1.4.7 released</span>
-<span class='nn'>---</span>
-</code></pre>
-</div>
+
 <h2 id='update'>Update the site</h2>
 
 <p>When you&#8217;re done with making your changes, please check the following:</p>
