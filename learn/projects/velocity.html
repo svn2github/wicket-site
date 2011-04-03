@@ -86,7 +86,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.16">Wicket 1.4</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.17">Wicket 1.4</a>
 			(<a href="http://wicket.apache.org/apidocs/1.4" title="JavaDocs of the latest stable release - 1.4.x">docs</a>)
 		</li>
 		<li>
@@ -161,7 +161,16 @@
 <p>Velocity brings a templating language to your users. You can let them create conditional markup, use loops and do all other things made possible by Velocity.</p>
 
 <p>Velocity templates look like the following:</p>
+<div class='highlight'><pre><code class='html'>#set ($foo = &quot;deoxyribonucleic acid&quot;)
+#set ($bar = &quot;ribonucleic acid&quot;)
 
+#if ($foo == $bar)
+  In this case it&#39;s clear they aren&#39;t equivalent. So...
+#else
+  They are not equivalent and this will be the output.
+#end
+</code></pre>
+</div>
 <p>Read <a href='http://velocity.apache.org/engine/releases/velocity-1.4/user-guide.html'>more</a> about the Velocity template language.</p>
 
 <p>This project allows you to use Velocity templates as a component within your Wicket pages, and let them live next to Wicket components. A typical usecase would be to enable your users to embed Velocity templates in your application and using that as a type of portlet.</p>
@@ -171,15 +180,32 @@
 <h2 id='example'>Example</h2>
 
 <p>Showing Hello, World using Velocity in a Wicket application, embedded in a Wicket page.</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;h2&gt;</span>This is a Velocity template<span class='nt'>&lt;/h2&gt;</span>
 
+<span class='nt'>&lt;p&gt;</span>The secret message is: $message<span class='nt'>&lt;/p&gt;</span>
+</code></pre>
+</div>
 <p>In this template we want to replace the string <code>$message</code> with the text &#8220;Hello, World!&#8221;. <code>$message</code> is Velocity markup denoting a variable that is taken from the context that is provided to the Velocity rendering engine.</p>
 
 <p>To use Velocity in your Wicket pages we provide a <code>VelocityPanel</code> which enables you to generate parts of your page using Velocity markup. Adding the panel to your Wicket page is shown in the following example:</p>
-
+<div class='highlight'><pre><code class='java'><span class='kd'>public</span> <span class='nf'>VelocityPage</span><span class='o'>()</span> <span class='o'>{</span>
+	<span class='n'>HashMap</span><span class='o'>&lt;</span><span class='n'>String</span><span class='o'>,</span> <span class='n'>String</span><span class='o'>&gt;</span> <span class='n'>values</span> <span class='o'>=</span> <span class='k'>new</span> <span class='n'>HashMap</span><span class='o'>&lt;</span><span class='n'>String</span><span class='o'>,</span> <span class='n'>String</span><span class='o'>&gt;();</span>
+	<span class='n'>values</span><span class='o'>.</span><span class='na'>put</span><span class='o'>(</span><span class='s'>&quot;message&quot;</span><span class='o'>,</span> <span class='s'>&quot;Hello, World!&quot;</span><span class='o'>);</span>
+	<span class='n'>Model</span><span class='o'>&lt;</span><span class='n'>HashMap</span><span class='o'>&lt;</span><span class='n'>String</span><span class='o'>,</span> <span class='n'>String</span><span class='o'>&gt;&gt;</span> <span class='n'>context</span> <span class='o'>=</span> <span class='n'>Model</span><span class='o'>.</span><span class='na'>of</span><span class='o'>(</span><span class='n'>values</span><span class='o'>);</span>
+	
+	<span class='n'>UrlResourceStream</span> <span class='n'>template</span> <span class='o'>=</span> <span class='k'>new</span> <span class='n'>UrlResourceStream</span><span class='o'>(</span><span class='n'>getClass</span><span class='o'>().</span><span class='na'>getResource</span><span class='o'>(</span><span class='s'>&quot;test.html&quot;</span><span class='o'>));</span>
+	<span class='n'>add</span><span class='o'>(</span><span class='n'>VelocityPanel</span><span class='o'>.</span><span class='na'>forTemplateResource</span><span class='o'>(</span><span class='s'>&quot;velocityPanel&quot;</span><span class='o'>,</span> <span class='n'>context</span><span class='o'>,</span> <span class='n'>template</span><span class='o'>));</span>
+<span class='o'>}</span>
+</code></pre>
+</div>
 <p><code>VelocityPanel.forTemplateResource</code> creates a <code>VelocityPanel</code> and sets up the engine such that the context is merged with the template with each render.</p>
 
 <p>The markup of the page is quite simple: adding a VelocityPanel is as simple as using a <code>div</code> and attaching a <code>wicket:identifier</code> to it. The following example shows this.</p>
-
+<div class='highlight'><pre><code class='html'><span class='cp'>&lt;!DOCTYPE html&gt;</span>
+<span class='nt'>&lt;h1&gt;</span>This is a test page for Velocity<span class='nt'>&lt;/h1&gt;</span>
+<span class='nt'>&lt;div</span> <span class='na'>wicket:id=</span><span class='s'>&quot;velocityPanel&quot;</span><span class='nt'>&gt;&lt;/div&gt;</span>
+</code></pre>
+</div>
 <h2 id='installing'>Installing</h2>
 
 <p>Installing Wicket Velocity can be done through adding a dependency in your project&#8217;s Maven pom, or by putting the wicket-velocity.jar and the required dependencies in your projects classpath.</p>
@@ -187,7 +213,13 @@
 <h3 id='using_maven'>Using Maven</h3>
 
 <p>Add the following dependency to your pom:</p>
-
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-velocity<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>1.4.17<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div>
 <h3 id='required_dependencies'>Required dependencies</h3>
 
 <p>Wicket Velocity requires the following jar files to be on your classpath:</p>

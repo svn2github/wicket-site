@@ -86,7 +86,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.16">Wicket 1.4</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.17">Wicket 1.4</a>
 			(<a href="http://wicket.apache.org/apidocs/1.4" title="JavaDocs of the latest stable release - 1.4.x">docs</a>)
 		</li>
 		<li>
@@ -149,41 +149,28 @@
 <p>The steps to submitting a patch for Wicket are:</p>
 
 <ul>
-<li>
-<p>Identify an issue that you want to fix or improve</p>
-</li>
+<li>Identify an issue that you want to fix or improve</li>
 
-<li>
-<p>Search JIRA and the mailing list to see if it&#8217;s already been discussed</p>
-</li>
+<li>Search JIRA and the mailing list to see if it&#8217;s already been discussed</li>
 
-<li>
-<p>If it&#8217;s a bug or a feature request, open a <a href='https://issues.apache.org/jira/browse/WICKET'>JIRA issue</a></p>
-</li>
+<li>If it&#8217;s a bug or a feature request, open a <a href='https://issues.apache.org/jira/browse/WICKET'>JIRA issue</a></li>
 
-<li>
-<p><a href='../start/quickstart.html'>Create a quickstart</a> that you can use for prototyping the feature or demonstrating the bug ** Attach this quickstart to the JIRA issue if it&#8217;s representing a bug report.</p>
-</li>
+<li><a href='../start/quickstart.html'>Create a quickstart</a> that you can use for prototyping the feature or demonstrating the bug ** Attach this quickstart to the JIRA issue if it&#8217;s representing a bug report.</li>
 
-<li>
-<p>Get Subversion running</p>
-</li>
+<li>Get Subversion running</li>
 
-<li>
-<p><a href='../start/download.html#snapshots_and_latest_bleedingedge_code'>Checkout out the code</a></p>
-</li>
+<li><a href='../start/download.html#snapshots_and_latest_bleedingedge_code'>Checkout out the code</a></li>
 
-<li>
-<p>Make your changes</p>
-</li>
+<li>Make your changes</li>
 
-<li>
-<p>Create the patch:</p>
-</li>
-
-<li>
-<p>Attach that file (/tmp/fix-WICKET-NNNN.patch) to the JIRA</p>
-</li>
+<li>Create the patch:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>svn add any_files_you_created</span>
+<span class='go'>svn diff &gt; /tmp/fix-WICKET-NNNN.patch</span>
+</code></pre>
+</div>
+<ul>
+<li>Attach that file (/tmp/fix-WICKET-NNNN.patch) to the JIRA</li>
 </ul>
 		</div>
         <div id="clearer"></div>

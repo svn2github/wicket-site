@@ -86,7 +86,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.16">Wicket 1.4</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.17">Wicket 1.4</a>
 			(<a href="http://wicket.apache.org/apidocs/1.4" title="JavaDocs of the latest stable release - 1.4.x">docs</a>)
 		</li>
 		<li>
@@ -195,7 +195,12 @@
 <h3 id='authorization'>Authorization</h3>
 
 <p>Annotation for configuring what roles are allowed for instantiation the annotated component or package. This annotation can be used for classes and packages, and can be used like this:</p>
-
+<div class='highlight'><pre><code class='java'><span class='c1'>// only users with role ADMIN are allowed to create instances of this page, whether it is</span>
+<span class='c1'>// either bookmarkable or not</span>
+<span class='nd'>@AuthorizeInstantiation</span><span class='o'>(</span><span class='s'>&quot;ADMIN&quot;</span><span class='o'>)</span>
+<span class='kd'>public</span> <span class='kd'>class</span> <span class='nc'>AdminAnnotationsBookmarkablePage</span> <span class='kd'>extends</span> <span class='n'>WebPage</span>
+</code></pre>
+</div>
 <p>When someone who doesn&#8217;t have the role ADMIN, Wicket will not allow the page to be fully constructed and throw an authorization exception during the construction of the page. This will result in an access denied page for the user.</p>
 
 <p>Enablng the annotations for role based authorization is done by setting the <code>WebApplication#getSecuritySettings</code> value to <code>AnnotationsRoleAuthorizationStrategy</code>. Then you can use the auth/roles provided authorization annotations.</p>
@@ -225,7 +230,13 @@
 <h3 id='using_maven'>Using Maven</h3>
 
 <p>Add the following dependency to your pom:</p>
-
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-auth-roles<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>1.4.17<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div>
 <h3 id='required_dependencies'>Required dependencies</h3>
 
 <p>Wicket Auth/Roles requires the following jar files to be on your classpath:</p>
