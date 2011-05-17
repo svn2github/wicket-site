@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2011-05-11T12:29:05+02:00</updated>
+ <updated>2011-05-17T12:25:23-07:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -13,9 +13,20 @@
  
  
  <entry>
+   <title>Apache Wicket Cookbook Giveaway Contest</title>
+   <link href="http://wicket.apache.org/2011/05/17/wicket-cookbook-contest.html"/>
+   <updated>2011-05-17T00:00:00-07:00</updated>
+   <id>http://wicket.apache.org/2011/05/17/wicket-cookbook-contest</id>
+   <content type="html">&lt;img title='Apache Wicket Cookbook' src='http://wicket.apache.org/learn/books/awc.png' height='111' alt='' style='float: left; margin-left: 10px; margin-right: 10px;' width='90' /&gt;
+&lt;p&gt;Packt Publishing has generously allowed me to give away a free copy of the ebook version of &lt;a href='http://link.packtpub.com/AzN8N9'&gt;&lt;strong&gt;Apache Wicket Cookbook&lt;/strong&gt;&lt;/a&gt; (http://link.packtpub.com/AzN8N9), and a &lt;strong&gt;free one year subscription&lt;/strong&gt; to PacktLib. For details see the &lt;a href='http://wicketinaction.com/2011/05/apache_wicket_cookbook_giveaway_contest'&gt;contest announcement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cheers,&lt;br /&gt; -Igor &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Wicket 1.5-RC4.2 released</title>
    <link href="http://wicket.apache.org/2011/05/11/wicket-1.5-RC4.2-released.html"/>
-   <updated>2011-05-11T00:00:00+02:00</updated>
+   <updated>2011-05-11T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2011/05/11/wicket-1.5-RC4.2-released</id>
    <content type="html">&lt;p&gt;The Wicket Team is proud to introduce the fourth Release Candidate in Wicket 1.5 series. See the changelog for the list of bug fixes and improvements done between 1.5-RC3 and 1.5-RC4.2&lt;/p&gt;
 
@@ -45,7 +56,7 @@
  <entry>
    <title>Wicket 1.5-RC3 released</title>
    <link href="http://wicket.apache.org/2011/04/02/wicket-1.5-RC3-released.html"/>
-   <updated>2011-04-02T00:00:00+02:00</updated>
+   <updated>2011-04-02T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2011/04/02/wicket-1.5-RC3-released</id>
    <content type="html">&lt;p&gt;The Wicket Team is proud to introduce the third Release Candidate in Wicket 1.5 series. See the changelog for the list of bug fixes and improvements done between 1.5-rc2 and 1.5-RC3&lt;/p&gt;
 
@@ -75,7 +86,7 @@
  <entry>
    <title>Wicket 1.4.17 released</title>
    <link href="http://wicket.apache.org/2011/04/02/wicket-1.4.17-released.html"/>
-   <updated>2011-04-02T00:00:00+02:00</updated>
+   <updated>2011-04-02T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2011/04/02/wicket-1.4.17-released</id>
    <content type="html">&lt;p&gt;This is seventeenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -101,7 +112,7 @@
  <entry>
    <title>Apache Wicket Cookbook Published!</title>
    <link href="http://wicket.apache.org/2011/03/25/wicket-cookbook-published.html"/>
-   <updated>2011-03-25T00:00:00+01:00</updated>
+   <updated>2011-03-25T00:00:00-07:00</updated>
    <id>http://wicket.apache.org/2011/03/25/wicket-cookbook-published</id>
    <content type="html">&lt;img title='Apache Wicket Cookbook' src='http://wicket.apache.org/learn/books/awc.png' height='222' alt='' style='float: left; margin-left: 10px; margin-right: 10px;' width='180' /&gt;
 &lt;p&gt;For the past nine months I have been quietly working on a book about Wicket. Unlike other books on the market this one does not attempt to teach you Wicket from the ground up. Instead, it is for developers who already know the basics and want to learn how to implement some of the more advanced use cases. Essentially, it contains recipes that show the reader how to implement solutions to some of, what I think are, the most commonly asked questions and stumbling blocks.&lt;/p&gt;
@@ -114,7 +125,7 @@
  <entry>
    <title>Wicket 1.5-rc2 released</title>
    <link href="http://wicket.apache.org/2011/02/25/wicket-1.5-rc2-released.html"/>
-   <updated>2011-02-25T00:00:00+01:00</updated>
+   <updated>2011-02-25T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2011/02/25/wicket-1.5-rc2-released</id>
    <content type="html">&lt;p&gt;The Wicket Team is proud to introduce the second Release Candidate in Wicket 1.5 series. See the changelog for the list of bug fixes and improvements done between 1.5-RC1 and 1.5-rc2&lt;/p&gt;
 
@@ -144,7 +155,7 @@
  <entry>
    <title>Wicket 1.4.16 released</title>
    <link href="http://wicket.apache.org/2011/02/25/wicket-1.4.16-released.html"/>
-   <updated>2011-02-25T00:00:00+01:00</updated>
+   <updated>2011-02-25T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2011/02/25/wicket-1.4.16-released</id>
    <content type="html">&lt;p&gt;This is sixteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -170,7 +181,7 @@
  <entry>
    <title>Wicket 1.5-RC1 released</title>
    <link href="http://wicket.apache.org/2011/01/22/wicket-1.5-RC1-released.html"/>
-   <updated>2011-01-22T00:00:00+01:00</updated>
+   <updated>2011-01-22T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2011/01/22/wicket-1.5-RC1-released</id>
    <content type="html">&lt;p&gt;The Wicket Team is proud to introduce the first Release Candidate in Wicket 1.5 series. The 1.5 series provides the following major improvements:&lt;/p&gt;
 
@@ -212,7 +223,7 @@
  <entry>
    <title>Wicket 1.4.15 released</title>
    <link href="http://wicket.apache.org/2010/12/24/wicket-1.4.15-released.html"/>
-   <updated>2010-12-24T00:00:00+01:00</updated>
+   <updated>2010-12-24T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2010/12/24/wicket-1.4.15-released</id>
    <content type="html">&lt;p&gt;This is fifteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -238,7 +249,7 @@
  <entry>
    <title>Wicket 1.4.14 released</title>
    <link href="http://wicket.apache.org/2010/11/29/wicket-1.4.14-released.html"/>
-   <updated>2010-11-29T00:00:00+01:00</updated>
+   <updated>2010-11-29T00:00:00-08:00</updated>
    <id>http://wicket.apache.org/2010/11/29/wicket-1.4.14-released</id>
    <content type="html">&lt;p&gt;This is fourteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -259,16 +270,6 @@
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.14'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Pedro Santos is a Wicket team member</title>
-   <link href="http://wicket.apache.org/2010/11/21/pedro-santos-committer.html"/>
-   <updated>2010-11-21T00:00:00+01:00</updated>
-   <id>http://wicket.apache.org/2010/11/21/pedro-santos-committer</id>
-   <content type="html">&lt;p&gt;Pedro Santos has been added as a committer and PMC member for Apache Wicket. Pedro has been increasingly active in the Wicket community in recent months, and his patches continue to improve in quality. Additionally, Pedro is always willing to do the &amp;#8220;grunt work&amp;#8221; of creating great test cases for his patches, or for JIRA issues that others have attached patches to. Test cases are invaluable to the development of Wicket because they help us not introduce regressions as we fix bugs and add features.&lt;/p&gt;
-
-&lt;p&gt;Thanks Pedro, and we look forward to working with you!&lt;/p&gt;</content>
  </entry>
  
 </feed>
