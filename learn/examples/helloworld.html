@@ -146,7 +146,7 @@
 			<h1>Hello World!</h1>
 			<p>HelloWorld demonstrates the basic structure of a web application in Wicket. A Label component is used to display a message on the home page for the application.</p>
 
-<p>In all the Wicket examples, you have to put all files in the same package directory. This means putting the markup files and the java files next to one another. It is possible to alter this behavior, but that is beyond the scope of this example. The only exception is the oblibatory web.xml file which should reside in the WEB-INF/ directory of your web application root folder.</p>
+<p>In all the Wicket examples, you have to put all files in the same package directory. This means putting the markup files and the java files next to one another. It is possible to alter this behavior, but that is beyond the scope of this example. The only exception is the obligatory web.xml file which should reside in the WEB-INF/ directory of your web application root folder.</p>
 
 <p>If you wish to start building this example, you may want to take a look at the Wicket Quickstart project, which provides a quick way of getting up and running without having to figure things out yourself. The Quickstart project contains the necessary build files (Ant and Maven), libraries, minimal set of Java and markup files and an embedded Jetty server to run your application without having to go through the whole build-deploy cycle.</p>
 
@@ -201,7 +201,7 @@
 <p>The HTML file that defines our Hello World functionality is as follows:</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
-    <span class='nt'>&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;message&quot;</span> <span class='na'>id=</span><span class='s'>&quot;message&quot;</span><span class='nt'>&gt;</span>Message goes here<span class='nt'>&lt;/span&gt;</span>
+    <span class='nt'>&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;message&quot;</span><span class='nt'>&gt;</span>Message goes here<span class='nt'>&lt;/span&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
 </code></pre>
@@ -214,11 +214,11 @@
 </li>
 
 <li>
-<p>the message Message goes here</p>
+<p>the text <code>Message goes here</code></p>
 </li>
 </ul>
 
-<p>The component declaration consists of the Wicket identifier wicket and the component identifier message. The component identifier should be the same as the name of the component you defined in your <code>WebPage</code>. The message between the <code>&lt;span&gt;</code> tags is removed when the component renders its message. The final content of the component is determined by your Java code. web.xml</p>
+<p>The component declaration consists of the Wicket identifier <code>wicket:id</code> and the component identifier <code>message</code>. The component identifier should be the same as the name of the component you defined in your <code>WebPage</code>. The text between the <code>&lt;span&gt;</code> tags is removed when the component renders its message. The final content of the component is determined by your Java code.</p>
 
 <h3 id='webxml'>web.xml</h3>
 

@@ -156,11 +156,11 @@
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
-<span class='nt'>&lt;ul&gt;</span>
-<span class='nt'>&lt;li</span> <span class='na'>wicket:id=</span><span class='s'>&quot;list&quot;</span><span class='nt'>&gt;&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;panel&quot;</span><span class='nt'>&gt;&lt;/span&gt;&lt;/li&gt;</span>
-<span class='nt'>&lt;/ul&gt;</span>
-<span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment1&quot;</span><span class='nt'>&gt;</span>panel 1<span class='nt'>&lt;/wicket:fragment&gt;</span>
-<span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment2&quot;</span><span class='nt'>&gt;</span>panel 2<span class='nt'>&lt;/wicket:fragment&gt;</span>
+    <span class='nt'>&lt;ul&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>wicket:id=</span><span class='s'>&quot;list&quot;</span><span class='nt'>&gt;&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;panel&quot;</span><span class='nt'>&gt;&lt;/span&gt;&lt;/li&gt;</span>
+    <span class='nt'>&lt;/ul&gt;</span>
+    <span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment1&quot;</span><span class='nt'>&gt;</span>panel 1<span class='nt'>&lt;/wicket:fragment&gt;</span>
+    <span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment2&quot;</span><span class='nt'>&gt;</span>panel 2<span class='nt'>&lt;/wicket:fragment&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
 </code></pre>
@@ -184,7 +184,7 @@
 <span class='o'>}</span>
 </code></pre>
 </div>
-<p>The Loop will render 5 items, and the <code>populateItem</code> method will be called for each item. In each item we construct a fragment identifier that corresponds to the identifier in the <code>&lt;wicket:fragment&gt;</code>. The Fragment constructor takes the identifier of the markup it needs to attach to, and the fragment identifier telling it where to find the specific markup in the file.</p>
+<p>The Loop will render 5 items, and the <code>populateItem</code> method will be called for each item. In each item we construct a fragment identifier that corresponds to the identifier in the <code>&lt;wicket:fragment&gt;</code>. The <code>Fragment</code> constructor takes the identifier of the markup it needs to attach to, and the fragment identifier telling it where to find the specific markup in the file.</p>
 
 <h2 id='adding_components_to_fragments'>Adding components to fragments</h2>
 
@@ -192,11 +192,11 @@
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
-<span class='nt'>&lt;ul&gt;</span>
-<span class='nt'>&lt;li</span> <span class='na'>wicket:id=</span><span class='s'>&quot;list&quot;</span><span class='nt'>&gt;&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;panel&quot;</span><span class='nt'>&gt;&lt;/span&gt;&lt;/li&gt;</span>
-<span class='nt'>&lt;/ul&gt;</span>
-<span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment1&quot;</span><span class='nt'>&gt;</span>panel 1 <span class='nt'>&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;label&quot;</span><span class='nt'>&gt;&lt;/span&gt;&lt;/wicket:fragment&gt;</span>
-<span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment2&quot;</span><span class='nt'>&gt;</span>panel 2<span class='nt'>&lt;/wicket:fragment&gt;</span>
+    <span class='nt'>&lt;ul&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>wicket:id=</span><span class='s'>&quot;list&quot;</span><span class='nt'>&gt;&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;panel&quot;</span><span class='nt'>&gt;&lt;/span&gt;&lt;/li&gt;</span>
+    <span class='nt'>&lt;/ul&gt;</span>
+    <span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment1&quot;</span><span class='nt'>&gt;</span>panel 1 <span class='nt'>&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;label&quot;</span><span class='nt'>&gt;&lt;/span&gt;&lt;/wicket:fragment&gt;</span>
+    <span class='nt'>&lt;wicket:fragment</span> <span class='na'>wicket:id=</span><span class='s'>&quot;fragment2&quot;</span><span class='nt'>&gt;</span>panel 2<span class='nt'>&lt;/wicket:fragment&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
 </code></pre>

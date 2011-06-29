@@ -41,6 +41,7 @@ a:hover {
 #content{
     width:899px;
     height:auto;
+    overflow: auto; /* keeps footer inside */
 }
 
 p, table, h1, h2, h3, h4, h5, h6, h7, div.code {

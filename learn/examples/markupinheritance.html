@@ -166,37 +166,37 @@
 
 <p>This is done using two special Wicket tags: <code>&lt;wicket:child&gt;</code> and <code>&lt;wicket:extend&gt;</code>. In the super markup you define where the child markup should be put, and in the sub markup you delineate where the child markup starts and ends.</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
+    <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
+    <span class='nt'>&lt;body&gt;</span>
+        This is in the super markup.<span class='nt'>&lt;br&gt;</span>
+        <span class='nt'>&lt;wicket:child</span> <span class='nt'>/&gt;</span>
+        This is in the super markup.<span class='nt'>&lt;br&gt;</span>
+    <span class='nt'>&lt;/body&gt;</span>
+<span class='nt'>&lt;/html&gt;</span>
+</code></pre>
+</div>
+<p>In this markup you see two sentences that surround the <code>&lt;wicket:child&gt;</code> tag. All markup in this file will remain when a sub class of this page is created, only the <code>&lt;wicket:child&gt;</code> tag will be replaced with the child markup. So if we look at the following markup:</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
-This is in the super markup.<span class='nt'>&lt;br&gt;</span>
-<span class='nt'>&lt;wicket:child</span> <span class='nt'>/&gt;</span>
-This is in the super markup.<span class='nt'>&lt;br&gt;</span>
+    This is in de child markup.<span class='nt'>&lt;br&gt;</span>
+    <span class='nt'>&lt;wicket:extend&gt;</span>
+    This is in the child markup.<span class='nt'>&lt;br&gt;</span>
+    <span class='nt'>&lt;/wicket:extend&gt;</span>
+    This is in the child markup.<span class='nt'>&lt;br&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
 </code></pre>
 </div>
-<p>In this markup you see two sentences that surround the <code>wicket:child</code> tag. All markup in this file will remain when a sub class of this page is created, only the <code>wicket:child</code> tag will be replaced with the child markup. So if we look at the following markup:</p>
+<p>we can see the markup that should be included in the parent. Only the markup between the <code>&lt;wicket:extend&gt;</code> tags is included in the final page. Take a look at the following markup which is the final markup when you would use this in a Wicket application.</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
-This is in de child markup.<span class='nt'>&lt;br&gt;</span>
-<span class='nt'>&lt;wicket:extend&gt;</span>
-This is in the child markup.<span class='nt'>&lt;br&gt;</span>
-<span class='nt'>&lt;/wicket:extend&gt;</span>
-This is in the child markup.<span class='nt'>&lt;br&gt;</span>
-<span class='nt'>&lt;/body&gt;</span>
-<span class='nt'>&lt;/html&gt;</span>
-</code></pre>
-</div>
-<p>we can see the markup that should be included in the parent. Only the markup between the <code>wicket:extend</code> tags is included in the final page. Take a look at the following markup which is the final markup when you would use this in a Wicket application.</p>
-<div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
-<span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
-<span class='nt'>&lt;body&gt;</span>
-This is in the super markup.<span class='nt'>&lt;br&gt;</span>
-<span class='nt'>&lt;wicket:child&gt;&lt;wicket:extend&gt;</span>
-This is in the child markup.<span class='nt'>&lt;br&gt;</span>
-<span class='nt'>&lt;/wicket:extend&gt;&lt;/wicket:child&gt;</span>
-This is in the super markup.<span class='nt'>&lt;br&gt;</span>
+    This is in the super markup.<span class='nt'>&lt;br&gt;</span>
+    <span class='nt'>&lt;wicket:child&gt;&lt;wicket:extend&gt;</span>
+    This is in the child markup.<span class='nt'>&lt;br&gt;</span>
+    <span class='nt'>&lt;/wicket:extend&gt;&lt;/wicket:child&gt;</span>
+    This is in the super markup.<span class='nt'>&lt;br&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
 </code></pre>
@@ -205,7 +205,7 @@ This is in the super markup.<span class='nt'>&lt;br&gt;</span>
 
 <h2 id='implementing_the_basepage'>Implementing the BasePage</h2>
 
-<p>Now that we have seen the basics for markup inheritance, we can now take a look at the example at hand. Let&#8217;s first create the base page.</p>
+<p>Now that we have seen the basics for markup inheritance, we can take a look at the example at hand. Let&#8217;s first create the base page.</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>wicket</span><span class='o'>.</span><span class='na'>quickstart</span><span class='o'>;</span>
 
 <span class='kn'>import</span> <span class='nn'>wicket.markup.html.WebPage</span><span class='o'>;</span>
@@ -270,14 +270,14 @@ This is in the super markup.<span class='nt'>&lt;br&gt;</span>
 <span class='o'>&lt;</span><span class='n'>head</span><span class='o'>&gt;&lt;/</span><span class='n'>head</span><span class='o'>&gt;</span>
 <span class='o'>&lt;</span><span class='n'>body</span><span class='o'>&gt;</span>
 <span class='o'>&lt;</span><span class='nl'>wicket:</span><span class='n'>extend</span><span class='o'>&gt;</span>
-<span class='o'>&lt;</span><span class='n'>h1</span><span class='o'>&gt;</span><span class='n'>Page1</span><span class='o'>&lt;/</span><span class='n'>h1</span><span class='o'>&gt;</span>
-<span class='o'>&lt;</span><span class='n'>span</span> <span class='nl'>wicket:</span><span class='n'>id</span><span class='o'>=</span><span class='s'>&quot;label1&quot;</span><span class='o'>&gt;&lt;/</span><span class='n'>span</span><span class='o'>&gt;</span>
+    <span class='o'>&lt;</span><span class='n'>h1</span><span class='o'>&gt;</span><span class='n'>Page1</span><span class='o'>&lt;/</span><span class='n'>h1</span><span class='o'>&gt;</span>
+    <span class='o'>&lt;</span><span class='n'>span</span> <span class='nl'>wicket:</span><span class='n'>id</span><span class='o'>=</span><span class='s'>&quot;label1&quot;</span><span class='o'>&gt;&lt;/</span><span class='n'>span</span><span class='o'>&gt;</span>
 <span class='o'>&lt;/</span><span class='nl'>wicket:</span><span class='n'>extend</span><span class='o'>&gt;</span>
 <span class='o'>&lt;/</span><span class='n'>body</span><span class='o'>&gt;</span>
 <span class='o'>&lt;/</span><span class='n'>html</span><span class='o'>&gt;</span>
 </code></pre>
 </div>
-<p>Here you see that we added the <code>Label</code> component in the markup between the <code>wicket:extend</code> tags. If we were to add the component outside those tags, Wicket will not be able to render the component in the final page.</p>
+<p>Here you see that we added the <code>Label</code> component in the markup between the <code>&lt;wicket:extend&gt;</code> tags. If we were to add the component outside those tags, Wicket will not be able to render the component in the final page.</p>
 
 <p>Now, let&#8217;s do the same for <code>Page2</code>.</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>wicket</span><span class='o'>.</span><span class='na'>quickstart</span><span class='o'>;</span>
@@ -294,8 +294,8 @@ This is in the super markup.<span class='nt'>&lt;br&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
 <span class='nt'>&lt;wicket:extend&gt;</span>
-<span class='nt'>&lt;h1&gt;</span>Page2<span class='nt'>&lt;/h1&gt;</span>
-<span class='nt'>&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;label2&quot;</span><span class='nt'>&gt;&lt;/span&gt;</span>
+    <span class='nt'>&lt;h1&gt;</span>Page2<span class='nt'>&lt;/h1&gt;</span>
+    <span class='nt'>&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;label2&quot;</span><span class='nt'>&gt;&lt;/span&gt;</span>
 <span class='nt'>&lt;/wicket:extend&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>

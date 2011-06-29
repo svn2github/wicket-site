@@ -158,7 +158,7 @@
 
 <p>Following this metaphor, if Wicket is our foreground object, it is defined in a negative sense by all the things that it is not (by the background).</p>
 
-<p>In other words, ideally, Wicket is a web UI framework that delegates as many areas of responsibility as possible to other, more focused tools and techniques. It recognizes that Hibernate is good at persistence; that OGNL is good at string formatting; that Java properties files are good for localization; that sub-classing is good for creating component types; that Dreamweaver is good at doing HTML layout; that Beans are good for structuring properties; and so on.</p>
+<p>In other words, ideally, Wicket is a web UI framework that delegates as many areas of responsibility as possible to other, more focused tools and techniques. It recognizes that Hibernate is good at persistence; that Spring is good at DI; that Java properties files are good for localization; that sub-classing is good for creating component types; that Dreamweaver is good at doing HTML layout; that Beans are good for structuring properties; and so on.</p>
 
 <p>The more ways that Wicket can find to offload responsibilities (both now and in the future), the less it will be. And thus, the more it will be.</p>
 
@@ -168,7 +168,7 @@
 
 <p>It&#8217;s easy to add features. It&#8217;s often impossible to change or remove them.</p>
 
-<p>Given this, the Wicket approach to the overall problem of evolving while keeping a high power to weight ratio will be partitioning off all controversial new ideas in a &#8220;contrib&#8221; package until they are broadly accepted. This way people can experiment and code away and check in lots of stuff without affecting the main codebase with untested ideas. Then, when ideas in contrib pan out to everyone&#8217;s satisfaction, the lead(s) of the project will move them into the core.</p>
+<p>Given this, the Wicket approach to the overall problem of evolving while keeping a high power to weight ratio will be partitioning off all controversial new ideas in a &#8220;wicket-stuff&#8221; package until they are broadly accepted. This way people can experiment and code away and check in lots of stuff without affecting the main codebase with untested ideas. Then, when ideas pan out to everyone&#8217;s satisfaction, the leads of the project will move them into the core.</p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
