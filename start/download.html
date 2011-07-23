@@ -190,7 +190,7 @@
 </div>
 <h2 id='snapshots_and_latest_bleedingedge_code'>SNAPSHOTs and latest bleeding-edge code</h2>
 
-<p>If you wish to build the latest code from scratch, the two branches live in the following places in Subversion:</p>
+<p>If you wish to build the latest code from scratch, trunk and branches live in the following places in Subversion:</p>
 
 <ul>
 <li><strong>1.5.x</strong>: <a href='http://svn.apache.org/repos/asf/wicket/trunk'>http://svn.apache.org/repos/asf/wicket/trunk</a></li>
@@ -205,9 +205,16 @@
 <p>There&#8217;s also a Maven 2 repository providing SNAPSHOTs available here:</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;repositories&gt;</span>
     <span class='nt'>&lt;repository&gt;</span>
-        <span class='nt'>&lt;id&gt;</span>org.wicketstuff<span class='nt'>&lt;/id&gt;</span>
-        <span class='nt'>&lt;name&gt;</span>Wicket Stuff Repository<span class='nt'>&lt;/name&gt;</span>
-        <span class='nt'>&lt;url&gt;</span>http://wicketstuff.org/maven/repository<span class='nt'>&lt;/url&gt;</span>
+        <span class='nt'>&lt;releases&gt;</span>
+            <span class='nt'>&lt;enabled&gt;</span>false<span class='nt'>&lt;/enabled&gt;</span>
+        <span class='nt'>&lt;/releases&gt;</span>
+        <span class='nt'>&lt;snapshots&gt;</span>
+            <span class='nt'>&lt;enabled&gt;</span>true<span class='nt'>&lt;/enabled&gt;</span>
+        <span class='nt'>&lt;/snapshots&gt;</span>
+        <span class='nt'>&lt;id&gt;</span>apache.snapshots<span class='nt'>&lt;/id&gt;</span>
+        <span class='nt'>&lt;name&gt;</span>Apache Snapshot Repository<span class='nt'>&lt;/name&gt;</span>
+        <span class='nt'>&lt;url&gt;</span>https://repository.apache.org/content/groups/snapshots<span class='nt'>&lt;/url&gt;</span>
+        <span class='nt'>&lt;layout&gt;</span>default<span class='nt'>&lt;/layout&gt;</span>
     <span class='nt'>&lt;/repository&gt;</span>
 <span class='nt'>&lt;/repositories&gt;</span>
 </code></pre>
