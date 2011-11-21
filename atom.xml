@@ -4,13 +4,39 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2011-11-21T13:23:22+01:00</updated>
+ <updated>2011-11-21T13:33:40+01:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Wicket 1.5.3 released</title>
+   <link href="http://wicket.apache.org/2011/11/14/wicket-1.5.3-released.html"/>
+   <updated>2011-11-14T00:00:00+01:00</updated>
+   <id>http://wicket.apache.org/2011/11/14/wicket-1.5.3-released</id>
+   <content type="html">&lt;p&gt;This is the third maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.5.3'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12318078'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.3&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.3'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.5.2 released</title>
@@ -337,36 +363,6 @@
 &lt;p&gt;Packt Publishing has generously allowed me to give away a free copy of the ebook version of &lt;a href='http://link.packtpub.com/AzN8N9'&gt;&lt;strong&gt;Apache Wicket Cookbook&lt;/strong&gt;&lt;/a&gt; (http://link.packtpub.com/AzN8N9), and a &lt;strong&gt;free one year subscription&lt;/strong&gt; to PacktLib. For details see the &lt;a href='http://wicketinaction.com/2011/05/apache_wicket_cookbook_giveaway_contest'&gt;contest announcement&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Cheers,&lt;br /&gt; -Igor &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.5-RC4.2 released</title>
-   <link href="http://wicket.apache.org/2011/05/11/wicket-1.5-RC4.2-released.html"/>
-   <updated>2011-05-11T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2011/05/11/wicket-1.5-RC4.2-released</id>
-   <content type="html">&lt;p&gt;The Wicket Team is proud to introduce the fourth Release Candidate in Wicket 1.5 series. See the changelog for the list of bug fixes and improvements done between 1.5-RC3 and 1.5-RC4.2&lt;/p&gt;
-
-&lt;p&gt;More detailed migration notes are available on our &lt;a href='https://cwiki.apache.org/WICKET/migration-to-wicket-15.html'&gt;Migrate to 1.5 Wiki Page&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Release Artifacts:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.5-RC4.2'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12316330'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5-RC4.2&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5-RC4.2'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;</content>
  </entry>
  
 </feed>
