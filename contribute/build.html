@@ -169,7 +169,7 @@
 
 <h2 id='getting_your_wicket_version'>Getting your Wicket version</h2>
 
-<p>When you build from SVN you should check out the whole of trunk or the selected branch as the project consists of various modules that may depend on one another. For the current (1.5) development branch, you will need to check out:</p>
+<p>When you build from SVN you should check out the whole of trunk or the selected branch as the project consists of various modules that may depend on one another. For the current (6.x) development branch, you will need to check out:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>svn co http://svn.apache.org/repos/asf/wicket/trunk wicket</span>
 </code></pre>
 </div>
@@ -190,9 +190,9 @@
 
 <h2 id='building_wicket'>Building Wicket</h2>
 
-<p>The current development version of Wicket requires at least jdk 1.5.</p>
+<p>The current development version of Wicket requires at least jdk 6.</p>
 
-<p>If you want to ensure that your Wicket version is built using JDK-1.5 and fully compatible with that Java version, you will need to build it with a Java 1.5 compiler and runtime library.</p>
+<p>If you want to ensure that your Wicket version is built using JDK-6 and fully compatible with that Java version, you will need to build it with a Java 6 compiler and runtime library.</p>
 
 <p>If you haven&#8217;t done so already change into the Wicket root directory:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>cd wicket</span>
@@ -228,8 +228,8 @@
 <p>Now you have built your own fresh Wicket jar you must be anxious to use it. This is now as simple as adding a snapshot dependency on the specific Wicket version. So in your pom.xml you can use:</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
-    <span class='nt'>&lt;artifactId&gt;</span>wicket<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>1.5-SNAPSHOT<span class='nt'>&lt;/version&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.0-SNAPSHOT<span class='nt'>&lt;/version&gt;</span>
     <span class='nt'>&lt;scope&gt;</span>compile<span class='nt'>&lt;/scope&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
 </code></pre>
