@@ -4,13 +4,39 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-01-07T18:56:18+02:00</updated>
+ <updated>2012-01-23T10:47:18+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Wicket 1.5.4 released</title>
+   <link href="http://wicket.apache.org/2012/01/23/wicket-1.5.4-released.html"/>
+   <updated>2012-01-23T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/01/23/wicket-1.5.4-released</id>
+   <content type="html">&lt;p&gt;This is the fourth maintenance release of the Wicket 1.5.x series. This release brings over 68 bug fixes and improvements.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket-1.5.4'&gt;Git tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12319051'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.4&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.4'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.5.3 released</title>
@@ -352,17 +378,6 @@
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5-RC5.1'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Apache Wicket Cookbook Giveaway Contest</title>
-   <link href="http://wicket.apache.org/2011/05/17/wicket-cookbook-contest.html"/>
-   <updated>2011-05-17T00:00:00+03:00</updated>
-   <id>http://wicket.apache.org/2011/05/17/wicket-cookbook-contest</id>
-   <content type="html">&lt;img title='Apache Wicket Cookbook' src='http://wicket.apache.org/learn/books/awc.png' height='111' alt='' style='float: left; margin-left: 10px; margin-right: 10px;' width='90' /&gt;
-&lt;p&gt;Packt Publishing has generously allowed me to give away a free copy of the ebook version of &lt;a href='http://link.packtpub.com/AzN8N9'&gt;&lt;strong&gt;Apache Wicket Cookbook&lt;/strong&gt;&lt;/a&gt; (http://link.packtpub.com/AzN8N9), and a &lt;strong&gt;free one year subscription&lt;/strong&gt; to PacktLib. For details see the &lt;a href='http://wicketinaction.com/2011/05/apache_wicket_cookbook_giveaway_contest'&gt;contest announcement&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Cheers,&lt;br /&gt; -Igor &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;</content>
  </entry>
  
 </feed>
