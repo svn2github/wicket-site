@@ -158,7 +158,7 @@
 <ol>
 <li>Getting your Wicket version</li>
 
-<li>Building Wicket 1.x</li>
+<li>Building Wicket</li>
 
 <li>Coping with test failures</li>
 
@@ -169,19 +169,26 @@
 
 <h2 id='getting_your_wicket_version'>Getting your Wicket version</h2>
 
-<p>When you build from SVN you should check out the whole of trunk or the selected branch as the project consists of various modules that may depend on one another. For the current (6.x) development branch, you will need to check out:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>svn co http://svn.apache.org/repos/asf/wicket/trunk wicket</span>
+<p>Clone the master branch from Apache Git Wicket repository</p>
+<div class='highlight'><pre><code class='console'><span class='gp'>$</span> git clone http://git-wip-us.apache.org/repos/asf/wicket.git
 </code></pre>
 </div>
 <p>This will give you a directory structure like the following directory tree:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>wicket</span>
-<span class='go'>wicket/wicket</span>
+<span class='go'>wicket/wicket-core</span>
 <span class='go'>wicket/wicket-extensions</span>
 <span class='go'>wicket/wicket-spring</span>
 <span class='go'>wicket/wicket-auth-roles</span>
 <span class='go'>wicket/wicket-examples</span>
 <span class='go'>wicket/wicket-spring-annot</span>
 <span class='go'>...</span>
+</code></pre>
+</div>
+<p>To check out a different branch use:</p>
+<div class='highlight'><pre><code class='console'><span class='gp'>$</span> <span class='nb'>cd </span>wicket
+<span class='gp'>$</span> git checkout -b release/wicket-x.y.z origin/release/wicket-x.y.z
+<span class='gp'>#</span> verify the branch with:
+<span class='gp'>$</span> git branch
 </code></pre>
 </div>
 <p>In this document we focus at the maven project descriptor located in the top level directory, which enforces default settings for all Wicket projects such as plug-in settings, versioning of the Wicket projects, managing the various dependencies and more.</p>
