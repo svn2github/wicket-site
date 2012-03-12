@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-01-25T10:41:45+01:00</updated>
+ <updated>2012-03-12T10:41:46+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -13,9 +13,61 @@
  
  
  <entry>
+   <title>Wicket 1.5.5 released</title>
+   <link href="http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html"/>
+   <updated>2012-03-12T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/03/12/wicket-1.5.5-released</id>
+   <content type="html">&lt;p&gt;This is the fifth maintenance release of the Wicket 1.5.x series. This release brings over 50 bug fixes and improvements.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket-1.5.5'&gt;Git tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12319052'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.5&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.5'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Wicket 1.4.20 released</title>
+   <link href="http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html"/>
+   <updated>2012-03-12T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/03/12/wicket-1.4.20-released</id>
+   <content type="html">&lt;p&gt;This is twentieth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket-1.4.20'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12318545'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.20&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.20'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Wicket 1.5.4 released</title>
    <link href="http://wicket.apache.org/2012/01/23/wicket-1.5.4-released.html"/>
-   <updated>2012-01-23T00:00:00+01:00</updated>
+   <updated>2012-01-23T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/01/23/wicket-1.5.4-released</id>
    <content type="html">&lt;p&gt;This is the fourth maintenance release of the Wicket 1.5.x series. This release brings over 68 bug fixes and improvements.&lt;/p&gt;
 
@@ -41,7 +93,7 @@
  <entry>
    <title>Wicket 1.5.3 released</title>
    <link href="http://wicket.apache.org/2011/11/14/wicket-1.5.3-released.html"/>
-   <updated>2011-11-14T00:00:00+01:00</updated>
+   <updated>2011-11-14T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2011/11/14/wicket-1.5.3-released</id>
    <content type="html">&lt;p&gt;This is the third maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
 
@@ -67,7 +119,7 @@
  <entry>
    <title>Wicket 1.5.2 released</title>
    <link href="http://wicket.apache.org/2011/10/24/wicket-1.5.2-released.html"/>
-   <updated>2011-10-24T00:00:00+02:00</updated>
+   <updated>2011-10-24T00:00:00+03:00</updated>
    <id>http://wicket.apache.org/2011/10/24/wicket-1.5.2-released</id>
    <content type="html">&lt;p&gt;This is the second maintenance release of the Wicket 1.5.x series. This release brings over 25 bug fixes and 5 improvements.&lt;/p&gt;
 
@@ -93,7 +145,7 @@
  <entry>
    <title>Wicket 1.4.19 released</title>
    <link href="http://wicket.apache.org/2011/10/17/wicket-1.4.19-released.html"/>
-   <updated>2011-10-17T00:00:00+02:00</updated>
+   <updated>2011-10-17T00:00:00+03:00</updated>
    <id>http://wicket.apache.org/2011/10/17/wicket-1.4.19-released</id>
    <content type="html">&lt;p&gt;This is nineteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -119,7 +171,7 @@
  <entry>
    <title>Wicket 1.5.1 released</title>
    <link href="http://wicket.apache.org/2011/09/29/wicket-1.5.1-released.html"/>
-   <updated>2011-09-29T00:00:00+02:00</updated>
+   <updated>2011-09-29T00:00:00+03:00</updated>
    <id>http://wicket.apache.org/2011/09/29/wicket-1.5.1-released</id>
    <content type="html">&lt;p&gt;This is the first maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and 15 improvements.&lt;/p&gt;
 
@@ -145,7 +197,7 @@
  <entry>
    <title>Apache Wicket releases Wicket 1.5</title>
    <link href="http://wicket.apache.org/2011/09/07/wicket-1.5-released.html"/>
-   <updated>2011-09-07T00:00:00+02:00</updated>
+   <updated>2011-09-07T00:00:00+03:00</updated>
    <id>http://wicket.apache.org/2011/09/07/wicket-1.5-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket team is proud to announce the immediate availability of the newest release of their component oriented open source Java web framework. Apache Wicket 1.5 has been in development for the last two years and brings many improvements over previous versions.&lt;/p&gt;
 
@@ -268,7 +320,7 @@
  <entry>
    <title>Wicket 1.5-RC7 released</title>
    <link href="http://wicket.apache.org/2011/08/28/1.5-RC7-released.html"/>
-   <updated>2011-08-28T00:00:00+02:00</updated>
+   <updated>2011-08-28T00:00:00+03:00</updated>
    <id>http://wicket.apache.org/2011/08/28/1.5-RC7-released</id>
    <content type="html">&lt;p&gt;The Wicket Team is proud to introduce the seventh Release Candidate in Wicket 1.5 series. See the changelog for the list of bug fixes and improvements done between 1.5-RC5.1 and 1.5-RC7&lt;/p&gt;
 
@@ -300,7 +352,7 @@
  <entry>
    <title>CVE-2011-2712 - Apache Wicket XSS vulnerability</title>
    <link href="http://wicket.apache.org/2011/08/23/cve-2011-2712.html"/>
-   <updated>2011-08-23T00:00:00+02:00</updated>
+   <updated>2011-08-23T00:00:00+03:00</updated>
    <id>http://wicket.apache.org/2011/08/23/cve-2011-2712</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -322,62 +374,6 @@
 &lt;p&gt;or upgrade to &lt;a href='http://wicket.apache.org/2011/08/09/wicket-1.4.18-released.html'&gt;Apache Wicket 1.4.18&lt;/a&gt; or &lt;a href='http://wicket.apache.org/2011/06/25/wicket-1.5-RC5.1-released.html'&gt;Apache Wicket 1.5-RC5.1&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Credit: This issue was discovered by ﻿Sven Krewitt of TÜV Rheinland i-sec GmbH.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.18 released</title>
-   <link href="http://wicket.apache.org/2011/08/09/wicket-1.4.18-released.html"/>
-   <updated>2011-08-09T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2011/08/09/wicket-1.4.18-released</id>
-   <content type="html">&lt;p&gt;This is eightteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.18'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12316329'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.18&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.18'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.5-RC5.1 released</title>
-   <link href="http://wicket.apache.org/2011/06/25/wicket-1.5-RC5.1-released.html"/>
-   <updated>2011-06-25T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2011/06/25/wicket-1.5-RC5.1-released</id>
-   <content type="html">&lt;p&gt;The Wicket Team is proud to introduce the fourth Release Candidate in Wicket 1.5 series. See the changelog for the list of bug fixes and improvements done between 1.5-RC4.2 and 1.5-RC5.1&lt;/p&gt;
-
-&lt;p&gt;More detailed migration notes are available on our &lt;a href='https://cwiki.apache.org/WICKET/migration-to-wicket-15.html'&gt;Migrate to 1.5 Wiki Page&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Release Artifacts:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.5-RC5.1'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12316423'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5-RC5.1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5-RC5.1'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;</content>
  </entry>
  
 </feed>
