@@ -254,12 +254,11 @@
 
 <li>If the release is voted down you can <strong>Drop</strong> the staged release and then restage later after incorporating the necessary changes.</li>
 
-<li>Tag the release in SVN:</li>
+<li>Tag the release in Git:</li>
 </ul>
-<div class='highlight'><pre><code class='console'><span class='gp'>$</span> svn cp https://svn.apache.org/repos/asf/wicket/branches/wicket-1.4.13 <span class='se'>\</span>
-<span class='go'>https://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.13 \</span>
-<span class='go'>-m &quot;tag release 1.4.13&quot;</span>
-<span class='go'>Committed revision 1027826.</span>
+<div class='highlight'><pre><code class='console'><span class='go'>git checkout build/wicket-1.5.4</span>
+<span class='go'>git tag release/wicket-1.5.4</span>
+<span class='go'>git push --tags</span>
 </code></pre>
 </div>
 <ul>
