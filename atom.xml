@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-03-22T12:00:52+02:00</updated>
+ <updated>2012-03-26T21:09:17+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -13,9 +13,37 @@
  
  
  <entry>
+   <title>Wicket 6.0.0-beta1 released</title>
+   <link href="http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released.html"/>
+   <updated>2012-03-26T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released</id>
+   <content type="html">&lt;p&gt;The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.&lt;/p&gt;
+
+&lt;p&gt;Check the &lt;a href='https://cwiki.apache.org/WICKET/wicket-60-roadmap.html'&gt;roadmap&lt;/a&gt; with a list of the major goals. And the &lt;a href='https://cwiki.apache.org/WICKET/migration-to-wicket-60.html'&gt;migration guide&lt;/a&gt; with all major and some minor changes between 1.5.x and 6.x series.&lt;/p&gt;
+
+&lt;p&gt;The Jira changelog of all closed ticket at &lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12319052'&gt;Jira&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To use it in Maven:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.0.0-beta1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;If you don&amp;#8217;t use dependencies management build tool then you can download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0-beta1'&gt;full distribution&lt;/a&gt; (including source).&lt;/p&gt;
+
+&lt;p&gt;There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! We will try to avoid making any API changes in the Release Candidates that will follow this beta release.&lt;/p&gt;
+
+&lt;p&gt;Any feedback about the new features, their implementation and their documentation is very welcome!&lt;/p&gt;
+
+&lt;p&gt;The Wicket team!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089.html"/>
-   <updated>2012-03-22T00:00:00+02:00</updated>
+   <updated>2012-03-22T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -43,7 +71,7 @@
  <entry>
    <title>CVE-2012-0047 - Apache Wicket XSS vulnerability via pageMapName request parameter</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047.html"/>
-   <updated>2012-03-22T00:00:00+02:00</updated>
+   <updated>2012-03-22T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -55,13 +83,13 @@
 
 &lt;p&gt;Mitigation: Upgrade to &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html'&gt;Apache Wicket 1.4.20&lt;/a&gt; or &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html'&gt;Apache Wicket 1.5.5&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Credit: This issue was discovered by Jens Schenck.&lt;/p&gt;</content>
+&lt;p&gt;Credit: This issue was discovered by Jens Schenck and Stefan Schmidt.&lt;/p&gt;</content>
  </entry>
  
  <entry>
    <title>Wicket 1.5.5 released</title>
    <link href="http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html"/>
-   <updated>2012-03-12T00:00:00+02:00</updated>
+   <updated>2012-03-12T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/12/wicket-1.5.5-released</id>
    <content type="html">&lt;p&gt;This is the fifth maintenance release of the Wicket 1.5.x series. This release brings over 50 bug fixes and improvements.&lt;/p&gt;
 
@@ -87,7 +115,7 @@
  <entry>
    <title>Wicket 1.4.20 released</title>
    <link href="http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html"/>
-   <updated>2012-03-12T00:00:00+02:00</updated>
+   <updated>2012-03-12T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/12/wicket-1.4.20-released</id>
    <content type="html">&lt;p&gt;This is twentieth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -113,7 +141,7 @@
  <entry>
    <title>Wicket 1.5.4 released</title>
    <link href="http://wicket.apache.org/2012/01/23/wicket-1.5.4-released.html"/>
-   <updated>2012-01-23T00:00:00+02:00</updated>
+   <updated>2012-01-23T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/01/23/wicket-1.5.4-released</id>
    <content type="html">&lt;p&gt;This is the fourth maintenance release of the Wicket 1.5.x series. This release brings over 68 bug fixes and improvements.&lt;/p&gt;
 
@@ -139,7 +167,7 @@
  <entry>
    <title>Wicket 1.5.3 released</title>
    <link href="http://wicket.apache.org/2011/11/14/wicket-1.5.3-released.html"/>
-   <updated>2011-11-14T00:00:00+02:00</updated>
+   <updated>2011-11-14T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2011/11/14/wicket-1.5.3-released</id>
    <content type="html">&lt;p&gt;This is the third maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
 
@@ -165,7 +193,7 @@
  <entry>
    <title>Wicket 1.5.2 released</title>
    <link href="http://wicket.apache.org/2011/10/24/wicket-1.5.2-released.html"/>
-   <updated>2011-10-24T00:00:00+03:00</updated>
+   <updated>2011-10-24T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2011/10/24/wicket-1.5.2-released</id>
    <content type="html">&lt;p&gt;This is the second maintenance release of the Wicket 1.5.x series. This release brings over 25 bug fixes and 5 improvements.&lt;/p&gt;
 
@@ -191,7 +219,7 @@
  <entry>
    <title>Wicket 1.4.19 released</title>
    <link href="http://wicket.apache.org/2011/10/17/wicket-1.4.19-released.html"/>
-   <updated>2011-10-17T00:00:00+03:00</updated>
+   <updated>2011-10-17T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2011/10/17/wicket-1.4.19-released</id>
    <content type="html">&lt;p&gt;This is nineteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -217,7 +245,7 @@
  <entry>
    <title>Wicket 1.5.1 released</title>
    <link href="http://wicket.apache.org/2011/09/29/wicket-1.5.1-released.html"/>
-   <updated>2011-09-29T00:00:00+03:00</updated>
+   <updated>2011-09-29T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2011/09/29/wicket-1.5.1-released</id>
    <content type="html">&lt;p&gt;This is the first maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and 15 improvements.&lt;/p&gt;
 
@@ -238,129 +266,6 @@
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.1'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Apache Wicket releases Wicket 1.5</title>
-   <link href="http://wicket.apache.org/2011/09/07/wicket-1.5-released.html"/>
-   <updated>2011-09-07T00:00:00+03:00</updated>
-   <id>http://wicket.apache.org/2011/09/07/wicket-1.5-released</id>
-   <content type="html">&lt;p&gt;The Apache Wicket team is proud to announce the immediate availability of the newest release of their component oriented open source Java web framework. Apache Wicket 1.5 has been in development for the last two years and brings many improvements over previous versions.&lt;/p&gt;
-
-&lt;h2 id='downloading_apache_wicket_15'&gt;Downloading Apache Wicket 1.5&lt;/h2&gt;
-
-&lt;p&gt;You can download the release here: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.0'&gt;http://www.apache.org/dyn/closer.cgi/wicket/1.5.0&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Or use this in your Maven POM to upgrade to the new version:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Please note that Wicket&amp;#8217;s main artifact ID has been renamed to &lt;code&gt;wicket-core&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;You will need to upgrade all modules (i.e. wicket, wicket-extensions, wicket-ioc, wicket-spring, etc) to 1.5.0. &lt;strong&gt;It is not possible to mix previous versions of Wicket with modules of this release.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id='most_notable_changes'&gt;Most notable changes&lt;/h2&gt;
-
-&lt;p&gt;With this release the Wicket team has revised many of its internals. A short list:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTML5 components added: &lt;code&gt;EmailTextField&lt;/code&gt;, &lt;code&gt;NumberTextField&lt;/code&gt;, &lt;code&gt;UrlTextField&lt;/code&gt; and &lt;code&gt;RangeTextField&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;New inter-component events (explained below)&lt;/li&gt;
-
-&lt;li&gt;Minimum required servlet API is servlet-api 2.5&lt;/li&gt;
-
-&lt;li&gt;All standard validators now extend &lt;code&gt;Behavior&lt;/code&gt; to allow for client side validations&lt;/li&gt;
-
-&lt;li&gt;&lt;code&gt;IBehavior&lt;/code&gt; has been removed and &lt;code&gt;AbstractBehavior&lt;/code&gt; has been deprecated, you should now extend &lt;code&gt;Behavior&lt;/code&gt; instead&lt;/li&gt;
-
-&lt;li&gt;Simplified the &lt;a href='https://cwiki.apache.org/WICKET/requestcycle-in-wicket-15.html'&gt;request cycle processing&lt;/a&gt; and made it more extensible&lt;/li&gt;
-
-&lt;li&gt;URL handling is now in one place&lt;/li&gt;
-
-&lt;li&gt;Wicket&amp;#8217;s rendering code has been greatly simplified&lt;/li&gt;
-
-&lt;li&gt;Improved browser &lt;a href='https://cwiki.apache.org/WICKET/caching-in-wicket-15.html'&gt;caching support&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;ClientSideImageMap replaces old ImageMap&lt;/li&gt;
-
-&lt;li&gt;Better support for running behind proxies with &lt;code&gt;x-forwarded-for&lt;/code&gt; header&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://cwiki.apache.org/WICKET/requestcycle-in-wicket-15.html'&gt;Request cycle listeners&lt;/a&gt; make it easier to integrate frameworks in your Wicket application&lt;/li&gt;
-
-&lt;li&gt;Consistent naming: methods with &lt;code&gt;Javascript&lt;/code&gt; in the name have been renamed to use proper capitalization: &lt;code&gt;JavaScript&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;Switching to HTTPS is as simple as configuring a new root mapper to make Wicket HTTPS aware and annotating a page with @RequireHttps&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A longer list of changes and improvements can be found in our &lt;a href='http://s.apache.org/wicket-1.5-migration'&gt;migration guide&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id='intercomponent_events'&gt;Inter-component events&lt;/h3&gt;
-
-&lt;p&gt;Wicket 1.5 offers a simple, yet flexible, way for component to communicate with each other in a decoupled manner. The two major interfaces that facilitate this are:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='cm'&gt;/**&lt;/span&gt;
-&lt;span class='cm'&gt; * Objects that can send events&lt;/span&gt;
-&lt;span class='cm'&gt; */&lt;/span&gt;
-&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;interface&lt;/span&gt; &lt;span class='nc'&gt;IEventSource&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;T&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;IEventSink&lt;/span&gt; &lt;span class='n'&gt;sink&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;Broadcast&lt;/span&gt; &lt;span class='n'&gt;broadcast&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;T&lt;/span&gt; &lt;span class='n'&gt;payload&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;and&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='cm'&gt;/**&lt;/span&gt;
-&lt;span class='cm'&gt; * Objects that can receive events&lt;/span&gt;
-&lt;span class='cm'&gt; */&lt;/span&gt;
-&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;interface&lt;/span&gt; &lt;span class='nc'&gt;IEventSink&lt;/span&gt;
-&lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='cm'&gt;/**&lt;/span&gt;
-&lt;span class='cm'&gt;     * Called when an event is sent to this sink&lt;/span&gt;
-&lt;span class='cm'&gt;     */&lt;/span&gt;
-    &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onEvent&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;IEvent&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;?&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;event&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;The classes that implement these interfaces, and can thus participate in the event mechanism are: &lt;code&gt;Component&lt;/code&gt;, &lt;code&gt;RequestCycle&lt;/code&gt;, &lt;code&gt;Session&lt;/code&gt;, and &lt;code&gt;Application&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The mechanism allows for different event broadcast methods defined here:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='cm'&gt;/**&lt;/span&gt;
-&lt;span class='cm'&gt; * Defines the event broadcast type.&lt;/span&gt;
-&lt;span class='cm'&gt; */&lt;/span&gt;
-&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;enum&lt;/span&gt; &lt;span class='n'&gt;Broadcast&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='n'&gt;BREADTH&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
-    &lt;span class='n'&gt;DEPTH&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
-    &lt;span class='n'&gt;BUBBLE&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
-    &lt;span class='n'&gt;EXACT&lt;/span&gt;&lt;span class='o'&gt;;&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;There is an example in wicket-examples which demonstrates the usage of this.&lt;/p&gt;
-
-&lt;p&gt;Applications can register custom event dispatchers in &lt;code&gt;FrameworkSettings&lt;/code&gt;; the dispatchers can be used to build custom event delivery mechanisms. For example a custom &lt;code&gt;IEventDispatcher&lt;/code&gt; mechanism can route events to annotated methods, for example:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;MyComponent&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='n'&gt;Component&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='nd'&gt;@OnEvent&lt;/span&gt;
-    &lt;span class='kd'&gt;private&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onUserAdded&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;UserAddedEvent&lt;/span&gt; &lt;span class='n'&gt;event&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='o'&gt;{...}&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;where &lt;code&gt;UserAddedEvent&lt;/code&gt; is the event payload object.&lt;/p&gt;
-
-&lt;p&gt;The default &lt;code&gt;Component#onEvent&lt;/code&gt; method will be called even if custom dispatchers are registered.&lt;/p&gt;
-
-&lt;p&gt;A default event is raised whenever Wicket begins to create an AJAX response. The payload of the event is the &lt;code&gt;AjaxRequestTarget&lt;/code&gt; used for event. Sample implementation:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='c1'&gt;// component that always adds itself to the ajax response&lt;/span&gt;
-&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;MyComponent&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='n'&gt;Component&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;onEvent&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;IEvent&lt;/span&gt; &lt;span class='n'&gt;event&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-        &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;event&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;getPayload&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='k'&gt;instanceof&lt;/span&gt; &lt;span class='n'&gt;AjaxRequestTarget&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-            &lt;span class='o'&gt;((&lt;/span&gt;&lt;span class='n'&gt;AjaxRequestTarget&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;&lt;span class='n'&gt;event&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;getPayload&lt;/span&gt;&lt;span class='o'&gt;()).&lt;/span&gt;&lt;span class='na'&gt;add&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
-         &lt;span class='o'&gt;}&lt;/span&gt;
-    &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content>
  </entry>
  
 </feed>

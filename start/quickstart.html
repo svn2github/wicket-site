@@ -194,9 +194,9 @@
 </script><div id='mvncmd'>
 	<div>
 		<label for='groupId' title='Base Package'>GroupId:</label>
-		<input value='com.mycompany' id='groupId' type='text' onkeyup='changeIt();' /><span title='Base Package'>&nbsp;(?)</span><br />
+		<input id='groupId' type='text' value='com.mycompany' onkeyup='changeIt();' /><span title='Base Package'>&nbsp;(?)</span><br />
 		<label for='artifactId' title='Project Name'>ArtifactId:</label> 
-		<input value='myproject' id='artifactId' type='text' onkeyup='changeIt();' /><span title='Project Name'>&nbsp;(?)</span><br />
+		<input id='artifactId' type='text' value='myproject' onkeyup='changeIt();' /><span title='Project Name'>&nbsp;(?)</span><br />
 		<label for='version' title='Wicket Version'>Version:</label>
 		<select onchange='changeIt();' id='version'>
 
@@ -217,13 +217,13 @@
 		
 
 		
-			<option value='1.5.5' selected='selected'>1.5.5</option>
+			<option selected='selected' value='1.5.5'>1.5.5</option>
 		
 
 		</select><span title='Wicket Version'>&nbsp;(?)</span>
 	</div>
 	<div>
-		<label id='cmdLabel' for='cmdLine'>Command Line:</label>
+		<label for='cmdLine' id='cmdLabel'>Command Line:</label>
 		<textarea id='cmdLine' onfocus='this.select();'>
 		</textarea>
 		<script>changeIt();</script>
