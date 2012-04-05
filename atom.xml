@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-03-27T17:09:29+02:00</updated>
+ <updated>2012-04-04T20:23:04-04:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Wicket 6.0.0-beta1 released</title>
    <link href="http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released.html"/>
-   <updated>2012-03-26T00:00:00+02:00</updated>
+   <updated>2012-03-26T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released</id>
    <content type="html">&lt;p&gt;The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.&lt;/p&gt;
 
@@ -43,7 +43,7 @@
  <entry>
    <title>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089.html"/>
-   <updated>2012-03-22T00:00:00+01:00</updated>
+   <updated>2012-03-22T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -71,7 +71,7 @@
  <entry>
    <title>CVE-2012-0047 - Apache Wicket XSS vulnerability via pageMapName request parameter</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047.html"/>
-   <updated>2012-03-22T00:00:00+01:00</updated>
+   <updated>2012-03-22T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -89,7 +89,7 @@
  <entry>
    <title>Wicket 1.5.5 released</title>
    <link href="http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html"/>
-   <updated>2012-03-12T00:00:00+01:00</updated>
+   <updated>2012-03-12T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2012/03/12/wicket-1.5.5-released</id>
    <content type="html">&lt;p&gt;This is the fifth maintenance release of the Wicket 1.5.x series. This release brings over 50 bug fixes and improvements.&lt;/p&gt;
 
@@ -115,7 +115,7 @@
  <entry>
    <title>Wicket 1.4.20 released</title>
    <link href="http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html"/>
-   <updated>2012-03-12T00:00:00+01:00</updated>
+   <updated>2012-03-12T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2012/03/12/wicket-1.4.20-released</id>
    <content type="html">&lt;p&gt;This is twentieth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -141,7 +141,7 @@
  <entry>
    <title>Wicket 1.5.4 released</title>
    <link href="http://wicket.apache.org/2012/01/23/wicket-1.5.4-released.html"/>
-   <updated>2012-01-23T00:00:00+01:00</updated>
+   <updated>2012-01-23T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2012/01/23/wicket-1.5.4-released</id>
    <content type="html">&lt;p&gt;This is the fourth maintenance release of the Wicket 1.5.x series. This release brings over 68 bug fixes and improvements.&lt;/p&gt;
 
@@ -167,7 +167,7 @@
  <entry>
    <title>Wicket 1.5.3 released</title>
    <link href="http://wicket.apache.org/2011/11/14/wicket-1.5.3-released.html"/>
-   <updated>2011-11-14T00:00:00+01:00</updated>
+   <updated>2011-11-14T00:00:00-05:00</updated>
    <id>http://wicket.apache.org/2011/11/14/wicket-1.5.3-released</id>
    <content type="html">&lt;p&gt;This is the third maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
 
@@ -193,7 +193,7 @@
  <entry>
    <title>Wicket 1.5.2 released</title>
    <link href="http://wicket.apache.org/2011/10/24/wicket-1.5.2-released.html"/>
-   <updated>2011-10-24T00:00:00+02:00</updated>
+   <updated>2011-10-24T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2011/10/24/wicket-1.5.2-released</id>
    <content type="html">&lt;p&gt;This is the second maintenance release of the Wicket 1.5.x series. This release brings over 25 bug fixes and 5 improvements.&lt;/p&gt;
 
@@ -219,7 +219,7 @@
  <entry>
    <title>Wicket 1.4.19 released</title>
    <link href="http://wicket.apache.org/2011/10/17/wicket-1.4.19-released.html"/>
-   <updated>2011-10-17T00:00:00+02:00</updated>
+   <updated>2011-10-17T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2011/10/17/wicket-1.4.19-released</id>
    <content type="html">&lt;p&gt;This is nineteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -245,7 +245,7 @@
  <entry>
    <title>Wicket 1.5.1 released</title>
    <link href="http://wicket.apache.org/2011/09/29/wicket-1.5.1-released.html"/>
-   <updated>2011-09-29T00:00:00+02:00</updated>
+   <updated>2011-09-29T00:00:00-04:00</updated>
    <id>http://wicket.apache.org/2011/09/29/wicket-1.5.1-released</id>
    <content type="html">&lt;p&gt;This is the first maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and 15 improvements.&lt;/p&gt;
 
