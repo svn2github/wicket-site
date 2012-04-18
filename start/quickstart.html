@@ -194,11 +194,11 @@
 </script><div id='mvncmd'>
 	<div>
 		<label title='Base Package' for='groupId'>GroupId:</label>
-		<input id='groupId' type='text' value='com.mycompany' onkeyup='changeIt();' /><span title='Base Package'>&nbsp;(?)</span><br />
+		<input onkeyup='changeIt();' value='com.mycompany' type='text' id='groupId' /><span title='Base Package'>&nbsp;(?)</span><br />
 		<label title='Project Name' for='artifactId'>ArtifactId:</label> 
-		<input id='artifactId' type='text' value='myproject' onkeyup='changeIt();' /><span title='Project Name'>&nbsp;(?)</span><br />
+		<input onkeyup='changeIt();' value='myproject' type='text' id='artifactId' /><span title='Project Name'>&nbsp;(?)</span><br />
 		<label title='Wicket Version' for='version'>Version:</label>
-		<select id='version' onchange='changeIt();'>
+		<select onchange='changeIt();' id='version'>
 
 		
 			<option value='6.0-SNAPSHOT'>6.0-SNAPSHOT</option>
@@ -217,14 +217,18 @@
 		
 
 		
-			<option selected='selected' value='1.5.5'>1.5.5</option>
+			<option value='1.5.5' selected='selected'>1.5.5</option>
+		
+
+		
+			<option value='6.0.0-beta1'>6.0.0-beta1</option>
 		
 
 		</select><span title='Wicket Version'>&nbsp;(?)</span>
 	</div>
 	<div>
-		<label id='cmdLabel' for='cmdLine'>Command Line:</label>
-		<textarea id='cmdLine' onfocus='this.select();'>
+		<label for='cmdLine' id='cmdLabel'>Command Line:</label>
+		<textarea onfocus='this.select();' id='cmdLine'>
 		</textarea>
 		<script>changeIt();</script>
 	</div>
