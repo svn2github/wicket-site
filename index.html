@@ -89,7 +89,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.5">Wicket 1.5</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.6">Wicket 1.5</a>
 			(<a href="http://wicket.apache.org/apidocs/1.5" title="JavaDocs of the latest stable release - 1.5.x">docs</a>)
 		</li>
 		<li>
@@ -173,6 +173,22 @@
 <h1>Security announcement: CVE-2011-2712</h1>
 <p>A XSS vulnerability has been found in Apache Wicket version 1.4. This is solved in Apache Wicket 1.4.18. Please upgrade your applications to this release. Wicket versions 1.3.x and 1.5.x are not affected by this vulnerability. <a href='2011/08/23/cve-2011-2712.html'>More information</a></p>
 
+<h1 id='wicket_156_released'><a href='/2012/05/07/wicket-1.5.6-released.html'>Wicket 1.5.6 released</a></h1>
+<p>This is the sixth maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.</p><ul>
+<li><a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.6'>Git tag</a></li>
+
+<li><a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12319053'>Changelog</a></li>
+
+<li>To use in Maven:</li>
+</ul><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>1.5.6<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div><ul>
+<li>Download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.6'>full distribution</a> (including source)</li>
+</ul>
 <h1 id='wicket_600beta1_released'><a href='/2012/03/26/wicket-6.0.0-beta1-released.html'>Wicket 6.0.0-beta1 released</a></h1>
 <p>The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.</p><p>Check the <a href='https://cwiki.apache.org/WICKET/wicket-60-roadmap.html'>roadmap</a> with a list of the major goals. And the <a href='https://cwiki.apache.org/WICKET/migration-to-wicket-60.html'>migration guide</a> with all major and some minor changes between 1.5.x and 6.x series.</p><p>The Jira changelog of all closed ticket at <a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12319052'>Jira</a></p><p>To use it in Maven:</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
@@ -180,19 +196,13 @@
     <span class='nt'>&lt;version&gt;</span>6.0.0-beta1<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
 </code></pre>
-</div><p>If you don&#8217;t use dependencies management build tool then you can download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0-beta1'>full distribution</a> (including source).</p><p>There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! We will try to avoid making any API changes in the Release Candidates that will follow this beta release.</p><p>Any feedback about the new features, their implementation and their documentation is very welcome!</p><p>The Wicket team!</p>
-<h1 id='cve20121089__apache_wicket_serving_of_hidden_files_vulnerability'><a href='/2012/03/22/wicket-cve-2012-1089.html'>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</a></h1>
-<p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache Wicket 1.4.x and 1.5.x</p><p>Description: It is possible to view the content of any file of a web application by using an Url to a Wicket resource which resolves to a &#8216;null&#8217; package. With such a Url the attacker can request the content of any file by specifying its relative path, i.e. the attacker must know the file name to be able to request it.</p><p>Mitigation: Setup a custom org.apache.wicket.markup.html.IPackageResourceGuard that provides a whitelist of allowed resources. Since versions 1.4.20 and 1.5.5 Apache Wicket uses by default org.apache.wicket.markup.html.SecurePackageResourceGuard with a preconfigured list of allowed file extensions. Either setup SecurePackageResourceGuard with code like:</p><div class='highlight'><pre><code class='java'><span class='kd'>public</span> <span class='kd'>class</span> <span class='nc'>MyApp</span> <span class='kd'>extends</span> <span class='n'>WebApplication</span> <span class='o'>{</span>
-    <span class='kd'>public</span> <span class='kt'>void</span> <span class='nf'>init</span><span class='o'>()</span> <span class='o'>{</span>
-        <span class='kd'>super</span><span class='o'>.</span><span class='na'>init</span><span class='o'>();</span>
-        <span class='n'>SecurePackageResourceGuard</span> <span class='n'>guard</span> <span class='o'>=</span> <span class='k'>new</span> <span class='n'>SecurePackageResourceGuard</span><span class='o'>();</span>
-        <span class='n'>guard</span><span class='o'>.</span><span class='na'>addPattern</span><span class='o'>(...);</span>
-        <span class='n'>guard</span><span class='o'>.</span><span class='na'>addPattern</span><span class='o'>(...);</span>
-        <span class='n'>getResourceSettings</span><span class='o'>().</span><span class='na'>setPackageResourceGuard</span><span class='o'>(</span><span class='n'>guard</span><span class='o'>);</span>
-    <span class='o'>}</span>
-<span class='o'>}</span>
-</code></pre>
-</div><p>or upgrade <a href='http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html'>Apache Wicket 1.4.20</a> or <a href='http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html'>Apache Wicket 1.5.5</a></p><p>Credit: This issue was discovered by Sebastian van Erk.</p><h1>Older news items</h1><ul>
+</div><p>If you don&#8217;t use dependencies management build tool then you can download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0-beta1'>full distribution</a> (including source).</p><p>There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! We will try to avoid making any API changes in the Release Candidates that will follow this beta release.</p><p>Any feedback about the new features, their implementation and their documentation is very welcome!</p><p>The Wicket team!</p><h1>Older news items</h1><ul>
+
+
+<li>
+        <a href='/2012/03/22/wicket-cve-2012-1089.html'>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</a> - <span>22 Mar 2012</span><br />
+        Vendor: The Apache Software Foundation Versions Affected: Apache Wicket 1.4.x and 1.5.x Description: It is possible to view the content of any file of a...
+        <a href='/2012/03/22/wicket-cve-2012-1089.html'>more</a></li>
 
 
 <li>
@@ -247,12 +257,6 @@
         <a href='/2011/09/07/wicket-1.5-released.html'>Apache Wicket releases Wicket 1.5</a> - <span>07 Sep 2011</span><br />
         The Apache Wicket team is proud to announce the immediate availability of the newest release of their component oriented open source Java web framework. Apache...
         <a href='/2011/09/07/wicket-1.5-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2011/08/28/1.5-RC7-released.html'>Wicket 1.5-RC7 released</a> - <span>28 Aug 2011</span><br />
-        The Wicket Team is proud to introduce the seventh Release Candidate in Wicket 1.5 series. See the changelog for the list of bug fixes and...
-        <a href='/2011/08/28/1.5-RC7-released.html'>more</a></li>
 
 </ul>
 <h1 id='books_about_wicket'>Books about Wicket</h1>
