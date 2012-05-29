@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-05-10T11:42:02+03:00</updated>
+ <updated>2012-05-29T16:12:56+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -13,9 +13,73 @@
  
  
  <entry>
+   <title>Wicket 6.0.0-beta2 released</title>
+   <link href="http://wicket.apache.org/2012/05/29/wicket-6.0.0-beta2-released.html"/>
+   <updated>2012-05-29T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/05/29/wicket-6.0.0-beta2-released</id>
+   <content type="html">&lt;p&gt;The Wicket team is proud to announce the second beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.&lt;/p&gt;
+
+&lt;h3 id='new_and_noteworthy'&gt;New and Noteworthy&lt;/h3&gt;
+
+&lt;h4 id='wicket_atmosphere'&gt;Wicket Atmosphere&lt;/h4&gt;
+
+&lt;p&gt;The Beta 2 contains a new experimental module Wicket Atmosphere, which brings serverside push to Wicket and provides a great way to render serverside markup and send it to the browsers of your users. Check out the atmosphere example in our Examples project to see it in action.&lt;/p&gt;
+
+&lt;p&gt;In your application&amp;#8217;s init method you need to register the push event bus:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nf'&gt;EventBus&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Somewhere where you want to push your changes to the client, you need to publish your event to the push &lt;code&gt;EventBus&lt;/code&gt;:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='n'&gt;EventBus&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;get&lt;/span&gt;&lt;span class='o'&gt;().&lt;/span&gt;&lt;span class='na'&gt;post&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;input&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;getModelObject&lt;/span&gt;&lt;span class='o'&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;And finally you need to subscribe your page (or component) to the &lt;code&gt;EventBus&lt;/code&gt;&amp;#8217;s events with &lt;code&gt;@Subscribe&lt;/code&gt;, taking in the typed parameter you post to the EventBus (in this case a &lt;code&gt;String&lt;/code&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='nd'&gt;@Subscribe&lt;/span&gt;
+&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;receiveMessage&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;AjaxRequestTarget&lt;/span&gt; &lt;span class='n'&gt;target&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;String&lt;/span&gt; &lt;span class='n'&gt;message&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+	&lt;span class='n'&gt;label&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setDefaultModelObject&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;message&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
+	&lt;span class='n'&gt;target&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;add&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;label&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
+&lt;span class='o'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;To be able to use Wicket Atmosphere you need to include the following dependency:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-atmosphere&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Please note that this is still experimental.&lt;/p&gt;
+
+&lt;h3 id='this_release'&gt;This release&lt;/h3&gt;
+
+&lt;p&gt;Check the &lt;a href='https://cwiki.apache.org/WICKET/wicket-60-roadmap.html'&gt;roadmap&lt;/a&gt; with a list of the major goals. And the &lt;a href='https://cwiki.apache.org/WICKET/migration-to-wicket-60.html'&gt;migration guide&lt;/a&gt; with all major and some minor changes between 1.5.x and 6.x series.&lt;/p&gt;
+
+&lt;p&gt;The Jira changelog of all closed ticket at &lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12320343'&gt;Jira&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To use it in Maven:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.0.0-beta2&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;If you don&amp;#8217;t use a dependencies management build tool then you can download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0-beta2'&gt;full distribution&lt;/a&gt; (including source).&lt;/p&gt;
+
+&lt;p&gt;There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! We will try to avoid making any API changes in the Release Candidates that will follow this beta release.&lt;/p&gt;
+
+&lt;p&gt;Any feedback about the new features, their implementation and their documentation is very welcome!&lt;/p&gt;
+
+&lt;p&gt;The Wicket team!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Wicket 1.5.6 released</title>
    <link href="http://wicket.apache.org/2012/05/07/wicket-1.5.6-released.html"/>
-   <updated>2012-05-07T00:00:00+03:00</updated>
+   <updated>2012-05-07T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/05/07/wicket-1.5.6-released</id>
    <content type="html">&lt;p&gt;This is the sixth maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
 
@@ -41,7 +105,7 @@
  <entry>
    <title>Wicket 6.0.0-beta1 released</title>
    <link href="http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released.html"/>
-   <updated>2012-03-26T00:00:00+03:00</updated>
+   <updated>2012-03-26T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released</id>
    <content type="html">&lt;p&gt;The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.&lt;/p&gt;
 
@@ -69,7 +133,7 @@
  <entry>
    <title>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089.html"/>
-   <updated>2012-03-22T00:00:00+02:00</updated>
+   <updated>2012-03-22T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -97,7 +161,7 @@
  <entry>
    <title>CVE-2012-0047 - Apache Wicket XSS vulnerability via pageMapName request parameter</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047.html"/>
-   <updated>2012-03-22T00:00:00+02:00</updated>
+   <updated>2012-03-22T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -115,7 +179,7 @@
  <entry>
    <title>Wicket 1.5.5 released</title>
    <link href="http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html"/>
-   <updated>2012-03-12T00:00:00+02:00</updated>
+   <updated>2012-03-12T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/12/wicket-1.5.5-released</id>
    <content type="html">&lt;p&gt;This is the fifth maintenance release of the Wicket 1.5.x series. This release brings over 50 bug fixes and improvements.&lt;/p&gt;
 
@@ -141,7 +205,7 @@
  <entry>
    <title>Wicket 1.4.20 released</title>
    <link href="http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html"/>
-   <updated>2012-03-12T00:00:00+02:00</updated>
+   <updated>2012-03-12T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/12/wicket-1.4.20-released</id>
    <content type="html">&lt;p&gt;This is twentieth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
 
@@ -167,7 +231,7 @@
  <entry>
    <title>Wicket 1.5.4 released</title>
    <link href="http://wicket.apache.org/2012/01/23/wicket-1.5.4-released.html"/>
-   <updated>2012-01-23T00:00:00+02:00</updated>
+   <updated>2012-01-23T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/01/23/wicket-1.5.4-released</id>
    <content type="html">&lt;p&gt;This is the fourth maintenance release of the Wicket 1.5.x series. This release brings over 68 bug fixes and improvements.&lt;/p&gt;
 
@@ -193,7 +257,7 @@
  <entry>
    <title>Wicket 1.5.3 released</title>
    <link href="http://wicket.apache.org/2011/11/14/wicket-1.5.3-released.html"/>
-   <updated>2011-11-14T00:00:00+02:00</updated>
+   <updated>2011-11-14T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2011/11/14/wicket-1.5.3-released</id>
    <content type="html">&lt;p&gt;This is the third maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
 
@@ -219,7 +283,7 @@
  <entry>
    <title>Wicket 1.5.2 released</title>
    <link href="http://wicket.apache.org/2011/10/24/wicket-1.5.2-released.html"/>
-   <updated>2011-10-24T00:00:00+03:00</updated>
+   <updated>2011-10-24T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2011/10/24/wicket-1.5.2-released</id>
    <content type="html">&lt;p&gt;This is the second maintenance release of the Wicket 1.5.x series. This release brings over 25 bug fixes and 5 improvements.&lt;/p&gt;
 
@@ -239,32 +303,6 @@
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.2'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.19 released</title>
-   <link href="http://wicket.apache.org/2011/10/17/wicket-1.4.19-released.html"/>
-   <updated>2011-10-17T00:00:00+03:00</updated>
-   <id>http://wicket.apache.org/2011/10/17/wicket-1.4.19-released</id>
-   <content type="html">&lt;p&gt;This is nineteenth release of the Wicket 1.4.x series. This is primarily a minor bugfix release on the 1.4.x (stable) branch.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.4.19'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12317570'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.19&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.19'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  

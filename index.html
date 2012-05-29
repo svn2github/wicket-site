@@ -90,7 +90,7 @@
 	<ul>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.6">Wicket 1.5</a>
-			(<a href="http://wicket.apache.org/apidocs/1.5" title="JavaDocs of the latest stable release - 1.5.x">docs</a>)
+			(<a href="http://ci.apache.org/projects/wicket/apidocs/1.5.x/" title="JavaDocs of the latest stable release - 1.5.x">docs</a>)
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.19">Wicket 1.4</a>
@@ -114,6 +114,12 @@
 		<a name="Navigation-Developers" id="Navigation-Developers"></a>Contribute
 	</h5>
 	<ul>
+		<li>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.0.0-beta2">Wicket 6.x BETA</a>
+		</li>
+		<li>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/6.0.x/" title="JavaDocs of the latest beta release - 6.0.x">Wicket 6.x docs</a>
+		</li>
 		<li>
 			<a href="/contribute/write.html" title="Writing documentation">Writing docs</a>
 		</li>
@@ -173,6 +179,34 @@
 <h1>Security announcement: CVE-2011-2712</h1>
 <p>A XSS vulnerability has been found in Apache Wicket version 1.4. This is solved in Apache Wicket 1.4.18. Please upgrade your applications to this release. Wicket versions 1.3.x and 1.5.x are not affected by this vulnerability. <a href='2011/08/23/cve-2011-2712.html'>More information</a></p>
 
+<h1 id='wicket_600beta2_released'><a href='/2012/05/29/wicket-6.0.0-beta2-released.html'>Wicket 6.0.0-beta2 released</a></h1>
+<p>The Wicket team is proud to announce the second beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.</p><h3 id='new_and_noteworthy'>New and Noteworthy</h3><h4 id='wicket_atmosphere'>Wicket Atmosphere</h4><p>The Beta 2 contains a new experimental module Wicket Atmosphere, which brings serverside push to Wicket and provides a great way to render serverside markup and send it to the browsers of your users. Check out the atmosphere example in our Examples project to see it in action.</p><p>In your application&#8217;s init method you need to register the push event bus:</p><div class='highlight'><pre><code class='java'><span class='k'>new</span> <span class='nf'>EventBus</span><span class='o'>(</span><span class='k'>this</span><span class='o'>);</span>
+</code></pre>
+</div><p>Somewhere where you want to push your changes to the client, you need to publish your event to the push <code>EventBus</code>:</p><div class='highlight'><pre><code class='java'><span class='n'>EventBus</span><span class='o'>.</span><span class='na'>get</span><span class='o'>().</span><span class='na'>post</span><span class='o'>(</span><span class='n'>input</span><span class='o'>.</span><span class='na'>getModelObject</span><span class='o'>());</span>
+</code></pre>
+</div>
+<p><p>And finally you need to subscribe your page (or component) to the <code>EventBus</code>&#8217;s events with <code>@Subscribe</code>, taking in the typed parameter you post to the EventBus (in this case a <code>String</code>):</p></p>
+
+<p><p><div class='highlight'><pre><code class='java'><span class='nd'>@Subscribe</span>
+<span class='kd'>public</span> <span class='kt'>void</span> <span class='nf'>receiveMessage</span><span class='o'>(</span><span class='n'>AjaxRequestTarget</span> <span class='n'>target</span><span class='o'>,</span> <span class='n'>String</span> <span class='n'>message</span><span class='o'>)</span> <span class='o'>{</span>
+	<span class='n'>label</span><span class='o'>.</span><span class='na'>setDefaultModelObject</span><span class='o'>(</span><span class='n'>message</span><span class='o'>);</span>
+	<span class='n'>target</span><span class='o'>.</span><span class='na'>add</span><span class='o'>(</span><span class='n'>label</span><span class='o'>);</span>
+<span class='o'>}</span>
+</code></pre>
+</div></p></p>
+<p>To be able to use Wicket Atmosphere you need to include the following dependency:</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-atmosphere<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>0.1<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div><p>Please note that this is still experimental.</p><h3 id='this_release'>This release</h3><p>Check the <a href='https://cwiki.apache.org/WICKET/wicket-60-roadmap.html'>roadmap</a> with a list of the major goals. And the <a href='https://cwiki.apache.org/WICKET/migration-to-wicket-60.html'>migration guide</a> with all major and some minor changes between 1.5.x and 6.x series.</p><p>The Jira changelog of all closed ticket at <a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12320343'>Jira</a></p><p>To use it in Maven:</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.0.0-beta2<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div><p>If you don&#8217;t use a dependencies management build tool then you can download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0-beta2'>full distribution</a> (including source).</p><p>There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! We will try to avoid making any API changes in the Release Candidates that will follow this beta release.</p><p>Any feedback about the new features, their implementation and their documentation is very welcome!</p><p>The Wicket team!</p>
 <h1 id='wicket_156_released'><a href='/2012/05/07/wicket-1.5.6-released.html'>Wicket 1.5.6 released</a></h1>
 <p>This is the sixth maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.</p><ul>
 <li><a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.6'>Git tag</a></li>
@@ -188,15 +222,13 @@
 </code></pre>
 </div><ul>
 <li>Download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.6'>full distribution</a> (including source)</li>
-</ul>
-<h1 id='wicket_600beta1_released'><a href='/2012/03/26/wicket-6.0.0-beta1-released.html'>Wicket 6.0.0-beta1 released</a></h1>
-<p>The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.</p><p>Check the <a href='https://cwiki.apache.org/WICKET/wicket-60-roadmap.html'>roadmap</a> with a list of the major goals. And the <a href='https://cwiki.apache.org/WICKET/migration-to-wicket-60.html'>migration guide</a> with all major and some minor changes between 1.5.x and 6.x series.</p><p>The Jira changelog of all closed ticket at <a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12319052'>Jira</a></p><p>To use it in Maven:</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
-    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
-    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>6.0.0-beta1<span class='nt'>&lt;/version&gt;</span>
-<span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div><p>If you don&#8217;t use dependencies management build tool then you can download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0-beta1'>full distribution</a> (including source).</p><p>There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! We will try to avoid making any API changes in the Release Candidates that will follow this beta release.</p><p>Any feedback about the new features, their implementation and their documentation is very welcome!</p><p>The Wicket team!</p><h1>Older news items</h1><ul>
+</ul><h1>Older news items</h1><ul>
+
+
+<li>
+        <a href='/2012/03/26/wicket-6.0.0-beta1-released.html'>Wicket 6.0.0-beta1 released</a> - <span>26 Mar 2012</span><br />
+        The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x...
+        <a href='/2012/03/26/wicket-6.0.0-beta1-released.html'>more</a></li>
 
 
 <li>
@@ -252,17 +284,11 @@
         This is the first maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and 15 improvements. Subversion tag Changelog To...
         <a href='/2011/09/29/wicket-1.5.1-released.html'>more</a></li>
 
-
-<li>
-        <a href='/2011/09/07/wicket-1.5-released.html'>Apache Wicket releases Wicket 1.5</a> - <span>07 Sep 2011</span><br />
-        The Apache Wicket team is proud to announce the immediate availability of the newest release of their component oriented open source Java web framework. Apache...
-        <a href='/2011/09/07/wicket-1.5-released.html'>more</a></li>
-
 </ul>
 <h1 id='books_about_wicket'>Books about Wicket</h1>
 
 <p>The following books are published regarding Apache Wicket (click a cover to learn more about the book):</p>
-<a href='/learn/books/awc.html'><img src='/learn/books/awc.png' height='200px' /></a><a href='/learn/books/wia.html'><img src='/learn/books/wia.png' height='200px' /></a><a href='/learn/books/ewdww.html'><img src='/learn/books/ewdww.png' height='200px' /></a><a href='/learn/books/prowicket.html'><img src='/learn/books/prowicket.png' height='200px' /></a><a href='/learn/books/kwij.html'><img src='/learn/books/kwij.png' height='200px' /></a><a href='/learn/books/praxisbuchwicket.html'><img src='/learn/books/praxisbuchwicket.png' height='200px' /></a><a href='/learn/books/wicket-jp.html'><img src='/learn/books/wicket-jp.png' height='200px' /></a><a href='/learn/books/koda.html'><img src='/learn/books/koda.jpg' height='200px' /></a>
+<a href='/learn/books/awc.html'><img height='200px' src='/learn/books/awc.png' /></a><a href='/learn/books/wia.html'><img height='200px' src='/learn/books/wia.png' /></a><a href='/learn/books/ewdww.html'><img height='200px' src='/learn/books/ewdww.png' /></a><a href='/learn/books/prowicket.html'><img height='200px' src='/learn/books/prowicket.png' /></a><a href='/learn/books/kwij.html'><img height='200px' src='/learn/books/kwij.png' /></a><a href='/learn/books/praxisbuchwicket.html'><img height='200px' src='/learn/books/praxisbuchwicket.png' /></a><a href='/learn/books/wicket-jp.html'><img height='200px' src='/learn/books/wicket-jp.png' /></a><a href='/learn/books/koda.html'><img height='200px' src='/learn/books/koda.jpg' /></a>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
