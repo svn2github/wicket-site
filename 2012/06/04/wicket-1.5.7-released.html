@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Apache Wicket - The Wicket Vision</title>
+    <title>Apache Wicket - Wicket 1.5.7 released</title>
 
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
 
@@ -156,32 +156,26 @@
 </div>
 
 		<div id="contentbody">
-			<h1>The Wicket Vision</h1>
-			<p>Designing and implementing any framework for use in the real world inevitably involves compromises and some degree of complexity, and Wicket is no exception. However, I believe you will find that Wicket is quite compact, focused and powerful as a framework. If Wicket has these characteristics, it is because it was designed to solve one very specific problem well:</p>
+			<h1>Wicket 1.5.7 released</h1>
+			<p>This is the seventh maintenance release of the Wicket 1.5.x series. This release brings over 26 bug fixes and improvements.</p>
 
-<blockquote>
-<p>enabling component-oriented, programmatic manipulation of markup</p>
-</blockquote>
+<ul>
+<li><a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.7'>Git tag</a></li>
 
-<p>Wicket does this and very little else, and that is a good thing.</p>
+<li><a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12321241'>Changelog</a></li>
 
-<p>I once heard Josh Bloch talk about the power to weight ratio of an API. The highest compliment anyone could make of Wicket would be to suggest that Wicket has a lot of power and not much conceptual surface area.</p>
-
-<p>In art, negative space is the part that&#8217;s not the subject. In music, negative space is the rest. In software, negative space is all the code that you managed to avoid writing. In all three disciplines, it&#8217;s what separates what is truly excellent from what is merely good.</p>
-
-<p>Following this metaphor, if Wicket is our foreground object, it is defined in a negative sense by all the things that it is not (by the background).</p>
-
-<p>In other words, ideally, Wicket is a web UI framework that delegates as many areas of responsibility as possible to other, more focused tools and techniques. It recognizes that Hibernate is good at persistence; that Spring is good at DI; that Java properties files are good for localization; that sub-classing is good for creating component types; that Dreamweaver is good at doing HTML layout; that Beans are good for structuring properties; and so on.</p>
-
-<p>The more ways that Wicket can find to offload responsibilities (both now and in the future), the less it will be. And thus, the more it will be.</p>
-
-<p>The difficulty moving forward with Wicket will be balancing all the day-to-day needs people are going to be bringing up with this overall vision of minimalism. There ultimately will be compromises, and the &#8220;trick&#8221; to making the right compromises is simply to agonize over all the options for a long time and then to only make the compromises that everyone agrees are really essential to what Wicket needs to be and do.</p>
-
-<p>A big part of this process of agonizing is to act like doctors and &#8220;first, do no harm&#8221;. If some issue isn&#8217;t sitting well with everyone yet, there&#8217;s probably a reason for that. So, maybe the near-term solution is to simply do nothing and let people use the existing functionality until the limits to that approach (as well as competing ideas) are better understood.</p>
-
-<p>It&#8217;s easy to add features. It&#8217;s often impossible to change or remove them.</p>
-
-<p>Given this, the Wicket approach to the overall problem of evolving while keeping a high power to weight ratio will be partitioning off all controversial new ideas in a &#8220;wicket-stuff&#8221; package until they are broadly accepted. This way people can experiment and code away and check in lots of stuff without affecting the main codebase with untested ideas. Then, when ideas pan out to everyone&#8217;s satisfaction, the leads of the project will move them into the core.</p>
+<li>To use in Maven:</li>
+</ul>
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>1.5.7<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div>
+<ul>
+<li>Download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.7'>full distribution</a> (including source)</li>
+</ul>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
