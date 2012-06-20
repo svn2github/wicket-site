@@ -4,13 +4,27 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-06-04T10:25:15+03:00</updated>
+ <updated>2012-06-20T12:27:34+03:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Wicket Native WebSockets support</title>
+   <link href="http://wicket.apache.org/2012/06/20/wicket-native-websockets.html"/>
+   <updated>2012-06-20T00:00:00+03:00</updated>
+   <id>http://wicket.apache.org/2012/06/20/wicket-native-websockets</id>
+   <content type="html">&lt;p&gt;A new experimental module just landed in Wicket&amp;#8217;s Git repository - Wicket Native WebSocket. It provides the support for HTML5 WebSockets in Wicket as the one for Ajax that you may already use in your applications.&lt;/p&gt;
+
+&lt;p&gt;The full documentation is available at &lt;a href='https://cwiki.apache.org/confluence/x/0vSoAQ'&gt;Native WebSocket Wiki&lt;/a&gt; A demo application is available at &lt;a href='https://github.com/martin-g/wicket-native-websocket-example'&gt;Martin Grigorov&amp;#8217;s GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Any feedback about the new module, its implementation and its documentation is very welcome! Just ask your question in Wicket&amp;#8217;s mailing lists or IRC channel.&lt;/p&gt;
+
+&lt;p&gt;The Wicket team!&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.5.7 released</title>
@@ -277,32 +291,6 @@
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.4'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.5.3 released</title>
-   <link href="http://wicket.apache.org/2011/11/14/wicket-1.5.3-released.html"/>
-   <updated>2011-11-14T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2011/11/14/wicket-1.5.3-released</id>
-   <content type="html">&lt;p&gt;This is the third maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://svn.apache.org/repos/asf/wicket/releases/wicket-1.5.3'&gt;Subversion tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12318550'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.3&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.3'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
