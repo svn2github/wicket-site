@@ -179,6 +179,22 @@
 <h1>Security announcement: CVE-2011-2712</h1>
 <p>A XSS vulnerability has been found in Apache Wicket version 1.4. This is solved in Apache Wicket 1.4.18. Please upgrade your applications to this release. Wicket versions 1.3.x and 1.5.x are not affected by this vulnerability. <a href='2011/08/23/cve-2011-2712.html'>More information</a></p>
 
+<h1 id='wicket_158_released'><a href='/2012/08/24/wicket-1.5.8-released.html'>Wicket 1.5.8 released</a></h1>
+<p>This is the eighth maintenance release of the Wicket 1.5.x series. This release brings over 45 bug fixes and improvements.</p><ul>
+<li><a href='https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket.1.5.8'>Git tag</a></li>
+
+<li><a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12321662'>Changelog</a></li>
+
+<li>To use in Maven:</li>
+</ul><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>1.5.8<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div><ul>
+<li>Download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.8'>full distribution</a> (including source)</li>
+</ul>
 <h1 id='wicket_600beta3_released'><a href='/2012/07/16/wicket-6.0.0-beta3-released.html'>Wicket 6.0.0-beta3 released</a></h1>
 <p>The Wicket team is proud to announce the third beta release of the Wicket 6.x series. This release is an intermediary release just before we give you 6.0.0 final.</p><p>There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! The next planned release is 6.0.0 final, so speak now or forever be silenced (or learn to live with it until 7.0.0 comes out).</p><p>Any feedback about the new features, their implementation and their documentation is very welcome!</p><h1 id='new_and_noteworthy_in_600beta3'>New and Noteworthy in 6.0.0-beta3</h1><p><strong>NOTA BENE:</strong> the use of modules that are marked experimental, by being part of the sub module &#8216;wicket-experimental&#8217;, are really that: experimental. These modules can change, disappear or blow up your computer without notice and you really use/depend on them at your own risk.</p><h2 id='wicket_native_websockets'>Wicket Native Websockets</h2><p>A new <strong>experimental</strong> module has been added to Wicket 6 - Wicket Native WebSocket. This module adds support for using HTML5 WebSockets as you may use Ajax in your Wicket applications.</p><p>All you have to do is to add a WebSocketBehavior to your page and from there on you can receive messages from the clients and push messages back to them.</p><p>At <a href='https://cwiki.apache.org/confluence/x/0vSoAQ'>our wiki</a> you may find the documentation and a link to a demo application.</p><p>If something is not clear feel free to ask your question in the mailing lists and we will improve the documentation.</p><h2 id='wicket_bootstrap'>Wicket Bootstrap</h2><p>The <strong>experimental</strong> modules now contain a new module for integration with Twitter&#8217;s Bootstrap. Currently this module only provides a central way of using the Bootstrap resources. In the future we will provide proper components and behaviors for the Bootstrap concepts.</p><p>To use this new <strong>experimental</strong> module, add this to your pom:</p><pre><code>&lt;dependency&gt;
     &lt;groupId&gt;org.apache.wicket&lt;/groupId&gt;
@@ -203,9 +219,13 @@ public void renderHead(IHeaderResponse response) {
     &lt;groupId&gt;org.apache.wicket&lt;/groupId&gt;
     &lt;artifactId&gt;wicket-core&lt;/artifactId&gt;
     &lt;version&gt;6.0.0-beta3&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>If you don’t use a dependencies management build tool then you can download the full distribution (including source) and build from source yourself.</p><p>Have fun,</p><p>The Wicket team!</p>
-<h1 id='wicket_native_websockets_support'><a href='/2012/06/20/wicket-native-websockets.html'>Wicket Native WebSockets support</a></h1>
-<p>A new experimental module just landed in Wicket&#8217;s Git repository - Wicket Native WebSocket. It provides the support for HTML5 WebSockets in Wicket as the one for Ajax that you may already use in your applications.</p><p>The full documentation is available at <a href='https://cwiki.apache.org/confluence/x/0vSoAQ'>Native WebSocket Wiki</a> A demo application is available at <a href='https://github.com/martin-g/wicket-native-websocket-example'>Martin Grigorov&#8217;s GitHub</a></p><p>Any feedback about the new module, its implementation and its documentation is very welcome! Just ask your question in Wicket&#8217;s mailing lists or IRC channel.</p><p>The Wicket team!</p><h1>Older news items</h1><ul>
+&lt;/dependency&gt;</code></pre><p>If you don’t use a dependencies management build tool then you can download the full distribution (including source) and build from source yourself.</p><p>Have fun,</p><p>The Wicket team!</p><h1>Older news items</h1><ul>
+
+
+<li>
+        <a href='/2012/06/20/wicket-native-websockets.html'>Wicket Native WebSockets support</a> - <span>20 Jun 2012</span><br />
+        A new experimental module just landed in Wicket&#8217;s Git repository - Wicket Native WebSocket. It provides the support for HTML5 WebSockets in Wicket as the...
+        <a href='/2012/06/20/wicket-native-websockets.html'>more</a></li>
 
 
 <li>
@@ -261,17 +281,11 @@ public void renderHead(IHeaderResponse response) {
         This is the fourth maintenance release of the Wicket 1.5.x series. This release brings over 68 bug fixes and improvements. Git tag Changelog To use...
         <a href='/2012/01/23/wicket-1.5.4-released.html'>more</a></li>
 
-
-<li>
-        <a href='/2011/11/14/wicket-1.5.3-released.html'>Wicket 1.5.3 released</a> - <span>14 Nov 2011</span><br />
-        This is the third maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements. Subversion tag Changelog To use...
-        <a href='/2011/11/14/wicket-1.5.3-released.html'>more</a></li>
-
 </ul>
 <h1 id='books_about_wicket'>Books about Wicket</h1>
 
 <p>The following books are published regarding Apache Wicket (click a cover to learn more about the book):</p>
-<a href='/learn/books/awc.html'><img height='200px' src='/learn/books/awc.png' /></a><a href='/learn/books/wia.html'><img height='200px' src='/learn/books/wia.png' /></a><a href='/learn/books/ewdww.html'><img height='200px' src='/learn/books/ewdww.png' /></a><a href='/learn/books/prowicket.html'><img height='200px' src='/learn/books/prowicket.png' /></a><a href='/learn/books/kwij.html'><img height='200px' src='/learn/books/kwij.png' /></a><a href='/learn/books/praxisbuchwicket.html'><img height='200px' src='/learn/books/praxisbuchwicket.png' /></a><a href='/learn/books/wicket-jp.html'><img height='200px' src='/learn/books/wicket-jp.png' /></a><a href='/learn/books/koda.html'><img height='200px' src='/learn/books/koda.jpg' /></a>
+<a href='/learn/books/awc.html'><img src='/learn/books/awc.png' height='200px' /></a><a href='/learn/books/wia.html'><img src='/learn/books/wia.png' height='200px' /></a><a href='/learn/books/ewdww.html'><img src='/learn/books/ewdww.png' height='200px' /></a><a href='/learn/books/prowicket.html'><img src='/learn/books/prowicket.png' height='200px' /></a><a href='/learn/books/kwij.html'><img src='/learn/books/kwij.png' height='200px' /></a><a href='/learn/books/praxisbuchwicket.html'><img src='/learn/books/praxisbuchwicket.png' height='200px' /></a><a href='/learn/books/wicket-jp.html'><img src='/learn/books/wicket-jp.png' height='200px' /></a><a href='/learn/books/koda.html'><img src='/learn/books/koda.jpg' height='200px' /></a>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
