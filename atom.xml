@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-08-25T06:36:25+03:00</updated>
+ <updated>2012-09-05T09:04:52+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Wicket 1.5.8 released</title>
    <link href="http://wicket.apache.org/2012/08/24/wicket-1.5.8-released.html"/>
-   <updated>2012-08-24T00:00:00+03:00</updated>
+   <updated>2012-08-24T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/08/24/wicket-1.5.8-released</id>
    <content type="html">&lt;p&gt;This is the eighth maintenance release of the Wicket 1.5.x series. This release brings over 45 bug fixes and improvements.&lt;/p&gt;
 
@@ -41,7 +41,7 @@
  <entry>
    <title>Wicket 6.0.0-beta3 released</title>
    <link href="http://wicket.apache.org/2012/07/16/wicket-6.0.0-beta3-released.html"/>
-   <updated>2012-07-16T00:00:00+03:00</updated>
+   <updated>2012-07-16T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/07/16/wicket-6.0.0-beta3-released</id>
    <content type="html">&lt;p&gt;The Wicket team is proud to announce the third beta release of the Wicket 6.x series. This release is an intermediary release just before we give you 6.0.0 final.&lt;/p&gt;
 
@@ -140,7 +140,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>Wicket Native WebSockets support</title>
    <link href="http://wicket.apache.org/2012/06/20/wicket-native-websockets.html"/>
-   <updated>2012-06-20T00:00:00+03:00</updated>
+   <updated>2012-06-20T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/06/20/wicket-native-websockets</id>
    <content type="html">&lt;p&gt;A new experimental module just landed in Wicket&amp;#8217;s Git repository - Wicket Native WebSocket. It provides the support for HTML5 WebSockets in Wicket as the one for Ajax that you may already use in your applications.&lt;/p&gt;
 
@@ -154,7 +154,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>Wicket 1.5.7 released</title>
    <link href="http://wicket.apache.org/2012/06/04/wicket-1.5.7-released.html"/>
-   <updated>2012-06-04T00:00:00+03:00</updated>
+   <updated>2012-06-04T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/06/04/wicket-1.5.7-released</id>
    <content type="html">&lt;p&gt;This is the seventh maintenance release of the Wicket 1.5.x series. This release brings over 26 bug fixes and improvements.&lt;/p&gt;
 
@@ -180,7 +180,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>Wicket 6.0.0-beta2 released</title>
    <link href="http://wicket.apache.org/2012/05/29/wicket-6.0.0-beta2-released.html"/>
-   <updated>2012-05-29T00:00:00+03:00</updated>
+   <updated>2012-05-29T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/05/29/wicket-6.0.0-beta2-released</id>
    <content type="html">&lt;p&gt;The Wicket team is proud to announce the second beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.&lt;/p&gt;
 
@@ -244,7 +244,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>Wicket 1.5.6 released</title>
    <link href="http://wicket.apache.org/2012/05/07/wicket-1.5.6-released.html"/>
-   <updated>2012-05-07T00:00:00+03:00</updated>
+   <updated>2012-05-07T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/05/07/wicket-1.5.6-released</id>
    <content type="html">&lt;p&gt;This is the sixth maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements.&lt;/p&gt;
 
@@ -270,7 +270,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>Wicket 6.0.0-beta1 released</title>
    <link href="http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released.html"/>
-   <updated>2012-03-26T00:00:00+03:00</updated>
+   <updated>2012-03-26T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2012/03/26/wicket-6.0.0-beta1-released</id>
    <content type="html">&lt;p&gt;The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x series.&lt;/p&gt;
 
@@ -298,7 +298,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089.html"/>
-   <updated>2012-03-22T00:00:00+02:00</updated>
+   <updated>2012-03-22T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -326,7 +326,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>CVE-2012-0047 - Apache Wicket XSS vulnerability via pageMapName request parameter</title>
    <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047.html"/>
-   <updated>2012-03-22T00:00:00+02:00</updated>
+   <updated>2012-03-22T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -344,7 +344,7 @@ public void renderHead(IHeaderResponse response) {
  <entry>
    <title>Wicket 1.5.5 released</title>
    <link href="http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html"/>
-   <updated>2012-03-12T00:00:00+02:00</updated>
+   <updated>2012-03-12T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/03/12/wicket-1.5.5-released</id>
    <content type="html">&lt;p&gt;This is the fifth maintenance release of the Wicket 1.5.x series. This release brings over 50 bug fixes and improvements.&lt;/p&gt;
 
