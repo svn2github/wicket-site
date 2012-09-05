@@ -4,13 +4,39 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-09-05T09:04:52+02:00</updated>
+ <updated>2012-09-05T16:26:04+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Wicket 1.4.21 released</title>
+   <link href="http://wicket.apache.org/2012/09/05/wicket-1.4.21-released.html"/>
+   <updated>2012-09-05T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/09/05/wicket-1.4.21-released</id>
+   <content type="html">&lt;p&gt;This is 21st release of the Wicket 1.4.x series. This is also the last release of the 1.4.x series, rounding up the remaining bugfixes. No further releases will happen in this branch.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket-1.4.21'&gt;Git tag&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12320171'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.21&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.21'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.5.8 released</title>
@@ -339,32 +365,6 @@ public void renderHead(IHeaderResponse response) {
 &lt;p&gt;Mitigation: Upgrade to &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html'&gt;Apache Wicket 1.4.20&lt;/a&gt; or &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html'&gt;Apache Wicket 1.5.5&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Credit: This issue was discovered by Jens Schenck and Stefan Schmidt.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.5.5 released</title>
-   <link href="http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html"/>
-   <updated>2012-03-12T00:00:00+01:00</updated>
-   <id>http://wicket.apache.org/2012/03/12/wicket-1.5.5-released</id>
-   <content type="html">&lt;p&gt;This is the fifth maintenance release of the Wicket 1.5.x series. This release brings over 50 bug fixes and improvements.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket-1.5.5'&gt;Git tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12319052'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.5&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.5'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;</content>
  </entry>
  
 </feed>
