@@ -89,11 +89,15 @@
 	</h5>
 	<ul>
 		<li>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.0.0">Wicket 6.0</a>
+			(<a href="http://ci.apache.org/projects/wicket/apidocs/6.0.x/" title="JavaDocs of the latest stable release - 6.0.x">docs</a>)
+		</li>
+		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.8">Wicket 1.5</a>
 			(<a href="http://ci.apache.org/projects/wicket/apidocs/1.5.x/" title="JavaDocs of the latest stable release - 1.5.x">docs</a>)
 		</li>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.20">Wicket 1.4</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.21">Wicket 1.4</a>
 			(<a href="http://ci.apache.org/projects/wicket/apidocs/1.4.x" title="JavaDocs of Apache Wicket 1.4.x">docs</a>)
 		</li>
 		<li>
@@ -199,12 +203,12 @@
 	}
 </script><div id='mvncmd'>
 	<div>
-		<label title='Base Package' for='groupId'>GroupId:</label>
-		<input value='com.mycompany' type='text' onkeyup='changeIt();' id='groupId' /><span title='Base Package'>&nbsp;(?)</span><br />
-		<label title='Project Name' for='artifactId'>ArtifactId:</label> 
-		<input value='myproject' type='text' onkeyup='changeIt();' id='artifactId' /><span title='Project Name'>&nbsp;(?)</span><br />
-		<label title='Wicket Version' for='version'>Version:</label>
-		<select onchange='changeIt();' id='version'>
+		<label for='groupId' title='Base Package'>GroupId:</label>
+		<input id='groupId' onkeyup='changeIt();' type='text' value='com.mycompany' /><span title='Base Package'>&nbsp;(?)</span><br />
+		<label for='artifactId' title='Project Name'>ArtifactId:</label> 
+		<input id='artifactId' onkeyup='changeIt();' type='text' value='myproject' /><span title='Project Name'>&nbsp;(?)</span><br />
+		<label for='version' title='Wicket Version'>Version:</label>
+		<select id='version' onchange='changeIt();'>
 
 		
 			<option value='6.0-SNAPSHOT'>6.0-SNAPSHOT</option>
@@ -223,18 +227,18 @@
 		
 
 		
-			<option value='1.5.8' selected='selected'>1.5.8</option>
+			<option value='1.5.8'>1.5.8</option>
 		
 
 		
-			<option value='6.0.0-beta3'>6.0.0-beta3</option>
+			<option selected='selected' value='6.0.0'>6.0.0</option>
 		
 
 		</select><span title='Wicket Version'>&nbsp;(?)</span>
 	</div>
 	<div>
 		<label for='cmdLine' id='cmdLabel'>Command Line:</label>
-		<textarea onfocus='this.select();' id='cmdLine'>
+		<textarea id='cmdLine' onfocus='this.select();'>
 		</textarea>
 		<script>changeIt();</script>
 	</div>

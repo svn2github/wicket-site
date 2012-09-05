@@ -4,13 +4,73 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-09-05T16:26:04+02:00</updated>
+ <updated>2012-09-05T18:20:37+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Apache Wicket v6.0.0 released</title>
+   <link href="http://wicket.apache.org/2012/09/05/wicket-6.0.0-released.html"/>
+   <updated>2012-09-05T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/09/05/wicket-6.0.0-released</id>
+   <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&amp;#8220;With great pleasure we announce the availability of Apache Wicket 6.0.0&amp;#8221;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8211; Martijn Dashorst, Vice President, Apache Wicket&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Apache Wicket v6.0.0 is the 6th major release of the popular open source Java web framework. Numerous enhancements make Apache Wicket v6.0.0 a solid choice for web development:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Out-of-the box JQuery integration&lt;/li&gt;
+
+&lt;li&gt;Complete control over AJAX requests&lt;/li&gt;
+
+&lt;li&gt;Improved event registration in browsers&lt;/li&gt;
+
+&lt;li&gt;Support for large datasets in components&lt;/li&gt;
+
+&lt;li&gt;Dependency management for client side javascript libraries&lt;/li&gt;
+
+&lt;li&gt;Experimental support for websockets&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This release is available from the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0'&gt;usual download location (wicket-6.0.0)&lt;/a&gt;, or available through the Maven Central repository.&lt;/p&gt;
+
+&lt;p&gt;Additional features include a customizable client-side API, improved feedback messages, correct packaging for OSGi compatibility and improved initialization of plugins. Highlights include:&lt;/p&gt;
+
+&lt;p&gt;Java 6 required - This release moves the minimum required Java version to Java 6. This means that Wicket applications running on earlier Java versions meaning to upgrade, also need to upgrade their Java runtime.&lt;/p&gt;
+
+&lt;p&gt;Revamped Wicket AJAX now leverages JQuery - Wicket&amp;#8217;s custom AJAX JavaScript library has been re-implemented using JQuery. This makes it easier to integrate JQuery plugins into Wicket applications. With the new AJAX implementation it is possible to provide your own version of JQuery should the need arise, or even to replace the whole Wicket client side AJAX implementation.&lt;/p&gt;
+
+&lt;p&gt;AJAX Attributes - With the new and improved AJAX implementation, you can alter any aspect of an AJAX request through AjaxRequestAttributes. For example you can specify that the request should be executed using POST instead of GET, or that the AJAX request should be multi-part, etc. See the migration guide or the JavaDoc of AjaxRequestAttributes for all possible options.&lt;/p&gt;
+
+&lt;p&gt;Browser event registration replaces inline events - Wicket now uses JavaScript event registration instead of inline attributes for AJAX components. This enables multiple event listeners to be attached to a markup tag, cleans up the rendered markup considerably and reduces the amount of generated markup.&lt;/p&gt;
+
+&lt;p&gt;IDataProvider now uses long instead of int - The &lt;code&gt;IDataProvider&amp;lt;T&amp;gt;&lt;/code&gt; interface and implementations now use long instead of int for index and size parameters to better line up with the Java Persistence API and other persistency frameworks. Big data is now possible with Wicket!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;${label}&lt;/code&gt; replaces &lt;code&gt;${input}&lt;/code&gt; in feedback messages - Previous Wicket versions used the input that was provided by users in error messages when validations failed. This led to error messages like &amp;#8220;1234a is not a valid number&amp;#8221;. In Wicket 6 the feedback messages use the label of the invalid form component instead. You can set the label by calling setLabel() on the form component. If no label is provided, Wicket defaults to displaying the component identifier. This changes the error message to &amp;#8220;Phonenumber is not a valid number&amp;#8221;.&lt;/p&gt;
+
+&lt;p&gt;Resources can declare dependencies - It is now much easier to create resource contributions with dependencies, for example a JQuery plugin can declare a dependency on JQuery and other resources such as embedded style sheets. Users of such resources don’t have to provide these dependencies themselves, and the dependencies are linked in the appropriate order.&lt;/p&gt;
+
+&lt;p&gt;Packaged resources will use minimized version automatically - When a minimized JavaScript resource is available (filename.min.js – add the .min part to the filename before the extension), Wicket will automatically use the minimized version when running in deployment mode, while using the non-minimized version for development mode.&lt;/p&gt;
+
+&lt;p&gt;OSGi compatible packaging - Wicket&amp;#8217;s packaging has been made compatible with OSGi bundles by moving some classes to different packages. The full list can be found in our migration guide. This makes it much easier to deploy Wicket applications in an OSGi environment.&lt;/p&gt;
+
+&lt;p&gt;Experimental websocket implementations - This release also includes two experimental websocket implementations: one using Atmosphere as a bridge for browsers and containers that don&amp;#8217;t support websockets natively and one for containers and browsers that have native websocket support.&lt;/p&gt;
+
+&lt;p&gt;The complete set of changes is available in the migration guide at &lt;a href='http://s.apache.org/wicket-6.0-migration'&gt;http://s.apache.org/wicket-6.0-migration&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id='availability_and_oversight'&gt;Availability and Oversight&lt;/h3&gt;
+
+&lt;p&gt;As with all Apache products, Apache Wicket v6.0.0 is released under the Apache License v2.0, and is overseen by a self-selected team of active contributors to the project. A Project Management Committee (PMC) guides the Project&amp;#8217;s day-to-day operations, including community development and product releases. Apache Wicket source code, documentation, and related resources are available at http://wicket.apache.org/&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;Apache&amp;#8221;, &amp;#8220;Wicket&amp;#8221;, &amp;#8220;Apache Wicket&amp;#8221;, and &amp;#8220;ApacheCon&amp;#8221; are trademarks of The Apache Software Foundation. All other brands and trademarks are the property of their respective owners.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Wicket 1.4.21 released</title>
@@ -347,24 +407,6 @@ public void renderHead(IHeaderResponse response) {
 &lt;p&gt;or upgrade &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html'&gt;Apache Wicket 1.4.20&lt;/a&gt; or &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html'&gt;Apache Wicket 1.5.5&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Credit: This issue was discovered by Sebastian van Erk.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>CVE-2012-0047 - Apache Wicket XSS vulnerability via pageMapName request parameter</title>
-   <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047.html"/>
-   <updated>2012-03-22T00:00:00+01:00</updated>
-   <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-0047</id>
-   <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
-
-&lt;p&gt;Versions Affected: Apache Wicket 1.4.x&lt;/p&gt;
-
-&lt;p&gt;Apache Wicket 1.3.x and 1.5.x are not affected&lt;/p&gt;
-
-&lt;p&gt;Description: A Cross Site Scripting (XSS) attack is possible by manipulating the value of &amp;#8216;wicket:pageMapName&amp;#8217; request parameter.&lt;/p&gt;
-
-&lt;p&gt;Mitigation: Upgrade to &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html'&gt;Apache Wicket 1.4.20&lt;/a&gt; or &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html'&gt;Apache Wicket 1.5.5&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Credit: This issue was discovered by Jens Schenck and Stefan Schmidt.&lt;/p&gt;</content>
  </entry>
  
 </feed>
