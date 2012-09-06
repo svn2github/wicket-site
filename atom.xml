@@ -4,13 +4,31 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-09-05T18:20:37+02:00</updated>
+ <updated>2012-09-06T13:26:24+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>CVE-2012-3373 - Apache Wicket XSS vulnerability</title>
+   <link href="http://wicket.apache.org/2012/09/06/cve-2012-3373.html"/>
+   <updated>2012-09-06T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2012/09/06/cve-2012-3373</id>
+   <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
+
+&lt;p&gt;Versions Affected: Apache Wicket 1.4.x and 1.5.x&lt;/p&gt;
+
+&lt;p&gt;Description: It is possible to inject JavaScript statements into an ajax link by adding an encoded null byte to a URL pointing to a Wicket app. This could be done by sending a legitimate user a manipulated URL and tricking the user into clicking on it.&lt;/p&gt;
+
+&lt;p&gt;This vulnerability is fixed in &lt;a href='https://wicket.apache.org/2012/09/05/wicket-1.4.21-released.html'&gt;Apache Wicket 1.4.21&lt;/a&gt; and &lt;a href='https://wicket.apache.org/2012/08/24/wicket-1.5.8-released.html'&gt;Apache Wicket 1.5.8&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='https://wicket.apache.org/2012/09/05/wicket-6.0.0-released.html'&gt;Apache Wicket 6.0.0&lt;/a&gt; is not affected.&lt;/p&gt;
+
+&lt;p&gt;Credit: This issue was reported by Thomas Heigl.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Apache Wicket v6.0.0 released</title>
@@ -379,34 +397,6 @@ public void renderHead(IHeaderResponse response) {
 &lt;p&gt;Any feedback about the new features, their implementation and their documentation is very welcome!&lt;/p&gt;
 
 &lt;p&gt;The Wicket team!&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</title>
-   <link href="http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089.html"/>
-   <updated>2012-03-22T00:00:00+01:00</updated>
-   <id>http://wicket.apache.org/2012/03/22/wicket-cve-2012-1089</id>
-   <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
-
-&lt;p&gt;Versions Affected: Apache Wicket 1.4.x and 1.5.x&lt;/p&gt;
-
-&lt;p&gt;Description: It is possible to view the content of any file of a web application by using an Url to a Wicket resource which resolves to a &amp;#8216;null&amp;#8217; package. With such a Url the attacker can request the content of any file by specifying its relative path, i.e. the attacker must know the file name to be able to request it.&lt;/p&gt;
-
-&lt;p&gt;Mitigation: Setup a custom org.apache.wicket.markup.html.IPackageResourceGuard that provides a whitelist of allowed resources. Since versions 1.4.20 and 1.5.5 Apache Wicket uses by default org.apache.wicket.markup.html.SecurePackageResourceGuard with a preconfigured list of allowed file extensions. Either setup SecurePackageResourceGuard with code like:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;MyApp&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='n'&gt;WebApplication&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;init&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-        &lt;span class='kd'&gt;super&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;init&lt;/span&gt;&lt;span class='o'&gt;();&lt;/span&gt;
-        &lt;span class='n'&gt;SecurePackageResourceGuard&lt;/span&gt; &lt;span class='n'&gt;guard&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='n'&gt;SecurePackageResourceGuard&lt;/span&gt;&lt;span class='o'&gt;();&lt;/span&gt;
-        &lt;span class='n'&gt;guard&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;addPattern&lt;/span&gt;&lt;span class='o'&gt;(...);&lt;/span&gt;
-        &lt;span class='n'&gt;guard&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;addPattern&lt;/span&gt;&lt;span class='o'&gt;(...);&lt;/span&gt;
-        &lt;span class='n'&gt;getResourceSettings&lt;/span&gt;&lt;span class='o'&gt;().&lt;/span&gt;&lt;span class='na'&gt;setPackageResourceGuard&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;guard&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
-    &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;or upgrade &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.4.20-released.html'&gt;Apache Wicket 1.4.20&lt;/a&gt; or &lt;a href='http://wicket.apache.org/2012/03/12/wicket-1.5.5-released.html'&gt;Apache Wicket 1.5.5&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Credit: This issue was discovered by Sebastian van Erk.&lt;/p&gt;</content>
  </entry>
  
 </feed>
