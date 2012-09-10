@@ -164,6 +164,8 @@
 			<h2 id='contents'>Contents</h2>
 
 <ul>
+<li><a href='#release-60'>Releasing Apache Wicket 6.x</a></li>
+
 <li><a href='#release-14'>Releasing Apache Wicket 1.4.x+</a></li>
 
 <li><a href='#release-13'>Releasing Apache Wicket 1.3.x</a></li>
@@ -174,6 +176,181 @@
 
 <li><a href='#additional'>Additional tasks</a></li>
 </ul>
+
+<h2 id='release-60'>Releasing Apache Wicket 6.x</h2>
+
+<p>Per <a href='http://apache.org/dev/release.html'>Apache release policy</a> we need to build, vote on and release a source distribution. As a convenience to our users, we can also provide binary packages, that are uploaded to Maven Central, and a binary archive for folks that for whatever reason don&#8217;t use Maven.</p>
+
+<h3 id='building_the_release'>Building the Release</h3>
+
+<h4 id='required_software'>Required software</h4>
+
+<p>This assumes running a unix-y environment (i.e. OS X, Linux) and that you have the necessary tools installed, such as recent Maven, Java 6, gpg (-agent).</p>
+
+<h4 id='preparing'>Preparing</h4>
+
+<ul>
+<li>Pull changes</li>
+
+<li>Checkout master</li>
+
+<li>Update changelog and commit them</li>
+</ul>
+
+<h4 id='building'>Building</h4>
+
+<ul>
+<li>Start gpg-agent as a daemon (OS X, using homebrew installation of gpg, gpg-agent, pinentry):</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>    eval `gpg-agent --daemon --pinentry-program /usr/local/bin/pinentry`</span>
+</code></pre>
+</div>
+<ul>
+<li>Create an environment variable such that you can copy/paste several of the following commands (substitute 6.0.0 with the number you&#8217;re actually going to release):</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>export NEWVERSION=6.0.0</span>
+</code></pre>
+</div>
+<ul>
+<li>Sign pom.xml such that gpg-agent has enabled your key (and remove the .asc file). This triggers the pinentry program and sets the stage for gpg-agent:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>gpg --armor --detach-sign --use-agent --sign pom.xml</span>
+<span class='go'>rm pom.xml.asc</span>
+</code></pre>
+</div>
+<ul>
+<li>Create release branch:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>mvn release:branch -DbranchName=build/wicket-$NEWVERSION</span>
+</code></pre>
+</div>
+<ul>
+<li>Checkout the release branch:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>git checkout build/wicket-$NEWVERSION</span>
+</code></pre>
+</div>
+<ul>
+<li>
+<p>Update archetypes/quickstart/src/main/archetype-resources/pom.xml to use NEWVERSION of Wicket and commit</p>
+</li>
+
+<li>
+<p>Use Maven to do the first steps of the release process by</p>
+
+<ul>
+<li>Fill in NEWVERSION for all but the experimental submodules</li>
+
+<li>New development version doesn&#8217;t matter–just press enter, see next step</li>
+
+<li>And running the following command:</li>
+</ul>
+</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>mvn release:prepare</span>
+</code></pre>
+</div>
+<ul>
+<li>Remove last commit such that HEAD points to the NEWVERSION release, not the new development version</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>git reset HEAD^ --hard</span>
+</code></pre>
+</div>
+<ul>
+<li>Create source archive:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>git archive --format=tar.gz --prefix=apache-wicket-$NEWVERSION/ -o apache-wicket-$NEWVERSION.tar.gz wicket-$NEWVERSION</span>
+<span class='go'>git archive --format=zip --prefix=apache-wicket-$NEWVERSION/ -o apache-wicket-$NEWVERSION.zip wicket-$NEWVERSION</span>
+</code></pre>
+</div>
+<ul>
+<li><strong>NOTE</strong> the trailing &#8217;/&#8217; after &#8211;prefix=NEWVERSION is vital for the tarball</li>
+
+<li>Sign the packages, the git tag and create the digests:</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>gpg --armor --detached-sig --use-agent --sign apache-wicket-$NEWVERSION.tar.gz</span>
+<span class='go'>gpg --armor --detached-sig --use-agent --sign apache-wicket-$NEWVERSION.zip</span>
+<span class='go'>gpg --print-md SHA1 apache-wicket-$NEWVERSION.tar.gz &gt; apache-wicket-$NEWVERSION.tar.gz.sha</span>
+<span class='go'>gpg --print-md MD5  apache-wicket-$NEWVERSION.tar.gz &gt; apache-wicket-$NEWVERSION.tar.gz.md5</span>
+<span class='go'>gpg --print-md SHA1 apache-wicket-$NEWVERSION.zip &gt; apache-wicket-$NEWVERSION.zip.sha</span>
+<span class='go'>gpg --print-md MD5  apache-wicket-$NEWVERSION.zip &gt; apache-wicket-$NEWVERSION.zip.md5</span>
+</code></pre>
+</div>
+<p>To sign the tag (overwrites the maven generated tag), execute:</p>
+<div class='highlight'><pre><code class='console'><span class='go'>git tag -s --force wicket-$NEWVERSION</span>
+</code></pre>
+</div>
+<h4 id='staging_the_build'>Staging the build</h4>
+
+<p><div class='highlight'><pre><code class='console'><span class='go'>ssh APACHE_ID@people.apache.org mkdir public_html/wicket-$NEWVERSION</span>
+<span class='go'>scp apache-wicket-* APACHE_ID@people.apache.org:public_html/wicket-$NEWVERSION</span>
+</code></pre>
+</div></p>
+
+<p><strong>TODO</strong> figure out how to let <code>release:perform</code> work from a local checkout, such that we can actually <em>stage</em> the build instead of having to push the tag to our git repo.</p>
+
+<p>The following steps are ONLY necessary as long as the above TODO has not been resolved.</p>
+<div class='highlight'><pre><code class='console'><span class='go'>git push origin build/wicket-$NEWVERSION:refs/heads/build/wicket-$NEWVERSION</span>
+<span class='go'>git push -tags origin</span>
+</code></pre>
+</div>
+<p>The step below uploads the artifacts to a staging area for Maven.</p>
+
+<ul>
+<li>assumes you have an Apache nexus account</li>
+
+<li>will checkout a fresh copy and build it (ask Maven for why)</li>
+
+<li>artifacts will have different signature than in previous release:prepare build (due to times changing)</li>
+</ul>
+<div class='highlight'><pre><code class='console'><span class='go'>mvn release:perform</span>
+</code></pre>
+</div>
+<p>This will upload artifacts and signatures to Apache nexus in a staging repository.</p>
+
+<h4 id='create_a_binary_release'>Create a binary release</h4>
+
+<p>As we don&#8217;t vote on binary packages, but do want to cater to developers not using Maven, it is very convenient to create a download for non-Maven users.</p>
+
+<p>The binary distribution should contain the same jar files that are uploaded to Maven Central. Unfortunately the Maven build creates duplicate jar files, but with different manifests (due to the inclusion of date/time of build), and the jar files have different signatures. Therefore it is necessary to create a distribution of the artifacts generated by the <code>mvn release:perform</code> command.</p>
+
+<p>Perform the following commands in the root of your Wicket checkout to create the binary release files.</p>
+<div class='highlight'><pre><code class='console'><span class='go'>mkdir apache-wicket-$NEWVERSION</span>
+<span class='go'>cd apache-wicket-$NEWVERSION</span>
+<span class='go'>find ../target/checkout ! \( -type d -name &quot;WEB-INF&quot; -prune \) -regex &quot;.*wicket-.*.[jw]ar&quot; ! -name &quot;*-sources*&quot; ! -name &quot;*-javadoc*&quot; ! -name &quot;*wicket-archetype-quickstart*&quot; ! -name &quot;wicket-common-tests*&quot;  -type f -exec cp {} . \;</span>
+<span class='go'>find ../target/checkout ! \( -type d -name &quot;WEB-INF&quot; -prune \) -regex &quot;.*wicket-.*.[jw]ar\.asc&quot; ! -name &quot;*-sources*&quot; ! -name &quot;*-javadoc*&quot; ! -name &quot;*wicket-archetype-quickstart*&quot; ! -name &quot;wicket-common-tests*&quot;  -type f -exec cp {} . \;</span>
+<span class='go'>cp ../LICENSE .</span>
+<span class='go'>cp ../README .</span>
+<span class='go'>cp ../NOTICE .</span>
+<span class='go'>cd ..</span>
+<span class='go'>tar xfz apache-wicket-$NEWVERSION-bin.tar.gz apache-wicket-$NEWVERSION</span>
+<span class='go'>zip apache-wicket-$NEWVERSION-bin.zip apache-wicket-$NEWVERSION</span>
+<span class='go'>gpg --armor --detached-sig --use-agent --sign apache-wicket-$NEWVERSION-bin.tar.gz</span>
+<span class='go'>gpg --armor --detached-sig --use-agent --sign apache-wicket-$NEWVERSION-bin.zip</span>
+<span class='go'>gpg --print-md SHA1 apache-wicket-$NEWVERSION-bin.tar.gz &gt; apache-wicket-$NEWVERSION-bin.tar.gz.sha</span>
+<span class='go'>gpg --print-md MD5  apache-wicket-$NEWVERSION-bin.tar.gz &gt; apache-wicket-$NEWVERSION-bin.tar.gz.md5</span>
+<span class='go'>gpg --print-md SHA1 apache-wicket-$NEWVERSION-bin.zip &gt; apache-wicket-$NEWVERSION.-binzip.sha</span>
+<span class='go'>gpg --print-md MD5  apache-wicket-$NEWVERSION-bin.zip &gt; apache-wicket-$NEWVERSION-bin.zip.md5</span>
+<span class='go'>ssh APACHE_ID@people.apache.org mkdir public_html/wicket-$NEWVERSION/bin</span>
+<span class='go'>scp apache-wicket-*bin.* APACHE_ID@people.apache.org:public_html/wicket-$NEWVERSION/bin</span>
+</code></pre>
+</div>
+<p>This binary release contains all required files to comply with the release policy, and the binary artefacts generated by our Maven release build, including the experimental modules and examples.</p>
+
+<h4 id='vote_the_build'>Vote the build</h4>
+
+<p>Start a vote on dev@ for this release. Allow for at least 72 hours, and ensure you take into account weekends.</p>
+
+<h4 id='promoting_the_build'>Promoting the build</h4>
+
+<p>The following two steps are only necessary when the previous TODO is resolved (you can&#8217;t push the tag twice).</p>
+<div class='highlight'><pre><code class='console'><span class='go'>git push origin build/wicket-$NEWVERSION:refs/heads/build/wicket-$NEWVERSION</span>
+<span class='go'>git push -tags origin</span>
+</code></pre>
+</div>
+<p>You only need to do them if you haven&#8217;t done so yet.</p>
+
+<p>See also <a href='#nexus'>managing nexus</a> for the steps needed to publish the artifacts to Maven Central. And don&#8217;t forget to announce the release!</p>
 
 <h2 id='release-14'>Releasing Apache Wicket 1.4.x+</h2>
 
