@@ -258,12 +258,14 @@
 </code></pre>
 </div>
 <ul>
-<li><strong>NOTE</strong> the trailing &#8217;/&#8217; after &#8211;prefix=NEWVERSION is vital for the tarball</li>
+<li><strong>NOTE 1</strong> the trailing &#8217;/&#8217; after &#8211;prefix=NEWVERSION is vital for the tarball</li>
+
+<li><strong>NOTE 2</strong> you can ignore the gpg generated messages telling &#8216;You need a passphrase to unlock the secret key for&#8217;, unless an error occurred&#8212;these messages are not error messages</li>
 
 <li>Sign the packages, the git tag and create the digests:</li>
 </ul>
-<div class='highlight'><pre><code class='console'><span class='go'>gpg --armor --detached-sig --use-agent --sign apache-wicket-$NEWVERSION.tar.gz</span>
-<span class='go'>gpg --armor --detached-sig --use-agent --sign apache-wicket-$NEWVERSION.zip</span>
+<div class='highlight'><pre><code class='console'><span class='go'>gpg --armor --detach-sign --use-agent --sign apache-wicket-$NEWVERSION.tar.gz</span>
+<span class='go'>gpg --armor --detach-sign --use-agent --sign apache-wicket-$NEWVERSION.zip</span>
 <span class='go'>gpg --print-md SHA1 apache-wicket-$NEWVERSION.tar.gz &gt; apache-wicket-$NEWVERSION.tar.gz.sha</span>
 <span class='go'>gpg --print-md MD5  apache-wicket-$NEWVERSION.tar.gz &gt; apache-wicket-$NEWVERSION.tar.gz.md5</span>
 <span class='go'>gpg --print-md SHA1 apache-wicket-$NEWVERSION.zip &gt; apache-wicket-$NEWVERSION.zip.sha</span>
