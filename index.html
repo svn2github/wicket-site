@@ -89,20 +89,16 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.0.0">Wicket 6.0</a>
-			(<a href="http://ci.apache.org/projects/wicket/apidocs/6.0.x/" title="JavaDocs of the latest stable release - 6.0.x">docs</a>)
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.1.0">Wicket 6.1</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.8">Wicket 1.5</a>
-			(<a href="http://ci.apache.org/projects/wicket/apidocs/1.5.x/" title="JavaDocs of the latest stable release - 1.5.x">docs</a>)
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.21">Wicket 1.4</a>
-			(<a href="http://ci.apache.org/projects/wicket/apidocs/1.4.x" title="JavaDocs of Apache Wicket 1.4.x">docs</a>)
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.3.7">Wicket 1.3</a>
-			(<a href="http://ci.apache.org/projects/wicket/apidocs/1.3.x" title="JavaDocs of Apache Wicket 1.3.x">docs</a>)
 		</li>
 		<li>
 			<a href="http://wicket.sf.net/wicket-1.2" class="external-link" rel="nofollow">Wicket 1.2</a>
@@ -112,6 +108,23 @@
 		</li>
 		<li>
 			<a href="http://wicket.sf.net/wicket-1.0" class="external-link" rel="nofollow">Wicket 1.0</a>
+		</li>
+	</ul>
+	<h5>
+		<a name="Navigation-Docs" id="Navigation-Docs"></a>API Docs
+	</h5>
+	<ul>
+		<li>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/6.0.x/" title="JavaDocs of Apache Wicket 6.x">Wicket 6</a>
+		</li>
+		<li>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/1.5.x/" title="JavaDocs of Apache Wicket 1.5.x">Wicket 1.5</a>
+		</li>
+		<li>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/1.4.x" title="JavaDocs of Apache Wicket 1.4.x">Wicket 1.4</a>
+		</li>
+		<li>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/1.3.x" title="JavaDocs of Apache Wicket 1.3.x">Wicket 1.3</a>
 		</li>
 	</ul>
 	<h5>
@@ -175,26 +188,104 @@
 
 <p>Wicket is released under the <a href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache License, Version 2.0</a>.</p>
 
+<h1 id='apache_wicket_610_released'><a href='/2012/10/04/wicket-6.1.0-released.html'>Apache Wicket 6.1.0 released</a></h1>
+<p>The Apache Wicket PMC is proud to announce Apache Wicket 6.1.0!</p><p>This release marks the first maintenance release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p><h3 id='new_and_noteworthy'>New and noteworthy</h3><p>Wicket CDI has been integrated as a core module, and can be used to manage conversations in your Wicket application with ease.</p><p>Wicket Experimental:</p><ul>
+<li>Wicket Bootstrap has been upgraded to 2.1.1</li>
+
+<li>Several issues with Wicket Atmosphere have been resolved</li>
+</ul><h3 id='known_issues'>Known issues</h3><p>This release has two known issues, which will be solved shortly in 6.1.1 and 6.2.0:</p><ul>
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4789'>WICKET-4789</a> The way URLs are encoded was changed (WICKET-4645) and now the first request (with ;jsessionid in path) generates invalid internal links.</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4759'>WICKET-4759</a> FilterForm/FilterToolbar don&#8217;t work when there&#8217;s more than one IColumn to be filtered</li>
+</ul><p>Any other issues will be released in 6.2.0</p><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.1.0<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div><p>Or download and build the distribution yourself, or use our convenience binary package:</p><ul>
+<li><a href='http://www.apache.org/dyn/closer.cgi/wicket/6.1.0'>6.1.0 sources</a></li>
+
+<li><a href='http://www.apache.org/dyn/closer.cgi/wicket/6.1.0/binaries'>6.1.0 binaries</a></li>
+</ul><h3 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h3><p>If you upgrade from 6.0.0, this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our <a href='http://s.apache.org/wicket-6.0-migration'>Wicket 6 migration guide</a> found at http://s.apache.org/wicket-6.0-migration</p><p>Have fun!</p><p>— The Wicket team</p><h3 id='release_notes__wicket__version_610'>Release Notes - Wicket - Version 6.1.0</h3><h4 id='squashed_bugs'>Squashed bugs</h4><ul>
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4645'>WICKET-4645</a> - encodeURL broken on Tomcat 7.0.28</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4656'>WICKET-4656</a> - Atmosphere example doesn&#39;t work due to missing &#39;page&#39; when creating AjaxRequestTarget</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4729'>WICKET-4729</a> - atmosphere example will stop working if opening the same url in a different tab in the same browser</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4732'>WICKET-4732</a> - CssPackageResource doesn&#39;t work if the extension isn&#39;t css</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4734'>WICKET-4734</a> - Button value is double escaped</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4735'>WICKET-4735</a> - KittenCaptchaPanel is broken</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4737'>WICKET-4737</a> - IllegalStateException on WicketFilter.init() after calling setFilterPath()</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4738'>WICKET-4738</a> - DownloadLink doesn&#39;t wrap the String model used for file name nor does it detach</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4741'>WICKET-4741</a> - Only complete handler (no success or failure handler) is called when Ajax link produces an exception</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4742'>WICKET-4742</a> - Wicket 6 and Atmospher Integration: AtmosphereServlet does not delegate WicketFilter for Error Pages .</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4743'>WICKET-4743</a> - SerializingObjectSizeOfStrategy do not use framework serializer</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4749'>WICKET-4749</a> - TabbedPanel - IModel&#60;?&#62; initModel()</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4750'>WICKET-4750</a> - AbstractDefaultAjaxBehavior.getCallbackFunction should not add the event attribute</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4751'>WICKET-4751</a> - UploadProgressBar regression</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4753'>WICKET-4753</a> - Resource bundles are not resolved on PriorityHeaderItems</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4755'>WICKET-4755</a> - &#34;&#39;NEW VALUE&#39; is not a valid Serializable&#34; error during ajax form submission</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4757'>WICKET-4757</a> - FormComponents remain invalid forever if there is no feedback panel</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4758'>WICKET-4758</a> - DOM ids change of the input fields of FilterToolbar</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4760'>WICKET-4760</a> - JavaScriptStripper fails with single line comments</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4761'>WICKET-4761</a> - ModalWindow.closeCurrent Javascript error</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4763'>WICKET-4763</a> - Page&#39;s stateless hint is initially set to &#39;false&#39;</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4766'>WICKET-4766</a> - multiple &#38;lt;style&#38;gt; tags in header are rendered incorrectly</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4768'>WICKET-4768</a> - Whitespace in TabbedPanel markup causes layout issues</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4770'>WICKET-4770</a> - Wicket 6: modal windows in Safari are always in drag or resize mode</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4773'>WICKET-4773</a> - ComponentFeedbackPanel broken under Wicket 6.0.0 when RenderStrategy.REDIRECT_TO_RENDER</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4775'>WICKET-4775</a> - PageParameters#mergeWith may loose values of the &#39;other&#39; PP</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4780'>WICKET-4780</a> - Using both MountedMapper and CryptoMapper causes warning</li>
+</ul><h4 id='improvement'>Improvement</h4><ul>
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4730'>WICKET-4730</a> - Filter component does not clear filter fields</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4731'>WICKET-4731</a> - TimeField not able to work with a java.sql.Time</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4736'>WICKET-4736</a> - JavaScriptFilteredIntoFooterHeaderResponse should reverse filter logic</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4745'>WICKET-4745</a> - Allow to set initial state of DebugBar to expanded / collapsed</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4746'>WICKET-4746</a> - Wizard component translation for pt_BR</li>
+
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4748'>WICKET-4748</a> - Improve WicketTester to be able to find AjaxBehaviors on second/third/&#8230; event name</li>
+</ul><h4 id='new_feature'>New Feature</h4><ul>
+<li><a href='https://issues.apache.org/jira/browse/WICKET-3969'>WICKET-3969</a> - Add CDI integration</li>
+</ul><h4 id='task'>Task</h4><ul>
+<li><a href='https://issues.apache.org/jira/browse/WICKET-4781'>WICKET-4781</a> - Downgrade the warning that a rendering falls back to redirect_to_buffer to a DEBUG</li>
+</ul>
 <h1 id='cve20123373__apache_wicket_xss_vulnerability'><a href='/2012/09/06/cve-2012-3373.html'>CVE-2012-3373 - Apache Wicket XSS vulnerability</a></h1>
-<p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache Wicket 1.4.x and 1.5.x</p><p>Description: It is possible to inject JavaScript statements into an ajax link by adding an encoded null byte to a URL pointing to a Wicket app. This could be done by sending a legitimate user a manipulated URL and tricking the user into clicking on it.</p><p>This vulnerability is fixed in <a href='https://wicket.apache.org/2012/09/05/wicket-1.4.21-released.html'>Apache Wicket 1.4.21</a> and <a href='https://wicket.apache.org/2012/08/24/wicket-1.5.8-released.html'>Apache Wicket 1.5.8</a>.</p><p><a href='https://wicket.apache.org/2012/09/05/wicket-6.0.0-released.html'>Apache Wicket 6.0.0</a> is not affected.</p><p>Credit: This issue was reported by Thomas Heigl.</p>
-<h1 id='apache_wicket_v600_released'><a href='/2012/09/05/wicket-6.0.0-released.html'>Apache Wicket v6.0.0 released</a></h1>
-<blockquote>
-<p>&#8220;With great pleasure we announce the availability of Apache Wicket 6.0.0&#8221;</p>
+<p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache Wicket 1.4.x and 1.5.x</p><p>Description: It is possible to inject JavaScript statements into an ajax link by adding an encoded null byte to a URL pointing to a Wicket app. This could be done by sending a legitimate user a manipulated URL and tricking the user into clicking on it.</p><p>This vulnerability is fixed in <a href='https://wicket.apache.org/2012/09/05/wicket-1.4.21-released.html'>Apache Wicket 1.4.21</a> and <a href='https://wicket.apache.org/2012/08/24/wicket-1.5.8-released.html'>Apache Wicket 1.5.8</a>.</p><p><a href='https://wicket.apache.org/2012/09/05/wicket-6.0.0-released.html'>Apache Wicket 6.0.0</a> is not affected.</p><p>Credit: This issue was reported by Thomas Heigl.</p><h1>Older news items</h1><ul>
 
-<p>&#8211; Martijn Dashorst, Vice President, Apache Wicket</p>
-</blockquote><p>Apache Wicket v6.0.0 is the 6th major release of the popular open source Java web framework. Numerous enhancements make Apache Wicket v6.0.0 a solid choice for web development:</p><ul>
-<li>Out-of-the box JQuery integration</li>
 
-<li>Complete control over AJAX requests</li>
-
-<li>Improved event registration in browsers</li>
-
-<li>Support for large datasets in components</li>
-
-<li>Dependency management for client side javascript libraries</li>
-
-<li>Experimental support for websockets</li>
-</ul><p>This release is available from the <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.0.0'>usual download location (wicket-6.0.0)</a>, or available through the Maven Central repository.</p><p>Additional features include a customizable client-side API, improved feedback messages, correct packaging for OSGi compatibility and improved initialization of plugins. Highlights include:</p><p>Java 6 required - This release moves the minimum required Java version to Java 6. This means that Wicket applications running on earlier Java versions meaning to upgrade, also need to upgrade their Java runtime.</p><p>Revamped Wicket AJAX now leverages JQuery - Wicket&#8217;s custom AJAX JavaScript library has been re-implemented using JQuery. This makes it easier to integrate JQuery plugins into Wicket applications. With the new AJAX implementation it is possible to provide your own version of JQuery should the need arise, or even to replace the whole Wicket client side AJAX implementation.</p><p>AJAX Attributes - With the new and improved AJAX implementation, you can alter any aspect of an AJAX request through AjaxRequestAttributes. For example you can specify that the request should be executed using POST instead of GET, or that the AJAX request should be multi-part, etc. See the migration guide or the JavaDoc of AjaxRequestAttributes for all possible options.</p><p>Browser event registration replaces inline events - Wicket now uses JavaScript event registration instead of inline attributes for AJAX components. This enables multiple event listeners to be attached to a markup tag, cleans up the rendered markup considerably and reduces the amount of generated markup.</p><p>IDataProvider now uses long instead of int - The <code>IDataProvider&lt;T&gt;</code> interface and implementations now use long instead of int for index and size parameters to better line up with the Java Persistence API and other persistency frameworks. Big data is now possible with Wicket!</p><p><code>${label}</code> replaces <code>${input}</code> in feedback messages - Previous Wicket versions used the input that was provided by users in error messages when validations failed. This led to error messages like &#8220;1234a is not a valid number&#8221;. In Wicket 6 the feedback messages use the label of the invalid form component instead. You can set the label by calling setLabel() on the form component. If no label is provided, Wicket defaults to displaying the component identifier. This changes the error message to &#8220;Phonenumber is not a valid number&#8221;.</p><p>Resources can declare dependencies - It is now much easier to create resource contributions with dependencies, for example a JQuery plugin can declare a dependency on JQuery and other resources such as embedded style sheets. Users of such resources don’t have to provide these dependencies themselves, and the dependencies are linked in the appropriate order.</p><p>Packaged resources will use minimized version automatically - When a minimized JavaScript resource is available (filename.min.js – add the .min part to the filename before the extension), Wicket will automatically use the minimized version when running in deployment mode, while using the non-minimized version for development mode.</p><p>OSGi compatible packaging - Wicket&#8217;s packaging has been made compatible with OSGi bundles by moving some classes to different packages. The full list can be found in our migration guide. This makes it much easier to deploy Wicket applications in an OSGi environment.</p><p>Experimental websocket implementations - This release also includes two experimental websocket implementations: one using Atmosphere as a bridge for browsers and containers that don&#8217;t support websockets natively and one for containers and browsers that have native websocket support.</p><p>The complete set of changes is available in the migration guide at <a href='http://s.apache.org/wicket-6.0-migration'>http://s.apache.org/wicket-6.0-migration</a></p><h3 id='availability_and_oversight'>Availability and Oversight</h3><p>As with all Apache products, Apache Wicket v6.0.0 is released under the Apache License v2.0, and is overseen by a self-selected team of active contributors to the project. A Project Management Committee (PMC) guides the Project&#8217;s day-to-day operations, including community development and product releases. Apache Wicket source code, documentation, and related resources are available at http://wicket.apache.org/</p><p>&#8220;Apache&#8221;, &#8220;Wicket&#8221;, &#8220;Apache Wicket&#8221;, and &#8220;ApacheCon&#8221; are trademarks of The Apache Software Foundation. All other brands and trademarks are the property of their respective owners.</p><h1>Older news items</h1><ul>
+<li>
+        <a href='/2012/09/05/wicket-6.0.0-released.html'>Apache Wicket v6.0.0 released</a> - <span>05 Sep 2012</span><br />
+        &#8220;With great pleasure we announce the availability of Apache Wicket 6.0.0&#8221; &#8211; Martijn Dashorst, Vice President, Apache Wicket Apache Wicket v6.0.0 is the 6th major...
+        <a href='/2012/09/05/wicket-6.0.0-released.html'>more</a></li>
 
 
 <li>
@@ -249,12 +340,6 @@
         <a href='/2012/03/22/wicket-cve-2012-1089.html'>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</a> - <span>22 Mar 2012</span><br />
         Vendor: The Apache Software Foundation Versions Affected: Apache Wicket 1.4.x and 1.5.x Description: It is possible to view the content of any file of a...
         <a href='/2012/03/22/wicket-cve-2012-1089.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/03/22/wicket-cve-2012-0047.html'>CVE-2012-0047 - Apache Wicket XSS vulnerability via pageMapName request parameter</a> - <span>22 Mar 2012</span><br />
-        Vendor: The Apache Software Foundation Versions Affected: Apache Wicket 1.4.x Apache Wicket 1.3.x and 1.5.x are not affected Description: A Cross Site Scripting (XSS) attack...
-        <a href='/2012/03/22/wicket-cve-2012-0047.html'>more</a></li>
 
 </ul>
 <h1 id='books_about_wicket'>Books about Wicket</h1>
