@@ -89,7 +89,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.1.0">Wicket 6.1</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.1.1">Wicket 6.1</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.8">Wicket 1.5</a>
@@ -188,6 +188,18 @@
 
 <p>Wicket is released under the <a href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache License, Version 2.0</a>.</p>
 
+<h1 id='apache_wicket_611_released'><a href='/2012/10/08/wicket-6.1.1-released.html'>Apache Wicket 6.1.1 released</a></h1>
+<p>The Apache Wicket PMC is proud to announce Apache Wicket 6.1.1!</p><p>This release marks the first patch release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.1.0 and 6.0.0.</p><p>This release fixes two bugs in 6.1.0:</p><p><a href='https://issues.apache.org/jira/browse/WICKET-4789'>WICKET-4789</a></p><p>The way URLs are encoded was changed (WICKET-4645) and now the first request (with ;jsessionid in path) generates invalid internal links.</p><p><a href='https://issues.apache.org/jira/browse/WICKET-4759'>WICKET-4759</a></p><p>FilterForm/FilterToolbar don&#8217;t work when there&#8217;s more than one IColumn to be filtered</p><p>Any other issues will be released in 6.2.0</p><h2 id='using_this_release'>Using this release</h2><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.1.1<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
+<li><a href='http://www.apache.org/dyn/closer.cgi/wicket/6.1.1'>http://www.apache.org/dyn/closer.cgi/wicket/6.1.1</a></li>
+
+<li><a href='http://www.apache.org/dyn/closer.cgi/wicket/6.1.1/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.1.1/binaries</a></li>
+</ul><h2 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h2><p>If you upgrade from 6.0.0 or 6.1.0, this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at <a href='http://s.apache.org/wicket-6.0-migration'>http://s.apache.org/wicket-6.0-migration</a></p><p>Have fun!</p><p>— The Wicket team</p>
 <h1 id='apache_wicket_610_released'><a href='/2012/10/04/wicket-6.1.0-released.html'>Apache Wicket 6.1.0 released</a></h1>
 <p>The Apache Wicket PMC is proud to announce Apache Wicket 6.1.0!</p><p>This release marks the first maintenance release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p><h3 id='new_and_noteworthy'>New and noteworthy</h3><p>Wicket CDI has been integrated as a core module, and can be used to manage conversations in your Wicket application with ease.</p><p>Wicket Experimental:</p><ul>
 <li>Wicket Bootstrap has been upgraded to 2.1.1</li>
@@ -277,9 +289,13 @@
 <li><a href='https://issues.apache.org/jira/browse/WICKET-3969'>WICKET-3969</a> - Add CDI integration</li>
 </ul><h4 id='task'>Task</h4><ul>
 <li><a href='https://issues.apache.org/jira/browse/WICKET-4781'>WICKET-4781</a> - Downgrade the warning that a rendering falls back to redirect_to_buffer to a DEBUG</li>
-</ul>
-<h1 id='cve20123373__apache_wicket_xss_vulnerability'><a href='/2012/09/06/cve-2012-3373.html'>CVE-2012-3373 - Apache Wicket XSS vulnerability</a></h1>
-<p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache Wicket 1.4.x and 1.5.x</p><p>Description: It is possible to inject JavaScript statements into an ajax link by adding an encoded null byte to a URL pointing to a Wicket app. This could be done by sending a legitimate user a manipulated URL and tricking the user into clicking on it.</p><p>This vulnerability is fixed in <a href='https://wicket.apache.org/2012/09/05/wicket-1.4.21-released.html'>Apache Wicket 1.4.21</a> and <a href='https://wicket.apache.org/2012/08/24/wicket-1.5.8-released.html'>Apache Wicket 1.5.8</a>.</p><p><a href='https://wicket.apache.org/2012/09/05/wicket-6.0.0-released.html'>Apache Wicket 6.0.0</a> is not affected.</p><p>Credit: This issue was reported by Thomas Heigl.</p><h1>Older news items</h1><ul>
+</ul><h1>Older news items</h1><ul>
+
+
+<li>
+        <a href='/2012/09/06/cve-2012-3373.html'>CVE-2012-3373 - Apache Wicket XSS vulnerability</a> - <span>06 Sep 2012</span><br />
+        Vendor: The Apache Software Foundation Versions Affected: Apache Wicket 1.4.x and 1.5.x Description: It is possible to inject JavaScript statements into an ajax link by...
+        <a href='/2012/09/06/cve-2012-3373.html'>more</a></li>
 
 
 <li>
@@ -334,12 +350,6 @@
         <a href='/2012/03/26/wicket-6.0.0-beta1-released.html'>Wicket 6.0.0-beta1 released</a> - <span>26 Mar 2012</span><br />
         The Wicket team is proud to announce the first beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x...
         <a href='/2012/03/26/wicket-6.0.0-beta1-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/03/22/wicket-cve-2012-1089.html'>CVE-2012-1089 - Apache Wicket serving of hidden files vulnerability</a> - <span>22 Mar 2012</span><br />
-        Vendor: The Apache Software Foundation Versions Affected: Apache Wicket 1.4.x and 1.5.x Description: It is possible to view the content of any file of a...
-        <a href='/2012/03/22/wicket-cve-2012-1089.html'>more</a></li>
 
 </ul>
 <h1 id='books_about_wicket'>Books about Wicket</h1>
