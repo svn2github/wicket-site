@@ -92,7 +92,7 @@
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.2.0">Wicket 6.2</a>
 		</li>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.8">Wicket 1.5</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.9">Wicket 1.5</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.21">Wicket 1.4</a>
@@ -188,6 +188,22 @@
 
 <p>Wicket is released under the <a href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache License, Version 2.0</a>.</p>
 
+<h1 id='wicket_159_released'><a href='/2012/11/09/wicket-1.5.9-released.html'>Wicket 1.5.9 released</a></h1>
+<p>This is the nineth maintenance release of the Wicket 1.5.x series. This release brings over 48 bug fixes and improvements.</p><ul>
+<li><a href='https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket.1.5.9'>Git tag</a></li>
+
+<li><a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12322962'>Changelog</a></li>
+
+<li>To use in Maven:</li>
+</ul><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>1.5.9<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre>
+</div><ul>
+<li>Download the <a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.9'>full distribution</a> (including source)</li>
+</ul>
 <h1 id='apache_wicket_620_released'><a href='/2012/10/23/wicket-6.2.0-released.html'>Apache Wicket 6.2.0 released</a></h1>
 <p>The Apache Wicket PMC is proud to announce Apache Wicket 6.2.0!</p><p>This release marks the second minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p><h2 id='new_and_noteworthy'>New and noteworthy</h2><p>SerializableChecker has been made easier to extend. It is now much easier to add your own checks at serialization time. For example, check whether your LoadableDetachableModels are detached, or no Hibernate entities are referenced directly from your component tree, etc.</p><p>For the full changelog see the release notes attached to the end of this announcement.</p><h2 id='using_this_release'>Using this release</h2><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
@@ -271,19 +287,13 @@
 <li><a href='https://issues.apache.org/jira/browse/WICKET-4802'>WICKET-4802</a> - Add functionality to be able to export DataTable content</li>
 
 <li><a href='https://issues.apache.org/jira/browse/WICKET-4815'>WICKET-4815</a> - Interface to mark components with type safe models</li>
-</ul>
-<h1 id='apache_wicket_611_released'><a href='/2012/10/08/wicket-6.1.1-released.html'>Apache Wicket 6.1.1 released</a></h1>
-<p>The Apache Wicket PMC is proud to announce Apache Wicket 6.1.1!</p><p>This release marks the first patch release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.1.0 and 6.0.0.</p><p>This release fixes two bugs in 6.1.0:</p><p><a href='https://issues.apache.org/jira/browse/WICKET-4789'>WICKET-4789</a></p><p>The way URLs are encoded was changed (WICKET-4645) and now the first request (with ;jsessionid in path) generates invalid internal links.</p><p><a href='https://issues.apache.org/jira/browse/WICKET-4759'>WICKET-4759</a></p><p>FilterForm/FilterToolbar don&#8217;t work when there&#8217;s more than one IColumn to be filtered</p><p>Any other issues will be released in 6.2.0</p><h2 id='using_this_release'>Using this release</h2><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
-    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
-    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>6.1.1<span class='nt'>&lt;/version&gt;</span>
-<span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
-<li><a href='http://www.apache.org/dyn/closer.cgi/wicket/6.1.1'>http://www.apache.org/dyn/closer.cgi/wicket/6.1.1</a></li>
+</ul><h1>Older news items</h1><ul>
 
-<li><a href='http://www.apache.org/dyn/closer.cgi/wicket/6.1.1/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.1.1/binaries</a></li>
-</ul><h2 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h2><p>If you upgrade from 6.0.0 or 6.1.0, this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at <a href='http://s.apache.org/wicket-6.0-migration'>http://s.apache.org/wicket-6.0-migration</a></p><p>Have fun!</p><p>— The Wicket team</p><h1>Older news items</h1><ul>
+
+<li>
+        <a href='/2012/10/08/wicket-6.1.1-released.html'>Apache Wicket 6.1.1 released</a> - <span>08 Oct 2012</span><br />
+        The Apache Wicket PMC is proud to announce Apache Wicket 6.1.1! This release marks the first patch release of Wicket 6. Starting with Wicket 6...
+        <a href='/2012/10/08/wicket-6.1.1-released.html'>more</a></li>
 
 
 <li>
@@ -338,12 +348,6 @@
         <a href='/2012/05/29/wicket-6.0.0-beta2-released.html'>Wicket 6.0.0-beta2 released</a> - <span>29 May 2012</span><br />
         The Wicket team is proud to announce the second beta release of the Wicket 6.x series. This release brings over many improvements over the 1.5.x...
         <a href='/2012/05/29/wicket-6.0.0-beta2-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/05/07/wicket-1.5.6-released.html'>Wicket 1.5.6 released</a> - <span>07 May 2012</span><br />
-        This is the sixth maintenance release of the Wicket 1.5.x series. This release brings over 40 bug fixes and improvements. Git tag Changelog To use...
-        <a href='/2012/05/07/wicket-1.5.6-released.html'>more</a></li>
 
 </ul>
 <h1 id='books_about_wicket'>Books about Wicket</h1>
