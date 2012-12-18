@@ -4,13 +4,199 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2012-11-20T16:55:15+01:00</updated>
+ <updated>2012-12-17T21:59:54+01:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Apache Wicket 6.4.0 released</title>
+   <link href="http://wicket.apache.org/2012/12/14/wicket-6.4.0-released.html"/>
+   <updated>2012-12-14T00:00:00+01:00</updated>
+   <id>http://wicket.apache.org/2012/12/14/wicket-6.4.0-released</id>
+   <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.4.0!&lt;/p&gt;
+
+&lt;p&gt;This release marks the fourth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
+
+&lt;h3 id='new_and_noteworthy'&gt;New and noteworthy&lt;/h3&gt;
+
+&lt;p&gt;JQuery was upgraded to 1.8.3, bootstrap to 2.2.2.&lt;/p&gt;
+
+&lt;h4 id='jsr_303_beanvalidation_support'&gt;JSR 303 BeanValidation support&lt;/h4&gt;
+
+&lt;p&gt;Native support for BeanValidation (JSR 303) was added as an experimental module and released as version 0.5. You can grab it by using these maven coordinates:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;org.apache.wicket:wicket-bean-validation:0.5:jar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or by pasting in the pom snippet below:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-bean-validation&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.5&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Note that this is an experimental module and that it is not released under the SemVer rules. Use at your own risk.&lt;/p&gt;
+
+&lt;h4 id='hierarchical_feedback_panel'&gt;Hierarchical feedback panel&lt;/h4&gt;
+
+&lt;p&gt;A new kind of feedback panel was introduced: a hierarchical feedback panel. A specialized feedback panel that only displays messages from inside a fence defined by a container component. Instances will not show messages coming from inside a nested fence, allowing the nesting of these panels to work correctly without displaying the same feedback message twice. A constructor that does not takes a fencing component creates a catch-all panel that shows messages that do not come from inside any fence or from the Session.&lt;/p&gt;
+
+&lt;p&gt;For more information see the &lt;a href='http://s.apache.org/wicket-FencedFeedbackPanel'&gt;FencedFeedbackPanel javadoc&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For the full changelog see the release notes attached to the end of this announcement.&lt;/p&gt;
+
+&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+
+&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.4.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.4.0'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.4.0&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.4.0/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.4.0/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+
+&lt;p&gt;If you upgrade from 6.0.0, 6.1.0, 6.2.0 or 6.3.0 this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://s.apache.org/wicket-6.0-migration&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;
+
+&lt;p&gt;— The Wicket team&lt;/p&gt;
+
+&lt;h3 id='release_notes__wicket__version_640'&gt;Release Notes - Wicket - Version 6.4.0&lt;/h3&gt;
+
+&lt;h4 id='subtask'&gt;Sub-task&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='WICKET-4880'&gt;WICKET-4880&lt;/a&gt; - Make it possible to override the Ajax behavior of AjaxSubmitLink and AjaxButton&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id='bug'&gt;Bug&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4869'&gt;WICKET-4869&lt;/a&gt; - Wicket-Atmosphere track message length&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4872'&gt;WICKET-4872&lt;/a&gt; - IllegalArgumentException on ReloadingWicketFilter and inheritance markup&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4877'&gt;WICKET-4877&lt;/a&gt; - encodeUrl fails parsing jsessionid when using root context&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4878'&gt;WICKET-4878&lt;/a&gt; - Rendering of feedback messages fails with DebugBar in page&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4881'&gt;WICKET-4881&lt;/a&gt; - IE 8 : error when handling Wicket Ajax Response&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4884'&gt;WICKET-4884&lt;/a&gt; - ValidationError messages for NumberTextFields with minimum/maximum are always English&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4886'&gt;WICKET-4886&lt;/a&gt; - Do not register Ajax timer if the component is removed&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4890'&gt;WICKET-4890&lt;/a&gt; - Bad validation messages after WICKET-2128&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4891'&gt;WICKET-4891&lt;/a&gt; - UrlRenderer.renderRelativeUrl misbehavior if the filterPath is composed.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4894'&gt;WICKET-4894&lt;/a&gt; - Internet Explorer fails fails to properly include conditional stylesheet links added via AjaxRequestTarget&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4895'&gt;WICKET-4895&lt;/a&gt; - WicketRuntimeException: addOrReplace for feedback panel does not clear Component.FEEDBACK_LIST - feedback from replaced component causes error.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4899'&gt;WICKET-4899&lt;/a&gt; - autocomplete shows strings with quotes strings as string2 with &amp;#34;quote&amp;#34;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4900'&gt;WICKET-4900&lt;/a&gt; - Setting a status code on an AbstractResource results in no HTTP body&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4908'&gt;WICKET-4908&lt;/a&gt; - Wrong charset or screwed up characters in Norwegian properties-file&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4911'&gt;WICKET-4911&lt;/a&gt; - Palette Ajax update does not work&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4913'&gt;WICKET-4913&lt;/a&gt; - HtmlDocumentParser does not support tags containing number (e.g. h1-h6)&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4915'&gt;WICKET-4915&lt;/a&gt; - org.apache.wicket.util.resource.Patht#find fails on Windows&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4916'&gt;WICKET-4916&lt;/a&gt; - AbstractTree$TreeItem renderHead does not call renderHead for child TreeItems.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4917'&gt;WICKET-4917&lt;/a&gt; - Websockets are not working if URL has a hash in it&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4918'&gt;WICKET-4918&lt;/a&gt; - LazyInitProxyFactory prevents using package private interfaces&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4920'&gt;WICKET-4920&lt;/a&gt; - Rendered Url on root context with cookies disabled might result in double slash //&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4922'&gt;WICKET-4922&lt;/a&gt; - Cloned ServletWebRequest returns wrong OriginalUrl&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4923'&gt;WICKET-4923&lt;/a&gt; - CryptoMapper ignores original queryString parameters&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id='improvement'&gt;Improvement&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4873'&gt;WICKET-4873&lt;/a&gt; - Support different session id parameter&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4876'&gt;WICKET-4876&lt;/a&gt; - CheckBoxMultipleChoice should implement getAdditionalAttributes as RadioChoice&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4887'&gt;WICKET-4887&lt;/a&gt; - Use a Set to keep the supported wicket elements in WicketTagIdentifier&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4889'&gt;WICKET-4889&lt;/a&gt; - Label constructor should accept Serializable as label&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4892'&gt;WICKET-4892&lt;/a&gt; - Provide helpful exception message in RequestCycle#urlFor()&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4901'&gt;WICKET-4901&lt;/a&gt; - AjaxPagingNaviagtionLink should provide updateAjaxAttributes like AjaxLink&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4902'&gt;WICKET-4902&lt;/a&gt; - ConcatBundleResource should use the respective ITextResourceCompressor&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4924'&gt;WICKET-4924&lt;/a&gt; - Websocket broadcast support does not work with OSGi&lt;/p&gt;
+
+&lt;h4 id='new_feature'&gt;New Feature&lt;/h4&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4832'&gt;WICKET-4832&lt;/a&gt; - Websocket broadcast support&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4879'&gt;WICKET-4879&lt;/a&gt; - Implementing channels in wicket-atmosphere&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4883'&gt;WICKET-4883&lt;/a&gt; - Out of the box bean-validation (JSR 303) integration&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4888'&gt;WICKET-4888&lt;/a&gt; - Introduce a hierarchical feedback panel (FencedFeedbackPanel)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id='task'&gt;Task&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4885'&gt;WICKET-4885&lt;/a&gt; - Upgrade jQuery to its latest stable version (1.8.3)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Apache Wicket 6.3.0 released</title>
@@ -598,105 +784,6 @@
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.8'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 6.0.0-beta3 released</title>
-   <link href="http://wicket.apache.org/2012/07/16/wicket-6.0.0-beta3-released.html"/>
-   <updated>2012-07-16T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2012/07/16/wicket-6.0.0-beta3-released</id>
-   <content type="html">&lt;p&gt;The Wicket team is proud to announce the third beta release of the Wicket 6.x series. This release is an intermediary release just before we give you 6.0.0 final.&lt;/p&gt;
-
-&lt;p&gt;There are no more planned API breaks but if you find something that can be made better now it the time to discuss it! The next planned release is 6.0.0 final, so speak now or forever be silenced (or learn to live with it until 7.0.0 comes out).&lt;/p&gt;
-
-&lt;p&gt;Any feedback about the new features, their implementation and their documentation is very welcome!&lt;/p&gt;
-
-&lt;h1 id='new_and_noteworthy_in_600beta3'&gt;New and Noteworthy in 6.0.0-beta3&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTA BENE:&lt;/strong&gt; the use of modules that are marked experimental, by being part of the sub module &amp;#8216;wicket-experimental&amp;#8217;, are really that: experimental. These modules can change, disappear or blow up your computer without notice and you really use/depend on them at your own risk.&lt;/p&gt;
-
-&lt;h2 id='wicket_native_websockets'&gt;Wicket Native Websockets&lt;/h2&gt;
-
-&lt;p&gt;A new &lt;strong&gt;experimental&lt;/strong&gt; module has been added to Wicket 6 - Wicket Native WebSocket. This module adds support for using HTML5 WebSockets as you may use Ajax in your Wicket applications.&lt;/p&gt;
-
-&lt;p&gt;All you have to do is to add a WebSocketBehavior to your page and from there on you can receive messages from the clients and push messages back to them.&lt;/p&gt;
-
-&lt;p&gt;At &lt;a href='https://cwiki.apache.org/confluence/x/0vSoAQ'&gt;our wiki&lt;/a&gt; you may find the documentation and a link to a demo application.&lt;/p&gt;
-
-&lt;p&gt;If something is not clear feel free to ask your question in the mailing lists and we will improve the documentation.&lt;/p&gt;
-
-&lt;h2 id='wicket_bootstrap'&gt;Wicket Bootstrap&lt;/h2&gt;
-
-&lt;p&gt;The &lt;strong&gt;experimental&lt;/strong&gt; modules now contain a new module for integration with Twitter&amp;#8217;s Bootstrap. Currently this module only provides a central way of using the Bootstrap resources. In the future we will provide proper components and behaviors for the Bootstrap concepts.&lt;/p&gt;
-
-&lt;p&gt;To use this new &lt;strong&gt;experimental&lt;/strong&gt; module, add this to your pom:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.apache.wicket&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;wicket-bootstrap&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;0.1&amp;lt;/version&amp;gt;
-&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To add Bootstrap support to your pages, add this in the &lt;code&gt;renderHead&lt;/code&gt; method:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;@Override
-public void renderHead(IHeaderResponse response) {
-    super.renderHead(response);
-
-    Bootstrap.renderHead(response);
-}&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will render a dependency to the Twitter bootstrap CSS and JS files, including the required dependency to JQuery.&lt;/p&gt;
-
-&lt;h2 id='new_wicket_examples'&gt;New Wicket Examples&lt;/h2&gt;
-
-&lt;p&gt;We have started an effort to revamp the tried and tested Wicket Examples and bring them into 2012. The new examples are located in the &lt;strong&gt;experimental&lt;/strong&gt; module.&lt;/p&gt;
-
-&lt;p&gt;It is currently a copy of Twitter Bootstrap&amp;#8217;s design but with Wicket specific filling.&lt;/p&gt;
-
-&lt;p&gt;You can test the examples by running the&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;wicket-examples-jar/src/test/java/Start.java&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;class in the default package.&lt;/p&gt;
-
-&lt;p&gt;The examples will feature a component reference with typical use cases, full examples such as Hello, World, and descriptions of the code in play.&lt;/p&gt;
-
-&lt;h2 id='wicket_atmosphere'&gt;Wicket Atmosphere&lt;/h2&gt;
-
-&lt;p&gt;Wicket Atmosphere in the experimental modules has seen an upgrade of the Atmosphere dependency to 1.0.0-beta3. This has caused an incompatibility with Jetty 7.6.3 (used with Wicket and the examples). To mitigate this, you need to override either:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the dependency on Jetty to 8.1.3 or newer, or&lt;/li&gt;
-
-&lt;li&gt;the dependency on Atmosphere to 0.9.5 (0.9.6 and 0.9.7 are broken as well)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;See &lt;a href='https://issues.apache.org/jira/browse/WICKET-4656'&gt;WICKET-4656&lt;/a&gt; for more information regarding this issue.&lt;/p&gt;
-
-&lt;h1 id='this_release'&gt;This release&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Check the roadmap with a list of the major goals: &lt;a href='https://cwiki.apache.org/WICKET/wicket-60-roadmap.html'&gt;6.0 roadmap&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;And the migration guide with all major and some minor changes between 1.5.x and 6.x series: &lt;a href='http://s.apache.org/wicket-6.0-migration'&gt;migration guide&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;The Jira changelog of all closed ticket at Jira: &lt;a href='http://s.apache.org/wicket-6.0.0-beta3-changelog'&gt;changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To use it in Maven:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.apache.wicket&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;wicket-core&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;6.0.0-beta3&amp;lt;/version&amp;gt;
-&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you don’t use a dependencies management build tool then you can download the full distribution (including source) and build from source yourself.&lt;/p&gt;
-
-&lt;p&gt;Have fun,&lt;/p&gt;
-
-&lt;p&gt;The Wicket team!&lt;/p&gt;</content>
  </entry>
  
 </feed>
