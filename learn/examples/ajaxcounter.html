@@ -186,8 +186,7 @@
     <span class='nt'>&lt;/p&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>The link component will refresh the page and the label will replace the text &#8216;nr of times&#8217; with the count. Take a look at the following Java file to see how it works on the Java side:</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>wicket</span><span class='o'>.</span><span class='na'>quickstart</span><span class='o'>;</span>
 
@@ -213,8 +212,7 @@
         <span class='n'>add</span><span class='o'>(</span><span class='k'>new</span> <span class='n'>Label</span><span class='o'>&lt;</span><span class='n'>Integer</span><span class='o'>&gt;(</span><span class='s'>&quot;counter&quot;</span><span class='o'>,</span> <span class='n'>model</span><span class='o'>));</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>In this class we created a <code>Model</code> subclass that increases its counter everytime the <code>getObject</code> method gets called, and returns its value. We set this model on the label component, so that each time the label gets rendered the counter gets increased.</p>
 
 <p>The link doesn&#8217;t do anything, just listen to the requests and update the page. If you run this code in your application (download the Quickstart project and copy/paste the code in the homepage for a quick experience).</p>
@@ -250,8 +248,7 @@
         <span class='n'>add</span><span class='o'>(</span><span class='k'>new</span> <span class='n'>Label</span><span class='o'>&lt;</span><span class='n'>Integer</span><span class='o'>&gt;(</span><span class='s'>&quot;counter&quot;</span><span class='o'>,</span> <span class='n'>model</span><span class='o'>));</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>As you can see, the <code>Link</code> has been replaced with the <code>AjaxFallbackLink</code>, and the <code>onClick</code> method now takes a new argument: the <code>AjaxRequestTarget</code>. If you want a component to be updated in the Ajax request, you&#8217;ll have to add them to the target. So let&#8217;s alter the file to make it possible to add the label to the request target.</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>wicket</span><span class='o'>.</span><span class='na'>quickstart</span><span class='o'>;</span>
 
@@ -283,8 +280,7 @@
         <span class='n'>add</span><span class='o'>(</span><span class='n'>label</span><span class='o'>);</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>We&#8217;ve moved the instantiation of the label to the beginning of the page constructor and made a local, final variable. This way we can reference the label in the event handler of the link component.</p>
 
 <p>We also had to call <code>setOutputMarkupId(true)</code> on the label to be able to update the component when the request is returned to the client browser. If we don&#8217;t, Wicket will not know how to update the markup in the client.</p>
