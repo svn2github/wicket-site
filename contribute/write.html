@@ -95,7 +95,7 @@
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.10">Wicket 1.5</a>
 		</li>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.21">Wicket 1.4</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.4.22">Wicket 1.4</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.3.7">Wicket 1.3</a>
@@ -202,12 +202,19 @@
 <p>Before you can edit the site, you need to check it out from SVN:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>svn co https://svn.apache.org/repos/asf/wicket/common/site/trunk wicket-site</span>
 </code></pre></div>
-<h2 id='run'>Run the site</h2>
+<h2 id='generate'>Generating the site</h2>
 
-<p>You can run the website by starting jekyll in the checked out directory:</p>
+<p>You can regenerate the site in the checked out directory:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>./regenerate.sh</span>
 </code></pre></div>
-<p>This not only runs the server, but watches for modifications and regenerates any modified files. Note that this script restores Subversion (<code>.svn</code>) subfolders inside <code>_site</code>, which are erased when Jekyll is generating the content.</p>
+<p>Note that this script restores Subversion (<code>.svn</code>) subfolders inside <code>_site</code>, which are erased when Jekyll is generating the content.</p>
+
+<h2 id='run'>Run the site</h2>
+
+<p>You can run the website and edit it live:</p>
+<div class='highlight'><pre><code class='console'><span class='go'>./liveedit.sh</span>
+</code></pre></div>
+<p>This not only runs the server, but watches for modifications and regenerates any modified files.</p>
 
 <p>You can check out the website running at <a href='http://localhost:4000'>localhost, port 4000</a>.</p>
 
