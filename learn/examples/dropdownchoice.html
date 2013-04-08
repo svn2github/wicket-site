@@ -190,11 +190,12 @@
     <span class='cm'>/**</span>
 <span class='cm'>     * Gets the list of possible managers from the database.</span>
 <span class='cm'>     */</span>
-    <span class='kd'>public</span> <span class='kd'>static</span> <span class='n'>List</span><span class='o'>&lt;</span><span class='n'>Person</span><span class='o'>&gt;</span> <span class='nf'>getManagers</span><span class='o'>()</span> <span class='o'>{</span>
+    <span class='kd'>public</span> <span class='kd'>static</span> <span class='n'>List</span><span class='o'>&lt;</span><span class='n'>Person</span><span class='o'>&gt;</span> <span class='n'>getManagers</span><span class='o'>()</span> <span class='o'>{</span>
         <span class='c1'>// gets the managers from the database</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <h2 id='the_assign_manager_page'>The assign manager page</h2>
 
 <p>Next we want to create a page where we assign a manager to an employee. This is how the page would look like in HTML:</p>
@@ -220,7 +221,8 @@
 <span class='nt'>&lt;/form&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>This page has three components:</p>
 
 <ul>
@@ -253,7 +255,8 @@
         <span class='n'>form</span><span class='o'>.</span><span class='na'>add</span><span class='o'>(</span><span class='n'>ddc</span><span class='o'>));</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>In this example you see that we add the <code>DropDownChoice</code> to the form, and provide it with 3 parameters. The first is the component identifier. The second is the item that needs to be updated, in this case the <code>managedBy</code> field of the <code>employee</code>. The third parameter is a <code>LoadableDetachableModel</code> that retrieves the list of available choices.</p>
 
 <p>Note that the <code>DropDownChoice</code> component has many constructors, and that you need to read the JavaDoc documentation to pick the right one for you.</p>
@@ -271,7 +274,8 @@
         <span class='nt'>&lt;/select&gt;</span>
     <span class='nt'>&lt;/td&gt;</span>
 <span class='nt'>&lt;/tr&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>As you can see from this markup is that Wicket added the items of the managers list and numbered the values of the options. These are the indices of the items in the list. If the order of the list can change between requests, <em>or</em> if the list itself can change, then please use an <code>IChoiceRenderer</code>.</p>
 
 <h2 id='selecting_a_choice'>Selecting a choice</h2>
@@ -301,7 +305,8 @@
 <span class='n'>newEmployee</span><span class='o'>.</span><span class='na'>setManagedBy</span><span class='o'>(</span><span class='n'>manager</span><span class='o'>);</span>
 
 <span class='n'>setResponsePage</span><span class='o'>(</span><span class='k'>new</span> <span class='n'>AssignManagerPage</span><span class='o'>(</span><span class='n'>newEmployee</span><span class='o'>));</span>
-</code></pre></div>
+</code></pre>
+</div>
 <h2 id='summary'>Summary</h2>
 
 <p>This concludes the (small) example of using a <code>DropDownChoice</code> component correctly. The ideas behind Wicket are perfectly reflected in this component: work with your domain objects, bind them to your components and get on with the rest of your application.</p>
