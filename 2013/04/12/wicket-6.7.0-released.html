@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Apache Wicket - Welcome to Apache Wicket</title>
+    <title>Apache Wicket - Apache Wicket 6.7.0 released</title>
 
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
 
@@ -167,40 +167,57 @@
 </div>
 
 		<div id="contentbody">
-			<h1>Welcome to Apache Wicket</h1>
-			<p>With proper mark-up/logic separation, a POJO data model, and a refreshing lack of XML, Apache Wicket makes developing web-apps simple and enjoyable again. Swap the boilerplate, complex debugging and brittle code for powerful, reusable components written with plain Java and HTML.</p>
+			<h1>Apache Wicket 6.7.0 released</h1>
+			<p>The Apache Wicket PMC is proud to announce Apache Wicket 6.7.0!</p>
 
-<ul>
-<li>Check the <a href='meet/features.html'>feature list</a></li>
+<p>This release marks the seventh minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p>
 
-<li>Read some <a href='meet/buzz.html'>Wicket buzz</a>, some <a href='meet/blogs.html'>Wicket blogs</a></li>
+<h3 id='new_and_noteworthy'>New and noteworthy</h3>
 
-<li>Find out why you should <a href='meet/introduction.html'>use Wicket</a></li>
+<h4 id='webfonts_are_now_supported'>webfonts are now supported</h4>
 
-<li>Check out some selected <a href='learn/examples'>examples in detail</a> or see them and many more in <a href='http://www.wicket-library.com/wicket-examples/'>live action</a></li>
+<p>Our resource guard that prevents access to classpath resources that are not intended to be shared through the web server is a whitelist of permissable resource extensions. Typically images, JavaScript files, stylesheets are on the whitelist, but the file types for webfonts were blocked. From Wicket 6.7 and onward you can now embed webfonts with your components and link to them from your stylesheets.</p>
 
-<li>Take a look at our live <a href='http://www.wicket-library.com/wicket-examples/compref/'>component reference</a></li>
+<h4 id='render_a_page_or_component_to_a_string'>Render a page or component to a String</h4>
 
-<li>Go and <a href='start/download.html'>download Wicket</a></li>
+<p>One of the issues that keeps propping up on the user lists is the ability to render a page or component to a String so that you can use Wicket to render HTML email messages. Now you can use <a href='http://ci.apache.org/projects/wicket/apidocs/6.0.x/org/apache/wicket/core/util/string/ComponentRenderer.html'>ComponentRenderer</a> to actually do so without having to resort to other less obvious methods.</p>
 
-<li>See what <a href='learn/projects'>extras are available</a></li>
-</ul>
+<p>ComponentRenderer exposes two methods: <code>renderComponent</code> and <code>renderPage</code> and they do exactly what their names suggest. Happy emailing!</p>
 
-<p>Wicket is released under the <a href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache License, Version 2.0</a>.</p>
+<h3 id='using_this_release'>Using this release</h3>
 
-<h1 id='apache_wicket_670_released'><a href='/2013/04/12/wicket-6.7.0-released.html'>Apache Wicket 6.7.0 released</a></h1>
-<p>The Apache Wicket PMC is proud to announce Apache Wicket 6.7.0!</p><p>This release marks the seventh minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p><h3 id='new_and_noteworthy'>New and noteworthy</h3><h4 id='webfonts_are_now_supported'>webfonts are now supported</h4><p>Our resource guard that prevents access to classpath resources that are not intended to be shared through the web server is a whitelist of permissable resource extensions. Typically images, JavaScript files, stylesheets are on the whitelist, but the file types for webfonts were blocked. From Wicket 6.7 and onward you can now embed webfonts with your components and link to them from your stylesheets.</p><h4 id='render_a_page_or_component_to_a_string'>Render a page or component to a String</h4><p>One of the issues that keeps propping up on the user lists is the ability to render a page or component to a String so that you can use Wicket to render HTML email messages. Now you can use <a href='http://ci.apache.org/projects/wicket/apidocs/6.0.x/org/apache/wicket/core/util/string/ComponentRenderer.html'>ComponentRenderer</a> to actually do so without having to resort to other less obvious methods.</p><p>ComponentRenderer exposes two methods: <code>renderComponent</code> and <code>renderPage</code> and they do exactly what their names suggest. Happy emailing!</p><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+<p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p>
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
     <span class='nt'>&lt;version&gt;</span>6.7.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre></div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
+</code></pre></div>
+<p>Or download and build the distribution yourself, or use our convenience binary package</p>
+
+<ul>
 <li>Source: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.7.0'>http://www.apache.org/dyn/closer.cgi/wicket/6.7.0</a></li>
 
 <li>Binary: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.7.0/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.7.0/binaries</a></li>
-</ul><h3 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h3><p>If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at</p><ul>
+</ul>
+
+<h3 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h3>
+
+<p>If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at</p>
+
+<ul>
 <li><a href='http://s.apache.org/wicket-6.0-migration'>http://s.apache.org/wicket-6.0-migration</a></li>
-</ul><p>Have fun!</p><p>— The Wicket team</p><h3 id='release_notes__wicket__version_670'>Release Notes - Wicket - Version 6.7.0</h3><h4 id='bug'>Bug</h4><ul>
+</ul>
+
+<p>Have fun!</p>
+
+<p>— The Wicket team</p>
+
+<h3 id='release_notes__wicket__version_670'>Release Notes - Wicket - Version 6.7.0</h3>
+
+<h4 id='bug'>Bug</h4>
+
+<ul>
 <li><a href='https://issues.apache.org/jira/browse/WICKET-4658'>WICKET-4658</a> - TabbedPanel CSS &#8220;last&#8221; is wrong if last step is not visible</li>
 
 <li><a href='https://issues.apache.org/jira/browse/WICKET-4803'>WICKET-4803</a> - UrlDecoder should log a message when invalid input is provided</li>
@@ -300,7 +317,11 @@
 <li><a href='https://issues.apache.org/jira/browse/WICKET-5138'>WICKET-5138</a> - Wicket does not correctly handle http OPTIONS requests</li>
 
 <li><a href='https://issues.apache.org/jira/browse/WICKET-5141'>WICKET-5141</a> - Exception while rendering absolute URL with UrlResourceReference</li>
-</ul><h4 id='improvement'>Improvement</h4><ul>
+</ul>
+
+<h4 id='improvement'>Improvement</h4>
+
+<ul>
 <li><a href='https://issues.apache.org/jira/browse/WICKET-4115'>WICKET-4115</a> - SignInPanel should not always redirect to the Home page when the user is signed-in automaticaly with the remember-me feature.</li>
 
 <li><a href='https://issues.apache.org/jira/browse/WICKET-5005'>WICKET-5005</a> - Add Utility to allow conversion from Panel (or Component) to html String</li>
@@ -350,79 +371,19 @@
 <li><a href='https://issues.apache.org/jira/browse/WICKET-5137'>WICKET-5137</a> - Improve TagTester support for Ajax responses</li>
 
 <li><a href='https://issues.apache.org/jira/browse/WICKET-5139'>WICKET-5139</a> - Missing French translations</li>
-</ul><h4 id='task'>Task</h4><ul>
+</ul>
+
+<h4 id='task'>Task</h4>
+
+<ul>
 <li><a href='https://issues.apache.org/jira/browse/WICKET-5097'>WICKET-5097</a> - Deprecate BaseWicketTester#startComponent(Component)</li>
-</ul><h4 id='test'>Test</h4><ul>
+</ul>
+
+<h4 id='test'>Test</h4>
+
+<ul>
 <li><a href='https://issues.apache.org/jira/browse/WICKET-5042'>WICKET-5042</a> - Cleanup FilteringHeaderResponseTest to make it more readable</li>
 </ul>
-<h1 id='cve20125636__apache_wicket_xss_vulnerability'><a href='/2013/03/03/cve-2012-5636.html'>CVE-2012-5636 - Apache Wicket XSS vulnerability</a></h1>
-<p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache Wicket 1.4.x, 1.5.x and 1.6.x</p><p>Description: It is possible for JavaScript statements to break out of a &#60;script&#62; tag in the rendered response. This might pose a security threat if the written JavaScript contains user provided data.</p><p>This vulnerability is fixed in <a href='https://wicket.apache.org/2012/12/14/wicket-6.4.0-released.html'>Apache Wicket 6.4.0</a>, <a href='https://wicket.apache.org/2013/02/26/wicket-1.5.10-released.html'>Apache Wicket 1.5.10</a> and Apache Wicket 1.4.22.</p><p>Credit: This issue was reported by Michael Riedel.</p><h1>Older news items</h1><ul>
-
-
-<li>
-        <a href='/2013/02/26/wicket-1.5.10-released.html'>Wicket 1.5.10 released</a> - <span>26 Feb 2013</span><br />
-        This is the tenth maintenance release of the Wicket 1.5.x series. This release brings over 28 bug fixes and improvements. Git tag Changelog To use...
-        <a href='/2013/02/26/wicket-1.5.10-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2013/02/15/wicket-6.6.0-released.html'>Apache Wicket 6.6.0 released</a> - <span>15 Feb 2013</span><br />
-        The Apache Wicket PMC is proud to announce Apache Wicket 6.6.0! This release marks the sixth minor release of Wicket 6. Starting with Wicket 6...
-        <a href='/2013/02/15/wicket-6.6.0-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2013/01/23/wicket-6.5.0-released.html'>Apache Wicket 6.5.0 released</a> - <span>23 Jan 2013</span><br />
-        The Apache Wicket PMC is proud to announce Apache Wicket 6.5.0! This release marks the fifth minor release of Wicket 6. Starting with Wicket 6...
-        <a href='/2013/01/23/wicket-6.5.0-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/12/14/wicket-6.4.0-released.html'>Apache Wicket 6.4.0 released</a> - <span>14 Dec 2012</span><br />
-        The Apache Wicket PMC is proud to announce Apache Wicket 6.4.0! This release marks the fourth minor release of Wicket 6. Starting with Wicket 6...
-        <a href='/2012/12/14/wicket-6.4.0-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/11/16/wicket-6.3.0-released.html'>Apache Wicket 6.3.0 released</a> - <span>16 Nov 2012</span><br />
-        The Apache Wicket PMC is proud to announce Apache Wicket 6.3.0! This release marks the third minor release of Wicket 6. Starting with Wicket 6...
-        <a href='/2012/11/16/wicket-6.3.0-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/11/09/wicket-1.5.9-released.html'>Wicket 1.5.9 released</a> - <span>09 Nov 2012</span><br />
-        This is the nineth maintenance release of the Wicket 1.5.x series. This release brings over 48 bug fixes and improvements. Git tag Changelog To use...
-        <a href='/2012/11/09/wicket-1.5.9-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/10/23/wicket-6.2.0-released.html'>Apache Wicket 6.2.0 released</a> - <span>23 Oct 2012</span><br />
-        The Apache Wicket PMC is proud to announce Apache Wicket 6.2.0! This release marks the second minor release of Wicket 6. Starting with Wicket 6...
-        <a href='/2012/10/23/wicket-6.2.0-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/10/08/wicket-6.1.1-released.html'>Apache Wicket 6.1.1 released</a> - <span>08 Oct 2012</span><br />
-        The Apache Wicket PMC is proud to announce Apache Wicket 6.1.1! This release marks the first patch release of Wicket 6. Starting with Wicket 6...
-        <a href='/2012/10/08/wicket-6.1.1-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/10/04/wicket-6.1.0-released.html'>Apache Wicket 6.1.0 released</a> - <span>04 Oct 2012</span><br />
-        The Apache Wicket PMC is proud to announce Apache Wicket 6.1.0! This release marks the first maintenance release of Wicket 6. Starting with Wicket 6...
-        <a href='/2012/10/04/wicket-6.1.0-released.html'>more</a></li>
-
-
-<li>
-        <a href='/2012/09/06/cve-2012-3373.html'>CVE-2012-3373 - Apache Wicket XSS vulnerability</a> - <span>06 Sep 2012</span><br />
-        Vendor: The Apache Software Foundation Versions Affected: Apache Wicket 1.4.x and 1.5.x Description: It is possible to inject JavaScript statements into an ajax link by...
-        <a href='/2012/09/06/cve-2012-3373.html'>more</a></li>
-
-</ul>
-<h1 id='books_about_wicket'>Books about Wicket</h1>
-
-<p>The following books are published regarding Apache Wicket (click a cover to learn more about the book):</p>
-<a href='/learn/books/awc.html'><img height='200px' src='/learn/books/awc.png' /></a><a href='/learn/books/wia.html'><img height='200px' src='/learn/books/wia.png' /></a><a href='/learn/books/ewdww.html'><img height='200px' src='/learn/books/ewdww.png' /></a><a href='/learn/books/prowicket.html'><img height='200px' src='/learn/books/prowicket.png' /></a><a href='/learn/books/kwij.html'><img height='200px' src='/learn/books/kwij.png' /></a><a href='/learn/books/praxisbuchwicket.html'><img height='200px' src='/learn/books/praxisbuchwicket.png' /></a><a href='/learn/books/wicket-jp.html'><img height='200px' src='/learn/books/wicket-jp.png' /></a><a href='/learn/books/koda.html'><img height='200px' src='/learn/books/koda.jpg' /></a>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
