@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2013-04-18T11:26:49+02:00</updated>
+ <updated>2013-04-25T07:48:24+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -41,7 +41,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.7.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -270,7 +271,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.10&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.10'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
@@ -298,7 +300,8 @@
 &lt;p&gt;So you can use the following markup:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;label&lt;/span&gt; &lt;span class='na'&gt;wicket:for=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;someinput&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Some label&lt;span class='nt'&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;input&lt;/span&gt; &lt;span class='na'&gt;wicket:id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;someinput&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h4 id='added_a_callback_for_an_invalidated_session'&gt;Added a callback for an invalidated session&lt;/h4&gt;
 
 &lt;p&gt;Session is extended with a life cycle event called &lt;code&gt;onInvalidate()&lt;/code&gt;. This method is executed when the user session is invalidated either by explicit call to &lt;code&gt;org.apache.wicket.Session#invalidate()&lt;/code&gt; or due to HttpSession expiration.&lt;/p&gt;
@@ -313,7 +316,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.6.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -432,7 +436,8 @@
 		&lt;span class='n'&gt;attributes&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setChannel&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='n'&gt;AjaxChannel&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;globalAjaxChannel&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;AjaxChannel&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;Type&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;ACTIVE&lt;/span&gt;&lt;span class='o'&gt;));&lt;/span&gt;
 	&lt;span class='o'&gt;}&lt;/span&gt;
 &lt;span class='o'&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Each Ajax behavior/component can override such global settings.&lt;/p&gt;
 
 &lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
@@ -443,7 +448,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.5.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -533,7 +539,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-bean-validation&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.5&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Note that this is an experimental module and that it is not released under the SemVer rules. Use at your own risk.&lt;/p&gt;
 
 &lt;h4 id='hierarchical_feedback_panel'&gt;Hierarchical feedback panel&lt;/h4&gt;
@@ -552,7 +559,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.4.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -715,7 +723,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.3.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -812,7 +821,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.9&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.9'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
@@ -841,7 +851,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.2.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -978,7 +989,8 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.1.1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
