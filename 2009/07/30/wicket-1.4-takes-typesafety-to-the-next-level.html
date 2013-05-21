@@ -183,8 +183,7 @@
   <span class='nt'>&lt;artifactId&gt;</span>wicket<span class='nt'>&lt;/artifactId&gt;</span>
   <span class='nt'>&lt;version&gt;</span>1.4.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>You will need to upgrade all modules (i.e. wicket, wicket-extensions) to their 1.4 counterparts. It is not possible to mix Wicket 1.3 libraries with 1.4 libraries due to API changes.</p>
 
 <h2 id='most_notable_changes'>Most notable changes</h2>
@@ -213,14 +212,12 @@
 <div class='highlight'><pre><code class='java'><span class='kd'>public</span> <span class='kd'>class</span> <span class='nc'>DropDownChoice</span> <span class='kd'>extends</span> <span class='o'>...</span>
     <span class='kd'>public</span> <span class='nf'>DropDownChoice</span><span class='o'>(</span><span class='n'>String</span> <span class='n'>id</span><span class='o'>,</span> <span class='n'>IModel</span> <span class='n'>model</span><span class='o'>,</span> <span class='n'>IModel</span> <span class='n'>choices</span><span class='o'>)</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>As you can see, this constructor doesn&#8217;t give much insight into what goes where (other than the names of the parameters). The first parameter is the component identifier, the second parameter is the model that contains the selection, and the third parameter is a model that contains the list of choices from which the user can select one. You&#8217;ll have to read the JavaDoc to assign the right IModel values to the right parameters. Now take a look at the same constructor, but now in Wicket 1.4. The signature for our generified constructor looks like the following example.</p>
 <div class='highlight'><pre><code class='java'><span class='kd'>public</span> <span class='o'>&lt;</span><span class='n'>T</span><span class='o'>&gt;</span> <span class='n'>DropDownChoice</span> <span class='kd'>extends</span> <span class='o'>...</span>
     <span class='kd'>public</span> <span class='nf'>DropDownChoice</span><span class='o'>(</span><span class='n'>String</span> <span class='n'>id</span><span class='o'>,</span> <span class='n'>IModel</span><span class='o'>&lt;</span><span class='n'>T</span><span class='o'>&gt;</span> <span class='n'>model</span><span class='o'>,</span> <span class='n'>IModel</span><span class='o'>&lt;?</span> <span class='kd'>extends</span> <span class='n'>List</span><span class='o'>&lt;?</span> <span class='kd'>extends</span> <span class='n'>T</span><span class='o'>&gt;&gt;</span> <span class='n'>choices</span><span class='o'>)</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Here we communicate that the first <code>IModel</code> parameter is a <code>T</code>, which is the single value that will be provided when the <code>DropDownChoice</code> selects one value. The second parameter provides a <code>List</code> of objects that extend <code>T</code>, the choices from which to select one value. This was not apparent in the Wicket 1.3 API, and the type safety brought by generics make this much more clear, albeit much more verbose.</p>
 
 <h2 id='removal_of_default_model_from_component'>Removal of default model from component</h2>
@@ -236,8 +233,7 @@
             <span class='o'>});</span>
         <span class='o'>}</span>
     <span class='o'>};</span>
-</code></pre>
-</div>
+</code></pre></div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
