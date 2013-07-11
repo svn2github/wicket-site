@@ -147,7 +147,7 @@
 			<a href="/contribute/release.html" title="Release Wicket">Release Wicket</a>
 		</li>
 		<li>
-			<a href="http://fisheye6.atlassian.com/browse/wicket" title="SVN Overview" class="external-link" rel="nofollow">Fisheye</a>
+			<a href="https://fisheye6.atlassian.com/browse/wicket-git" title="Git Overview" class="external-link" rel="nofollow">Fisheye</a>
 		</li>
 	</ul>
 	<h5>
@@ -200,7 +200,8 @@
         This is in the super markup.<span class='nt'>&lt;br&gt;</span>
     <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>In this markup you see two sentences that surround the <code>&lt;wicket:child&gt;</code> tag. All markup in this file will remain when a sub class of this page is created, only the <code>&lt;wicket:child&gt;</code> tag will be replaced with the child markup. So if we look at the following markup:</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
@@ -212,7 +213,8 @@
     This is in the child markup.<span class='nt'>&lt;br&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>we can see the markup that should be included in the parent. Only the markup between the <code>&lt;wicket:extend&gt;</code> tags is included in the final page. Take a look at the following markup which is the final markup when you would use this in a Wicket application.</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
@@ -224,7 +226,8 @@
     This is in the super markup.<span class='nt'>&lt;br&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>Here you can see that the <code>&lt;wicket:child /&gt;</code> tag has been expanded, and its contents filled with exactly the markup between the <code>&lt;wicket:extend&gt;</code> tags. If you want to get rid of the special Wicket tags, you can disable that on the markup settings (<a href='http://wicketframework.org/api/wicket/settings/IMarkupSettings'>IMarkupSettings</a>).</p>
 
 <h2 id='implementing_the_basepage'>Implementing the BasePage</h2>
@@ -243,7 +246,8 @@
 		<span class='n'>add</span><span class='o'>(</span><span class='k'>new</span> <span class='n'>Label</span><span class='o'>(</span><span class='s'>&quot;footer&quot;</span><span class='o'>,</span> <span class='s'>&quot;This is in the footer&quot;</span><span class='o'>));</span>
 	<span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>The two links should go into the header, and the footer in the footer of the page. Note that the abstract keyword isn&#8217;t required, but considered a good practise. Now let&#8217;s take a look at the markup for the BasePage</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
@@ -260,7 +264,8 @@
 <span class='nt'>&lt;/div&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>In this markup file you see the specific basic layout: we have 3 div elements:</p>
 
 <ol>
@@ -285,7 +290,8 @@
 		<span class='n'>add</span><span class='o'>(</span><span class='k'>new</span> <span class='n'>Label</span><span class='o'>(</span><span class='s'>&quot;label1&quot;</span><span class='o'>,</span> <span class='s'>&quot;This is in the subclass Page1&quot;</span><span class='o'>));</span>
 	<span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>In this example you see that we add a new label component to the page: <code>label1</code>. This component is only available for <code>Page1</code>, as such <code>Page2</code> can define its own component hierarchy. Let&#8217;s take a look at the markup for <code>Page1</code>:</p>
 <div class='highlight'><pre><code class='java'><span class='o'>&lt;</span><span class='n'>html</span><span class='o'>&gt;</span>
 <span class='o'>&lt;</span><span class='n'>head</span><span class='o'>&gt;&lt;/</span><span class='n'>head</span><span class='o'>&gt;</span>
@@ -296,7 +302,8 @@
 <span class='o'>&lt;/</span><span class='nl'>wicket:</span><span class='n'>extend</span><span class='o'>&gt;</span>
 <span class='o'>&lt;/</span><span class='n'>body</span><span class='o'>&gt;</span>
 <span class='o'>&lt;/</span><span class='n'>html</span><span class='o'>&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>Here you see that we added the <code>Label</code> component in the markup between the <code>&lt;wicket:extend&gt;</code> tags. If we were to add the component outside those tags, Wicket will not be able to render the component in the final page.</p>
 
 <p>Now, let&#8217;s do the same for <code>Page2</code>.</p>
@@ -309,7 +316,8 @@
 		<span class='n'>add</span><span class='o'>(</span><span class='k'>new</span> <span class='n'>Label</span><span class='o'>(</span><span class='s'>&quot;label2&quot;</span><span class='o'>,</span> <span class='s'>&quot;This is in the subclass Page2&quot;</span><span class='o'>));</span>
 	<span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
+</code></pre>
+</div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
 <span class='nt'>&lt;wicket:extend&gt;</span>
@@ -318,7 +326,8 @@
 <span class='nt'>&lt;/wicket:extend&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>In <code>Page2</code> you see that we have a different component structure (<code>label2</code> instead of <code>label1</code>), and as such that the pages are quite different.</p>
 
 <p>If you paste this code into a Wicket quickstart application, you can see it immediately working (don&#8217;t forget to set the homepage to <code>Page1</code> or <code>Page2</code>).</p>
