@@ -89,7 +89,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.9.0">Wicket 6.9</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.9.1">Wicket 6.9</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.10">Wicket 1.5</a>
@@ -194,8 +194,7 @@
         <span class='k'>return</span> <span class='n'>HelloWorld</span><span class='o'>.</span><span class='na'>class</span><span class='o'>;</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Here you can see that we define <code>wicket.examples.helloworld.HelloWorld</code> to be our home page. When the base URL of our application is requested, the markup rendered by the HelloWorld page is returned.</p>
 
 <h3 id='helloworldjava'>HelloWorld.java</h3>
@@ -207,8 +206,7 @@
         <span class='n'>add</span><span class='o'>(</span><span class='k'>new</span> <span class='n'>Label</span><span class='o'>(</span><span class='s'>&quot;message&quot;</span><span class='o'>,</span> <span class='s'>&quot;Hello World!&quot;</span><span class='o'>));</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>The Label is constructed using two parameters:</p>
 
 <ol>
@@ -231,8 +229,7 @@
     <span class='nt'>&lt;span</span> <span class='na'>wicket:id=</span><span class='s'>&quot;message&quot;</span><span class='nt'>&gt;</span>Message goes here<span class='nt'>&lt;/span&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>In this file, you see two elements that need some attention:</p>
 
 <ul>
@@ -270,8 +267,7 @@
         <span class='nt'>&lt;url-pattern&gt;</span>/*<span class='nt'>&lt;/url-pattern&gt;</span>
     <span class='nt'>&lt;/filter-mapping&gt;</span>
 <span class='nt'>&lt;/web-app&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>In this definition you see the Wicket filter defined, which handles all requests. In order to let Wicket know which application is available, only the applicationClassName filter parameter is needed.</p>
 
 <p>Also, notice the url-mapping to /*. The Wicket filter will only process requests that are Wicket requests. If a request is not Wicket related, the filter will pass the request on to the chain. This ensures that (static) resources outside the realm of the Wicket application, such as style sheets, JavaScript files, images and so forth will be served by the container.</p>

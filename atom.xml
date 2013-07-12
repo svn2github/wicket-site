@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2013-07-11T07:11:17+03:00</updated>
+ <updated>2013-07-12T14:46:12+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -13,9 +13,78 @@
  
  
  <entry>
+   <title>Apache Wicket 6.9.1 released</title>
+   <link href="http://wicket.apache.org/2013/07/10/wicket-6.9.1-released+copy.html"/>
+   <updated>2013-07-10T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2013/07/10/wicket-6.9.1-released copy</id>
+   <content type="html">&lt;p&gt;The Apache Wicket PMC announces Apache Wicket 6.9.1!&lt;/p&gt;
+
+&lt;p&gt;This is a patch release for 6.9.0 where we inadvertently broke CDI injection into (amongst others) anonymous inner classes. See below for more information regarding this release.&lt;/p&gt;
+
+&lt;p&gt;Please note that this patch release &lt;strong&gt;only&lt;/strong&gt; fixes WICKET-5264.&lt;/p&gt;
+
+&lt;p&gt;Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
+
+&lt;h3 id='jquery_update_in_690'&gt;JQuery update in 6.9.0&lt;/h3&gt;
+
+&lt;p&gt;As of Wicket 6.9 we ship JQuery 1.10.1. The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from http://jquery.com/upgrade-guide/1.9/&lt;/p&gt;
+
+&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application&amp;#8217;s init method:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='nd'&gt;@Override&lt;/span&gt; 
+&lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;init&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
+        &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
+&lt;span class='o'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
+
+&lt;p&gt;In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
+Simple bean [EnhancedAnnotatedTypeImpl] private class
+com.example.HomePage$AForm cannot be a non-static inner class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href='https://issues.apache.org/jira/browse/WICKET-5264'&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+
+&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.9.1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.9.1'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+
+&lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'&gt;migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;
+
+&lt;p&gt;— The Wicket team&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Apache Wicket 6.9.0 released</title>
    <link href="http://wicket.apache.org/2013/06/27/wicket-6.9.0-released.html"/>
-   <updated>2013-06-27T00:00:00+03:00</updated>
+   <updated>2013-06-27T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2013/06/27/wicket-6.9.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.9.0!&lt;/p&gt;
 
@@ -28,8 +97,7 @@
     &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
         &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;DynamicJQueryResourceReference&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;INSTANCE&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
 &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Upgraded Atmoshpere (1.0.13) and Bootstrap (2.3.2) resources.&lt;/p&gt;
 
 &lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
@@ -40,8 +108,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.9.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -138,7 +205,7 @@
  <entry>
    <title>Apache Wicket 6.8.0 released</title>
    <link href="http://wicket.apache.org/2013/05/17/wicket-6.8.0-released.html"/>
-   <updated>2013-05-17T00:00:00+03:00</updated>
+   <updated>2013-05-17T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2013/05/17/wicket-6.8.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.8.0!&lt;/p&gt;
 
@@ -152,8 +219,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.8.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -256,7 +322,7 @@
  <entry>
    <title>Apache Wicket 6.7.0 released</title>
    <link href="http://wicket.apache.org/2013/04/12/wicket-6.7.0-released.html"/>
-   <updated>2013-04-12T00:00:00+03:00</updated>
+   <updated>2013-04-12T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2013/04/12/wicket-6.7.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.7.0!&lt;/p&gt;
 
@@ -282,8 +348,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.7.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -480,7 +545,7 @@
  <entry>
    <title>CVE-2012-5636 - Apache Wicket XSS vulnerability</title>
    <link href="http://wicket.apache.org/2013/03/03/cve-2012-5636.html"/>
-   <updated>2013-03-03T00:00:00+02:00</updated>
+   <updated>2013-03-03T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2013/03/03/cve-2012-5636</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -496,7 +561,7 @@
  <entry>
    <title>Wicket 1.5.10 released</title>
    <link href="http://wicket.apache.org/2013/02/26/wicket-1.5.10-released.html"/>
-   <updated>2013-02-26T00:00:00+02:00</updated>
+   <updated>2013-02-26T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2013/02/26/wicket-1.5.10-released</id>
    <content type="html">&lt;p&gt;This is the tenth maintenance release of the Wicket 1.5.x series. This release brings over 28 bug fixes and improvements.&lt;/p&gt;
 
@@ -512,8 +577,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.10&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.10'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
@@ -522,7 +586,7 @@
  <entry>
    <title>Apache Wicket 6.6.0 released</title>
    <link href="http://wicket.apache.org/2013/02/15/wicket-6.6.0-released.html"/>
-   <updated>2013-02-15T00:00:00+02:00</updated>
+   <updated>2013-02-15T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2013/02/15/wicket-6.6.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.6.0!&lt;/p&gt;
 
@@ -541,8 +605,7 @@
 &lt;p&gt;So you can use the following markup:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;label&lt;/span&gt; &lt;span class='na'&gt;wicket:for=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;someinput&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Some label&lt;span class='nt'&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;input&lt;/span&gt; &lt;span class='na'&gt;wicket:id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;someinput&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4 id='added_a_callback_for_an_invalidated_session'&gt;Added a callback for an invalidated session&lt;/h4&gt;
 
 &lt;p&gt;Session is extended with a life cycle event called &lt;code&gt;onInvalidate()&lt;/code&gt;. This method is executed when the user session is invalidated either by explicit call to &lt;code&gt;org.apache.wicket.Session#invalidate()&lt;/code&gt; or due to HttpSession expiration.&lt;/p&gt;
@@ -557,8 +620,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.6.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -651,7 +713,7 @@
  <entry>
    <title>Apache Wicket 6.5.0 released</title>
    <link href="http://wicket.apache.org/2013/01/23/wicket-6.5.0-released.html"/>
-   <updated>2013-01-23T00:00:00+02:00</updated>
+   <updated>2013-01-23T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2013/01/23/wicket-6.5.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.5.0!&lt;/p&gt;
 
@@ -677,8 +739,7 @@
 		&lt;span class='n'&gt;attributes&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setChannel&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='n'&gt;AjaxChannel&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;globalAjaxChannel&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;AjaxChannel&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;Type&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;ACTIVE&lt;/span&gt;&lt;span class='o'&gt;));&lt;/span&gt;
 	&lt;span class='o'&gt;}&lt;/span&gt;
 &lt;span class='o'&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Each Ajax behavior/component can override such global settings.&lt;/p&gt;
 
 &lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
@@ -689,8 +750,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.5.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -756,7 +816,7 @@
  <entry>
    <title>Apache Wicket 6.4.0 released</title>
    <link href="http://wicket.apache.org/2012/12/14/wicket-6.4.0-released.html"/>
-   <updated>2012-12-14T00:00:00+02:00</updated>
+   <updated>2012-12-14T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/12/14/wicket-6.4.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.4.0!&lt;/p&gt;
 
@@ -780,8 +840,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-bean-validation&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.5&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note that this is an experimental module and that it is not released under the SemVer rules. Use at your own risk.&lt;/p&gt;
 
 &lt;h4 id='hierarchical_feedback_panel'&gt;Hierarchical feedback panel&lt;/h4&gt;
@@ -800,8 +859,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.4.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -942,7 +1000,7 @@
  <entry>
    <title>Apache Wicket 6.3.0 released</title>
    <link href="http://wicket.apache.org/2012/11/16/wicket-6.3.0-released.html"/>
-   <updated>2012-11-16T00:00:00+02:00</updated>
+   <updated>2012-11-16T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2012/11/16/wicket-6.3.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.3.0!&lt;/p&gt;
 
@@ -964,8 +1022,7 @@
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.3.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1040,32 +1097,6 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4855'&gt;WICKET-4855&lt;/a&gt; - Upgrade JQuery to 1.8.2&lt;/li&gt;
-&lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.5.9 released</title>
-   <link href="http://wicket.apache.org/2012/11/09/wicket-1.5.9-released.html"/>
-   <updated>2012-11-09T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2012/11/09/wicket-1.5.9-released</id>
-   <content type="html">&lt;p&gt;This is the nineth maintenance release of the Wicket 1.5.x series. This release brings over 48 bug fixes and improvements.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/release/wicket.1.5.9'&gt;Git tag&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12322962'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.9&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.9'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
