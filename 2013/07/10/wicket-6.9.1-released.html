@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Apache Wicket - Books — Enjoying Web Development with Wicket</title>
+    <title>Apache Wicket - Apache Wicket 6.9.1 released</title>
 
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
 
@@ -170,64 +170,69 @@
 </div>
 
 		<div id="contentbody">
-			<h1>Books — Enjoying Web Development with Wicket</h1>
-			<p>Enjoying Web Development with Wicket is written by Kent Tong and is self published.</p>
+			<h1>Apache Wicket 6.9.1 released</h1>
+			<p>The Apache Wicket PMC announces Apache Wicket 6.9.1!</p>
 
-<h2 id='description'>Description</h2>
+<p>This is a patch release for 6.9.0 where we inadvertently broke CDI injection into (amongst others) anonymous inner classes. See below for more information regarding this release.</p>
 
-<p>If you&#8217;d like to create AJAX web-based applications easily, then this book is for you. More importantly, it shows you how to do that with joy and feel good about your own work! You don&#8217;t need to know servlet or JSP while your productivity will be much higher than using servlet or JSP directly. This is possible because we&#8217;re going to use a library called Wicket that makes complicated stuff simple and elegant.</p>
+<p>Please note that this patch release <strong>only</strong> fixes WICKET-5264.</p>
 
-<p>How does it do that? First, it allows the web designer to work on the static contents and design of a page while allowing the developer to work on the dynamic contents of that page without stepping on each other&#8217;s toes; Second, it allows developers to work with high level concepts such as objects and properties instead of HTTP URLs, query parameters or HTML string values; Third, it comes with powerful components such as calendar, tree and data grid and it allows you to create your own components for reuse in your own project.</p>
+<p>Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p>
 
-<p>However, don&#8217;t take our word for it! This book will quickly walk you through real world use cases to show you how to use Wicket and leave it up to you to judge.</p>
+<h3 id='jquery_update_in_690'>JQuery update in 6.9.0</h3>
 
-<h2 id='about_the_author'>About the author</h2>
+<p>As of Wicket 6.9 we ship JQuery 1.10.1. The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from http://jquery.com/upgrade-guide/1.9/</p>
 
-<p>Kent Ka Iok Tong is the manager of the IT department of the Macau Productivity and Technology Transfer Center. With a Master degree in Computer Science from the New South Wales University, Sydney, Australia and having won the &#8220;Macao Programming Competition (Open Category)&#8221; in 1992, Mr. Tong has been involved in professional software development, training and project management since 1993. He is the author of several popular books on web technologies including Developing Web Services with Apache CXF and Axis2. He has also created an open source project &#8220;Wicket Page Test&#8221; for unit testing Wicket pages.</p>
+<p>If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application&#8217;s init method:</p>
 
-<h2 id='book_details'>Book details</h2>
-<table>
-	<tr>
-		<th>Title</th>
-		<td>Enjoying Web Development with Wicket (2nd edition)</td>
-	</tr>
-	<tr>
-		<th>Author</th>
-		<td>Kent Tong</td>
-	</tr>
-	<tr>
-		<th>Version covered</th>
-		<td>Wicket 1.4</td>
-	</tr>
-	<tr>
-		<th>URL</th>
-		<td><a href='http://www.agileskills2.org/EWDW/'>Enjoying Web Development with Wicket</a></td>
-	</tr>
-	<tr>
-		<th>Paperback</th>
-		<td>~358 pages</td>
-	</tr>
-	<tr>
-		<th>Date</th>
-		<td>April, 2010</td>
-	</tr>
-	<tr>
-		<th>Language</th>
-		<td>English</td>
-	</tr>
-	<tr>
-		<th>ISBN-10</th>
-		<td>0557522463</td>
-	</tr>
-	<tr>
-		<th>ISBN-13</th>
-		<td>978-0557522460</td>
-	</tr>
-	<tr>
-		<th>Buy</th>
-		<td><a href='http://www.agileskills2.org/EWDW/'>AgileSkills</a></td>
-	</tr>
-</table>
+<p><div class='highlight'><pre><code class='java'><span class='nd'>@Override</span> 
+<span class='kd'>protected</span> <span class='kt'>void</span> <span class='nf'>init</span><span class='o'>()</span> <span class='o'>{</span>
+    <span class='n'>getJavaScriptLibrarySettings</span><span class='o'>()</span>
+        <span class='o'>.</span><span class='na'>setJQueryReference</span><span class='o'>(</span><span class='n'>yourJquery183ResourceReference</span><span class='o'>);</span>
+<span class='o'>}</span>
+</code></pre></div></p>
+
+<h3 id='cdi_injection_issue'>CDI injection issue</h3>
+
+<p>In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:</p>
+<div class='highlight'><pre><code class='text'>Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
+Simple bean [EnhancedAnnotatedTypeImpl] private class
+com.example.HomePage$AForm cannot be a non-static inner class
+</code></pre></div>
+<p>This was reported as <a href='https://issues.apache.org/jira/browse/WICKET-5226'>WICKET-5226</a>, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.</p>
+
+<p>Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see <a href='https://issues.jboss.org/browse/WELD-1441'>WELD-1441</a>)</p>
+
+<p>Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read <a href='https://issues.apache.org/jira/browse/WICKET-5264'>WICKET-5264</a></p>
+
+<h3 id='using_this_release'>Using this release</h3>
+
+<p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p>
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.9.1<span class='nt'>&lt;/version&gt;</span>
+<span class='nt'>&lt;/dependency&gt;</span>
+</code></pre></div>
+<p>Or download and build the distribution yourself, or use our convenience binary package</p>
+
+<ul>
+<li>Source: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.9.1'>http://www.apache.org/dyn/closer.cgi/wicket/6.9.1</a></li>
+
+<li>Binary: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries</a></li>
+</ul>
+
+<h3 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h3>
+
+<p>If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at</p>
+
+<ul>
+<li><a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'>migration to Wicket 6.0</a></li>
+</ul>
+
+<p>Have fun!</p>
+
+<p>— The Wicket team</p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
