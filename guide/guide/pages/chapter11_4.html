@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>11.4 Submit form with an IFormSubmittingComponent 1.0.0.BUILD-SNAPSHOT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter1.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter2.html"><strong>2</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter3.html"><strong>3</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter4.html"><strong>4</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter5.html"><strong>5</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter6.html"><strong>6</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter7.html"><strong>7</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter8.html"><strong>8</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter9.html"><strong>9</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter10.html"><strong>10</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter11.html"><strong>11</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter12.html"><strong>12</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter13.html"><strong>13</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter14.html"><strong>14</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter15.html"><strong>15</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter16.html"><strong>16</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter17.html"><strong>17</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter18.html"><strong>18</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter19.html"><strong>19</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter20.html"><strong>20</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter21.html"><strong>21</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter22.html"><strong>22</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter23.html"><strong>23</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter24.html"><strong>24</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter25.html"><strong>25</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/chapter10.html">&lt;&lt; <strong>10</strong><span>Wicket models and forms</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/chapter12.html"><strong>12</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>11.4 Submit form with an IFormSubmittingComponent - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl</p>
+
+                    <p><strong>Version:</strong> 1.0.0.BUILD-SNAPSHOT</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="chapter11_4">11.4 Submit form with an IFormSubmittingComponent</h2>
+<p class="paragraph"/>Besides submitting forms with a standard HTML submit button, Wicket allows us to use special components which implement interface IFormSubmittingComponent. This entity is a subinterface of  IFormSubmitter:<p class="paragraph"/><img border="0" class="center" src="../img/class-diag-IFormSubmittingComponent.png"></img><p class="paragraph"/>At the beginning of this chapter we have seen that form processing is started by process method which takes as input an instance of IFormSubmitter. This parameter corresponds to the IFormSubmittingComponent clicked by a user to submit the form and it is null if we have used a standard HTML submit button (like we have done so far).<p class="paragraph"/>A submitting component is added to a form just like any other child component using method add(Component...).<p class="paragraph"/>A form can have any number of submitting components and we can specify which one among them is the default one by calling the Form's method setDefaultButton(IFormSubmittingComponent  component). The default submitter is the one that will be used when user presses 'Enter' key in a field of the form. In order to make the default button work, Wicket will add to our form a hidden &#60;div&#62; tag containing a text field and a submit button with some JavaScript code to trigger it:<p class="paragraph"/><div class="code"><pre>&#60;div style=<span class="java&#45;quote">"width:0px;height:0px;position:absolute;left:&#45;100px;top:&#45;100px;overflow:hidden"</span>&#62;
+	&#60;input type=<span class="java&#45;quote">"text"</span> autocomplete=<span class="java&#45;quote">"off"</span>/&#62;
+	&#60;input type=<span class="java&#45;quote">"submit"</span> name=<span class="java&#45;quote">"submit2"</span> onclick=<span class="java&#45;quote">" <span class="java&#45;keyword">var</span> b=document...."</span>/&#62;
+&#60;/div&#62;</pre></div><p class="paragraph"/>Just like Wicket forms, interface IFormSubmitter defines methods onSubmit and onError. These two methods have the priority over the namesake methods of the form, meaning that when a form is submitted with an IFormSubmitter, the onSubmit of the submitter is called before the one of the form. Similarly, if validation errors occurs during the first step of form processing, submitter's method onError is called before the form's one.<p class="paragraph"/><blockquote class="note">
+Starting with Wicket version 6.0 interface IFormSubmitter defines a further callback method called onAfterSubmit(). This method is called after form's method onSubmit() has been executed.
+</blockquote><p class="paragraph"/><h3>Components Button and SubmitLink</h3><p class="paragraph"/>Component org.apache.wicket.markup.html.form.Button is a basic implementation of a form submitter. It can be used with either the &#60;input&#62; or &#60;button&#62; tags. The string model received as input by its constructor is used as button label and it will be the value of the markup attribute value.<p class="paragraph"/>In the following snippet we have a form with two submit buttons bound to an &#60;input&#62; tag. One of them is set as default button and both have a string model for the label:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;body&#62;
+		&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+			Username: &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span>/&#62;
+			&#60;br/&#62;
+			&#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit1"</span>/&#62;
+			&#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit2"</span>/&#62;
+		&#60;/form&#62;
+&#60;/body&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;		
+		Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);<p class="paragraph"/>     	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"username"</span>, Model.of(<span class="java&#45;quote">""</span>)));
+    	form.add(<span class="java&#45;keyword">new</span> Button(<span class="java&#45;quote">"submit1"</span>, Model.of(<span class="java&#45;quote">"First submitter"</span>)));
+		Button secondSubmitter;
+		form.add(secondSubmitter = <span class="java&#45;keyword">new</span> Button(<span class="java&#45;quote">"submit2"</span>, Model.of(<span class="java&#45;quote">"Second submitter"</span>)));<p class="paragraph"/>    	form.setDefaultButton(secondSubmitter);
+		add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Generated markup:</strong><p class="paragraph"/><div class="code"><pre>&#60;form wicket:id=<span class="java&#45;quote">"form"</span> id=<span class="java&#45;quote">"form1"</span> method=<span class="java&#45;quote">"post"</span> action=<span class="java&#45;quote">"?0&#45;1.IFormSubmitListener&#45;form"</span>&#62;
+   &#60;div&#62;
+      &#8230;
+      &#60;!&#45;&#45; Code generated by Wicket to handle the <span class="java&#45;keyword">default</span> button &#45;&#45;&#62;
+      &#8230;
+   &#60;/div&#62;			
+   Username: &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span> value=<span class="java&#45;quote">""</span> name=<span class="java&#45;quote">"username"</span>/&#62;
+   &#60;br/&#62;
+   &#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit1"</span> name=<span class="java&#45;quote">"submit1"</span> id=<span class="java&#45;quote">"submit13"</span> value=<span class="java&#45;quote">"First submitter"</span>/&#62;
+   &#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit2"</span> name=<span class="java&#45;quote">"submit2"</span> id=<span class="java&#45;quote">"submit22"</span> value=<span class="java&#45;quote">"Second submitter"</span>/&#62;
+&#60;/form&#62;</pre></div><p class="paragraph"/>Another component that can be used to submit a form is org.apache.wicket.markup. html.form.SubmitLink. This component uses JavaScript to submit the form. Like the name suggests, the component can be used with the &#60;a&#62; tag but it can be also bound to any other tag that supports the event handler onclick. When used with the &#60;a&#62; tag, the JavaScript code needed to submit the form will be placed inside href attribute while with other tags the script will go inside the event handler onclick.<p class="paragraph"/>A notable difference between this component and Button is that SubmitLink can be placed outside the form it must submit. In this case we must specify the form to submit in its constructor:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;html xmlns:wicket=<span class="java&#45;quote">"http://wicket.apache.org"</span>&#62;
+&#60;head&#62;
+	&#60;/head&#62;
+	&#60;body&#62;
+	&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+			Password: &#60;input type=<span class="java&#45;quote">"password"</span> wicket:id=<span class="java&#45;quote">"password"</span>/&#62;
+			&#60;br/&#62;					
+		&#60;/form&#62;
+		&#60;button wicket:id=<span class="java&#45;quote">"externalSubmitter"</span>&#62;
+			Submit
+		&#60;/button&#62;
+	&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;		
+		Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);<p class="paragraph"/>		form.add(<span class="java&#45;keyword">new</span> PasswordTextField(<span class="java&#45;quote">"password"</span>, Model.of(<span class="java&#45;quote">""</span>)));
+		//specify the form to submit
+		add(<span class="java&#45;keyword">new</span> SubmitLink(<span class="java&#45;quote">"externalSubmitter"</span>, form));
+		add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><h3>Disabling default form processing</h3><p class="paragraph"/>With an IFormSubmittingComponent we can choose to skip the default form submission process  by setting the appropriate flag to false with the setDefaultFormProcessing method. When the default form processing is disabled only the submitter's onSubmit is called while form's validation and models updating are skipped.<p class="paragraph"/>This can be useful if we want to implement a “Cancel” button on our form which redirects user to another page without validating his/her input.<p class="paragraph"/>When we set this flag to false we can decide to manually invoke the form processing by calling the process(IFormSubmittingComponent) method.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/chapter10.html">&lt;&lt; <strong>10</strong><span>Wicket models and forms</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/chapter12.html"><strong>12</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43124634-1', 'comsysto.com');
+  ga('send', 'pageview');
+
+</script>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

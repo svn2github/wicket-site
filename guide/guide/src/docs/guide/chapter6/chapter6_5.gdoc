@@ -1,0 +1,5 @@
+
+
+This stage is triggered when a component is removed from its component hierarchy. The only hook method for this phase is @onRemove()@. If our component still holds some resources needed during rendering phase, we can override this method to release them.
+
+Once a component has been removed we are free to add it again to the same container or to a different one.

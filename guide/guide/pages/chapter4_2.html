@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>4.2 Here comes the inheritance! 1.0.0.BUILD-SNAPSHOT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter1.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter2.html"><strong>2</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter3.html"><strong>3</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter4.html"><strong>4</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter5.html"><strong>5</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter6.html"><strong>6</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter7.html"><strong>7</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter8.html"><strong>8</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter9.html"><strong>9</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter10.html"><strong>10</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter11.html"><strong>11</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter12.html"><strong>12</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter13.html"><strong>13</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter14.html"><strong>14</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter15.html"><strong>15</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter16.html"><strong>16</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter17.html"><strong>17</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter18.html"><strong>18</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter19.html"><strong>19</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter20.html"><strong>20</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter21.html"><strong>21</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter22.html"><strong>22</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter23.html"><strong>23</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter24.html"><strong>24</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter25.html"><strong>25</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/chapter3.html">&lt;&lt; <strong>3</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/chapter5.html"><strong>5</strong><span>Keeping control over HTML</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>4.2 Here comes the inheritance! - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl</p>
+
+                    <p><strong>Version:</strong> 1.0.0.BUILD-SNAPSHOT</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="chapter4_2">4.2 Here comes the inheritance!</h2>
+The need of ensuring a consistent layout across our pages unveiled a serious limit of the HTML: the inability to apply inheritance to web pages and their markup. Wouldn't be great if we could write our layout once in a page and then inherit it in the other pages of our application? 
+One of the goals of Wicket is to overcome this kind of limit.<p class="paragraph"/><h3>Markup inheritance</h3><p class="paragraph"/>As we have seen in the previous chapter, Wicket pages are pure Java classes, so we can easily write a page which is a subclass of another parent page. But in Wicket inheritance is not limited to the classic object-oriented code inheritance. When a class subclasses a <code>WebPage</code> it also inherits the HTML file of to the parent class. This type of inheritance is called markup inheritance.
+To better illustrate this concept let's consider the following example where we have a page class called <code>GenericSitePage</code> with the corresponding HTML file GenericSitePage.html. Now let's create a specific page called <code>OrderCheckOutPage</code> where users can check out their orders on our our web site. This class extends <code>GenericSitePage</code> but we don't provide it with any corresponding HTML file.
+In this scenario <code>OrderCheckOutPage</code> will use GenericSitePage.html as markup file:<p class="paragraph"/><img border="0" class="center" src="../img/markup-inheritance.png"></img><p class="paragraph"/>Markup inheritance comes in handy for page layout management as it helps us avoid the burden of checking that each page conforms to the site layout. However to fully take advantage of markup inheritance we must first learn how to use another important component of the framework that supports this feature: the panel.<p class="paragraph"/><blockquote class="warning">
+If no markup is found (nor directly assigned to the class, neither inherited from an ancestor) a <code>MarkupNotFoundException</code> is thrown.
+</blockquote><p class="paragraph"/><h3>Panel class</h3><p class="paragraph"/>Class <code>org.apache.wicket.markup.html.panel.Panel</code> is a special component which lets us reuse GUI code and HTML markup across different pages and different web applications. It shares a common ancestor class with WebPage class, which is <code>org.apache.wicket.MarkupContainer</code>:<p class="paragraph"/><img border="0" class="center" src="../img/page-panel-hierarchy.png"></img><p class="paragraph"/> <em class="italic">Illustration: Hierarchy of WebPage and Panel classes</em> <p class="paragraph"/>Subclasses of <code>MarkupContainer</code> can contain children components that can be added with method <code>add(Component...)</code> (seen in <a href="../guide/single.html#chapter3_3" class="guide">chapter 3.3</a>). <code>MarkupContainer</code> implements a full set of methods to manage children components. The basic operations we can do on them are:
+<ul class="star">
+<li>add one or more children components (with method <code>add</code>).</li>
+<li>remove a specific child component (with method <code>remove</code>).</li>
+<li>retrieve a specific child component with method <code>get(String)</code>. The string parameter is the id of the component or its relative path if the component is nested inside other <code>MarkupContainer</code>s. This path is a colon-separated string containing also the ids of the intermediate containers traversed to get to the child component. To illustrate an example of component path, let's consider the code of the following page:</li>
+</ul><p class="paragraph"/><div class="code"><pre>MyPanel myPanel = <span class="java&#45;keyword">new</span> MyPanel (<span class="java&#45;quote">"innerContainer"</span>);
+add(myPanel);</pre></div><p class="paragraph"/>Component <code>MyPanel</code> is a custom panel containing only a label having <code>"name"</code> as id. Under those conditions we could retrieve this label from the container page using the following path expression:<p class="paragraph"/><div class="code"><pre>Label name = (Label)get(<span class="java&#45;quote">"innerContainer:name"</span>);</pre></div>
+<ul class="star">
+<li>replace a specific child component with a new component having the same id (with method <code>replace</code>).</li>
+<li>iterate thought children components with the iterator returned by method <code>iterator</code> or using visitor pattern1 with methods <code>visitChildren</code>.</li>
+</ul><p class="paragraph"/>Both <code>Panel</code> and <code>WebPage</code> have their own associated markup file which is used to render the corresponding component. If such file is not provided, Wicket will apply markup inheritance looking for a markup file through their ancestor classes. When a panel is attached to a container, the content of its markup file is inserted into its related tag.<p class="paragraph"/>While panels and pages have much in common, there are some notable differences between these two components that we should keep in mind. The main difference between them is that pages can be rendered as standalone entities while panels must be placed inside a page to be rendered. Another important difference is the content of their markup file: for both <code>WebPage</code> and <code>Panel</code> this is a standard HTML file, but <code>Panel</code> uses a special tag to indicate which part of the whole file will be considered as markup source. This tag is <code>&#60;wicket:panel&#62;</code>. A markup file for a panel will typically look like this:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#60;head&#62;
+&#60;meta http&#45;equiv=<span class="java&#45;quote">"Content&#45;Type"</span> content=<span class="java&#45;quote">"text/html; charset=UTF&#45;8"</span>&#62;
+&#8230;
+&#60;/head&#62;
+&#60;body&#62;
+   &#60;wicket:panel&#62;
+      &#60;!&#45;&#45; Your markup goes here &#45;&#45;&#62;
+       &#60;/wicket:panel&#62;
+&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>The HTML outside tag <code>&#60;wicket:panel&#62;</code> will be removed during rendering phase. The space outside this tag can be used by both web developers and web designers to place some mock HTML to show how the final panel should look like.
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/chapter3.html">&lt;&lt; <strong>3</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/chapter5.html"><strong>5</strong><span>Keeping control over HTML</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43124634-1', 'comsysto.com');
+  ga('send', 'pageview');
+
+</script>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

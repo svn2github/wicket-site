@@ -1,0 +1,196 @@
+chapter1:
+  title: Introduction
+chapter2:
+  title: Why should I learn Wicket?
+  chapter2_1: We all like spaghetti :-) ...
+  chapter2_2: Component oriented frameworks - an overview
+  chapter2_3: Benefits of component oriented frameworks for web development
+  chapter2_4: Wicket vs the other component oriented frameworks
+chapter3:
+  title: Wicket says “Hello world!”
+  chapter3_1: Wicket distribution and modules
+  chapter3_2: Configuration of Wicket applications
+  chapter3_3: The HomePage class
+  chapter3_4: Wicket Links
+  chapter3_5: Summary
+chapter4:
+  title: Wicket as page layout manager
+  chapter4_1: Header, footer, left menu, content, etc...
+  chapter4_2: Here comes the inheritance!
+  chapter4_3: Divide et impera!  
+  chapter4_4: Markup inheritance with the <wicket:extend> tag
+  chapter4_5: Summary
+chapter5:
+  title: Keeping control over HTML
+  chapter5_1: Hiding or disabling a component
+  chapter5_2: Modifing tag attributes
+  chapter5_3: Generating tag attribute 'id'
+  chapter5_4: Creating in-line panels with WebMarkupContainer
+  chapter5_5: Working with markup fragments
+  chapter5_6: Adding header contents to the final page
+  chapter5_7: Using stub markup in our pages/panels
+  chapter5_8: How to render component body only
+  chapter5_9: Hiding decorating elements with the <wicket:enclosure> tag
+  chapter5_10: Surrounding existing markup with Border
+  chapter5_11: Summary
+chapter6:
+  title: Components lifecycle
+  chapter6_1: Lifecycle stages of a component
+  chapter6_2: Hook methods for component lifecycle
+  chapter6_3: Initialization stage
+  chapter6_4: Rendering stage
+  chapter6_5: Removing stage
+  chapter6_6: Summary
+chapter7:
+  title: Page versioning and caching
+  chapter7_1: Stateful pages vs stateless
+  chapter7_2: Stateful pages
+  chapter7_3: Stateless pages
+  chapter7_4: Summary
+chapter8:
+  title: Under the hood of the request processing
+  chapter8_1: Class Application and request processing
+  chapter8_2: Request and Response classes
+  chapter8_3: The “director” of request processing - RequestCycle
+  chapter8_4: Session Class
+  chapter8_5: Summary
+chapter9:
+  title: Wicket Links and URL generation
+  chapter9_1: PageParameters
+  chapter9_2: Bookmarkable links
+  chapter9_3: Automatically creating bookmarkable links with tag <wicket:link>
+  chapter9_4: External links
+  chapter9_5: Stateless links
+  chapter9_6: Generating structured and clear URLs
+  chapter9_7: Summary
+chapter10:
+  title: Wicket models and forms
+  chapter10_1: What is a model?
+  chapter10_2: Models and JavaBeans
+  chapter10_3: Wicket forms
+  chapter10_4: Component DropDownChoice
+  chapter10_5: Model chaining
+  chapter10_6: Detachable models
+  chapter10_7: Using more than one model in a component
+  chapter10_8: Use models!
+  chapter10_9: Summary
+chapter11:
+  title: Wicket forms in detail
+  chapter11_1: Default form processing
+  chapter11_2: Form validation and feedback messages
+  chapter11_3: Input value conversion
+  chapter11_4: Submit form with an IFormSubmittingComponent
+  chapter11_5: Nested forms
+  chapter11_6: Multi-line text input
+  chapter11_7: File upload
+  chapter11_8: Creating complex form components with FormComponentPanel
+  chapter11_9: Stateless form
+  chapter11_10: Working with radio buttons and checkboxes
+  chapter11_11: Selecting multiple values with ListMultipleChoices and Palette
+  chapter11_12: Summary
+chapter12:
+  title: Displaying multiple items with repeaters
+  chapter12_1: Component RepeatingView
+  chapter12_2: Component ListView
+  chapter12_3: Component RefreshingView
+  chapter12_4: Pageable repeaters
+  chapter12_5: Summary
+chapter13:
+  title: Internationalization with Wicket
+  chapter13_1: Localization
+  chapter13_2: Localization in Wicket
+  chapter13_3: Bundles lookup algorithm
+  chapter13_4: Localization of component's choices
+  chapter13_5: Internationalization and Models
+  chapter13_6: Summary
+chapter14:
+  title: Resource management with Wicket
+  chapter14_1: Static vs dynamic resources
+  chapter14_2: Resource references
+  chapter14_3: Package resources
+  chapter14_4: Adding resources to page header section
+  chapter14_5: Resource dependencies
+  chapter14_6: Custom resources
+  chapter14_7: Mounting resources
+  chapter14_8: Shared resources
+  chapter14_9: Customizing resource loading
+  chapter14_10: Summary
+chapter15:
+  title: An example of integration with JavaScript
+  chapter15_1: What we want to do...
+  chapter15_2: ...and how we will do it
+  chapter15_3: Summary
+chapter16:
+  title: Wicket advanced topics
+  chapter16_1: Enriching components with behaviors
+  chapter16_2: Generating callback URLs with IRequestListener
+  chapter16_3: Initializers
+  chapter16_4: Using JMX with Wicket
+  chapter16_5: Generating HTML markup from code
+  chapter16_6: Summary
+chapter17:
+  title: Working with AJAX
+  chapter17_1: How to use AJAX components and behaviors
+  chapter17_2: Build-in AJAX components
+  chapter17_3: Built-in AJAX behaviors
+  chapter17_4: Using an activity indicator
+  chapter17_5: AJAX request attributes and call listeners
+  chapter17_6: Creating custom AJAX call listener
+  chapter17_7: Summary
+chapter18:
+  title: Integration with enterprise containers
+  chapter18_1: Integrating Wicket with EJB
+  chapter18_2: Integrating Wicket with Spring
+  chapter18_3: JSR-330 annotations
+  chapter18_4: Summary
+chapter19:
+  title: Security with Wicket
+  chapter19_1: Authentication
+  chapter19_2: Authorizations
+  chapter19_3: Using HTTPS protocol
+  chapter19_4: Package Resource Guard
+  chapter19_5: Summary
+chapter20:
+  title: Test Driven Development with Wicket
+  chapter20_1: Utility class WicketTester
+  chapter20_2: Testing Wicket forms
+  chapter20_3: Testing markup with TagTester
+  chapter20_4: Summary
+chapter21:
+  title: Test Driven Development with Wicket and Spring
+  chapter21_1: Configuration of the runtime environment
+  chapter21_2: Configuration of the JUnit based integration test environment
+  chapter21_3: Summary
+chapter22:
+  title: Wicket Best Practices
+  chapter22_1: Encapsulate components correctly
+  chapter22_2: Put models and page data in fields
+  chapter22_3: Correct naming for Wicket IDs
+  chapter22_4: Avoid changes at the component tree
+  chapter22_5: Implement visibilities of components correctly
+  chapter22_6: Always use models
+  chapter22_7: Do not unwrap models within the constructor hierarchy
+  chapter22_8: Pass models extended components
+  chapter22_9: Validators must not change any data or models
+  chapter22_10: Do not pass components to constructors
+  chapter22_11: Use the Wicket session only for global data
+  chapter22_12: Do not use factories for components
+  chapter22_13: Every page and component must be tested
+  chapter22_14: Avoid interactions with other servlet filters
+  chapter22_15: Cut small classes and methods
+  chapter22_16: The argument "Bad documentation"
+  chapter22_17: Summary
+chapter23:
+  title: Working with Maven (Appendix)
+  chapter23_1: Switching Wicket to DEPLOYMENT mode
+  chapter23_2: Creating a Wicket project from scratch and importing it into our favourite IDE
+chapter24:
+  title: Project WicketStuff (Appendix)
+  chapter24_1: What is project WicketStuff
+  chapter24_2: Module tinymce
+  chapter24_3: Module wicketstuff-gmap3
+  chapter24_4: Module wicketstuff-googlecharts
+  chapter24_5: Module wicketstuff-inmethod-grid
+chapter25:
+  title: Lost In Redirection With Apache Wicket (Appendix)
+  

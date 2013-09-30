@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>16 Wicket advanced topics 1.0.0.BUILD-SNAPSHOT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter1.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter2.html"><strong>2</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter3.html"><strong>3</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter4.html"><strong>4</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter5.html"><strong>5</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter6.html"><strong>6</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter7.html"><strong>7</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter8.html"><strong>8</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter9.html"><strong>9</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter10.html"><strong>10</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter11.html"><strong>11</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter12.html"><strong>12</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter13.html"><strong>13</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter14.html"><strong>14</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter15.html"><strong>15</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter16.html"><strong>16</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter17.html"><strong>17</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter18.html"><strong>18</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter19.html"><strong>19</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter20.html"><strong>20</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter21.html"><strong>21</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter22.html"><strong>22</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter23.html"><strong>23</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter24.html"><strong>24</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter25.html"><strong>25</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/chapter15.html">&lt;&lt; <strong>15</strong><span>An example of integration with JavaScript</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/chapter17.html"><strong>17</strong><span>Working with AJAX</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>16 Wicket advanced topics - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl</p>
+
+                    <p><strong>Version:</strong> 1.0.0.BUILD-SNAPSHOT</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter16_1"><strong>16.1</strong><span>Enriching components with behaviors</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter16_2"><strong>16.2</strong><span>Generating callback URLs with IRequestListener</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter16_3"><strong>16.3</strong><span>Initializers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter16_4"><strong>16.4</strong><span>Using JMX with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter16_5"><strong>16.5</strong><span>Generating HTML markup from code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter16_6"><strong>16.6</strong><span>Summary</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="chapter16">16 Wicket advanced topics</h1>
+In this chapter we will learn some advanced topics which have not been covered yet in the previous chapters but which are nonetheless essential to make the most of Wicket and to build sophisticated web applications.
+
+
+<h2 id="chapter16_1">16.1 Enriching components with behaviors</h2>
+<p class="paragraph"/>With class org.apache.wicket.behavior.Behavior Wicket provides a very flexible mechanism to share common features across different components and to enrich existing components with further functionalities. As the class name suggests, Behavior adds a generic behavior to a component modifying its markup and/or contributing to the header section of the page (Behavior implements the interface IHeaderContributor).<p class="paragraph"/>One or more behaviors can be added to a component with Component's method add(Behavior...), while to remove a behavior we must use method remove(Behavior).<p class="paragraph"/>Here is a partial list of methods defined inside class Behavior along with a brief description of what they do:
+<ul class="star">
+<li><strong class="bold">beforeRender(Component component)</strong>: called when a component is about to be rendered.</li>
+<li><strong class="bold">afterRender(Component component)</strong>: called after a component has been rendered.</li>
+<li><strong class="bold">onComponentTag(Component component, ComponentTag tag)</strong>: called when component tag is being rendered.</li>
+<li><strong class="bold">getStatelessHint(Component component)</strong>: returns if a behavior is stateless or not.</li>
+<li><strong class="bold">bind(Component component)</strong>: called after a behavior has been added to a component.</li>
+<li><strong class="bold">unbind(Component component)</strong>: called when a behavior has been removed from a component.</li>
+<li><strong class="bold">detach(Component component)</strong>: overriding this method a behavior can detach its state before being serialized.</li>
+<li><strong class="bold">isEnabled(Component component)</strong>: tells if the current behavior is enabled for a given component. When a behavior is disabled it will be simply ignored and not executed.</li>
+<li><strong class="bold">isTemporary(Component component)</strong>: tells component if the current behavior is temporary. A temporary behavior is discarded at the end of the current request (i.e it's executed only once).</li>
+<li><strong class="bold">onConfigure(Component component)</strong>: called right after the owner component has been configured.</li>
+<li><strong class="bold">onRemove(Component component)</strong>: called when the owner component has been removed from its container.</li>
+<li><strong class="bold">renderHead(Component component, IHeaderResponse response)</strong>: overriding this method behaviors can render resources to the header section of the page.</li>
+</ul><p class="paragraph"/>For example the following behavior prepends a red asterisk to the tag of a form component if this one  is required:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RedAsteriskBehavior <span class="java&#45;keyword">extends</span> Behavior &#123;<p class="paragraph"/>  @Override
+  <span class="java&#45;keyword">public</span> void beforeRender(Component component) &#123;
+      Response response = component.getResponse();
+      <span class="java&#45;object">StringBuffer</span> asterisktHtml = <span class="java&#45;keyword">new</span> <span class="java&#45;object">StringBuffer</span>(200);<p class="paragraph"/>      <span class="java&#45;keyword">if</span>(componet <span class="java&#45;keyword">instanceof</span> FormComponent 
+            &#38;&#38; ((FormComponent)component).isRequired())&#123;
+        asteriskHtml.append(<span class="java&#45;quote">" &#60;b style=&#34;color:red;font&#45;size:medium&#34;&#62;&#42;&#60;/b&#62;"</span>);
+      &#125;  
+      response.write(asteriskHtml);
+  &#125;
+&#125;</pre></div><p class="paragraph"/>Since method beforeRender is called before the coupled component is rendered, we can use it to prepend custom markup to component tag. This can be done writing our markup directly to the current  Response object, as we did in the example above.<p class="paragraph"/>Please note that we could achieve the same result overriding component method onBeforeRender. However using a behavior we can easily reuse our custom code with any other kind of component without modifying its source code. As general best practice we should always consider to implement a new functionality using a behavior if it can be shared among different kinds of component.<p class="paragraph"/>Behaviors play also a strategic role in the built-in AJAX support provided by Wicket, as we will see in the next chapter. 
+
+
+
+<h2 id="chapter16_2">16.2 Generating callback URLs with IRequestListener</h2>
+<p class="paragraph"/>With Wicket it's quite easy to build a callback URL that executes a specific method on server side. This method must be defined in a functional interface1 that inherits from built-in org.apache.wicket. IRequestListener and it must be a void method with no parameters in input:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> IMyListener <span class="java&#45;keyword">extends</span> IRequestListener
+&#123;
+	/&#42;&#42;
+	 &#42; Called when the relative callback URL is requested.
+	 &#42;/
+	void myCallbackMethod();
+&#125;</pre></div><p class="paragraph"/>To control how the method will be invoked we must use class org.apache.wicket.Request ListenerInterface. In Wicket is a common practice to instantiate this class as a public static field inside the relative callback interface:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> IMyListener <span class="java&#45;keyword">extends</span> IRequestListener
+&#123;
+	/&#42;&#42;RequestListenerInterface instance&#42;/
+	<span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;keyword">final</span> RequestListenerInterface INTERFACE = <span class="java&#45;keyword">new</span> 
+                                           RequestListenerInterface(IMyListener.class);
+	/&#42;&#42;
+	 &#42; Called when the relative callback URL is requested.
+	 &#42;/
+	void myCallbackMethod();
+&#125;</pre></div><p class="paragraph"/>By default RequestListenerInterface will respond rendering the current page after the callback method has been executed (if we have a non-AJAX request). To change this behavior we can use setter method setRenderPageAfterInvocation(boolean).<p class="paragraph"/>Now that our callback interface is complete we can generate a callback URL with Component's method urlFor(RequestListenerInterface, PageParameters) or with method urlFor (Behavior, RequestListenerInterface, PageParameters) if we are using a callback interface with a behavior (see the following example).<p class="paragraph"/>Project CallbackURLExample contains a behavior (class OnChangeSingleChoiceBehavior) that implements a callback interface to update the model of an AbstractSingleSelectChoice component when user changes the selected option (it provides the same functionality of method want OnSelectionChangedNotifications).<p class="paragraph"/>Instead of a custom callback interface, OnChangeSingleChoiceBehavior implements built-in interface org.apache.wicket.behavior.IBehaviorListener which is designed to generate a callback URL for behaviors. The callback method defined in this interface is onRequest() and the following is the implementation provided by OnSelectionChangedNotifications:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void onRequest() &#123;	
+	Request request = RequestCycle.get().getRequest();
+	IRequestParameters requestParameters = request.getRequestParameters();
+	StringValue choiceId = requestParameters.getParameterValue(<span class="java&#45;quote">"choiceId"</span>);
+	//boundComponent is the component that the behavior it is bound to.
+	boundComponent.setDefaultModelObject(convertChoiceIdToChoice(choiceId.toString()));
+&#125;</pre></div><p class="paragraph"/>When invoked via URL, the behavior expects to find a request parameter (choiceId) containing the id of the selected choice. This value is used to obtain the corresponding choice object that must be used to set the model of the component that the behavior is bound to (boundComponent). Method convertChoiceIdToChoice is in charge of retrieving the choice object given its id and it has been copied from class AbstractSingleSelectChoice.<p class="paragraph"/>Another interesting part of OnChangeSingleChoiceBehavior is its method onComponentTag where some JavaScript “magic” is used to move user's browser to the callback URL when event “change” occurs on bound component:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void onComponentTag(Component component, ComponentTag tag) &#123;
+	<span class="java&#45;keyword">super</span>.onComponentTag(component, tag);<p class="paragraph"/>	CharSequence callBackURL = getCallbackUrl();
+	<span class="java&#45;object">String</span> separatorChar = (callBackURL.toString().indexOf('?') &#62; &#45;1 ? <span class="java&#45;quote">"&#38;"</span> : <span class="java&#45;quote">"?"</span>);<p class="paragraph"/>	<span class="java&#45;object">String</span> finalScript = <span class="java&#45;quote">"<span class="java&#45;keyword">var</span> isSelect = $(<span class="java&#45;keyword">this</span>).is('select');&#110;"</span> +
+				 <span class="java&#45;quote">"<span class="java&#45;keyword">var</span> component;&#110;"</span> +	
+				 <span class="java&#45;quote">"<span class="java&#45;keyword">if</span>(isSelect)&#110;"</span> +
+				 <span class="java&#45;quote">"	component = $(<span class="java&#45;keyword">this</span>);&#110;"</span> +
+				 <span class="java&#45;quote">"<span class="java&#45;keyword">else</span> &#110;"</span> +
+				 <span class="java&#45;quote">"	component = $(<span class="java&#45;keyword">this</span>).find('input:radio:checked');&#110;"</span> +
+				 <span class="java&#45;quote">"window.location.href='"</span> + callBackURL +  separatorChar + 
+				 <span class="java&#45;quote">"choiceId=' + "</span> + <span class="java&#45;quote">"component.val()"</span>;<p class="paragraph"/>	tag.put(<span class="java&#45;quote">"onchange"</span>, finalScript);
+&#125;</pre></div><p class="paragraph"/>The goal of onComponentTag is to build an onchange handler that forces user's browser to move to the callback URL (modifing standard property window.location.href). Please note that we have appended the expected parameter (choiceId) to the URL retrieving its value with a JQuery selector suited for the current type of component (a drop-down menu or a radio group). Since we are using JQuery in our JavaScript code, the behavior comes also with method renderHead that adds the bundled JQuery library to the current page.<p class="paragraph"/>Method getCallbackUrl() is used to generate the callback URL for our custom behavior and it has been copied from built-in class AbstractAjaxBehavior:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> CharSequence getCallbackUrl()&#123;
+	<span class="java&#45;keyword">if</span> (boundComponent == <span class="java&#45;keyword">null</span>)&#123;
+		<span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> IllegalArgumentException(
+			<span class="java&#45;quote">"Behavior must be bound to a component to create the URL"</span>);
+	&#125;<p class="paragraph"/>	<span class="java&#45;keyword">final</span> RequestListenerInterface rli;<p class="paragraph"/>	rli = IBehaviorListener.INTERFACE;<p class="paragraph"/>	<span class="java&#45;keyword">return</span> boundComponent.urlFor(<span class="java&#45;keyword">this</span>, rli, <span class="java&#45;keyword">new</span> PageParameters());
+&#125;</pre></div><p class="paragraph"/>Static field IBehaviorListener.INTERFACE is the implementation of RequestListener Interface defined inside callback interface IBehaviorListener.<p class="paragraph"/>The home page of project CallbackURLExample contains a DropDownChoice and a RadioChoice which use our custom behavior. There are also two labels to display the content of the models of the two components:<p class="paragraph"/><img border="0" class="center" src="../img/CallbackURLExample-screenshot.png"></img><p class="paragraph"/><blockquote class="note">
+Implementing interface IBehaviorListener makes a behavior stateful because its callback URL is specific for a given instance of component.
+</blockquote><p class="paragraph"/>
+<h3>Wicket events infrastructure</h3><p class="paragraph"/>Starting from version 1.5 Wicket offers an event-based infrastructure for inter-component communication. The infrastructure is based on two simple interfaces (both in package org. apache.wicket.event) : IEventSource and IEventSink.<p class="paragraph"/>The first interface must be implemented by those entities that want to broadcast en event while the second interface must be implemented by those entities that want to receive a broadcast event.<p class="paragraph"/>The following entities already implement both these two interfaces (i.e. they can be either sender or receiver): Component, Session, RequestCycle and Application.
+IEventSource exposes a single method named send which takes in input three parameters:
+<ul class="star">
+<li><strong class="bold">sink</strong>: an implementation of IEventSink that will be the receiver of the event.</li>
+<li><strong class="bold">broadcast</strong>: a Broadcast enum which defines the broadcast method used to dispatch the event to the sink and to other entities such as sink children, sink containers, session object, application object and the current request cycle. It has four possible values:</li>
+</ul><p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Value</strong></th><th><strong class="bold">Description</strong></th></tr><tr class="table-odd"><td>BREADTH</td><td>The event is sent first to the specified sink and then to all its children components following a breadth-first order.</td></tr><tr class="table-even"><td>DEPTH</td><td>The event is sent to the specified sink only after it has been dispatched to all its children components following a depth-first order.</td></tr><tr class="table-odd"><td>BUBBLE</td><td>The event is sent first to the specified sink and then to its parent containers.</td></tr><tr class="table-even"><td>EXACT</td><td>The event is sent only to the specified sink.</td></tr></table>
+<ul class="star">
+<li><strong class="bold">payload</strong>: a generic object representing the data sent with the event.</li>
+</ul><p class="paragraph"/>Each broadcast mode has its own traversal order for Session, RequestCycle and Application. See JavaDoc of class Broadcast for further details about this order.<p class="paragraph"/>Interface IEventSink exposes callback method onEvent(IEvent&#60;?&#62; event) which is triggered when a sink receives an event. The interface IEvent represents the received event and provides getter methods to retrieve the event broadcast type, the source of the event and its payload. Typically the received event is used checking the type of its payload object:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void onEvent(IEvent event) &#123;
+  //<span class="java&#45;keyword">if</span> the type of payload is MyPayloadClass perform some actions 
+  <span class="java&#45;keyword">if</span>(event.getPayload() <span class="java&#45;keyword">instanceof</span> MyPayloadClass) &#123;
+     //execute some business code.
+  &#125;<span class="java&#45;keyword">else</span>&#123;
+     //other business code
+  &#125;   		
+&#125;</pre></div><p class="paragraph"/>Project InterComponetsEventsExample provides a concrete example of sending an event to a component (named 'container in the middle') using all the available broadcast methods:<p class="paragraph"/><img border="0" class="center" src="../img/InterComponentsEventsExample-screenshot.png"></img>
+
+
+<h2 id="chapter16_3">16.3 Initializers</h2>
+<p class="paragraph"/>Some components or resources may need to be configured before being used in our applications. While so far we used Application's init method to initialize these kinds of entities, Wicket offers a more flexible and modular way to configure our classes.<p class="paragraph"/>During application's bootstrap Wicket searches for any properties file named wicket.properties  placed in one of the classpath roots visible to the application. When one of these files is found, the initializer defined inside it will be executed. An initializer is an implementation of interface org.apache.wicket.IInitializer and is defined inside wicket.properties with a line like this:<p class="paragraph"/><div class="code"><pre>initializer=org.wicketTutorial.MyInitializer</pre></div><p class="paragraph"/>The fully qualified class name corresponds to the initializer that must be executed. Interface IInitializer defines method init(Application) which should contain our initialization code, and method destroy(Application) which is invoked when application is terminated:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class MyInitializer <span class="java&#45;keyword">implements</span> IInitializer&#123;<p class="paragraph"/>	<span class="java&#45;keyword">public</span> void init(Application application) &#123;
+		//initialization code 
+	&#125;<p class="paragraph"/>	<span class="java&#45;keyword">public</span> void destroy(Application application) &#123;
+		//code to execute when application is terminated
+	&#125;	
+&#125;</pre></div><p class="paragraph"/>Only one initializer can be defined in a single wicket.properties file. To overcome this limit we can create a main initializer that in turn executes every initializer we need:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class MainInitializer <span class="java&#45;keyword">implements</span> IInitializer&#123;<p class="paragraph"/>	<span class="java&#45;keyword">public</span> void init(Application application) &#123;
+		<span class="java&#45;keyword">new</span> AnotherInitializer().init(application);
+		<span class="java&#45;keyword">new</span> YetAnotherInitializer().init(application);
+		//&#8230; 
+	&#125;
+	//destroy&#8230; 
+&#125;</pre></div>
+
+
+<h2 id="chapter16_4">16.4 Using JMX with Wicket</h2>
+<p class="paragraph"/>JMX (Java Management Extensions) is the standard technology adopted in Java for managing and monitoring running applications or Java Virtual Machines. Wicket offers support for JMX through module wicket-jmx. In this paragraph we will see how we can connect to a Wicket application using JMX. In our example we will use JConsole as JMX client. This program is bundled with Java SE since version 5 and we can run it typing jconsole in our OS shell.<p class="paragraph"/>Once JConsole has started it will ask us to establish a new connection to a Java process, choosing between a local process or a remote one. In the following picture we have selected the process corresponding to the local instance of Jetty server we used to run one of our example projects:<p class="paragraph"/><img border="0" class="center" src="../img/JMX-new-connection.png"></img><p class="paragraph"/>After we have established a JMX connection, JConsole will show us the following set of tabs:<p class="paragraph"/><img border="0" class="center" src="../img/JMX-console.png"></img><p class="paragraph"/>JMX exposes application-specific informations using special objects called MBeans (Manageable Beans), hence if we want to control our application we must open the corresponding tab. The MBeans containing the application's informations is named org.apache.wicket.app.&#60;filter/servlet name&#62;.<p class="paragraph"/>In our example we have used wicket.test as filter name for our application:<p class="paragraph"/><img border="0" class="center" src="../img/JMX-console2.png"></img><p class="paragraph"/>As we can see in the picture above, every MBean exposes a node containing its attributes and another node showing the possible operations that can be performed on the object. In the case of a Wicket application the available operations are clearMarkupCache and clearLocalizerCache:<p class="paragraph"/><img border="0" class="center" src="../img/JMX-console3.png"></img><p class="paragraph"/>With these two operations we can force Wicket to clear the internal caches used to load components markup and resource bundles. This can be particularly useful if we have our application running in DEPLOYMENT mode and we want to publish minor fixes for markup or bundle files (like spelling or typo corrections) without restarting the entire application. Without cleaning these two caches Wicket would continue to use cached values ignoring any change made to markup or bundle files.<p class="paragraph"/>Some of the exposed properties are editable, hence we can tune their values while the application is running. For example if we look at the properties of ApplicationSettings we can set the maximum size allowed for an upload modifying the attribute DefaultMaximumUploadSize:<p class="paragraph"/><img border="0" class="center" src="../img/JMX-console4.png"></img>
+
+
+<h2 id="chapter16_5">16.5 Generating HTML markup from code</h2>
+<p class="paragraph"/>So far, as markup source for our pages/panels we have used a static markup file, no matter if it was inherited or directly associated to the component. Now we want to investigate a more complex use case where we want to dynamical generate the markup directly inside component code.<p class="paragraph"/>To become a markup producer, a component must simply implement interface org.apache. wicket.markup.IMarkupResourceStreamProvider. The only method defined in this interface is getMarkupResourceStream(MarkupContainer, Class&#60;?&#62;) which returns an utility interface called IResourceStream representing the actual markup.<p class="paragraph"/>In the following example we have a custom panel without a related markup file that generates a simple &#60;div&#62; tag as markup:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class AutoMarkupGenPanel <span class="java&#45;keyword">extends</span> Panel <span class="java&#45;keyword">implements</span> IMarkupResourceStreamProvider &#123;
+	<span class="java&#45;keyword">public</span> AutoMarkupGenPanel(<span class="java&#45;object">String</span> id, IModel&#60;?&#62; model) &#123;
+		<span class="java&#45;keyword">super</span>(id, model);		
+	&#125;<p class="paragraph"/>	@Override
+	<span class="java&#45;keyword">public</span> IResourceStream getMarkupResourceStream(MarkupContainer container,
+			<span class="java&#45;object">Class</span>&#60;?&#62; containerClass) &#123;
+		<span class="java&#45;object">String</span> markup = <span class="java&#45;quote">"&#60;div&#62;Panel markup&#60;/div&#62;"</span>;
+		StringResourceStream resourceStream = <span class="java&#45;keyword">new</span> StringResourceStream(markup);<p class="paragraph"/>		<span class="java&#45;keyword">return</span> resourceStream;
+	&#125;
+&#125;</pre></div><p class="paragraph"/>Class StringResourceStream is a resource stream that uses a String instance as backing object.<p class="paragraph"/><h3>Avoiding markup caching</h3><p class="paragraph"/>As we have seen in the previous paragraph, Wicket uses an internal cache for components markup. This can be a problem if our component dynamical generates its markup when it is rendered because once the markup has been cached, Wicket will always use the cached version for the specific component. To overwrite this default caching policy, a component can implement interface IMarkupCacheKeyProvider.<p class="paragraph"/>This interface defines method getCacheKey(MarkupContainer, Class&#60;?&#62;) which returns a string value representing the key used by Wicket to retrieve the markup of the component from the cache. If this value is null the markup will not be cached, allowing the component to display the last generated markup each time it is rendered:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class NoCacheMarkupPanel <span class="java&#45;keyword">extends</span> Panel <span class="java&#45;keyword">implements</span> IMarkupCacheKeyProvider &#123;
+	<span class="java&#45;keyword">public</span> NoCacheMarkupPanel(<span class="java&#45;object">String</span> id, IModel&#60;?&#62; model) &#123;
+		<span class="java&#45;keyword">super</span>(id, model);		
+	&#125;<p class="paragraph"/>	/&#42;&#42;
+	&#42; Generate a dynamic HTML markup that changes every time
+	&#42; the component is rendered
+	&#42;/
+	@Override
+	<span class="java&#45;keyword">public</span> IResourceStream getMarkupResourceStream(MarkupContainer container,
+			<span class="java&#45;object">Class</span>&#60;?&#62; containerClass) &#123;
+		<span class="java&#45;object">String</span> markup = <span class="java&#45;quote">"&#60;div&#62;Panel with current nanotime: "</span> + <span class="java&#45;object">System</span>.nanoTime() +
+				 <span class="java&#45;quote">"&#60;/div&#62;"</span>; 
+		StringResourceStream resourceStream = <span class="java&#45;keyword">new</span> StringResourceStream(markup);<p class="paragraph"/>		<span class="java&#45;keyword">return</span> resourceStream;
+	&#125;<p class="paragraph"/>	/&#42;&#42;
+	&#42; Avoid markup caching <span class="java&#45;keyword">for</span> <span class="java&#45;keyword">this</span> component
+	&#42;/
+	@Override
+	<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getCacheKey(MarkupContainer arg0, <span class="java&#45;object">Class</span>&#60;?&#62; arg1) &#123;
+		<span class="java&#45;keyword">return</span> <span class="java&#45;keyword">null</span>;
+	&#125;
+&#125;</pre></div>
+
+
+<h2 id="chapter16_6">16.6 Summary</h2>
+<p class="paragraph"/>In this chapter we have introduced some advanced topics we didn't have the chance to cover yet. We have started talking about behaviors and we have seen how they can be used to enrich existing components (promoting a component-oriented approach). Behaviors are also fundamental to work with AJAX in Wicket, as we will see in the next chapter.<p class="paragraph"/>After behaviors we have learnt how to generate callback URLs to execute a custom method on server side defined inside a specific callback interface.<p class="paragraph"/>The third topic of the chapter has been the event infrastructure provided in Wicket for inter-component communication which brings to our components a desktop-like event-driven architecture.<p class="paragraph"/>Then, we have introduced a new entity called initializer which can be used to configure resources and component in a modular and self-contained way.<p class="paragraph"/>We have also looked at Wicket support for JMX and we have seen how to use this technology for monitoring and managing our running applications.<p class="paragraph"/>Finally we have introduced a new technique to generate the markup of a component from its Java code.<p class="paragraph"/><p class="paragraph"/>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/chapter15.html">&lt;&lt; <strong>15</strong><span>An example of integration with JavaScript</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/chapter17.html"><strong>17</strong><span>Working with AJAX</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43124634-1', 'comsysto.com');
+  ga('send', 'pageview');
+
+</script>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>
