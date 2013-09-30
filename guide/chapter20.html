@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>20 Test Driven Development with Wicket 1.0.0.BUILD-SNAPSHOT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter1.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter2.html"><strong>2</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter3.html"><strong>3</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter4.html"><strong>4</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter5.html"><strong>5</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter6.html"><strong>6</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter7.html"><strong>7</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter8.html"><strong>8</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter9.html"><strong>9</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter10.html"><strong>10</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter11.html"><strong>11</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter12.html"><strong>12</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter13.html"><strong>13</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter14.html"><strong>14</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter15.html"><strong>15</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter16.html"><strong>16</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter17.html"><strong>17</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter18.html"><strong>18</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter19.html"><strong>19</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter20.html"><strong>20</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter21.html"><strong>21</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter22.html"><strong>22</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter23.html"><strong>23</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter24.html"><strong>24</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter25.html"><strong>25</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/chapter19.html">&lt;&lt; <strong>19</strong><span>Security with Wicket</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/chapter21.html"><strong>21</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>20 Test Driven Development with Wicket - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl</p>
+
+                    <p><strong>Version:</strong> 1.0.0.BUILD-SNAPSHOT</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter20_1"><strong>20.1</strong><span>Utility class WicketTester</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter20_2"><strong>20.2</strong><span>Testing Wicket forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter20_3"><strong>20.3</strong><span>Testing markup with TagTester</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter20_4"><strong>20.4</strong><span>Summary</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="chapter20">20 Test Driven Development with Wicket</h1>
+<a href="http://en.wikipedia.org/wiki/Test-driven_development" target="blank">Test Driven Development</a> has become a crucial activity for every modern development methodology. This chapter will cover the built-in support for testing provided by Wicket with its rich set of helper and mock classes that allows us to test our components and our applications in isolation (i.e without the need for a servlet container) using JUnit, the de facto standard for Java unit testing.<p class="paragraph"/>In this chapter we will see how to write unit tests for our applications and components and we will learn how to use helper classes to simulate user navigation and write acceptance tests without the need of any testing framework other than JUnit.<p class="paragraph"/>The JUnit version used in this chapter is 4.x.   
+
+
+<h2 id="chapter20_1">20.1 Utility class WicketTester</h2>
+<p class="paragraph"/>A good way to start getting confident with Wicket unit testing support is looking at the test case class TestHomePage that is automatically generated by Maven when we use Wicket archetype to create a new project:<p class="paragraph"/><img border="0" class="center" src="../img/mvn-wicket-archetype.png"></img><p class="paragraph"/>Here is the content of TestHomePage:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class TestHomePage&#123;
+	<span class="java&#45;keyword">private</span> WicketTester tester;<p class="paragraph"/>	@Before
+	<span class="java&#45;keyword">public</span> void setUp()&#123;
+		tester = <span class="java&#45;keyword">new</span> WicketTester(<span class="java&#45;keyword">new</span> WicketApplication());
+	&#125;
+	@Test
+	<span class="java&#45;keyword">public</span> void homepageRendersSuccessfully()&#123;
+		//start and render the test page
+		tester.startPage(HomePage.class);
+		//assert rendered page class
+		tester.assertRenderedPage(HomePage.class);
+	&#125;
+&#125;</pre></div><p class="paragraph"/>The central class in a Wicket testing is org.apache.wicket.util.tester.WicketTester. This utility class provides a set of methods to render a component, click links, check if page contains a given component or a feedback message, and so on.<p class="paragraph"/>The basic test case shipped with TestHomePage illustrates how WicketTester is typically instantiated (inside method setUp()). In order to test our components, WicketTester needs to use an instance of WebApplication. Usually, we will use our application class as WebApplication, but we can also decide to build WicketTester invoking its no-argument constructor and letting it automatically build a mock web application (an instance of class org.apache.wicket.mock. MockApplication).<p class="paragraph"/>The code from TestHomePage introduces two basic methods to test our pages. The first is method startPage that renders a new instance of the given page class and sets it as current rendered page for WicketTester. The second method is assertRenderedPage which checks if the current rendered page is an instance of the given class. In this way if TestHomePage succeeds we are sure that page HomePage has been rendered without any problem. The last rendered page can be retrieved with method getLastRenderedPage.<p class="paragraph"/>That's only a taste of what WicketTester can do. In the next paragraphs we will see how it can be used to test every element that composes a Wicket page (links, models, behaviors, etc...).<p class="paragraph"/><h3>Testing links</h3><p class="paragraph"/>A click on a Wicket link can be simulated with method clickLink which takes in input the link component or the page-relative path to it.<p class="paragraph"/>To see an example of usage of clickLink, let's consider again project LifeCycleStagesRevisited. As we know from chapter 5 the home page of the project alternately displays two different labels (“First label” and “Second label”), swapping between them each time button "reload" is clicked. The code from its test case checks that label has actually changed after button "reload" has been pressed:<p class="paragraph"/><div class="code"><pre>//&#8230;
+@Test
+<span class="java&#45;keyword">public</span> void switchLabelTest()&#123;
+	//start and render the test page
+	tester.startPage(HomePage.class);
+	//assert rendered page class
+	tester.assertRenderedPage(HomePage.class);
+	//assert rendered label
+	tester.assertLabel(<span class="java&#45;quote">"label"</span>, <span class="java&#45;quote">"First label"</span>);
+	//simulate a click on <span class="java&#45;quote">"reload"</span> button
+	tester.clickLink(<span class="java&#45;quote">"reload"</span>);
+	//assert rendered label
+	tester.assertLabel(<span class="java&#45;quote">"label"</span>, <span class="java&#45;quote">"Second label"</span>);	
+&#125;
+//...</pre></div><p class="paragraph"/>In the code above we have used clickLink to click on the "reload" button and force page to be rendered again. In addition, we have used also method assertLabel that checks if a given label contains the expected text.<p class="paragraph"/>By default clickLink assumes that AJAX is enabled on client side. To switch AJAX off we can use another version of this method that takes in input the path to the link component and a boolean flag that indicates if AJAX must be enabled (true) or not (false).<p class="paragraph"/><div class="code"><pre>//&#8230;
+//simulate a click on a button without AJAX support
+tester.clickLink(<span class="java&#45;quote">"reload"</span>, <span class="java&#45;keyword">false</span>);
+//...</pre></div><p class="paragraph"/><h3>Testing component status</h3><p class="paragraph"/>WicketTester provides also a set of methods to test the states of a component. They are:
+<ul class="star">
+<li><strong class="bold">assertEnabled(String path)/assertDisabled(String path)</strong>: they test if a component is enabled or not.</li>
+<li><strong class="bold">assertVisible(String path)/assertInvisible(String path)</strong>: they test component visibility.</li>
+<li><strong class="bold">assertRequired(String path)</strong>: checks if a form component is required.</li>
+</ul><p class="paragraph"/>In the test case from project CustomDatepickerAjax we used assertEnabled/assertDisabled to check if button "update" really disables our datepicker:<p class="paragraph"/><div class="code"><pre>//&#8230;
+@Test
+<span class="java&#45;keyword">public</span> void testDisableDatePickerWithButton()&#123;
+	//start and render the test page
+	tester.startPage(HomePage.class);
+	//assert that datepicker is enabled
+	tester.assertEnabled(<span class="java&#45;quote">"form:datepicker"</span>);
+	//click on update button to disable datepicker
+	tester.clickLink(<span class="java&#45;quote">"update"</span>);
+	//assert that datepicker is disabled
+	tester.assertDisabled(<span class="java&#45;quote">"form:datepicker"</span>);		
+&#125;
+//...</pre></div><p class="paragraph"/><h3>Testing components in isolation</h3><p class="paragraph"/>Method startComponent(Component) can be used to test a component in isolation without having to create a container page for this purpose. The target component is rendered and both its methods onInitialize() and onBeforeRender() are executed. In the test case from project CustomFormComponentPanel we used this method to check if our custom form component correctly renders its internal label:<p class="paragraph"/><div class="code"><pre>//&#8230;
+@Test
+<span class="java&#45;keyword">public</span> void testCustomPanelContainsLabel()&#123;
+	TemperatureDegreeField field = <span class="java&#45;keyword">new</span> TemperatureDegreeField(<span class="java&#45;quote">"field"</span>, Model.of(0.00));
+	//Use standard JUnit class Assert	
+	Assert.assertNull(field.get(<span class="java&#45;quote">"mesuramentUnit"</span>));		
+	tester.startComponent(field);		
+	Assert.assertNotNull(field.get(<span class="java&#45;quote">"mesuramentUnit"</span>));
+&#125;
+//...</pre></div><p class="paragraph"/>If test requires a page we can use startComponentInPage(Component) which automatically generates a page for our component.<p class="paragraph"/><h3>Testing the response</h3><p class="paragraph"/>WicketTester allows us to access to the last response generated during testing with method getLastResponse. The returned value is an instance of class MockHttpServletResponse that provides helper methods to extract informations from mocked request.<p class="paragraph"/>In the test case from project CustomResourceMounting we extract the text contained in the last response with method getDocument and we check if it is equal to the RSS feed used for the test:<p class="paragraph"/><div class="code"><pre>//&#8230;
+@Test
+<span class="java&#45;keyword">public</span> void testMountedResourceResponse() <span class="java&#45;keyword">throws</span> IOException, FeedException&#123;		tester.startResource(<span class="java&#45;keyword">new</span> RSSProducerResource());
+	<span class="java&#45;object">String</span> responseTxt = tester.getLastResponse().getDocument();
+	//write the RSS feed used in the test into a ByteArrayOutputStream
+	ByteArrayOutputStream outputStream = <span class="java&#45;keyword">new</span> ByteArrayOutputStream();
+	Writer writer = <span class="java&#45;keyword">new</span> OutputStreamWriter(outputStream);
+	SyndFeedOutput output = <span class="java&#45;keyword">new</span> SyndFeedOutput();<p class="paragraph"/>	output.output(RSSProducerResource.getFeed(), writer);
+	//the response and the RSS must be equal 
+	Assert.assertEquals(responseTxt, outputStream.toString());
+&#125;
+//...</pre></div><p class="paragraph"/>To simulate a request to the custom resource we used method startResource which can be used also with resource references.<p class="paragraph"/><h3>Testing URLs</h3><p class="paragraph"/>WicketTester can be pointed to an arbitrary URL with method executeUrl(String url). This can be useful to test mounted pages, resources or request mappers:<p class="paragraph"/><div class="code"><pre>//&#8230;
+//the resource was mapped at '/foo/bar'
+tester.executeUrl(<span class="java&#45;quote">"./foo/bar"</span>);	
+//...</pre></div><p class="paragraph"/><h3>Testing AJAX components</h3><p class="paragraph"/>If our application uses AJAX to refresh components markup, we can test if AjaxRequestTarget contains a given component with WicketTester's method assertComponentOnAjaxResponse:<p class="paragraph"/><div class="code"><pre>//&#8230;
+//test <span class="java&#45;keyword">if</span> AjaxRequestTarget contains a component (using its instance)
+tester.assertComponentOnAjaxResponse(amountLabel);	
+//&#8230;
+//test <span class="java&#45;keyword">if</span> AjaxRequestTarget contains a component (using its path)
+tester.assertComponentOnAjaxResponse(<span class="java&#45;quote">"pathToLabel:labelId"</span>);</pre></div><p class="paragraph"/>It's also possible to use method isComponentOnAjaxResponse(Component cmp) to know if a component has been added to AjaxRequestTarget:<p class="paragraph"/><div class="code"><pre>//&#8230;
+//test <span class="java&#45;keyword">if</span> AjaxRequestTarget does NOT contain amountLabel 
+assertFalse(tester.isComponentOnAjaxResponse(amountLabel));	
+//...</pre></div><p class="paragraph"/><h3>Testing AJAX events</h3><p class="paragraph"/>Behavior AjaxEventBehavior and its subclasses can be tested simulating AJAX events with WicketTester's method executeAjaxEvent(Component cmp, String event). Here is the sample code from project TestAjaxEventsExample:<p class="paragraph"/><strong class="bold">Home page code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+ <span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;object">String</span> INIT_VALUE = <span class="java&#45;quote">"Initial value"</span>;
+ <span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;object">String</span> OTHER_VALUE = <span class="java&#45;quote">"Other value"</span>;<p class="paragraph"/> <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+	<span class="java&#45;keyword">super</span>(parameters);
+	Label label;
+	add(label = <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"label"</span>, INIT_VALUE));				
+	label.add(<span class="java&#45;keyword">new</span> AjaxEventBehavior(<span class="java&#45;quote">"click"</span>) &#123;<p class="paragraph"/>		@Override
+		<span class="java&#45;keyword">protected</span> void onEvent(AjaxRequestTarget target) &#123;
+			//change label's data object
+			getComponent().setDefaultModelObject(OTHER_VALUE);
+			target.add(getComponent());
+		&#125;
+	&#125;).setOutputMarkupId(<span class="java&#45;keyword">true</span>);
+	//&#8230;
+ &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Test method:</strong><p class="paragraph"/><div class="code"><pre>@Test
+<span class="java&#45;keyword">public</span> void testAjaxBehavior()&#123;
+	//start and render the test page
+	tester.startPage(HomePage.class);
+	//test <span class="java&#45;keyword">if</span> label has the initial expected value
+	tester.assertLabel(<span class="java&#45;quote">"label"</span>, HomePage.INIT_VALUE);		
+	//simulate an AJAX <span class="java&#45;quote">"click"</span> event
+	tester.executeAjaxEvent(<span class="java&#45;quote">"label"</span>, <span class="java&#45;quote">"click"</span>);
+	//test <span class="java&#45;keyword">if</span> label has changed as expected
+	tester.assertLabel(<span class="java&#45;quote">"label"</span>, HomePage.OTHER_VALUE);
+&#125;</pre></div><p class="paragraph"/><h3>Testing AJAX behaviors</h3><p class="paragraph"/>To test a generic AJAX behavior we can simulate a request to it using WicketTester's method executeBehavior(AbstractAjaxBehavior behavior):<p class="paragraph"/><div class="code"><pre>//&#8230;
+AjaxFormComponentUpdatingBehavior ajaxBehavior = <span class="java&#45;keyword">new</span> AjaxFormComponentUpdatingBehavior 
+                                                                           (<span class="java&#45;quote">"change"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">protected</span> void onUpdate(AjaxRequestTarget target) &#123;
+		//...				
+	&#125;
+&#125;;
+component.add(ajaxBehavior);
+//&#8230;
+//execute AJAX behavior, i.e. onUpdate will be invoked 
+tester.executeBehavior(ajaxBehavior));	
+//...</pre></div><p class="paragraph"/><h3>Using a custom servlet context</h3><p class="paragraph"/>In paragraph 13.9 we have seen how to configure our application to store resource files into a custom folder placed inside webapp root folder (see project CustomFolder4MarkupExample).<p class="paragraph"/>In order to write testing code for applications that use this kind of customization, we must tell WicketTester which folder to use as webapp root. This is necessary as under test environment we don't have any web server, hence it's impossible for WicketTester to retrieve this parameter from servlet context.<p class="paragraph"/>Webapp root folder can be passed to WicketTester's constructor as further parameter like we did in the test case of project CustomFolder4MarkupExample:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class TestHomePage&#123;
+   <span class="java&#45;keyword">private</span> WicketTester tester;<p class="paragraph"/>   @Before
+   <span class="java&#45;keyword">public</span> void setUp()&#123;
+      //build the path to webapp root folder   
+      File curDirectory = <span class="java&#45;keyword">new</span> File(<span class="java&#45;object">System</span>.getProperty(<span class="java&#45;quote">"user.dir"</span>));
+      File webContextDir = <span class="java&#45;keyword">new</span> File(curDirectory, <span class="java&#45;quote">"src/main/webapp"</span>);<p class="paragraph"/>      tester = <span class="java&#45;keyword">new</span> WicketTester(<span class="java&#45;keyword">new</span> WicketApplication(), webContextDir.getAbsolutePath());
+   &#125;
+   //test methods&#8230;
+&#125;</pre></div><p class="paragraph"/><blockquote class="note">
+After a test method has been executed, we may need to clear any possible side effect occurred to the Application and Session objects. This can be done invoking WicketTester's method destroy():<p class="paragraph"/><div class="code"><pre>@After
+<span class="java&#45;keyword">public</span> void tearDown()&#123;
+	//clear any side effect occurred during test.
+	tester.destroy();
+&#125;</pre></div>
+</blockquote>
+
+
+<h2 id="chapter20_2">20.2 Testing Wicket forms</h2>
+<p class="paragraph"/>Wicket provides utility class FormTester that is expressly designed to test Wicket forms. A new FormTester is returned by WicketTester's method newFormTester(String, boolean) which takes in input the page-relative path of the form we want to test and a boolean flag indicating if its form components must be filled with a blank string:<p class="paragraph"/><div class="code"><pre>//&#8230;
+//create a <span class="java&#45;keyword">new</span> form tester without filling its form components with a blank string
+FormTester formTester = tester.newFormTester(<span class="java&#45;quote">"form"</span>, <span class="java&#45;keyword">false</span>);
+//...</pre></div><p class="paragraph"/>FormTester can simulate form submission with method submit which takes in input as optional parameter the submitting component to use instead of the default one:<p class="paragraph"/><div class="code"><pre>//&#8230;
+//create a <span class="java&#45;keyword">new</span> form tester without filling its form components with a blank string
+FormTester formTester = tester.newFormTester(<span class="java&#45;quote">"form"</span>, <span class="java&#45;keyword">false</span>);
+//submit form with <span class="java&#45;keyword">default</span> submitter
+formTester.submit();
+//&#8230;
+//submit form using <span class="java&#45;keyword">inner</span> component 'button' as alternate button
+formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p class="paragraph"/>If we want to submit a form with an external link component we can use method submitLink (String path, boolean pageRelative) specifying the path to the link.<p class="paragraph"/>In the next paragraphs we will see how to use WicketTester and FormTester to interact with a form and with its children components.<p class="paragraph"/><h3>Setting form components input</h3><p class="paragraph"/>The purpose of a HTML form is to collect user input. FormTester comes with the following set of methods that simulate input insertion into form's fields:
+<ul class="star">
+<li><strong class="bold">setValue(String path, String value)</strong>: inserts the given textual value into the specified component. It can be used with components TextField and TextArea. A version of this method that accepts a component instance instead of its path is also available.</li>
+<li><strong class="bold">setValue(String checkboxId, boolean value)</strong>: sets the value of a given CheckBox component.</li>
+<li><strong class="bold">setFile(String formComponentId, File file, String contentType)</strong>: sets a File object on a FileUploadField component.</li>
+<li><strong class="bold">select(String formComponentId, int index)</strong>: selects an option among a list of possible options owned by a component. It supports components that are subclasses of AbstractChoice along with RadioGroup and CheckGroup.</li>
+<li><strong class="bold">selectMultiple(String formComponentId, int indexes)</strong>: selects all the options corresponding to the given array of indexes. It can be used with multiple-choice components like CheckGroup or ListMultipleChoice.</li>
+</ul><p class="paragraph"/>setValue is used inside method insertUsernamePassword to set the username and password fields of the form used in project StatelessLoginForm:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">protected</span> void insertUsernamePassword(<span class="java&#45;object">String</span> username, <span class="java&#45;object">String</span> password) &#123;
+	//start and render the test page
+	tester.startPage(HomePage.class);
+	FormTester formTester = tester.newFormTester(<span class="java&#45;quote">"form"</span>);
+	//set credentials
+	formTester.setValue(<span class="java&#45;quote">"username"</span>, username);
+	formTester.setValue(<span class="java&#45;quote">"password"</span>, password);		
+	//submit form
+	formTester.submit();
+&#125;</pre></div><p class="paragraph"/><h3>Testing feedback messages</h3><p class="paragraph"/>To check if a page contains one or more expected feedback messages we can use the following methods provided by WicketTester:
+<ul class="star">
+<li><strong class="bold">assertFeedback(String path, String&#8230; messages)</strong>: asserts that a given panel contains the specified messages</li>
+<li><strong class="bold">assertInfoMessages(String&#8230; expectedInfoMessages)</strong>: asserts that the expected info messages are rendered in the page.</li>
+<li><strong class="bold">assertErrorMessages(String&#8230; expectedErrorMessages)</strong>: asserts that the expected error messages are rendered in the page.</li>
+</ul><p class="paragraph"/>assertInfoMessages and assertErrorMessages are used in the test case from project  StatelessLoginForm to check that form generates a feedback message in accordance with the login result:<p class="paragraph"/>
+<div class="code"><pre>@Test
+<span class="java&#45;keyword">public</span> void testMessageForSuccessfulLogin()&#123;
+	inserUsernamePassword(<span class="java&#45;quote">"user"</span>, <span class="java&#45;quote">"user"</span>);	
+	tester.assertInfoMessages(<span class="java&#45;quote">"Username and password are correct!"</span>);
+&#125;<p class="paragraph"/>@Test
+<span class="java&#45;keyword">public</span> void testMessageForFailedLogin ()&#123;
+	inserUsernamePassword(<span class="java&#45;quote">"wrongCredential"</span>, <span class="java&#45;quote">"wrongCredential"</span>);		
+	tester.assertErrorMessages(<span class="java&#45;quote">"Wrong username or password"</span>);
+&#125;</pre></div><p class="paragraph"/><h3>Testing models</h3><p class="paragraph"/>Component model can be tested as well. With method assertModelValue we can test if a specific  component has the expected data object inside its model.<p class="paragraph"/>This method has been used in the test case of project ModelChainingExample to check if the form and the drop-down menu share the same data object:<p class="paragraph"/><div class="code"><pre>@Test
+<span class="java&#45;keyword">public</span> void testFormSelectSameModelObject()&#123;
+	PersonListDetails personListDetails = <span class="java&#45;keyword">new</span> PersonListDetails();
+	DropDownChoice dropDownChoice = (DropDownChoice) personListDetails.get(<span class="java&#45;quote">"persons"</span>);
+	List choices = dropDownChoice.getChoices();
+	//select the second option of the drop&#45;down menu
+	dropDownChoice.setModelObject(choices.get(1));<p class="paragraph"/>	//start and render the test page
+	tester.startPage(personListDetails);		
+	//assert that form has the same data object used by drop&#45;down menu
+	tester.assertModelValue(<span class="java&#45;quote">"form"</span>, dropDownChoice.getModelObject());
+&#125;</pre></div>
+
+
+<h2 id="chapter20_3">20.3 Testing markup with TagTester</h2>
+<p class="paragraph"/>If we need to test component markup at a more fine-grained level, we can use class TagTester from package org.apache.wicket.util.tester.<p class="paragraph"/>This test class allows to check if the generated markup contains one or more tags having a given attribute with a given value. TagTester can not be directly instantiated but it comes with three factory methods that return one or more TagTester matching the searching criteria. In the following test case (from project TagTesterExample) we retrieve the first tag of the home page (a &#60;span&#62; tag) having attribute class equal to myClass:<p class="paragraph"/><strong class="bold">HomePage markup:</strong><p class="paragraph"/><div class="code"><pre>&#60;html xmlns:wicket=<span class="java&#45;quote">"http://wicket.apache.org"</span>&#62;
+	&#60;head&#62;
+		&#60;meta charset=<span class="java&#45;quote">"utf&#45;8"</span> /&#62;
+		&#60;title&#62;&#60;/title&#62;
+	&#60;/head&#62;
+	&#60;body&#62;
+		&#60;span class=<span class="java&#45;quote">"myClass"</span>&#62;&#60;/span&#62;
+		&#60;div class=<span class="java&#45;quote">"myClass"</span>&#62;&#60;/div&#62;
+	&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/><strong class="bold">Test method:</strong><p class="paragraph"/><div class="code"><pre>@Test
+<span class="java&#45;keyword">public</span> void homePageMarkupTest()
+&#123;
+	//start and render the test page
+	tester.startPage(HomePage.class);
+	//retrieve response's markup
+	<span class="java&#45;object">String</span> responseTxt = tester.getLastResponse().getDocument();<p class="paragraph"/>	TagTester tagTester = TagTester.createTagByAttribute(responseTxt, <span class="java&#45;quote">"class"</span>, <span class="java&#45;quote">"myClass"</span>);<p class="paragraph"/>	Assert.assertNotNull(tagTester);
+	Assert.assertEquals(<span class="java&#45;quote">"span"</span>, tagTester.getName());<p class="paragraph"/>	List&#60;TagTester&#62; tagTesterList = TagTester.createTagsByAttribute(responseTxt, <span class="java&#45;quote">"class"</span>, 
+                                                                       <span class="java&#45;quote">"myClass"</span>, <span class="java&#45;keyword">false</span>);<p class="paragraph"/>	Assert.assertEquals(2, tagTesterList.size());
+&#125;</pre></div><p class="paragraph"/>The name of the tag found by TagTester can be retrieved with its method getName. Method createTagsByAttribute returns all the tags that have the given value on the given attribute. In the code above we have used this method to test that our markup contains two tags having attribute class equal to myClass.
+
+
+
+<h2 id="chapter20_4">20.4 Summary</h2>
+<p class="paragraph"/>With a component-oriented framework we can test our pages and components as we use to do with any other Java entity. Wicket offers a complete support for writing testing code, offering built-in tools to test nearly all the elements that build up our applications (pages, containers, links, behaviors, etc...).<p class="paragraph"/>The main entity discussed in this chapter has been class WicketTester which can be used to write unit tests and acceptance tests for our application, but we have also seen how to test forms with FormTester and how to inspect markup with TagTester.<p class="paragraph"/>In addition to learning how to use the utility classes provided by Wicket for testing, we have also experienced the innovative approach of Wicket to web testing that allows to test components in isolation without the need of running our tests with a web server and depending only on JUnit as testing framework.<p class="paragraph"/><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/chapter19.html">&lt;&lt; <strong>19</strong><span>Security with Wicket</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/chapter21.html"><strong>21</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43124634-1', 'comsysto.com');
+  ga('send', 'pageview');
+
+</script>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

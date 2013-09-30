@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>3 Wicket says &ldquo;Hello world!&rdquo; 1.0.0.BUILD-SNAPSHOT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter1.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter2.html"><strong>2</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter3.html"><strong>3</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter4.html"><strong>4</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter5.html"><strong>5</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter6.html"><strong>6</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter7.html"><strong>7</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter8.html"><strong>8</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter9.html"><strong>9</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter10.html"><strong>10</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter11.html"><strong>11</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter12.html"><strong>12</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter13.html"><strong>13</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter14.html"><strong>14</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter15.html"><strong>15</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter16.html"><strong>16</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter17.html"><strong>17</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter18.html"><strong>18</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter19.html"><strong>19</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter20.html"><strong>20</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter21.html"><strong>21</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter22.html"><strong>22</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter23.html"><strong>23</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter24.html"><strong>24</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter25.html"><strong>25</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/chapter2.html">&lt;&lt; <strong>2</strong><span>Why should I learn Wicket?</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/chapter4.html"><strong>4</strong><span>Wicket as page layout manager</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>3 Wicket says &ldquo;Hello world!&rdquo; - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl</p>
+
+                    <p><strong>Version:</strong> 1.0.0.BUILD-SNAPSHOT</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter3_1"><strong>3.1</strong><span>Wicket distribution and modules</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter3_2"><strong>3.2</strong><span>Configuration of Wicket applications</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter3_3"><strong>3.3</strong><span>The HomePage class</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter3_4"><strong>3.4</strong><span>Wicket Links</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter3_5"><strong>3.5</strong><span>Summary</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="chapter3">3 Wicket says “Hello world!”</h1>
+Wicket allows us to design our web pages in terms of components and containers, just like AWT does with desktop windows. 
+Both frameworks share the same component-based architecture: in AWT we have a <code>Windows</code> instance which represents the physical windows containing GUI components (like text fields, radio buttons, drawing areas, etc...), in Wicket we have a <code>WebPage</code> instance which represents the physical web page containing HTML components (pictures, buttons, forms, etc&#8230; ) .<p class="paragraph"/><img border="0" class="center" src="../img/uml-component.png"></img><p class="paragraph"/>In both frameworks we find a base class for GUI components called <code>Component</code>. Wicket pages can be composed (and usually are) by many components, just like AWT windows are composed by Swing/AWT components. Both frameworks promote the reuse of presentation code and GUI elements building custom components. Even if Wicket already comes with a rich set of ready-to-use components, building custom components is a common practice when working with this framework. We'll learn more about custom components in the next chapters.
+
+
+
+<h2 id="chapter3_1">3.1 Wicket distribution and modules</h2>
+Wicket is available as a binary package on the main site <a href="http://wicket.apache.org" target="blank">http://wicket.apache.org</a> . Inside this archive we can find the distribution jars of the framework. Each jar corresponds to a sub-module of the framework. The following table reports these modules along with a short description of their purpose and with the related dependencies:<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Module'sname</strong></th><th><strong class="bold">Description</strong></th><th><strong class="bold">Dependencies</strong></th></tr><tr class="table-odd"><td>wicket-core</td><td>Contains the main classes of the framework, like class <code>Component</code> and <code>Application</code>.</td><td>wicket-request, wicket-util</td></tr><tr class="table-even"><td>wicket-request</td><td>This module contains the classes involved into web request processing.</td><td>wicket-util</td></tr><tr class="table-odd"><td>wicket-util</td><td>Contains general-purpose utility classes for functional areas such as I/O, lang, string manipulation, security, etc...</td><td>None</td></tr><tr class="table-even"><td>wicket-datetime</td><td>Contains special purpose components designed to work with date and time.</td><td>wicket-core</td></tr><tr class="table-odd"><td>wicket-devutils</td><td>Contains utility classes and components to help developers with tasks such as debugging, class inspection and so on.</td><td>wicket-core, wicket-extensions</td></tr><tr class="table-even"><td>wicket-extensions</td><td>Contains a vast set of built-in components to build a rich UI for our web application (Ajax support is part of this module).</td><td>wicket-core</td></tr><tr class="table-odd"><td>wicket-auth-roles</td><td>Provides support for role-based authorization.</td><td>wicket-core</td></tr><tr class="table-even"><td>wicket-ioc</td><td>This module provides common classes to support Inversion Of Control. It's used by both Spring and Guice integration module.</td><td>wicket-core</td></tr><tr class="table-odd"><td>wicket-guice</td><td>This module provides integration with the dependency injection framework developed by Google.</td><td>wicket-core, wicket-ioc</td></tr><tr class="table-even"><td>wicket-spring</td><td>This module provides integration with Spring framework.</td><td>wicket-core, wicket-ioc</td></tr><tr class="table-odd"><td>wicket-velocity</td><td>This module provides panels and utility class to integrate Wicket with Velocity template engine.</td><td>wicket-core</td></tr><tr class="table-even"><td>wicket-jmx</td><td>This module provides panels and utility class to integrate Wicket with Java Management Extensions.</td><td>wicket-core</td></tr><tr class="table-odd"><td>wicket-objectsizeof-agent</td><td>Provides integration with Java agent libraries and instrumentation tools.</td><td>wicket-core</td></tr></table><p class="paragraph"/>Please note that the core module depends on the utility and request modules, hence it cannot be used without them.
+
+
+<h2 id="chapter3_2">3.2 Configuration of Wicket applications</h2>
+In this chapter we will see a classic Hello World! example implemented using a Wicket page with a built-in component called <code>Label</code> (the code is from project the HelloWorldExample). Since this is the first example of the guide, before looking at Java code we will go through the common artifacts needed to build a Wicket application from scratch.<p class="paragraph"/><blockquote class="note">
+All the example projects presented in this document have been generated using Maven and the utility page at <a href="http://wicket.apache.org/start/quickstart.html" target="blank">http://wicket.apache.org/start/quickstart.html</a> . <strong class="bold">Appendix A</strong> contains the instructions needed to use these projects and build a quickstart application using Apache Maven. All the artifacts used in the next example (files web.xml, HomePage.class and HomePage.html) are automatically generated by Maven.
+</blockquote><p class="paragraph"/><h3>Wicket application structure</h3><p class="paragraph"/>A Wicket application is a standard Java EE web application, hence it is deployed through a web.xml file placed inside folder WEB-INF:<p class="paragraph"/><img border="0" class="center" src="../img/webinf.png"></img><p class="paragraph"/> <em class="italic">Illustration : The standard directory structure of a Wicket application</em> <p class="paragraph"/>The content of web.xml declares a servlet filter (class <code>org.apache.wicket.Protocol.http.WicketFilter</code>) which dispatches web requests to our Wicket application:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;?xml version=<span class="xml&#45;quote">"1.0"</span> encoding=<span class="xml&#45;quote">"UTF&#45;8"</span>?&#62;</span>
+<span class="xml&#45;tag">&#60;web&#45;app&#62;</span>
+    <span class="xml&#45;tag">&#60;display&#45;name&#62;</span>Wicket Test<span class="xml&#45;tag">&#60;/display&#45;name&#62;</span>
+    <span class="xml&#45;tag">&#60;filter&#62;</span>
+        <span class="xml&#45;tag">&#60;filter&#45;name&#62;</span>TestApplication<span class="xml&#45;tag">&#60;/filter&#45;name&#62;</span>
+        <span class="xml&#45;tag">&#60;filter&#45;class&#62;</span>org.apache.wicket.protocol.http.WicketFilter<span class="xml&#45;tag">&#60;/filter&#45;class&#62;</span>
+        <span class="xml&#45;tag">&#60;init&#45;param&#62;</span>
+          <span class="xml&#45;tag">&#60;param&#45;name&#62;</span>applicationClassName<span class="xml&#45;tag">&#60;/param&#45;name&#62;</span>
+          <span class="xml&#45;tag">&#60;param&#45;value&#62;</span>org.wicketTutorial.WicketApplication<span class="xml&#45;tag">&#60;/param&#45;value&#62;</span>
+        <span class="xml&#45;tag">&#60;/init&#45;param&#62;</span>
+    <span class="xml&#45;tag">&#60;/filter&#62;</span>
+    <span class="xml&#45;tag">&#60;filter&#45;mapping&#62;</span>
+        <span class="xml&#45;tag">&#60;filter&#45;name&#62;</span>TestApplication<span class="xml&#45;tag">&#60;/filter&#45;name&#62;</span>
+        <span class="xml&#45;tag">&#60;url&#45;pattern&#62;</span>/&#42;<span class="xml&#45;tag">&#60;/url&#45;pattern&#62;</span>
+    <span class="xml&#45;tag">&#60;/filter&#45;mapping&#62;</span>
+<span class="xml&#45;tag">&#60;/web&#45;app&#62;</span></pre></div><p class="paragraph"/>Since this is a standard servlet filter we must map it to a specific set of URLs through the <code>&#60;filter-mapping&#62;</code> tag). In the xml above we have mapped every URL to our Wicket filter.<p class="paragraph"/><blockquote class="note">
+Wicket can be started in two modes named respectively DEVELOPMENT and DEPLOYMENT. The first mode activates some extra features which help application development, like resources monitoring and reloading, full stack trace rendering of exceptions, an AJAX debugger window, etc&#8230; The DEPLOYMENT mode turns off all these features optimizing performances and resource consumption. In our example projects we will use the default mode which is DEVELOPMENT. <a href="../guide/single.html#chapter23_1" class="guide">Chapter 23.1</a> contains the chapter “Switching Wicket to DEPLOYMENT mode“ where we can find further details about these two modes as well as the possible ways we have to set the desired one. In any case, DO NOT deploy your applications in a production environment without switching to DEPLOYMENT mode!
+</blockquote><p class="paragraph"/><h3>The application class</h3><p class="paragraph"/>If we look back at web.xml we can see that we have provided the Wicket filter with a parameter called  <code>applicationClassName</code>. This value must be the fully qualified class name of a subclass of <code>org.apache.wicket.Application</code>. This subclass represents our web application built upon Wicket and it's responsible for configuring it when the server is starting up. Most of the times our custom application class won't inherit directly from class <code>Application</code>, but rather from class <code>org.apache.wicket.protocol.http.WebApplication</code> which provides a closer integration with servlet infrastructure. 
+Class <code>Application</code> comes with a set of configuration methods that we can override to customize our application's settings. One of these methods is <code>getHomePage()</code> that must be overridden as it is declared abstract:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">abstract</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> Page&#62; getHomePage()</pre></div><p class="paragraph"/>As you may guess from its name, this method specifies which page to use as homepage for our application. 
+Another important method is <code>init()</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">protected</span> void init()</pre></div><p class="paragraph"/>This method is called when our application is loaded by the web server (Tomcat, Jetty, etc...) and is the ideal place to put our configuration code. The <code>Application</code> class exposes its settings grouping them into interfaces (you can find them in package <code>org.apache.wicket.settings</code>). We can access these interfaces through getter methods that will be gradually introduced in the next chapters when we will cover the related settings.<p class="paragraph"/>The current application's instance can be retrieved at any time calling static method <code>Application.get()</code> in our code. We will give more details about this method in <a href="../guide/single.html#chapter8_3" class="guide">chapter 8.3</a>. The content of the application class from project HelloWorldExample is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> WebApplication
+&#123;    	
+	@Override
+	<span class="java&#45;keyword">public</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> WebPage&#62; getHomePage()
+	&#123;
+		<span class="java&#45;keyword">return</span> HomePage.class;
+	&#125;<p class="paragraph"/>	@Override
+	<span class="java&#45;keyword">public</span> void init()
+	&#123;
+		<span class="java&#45;keyword">super</span>.init();
+		// add your configuration here
+	&#125;
+&#125;</pre></div><p class="paragraph"/>Since this is a very basic example of a Wicket application, we don't need to specify anything inside the <code>init</code> method. The home page of the application is the <code>HomePage</code> class. In the next paragraph we will see how this page is implemented and which conventions we have to follow to create a page in Wicket.<p class="paragraph"/><blockquote class="note">
+Declaring a <code>WicketFilter</code> inside web.xml descriptor is not the only way we have to kickstart our application.
+If we prefer to use a servlet instead of a filter, we can use class <code>org.apache.wicket.protocol.http.WicketServlet</code>. See the JavaDoc for further details.
+</blockquote>
+
+
+<h2 id="chapter3_3">3.3 The HomePage class</h2>
+<p class="paragraph"/>To complete our first Wicket application we must explore the home page class that is returned by the <code>Application</code>'s method <code>getHomePage()</code> seen above. 
+In Wicket a web page is a subclass of <code>org.apache.wicket.WebPage</code>. This subclass must have a corresponding HTML file which will be used by the framework as template to generate its HTML markup. This file is a regular plain HTML file (its extension must be html).<p class="paragraph"/>By default this HTML file must have the same name of the related page class and must be in the same package:<p class="paragraph"/><img border="0" class="center" src="../img/samepackage.png"></img><p class="paragraph"/> <em class="italic">Illustration :Page class and its related HTML file</em> <p class="paragraph"/>If you don't like to put class and html side by side (let's say you want all your HTML files in a separated folder) you can use Wicket settings to specify where HTML files can be found. We will cover this topic later in <a href="../guide/single.html#chapter14_9" class="guide">chapter 14.9</a>.<p class="paragraph"/>The Java code for the <code>HomePage</code> class is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> org.wicketTutorial;<p class="paragraph"/><span class="java&#45;keyword">import</span> org.apache.wicket.request.mapper.parameter.PageParameters;
+<span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.basic.Label;
+<span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.WebPage;<p class="paragraph"/><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;	
+    <span class="java&#45;keyword">public</span> HomePage() &#123;
+	add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"helloMessage"</span>, <span class="java&#45;quote">"Hello WicketWorld!"</span>));
+    &#125;
+&#125;</pre></div><p class="paragraph"/>Apart from subclassing <code>WebPage</code>, <code>HomePage</code> defines a constructor that adds a <code>Label</code> component to  itself. 
+Method <code>add(Component component)</code> is inherited from ancestor class <code>org.apache.wicket. MarkupContainer</code> and is used to add children components to a web page. We'll see more about <code>MarkupContainer</code> later in <a href="../guide/single.html#chapter4_2" class="guide">chapter 4.2</a>.
+Class <code>org.apache.wicket.markup.html.basic.Label</code> is the simplest component shipped with Wicket. It just inserts a string (the second argument of its constructor) inside the corresponding HTML tag.
+Just like any other Wicket component, <code>Label</code> needs a textual id (<code>'helloMessage'</code> in our example) to be instantiated. At runtime Wicket will use this value to find the HTML tag we want to bind to the component. This tag must have a special attribute called <code>wicket:id</code> and its value must be identical to the component id (comparison is case-sensitive!).<p class="paragraph"/>Here is the HTML markup for <code>HomePage</code> (file HomePage.html):<p class="paragraph"/><div class="code"><pre>&#60;!DOCTYPE html&#62;
+&#60;html&#62;
+	&#60;head&#62;
+		&#60;meta charset=<span class="java&#45;quote">"utf&#45;8"</span> /&#62;
+		&#60;title&#62;Apache Wicket HelloWorld&#60;/title&#62;
+	&#60;/head&#62;
+	&#60;body&#62;<p class="paragraph"/>		&#60;div wicket:id=<span class="java&#45;quote">"helloMessage"</span>&#62;
+		&#91;Label's message goes here&#93;
+		&#60;/div&#62;
+	&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>We can see that the <code>wicket:id</code> attribute is set according to the value of the component id. If we run this example we will see the text <code>Hello WicketWorld!</code> Inside a <code>&#60;div&#62;</code> tag.<p class="paragraph"/><blockquote class="note">
+<code>Label</code> replaces the original content of its tag (in our example <code>Label's message goes here</code>) with the string passed as value (<code>Hello WicketWorld!</code> in our example).
+</blockquote><p class="paragraph"/><blockquote class="warning">
+If we specify a <code>wicket:id</code> attribute for a tag without adding the corresponding component in our Java code, Wicket will throw a <code>ComponentNotFound</code> Exception.  On the contrary if we add a component in our Java code without specifying a corresponding <code>wicket:id</code> attribute in our markup, Wicket will throw a <code>WicketRuntimeException</code>.
+</blockquote>
+
+
+
+<h2 id="chapter3_4">3.4 Wicket Links</h2>
+The basic form of interaction offered by web applications is to navigate through pages using links. In HTML a link is basically a pointer to another resource that most of the time is another page. Wicket implements links with component <code>org.apache.wicket.markup.html.link.Link</code>, but due to the component-oriented nature of the framework, this component is quite different from classic HTML links.  
+Following the analogy with GUI frameworks, we can consider Wicket link as a “click” event handler: its purpose is to perform some actions (on server side!) when the user clicks on it.<p class="paragraph"/>That said, you shouldn't be surprised to find an abstract method called <code>onClick()</code> inside the <code>Link</code> class. In the following example we have a page with a <code>Link</code> containing an empty implementation of <code>onClick</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+	<span class="java&#45;keyword">public</span> HomePage()&#123;
+		add(<span class="java&#45;keyword">new</span> Link(<span class="java&#45;quote">"id"</span>)&#123;
+			@Override
+			<span class="java&#45;keyword">public</span> void onClick() &#123;
+				//link code goes here
+		    &#125;			
+		&#125;);
+	&#125;
+&#125;</pre></div><p class="paragraph"/>By default after <code>onClick</code> has been executed, Wicket will send back to the current page to the client web browser. If we want to navigate to another page we must use method <code>setResponsePage</code> of class <code>Component</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+	<span class="java&#45;keyword">public</span> HomePage()&#123;
+		add(<span class="java&#45;keyword">new</span> Link(<span class="java&#45;quote">"id"</span>)&#123;
+			@Override
+			<span class="java&#45;keyword">public</span> void onClick() &#123;			   
+                         //we redirect browser to another page.
+                         setResponsePage(AnotherPage.class);
+			&#125;			
+		&#125;);
+	&#125;
+&#125;</pre></div><p class="paragraph"/>In the example above we used a version of <code>setResponsePage</code> which takes as input the class of the target page. In this way a new instance of <code>AnotherPage</code> will be create each time we click on the link. The other version of <code>setResponsePage</code> takes in input a page instance instead of a page class:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void onClick() &#123;			   
+	//we redirect browser to another page.
+	AnotherPage anotherPage = <span class="java&#45;keyword">new</span> AnotherPage();
+	setResponsePage(anotherPage);
+&#125;</pre></div><p class="paragraph"/>The difference between using the first version of <code>setResponsePage</code> rather than the second one will be illustrated in <a href="../guide/single.html#chapter7" class="guide">chapter 7</a>, when we will introduce the topic of stateful and stateless pages. For now, we can consider them as equivalent.<p class="paragraph"/><blockquote class="note">
+Wicket comes with a rich set of link components suited for every need (links to static URL, Ajax-enhanced links, links to a file to download, links to external pages and so on). We will see them in <a href="../guide/single.html#chapter9" class="guide">chapter 9</a>.
+</blockquote>
+
+
+<h2 id="chapter3_5">3.5 Summary</h2>
+In this chapter we have seen the basic elements that compose a Wicket application. We have started preparing the configuration artifacts needed for our applications. As promised in <a href="../guide/single.html#chapter2_4" class="guide">chapter 2.4</a>, we needed to put in place just a minimal amount of XML with an application class and a home page. 
+Then we have continued our “first contact” with Wicket learning how to build a simple page with a label component as child. This example page has shown us how Wicket maps components to HTML tags and how it uses both of them to generate the final HTML markup. 
+In the last paragraph we had a first taste of Wicket links and we have seen how they can be considered as a “click” event listener and how they can be used to navigate from a page to another.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/chapter2.html">&lt;&lt; <strong>2</strong><span>Why should I learn Wicket?</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/chapter4.html"><strong>4</strong><span>Wicket as page layout manager</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43124634-1', 'comsysto.com');
+  ga('send', 'pageview');
+
+</script>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>
