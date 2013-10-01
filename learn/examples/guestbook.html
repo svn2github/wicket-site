@@ -63,6 +63,9 @@
 	</h5>
 	<ul>
 		<li>
+			<a href="/guide" title="User Guide">User Guide</a>
+		</li>
+		<li>
 			<a href="/learn/examples" title="Examples">Examples</a>
 		</li>
 		<li>
@@ -217,7 +220,8 @@
         <span class='k'>return</span> <span class='s'>&quot;[Comment date = &quot;</span> <span class='o'>+</span> <span class='n'>date</span> <span class='o'>+</span> <span class='s'>&quot;, text = &quot;</span> <span class='o'>+</span> <span class='n'>text</span> <span class='o'>+</span> <span class='s'>&quot;]&quot;</span><span class='o'>;</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <h2 id='guestbookjava'>GuestBook.java</h2>
 
 <p>In the file <code>GuestBook.java</code> we have put the Java component code for the guestbook page. This is the homepage for the guestbook application. The page consists of a form for entering new items to the guestbook and a list of repeating markup for showing the guestbook entries.</p>
@@ -318,7 +322,8 @@
         <span class='n'>commentList</span><span class='o'>.</span><span class='na'>clear</span><span class='o'>();</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>When the <code>CommentForm</code> is submitted, the <code>onSubmit()</code> method is called. Notice that nothing gets the value of the <code>TextArea</code> that was added in the <code>CommentForm</code> constructor. This is because the comment is the model and the third parameter to the <code>TextArea</code> constructor specified the property of the model to update. So all <code>onSubmit()</code> has to do is create a new comment from the model that was updated and add it to the comment list. When the page redraws, the new list will be rendered.</p>
 
 <p>We use a synchronized list as our shared static model used by <code>commentListView</code> (<code>commentList</code>) to ensure that it is only updated by one thread at a time. Remember, this is a multi-user application with a shared model!</p>
@@ -361,7 +366,8 @@
   <span class='nt'>&lt;/wicket:remove&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <h2 id='guestbookapplicationjava'>GuestBookApplication.java</h2>
 
 <p>For completeness, we&#8217;ve included the <code>GuestBookApplication</code> class, and as a final treat the modifications to the <code>web.xml</code> file.</p>
@@ -379,7 +385,8 @@
         <span class='k'>return</span> <span class='n'>GuestBook</span><span class='o'>.</span><span class='na'>class</span><span class='o'>;</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <h2 id='webxml'>web.xml</h2>
 
 <p>Add the following two sections (servlet and servlet-mapping) to your web.xml file for running this application.</p>
@@ -391,7 +398,8 @@
       <span class='nt'>&lt;param-value&gt;</span>org.apache.wicket.examples.guestbook.GuestBookApplication<span class='nt'>&lt;/param-value&gt;</span>
     <span class='nt'>&lt;/init-param&gt;</span>
 <span class='nt'>&lt;/filter&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
