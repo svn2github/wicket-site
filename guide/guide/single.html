@@ -73,6 +73,8 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:0"><a href="#chapter25"><strong>25</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a></div>
                             
+                            <div class="toc-item" style="margin-left:0"><a href="#chapter26"><strong>26</strong><span>Contributing to this guide (Appendix)</span></a></div>
+                            
                         </div>
                     </div>
                 </li>
@@ -451,6 +453,8 @@ function addJsClass(el) {
                             <div class="toc-item" style="margin-left:10px"><a href="#chapter24_5"><strong>24.5</strong><span>Module wicketstuff-inmethod-grid</span></a></div>
                             
                             <div class="toc-item" style="margin-left:0px"><a href="#chapter25"><strong>25</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#chapter26"><strong>26</strong><span>Contributing to this guide (Appendix)</span></a></div>
                             
                             <div style="clear:both" ></div>
                         </div>
@@ -4345,6 +4349,31 @@ Quite a few teams have already got stuck into the following problem when working
     getRequestCycleSettings().setRenderStrategy(
         IRequestCycleSettings.ONE_PASS_RENDER);
 &#125;</pre></div><p class="paragraph"/>ONE_PASS_RENDER RenderStrategy does not solve the double submit problem though! So this way you’d only be trading one problem for another one actually.<p class="paragraph"/>You could of course turn on the session stickiness between your load balancer (apache server) and your tomcat server additionally to the session replication which would be the preferred solution in my opinion.<p class="paragraph"/><img border="0" class="center" src="../img/lost-in-redirection-mockup4.png"></img><p class="paragraph"/>Session replication would still provide you with failover in case one of the tomcat server dies for whatever reason and sticky sessions would ensure that the Lost In Redirection problem does not occur any more.<p class="paragraph"/>
+
+
+<h1 id="chapter26">26 Contributing to this guide (Appendix)</h1>
+You can contribute to this guide by following these steps:
+<ul class="star">
+<li>The guide uses Grails GDoc to generate the final HTML/PDF so you should consult with its <a href="http://grails.org/WikiSyntax" target="blank">syntax</a>.</li>
+<li>Checkout Apache Wicket's <a href="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/" target="blank">site</a></li>
+</ul><p class="paragraph"/><div class="code"><pre>svn checkout https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/</pre></div>
+<ul class="star">
+<li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">_site/guide/guide/src/docs/guide</em>  folder</li>
+<li>To preview your changes you should have <a href="http://grails.org/" target="blank">Grails</a> installed.</li>
+<ul class="star">
+<li>Download it from <a href="http://grails.org/download" target="blank">here</a>.</li>
+</ul></ul><p class="paragraph"/><strong class="bold">Note</strong>: Download version <strong class="bold">2.2.4</strong>. Newer versions are not supported at the moment.
+<ul class="star">
+<ul class="star">
+<li>Install it by following these <a href="http://grails.org/doc/latest/guide/gettingStarted.html#requirements" target="blank">instructions</a></li>
+</ul>
+<li>Navigate to  <em class="italic">_site/guide/guide</em>  folder and execute</li>
+</ul><p class="paragraph"/><div class="code"><pre>grails doc</pre></div>
+<ul class="star">
+<li>To preview your changes open  <em class="italic">_site/guide/index.html</em>  in a browser</li>
+<li>Create a patch with</li>
+</ul><p class="paragraph"/><div class="code"><pre>svn diff &#62; my.patch</pre></div>
+and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
 
                     </div>
                 </td>
