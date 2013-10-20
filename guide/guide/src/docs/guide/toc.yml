@@ -18,7 +18,7 @@ chapter4:
   chapter4_1: Header, footer, left menu, content, etc...
   chapter4_2: Here comes the inheritance!
   chapter4_3: Divide et impera!  
-  chapter4_4: Markup inheritance with the <wicket:extend> tag
+  chapter4_4: Markup inheritance with the wicket:extend tag
   chapter4_5: Summary
 chapter5:
   title: Keeping control over HTML
@@ -30,7 +30,7 @@ chapter5:
   chapter5_6: Adding header contents to the final page
   chapter5_7: Using stub markup in our pages/panels
   chapter5_8: How to render component body only
-  chapter5_9: Hiding decorating elements with the <wicket:enclosure> tag
+  chapter5_9: Hiding decorating elements with the wicket:enclosure tag
   chapter5_10: Surrounding existing markup with Border
   chapter5_11: Summary
 chapter6:
@@ -58,7 +58,7 @@ chapter9:
   title: Wicket Links and URL generation
   chapter9_1: PageParameters
   chapter9_2: Bookmarkable links
-  chapter9_3: Automatically creating bookmarkable links with tag <wicket:link>
+  chapter9_3: Automatically creating bookmarkable links with tag wicket:link
   chapter9_4: External links
   chapter9_5: Stateless links
   chapter9_6: Generating structured and clear URLs

@@ -43,11 +43,11 @@ public class CustomPanel extends Panel {
 
 Wicket will take care of generating a valid URL for file calendar.jpg. URLs for package resources have the following structure:
 
-@<path to application root>/wicket/resource/<fully qualified class name>/<resource file name> -<ver-<id>>[.<file extension>]@
+@&lt;path to application root>/wicket/resource/&lt;fully qualified classname>/&lt;resource file name> -&lt;ver-&lt;id>>[.&lt;file extension>]@
 
 In our example the URL for our picture file calendar.jpg is the following:
 
-@./wicket/resource/org.wicketTutorial.CustomPanel/calendar-ver-1297887542000.jpg@
+@./wicket/resource/org.wicketTutorial.CustomPanel/ calendar-ver-1297887542000.jpg@
 
 The first part of the URL is the relative path to the application root. In our example our page is already at the application's root so we have only a single-dotted segment. The next two segments, wicket and resource, are respectively the namespace and the identifier for resources seen in paragraph 8.6.4. 
 
