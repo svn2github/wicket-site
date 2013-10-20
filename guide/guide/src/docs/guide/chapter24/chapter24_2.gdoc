@@ -18,21 +18,25 @@ By default TinyMceBehavior adds only a basic set of functionalities to our texta
 To add more functionalities we must use class TinyMCESettings to register additional TinyMCE plugins and to customize the toolbars buttons. The following code is an excerpt from example page FullFeaturedTinyMCEPage:
 
 {code}
-TinyMCESettings settings = new TinyMCESettings(TinyMCESettings.Theme.advanced);
+TinyMCESettings settings = new TinyMCESettings(
+                       TinyMCESettings.Theme.advanced);
 //...
 // first toolbar
 //...
 settings.add(Button.newdocument, TinyMCESettings.Toolbar.first,
-		                             TinyMCESettings.Position.before);
+		      TinyMCESettings.Position.before);
 settings.add(Button.separator, TinyMCESettings.Toolbar.first,
-			                      TinyMCESettings.Position.before);
+		      TinyMCESettings.Position.before);
 settings.add(Button.fontselect, TinyMCESettings.Toolbar.first,
-			                      TinyMCESettings.Position.after);
+		      TinyMCESettings.Position.after);
 //...
 // other settings
-settings.setToolbarAlign(TinyMCESettings.Align.left);
-settings.setToolbarLocation(TinyMCESettings.Location.top);
-settings.setStatusbarLocation(TinyMCESettings.Location.bottom);
+settings.setToolbarAlign(
+   		TinyMCESettings.Align.left);
+settings.setToolbarLocation(
+   		TinyMCESettings.Location.top);
+settings.setStatusbarLocation(
+   		TinyMCESettings.Location.bottom);
 settings.setResizing(true);
 //...
 TextArea textArea = new TextArea("ta", new Model(TEXT));

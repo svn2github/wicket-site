@@ -94,7 +94,7 @@ public void init()
 {
   super.init();
   //retrieve IResourceSettings and then the list of resource loaders
-  List<IStringResourceLoader> resourceLoaders= getResourceSettings(). 
-                                                                 getStringResourceLoaders();
+  List<IStringResourceLoader> resourceLoaders = getResourceSettings(). 
+                                                getStringResourceLoaders();
   //customize the list...
 {code}

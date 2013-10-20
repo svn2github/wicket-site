@@ -38,15 +38,24 @@ When you run this test though, you'll unfortunately get the following exception 
 
 {code}
 java.lang.IllegalStateException: No WebApplicationContext found: no ContextLoaderListener registered?
-	at org.springframework.web.context.support.WebApplicationContextUtils.getRequiredWebApplicationContext(WebApplicationContextUtils.java:84)
-	at org.apache.wicket.spring.injection.annot.SpringComponentInjector.<init>(SpringComponentInjector.java:72)
-	at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.initializeSpringComponentInjector(MyWebApplication.java:59)
-	at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.init(MyWebApplication.java:49)
-	at org.apache.wicket.protocol.http.WicketFilter.init(WicketFilter.java:719)
-	at org.apache.wicket.protocol.http.MockWebApplication.<init>(MockWebApplication.java:168)
-	at org.apache.wicket.util.tester.BaseWicketTester.<init>(BaseWicketTester.java:219)
-	at org.apache.wicket.util.tester.WicketTester.<init>(WicketTester.java:325)
-	at org.apache.wicket.util.tester.WicketTester.<init>(WicketTester.java:308)
+    at org.springframework.web.context.support.WebApplicationContextUtils.
+	getRequiredWebApplicationContext(WebApplicationContextUtils.java:84)
+    at org.apache.wicket.spring.injection.annot.
+	SpringComponentInjector.<init>(SpringComponentInjector.java:72)
+    at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.
+	initializeSpringComponentInjector(MyWebApplication.java:59)
+    at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.
+	init(MyWebApplication.java:49)
+    at org.apache.wicket.protocol.http.WicketFilter.
+	init(WicketFilter.java:719)
+    at org.apache.wicket.protocol.http.MockWebApplication.
+	<init>(MockWebApplication.java:168)
+    at org.apache.wicket.util.tester.BaseWicketTester.
+	<init>(BaseWicketTester.java:219)
+    at org.apache.wicket.util.tester.WicketTester.
+	<init>(WicketTester.java:325)
+    at org.apache.wicket.util.tester.WicketTester.
+	<init>(WicketTester.java:308)
 {code}
 
 As you can see above, the Exception gets raised during the initialization of the WicketTester instance even before the actual test method gets executed. Even though we have applied rather cool and simple annotation based test configuration already described and passed in perfectly well prepared ApplicationContext instance to the WicketTester instance in the constructor, somewhere down the rabbit hole someone complained that no WebApplicationContext instance could have been found which seems to be required in order to initialize the WicketTester properly.

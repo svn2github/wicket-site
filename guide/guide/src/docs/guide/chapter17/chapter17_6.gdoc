@@ -77,7 +77,7 @@ The code of our custom listener is the following:
 {code}
 public class DisableComponentListener extends AjaxCallListener {
    private static PackageResourceReference customScriptReference = new   
-   PackageResourceReference(DisableComponentListener.class,"moveHiderAndIndicator.js");
+   PackageResourceReference(DisableComponentListener.class, "moveHiderAndIndicator.js");
    
    private static PackageResourceReference jqueryUiPositionRef = new    
    PackageResourceReference(DisableComponentListener.class, "jquery-ui-position.min.js");
@@ -95,13 +95,13 @@ public class DisableComponentListener extends AjaxCallListener {
    public CharSequence getBeforeHandler(Component component) {   
       CharSequence indicatorUrl = getIndicatorUrl(component);
       return ";DisableComponentListener.disableElement('" + targetComponent.getMarkupId() 
-                                                   + "'," + "'" + indicatorUrl + "');";
+              + "'," + "'" + indicatorUrl + "');";
    }
 
    @Override
    public CharSequence getCompleteHandler(Component component) {
-      return ";DisableComponentListener.hideComponent('" + targetComponent.getMarkupId() + 
-                                                                               "');";
+      return ";DisableComponentListener.hideComponent('" 
+		+ targetComponent.getMarkupId() + "');";
    }
    
    protected CharSequence getIndicatorUrl(Component component) {
@@ -110,11 +110,11 @@ public class DisableComponentListener extends AjaxCallListener {
    
    @Override
    public void renderHead(Component component, IHeaderResponse response) {   
-      ResourceReference jqueryReference = Application.get().getJavaScriptLibrarySettings(). 
-                                     getJQueryReference();
+      ResourceReference jqueryReference = 
+      Application.get().getJavaScriptLibrarySettings().getJQueryReference();
       response.render(JavaScriptHeaderItem.forReference(jqueryReference));      
       response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
-      response.render(JavaScriptHeaderItem.forReference(customScriptReference));
+      response.render(JavaScriptHeaderItem.forReference(customScriptReference) );
    }
 }
 {code}

@@ -53,7 +53,8 @@ public class PageWithParameters extends WebPage {
 The code is quite straightforward and it’s more interesting to look at the URL generated for the target page:
 
 {code:html}
-<app root>/PageParametersExample/wicket/bookmarkable/org.wicketTutorial.PageWithParameters?foo=foo&bar=bar
+<app root>/PageParametersExample/wicket/bookmarkable/
+		org.wicketTutorial.PageWithParameters?foo=foo&bar=bar
 {code}
 
 At first glance the URL above could seem a little weird, except for the last part which contains the two named parameters used to build the target page.

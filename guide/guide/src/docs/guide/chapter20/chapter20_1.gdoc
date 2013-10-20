@@ -121,7 +121,7 @@ In the test case from project CustomResourceMounting we extract the text contain
 {code}
 //...
 @Test
-public void testMountedResourceResponse() throws IOException, FeedException{		tester.startResource(new RSSProducerResource());
+public void testMountedResourceResponse() throws IOException, FeedException{tester.startResource(new RSSProducerResource());
 	String responseTxt = tester.getLastResponse().getDocument();
 	//write the RSS feed used in the test into a ByteArrayOutputStream
 	ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -190,7 +190,8 @@ public class HomePage extends WebPage {
 		@Override
 		protected void onEvent(AjaxRequestTarget target) {
 			//change label's data object
-			getComponent().setDefaultModelObject(OTHER_VALUE);
+			getComponent().setDefaultModelObject(
+                                                  OTHER_VALUE);
 			target.add(getComponent());
 		}
 	}).setOutputMarkupId(true);
@@ -221,8 +222,8 @@ To test a generic AJAX behavior we can simulate a request to it using WicketTest
 
 {code}
 //...
-AjaxFormComponentUpdatingBehavior ajaxBehavior = new AjaxFormComponentUpdatingBehavior 
-                                                                           ("change"){
+AjaxFormComponentUpdatingBehavior ajaxBehavior = 
+		new AjaxFormComponentUpdatingBehavior("change"){
 	@Override
 	protected void onUpdate(AjaxRequestTarget target) {
 		//...				

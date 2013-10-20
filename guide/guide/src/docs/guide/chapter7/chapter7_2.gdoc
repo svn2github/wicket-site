@@ -132,7 +132,8 @@ This error page can be customized with the setPageExpiredErrorPage method of the
 public void init()
 {
 	super.init();
-	getApplicationSettings().setPageExpiredErrorPage(CustomExpiredErrorPage.class);
+	getApplicationSettings().setPageExpiredErrorPage(
+				CustomExpiredErrorPage.class);
 }
 {code}
 

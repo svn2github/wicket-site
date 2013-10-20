@@ -41,7 +41,8 @@ To change the authorization strategy in use we must register the desired impleme
   public void init()
   {
     super.init();
-    getSecuritySettings().setAuthorizationStrategy(myAuthorizationStrategy);
+    getSecuritySettings().
+	setAuthorizationStrategy(myAuthorizationStrategy);
   }	
 //...
 {code}
@@ -211,7 +212,8 @@ The access-denied page can be customized using method setAccessDeniedPage(Class<
    //Application class code...
    @Override
    public void init(){   
-      getApplicationSettings().setAccessDeniedPage(MyCustomAccessDeniedPage.class); 
+      getApplicationSettings().setAccessDeniedPage(
+			MyCustomAccessDeniedPage.class); 
    }
 {code}
 

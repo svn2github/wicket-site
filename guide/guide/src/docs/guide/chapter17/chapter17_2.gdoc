@@ -166,16 +166,16 @@ public class HomePage extends WebPage {
      DefaultMutableTreeNode root = new DefaultMutableTreeNode("Cities of Europe");
       
      addNodes(addNodes(root, "Italy"), "Rome", "Venice", "Milan", "Florence");
-     addNodes(addNodes(root, "Germany"),"Stuttgart","Munich","Berlin","Dusseldorf", "Dresden");
-     addNodes(addNodes(root, "France"), "Paris","Toulouse","Strasbourg","Bordeaux", "Lyon");
+     addNodes(addNodes(root, "Germany"),"Stuttgart","Munich", "Berlin","Dusseldorf", "Dresden");
+     addNodes(addNodes(root, "France"), "Paris","Toulouse", "Strasbourg","Bordeaux", "Lyon");
       
      DefaultTreeModel treeModel = new DefaultTreeModel(root);
      TreeModelProvider<DefaultMutableTreeNode> modelProvider = new 
-                                  TreeModelProvider<DefaultMutableTreeNode>(treeModel) {
-         @Override
-         public IModel<DefaultMutableTreeNode> model(DefaultMutableTreeNode object) {
-            return Model.of(object);
-        }
+                            TreeModelProvider<DefaultMutableTreeNode>( treeModel ){
+       @Override
+       public IModel<DefaultMutableTreeNode> model(DefaultMutableTreeNode object){
+          return Model.of(object);
+       }
      };
      //To be continued...
 {code}

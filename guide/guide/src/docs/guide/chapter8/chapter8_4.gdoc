@@ -39,7 +39,8 @@ h3. Accessing to the HTTP session
 If for any reason we need to directly access to the underlying HttpSession object, we can retrieve it from the current request with the following code:
 
 {code}
-HttpSession session = ((ServletWebRequest)RequestCycle.get().getRequest()).getContainerRequest().getSession();
+HttpSession session = ((ServletWebRequest)RequestCycle.get()
+		.getRequest()).getContainerRequest().getSession();
 {code}
 
 Using the raw session object might be necessary if we have to set a session attribute with a particular name without the prefix added by Wicket. Let's say for example that we are working with Tomcat as web server. One of the administrative tools provided by Tomcat is a page listing all the active user sessions of a given web application:
@@ -49,7 +50,8 @@ Using the raw session object might be necessary if we have to set a session attr
 Tomcat allows us to set the values that will be displayed in columns “Guessed locale” and “Guessed User name”. One possible way to do this is to use session attributes named “Locale” and “userName” but we can't create them via Wicket's Session class because they would not have exactly the name required by Tomcat. Instead, we must use the raw HttpSession and set our attributes on it:
 
 {code}
-HttpSession session = ((ServletWebRequest)RequestCycle.get().getRequest()).getContainerRequest().getSession();	
+HttpSession session = ((ServletWebRequest)RequestCycle.get().
+		getRequest()).getContainerRequest().getSession();	
 
 session.setAttribute("Locale", "ENGLISH");
 session.setAttribute("userName", "Mr BadGuy");

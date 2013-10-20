@@ -35,8 +35,8 @@ public void homePageMarkupTest()
 	Assert.assertNotNull(tagTester);
 	Assert.assertEquals("span", tagTester.getName());	
 	
-	List<TagTester> tagTesterList = TagTester.createTagsByAttribute(responseTxt, "class", 
-                                                                       "myClass", false);
+	List<TagTester> tagTesterList = TagTester.createTagsByAttribute(responseTxt, 
+						"class", "myClass", false);
 		
 	Assert.assertEquals(2, tagTesterList.size());
 }

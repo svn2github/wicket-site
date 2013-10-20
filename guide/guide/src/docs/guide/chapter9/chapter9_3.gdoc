@@ -23,7 +23,7 @@ Bookmarkable pages can be linked directly inside markup files without writing an
 The key part of the markup above is the href attribute which must contain the package-relative path to a page. The home page is inside package org.wicketTutorial which in turns contains the sub package anotherPackage. This package hierarchy is reflected by the href attributes: in the first anchor we have a link to the home page itself while the second anchor points to page SubPackagePage which is placed into sub package anotherPackage. Absolute paths are supported as well and we can use them if we want to specify the full package of a given page. For example the link to SubPackagePage could have been written in the following (more verbose) way:
 
 {code:html}
-<a href="/org/wicketTutorial/anotherPackage/SubPackagePage.html">SubPackagePage</a>
+<a href="/org/wicketTutorial/anotherPackage/SubPackagePage.html"> SubPackagePage</a>
 {code}
 
 If we take a look also at the markup of SubPackagePage we can see that it contains a link to the home page which uses the parent directory selector (relative path):

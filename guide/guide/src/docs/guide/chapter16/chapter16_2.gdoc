@@ -19,7 +19,7 @@ public interface IMyListener extends IRequestListener
 {
 	/**RequestListenerInterface instance*/
 	public static final RequestListenerInterface INTERFACE = new 
-                                           RequestListenerInterface(IMyListener.class);
+                               RequestListenerInterface(IMyListener.class);
 	/**
 	 * Called when the relative callback URL is requested.
 	 */
@@ -42,7 +42,7 @@ public void onRequest() {
 	IRequestParameters requestParameters = request.getRequestParameters();
 	StringValue choiceId = requestParameters.getParameterValue("choiceId");
 	//boundComponent is the component that the behavior it is bound to.
-	boundComponent.setDefaultModelObject(convertChoiceIdToChoice(choiceId.toString()));
+	boundComponent.setDefaultModelObject( convertChoiceIdToChoice(choiceId.toString()));
 }
 {code}
 

@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>5.9 Hiding decorating elements with the &lt;wicket:enclosure&gt; tag 1.0.0.BUILD-SNAPSHOT</title>
+    <title>5.9 Hiding decorating elements with the wicket:enclosure tag 1.0.0.BUILD-SNAPSHOT</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -140,7 +140,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>5.9 Hiding decorating elements with the &lt;wicket:enclosure&gt; tag - Reference Documentation</h1>
+                    <h1>5.9 Hiding decorating elements with the wicket:enclosure tag - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl</p>
 
@@ -153,7 +153,7 @@ function addJsClass() {
 
                 
 
-<h2 id="chapter5_9">5.9 Hiding decorating elements with the <wicket:enclosure> tag</h2>
+<h2 id="chapter5_9">5.9 Hiding decorating elements with the wicket:enclosure tag</h2>
 Our data are rarely displayed alone without a caption or other graphic elements that make clear the meaning of their value. For example:<p class="paragraph"/><div class="code"><pre>&#60;label&#62;Total amount: &#60;/label&#62;&#60;span wicket:id=<span class="java&#45;quote">"totalAmount"</span>&#62;&#60;/span&#62;</pre></div><p class="paragraph"/>Wicket comes with a nice utility tag called <code>&#60;wicket:enclosure&#62;</code> that automatically hides those decorating elements if the related data value is not visible. All we have to do is to put the involved markup inside this tag. Applying <code>&#60;wicket:enclosure&#62;</code> to the previous example we get the following markup:<p class="paragraph"/><div class="code"><pre>&#60;wicket:enclosure&#62; 
     &#60;label&#62;Total amount: &#60;/label&#62;&#60;span wicket:id=<span class="java&#45;quote">"totalAmount"</span>&#62;&#60;/span&#62;
 &#60;/wicket:enclosure&#62;</pre></div><p class="paragraph"/>Now if component <code>totalAmount</code> is not visible, its description (<code>Total amount:</code>) will be automatically hidden. If we have more then a Wicket component inside <code>&#60;wicket:enclosure&#62;</code> we can use <code>child</code> attribute to specify which component will control the overall visibility:<p class="paragraph"/><div class="code"><pre>&#60;wicket:enclosure child=<span class="java&#45;quote">"totalAmount"</span>&#62; 

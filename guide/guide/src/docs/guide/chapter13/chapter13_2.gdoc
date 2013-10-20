@@ -126,5 +126,5 @@ wicket:message can be adopted also to localize the attributes of a tag. The name
 If we want to specify multiple attributes at once, we can separate them with a coma:
 
 {code:html}
-<input type="submit" value="Preview value" wicket:message="value:key4value,title:key4title"/>
+<input type="submit" value="Preview value" wicket:message="value:key4value, title:key4title"/>
 {code}

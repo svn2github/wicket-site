@@ -30,7 +30,7 @@ Patterns that allow to access to every file with a given extensions (such as “
 public void init()   
 {
       IPackageResourceGuard packageResourceGuard = application.getResourceSettings() 
-                                                              .getPackageResourceGuard();
+                                                   .getPackageResourceGuard();
       if (packageResourceGuard instanceof SecurePackageResourceGuard)
       {
          SecurePackageResourceGuard guard = (SecurePackageResourceGuard) packageResourceGuard;
