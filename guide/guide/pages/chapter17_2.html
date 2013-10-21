@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -208,14 +208,14 @@ The component provides different setter methods to customize the appearance of t
     <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
      <span class="java&#45;keyword">super</span>(parameters);
      DefaultMutableTreeNode root = <span class="java&#45;keyword">new</span> DefaultMutableTreeNode(<span class="java&#45;quote">"Cities of Europe"</span>);<p class="paragraph"/>     addNodes(addNodes(root, <span class="java&#45;quote">"Italy"</span>), <span class="java&#45;quote">"Rome"</span>, <span class="java&#45;quote">"Venice"</span>, <span class="java&#45;quote">"Milan"</span>, <span class="java&#45;quote">"Florence"</span>);
-     addNodes(addNodes(root, <span class="java&#45;quote">"Germany"</span>),<span class="java&#45;quote">"Stuttgart"</span>,<span class="java&#45;quote">"Munich"</span>,<span class="java&#45;quote">"Berlin"</span>,<span class="java&#45;quote">"Dusseldorf"</span>, <span class="java&#45;quote">"Dresden"</span>);
-     addNodes(addNodes(root, <span class="java&#45;quote">"France"</span>), <span class="java&#45;quote">"Paris"</span>,<span class="java&#45;quote">"Toulouse"</span>,<span class="java&#45;quote">"Strasbourg"</span>,<span class="java&#45;quote">"Bordeaux"</span>, <span class="java&#45;quote">"Lyon"</span>);<p class="paragraph"/>     DefaultTreeModel treeModel = <span class="java&#45;keyword">new</span> DefaultTreeModel(root);
+     addNodes(addNodes(root, <span class="java&#45;quote">"Germany"</span>),<span class="java&#45;quote">"Stuttgart"</span>,<span class="java&#45;quote">"Munich"</span>, <span class="java&#45;quote">"Berlin"</span>,<span class="java&#45;quote">"Dusseldorf"</span>, <span class="java&#45;quote">"Dresden"</span>);
+     addNodes(addNodes(root, <span class="java&#45;quote">"France"</span>), <span class="java&#45;quote">"Paris"</span>,<span class="java&#45;quote">"Toulouse"</span>, <span class="java&#45;quote">"Strasbourg"</span>,<span class="java&#45;quote">"Bordeaux"</span>, <span class="java&#45;quote">"Lyon"</span>);<p class="paragraph"/>     DefaultTreeModel treeModel = <span class="java&#45;keyword">new</span> DefaultTreeModel(root);
      TreeModelProvider&#60;DefaultMutableTreeNode&#62; modelProvider = <span class="java&#45;keyword">new</span> 
-                                  TreeModelProvider&#60;DefaultMutableTreeNode&#62;(treeModel) &#123;
-         @Override
-         <span class="java&#45;keyword">public</span> IModel&#60;DefaultMutableTreeNode&#62; model(DefaultMutableTreeNode object) &#123;
-            <span class="java&#45;keyword">return</span> Model.of(object);
-        &#125;
+                            TreeModelProvider&#60;DefaultMutableTreeNode&#62;( treeModel )&#123;
+       @Override
+       <span class="java&#45;keyword">public</span> IModel&#60;DefaultMutableTreeNode&#62; model(DefaultMutableTreeNode object)&#123;
+          <span class="java&#45;keyword">return</span> Model.of(object);
+       &#125;
      &#125;;
      //To be continued...</pre></div><p class="paragraph"/>Nodes have been built using simple strings as data objects and invoking custom utility method addNodes which converts string parameters into children nodes for a given parent node. Once we have our tree of DefaultMutableTreeNodes we can build the Swing tree model (DefaultTreeModel) that will be the backing object for a TreeModelProvider. This provider wraps each node in a model invoking its abstract method model. In our example we have used a simple Model as wrapper model.<p class="paragraph"/>Scrolling down the code we can see how the tree component is instantiated and configured before being added to the home page:<p class="paragraph"/><div class="code"><pre>//Continued from previous snippet&#8230;
  NestedTree&#60;DefaultMutableTreeNode&#62; tree = <span class="java&#45;keyword">new</span> NestedTree&#60;DefaultMutableTreeNode&#62;(<span class="java&#45;quote">"tree"</span>, 
@@ -298,6 +298,7 @@ add(label);
 &#125;;</pre></div><p class="paragraph"/>Please note that in the code above we didn't invoked method setOutputMarkupId(true) as setOutputMarkupPlaceholderTag already does it internally.
 
 
+
                 <div style="clear:both;margin-top:15px;"></div>
                 
                     <div class="toc-item prev-left"><a href="../../guide/chapter16.html">&lt;&lt; <strong>16</strong><span>Wicket advanced topics</span></a></div>
@@ -323,17 +324,7 @@ add(label);
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>

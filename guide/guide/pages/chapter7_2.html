@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -195,8 +195,10 @@ For the second level cache we can use the setInmemoryCacheSize(int inmemoryCache
 <span class="java&#45;keyword">public</span> void init()
 &#123;
 	<span class="java&#45;keyword">super</span>.init();
-	getApplicationSettings().setPageExpiredErrorPage(CustomExpiredErrorPage.class);
+	getApplicationSettings().setPageExpiredErrorPage(
+				CustomExpiredErrorPage.class);
 &#125;</pre></div><p class="paragraph"/>The page class provided as custom error page must have a public constructor with no argument or a constructor that takes as input a single PageParameters argument (the page must be bookmarkable as described in paragraph 8.1.1).
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -224,17 +226,7 @@ For the second level cache we can use the setInmemoryCacheSize(int inmemoryCache
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>

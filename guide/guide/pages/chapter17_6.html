@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -182,7 +182,7 @@ function addJsClass() {
 	&#125;
 &#125;;</pre></div><p class="paragraph"/><h3>Java class code</h3><p class="paragraph"/>The code of our custom listener is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class DisableComponentListener <span class="java&#45;keyword">extends</span> AjaxCallListener &#123;
    <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference customScriptReference = <span class="java&#45;keyword">new</span>   
-   PackageResourceReference(DisableComponentListener.class,<span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
+   PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
    PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"jquery&#45;ui&#45;position.min.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference indicatorReference = 
          <span class="java&#45;keyword">new</span> PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"ajax&#45;loader.gif"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> Component targetComponent;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> DisableComponentListener(Component targetComponent)&#123;
       <span class="java&#45;keyword">this</span>.targetComponent = targetComponent;
@@ -190,20 +190,20 @@ function addJsClass() {
    <span class="java&#45;keyword">public</span> CharSequence getBeforeHandler(Component component) &#123;   
       CharSequence indicatorUrl = getIndicatorUrl(component);
       <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.disableElement('"</span> + targetComponent.getMarkupId() 
-                                                   + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
+              + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
    &#125;<p class="paragraph"/>   @Override
    <span class="java&#45;keyword">public</span> CharSequence getCompleteHandler(Component component) &#123;
-      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> + targetComponent.getMarkupId() + 
-                                                                               <span class="java&#45;quote">"');"</span>;
+      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> 
+		+ targetComponent.getMarkupId() + <span class="java&#45;quote">"');"</span>;
    &#125;<p class="paragraph"/>   <span class="java&#45;keyword">protected</span> CharSequence getIndicatorUrl(Component component) &#123;
       <span class="java&#45;keyword">return</span> component.urlFor(indicatorReference, <span class="java&#45;keyword">null</span>);
    &#125;<p class="paragraph"/>   @Override
    <span class="java&#45;keyword">public</span> void renderHead(Component component, IHeaderResponse response) &#123;   
-      ResourceReference jqueryReference = Application.get().getJavaScriptLibrarySettings(). 
-                                     getJQueryReference();
+      ResourceReference jqueryReference = 
+      Application.get().getJavaScriptLibrarySettings().getJQueryReference();
       response.render(JavaScriptHeaderItem.forReference(jqueryReference));      
       response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
-      response.render(JavaScriptHeaderItem.forReference(customScriptReference));
+      response.render(JavaScriptHeaderItem.forReference(customScriptReference) );
    &#125;
 &#125;</pre></div><p class="paragraph"/>As you can see in the code above we have created a function (getIndicatorUrl) to retrieve the URL of the indicator picture. This was done in order to make the picture customizable by overriding this method.<p class="paragraph"/>Once we have our listener in place, we can finally use it in our example overwriting method updateAjaxAttributes of the AJAX button that submits the form:<p class="paragraph"/><div class="code"><pre>//&#8230;
 <span class="java&#45;keyword">new</span> AjaxButton(<span class="java&#45;quote">"ajaxButton"</span>)&#123;
@@ -236,6 +236,7 @@ function addJsClass() {
 );</pre></div><p class="paragraph"/>The code above retrieves the id of the component that is about to be removed using parameter attributes. Then it checks if a JQuery datepicker was defined for the given component and if so, it removes the widget calling function destroy.
 
 
+
                 <div style="clear:both;margin-top:15px;"></div>
                 
                     <div class="toc-item prev-left"><a href="../../guide/chapter16.html">&lt;&lt; <strong>16</strong><span>Wicket advanced topics</span></a></div>
@@ -261,17 +262,7 @@ function addJsClass() {
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>
