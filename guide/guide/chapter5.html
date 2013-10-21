@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -177,7 +177,7 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0px"><a href="#chapter5_8"><strong>5.8</strong><span>How to render component body only</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#chapter5_9"><strong>5.9</strong><span>Hiding decorating elements with the &lt;wicket:enclosure&gt; tag</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#chapter5_9"><strong>5.9</strong><span>Hiding decorating elements with the wicket:enclosure tag</span></a>
                     </div>
                     
                     <div class="toc-item" style="margin-left:0px"><a href="#chapter5_10"><strong>5.10</strong><span>Surrounding existing markup with Border</span></a>
@@ -304,7 +304,7 @@ add(label);</pre></div><p class="paragraph"/>the output will be:<p class="paragr
 &#60;/html&#62;</pre></div><p class="paragraph"/>As you can see the <code>&#60;div&#62;</code> tag used for component <code>Label</code> is not present in the final markup.
 
 
-<h2 id="chapter5_9">5.9 Hiding decorating elements with the <wicket:enclosure> tag</h2>
+<h2 id="chapter5_9">5.9 Hiding decorating elements with the wicket:enclosure tag</h2>
 Our data are rarely displayed alone without a caption or other graphic elements that make clear the meaning of their value. For example:<p class="paragraph"/><div class="code"><pre>&#60;label&#62;Total amount: &#60;/label&#62;&#60;span wicket:id=<span class="java&#45;quote">"totalAmount"</span>&#62;&#60;/span&#62;</pre></div><p class="paragraph"/>Wicket comes with a nice utility tag called <code>&#60;wicket:enclosure&#62;</code> that automatically hides those decorating elements if the related data value is not visible. All we have to do is to put the involved markup inside this tag. Applying <code>&#60;wicket:enclosure&#62;</code> to the previous example we get the following markup:<p class="paragraph"/><div class="code"><pre>&#60;wicket:enclosure&#62; 
     &#60;label&#62;Total amount: &#60;/label&#62;&#60;span wicket:id=<span class="java&#45;quote">"totalAmount"</span>&#62;&#60;/span&#62;
 &#60;/wicket:enclosure&#62;</pre></div><p class="paragraph"/>Now if component <code>totalAmount</code> is not visible, its description (<code>Total amount:</code>) will be automatically hidden. If we have more then a Wicket component inside <code>&#60;wicket:enclosure&#62;</code> we can use <code>child</code> attribute to specify which component will control the overall visibility:<p class="paragraph"/><div class="code"><pre>&#60;wicket:enclosure child=<span class="java&#45;quote">"totalAmount"</span>&#62; 
@@ -389,17 +389,7 @@ To perform this task Wicket provides a special-purpose family of components call
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>

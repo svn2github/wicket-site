@@ -86,10 +86,10 @@ function addJsClass(el) {
         <div id="header">
             <div class="images clearfix">
                 
-                <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+                <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
                 
                 
-                <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+                <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
                 
             </div>
             <p>Free Online Guide for Apache Wicket framework</p>
@@ -146,7 +146,7 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#chapter4_3"><strong>4.3</strong><span>Divide et impera!</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter4_4"><strong>4.4</strong><span>Markup inheritance with the &lt;wicket:extend&gt; tag</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#chapter4_4"><strong>4.4</strong><span>Markup inheritance with the wicket:extend tag</span></a></div>
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#chapter4_5"><strong>4.5</strong><span>Summary</span></a></div>
                             
@@ -168,7 +168,7 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#chapter5_8"><strong>5.8</strong><span>How to render component body only</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter5_9"><strong>5.9</strong><span>Hiding decorating elements with the &lt;wicket:enclosure&gt; tag</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#chapter5_9"><strong>5.9</strong><span>Hiding decorating elements with the wicket:enclosure tag</span></a></div>
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#chapter5_10"><strong>5.10</strong><span>Surrounding existing markup with Border</span></a></div>
                             
@@ -216,7 +216,7 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#chapter9_2"><strong>9.2</strong><span>Bookmarkable links</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter9_3"><strong>9.3</strong><span>Automatically creating bookmarkable links with tag &lt;wicket:link&gt;</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#chapter9_3"><strong>9.3</strong><span>Automatically creating bookmarkable links with tag wicket:link</span></a></div>
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#chapter9_4"><strong>9.4</strong><span>External links</span></a></div>
                             
@@ -759,7 +759,7 @@ The page class contains the code to physically assemble the page and panels:<p c
 &#125;</pre></div><p class="paragraph"/>Obviously this page doesn't come with a related markup file. You can see the final page in the following picture:<p class="paragraph"/><img border="0" class="center" src="../img/final-login-page.png"></img><p class="paragraph"/>
 
 
-<h2 id="chapter4_4">4.4 Markup inheritance with the <wicket:extend> tag</h2>
+<h2 id="chapter4_4">4.4 Markup inheritance with the wicket:extend tag</h2>
 With Wicket we can apply markup inheritance using another approach based on the tag <code>&#60;wicket:child&#62;</code>. This tag is used inside the parent's markup to define where the children pages/panels can “inject” their custom markup extending the markup inherited from the parent component. 
 An example of a parent page using the tag <code>&#60;wicket:child&#62;</code> is the following:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;
 &#60;head&#62;
@@ -942,7 +942,7 @@ add(label);</pre></div><p class="paragraph"/>the output will be:<p class="paragr
 &#60;/html&#62;</pre></div><p class="paragraph"/>As you can see the <code>&#60;div&#62;</code> tag used for component <code>Label</code> is not present in the final markup.
 
 
-<h2 id="chapter5_9">5.9 Hiding decorating elements with the <wicket:enclosure> tag</h2>
+<h2 id="chapter5_9">5.9 Hiding decorating elements with the wicket:enclosure tag</h2>
 Our data are rarely displayed alone without a caption or other graphic elements that make clear the meaning of their value. For example:<p class="paragraph"/><div class="code"><pre>&#60;label&#62;Total amount: &#60;/label&#62;&#60;span wicket:id=<span class="java&#45;quote">"totalAmount"</span>&#62;&#60;/span&#62;</pre></div><p class="paragraph"/>Wicket comes with a nice utility tag called <code>&#60;wicket:enclosure&#62;</code> that automatically hides those decorating elements if the related data value is not visible. All we have to do is to put the involved markup inside this tag. Applying <code>&#60;wicket:enclosure&#62;</code> to the previous example we get the following markup:<p class="paragraph"/><div class="code"><pre>&#60;wicket:enclosure&#62; 
     &#60;label&#62;Total amount: &#60;/label&#62;&#60;span wicket:id=<span class="java&#45;quote">"totalAmount"</span>&#62;&#60;/span&#62;
 &#60;/wicket:enclosure&#62;</pre></div><p class="paragraph"/>Now if component <code>totalAmount</code> is not visible, its description (<code>Total amount:</code>) will be automatically hidden. If we have more then a Wicket component inside <code>&#60;wicket:enclosure&#62;</code> we can use <code>child</code> attribute to specify which component will control the overall visibility:<p class="paragraph"/><div class="code"><pre>&#60;wicket:enclosure child=<span class="java&#45;quote">"totalAmount"</span>&#62; 
@@ -1146,8 +1146,10 @@ For the second level cache we can use the setInmemoryCacheSize(int inmemoryCache
 <span class="java&#45;keyword">public</span> void init()
 &#123;
 	<span class="java&#45;keyword">super</span>.init();
-	getApplicationSettings().setPageExpiredErrorPage(CustomExpiredErrorPage.class);
+	getApplicationSettings().setPageExpiredErrorPage(
+				CustomExpiredErrorPage.class);
 &#125;</pre></div><p class="paragraph"/>The page class provided as custom error page must have a public constructor with no argument or a constructor that takes as input a single PageParameters argument (the page must be bookmarkable as described in paragraph 8.1.1).
+
 
 
 <h2 id="chapter7_3">7.3 Stateless pages</h2>
@@ -1241,7 +1243,9 @@ This paragraph will provide just the basic informations about what happens behin
 <li>setAttribute(String name, Serializable value): creates an attribute identified by the given name. If the session already contains an attribute with the same name, the new value will replace the existing one. The value must be a serializable object.</li>
 <li>getAttribute(String name): returns the value of the attribute identified by the given name, or null if the name does not correspond to any attribute.</li>
 <li>removeAttribute(String name): removes the attribute identified by the given name.</li>
-</ul><p class="paragraph"/>By default class WebSession will use the underlying http session to store attributes. Wicket will automatically add a prefix to the name of the attributes. This prefix is returned by the WebApplication's method getSessionAttributePrefix().<p class="paragraph"/><h3>Accessing to the HTTP session</h3><p class="paragraph"/>If for any reason we need to directly access to the underlying HttpSession object, we can retrieve it from the current request with the following code:<p class="paragraph"/><div class="code"><pre>HttpSession session = ((ServletWebRequest)RequestCycle.get().getRequest()).getContainerRequest().getSession();</pre></div><p class="paragraph"/>Using the raw session object might be necessary if we have to set a session attribute with a particular name without the prefix added by Wicket. Let's say for example that we are working with Tomcat as web server. One of the administrative tools provided by Tomcat is a page listing all the active user sessions of a given web application:<p class="paragraph"/><img border="0" class="center" src="../img/tomcat-admin-sessions.png"></img><p class="paragraph"/>Tomcat allows us to set the values that will be displayed in columns “Guessed locale” and “Guessed User name”. One possible way to do this is to use session attributes named “Locale” and “userName” but we can't create them via Wicket's Session class because they would not have exactly the name required by Tomcat. Instead, we must use the raw HttpSession and set our attributes on it:<p class="paragraph"/><div class="code"><pre>HttpSession session = ((ServletWebRequest)RequestCycle.get().getRequest()).getContainerRequest().getSession();<p class="paragraph"/>session.setAttribute(<span class="java&#45;quote">"Locale"</span>, <span class="java&#45;quote">"ENGLISH"</span>);
+</ul><p class="paragraph"/>By default class WebSession will use the underlying http session to store attributes. Wicket will automatically add a prefix to the name of the attributes. This prefix is returned by the WebApplication's method getSessionAttributePrefix().<p class="paragraph"/><h3>Accessing to the HTTP session</h3><p class="paragraph"/>If for any reason we need to directly access to the underlying HttpSession object, we can retrieve it from the current request with the following code:<p class="paragraph"/><div class="code"><pre>HttpSession session = ((ServletWebRequest)RequestCycle.get()
+		.getRequest()).getContainerRequest().getSession();</pre></div><p class="paragraph"/>Using the raw session object might be necessary if we have to set a session attribute with a particular name without the prefix added by Wicket. Let's say for example that we are working with Tomcat as web server. One of the administrative tools provided by Tomcat is a page listing all the active user sessions of a given web application:<p class="paragraph"/><img border="0" class="center" src="../img/tomcat-admin-sessions.png"></img><p class="paragraph"/>Tomcat allows us to set the values that will be displayed in columns “Guessed locale” and “Guessed User name”. One possible way to do this is to use session attributes named “Locale” and “userName” but we can't create them via Wicket's Session class because they would not have exactly the name required by Tomcat. Instead, we must use the raw HttpSession and set our attributes on it:<p class="paragraph"/><div class="code"><pre>HttpSession session = ((ServletWebRequest)RequestCycle.get().
+		getRequest()).getContainerRequest().getSession();<p class="paragraph"/>session.setAttribute(<span class="java&#45;quote">"Locale"</span>, <span class="java&#45;quote">"ENGLISH"</span>);
 session.setAttribute(<span class="java&#45;quote">"userName"</span>, <span class="java&#45;quote">"Mr BadGuy"</span>);</pre></div><p class="paragraph"/><h3>Temporary and permanent sessions</h3><p class="paragraph"/>Wicket doesn't need to store data into user session as long as the user visits only stateless pages. Nonetheless, even under these conditions, a temporary session object is created to process each request but it is discarded at the end of the current request. To know if the current session is temporary, we can use the isTemporary() method:<p class="paragraph"/><div class="code"><pre>Session.get().isTemporary();</pre></div><p class="paragraph"/>If a session is not temporary (i.e. it is permanent), it's identified by an unique id which can be read calling the getId() method. This value will be null if the session is temporary.<p class="paragraph"/>Although Wicket is able to automatically recognize when it needs to replace a temporary session with a permanent one, sometimes we may need to manually control this process to make our initially temporary session permanent.<p class="paragraph"/>To illustrate this possible scenario let's consider project BindSessionExample where we have a stateless home page which sets a session attribute inside its constructor and then it redirects the user to another page which displays with a label the session attribute previously created. The code of the two pages is as follows:<p class="paragraph"/>Home page:
 <div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
     <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
@@ -1278,6 +1282,7 @@ Remember that invalidateNow() will immediately remove any instance of components
 &#125;</pre></div><p class="paragraph"/>Code to get the object from the metadata:<p class="paragraph"/><div class="code"><pre>Connection connection = Application.get().getMetaData(MetaDataApp.connectionKey);</pre></div><p class="paragraph"/>Since MetaDataKey&#60;T&#62; class is declared as abstract, we must implement it with a subclass or with an anonymous class (like we did in the example above).
 
 
+
 <h2 id="chapter8_5">8.5 Summary</h2>
 <p class="paragraph"/>In this chapter we had a look at how Wicket internally handles a web request. Even if most of the time  we won't need to customize this internal process, knowing how it works is essential to use the framework at 100%.<p class="paragraph"/>Entities like Application and Session will come in handy again when we will tackle the topic of security in chapter 18.
 
@@ -1302,7 +1307,8 @@ pageParameters.get(<span class="java&#45;quote">"age"</span>);</pre></div><p cla
 	<span class="java&#45;keyword">public</span> PageWithParameters(PageParameters parameters) &#123;
 		<span class="java&#45;keyword">super</span>(parameters);
 	&#125;
- &#125;</pre></div><p class="paragraph"/>The code is quite straightforward and it’s more interesting to look at the URL generated for the target page:<p class="paragraph"/><div class="code"><pre>&#60;app root&#62;/PageParametersExample/wicket/bookmarkable/org.wicketTutorial.PageWithParameters?foo=foo&#38;bar=bar</pre></div><p class="paragraph"/>At first glance the URL above could seem a little weird, except for the last part which contains the two named parameters used to build the target page.<p class="paragraph"/>The reason for this “strange” URL is that, as we explained in paragraph 6.2.5, when a page is instantiated using a constructor with no argument or using a constructor that accepts only a PageParameters, Wicket will try to generate a static URL for it, with no session-relative informations. This kind of URL is called bookmarkable because it can be saved by the users as a bookmark and accessed at a later time.<p class="paragraph"/>A bookmarkable URL is composed by a fixed prefix (which by default is bookmarkable) and the qualified name of the page class (org.wicketTutorial.PageWithParameters in our example). Segment wicket is another fixed prefix added by default during URL generation. In paragraph 8.6.4 we will see how to customize fixed prefixes with a custom implementation of IMapperContext interface.<p class="paragraph"/><h3>Indexed parameters</h3><p class="paragraph"/>Besides named parameters, Wicket also supports indexed parameters. These kinds of parameters are rendered as URL segments placed before named parameters. Let's consider for example the following URL:<p class="paragraph"/><div class="code"><pre>&#60;application path&#62;/foo/bar?1&#38;baz=baz</pre></div><p class="paragraph"/>The URL above contains two indexed parameters (foo and bar) and a query string consisting of the page id and a named parameter (baz). Just like named parameters also indexed parameters are handled by the PageParameters class. The methods provided by PageParameters for indexed parameters are set(int index, Object object) (to add/modify a parameter), remove(int index)(to remove a parameter) and get(int index) (to read a parameter).<p class="paragraph"/>As their name suggests, indexed parameters are identified by a numeric index and they are rendered following the order in which they have been added to the PageParameters. The following is an example of indexed parameters:<p class="paragraph"/><div class="code"><pre>PageParameters pageParameters = <span class="java&#45;keyword">new</span> PageParameters(); 
+ &#125;</pre></div><p class="paragraph"/>The code is quite straightforward and it’s more interesting to look at the URL generated for the target page:<p class="paragraph"/><div class="code"><pre>&#60;app root&#62;/PageParametersExample/wicket/bookmarkable/
+		org.wicketTutorial.PageWithParameters?foo=foo&#38;bar=bar</pre></div><p class="paragraph"/>At first glance the URL above could seem a little weird, except for the last part which contains the two named parameters used to build the target page.<p class="paragraph"/>The reason for this “strange” URL is that, as we explained in paragraph 6.2.5, when a page is instantiated using a constructor with no argument or using a constructor that accepts only a PageParameters, Wicket will try to generate a static URL for it, with no session-relative informations. This kind of URL is called bookmarkable because it can be saved by the users as a bookmark and accessed at a later time.<p class="paragraph"/>A bookmarkable URL is composed by a fixed prefix (which by default is bookmarkable) and the qualified name of the page class (org.wicketTutorial.PageWithParameters in our example). Segment wicket is another fixed prefix added by default during URL generation. In paragraph 8.6.4 we will see how to customize fixed prefixes with a custom implementation of IMapperContext interface.<p class="paragraph"/><h3>Indexed parameters</h3><p class="paragraph"/>Besides named parameters, Wicket also supports indexed parameters. These kinds of parameters are rendered as URL segments placed before named parameters. Let's consider for example the following URL:<p class="paragraph"/><div class="code"><pre>&#60;application path&#62;/foo/bar?1&#38;baz=baz</pre></div><p class="paragraph"/>The URL above contains two indexed parameters (foo and bar) and a query string consisting of the page id and a named parameter (baz). Just like named parameters also indexed parameters are handled by the PageParameters class. The methods provided by PageParameters for indexed parameters are set(int index, Object object) (to add/modify a parameter), remove(int index)(to remove a parameter) and get(int index) (to read a parameter).<p class="paragraph"/>As their name suggests, indexed parameters are identified by a numeric index and they are rendered following the order in which they have been added to the PageParameters. The following is an example of indexed parameters:<p class="paragraph"/><div class="code"><pre>PageParameters pageParameters = <span class="java&#45;keyword">new</span> PageParameters(); 
 //add a couple of parameters
 pageParameters.set(0, <span class="java&#45;quote">"foo"</span>);
 pageParameters.set(1, <span class="java&#45;quote">"bar"</span>);
@@ -1315,11 +1321,12 @@ pageParameters.get(1);</pre></div><p class="paragraph"/>Project PageParametersEx
 	&#125;<p class="paragraph"/>&#125;);</pre></div><p class="paragraph"/>The URL generated for the linked page (PageWithParameters) is the one seen at the beginning of the paragraph.
 
 
+
 <h2 id="chapter9_2">9.2 Bookmarkable links</h2>
 <p class="paragraph"/>A link to a bookmarkable page can be built with the link component org.apache.wicket.markup.html.link.BookmarkablePageLink:<p class="paragraph"/><div class="code"><pre>BookmarkablePageLink bpl=<span class="java&#45;keyword">new</span> BookmarkablePageLink(PageWithParameters.class, pageParameters);</pre></div><p class="paragraph"/>The specific purpose of this component is to provide an anchor to a bookmarkable page, hence we don't have to implement any abstract method like we do with Link component.
 
 
-<h2 id="chapter9_3">9.3 Automatically creating bookmarkable links with tag <wicket:link></h2>
+<h2 id="chapter9_3">9.3 Automatically creating bookmarkable links with tag wicket:link</h2>
 <p class="paragraph"/>Bookmarkable pages can be linked directly inside markup files without writing any Java code. Using &#60;wicket:link&#62; tag we ask Wicket to automatically add bookmarkable links for the anchors wrapped inside it. Here is an example of usage of &#60;wicket:link&#62; tag taken from the home page of the project BookmarkablePageAutoLink:<p class="paragraph"/><div class="code"><pre>&#60;!DOCTYPE html&#62;
 &#60;html xmlns:wicket=<span class="java&#45;quote">"http://wicket.apache.org"</span>&#62;
 	&#60;head&#62;
@@ -1334,7 +1341,7 @@ pageParameters.get(1);</pre></div><p class="paragraph"/>Project PageParametersEx
 	      &#60;/wicket:link&#62;
 	   &#60;/div&#62;		
 	&#60;/body&#62;
-&#60;/html&#62;</pre></div><p class="paragraph"/>The key part of the markup above is the href attribute which must contain the package-relative path to a page. The home page is inside package org.wicketTutorial which in turns contains the sub package anotherPackage. This package hierarchy is reflected by the href attributes: in the first anchor we have a link to the home page itself while the second anchor points to page SubPackagePage which is placed into sub package anotherPackage. Absolute paths are supported as well and we can use them if we want to specify the full package of a given page. For example the link to SubPackagePage could have been written in the following (more verbose) way:<p class="paragraph"/><div class="code"><pre>&#60;a href=<span class="java&#45;quote">"/org/wicketTutorial/anotherPackage/SubPackagePage.html"</span>&#62;SubPackagePage&#60;/a&#62;</pre></div><p class="paragraph"/>If we take a look also at the markup of SubPackagePage we can see that it contains a link to the home page which uses the parent directory selector (relative path):<p class="paragraph"/><div class="code"><pre>&#60;!DOCTYPE html&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>The key part of the markup above is the href attribute which must contain the package-relative path to a page. The home page is inside package org.wicketTutorial which in turns contains the sub package anotherPackage. This package hierarchy is reflected by the href attributes: in the first anchor we have a link to the home page itself while the second anchor points to page SubPackagePage which is placed into sub package anotherPackage. Absolute paths are supported as well and we can use them if we want to specify the full package of a given page. For example the link to SubPackagePage could have been written in the following (more verbose) way:<p class="paragraph"/><div class="code"><pre>&#60;a href=<span class="java&#45;quote">"/org/wicketTutorial/anotherPackage/SubPackagePage.html"</span>&#62; SubPackagePage&#60;/a&#62;</pre></div><p class="paragraph"/>If we take a look also at the markup of SubPackagePage we can see that it contains a link to the home page which uses the parent directory selector (relative path):<p class="paragraph"/><div class="code"><pre>&#60;!DOCTYPE html&#62;
 &#60;html xmlns:wicket=<span class="java&#45;quote">"http://wicket.apache.org"</span>&#62;
 	&#60;head&#62;
 		&#60;meta charset=<span class="java&#45;quote">"utf&#45;8"</span> /&#62;
@@ -1356,6 +1363,7 @@ pageParameters.get(1);</pre></div><p class="paragraph"/>Project PageParametersEx
 	getMarkupSettings().setDefaultBeforeDisabledLink(<span class="java&#45;quote">"&#60;b&#62;"</span>);
 	getMarkupSettings().setDefaultAfterDisabledLink(<span class="java&#45;quote">"&#60;/b&#62;"</span>);		
 &#125;</pre></div><p class="paragraph"/>The purpose of &#60;wicket:link&#62; tag is not limited to just simplifying the usage of bookmarkable pages. As we we will see in chapter 13, this tag can also be adopted to manage web resources like pictures, CSS files, JavaScript files and so on.
+
 
 
 <h2 id="chapter9_4">9.4 External links</h2>
@@ -2365,7 +2373,8 @@ Session.get().getStyle();</pre></div><p class="paragraph"/>If set, style's value
 	&#125;
 &#125;;<p class="paragraph"/>setStatelessHint(<span class="java&#45;keyword">true</span>);
 add(form.add(changeLocale))</pre></div><p class="paragraph"/>
-<h3>Localization of markup files</h3><p class="paragraph"/>Although resource bundles exist to extract local-dependent elements from our code and from UI components, in Wicket we can decide to provide different markup files for different locale settings. Just like standard markup files, by default localized markup files must be placed next to component's class and their file name must contain the locale's informations. In the following picture, CustomPanel comes with a standard (or default) markup file and with another one localized for German:<p class="paragraph"/><img border="0" class="center" src="../img/comp-with-markup-german.png"></img><p class="paragraph"/>When the current locale corresponds to German country (language code de), markup file CustomPanel_de.html will be used in place of the default one.<p class="paragraph"/><h3>Reading bundles with tag &#60;wicket:message&#62;</h3><p class="paragraph"/>String resources can be also retrieved directly from markup code using tag &#60;wicket:message&#62;. The key of the desired resource is specified with attribute key:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;wicket:message key=<span class="xml&#45;quote">"greetingMessage"</span>&#62;</span>message goes here<span class="xml&#45;tag">&#60;/wicket:message&#62;</span></pre></div><p class="paragraph"/>wicket:message can be adopted also to localize the attributes of a tag. The name of the attribute and the resource key are expressed as a colon-separated value. In the following markup the content of attribute value will be replaced with the localized resource having 'key4value' as key:<p class="paragraph"/><div class="code"><pre>&#60;input type=<span class="java&#45;quote">"submit"</span> value=<span class="java&#45;quote">"Preview value"</span> wicket:message=<span class="java&#45;quote">"value:key4value"</span>/&#62;</pre></div><p class="paragraph"/>If we want to specify multiple attributes at once, we can separate them with a coma:<p class="paragraph"/><div class="code"><pre>&#60;input type=<span class="java&#45;quote">"submit"</span> value=<span class="java&#45;quote">"Preview value"</span> wicket:message=<span class="java&#45;quote">"value:key4value,title:key4title"</span>/&#62;</pre></div>
+<h3>Localization of markup files</h3><p class="paragraph"/>Although resource bundles exist to extract local-dependent elements from our code and from UI components, in Wicket we can decide to provide different markup files for different locale settings. Just like standard markup files, by default localized markup files must be placed next to component's class and their file name must contain the locale's informations. In the following picture, CustomPanel comes with a standard (or default) markup file and with another one localized for German:<p class="paragraph"/><img border="0" class="center" src="../img/comp-with-markup-german.png"></img><p class="paragraph"/>When the current locale corresponds to German country (language code de), markup file CustomPanel_de.html will be used in place of the default one.<p class="paragraph"/><h3>Reading bundles with tag &#60;wicket:message&#62;</h3><p class="paragraph"/>String resources can be also retrieved directly from markup code using tag &#60;wicket:message&#62;. The key of the desired resource is specified with attribute key:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;wicket:message key=<span class="xml&#45;quote">"greetingMessage"</span>&#62;</span>message goes here<span class="xml&#45;tag">&#60;/wicket:message&#62;</span></pre></div><p class="paragraph"/>wicket:message can be adopted also to localize the attributes of a tag. The name of the attribute and the resource key are expressed as a colon-separated value. In the following markup the content of attribute value will be replaced with the localized resource having 'key4value' as key:<p class="paragraph"/><div class="code"><pre>&#60;input type=<span class="java&#45;quote">"submit"</span> value=<span class="java&#45;quote">"Preview value"</span> wicket:message=<span class="java&#45;quote">"value:key4value"</span>/&#62;</pre></div><p class="paragraph"/>If we want to specify multiple attributes at once, we can separate them with a coma:<p class="paragraph"/><div class="code"><pre>&#60;input type=<span class="java&#45;quote">"submit"</span> value=<span class="java&#45;quote">"Preview value"</span> wicket:message=<span class="java&#45;quote">"value:key4value, title:key4title"</span>/&#62;</pre></div>
+
 
 
 <h2 id="chapter13_3">13.3 Bundles lookup algorithm</h2>
@@ -2387,9 +2396,10 @@ form.anotherLabel.labelValue=Value <span class="java&#45;keyword">for</span> ano
 &#123;
   <span class="java&#45;keyword">super</span>.init();
   //retrieve IResourceSettings and then the list of resource loaders
-  List&#60;IStringResourceLoader&#62; resourceLoaders= getResourceSettings(). 
-                                                                 getStringResourceLoaders();
+  List&#60;IStringResourceLoader&#62; resourceLoaders = getResourceSettings(). 
+                                                getStringResourceLoaders();
   //customize the list...</pre></div>
+
 
 
 <h2 id="chapter13_4">13.4 Localization of component's choices</h2>
@@ -2481,7 +2491,7 @@ One of the biggest challenge for a web framework is to offer an efficient and co
 	            <span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"calendar.jpg"</span>);
 		add(<span class="java&#45;keyword">new</span> Image(<span class="java&#45;quote">"packageResPicture"</span>, resourceReference));
 	&#125;
-&#125;</pre></div><p class="paragraph"/>Wicket will take care of generating a valid URL for file calendar.jpg. URLs for package resources have the following structure:<p class="paragraph"/><code>&#60;path to application root&#62;/wicket/resource/&#60;fully qualified class name&#62;/&#60;resource file name&#62; -&#60;ver-&#60;id&#62;&#62;.<file extension></code><p class="paragraph"/>In our example the URL for our picture file calendar.jpg is the following:<p class="paragraph"/><code>./wicket/resource/org.wicketTutorial.CustomPanel/calendar-ver-1297887542000.jpg</code><p class="paragraph"/>The first part of the URL is the relative path to the application root. In our example our page is already at the application's root so we have only a single-dotted segment. The next two segments, wicket and resource, are respectively the namespace and the identifier for resources seen in paragraph 8.6.4.<p class="paragraph"/>The fourth segment is the fully qualified name of the class used to locate the resource and it is the scope of the package resource. In the last segment of the URL we can find the name of the resource (the file name).<p class="paragraph"/>As you can see Wicket has automatically appended to the file name a version identifier (ver-1297887542000). When Wicket runs in DEVELOPMENT mode this identifier contains the timestamp in millisecond indicating the last time the resource file was modified. This can be useful when we are developing our application and resource files are frequently modified. Appending the timestamp to the original name we are sure that our browser will use always the last version of the file and not an old, out of date, cached version.<p class="paragraph"/>When instead Wicket is running in DEPLOYMENT mode, the version identifier will contain the MD5 digest of the file instead of the timestamp. The digest is computed only the first time the resource is requested. This perfectly makes sense as static resources don't change so often when our application runs into production environment and when this appends the application is redeployed.<p class="paragraph"/><blockquote class="note">
+&#125;</pre></div><p class="paragraph"/>Wicket will take care of generating a valid URL for file calendar.jpg. URLs for package resources have the following structure:<p class="paragraph"/><code>&#38;lt;path to application root&#62;/wicket/resource/&#38;lt;fully qualified classname&#62;/&#38;lt;resource file name&#62; -&#38;lt;ver-&#38;lt;id&#62;&#62;.&lt;file extension></code><p class="paragraph"/>In our example the URL for our picture file calendar.jpg is the following:<p class="paragraph"/><code>./wicket/resource/org.wicketTutorial.CustomPanel/ calendar-ver-1297887542000.jpg</code><p class="paragraph"/>The first part of the URL is the relative path to the application root. In our example our page is already at the application's root so we have only a single-dotted segment. The next two segments, wicket and resource, are respectively the namespace and the identifier for resources seen in paragraph 8.6.4.<p class="paragraph"/>The fourth segment is the fully qualified name of the class used to locate the resource and it is the scope of the package resource. In the last segment of the URL we can find the name of the resource (the file name).<p class="paragraph"/>As you can see Wicket has automatically appended to the file name a version identifier (ver-1297887542000). When Wicket runs in DEVELOPMENT mode this identifier contains the timestamp in millisecond indicating the last time the resource file was modified. This can be useful when we are developing our application and resource files are frequently modified. Appending the timestamp to the original name we are sure that our browser will use always the last version of the file and not an old, out of date, cached version.<p class="paragraph"/>When instead Wicket is running in DEPLOYMENT mode, the version identifier will contain the MD5 digest of the file instead of the timestamp. The digest is computed only the first time the resource is requested. This perfectly makes sense as static resources don't change so often when our application runs into production environment and when this appends the application is redeployed.<p class="paragraph"/><blockquote class="note">
 Package resources can be localized following the same rules seen for resource bundles and markup files:<p class="paragraph"/><img border="0" class="center" src="../img/package-resource-localization.png"></img><p class="paragraph"/>In the example illustrated in the picture above, if we try to retrieve package resource calendar.jpg when the current locale is set to French, the actual file returned will be calendar_fr.jpg.
 </blockquote><p class="paragraph"/>
 <h3>Using package resources with tag &#60;wicket:link&#62;</h3><p class="paragraph"/>In paragraph 8.3 we have used tag &#60;wicket:link&#62; to automatically create links to bookmarkable pages. The same technique can be used also for package resources in order to use them directly from markup file. Let's assume for example that we have a picture file called icon.png placed in the same package of the current page. Under these conditions we can display the picture file using the following markup fragment:<p class="paragraph"/><div class="code"><pre>&#60;wicket:link&#62;
@@ -2489,16 +2499,17 @@ Package resources can be localized following the same rules seen for resource bu
 &#60;/wicket:link&#62;</pre></div><p class="paragraph"/>In the example above Wicket will populate the attribute src with the URL corresponding to the package resource icon.png. &#60;wicket:link&#62; supports also tag &#60;link&#62; for CSS files and tag &#60;script&#62; for JavaScript files.
 
 
+
 <h2 id="chapter14_4">14.4 Adding resources to page header section</h2>
 <p class="paragraph"/>Wicket comes with interface org.apache.wicket.markup.html.IHeaderContributor which allows components and behaviors (which will be introduced later in paragraph 15.1) to contribute to the header section of their page. The only method defined in this interface is renderHead (IHeaderResponse response) where IHeaderResponse is an interface which defines method render(HeaderItem item) to write static resources or free-form text into the header section of the page.<p class="paragraph"/>Header entries are instances of abstract class org.apache.wicket.markup.head.HeaderItem. Wicket provides a set of built-in implementations of this class suited for the most common types of resources. With the exception of PriorityHeaderItem, every implementation of HeaderItem is an abstract factory class:
 <ul class="star">
-<li>CssHeaderItem: represents a CSS resource. Factory methods provided by this class are forReference which takes in input a resource reference, forUrl which creates an CSS item from a given URL and forCSS which takes in input an arbitrary CSS string and an optional id value to identify the resource.</li>
-<li>JavaScriptHeaderItem: represents a JavaScript resource. Just like CssHeaderItem it provides factory methods forReference and forUrl along with method forScript which takes in input an arbitrary string representing the script and an optional id value to identify the resource.</li>
-<li>OnDomReadyHeaderItem: it adds JavaScript code that will be executed after the DOM has been built, but before external files (such as picture, CSS, etc...) have been loaded. The class provides a factory method forScript which takes in input an arbitrary string representing the script to execute.</li>
-<li>OnEventHeaderItem: the JavaScript code added with this class is executed when a specific JavaScript event is triggered on a given DOM element. The factory method is forScript(String target, String event, CharSequence javaScript), where target is the id of a DOM element (or the element itself), event is the event that must trigger our code and javaScript is  the code to execute.</li>
-<li>OnLoadHeaderItem: the JavaScript code added with this class is executed after the whole page is loaded, external files included. The factory method is forScript(CharSequence javaScript).</li>
-<li>PriorityHeaderItem: it wraps another header item and ensures that it will have the priority over the other items during rendering phase.</li>
-<li>StringHeaderItem: with this class we can add an arbitrary text to the header section. Factory method is forString(CharSequence string).</li>
+<li><strong class="bold">CssHeaderItem:</strong> represents a CSS resource. Factory methods provided by this class are forReference which takes in input a resource reference, forUrl which creates an CSS item from a given URL and forCSS which takes in input an arbitrary CSS string and an optional id value to identify the resource.</li>
+<li><strong class="bold">JavaScriptHeaderItem:</strong> represents a JavaScript resource. Just like CssHeaderItem it provides factory methods forReference and forUrl along with method forScript which takes in input an arbitrary string representing the script and an optional id value to identify the resource.</li>
+<li><strong class="bold">OnDomReadyHeaderItem:</strong> it adds JavaScript code that will be executed after the DOM has been built, but before external files (such as picture, CSS, etc...) have been loaded. The class provides a factory method forScript which takes in input an arbitrary string representing the script to execute.</li>
+<li><strong class="bold">OnEventHeaderItem:</strong> the JavaScript code added with this class is executed when a specific JavaScript event is triggered on a given DOM element. The factory method is forScript(String target, String event, CharSequence javaScript), where target is the id of a DOM element (or the element itself), event is the event that must trigger our code and javaScript is  the code to execute.</li>
+<li><strong class="bold">OnLoadHeaderItem:</strong> the JavaScript code added with this class is executed after the whole page is loaded, external files included. The factory method is forScript(CharSequence javaScript).</li>
+<li><strong class="bold">PriorityHeaderItem:</strong> it wraps another header item and ensures that it will have the priority over the other items during rendering phase.</li>
+<li><strong class="bold">StringHeaderItem:</strong> with this class we can add an arbitrary text to the header section. Factory method is forString(CharSequence string).</li>
 </ul><p class="paragraph"/>In the following example our custom component loads a CSS file as a package resource (placed in the same package) and it adds it to header section.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class MyComponent <span class="java&#45;keyword">extends</span> Component&#123;<p class="paragraph"/>  @Override
   <span class="java&#45;keyword">public</span> void renderHead(IHeaderResponse response) &#123;
       PackageResourceReference cssFile = 
@@ -2506,6 +2517,7 @@ Package resources can be localized following the same rules seen for resource bu
     CssHeaderItem cssItem = CssHeaderItem.forReference(cssFile);<p class="paragraph"/>    response.render(cssItem);
   &#125;
 &#125;</pre></div>
+
 
 
 <h2 id="chapter14_5">14.5 Resource dependencies</h2>
@@ -2735,7 +2747,7 @@ In this chapter we will learn some advanced topics which have not been covered y
 &#123;
 	/&#42;&#42;RequestListenerInterface instance&#42;/
 	<span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;keyword">final</span> RequestListenerInterface INTERFACE = <span class="java&#45;keyword">new</span> 
-                                           RequestListenerInterface(IMyListener.class);
+                               RequestListenerInterface(IMyListener.class);
 	/&#42;&#42;
 	 &#42; Called when the relative callback URL is requested.
 	 &#42;/
@@ -2746,7 +2758,7 @@ In this chapter we will learn some advanced topics which have not been covered y
 	IRequestParameters requestParameters = request.getRequestParameters();
 	StringValue choiceId = requestParameters.getParameterValue(<span class="java&#45;quote">"choiceId"</span>);
 	//boundComponent is the component that the behavior it is bound to.
-	boundComponent.setDefaultModelObject(convertChoiceIdToChoice(choiceId.toString()));
+	boundComponent.setDefaultModelObject( convertChoiceIdToChoice(choiceId.toString()));
 &#125;</pre></div><p class="paragraph"/>When invoked via URL, the behavior expects to find a request parameter (choiceId) containing the id of the selected choice. This value is used to obtain the corresponding choice object that must be used to set the model of the component that the behavior is bound to (boundComponent). Method convertChoiceIdToChoice is in charge of retrieving the choice object given its id and it has been copied from class AbstractSingleSelectChoice.<p class="paragraph"/>Another interesting part of OnChangeSingleChoiceBehavior is its method onComponentTag where some JavaScript “magic” is used to move user's browser to the callback URL when event “change” occurs on bound component:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void onComponentTag(Component component, ComponentTag tag) &#123;
 	<span class="java&#45;keyword">super</span>.onComponentTag(component, tag);<p class="paragraph"/>	CharSequence callBackURL = getCallbackUrl();
@@ -2783,6 +2795,7 @@ IEventSource exposes a single method named send which takes in input three param
      //other business code
   &#125;   		
 &#125;</pre></div><p class="paragraph"/>Project InterComponetsEventsExample provides a concrete example of sending an event to a component (named 'container in the middle') using all the available broadcast methods:<p class="paragraph"/><img border="0" class="center" src="../img/InterComponentsEventsExample-screenshot.png"></img>
+
 
 
 <h2 id="chapter16_3">16.3 Initializers</h2>
@@ -2936,14 +2949,14 @@ The component provides different setter methods to customize the appearance of t
     <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
      <span class="java&#45;keyword">super</span>(parameters);
      DefaultMutableTreeNode root = <span class="java&#45;keyword">new</span> DefaultMutableTreeNode(<span class="java&#45;quote">"Cities of Europe"</span>);<p class="paragraph"/>     addNodes(addNodes(root, <span class="java&#45;quote">"Italy"</span>), <span class="java&#45;quote">"Rome"</span>, <span class="java&#45;quote">"Venice"</span>, <span class="java&#45;quote">"Milan"</span>, <span class="java&#45;quote">"Florence"</span>);
-     addNodes(addNodes(root, <span class="java&#45;quote">"Germany"</span>),<span class="java&#45;quote">"Stuttgart"</span>,<span class="java&#45;quote">"Munich"</span>,<span class="java&#45;quote">"Berlin"</span>,<span class="java&#45;quote">"Dusseldorf"</span>, <span class="java&#45;quote">"Dresden"</span>);
-     addNodes(addNodes(root, <span class="java&#45;quote">"France"</span>), <span class="java&#45;quote">"Paris"</span>,<span class="java&#45;quote">"Toulouse"</span>,<span class="java&#45;quote">"Strasbourg"</span>,<span class="java&#45;quote">"Bordeaux"</span>, <span class="java&#45;quote">"Lyon"</span>);<p class="paragraph"/>     DefaultTreeModel treeModel = <span class="java&#45;keyword">new</span> DefaultTreeModel(root);
+     addNodes(addNodes(root, <span class="java&#45;quote">"Germany"</span>),<span class="java&#45;quote">"Stuttgart"</span>,<span class="java&#45;quote">"Munich"</span>, <span class="java&#45;quote">"Berlin"</span>,<span class="java&#45;quote">"Dusseldorf"</span>, <span class="java&#45;quote">"Dresden"</span>);
+     addNodes(addNodes(root, <span class="java&#45;quote">"France"</span>), <span class="java&#45;quote">"Paris"</span>,<span class="java&#45;quote">"Toulouse"</span>, <span class="java&#45;quote">"Strasbourg"</span>,<span class="java&#45;quote">"Bordeaux"</span>, <span class="java&#45;quote">"Lyon"</span>);<p class="paragraph"/>     DefaultTreeModel treeModel = <span class="java&#45;keyword">new</span> DefaultTreeModel(root);
      TreeModelProvider&#60;DefaultMutableTreeNode&#62; modelProvider = <span class="java&#45;keyword">new</span> 
-                                  TreeModelProvider&#60;DefaultMutableTreeNode&#62;(treeModel) &#123;
-         @Override
-         <span class="java&#45;keyword">public</span> IModel&#60;DefaultMutableTreeNode&#62; model(DefaultMutableTreeNode object) &#123;
-            <span class="java&#45;keyword">return</span> Model.of(object);
-        &#125;
+                            TreeModelProvider&#60;DefaultMutableTreeNode&#62;( treeModel )&#123;
+       @Override
+       <span class="java&#45;keyword">public</span> IModel&#60;DefaultMutableTreeNode&#62; model(DefaultMutableTreeNode object)&#123;
+          <span class="java&#45;keyword">return</span> Model.of(object);
+       &#125;
      &#125;;
      //To be continued...</pre></div><p class="paragraph"/>Nodes have been built using simple strings as data objects and invoking custom utility method addNodes which converts string parameters into children nodes for a given parent node. Once we have our tree of DefaultMutableTreeNodes we can build the Swing tree model (DefaultTreeModel) that will be the backing object for a TreeModelProvider. This provider wraps each node in a model invoking its abstract method model. In our example we have used a simple Model as wrapper model.<p class="paragraph"/>Scrolling down the code we can see how the tree component is instantiated and configured before being added to the home page:<p class="paragraph"/><div class="code"><pre>//Continued from previous snippet&#8230;
  NestedTree&#60;DefaultMutableTreeNode&#62; tree = <span class="java&#45;keyword">new</span> NestedTree&#60;DefaultMutableTreeNode&#62;(<span class="java&#45;quote">"tree"</span>, 
@@ -3026,6 +3039,7 @@ add(label);
 &#125;;</pre></div><p class="paragraph"/>Please note that in the code above we didn't invoked method setOutputMarkupId(true) as setOutputMarkupPlaceholderTag already does it internally.
 
 
+
 <h2 id="chapter17_3">17.3 Built-in AJAX behaviors</h2>
 <p class="paragraph"/>In addition to specific components, Wicket offers also a set of built in AJAX behaviors that can be used to easily add AJAX functionalities to existing components. As we will see in this paragraph AJAX behaviors can be used also to ajaxify components that weren't initially designed to work with this technology. All the following behaviors are inside package org.apache.wicket.ajax.<p class="paragraph"/><h3>AjaxEventBehavior</h3><p class="paragraph"/>AjaxEventBehavior allows to handle a JavaScript event (like click, change, etc...) on server side via AJAX. Its constructor takes in input the name of the event that must be handled. Every time this event is fired for a given component on client side, the callback method onEvent(AjaxRequestTarget target) is executed. onEvent is abstract, hence we must implement it to tell AjaxEventBehavior what to do when the specified event occurs.<p class="paragraph"/>In project AjaxEventBehaviorExample we used this behavior to build a “clickable” Label component that counts the number of clicks. Here is the code from the home page of the project:<p class="paragraph"/><strong class="bold">HTML:</strong>
 <div class="code"><pre>&#60;body&#62;
@@ -3101,7 +3115,7 @@ add(dynamicLabel);</pre></div>
 <h2 id="chapter17_5">17.5 AJAX request attributes and call listeners</h2>
 <p class="paragraph"/>Starting from version 6.0 Wicket has introduced two entities which allow us to control how an AJAX request is generated on client side and to specify the custom JavaScript code we want to execute during request handling. These entities are class AjaxRequestAttributes and interface IAjaxCallListener, both placed in package org.apache.wicket.ajax.attributes.<p class="paragraph"/>AjaxRequestAttributes exposes the attributes used to generate the JavaScript call invoked on client side to start an AJAX request. Each attribute will be passed as a <a href="http://en.wikipedia.org/wiki/JSON" target="blank">JSON</a> parameter to the JavaScript function Wicket.Ajax.ajax which is responsible for sending the concrete AJAX request. Every JSON parameter is identified by a short name. Here is a partial list of the available parameters:<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Short name</strong></th><th><strong class="bold">Description</strong></th><th><strong class="bold">Default value</strong></th></tr><tr class="table-odd"><td>u</td><td>The callback URL used to serve the AJAX request that will be sent.</td><td>&#160;</td></tr><tr class="table-even"><td>c</td><td>The id of the component that wants to start the AJAX call.</td><td>&#160;</td></tr><tr class="table-odd"><td>e</td><td>A list of event (click, change, etc...) that can trigger the AJAX call.</td><td>domready</td></tr><tr class="table-even"><td>m</td><td>The request method that must be used (GET or POST).</td><td>GET</td></tr><tr class="table-odd"><td>f</td><td>The id of the form that must be submitted with the AJAX call.</td><td>&#160;</td></tr><tr class="table-even"><td>mp</td><td>If the AJAX call involves the submission of a form, this flag indicates whether the data must be encoded using the encoding mode “multipart/form-data”.</td><td>false</td></tr><tr class="table-odd"><td>sc</td><td>The input name of the submitting component of the form</td><td>&#160;</td></tr><tr class="table-even"><td>async</td><td>A boolean parameter that indicates if the AJAX call is asynchronous (true) or not.</td><td>true</td></tr><tr class="table-odd"><td>wr</td><td>Specifies the type of data returned by the AJAX call (XML, HTML, JSON, etc...).</td><td>XML</td></tr><tr class="table-even"><td>bh, pre, bsh, ah, sh, fh, coh</td><td>This is a list of the listeners that are executed on client side (they are JavaScript scripts) during the lifecycle of an AJAX request. Each short name is the abbreviation of one of the methods defined in the interface IAjaxCallListener (see below).</td><td>An empty list</td></tr></table><p class="paragraph"/><blockquote class="note">
 A full list of the available request parameters as well as more details on the related JavaScript code can be found at <a href="https://cwiki.apache.org/confluence/" target="blank">https://cwiki.apache.org/confluence/ display/WICKET/Wicket+Ajax</a> display/WICKET/Wicket+Ajax .
-</blockquote><p class="paragraph"/>Parameters 'u' (callback URL) and 'c' (the id of the component) are generated by the AJAX behavior that will serve the AJAX call and they are not accessible through AjaxRequestAttributes.<p class="paragraph"/>Here is the final AJAX function generate for the behavior used in example project AjaxEventBehavior Example:<p class="paragraph"/><div class="code"><pre>Wicket.Ajax.ajax(&#123;<span class="java&#45;quote">"u"</span>:<span class="java&#45;quote">"./?0&#45;1.IBehaviorListener.0&#45;clickCounterLabel"</span>,<span class="java&#45;quote">"e"</span>:<span class="java&#45;quote">"click"</span>,               
+</blockquote><p class="paragraph"/>Parameters 'u' (callback URL) and 'c' (the id of the component) are generated by the AJAX behavior that will serve the AJAX call and they are not accessible through AjaxRequestAttributes.<p class="paragraph"/>Here is the final AJAX function generate for the behavior used in example project AjaxEventBehavior Example:<p class="paragraph"/><div class="code"><pre>Wicket.Ajax.ajax(&#123;<span class="java&#45;quote">"u"</span>:<span class="java&#45;quote">"./?0&#45;1.IBehaviorListener.0&#45;clickCounterLabel"</span>, <span class="java&#45;quote">"e"</span>:<span class="java&#45;quote">"click"</span>,               
                   <span class="java&#45;quote">"c"</span>:<span class="java&#45;quote">"clickCounterLabel1"</span>&#125;);</pre></div><p class="paragraph"/>Even if most of the times we will let Wicket generate request attributes for us, both AJAX components and behaviors give us the chance to modify them overriding their method updateAjaxAttributes (AjaxRequestAttributes attributes).<p class="paragraph"/>One of the attribute we may need to modify is the list of IAjaxCallListeners returned by method getAjaxCallListeners().<p class="paragraph"/>IAjaxCallListener defines a set of methods which return the JavaScript code (as a CharSequence) that must be executed on client side when the AJAX request handling reaches a given stage:
 <ul class="star">
 <li><strong class="bold">getBeforeHandler(Component)</strong>: returns the JavaScript code that will be executed before any other handlers returned by IAjaxCallListener. The code is executed in a scope where it can use variable attrs, which is an array containing the JSON parameters passed to Wicket.Ajax.ajax.</li>
@@ -3122,6 +3136,7 @@ A full list of the available request parameters as well as more details on the r
 <li><strong class="bold">getFailureHandler(Component)</strong>: returns the JavaScript code that will be executed if the AJAX call has returned with a failure. The code is executed in a scope where it can use variable attrs, which is the same variable seen for getBeforeHandler.</li>
 <li><strong class="bold">getCompleteHandler(Component)</strong>: returns the JavaScript that will be invoked after success or failure handler has been executed. The code is executed in a scope where it can use variables attrs, jqXHR and textStatus which are the same variables seen for getSuccessHandler.</li>
 </ul><p class="paragraph"/>In the next paragraph we will see an example of custom IAjaxCallListener designed to disable a component during AJAX request processing.
+
 
 
 <h2 id="chapter17_6">17.6 Creating custom AJAX call listener</h2>
@@ -3153,7 +3168,7 @@ A full list of the available request parameters as well as more details on the r
 	&#125;
 &#125;;</pre></div><p class="paragraph"/><h3>Java class code</h3><p class="paragraph"/>The code of our custom listener is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class DisableComponentListener <span class="java&#45;keyword">extends</span> AjaxCallListener &#123;
    <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference customScriptReference = <span class="java&#45;keyword">new</span>   
-   PackageResourceReference(DisableComponentListener.class,<span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
+   PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
    PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"jquery&#45;ui&#45;position.min.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference indicatorReference = 
          <span class="java&#45;keyword">new</span> PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"ajax&#45;loader.gif"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> Component targetComponent;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> DisableComponentListener(Component targetComponent)&#123;
       <span class="java&#45;keyword">this</span>.targetComponent = targetComponent;
@@ -3161,20 +3176,20 @@ A full list of the available request parameters as well as more details on the r
    <span class="java&#45;keyword">public</span> CharSequence getBeforeHandler(Component component) &#123;   
       CharSequence indicatorUrl = getIndicatorUrl(component);
       <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.disableElement('"</span> + targetComponent.getMarkupId() 
-                                                   + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
+              + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
    &#125;<p class="paragraph"/>   @Override
    <span class="java&#45;keyword">public</span> CharSequence getCompleteHandler(Component component) &#123;
-      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> + targetComponent.getMarkupId() + 
-                                                                               <span class="java&#45;quote">"');"</span>;
+      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> 
+		+ targetComponent.getMarkupId() + <span class="java&#45;quote">"');"</span>;
    &#125;<p class="paragraph"/>   <span class="java&#45;keyword">protected</span> CharSequence getIndicatorUrl(Component component) &#123;
       <span class="java&#45;keyword">return</span> component.urlFor(indicatorReference, <span class="java&#45;keyword">null</span>);
    &#125;<p class="paragraph"/>   @Override
    <span class="java&#45;keyword">public</span> void renderHead(Component component, IHeaderResponse response) &#123;   
-      ResourceReference jqueryReference = Application.get().getJavaScriptLibrarySettings(). 
-                                     getJQueryReference();
+      ResourceReference jqueryReference = 
+      Application.get().getJavaScriptLibrarySettings().getJQueryReference();
       response.render(JavaScriptHeaderItem.forReference(jqueryReference));      
       response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
-      response.render(JavaScriptHeaderItem.forReference(customScriptReference));
+      response.render(JavaScriptHeaderItem.forReference(customScriptReference) );
    &#125;
 &#125;</pre></div><p class="paragraph"/>As you can see in the code above we have created a function (getIndicatorUrl) to retrieve the URL of the indicator picture. This was done in order to make the picture customizable by overriding this method.<p class="paragraph"/>Once we have our listener in place, we can finally use it in our example overwriting method updateAjaxAttributes of the AJAX button that submits the form:<p class="paragraph"/><div class="code"><pre>//&#8230;
 <span class="java&#45;keyword">new</span> AjaxButton(<span class="java&#45;quote">"ajaxButton"</span>)&#123;
@@ -3205,6 +3220,7 @@ A full list of the available request parameters as well as more details on the r
 	      $(componentId).datepicker('destroy');
      &#125;
 );</pre></div><p class="paragraph"/>The code above retrieves the id of the component that is about to be removed using parameter attributes. Then it checks if a JQuery datepicker was defined for the given component and if so, it removes the widget calling function destroy.
+
 
 
 <h2 id="chapter17_7">17.7 Summary</h2>
@@ -3383,7 +3399,8 @@ Since both restartResponseAtSignInPage and redirectToIntercept Page internally t
   <span class="java&#45;keyword">public</span> void init()
   &#123;
     <span class="java&#45;keyword">super</span>.init();
-    getSecuritySettings().setAuthorizationStrategy(myAuthorizationStrategy);
+    getSecuritySettings().
+	setAuthorizationStrategy(myAuthorizationStrategy);
   &#125;	
 //...</pre></div><p class="paragraph"/>If we want to combine the action of two or more authorization strategies we can chain them with strategy CompoundAuthorizationStrategy which implements composite patter for authorization strategies.<p class="paragraph"/>Most of the times we won't need to implement an IAuthorizationStrategy from scratch as Wicket already comes with a set of built-in strategies. In the next paragraphs we will see some of these strategies that can be used to implement an effective and flexible security policy.<p class="paragraph"/><h3>SimplePageAuthorizationStrategy</h3><p class="paragraph"/>Abstract class SimplePageAuthorizationStrategy (in package org.apache.wicket. authorization.strategies.page) is a strategy that checks user authorizations calling abstract method isAuthorized only for those pages that are subclasses of a given supertype. If isAuthorized returns false, the user is redirected to the sign in page specified as second constructor parameter:<p class="paragraph"/><div class="code"><pre>SimplePageAuthorizationStrategy authorizationStrategy = <span class="java&#45;keyword">new</span> SimplePageAuthorizationStrategy( 
                                                   PageClassToCheck.class, SignInPage.class)
@@ -3445,7 +3462,8 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
 &#125;</pre></div><p class="paragraph"/>The code that instantiates MetaDataRoleAuthorizationStrategy and set it as application's strategy is inside application class method init.<p class="paragraph"/>Any subclass of AbstractRoleAuthorizationStrategyWicket needs an implementation of interface IRoleCheckingStrategy to be instantiated. For this purpose in the code above we used the application class itself because its base class AuthenticatedWebApplication already implements interface IRoleCheckingStrategy. By default AuthenticatedWebApplication checks for authorizations using the roles returned by the current AbstractAuthenticated WebSession. As final step inside init we grant the access to page AdminOnlyPage to ADMIN role calling method authorize.<p class="paragraph"/>The code from session class has three interesting methods. The first is authenticate which considers as valid credentials every pair of username and password having the same value. The second notable method is getRoles which returns role SIGNED_IN if user is authenticated and it adds role ADMIN if username is equal to superuser. Finally, we have method signOut which has been overridden in order to clean the username field used internally to generate roles.<p class="paragraph"/>Now if we run the project and we try to access to AdminOnlyPage from the home page without having the ADMIN role, we will be redirected to the default access-denied page used by Wicket:<p class="paragraph"/><img border="0" class="center" src="../img/authorization-access-denied.png"></img><p class="paragraph"/>The access-denied page can be customized using method setAccessDeniedPage(Class&#60;? extends Page&#62;) of setting interface IApplicationSettings:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
    @Override
    <span class="java&#45;keyword">public</span> void init()&#123;   
-      getApplicationSettings().setAccessDeniedPage(MyCustomAccessDeniedPage.class); 
+      getApplicationSettings().setAccessDeniedPage(
+			MyCustomAccessDeniedPage.class); 
    &#125;</pre></div><p class="paragraph"/>Just like custom “Page expired” page (see chapter 6.2.5), also custom “Access denied” page must be bookmarkable.<p class="paragraph"/><h4>Using roles with annotations</h4><p class="paragraph"/>Strategy AnnotationsRoleAuthorizationStrategy relies on two built-in annotations to handle role-based authorizations. These annotations are AuthorizeInstantiation and Authorize Action. As their names suggest the first annotation specifies which roles are allowed to instantiate the annotated component while the second must be used to indicate which roles are allowed to perform a specific action on the annotated component.<p class="paragraph"/>In the following example we use annotations to make a page accessible only to signed-in users and to enable it only if user has the ADMIN role:<p class="paragraph"/><div class="code"><pre>@AuthorizeInstantiation(<span class="java&#45;quote">"SIGNED_IN"</span>)
 @AuthorizeAction(action = <span class="java&#45;quote">"ENABLE"</span>, roles = &#123;<span class="java&#45;quote">"ADMIN"</span>&#125;)
 <span class="java&#45;keyword">public</span> class MyPage <span class="java&#45;keyword">extends</span> WebPage &#123;
@@ -3465,6 +3483,7 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
         &#125;);
      &#125;
 &#125;</pre></div><p class="paragraph"/>In addition to interface IRoleCheckingStrategy, class AuthenticatedWebApplication implements also IUnauthorizedComponentInstantiationListener and registers itself as listener for unauthorized instantiations.<p class="paragraph"/>By default AuthenticatedWebApplication redirects users to sign-in page if they are not signed-in and they try to instantiate a restricted component. Otherwise, if users are already signed in but they are not allowed to instantiate a given component, an UnauthorizedInstantiationException will be thrown.<p class="paragraph"/><h3>Strategy RoleAuthorizationStrategy</h3><p class="paragraph"/>Class RoleAuthorizationStrategy is a compound strategy that combines both MetaData RoleAuthorizationStrategy and AnnotationsRoleAuthorizationStrategy.<p class="paragraph"/>This is the strategy used internally by AuthenticatedWebApplication.
+
 
 
 <h2 id="chapter19_3">19.3 Using HTTPS protocol</h2>
@@ -3506,7 +3525,7 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
 <span class="java&#45;keyword">public</span> void init()   
 &#123;
       IPackageResourceGuard packageResourceGuard = application.getResourceSettings() 
-                                                              .getPackageResourceGuard();
+                                                   .getPackageResourceGuard();
       <span class="java&#45;keyword">if</span> (packageResourceGuard <span class="java&#45;keyword">instanceof</span> SecurePackageResourceGuard)
       &#123;
          SecurePackageResourceGuard guard = (SecurePackageResourceGuard) packageResourceGuard;
@@ -3514,6 +3533,7 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
          guard.addPattern(<span class="java&#45;quote">"+<span class="java&#45;keyword">public</span>/&#42;.pdf"</span>);
       &#125;
 &#125;</pre></div>
+
 
 
 <h2 id="chapter19_5">19.5 Summary</h2>
@@ -3582,7 +3602,7 @@ tester.clickLink(<span class="java&#45;quote">"reload"</span>, <span class="java
 &#125;
 //...</pre></div><p class="paragraph"/>If test requires a page we can use startComponentInPage(Component) which automatically generates a page for our component.<p class="paragraph"/><h3>Testing the response</h3><p class="paragraph"/>WicketTester allows us to access to the last response generated during testing with method getLastResponse. The returned value is an instance of class MockHttpServletResponse that provides helper methods to extract informations from mocked request.<p class="paragraph"/>In the test case from project CustomResourceMounting we extract the text contained in the last response with method getDocument and we check if it is equal to the RSS feed used for the test:<p class="paragraph"/><div class="code"><pre>//&#8230;
 @Test
-<span class="java&#45;keyword">public</span> void testMountedResourceResponse() <span class="java&#45;keyword">throws</span> IOException, FeedException&#123;		tester.startResource(<span class="java&#45;keyword">new</span> RSSProducerResource());
+<span class="java&#45;keyword">public</span> void testMountedResourceResponse() <span class="java&#45;keyword">throws</span> IOException, FeedException&#123;tester.startResource(<span class="java&#45;keyword">new</span> RSSProducerResource());
 	<span class="java&#45;object">String</span> responseTxt = tester.getLastResponse().getDocument();
 	//write the RSS feed used in the test into a ByteArrayOutputStream
 	ByteArrayOutputStream outputStream = <span class="java&#45;keyword">new</span> ByteArrayOutputStream();
@@ -3611,7 +3631,8 @@ assertFalse(tester.isComponentOnAjaxResponse(amountLabel));
 	label.add(<span class="java&#45;keyword">new</span> AjaxEventBehavior(<span class="java&#45;quote">"click"</span>) &#123;<p class="paragraph"/>		@Override
 		<span class="java&#45;keyword">protected</span> void onEvent(AjaxRequestTarget target) &#123;
 			//change label's data object
-			getComponent().setDefaultModelObject(OTHER_VALUE);
+			getComponent().setDefaultModelObject(
+                                                  OTHER_VALUE);
 			target.add(getComponent());
 		&#125;
 	&#125;).setOutputMarkupId(<span class="java&#45;keyword">true</span>);
@@ -3628,8 +3649,8 @@ assertFalse(tester.isComponentOnAjaxResponse(amountLabel));
 	//test <span class="java&#45;keyword">if</span> label has changed as expected
 	tester.assertLabel(<span class="java&#45;quote">"label"</span>, HomePage.OTHER_VALUE);
 &#125;</pre></div><p class="paragraph"/><h3>Testing AJAX behaviors</h3><p class="paragraph"/>To test a generic AJAX behavior we can simulate a request to it using WicketTester's method executeBehavior(AbstractAjaxBehavior behavior):<p class="paragraph"/><div class="code"><pre>//&#8230;
-AjaxFormComponentUpdatingBehavior ajaxBehavior = <span class="java&#45;keyword">new</span> AjaxFormComponentUpdatingBehavior 
-                                                                           (<span class="java&#45;quote">"change"</span>)&#123;
+AjaxFormComponentUpdatingBehavior ajaxBehavior = 
+		<span class="java&#45;keyword">new</span> AjaxFormComponentUpdatingBehavior(<span class="java&#45;quote">"change"</span>)&#123;
 	@Override
 	<span class="java&#45;keyword">protected</span> void onUpdate(AjaxRequestTarget target) &#123;
 		//...				
@@ -3654,6 +3675,7 @@ After a test method has been executed, we may need to clear any possible side ef
 	tester.destroy();
 &#125;</pre></div>
 </blockquote>
+
 
 
 <h2 id="chapter20_2">20.2 Testing Wicket forms</h2>
@@ -3727,8 +3749,8 @@ formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p c
 	tester.startPage(HomePage.class);
 	//retrieve response's markup
 	<span class="java&#45;object">String</span> responseTxt = tester.getLastResponse().getDocument();<p class="paragraph"/>	TagTester tagTester = TagTester.createTagByAttribute(responseTxt, <span class="java&#45;quote">"class"</span>, <span class="java&#45;quote">"myClass"</span>);<p class="paragraph"/>	Assert.assertNotNull(tagTester);
-	Assert.assertEquals(<span class="java&#45;quote">"span"</span>, tagTester.getName());<p class="paragraph"/>	List&#60;TagTester&#62; tagTesterList = TagTester.createTagsByAttribute(responseTxt, <span class="java&#45;quote">"class"</span>, 
-                                                                       <span class="java&#45;quote">"myClass"</span>, <span class="java&#45;keyword">false</span>);<p class="paragraph"/>	Assert.assertEquals(2, tagTesterList.size());
+	Assert.assertEquals(<span class="java&#45;quote">"span"</span>, tagTester.getName());<p class="paragraph"/>	List&#60;TagTester&#62; tagTesterList = TagTester.createTagsByAttribute(responseTxt, 
+						<span class="java&#45;quote">"class"</span>, <span class="java&#45;quote">"myClass"</span>, <span class="java&#45;keyword">false</span>);<p class="paragraph"/>	Assert.assertEquals(2, tagTesterList.size());
 &#125;</pre></div><p class="paragraph"/>The name of the tag found by TagTester can be retrieved with its method getName. Method createTagsByAttribute returns all the tags that have the given value on the given attribute. In the code above we have used this method to test that our markup contains two tags having attribute class equal to myClass.
 
 
@@ -3808,15 +3830,24 @@ Since the development of many web applications is mostly based on the Spring fra
         tester.assertComponent(<span class="java&#45;quote">"login"</span>, LoginComponent.class);
     &#125;
 &#125;</pre></div><p class="paragraph"/>By defining three annotations on the class level (see code snippet above) in your test, Spring's TestContext framework takes care of preparing and initializing an ApplicationContext instance having all the beans defined in the according Spring context file as well as the transaction management in case your integration test includes some kind of database access. Fields marked with <code>&#64;Autowired</code> annotation will be automatically dependency injected as well so that you can easily access and use these for your testing purposes. Since MyWebApplication, which extends Wicket's WebApplication type and represents the main class of our web application, is also a bean within the ApplicationContext managed by Spring, it will also be provided to us by the test framework itself and can be easily used in order to initialize a WicketTester instance later on during the execution of the test's setUp() method. With this kind of simple, annotation based test configuration we are able to run an integration test that verifies whether a LoginPage gets started and initialized, whether the rendering of the page runs smoothly and whether the page itself contains a LoginComponent that we possibly need in order to process user's login successfully.<p class="paragraph"/>When you run this test though, you'll unfortunately get the following exception raised:<p class="paragraph"/><div class="code"><pre>java.lang.IllegalStateException: No WebApplicationContext found: no ContextLoaderListener registered?
-	at org.springframework.web.context.support.WebApplicationContextUtils.getRequiredWebApplicationContext(WebApplicationContextUtils.java:84)
-	at org.apache.wicket.spring.injection.annot.SpringComponentInjector.&#60;init&#62;(SpringComponentInjector.java:72)
-	at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.initializeSpringComponentInjector(MyWebApplication.java:59)
-	at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.init(MyWebApplication.java:49)
-	at org.apache.wicket.protocol.http.WicketFilter.init(WicketFilter.java:719)
-	at org.apache.wicket.protocol.http.MockWebApplication.&#60;init&#62;(MockWebApplication.java:168)
-	at org.apache.wicket.util.tester.BaseWicketTester.&#60;init&#62;(BaseWicketTester.java:219)
-	at org.apache.wicket.util.tester.WicketTester.&#60;init&#62;(WicketTester.java:325)
-	at org.apache.wicket.util.tester.WicketTester.&#60;init&#62;(WicketTester.java:308)</pre></div><p class="paragraph"/>As you can see above, the Exception gets raised during the initialization of the WicketTester instance even before the actual test method gets executed. Even though we have applied rather cool and simple annotation based test configuration already described and passed in perfectly well prepared ApplicationContext instance to the WicketTester instance in the constructor, somewhere down the rabbit hole someone complained that no WebApplicationContext instance could have been found which seems to be required in order to initialize the WicketTester properly.<p class="paragraph"/><img border="0" class="center" src="../img/description-of-illegalstate.jpg"></img><p class="paragraph"/>The problem that we run against here is due to the fact that SpringComponentInjector during its own initialization is trying to get hold of an according Spring's ApplicationContext instance that would normally be there in a runtime environment but does not find any since we are running in a test environment currently. SpringComponentInjector delegates to Spring's own WebApplicationContextUtils class to retrieve the instance of ApplicationContext out of the ServletContext which is perfectly fine for a runtime environment but is unfortunately failing in a test environment:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> WebApplicationContext getRequiredWebApplicationContext(ServletContext sc)
+    at org.springframework.web.context.support.WebApplicationContextUtils.
+	getRequiredWebApplicationContext(WebApplicationContextUtils.java:84)
+    at org.apache.wicket.spring.injection.annot.
+	SpringComponentInjector.&#60;init&#62;(SpringComponentInjector.java:72)
+    at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.
+	initializeSpringComponentInjector(MyWebApplication.java:59)
+    at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.
+	init(MyWebApplication.java:49)
+    at org.apache.wicket.protocol.http.WicketFilter.
+	init(WicketFilter.java:719)
+    at org.apache.wicket.protocol.http.MockWebApplication.
+	&#60;init&#62;(MockWebApplication.java:168)
+    at org.apache.wicket.util.tester.BaseWicketTester.
+	&#60;init&#62;(BaseWicketTester.java:219)
+    at org.apache.wicket.util.tester.WicketTester.
+	&#60;init&#62;(WicketTester.java:325)
+    at org.apache.wicket.util.tester.WicketTester.
+	&#60;init&#62;(WicketTester.java:308)</pre></div><p class="paragraph"/>As you can see above, the Exception gets raised during the initialization of the WicketTester instance even before the actual test method gets executed. Even though we have applied rather cool and simple annotation based test configuration already described and passed in perfectly well prepared ApplicationContext instance to the WicketTester instance in the constructor, somewhere down the rabbit hole someone complained that no WebApplicationContext instance could have been found which seems to be required in order to initialize the WicketTester properly.<p class="paragraph"/><img border="0" class="center" src="../img/description-of-illegalstate.jpg"></img><p class="paragraph"/>The problem that we run against here is due to the fact that SpringComponentInjector during its own initialization is trying to get hold of an according Spring's ApplicationContext instance that would normally be there in a runtime environment but does not find any since we are running in a test environment currently. SpringComponentInjector delegates to Spring's own WebApplicationContextUtils class to retrieve the instance of ApplicationContext out of the ServletContext which is perfectly fine for a runtime environment but is unfortunately failing in a test environment:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> WebApplicationContext getRequiredWebApplicationContext(ServletContext sc)
 		<span class="java&#45;keyword">throws</span> IllegalStateException &#123;<p class="paragraph"/>	WebApplicationContext wac = getWebApplicationContext(sc);
 	<span class="java&#45;keyword">if</span> (wac == <span class="java&#45;keyword">null</span>) &#123;
 		<span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> IllegalStateException(<span class="java&#45;quote">"No WebApplicationContext found: no ContextLoaderListener registered?"</span>);
@@ -3843,6 +3874,7 @@ Since the development of many web applications is mostly based on the Spring fra
         <span class="java&#45;keyword">this</span>.ctx = applicationContext;
     &#125;
 &#125;</pre></div><p class="paragraph"/>For additional clarification of how <code>MyWebApplication</code> now relates to both Wicket and Spring framework here is an according class diagram:<p class="paragraph"/><img border="0" class="center" src="../img/mywebapp-class-diagramm.jpg"></img>
+
 
 
 <h2 id="chapter21_3">21.3 Summary</h2>
@@ -4247,25 +4279,30 @@ Every WicketStuff module can be downloaded as JAR archive at <a href="http://mvn
 
 <h2 id="chapter24_2">24.2 Module tinymce</h2>
 <p class="paragraph"/>Module tinymce offers integration with the namesake JavaScript library that turns our “humble” text-areas into a full-featured HTML WYSIWYG editor:<p class="paragraph"/><img border="0" class="center" src="../img/tinymce.png"></img><p class="paragraph"/>To “tinyfy” a textarea component we must use behavior TinyMceBehavior:<p class="paragraph"/><div class="code"><pre>TextArea textArea = <span class="java&#45;keyword">new</span> TextArea(<span class="java&#45;quote">"textArea"</span>, <span class="java&#45;keyword">new</span> Model(<span class="java&#45;quote">""</span>));
-textArea.add(<span class="java&#45;keyword">new</span> TinyMceBehavior());</pre></div><p class="paragraph"/>By default TinyMceBehavior adds only a basic set of functionalities to our textarea:<p class="paragraph"/><img border="0" class="center" src="../img/tinymce_basic.png"></img><p class="paragraph"/>To add more functionalities we must use class TinyMCESettings to register additional TinyMCE plugins and to customize the toolbars buttons. The following code is an excerpt from example page FullFeaturedTinyMCEPage:<p class="paragraph"/><div class="code"><pre>TinyMCESettings settings = <span class="java&#45;keyword">new</span> TinyMCESettings(TinyMCESettings.Theme.advanced);
+textArea.add(<span class="java&#45;keyword">new</span> TinyMceBehavior());</pre></div><p class="paragraph"/>By default TinyMceBehavior adds only a basic set of functionalities to our textarea:<p class="paragraph"/><img border="0" class="center" src="../img/tinymce_basic.png"></img><p class="paragraph"/>To add more functionalities we must use class TinyMCESettings to register additional TinyMCE plugins and to customize the toolbars buttons. The following code is an excerpt from example page FullFeaturedTinyMCEPage:<p class="paragraph"/><div class="code"><pre>TinyMCESettings settings = <span class="java&#45;keyword">new</span> TinyMCESettings(
+                       TinyMCESettings.Theme.advanced);
 //&#8230;
 // first toolbar
 //&#8230;
 settings.add(Button.newdocument, TinyMCESettings.Toolbar.first,
-		                             TinyMCESettings.Position.before);
+		      TinyMCESettings.Position.before);
 settings.add(Button.separator, TinyMCESettings.Toolbar.first,
-			                      TinyMCESettings.Position.before);
+		      TinyMCESettings.Position.before);
 settings.add(Button.fontselect, TinyMCESettings.Toolbar.first,
-			                      TinyMCESettings.Position.after);
+		      TinyMCESettings.Position.after);
 //&#8230;
 // other settings
-settings.setToolbarAlign(TinyMCESettings.Align.left);
-settings.setToolbarLocation(TinyMCESettings.Location.top);
-settings.setStatusbarLocation(TinyMCESettings.Location.bottom);
+settings.setToolbarAlign(
+   		TinyMCESettings.Align.left);
+settings.setToolbarLocation(
+   		TinyMCESettings.Location.top);
+settings.setStatusbarLocation(
+   		TinyMCESettings.Location.bottom);
 settings.setResizing(<span class="java&#45;keyword">true</span>);
 //&#8230;
 TextArea textArea = <span class="java&#45;keyword">new</span> TextArea(<span class="java&#45;quote">"ta"</span>, <span class="java&#45;keyword">new</span> Model(TEXT));
 textArea.add(<span class="java&#45;keyword">new</span> TinyMceBehavior(settings));</pre></div><p class="paragraph"/>For more configuration examples see pages inside package wicket.contrib.examples.tinymce in the example project of the module.
+
 
 
 <h2 id="chapter24_3">24.3 Module wicketstuff-gmap3</h2>
@@ -4355,7 +4392,7 @@ Quite a few teams have already got stuck into the following problem when working
 You can contribute to this guide by following these steps:
 <ul class="star">
 <li>The guide uses Grails GDoc to generate the final HTML/PDF so you should consult with its <a href="http://grails.org/WikiSyntax" target="blank">syntax</a>.</li>
-<li>Checkout Apache Wicket's <a href="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/" target="blank">site</a></li>
+<li>Checkout Apache Wicket's <a href="../ref/Httpssvnapacheorgreposasfwicketcommonsitetrunksite/site.html" class="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/">site</a></li>
 </ul><p class="paragraph"/><div class="code"><pre>svn checkout https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/</pre></div>
 <ul class="star">
 <li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">_site/guide/guide/src/docs/guide</em>  folder</li>
@@ -4373,7 +4410,7 @@ You can contribute to this guide by following these steps:
 <li>To preview your changes open  <em class="italic">_site/guide/index.html</em>  in a browser</li>
 <li>Create a patch with</li>
 </ul><p class="paragraph"/><div class="code"><pre>svn diff &#62; my.patch</pre></div>
-and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
+and attach it to a ticket in Apache Wicket's <a href="../ref/Httpsissuesapacheorgjirabrowse WICKET/JIRA.html" class="https://issues.apache.org/jira/browse/WICKET">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
 
                     </div>
                 </td>
@@ -4393,17 +4430,7 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
 
         <div id="footer">
             
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
             
         </div>

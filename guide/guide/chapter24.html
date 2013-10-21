@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -188,25 +188,30 @@ Every WicketStuff module can be downloaded as JAR archive at <a href="http://mvn
 
 <h2 id="chapter24_2">24.2 Module tinymce</h2>
 <p class="paragraph"/>Module tinymce offers integration with the namesake JavaScript library that turns our “humble” text-areas into a full-featured HTML WYSIWYG editor:<p class="paragraph"/><img border="0" class="center" src="../img/tinymce.png"></img><p class="paragraph"/>To “tinyfy” a textarea component we must use behavior TinyMceBehavior:<p class="paragraph"/><div class="code"><pre>TextArea textArea = <span class="java&#45;keyword">new</span> TextArea(<span class="java&#45;quote">"textArea"</span>, <span class="java&#45;keyword">new</span> Model(<span class="java&#45;quote">""</span>));
-textArea.add(<span class="java&#45;keyword">new</span> TinyMceBehavior());</pre></div><p class="paragraph"/>By default TinyMceBehavior adds only a basic set of functionalities to our textarea:<p class="paragraph"/><img border="0" class="center" src="../img/tinymce_basic.png"></img><p class="paragraph"/>To add more functionalities we must use class TinyMCESettings to register additional TinyMCE plugins and to customize the toolbars buttons. The following code is an excerpt from example page FullFeaturedTinyMCEPage:<p class="paragraph"/><div class="code"><pre>TinyMCESettings settings = <span class="java&#45;keyword">new</span> TinyMCESettings(TinyMCESettings.Theme.advanced);
+textArea.add(<span class="java&#45;keyword">new</span> TinyMceBehavior());</pre></div><p class="paragraph"/>By default TinyMceBehavior adds only a basic set of functionalities to our textarea:<p class="paragraph"/><img border="0" class="center" src="../img/tinymce_basic.png"></img><p class="paragraph"/>To add more functionalities we must use class TinyMCESettings to register additional TinyMCE plugins and to customize the toolbars buttons. The following code is an excerpt from example page FullFeaturedTinyMCEPage:<p class="paragraph"/><div class="code"><pre>TinyMCESettings settings = <span class="java&#45;keyword">new</span> TinyMCESettings(
+                       TinyMCESettings.Theme.advanced);
 //&#8230;
 // first toolbar
 //&#8230;
 settings.add(Button.newdocument, TinyMCESettings.Toolbar.first,
-		                             TinyMCESettings.Position.before);
+		      TinyMCESettings.Position.before);
 settings.add(Button.separator, TinyMCESettings.Toolbar.first,
-			                      TinyMCESettings.Position.before);
+		      TinyMCESettings.Position.before);
 settings.add(Button.fontselect, TinyMCESettings.Toolbar.first,
-			                      TinyMCESettings.Position.after);
+		      TinyMCESettings.Position.after);
 //&#8230;
 // other settings
-settings.setToolbarAlign(TinyMCESettings.Align.left);
-settings.setToolbarLocation(TinyMCESettings.Location.top);
-settings.setStatusbarLocation(TinyMCESettings.Location.bottom);
+settings.setToolbarAlign(
+   		TinyMCESettings.Align.left);
+settings.setToolbarLocation(
+   		TinyMCESettings.Location.top);
+settings.setStatusbarLocation(
+   		TinyMCESettings.Location.bottom);
 settings.setResizing(<span class="java&#45;keyword">true</span>);
 //&#8230;
 TextArea textArea = <span class="java&#45;keyword">new</span> TextArea(<span class="java&#45;quote">"ta"</span>, <span class="java&#45;keyword">new</span> Model(TEXT));
 textArea.add(<span class="java&#45;keyword">new</span> TinyMceBehavior(settings));</pre></div><p class="paragraph"/>For more configuration examples see pages inside package wicket.contrib.examples.tinymce in the example project of the module.
+
 
 
 <h2 id="chapter24_3">24.3 Module wicketstuff-gmap3</h2>
@@ -278,17 +283,7 @@ add(grid);</pre></div><p class="paragraph"/>In the code above we have used conve
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>

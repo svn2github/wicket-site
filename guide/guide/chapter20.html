@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -232,7 +232,7 @@ tester.clickLink(<span class="java&#45;quote">"reload"</span>, <span class="java
 &#125;
 //...</pre></div><p class="paragraph"/>If test requires a page we can use startComponentInPage(Component) which automatically generates a page for our component.<p class="paragraph"/><h3>Testing the response</h3><p class="paragraph"/>WicketTester allows us to access to the last response generated during testing with method getLastResponse. The returned value is an instance of class MockHttpServletResponse that provides helper methods to extract informations from mocked request.<p class="paragraph"/>In the test case from project CustomResourceMounting we extract the text contained in the last response with method getDocument and we check if it is equal to the RSS feed used for the test:<p class="paragraph"/><div class="code"><pre>//&#8230;
 @Test
-<span class="java&#45;keyword">public</span> void testMountedResourceResponse() <span class="java&#45;keyword">throws</span> IOException, FeedException&#123;		tester.startResource(<span class="java&#45;keyword">new</span> RSSProducerResource());
+<span class="java&#45;keyword">public</span> void testMountedResourceResponse() <span class="java&#45;keyword">throws</span> IOException, FeedException&#123;tester.startResource(<span class="java&#45;keyword">new</span> RSSProducerResource());
 	<span class="java&#45;object">String</span> responseTxt = tester.getLastResponse().getDocument();
 	//write the RSS feed used in the test into a ByteArrayOutputStream
 	ByteArrayOutputStream outputStream = <span class="java&#45;keyword">new</span> ByteArrayOutputStream();
@@ -261,7 +261,8 @@ assertFalse(tester.isComponentOnAjaxResponse(amountLabel));
 	label.add(<span class="java&#45;keyword">new</span> AjaxEventBehavior(<span class="java&#45;quote">"click"</span>) &#123;<p class="paragraph"/>		@Override
 		<span class="java&#45;keyword">protected</span> void onEvent(AjaxRequestTarget target) &#123;
 			//change label's data object
-			getComponent().setDefaultModelObject(OTHER_VALUE);
+			getComponent().setDefaultModelObject(
+                                                  OTHER_VALUE);
 			target.add(getComponent());
 		&#125;
 	&#125;).setOutputMarkupId(<span class="java&#45;keyword">true</span>);
@@ -278,8 +279,8 @@ assertFalse(tester.isComponentOnAjaxResponse(amountLabel));
 	//test <span class="java&#45;keyword">if</span> label has changed as expected
 	tester.assertLabel(<span class="java&#45;quote">"label"</span>, HomePage.OTHER_VALUE);
 &#125;</pre></div><p class="paragraph"/><h3>Testing AJAX behaviors</h3><p class="paragraph"/>To test a generic AJAX behavior we can simulate a request to it using WicketTester's method executeBehavior(AbstractAjaxBehavior behavior):<p class="paragraph"/><div class="code"><pre>//&#8230;
-AjaxFormComponentUpdatingBehavior ajaxBehavior = <span class="java&#45;keyword">new</span> AjaxFormComponentUpdatingBehavior 
-                                                                           (<span class="java&#45;quote">"change"</span>)&#123;
+AjaxFormComponentUpdatingBehavior ajaxBehavior = 
+		<span class="java&#45;keyword">new</span> AjaxFormComponentUpdatingBehavior(<span class="java&#45;quote">"change"</span>)&#123;
 	@Override
 	<span class="java&#45;keyword">protected</span> void onUpdate(AjaxRequestTarget target) &#123;
 		//...				
@@ -304,6 +305,7 @@ After a test method has been executed, we may need to clear any possible side ef
 	tester.destroy();
 &#125;</pre></div>
 </blockquote>
+
 
 
 <h2 id="chapter20_2">20.2 Testing Wicket forms</h2>
@@ -377,8 +379,8 @@ formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p c
 	tester.startPage(HomePage.class);
 	//retrieve response's markup
 	<span class="java&#45;object">String</span> responseTxt = tester.getLastResponse().getDocument();<p class="paragraph"/>	TagTester tagTester = TagTester.createTagByAttribute(responseTxt, <span class="java&#45;quote">"class"</span>, <span class="java&#45;quote">"myClass"</span>);<p class="paragraph"/>	Assert.assertNotNull(tagTester);
-	Assert.assertEquals(<span class="java&#45;quote">"span"</span>, tagTester.getName());<p class="paragraph"/>	List&#60;TagTester&#62; tagTesterList = TagTester.createTagsByAttribute(responseTxt, <span class="java&#45;quote">"class"</span>, 
-                                                                       <span class="java&#45;quote">"myClass"</span>, <span class="java&#45;keyword">false</span>);<p class="paragraph"/>	Assert.assertEquals(2, tagTesterList.size());
+	Assert.assertEquals(<span class="java&#45;quote">"span"</span>, tagTester.getName());<p class="paragraph"/>	List&#60;TagTester&#62; tagTesterList = TagTester.createTagsByAttribute(responseTxt, 
+						<span class="java&#45;quote">"class"</span>, <span class="java&#45;quote">"myClass"</span>, <span class="java&#45;keyword">false</span>);<p class="paragraph"/>	Assert.assertEquals(2, tagTesterList.size());
 &#125;</pre></div><p class="paragraph"/>The name of the tag found by TagTester can be retrieved with its method getName. Method createTagsByAttribute returns all the tags that have the given value on the given attribute. In the code above we have used this method to test that our markup contains two tags having attribute class equal to myClass.
 
 
@@ -412,17 +414,7 @@ formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p c
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>

@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -273,14 +273,14 @@ The component provides different setter methods to customize the appearance of t
     <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
      <span class="java&#45;keyword">super</span>(parameters);
      DefaultMutableTreeNode root = <span class="java&#45;keyword">new</span> DefaultMutableTreeNode(<span class="java&#45;quote">"Cities of Europe"</span>);<p class="paragraph"/>     addNodes(addNodes(root, <span class="java&#45;quote">"Italy"</span>), <span class="java&#45;quote">"Rome"</span>, <span class="java&#45;quote">"Venice"</span>, <span class="java&#45;quote">"Milan"</span>, <span class="java&#45;quote">"Florence"</span>);
-     addNodes(addNodes(root, <span class="java&#45;quote">"Germany"</span>),<span class="java&#45;quote">"Stuttgart"</span>,<span class="java&#45;quote">"Munich"</span>,<span class="java&#45;quote">"Berlin"</span>,<span class="java&#45;quote">"Dusseldorf"</span>, <span class="java&#45;quote">"Dresden"</span>);
-     addNodes(addNodes(root, <span class="java&#45;quote">"France"</span>), <span class="java&#45;quote">"Paris"</span>,<span class="java&#45;quote">"Toulouse"</span>,<span class="java&#45;quote">"Strasbourg"</span>,<span class="java&#45;quote">"Bordeaux"</span>, <span class="java&#45;quote">"Lyon"</span>);<p class="paragraph"/>     DefaultTreeModel treeModel = <span class="java&#45;keyword">new</span> DefaultTreeModel(root);
+     addNodes(addNodes(root, <span class="java&#45;quote">"Germany"</span>),<span class="java&#45;quote">"Stuttgart"</span>,<span class="java&#45;quote">"Munich"</span>, <span class="java&#45;quote">"Berlin"</span>,<span class="java&#45;quote">"Dusseldorf"</span>, <span class="java&#45;quote">"Dresden"</span>);
+     addNodes(addNodes(root, <span class="java&#45;quote">"France"</span>), <span class="java&#45;quote">"Paris"</span>,<span class="java&#45;quote">"Toulouse"</span>, <span class="java&#45;quote">"Strasbourg"</span>,<span class="java&#45;quote">"Bordeaux"</span>, <span class="java&#45;quote">"Lyon"</span>);<p class="paragraph"/>     DefaultTreeModel treeModel = <span class="java&#45;keyword">new</span> DefaultTreeModel(root);
      TreeModelProvider&#60;DefaultMutableTreeNode&#62; modelProvider = <span class="java&#45;keyword">new</span> 
-                                  TreeModelProvider&#60;DefaultMutableTreeNode&#62;(treeModel) &#123;
-         @Override
-         <span class="java&#45;keyword">public</span> IModel&#60;DefaultMutableTreeNode&#62; model(DefaultMutableTreeNode object) &#123;
-            <span class="java&#45;keyword">return</span> Model.of(object);
-        &#125;
+                            TreeModelProvider&#60;DefaultMutableTreeNode&#62;( treeModel )&#123;
+       @Override
+       <span class="java&#45;keyword">public</span> IModel&#60;DefaultMutableTreeNode&#62; model(DefaultMutableTreeNode object)&#123;
+          <span class="java&#45;keyword">return</span> Model.of(object);
+       &#125;
      &#125;;
      //To be continued...</pre></div><p class="paragraph"/>Nodes have been built using simple strings as data objects and invoking custom utility method addNodes which converts string parameters into children nodes for a given parent node. Once we have our tree of DefaultMutableTreeNodes we can build the Swing tree model (DefaultTreeModel) that will be the backing object for a TreeModelProvider. This provider wraps each node in a model invoking its abstract method model. In our example we have used a simple Model as wrapper model.<p class="paragraph"/>Scrolling down the code we can see how the tree component is instantiated and configured before being added to the home page:<p class="paragraph"/><div class="code"><pre>//Continued from previous snippet&#8230;
  NestedTree&#60;DefaultMutableTreeNode&#62; tree = <span class="java&#45;keyword">new</span> NestedTree&#60;DefaultMutableTreeNode&#62;(<span class="java&#45;quote">"tree"</span>, 
@@ -363,6 +363,7 @@ add(label);
 &#125;;</pre></div><p class="paragraph"/>Please note that in the code above we didn't invoked method setOutputMarkupId(true) as setOutputMarkupPlaceholderTag already does it internally.
 
 
+
 <h2 id="chapter17_3">17.3 Built-in AJAX behaviors</h2>
 <p class="paragraph"/>In addition to specific components, Wicket offers also a set of built in AJAX behaviors that can be used to easily add AJAX functionalities to existing components. As we will see in this paragraph AJAX behaviors can be used also to ajaxify components that weren't initially designed to work with this technology. All the following behaviors are inside package org.apache.wicket.ajax.<p class="paragraph"/><h3>AjaxEventBehavior</h3><p class="paragraph"/>AjaxEventBehavior allows to handle a JavaScript event (like click, change, etc...) on server side via AJAX. Its constructor takes in input the name of the event that must be handled. Every time this event is fired for a given component on client side, the callback method onEvent(AjaxRequestTarget target) is executed. onEvent is abstract, hence we must implement it to tell AjaxEventBehavior what to do when the specified event occurs.<p class="paragraph"/>In project AjaxEventBehaviorExample we used this behavior to build a “clickable” Label component that counts the number of clicks. Here is the code from the home page of the project:<p class="paragraph"/><strong class="bold">HTML:</strong>
 <div class="code"><pre>&#60;body&#62;
@@ -438,7 +439,7 @@ add(dynamicLabel);</pre></div>
 <h2 id="chapter17_5">17.5 AJAX request attributes and call listeners</h2>
 <p class="paragraph"/>Starting from version 6.0 Wicket has introduced two entities which allow us to control how an AJAX request is generated on client side and to specify the custom JavaScript code we want to execute during request handling. These entities are class AjaxRequestAttributes and interface IAjaxCallListener, both placed in package org.apache.wicket.ajax.attributes.<p class="paragraph"/>AjaxRequestAttributes exposes the attributes used to generate the JavaScript call invoked on client side to start an AJAX request. Each attribute will be passed as a <a href="http://en.wikipedia.org/wiki/JSON" target="blank">JSON</a> parameter to the JavaScript function Wicket.Ajax.ajax which is responsible for sending the concrete AJAX request. Every JSON parameter is identified by a short name. Here is a partial list of the available parameters:<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Short name</strong></th><th><strong class="bold">Description</strong></th><th><strong class="bold">Default value</strong></th></tr><tr class="table-odd"><td>u</td><td>The callback URL used to serve the AJAX request that will be sent.</td><td>&#160;</td></tr><tr class="table-even"><td>c</td><td>The id of the component that wants to start the AJAX call.</td><td>&#160;</td></tr><tr class="table-odd"><td>e</td><td>A list of event (click, change, etc...) that can trigger the AJAX call.</td><td>domready</td></tr><tr class="table-even"><td>m</td><td>The request method that must be used (GET or POST).</td><td>GET</td></tr><tr class="table-odd"><td>f</td><td>The id of the form that must be submitted with the AJAX call.</td><td>&#160;</td></tr><tr class="table-even"><td>mp</td><td>If the AJAX call involves the submission of a form, this flag indicates whether the data must be encoded using the encoding mode “multipart/form-data”.</td><td>false</td></tr><tr class="table-odd"><td>sc</td><td>The input name of the submitting component of the form</td><td>&#160;</td></tr><tr class="table-even"><td>async</td><td>A boolean parameter that indicates if the AJAX call is asynchronous (true) or not.</td><td>true</td></tr><tr class="table-odd"><td>wr</td><td>Specifies the type of data returned by the AJAX call (XML, HTML, JSON, etc...).</td><td>XML</td></tr><tr class="table-even"><td>bh, pre, bsh, ah, sh, fh, coh</td><td>This is a list of the listeners that are executed on client side (they are JavaScript scripts) during the lifecycle of an AJAX request. Each short name is the abbreviation of one of the methods defined in the interface IAjaxCallListener (see below).</td><td>An empty list</td></tr></table><p class="paragraph"/><blockquote class="note">
 A full list of the available request parameters as well as more details on the related JavaScript code can be found at <a href="https://cwiki.apache.org/confluence/" target="blank">https://cwiki.apache.org/confluence/ display/WICKET/Wicket+Ajax</a> display/WICKET/Wicket+Ajax .
-</blockquote><p class="paragraph"/>Parameters 'u' (callback URL) and 'c' (the id of the component) are generated by the AJAX behavior that will serve the AJAX call and they are not accessible through AjaxRequestAttributes.<p class="paragraph"/>Here is the final AJAX function generate for the behavior used in example project AjaxEventBehavior Example:<p class="paragraph"/><div class="code"><pre>Wicket.Ajax.ajax(&#123;<span class="java&#45;quote">"u"</span>:<span class="java&#45;quote">"./?0&#45;1.IBehaviorListener.0&#45;clickCounterLabel"</span>,<span class="java&#45;quote">"e"</span>:<span class="java&#45;quote">"click"</span>,               
+</blockquote><p class="paragraph"/>Parameters 'u' (callback URL) and 'c' (the id of the component) are generated by the AJAX behavior that will serve the AJAX call and they are not accessible through AjaxRequestAttributes.<p class="paragraph"/>Here is the final AJAX function generate for the behavior used in example project AjaxEventBehavior Example:<p class="paragraph"/><div class="code"><pre>Wicket.Ajax.ajax(&#123;<span class="java&#45;quote">"u"</span>:<span class="java&#45;quote">"./?0&#45;1.IBehaviorListener.0&#45;clickCounterLabel"</span>, <span class="java&#45;quote">"e"</span>:<span class="java&#45;quote">"click"</span>,               
                   <span class="java&#45;quote">"c"</span>:<span class="java&#45;quote">"clickCounterLabel1"</span>&#125;);</pre></div><p class="paragraph"/>Even if most of the times we will let Wicket generate request attributes for us, both AJAX components and behaviors give us the chance to modify them overriding their method updateAjaxAttributes (AjaxRequestAttributes attributes).<p class="paragraph"/>One of the attribute we may need to modify is the list of IAjaxCallListeners returned by method getAjaxCallListeners().<p class="paragraph"/>IAjaxCallListener defines a set of methods which return the JavaScript code (as a CharSequence) that must be executed on client side when the AJAX request handling reaches a given stage:
 <ul class="star">
 <li><strong class="bold">getBeforeHandler(Component)</strong>: returns the JavaScript code that will be executed before any other handlers returned by IAjaxCallListener. The code is executed in a scope where it can use variable attrs, which is an array containing the JSON parameters passed to Wicket.Ajax.ajax.</li>
@@ -459,6 +460,7 @@ A full list of the available request parameters as well as more details on the r
 <li><strong class="bold">getFailureHandler(Component)</strong>: returns the JavaScript code that will be executed if the AJAX call has returned with a failure. The code is executed in a scope where it can use variable attrs, which is the same variable seen for getBeforeHandler.</li>
 <li><strong class="bold">getCompleteHandler(Component)</strong>: returns the JavaScript that will be invoked after success or failure handler has been executed. The code is executed in a scope where it can use variables attrs, jqXHR and textStatus which are the same variables seen for getSuccessHandler.</li>
 </ul><p class="paragraph"/>In the next paragraph we will see an example of custom IAjaxCallListener designed to disable a component during AJAX request processing.
+
 
 
 <h2 id="chapter17_6">17.6 Creating custom AJAX call listener</h2>
@@ -490,7 +492,7 @@ A full list of the available request parameters as well as more details on the r
 	&#125;
 &#125;;</pre></div><p class="paragraph"/><h3>Java class code</h3><p class="paragraph"/>The code of our custom listener is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class DisableComponentListener <span class="java&#45;keyword">extends</span> AjaxCallListener &#123;
    <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference customScriptReference = <span class="java&#45;keyword">new</span>   
-   PackageResourceReference(DisableComponentListener.class,<span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
+   PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
    PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"jquery&#45;ui&#45;position.min.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference indicatorReference = 
          <span class="java&#45;keyword">new</span> PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"ajax&#45;loader.gif"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> Component targetComponent;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> DisableComponentListener(Component targetComponent)&#123;
       <span class="java&#45;keyword">this</span>.targetComponent = targetComponent;
@@ -498,20 +500,20 @@ A full list of the available request parameters as well as more details on the r
    <span class="java&#45;keyword">public</span> CharSequence getBeforeHandler(Component component) &#123;   
       CharSequence indicatorUrl = getIndicatorUrl(component);
       <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.disableElement('"</span> + targetComponent.getMarkupId() 
-                                                   + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
+              + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
    &#125;<p class="paragraph"/>   @Override
    <span class="java&#45;keyword">public</span> CharSequence getCompleteHandler(Component component) &#123;
-      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> + targetComponent.getMarkupId() + 
-                                                                               <span class="java&#45;quote">"');"</span>;
+      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> 
+		+ targetComponent.getMarkupId() + <span class="java&#45;quote">"');"</span>;
    &#125;<p class="paragraph"/>   <span class="java&#45;keyword">protected</span> CharSequence getIndicatorUrl(Component component) &#123;
       <span class="java&#45;keyword">return</span> component.urlFor(indicatorReference, <span class="java&#45;keyword">null</span>);
    &#125;<p class="paragraph"/>   @Override
    <span class="java&#45;keyword">public</span> void renderHead(Component component, IHeaderResponse response) &#123;   
-      ResourceReference jqueryReference = Application.get().getJavaScriptLibrarySettings(). 
-                                     getJQueryReference();
+      ResourceReference jqueryReference = 
+      Application.get().getJavaScriptLibrarySettings().getJQueryReference();
       response.render(JavaScriptHeaderItem.forReference(jqueryReference));      
       response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
-      response.render(JavaScriptHeaderItem.forReference(customScriptReference));
+      response.render(JavaScriptHeaderItem.forReference(customScriptReference) );
    &#125;
 &#125;</pre></div><p class="paragraph"/>As you can see in the code above we have created a function (getIndicatorUrl) to retrieve the URL of the indicator picture. This was done in order to make the picture customizable by overriding this method.<p class="paragraph"/>Once we have our listener in place, we can finally use it in our example overwriting method updateAjaxAttributes of the AJAX button that submits the form:<p class="paragraph"/><div class="code"><pre>//&#8230;
 <span class="java&#45;keyword">new</span> AjaxButton(<span class="java&#45;quote">"ajaxButton"</span>)&#123;
@@ -544,6 +546,7 @@ A full list of the available request parameters as well as more details on the r
 );</pre></div><p class="paragraph"/>The code above retrieves the id of the component that is about to be removed using parameter attributes. Then it checks if a JQuery datepicker was defined for the given component and if so, it removes the widget calling function destroy.
 
 
+
 <h2 id="chapter17_7">17.7 Summary</h2>
 <p class="paragraph"/>AJAX is another example of how Wicket can simplify web technologies providing a good component and object oriented abstraction of them.<p class="paragraph"/>In this chapter we have seen how to take advantage of the AJAX support provided by Wicket to write AJAX-enhanced applications. Most of the chapter has been dedicated to the built-in components and behaviors that let us adopt AJAX without almost any effort.<p class="paragraph"/>In the final part of the chapter we have seen how Wicket physically implements an AJAX call on client side using AJAX request attributes. Then, we have learnt how to use call listeners to execute custom JavaScript during AJAX request lifecycle.
 
@@ -574,17 +577,7 @@ A full list of the available request parameters as well as more details on the r
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>

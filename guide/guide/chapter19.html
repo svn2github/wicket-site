@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -284,7 +284,8 @@ Since both restartResponseAtSignInPage and redirectToIntercept Page internally t
   <span class="java&#45;keyword">public</span> void init()
   &#123;
     <span class="java&#45;keyword">super</span>.init();
-    getSecuritySettings().setAuthorizationStrategy(myAuthorizationStrategy);
+    getSecuritySettings().
+	setAuthorizationStrategy(myAuthorizationStrategy);
   &#125;	
 //...</pre></div><p class="paragraph"/>If we want to combine the action of two or more authorization strategies we can chain them with strategy CompoundAuthorizationStrategy which implements composite patter for authorization strategies.<p class="paragraph"/>Most of the times we won't need to implement an IAuthorizationStrategy from scratch as Wicket already comes with a set of built-in strategies. In the next paragraphs we will see some of these strategies that can be used to implement an effective and flexible security policy.<p class="paragraph"/><h3>SimplePageAuthorizationStrategy</h3><p class="paragraph"/>Abstract class SimplePageAuthorizationStrategy (in package org.apache.wicket. authorization.strategies.page) is a strategy that checks user authorizations calling abstract method isAuthorized only for those pages that are subclasses of a given supertype. If isAuthorized returns false, the user is redirected to the sign in page specified as second constructor parameter:<p class="paragraph"/><div class="code"><pre>SimplePageAuthorizationStrategy authorizationStrategy = <span class="java&#45;keyword">new</span> SimplePageAuthorizationStrategy( 
                                                   PageClassToCheck.class, SignInPage.class)
@@ -346,7 +347,8 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
 &#125;</pre></div><p class="paragraph"/>The code that instantiates MetaDataRoleAuthorizationStrategy and set it as application's strategy is inside application class method init.<p class="paragraph"/>Any subclass of AbstractRoleAuthorizationStrategyWicket needs an implementation of interface IRoleCheckingStrategy to be instantiated. For this purpose in the code above we used the application class itself because its base class AuthenticatedWebApplication already implements interface IRoleCheckingStrategy. By default AuthenticatedWebApplication checks for authorizations using the roles returned by the current AbstractAuthenticated WebSession. As final step inside init we grant the access to page AdminOnlyPage to ADMIN role calling method authorize.<p class="paragraph"/>The code from session class has three interesting methods. The first is authenticate which considers as valid credentials every pair of username and password having the same value. The second notable method is getRoles which returns role SIGNED_IN if user is authenticated and it adds role ADMIN if username is equal to superuser. Finally, we have method signOut which has been overridden in order to clean the username field used internally to generate roles.<p class="paragraph"/>Now if we run the project and we try to access to AdminOnlyPage from the home page without having the ADMIN role, we will be redirected to the default access-denied page used by Wicket:<p class="paragraph"/><img border="0" class="center" src="../img/authorization-access-denied.png"></img><p class="paragraph"/>The access-denied page can be customized using method setAccessDeniedPage(Class&#60;? extends Page&#62;) of setting interface IApplicationSettings:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
    @Override
    <span class="java&#45;keyword">public</span> void init()&#123;   
-      getApplicationSettings().setAccessDeniedPage(MyCustomAccessDeniedPage.class); 
+      getApplicationSettings().setAccessDeniedPage(
+			MyCustomAccessDeniedPage.class); 
    &#125;</pre></div><p class="paragraph"/>Just like custom “Page expired” page (see chapter 6.2.5), also custom “Access denied” page must be bookmarkable.<p class="paragraph"/><h4>Using roles with annotations</h4><p class="paragraph"/>Strategy AnnotationsRoleAuthorizationStrategy relies on two built-in annotations to handle role-based authorizations. These annotations are AuthorizeInstantiation and Authorize Action. As their names suggest the first annotation specifies which roles are allowed to instantiate the annotated component while the second must be used to indicate which roles are allowed to perform a specific action on the annotated component.<p class="paragraph"/>In the following example we use annotations to make a page accessible only to signed-in users and to enable it only if user has the ADMIN role:<p class="paragraph"/><div class="code"><pre>@AuthorizeInstantiation(<span class="java&#45;quote">"SIGNED_IN"</span>)
 @AuthorizeAction(action = <span class="java&#45;quote">"ENABLE"</span>, roles = &#123;<span class="java&#45;quote">"ADMIN"</span>&#125;)
 <span class="java&#45;keyword">public</span> class MyPage <span class="java&#45;keyword">extends</span> WebPage &#123;
@@ -366,6 +368,7 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
         &#125;);
      &#125;
 &#125;</pre></div><p class="paragraph"/>In addition to interface IRoleCheckingStrategy, class AuthenticatedWebApplication implements also IUnauthorizedComponentInstantiationListener and registers itself as listener for unauthorized instantiations.<p class="paragraph"/>By default AuthenticatedWebApplication redirects users to sign-in page if they are not signed-in and they try to instantiate a restricted component. Otherwise, if users are already signed in but they are not allowed to instantiate a given component, an UnauthorizedInstantiationException will be thrown.<p class="paragraph"/><h3>Strategy RoleAuthorizationStrategy</h3><p class="paragraph"/>Class RoleAuthorizationStrategy is a compound strategy that combines both MetaData RoleAuthorizationStrategy and AnnotationsRoleAuthorizationStrategy.<p class="paragraph"/>This is the strategy used internally by AuthenticatedWebApplication.
+
 
 
 <h2 id="chapter19_3">19.3 Using HTTPS protocol</h2>
@@ -407,7 +410,7 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
 <span class="java&#45;keyword">public</span> void init()   
 &#123;
       IPackageResourceGuard packageResourceGuard = application.getResourceSettings() 
-                                                              .getPackageResourceGuard();
+                                                   .getPackageResourceGuard();
       <span class="java&#45;keyword">if</span> (packageResourceGuard <span class="java&#45;keyword">instanceof</span> SecurePackageResourceGuard)
       &#123;
          SecurePackageResourceGuard guard = (SecurePackageResourceGuard) packageResourceGuard;
@@ -415,6 +418,7 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
          guard.addPattern(<span class="java&#45;quote">"+<span class="java&#45;keyword">public</span>/&#42;.pdf"</span>);
       &#125;
 &#125;</pre></div>
+
 
 
 <h2 id="chapter19_5">19.5 Summary</h2>
@@ -446,17 +450,7 @@ Application class AuthenticatedWebApplication already sets MetaData RoleAuthoriz
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43124634-1', 'comsysto.com');
-  ga('send', 'pageview');
-
-</script>
+Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
 
     
 </div>
