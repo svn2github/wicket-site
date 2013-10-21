@@ -28,9 +28,9 @@ h3. Handling session attributes
 
 The Session class handles session attributes in much the same way as the standard interface javax.servlet.http.HttpSession. The following methods are provided to create, read and remove session attributes:
 
-* setAttribute(String name, Serializable value): creates an attribute identified by the given name. If the session already contains an attribute with the same name, the new value will replace the existing one. The value must be a serializable object.
-* getAttribute(String name): returns the value of the attribute identified by the given name, or null if the name does not correspond to any attribute.
-* removeAttribute(String name): removes the attribute identified by the given name.
+* *setAttribute(String name, Serializable value):* creates an attribute identified by the given name. If the session already contains an attribute with the same name, the new value will replace the existing one. The value must be a serializable object.
+* *getAttribute(String name):* returns the value of the attribute identified by the given name, or null if the name does not correspond to any attribute.
+* *removeAttribute(String name):* removes the attribute identified by the given name.
 
 By default class WebSession will use the underlying http session to store attributes. Wicket will automatically add a prefix to the name of the attributes. This prefix is returned by the WebApplication's method getSessionAttributePrefix().
 
@@ -109,10 +109,10 @@ h3. Storing arbitrary objects with metadata
 
 JavaServer Pages Specification1 defines 4 scopes in which a page can create and access a variable. These scopes are:
 
-* request: variables declared in this scope can be seen only by pages processing the same request. The lifespan of these variables is (at most) equal to the one of the related request. They are discarded when the full response has been generated or when the request is forwarded somewhere else.
-* page: variables declared in this scope can be seen only by the page that has created them. 
-* session: variables in session scope can be created and accessed by every page used in the same session where they are defined.
-* application: this is the widest scope. Variables declared in this scope can be used by any page of a given web application.
+* *request:* variables declared in this scope can be seen only by pages processing the same request. The lifespan of these variables is (at most) equal to the one of the related request. They are discarded when the full response has been generated or when the request is forwarded somewhere else.
+* *page:* variables declared in this scope can be seen only by the page that has created them. 
+* *session:* variables in session scope can be created and accessed by every page used in the same session where they are defined.
+* *application:* this is the widest scope. Variables declared in this scope can be used by any page of a given web application.
 
 Although Wicket doesn't implement the JSP Specification (it is rather an alternative to it), it offers a feature called metadata which resembles scoped variables but is much more powerful. Metadata is quite similar to a Java Map in that it stores pairs of key-value objects where the key must be unique. In Wicket each of the following classes has its own metadata store: RequestCycle, Session, Application and Component.
 

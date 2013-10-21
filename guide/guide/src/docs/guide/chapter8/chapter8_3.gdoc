@@ -57,22 +57,22 @@ public final void setResponsePage(final Page page) {
 h3. RequestCycle's hook methods and listeners
 
 The RequestCycle comes with some hook methods which can be overridden to perform custom actions when request handling reaches a specific stage. These methods are:
-* onBeginRequest(): called when the RequestCycle is about to start handling the request. 
-* onEndRequest(): called when the RequestCycle has finished to handle the request
-* onDetach(): called after the request handling has completed and the RequestCycle is about to be detached from its thread. The default implementation of this method invokes detach() on the current session (the Session class will be shortly discussed in paragraph 7.4).
+* *onBeginRequest():* called when the RequestCycle is about to start handling the request. 
+* *onEndRequest():* called when the RequestCycle has finished to handle the request
+* *onDetach():* called after the request handling has completed and the RequestCycle is about to be detached from its thread. The default implementation of this method invokes detach() on the current session (the Session class will be shortly discussed in paragraph 7.4).
 
 Methods onBeforeRequest and onEndRequest can be used if we need to execute custom actions before and after business code is executed, such as opening a Hibernate/JPA session and closing it when code has terminated. 
 
 A more flexible way to interact with the request processing is to use the listener interface org.apache.wicket.request.cycle.IRequestCycleListener. In addition to the three methods already seen for RequestCycle, this interface offers further hooks into request processing:
-* onBeginRequest(RequestCycle cycle): (see the description above)
-* onEndRequest(RequestCycle cycle): (see the description above)
-* onDetach(RequestCycle cycle): (see the description above)
-* onRequestHandlerResolved(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been resolved.
-* onRequestHandlerScheduled(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been scheduled for execution.
-* onRequestHandlerExecuted(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been executed.
-* onException(RequestCycle cycle, Exception ex): called when an exception has been thrown during request processing.
-* onExceptionRequestHandlerResolved(RequestCycle rc, IRequestHandler rh, Exception ex): called when an IRequestHandler has been resolved and will be used to handle an exception. 
-* onUrlMapped(RequestCycle cycle, IRequestHandler handler, Url url): called when an URL has been generated for an IRequestHandler object.
+* *onBeginRequest(RequestCycle cycle):* (see the description above)
+* *onEndRequest(RequestCycle cycle):* (see the description above)
+* *onDetach(RequestCycle cycle):* (see the description above)
+* *onRequestHandlerResolved(RequestCycle cycle, IRequestHandler handler):* called when an IRequestHandler has been resolved.
+* *onRequestHandlerScheduled(RequestCycle cycle, IRequestHandler handler):* called when an IRequestHandler has been scheduled for execution.
+* *onRequestHandlerExecuted(RequestCycle cycle, IRequestHandler handler):* called when an IRequestHandler has been executed.
+* *onException(RequestCycle cycle, Exception ex):* called when an exception has been thrown during request processing.
+* *onExceptionRequestHandlerResolved(RequestCycle rc, IRequestHandler rh, Exception ex):* called when an IRequestHandler has been resolved and will be used to handle an exception. 
+* *onUrlMapped(RequestCycle cycle, IRequestHandler handler, Url url):* called when an URL has been generated for an IRequestHandler object.
 
 To use the request cycle listeners we must add them to our application which in turn will pass them to the new RequestCycle's instances created with createRequestCycle method:
 
