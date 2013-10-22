@@ -39,7 +39,7 @@ public class HomePage extends WebPage
 
 Now if we run the new example (project LifeCycleStagesRevisited) and we click on the “Reload” button, a new page version is created and the page id is increased by one:
 
-!reload-page-png!
+!reload-page.png!
 
 If we press the back button the page version previously rendered (and serialized) will be retrieved (i.e. deserialized) and it will be used again to respond to our request (and page id is decremented):
 
