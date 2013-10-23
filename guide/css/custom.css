@@ -51,3 +51,9 @@ h1, h2, #main a, #main .project strong, .local .local-title .toggle a, #table-of
 #navigation .separator {
     background: none!important;
 }
+
+@media print
+  {
+   #col2 {display:none!important;}
+  }
+
