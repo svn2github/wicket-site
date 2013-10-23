@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
+        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -169,20 +169,20 @@ This paragraph will provide just the basic informations about what happens behin
 	getRequestCycle().setResponsePage(page);
 &#125;</pre></div><p class="paragraph"/><h3>RequestCycle's hook methods and listeners</h3><p class="paragraph"/>The RequestCycle comes with some hook methods which can be overridden to perform custom actions when request handling reaches a specific stage. These methods are:
 <ul class="star">
-<li>onBeginRequest(): called when the RequestCycle is about to start handling the request.</li>
-<li>onEndRequest(): called when the RequestCycle has finished to handle the request</li>
-<li>onDetach(): called after the request handling has completed and the RequestCycle is about to be detached from its thread. The default implementation of this method invokes detach() on the current session (the Session class will be shortly discussed in paragraph 7.4).</li>
+<li><strong class="bold">onBeginRequest():</strong> called when the RequestCycle is about to start handling the request.</li>
+<li><strong class="bold">onEndRequest():</strong> called when the RequestCycle has finished to handle the request</li>
+<li><strong class="bold">onDetach():</strong> called after the request handling has completed and the RequestCycle is about to be detached from its thread. The default implementation of this method invokes detach() on the current session (the Session class will be shortly discussed in paragraph 7.4).</li>
 </ul><p class="paragraph"/>Methods onBeforeRequest and onEndRequest can be used if we need to execute custom actions before and after business code is executed, such as opening a Hibernate/JPA session and closing it when code has terminated.<p class="paragraph"/>A more flexible way to interact with the request processing is to use the listener interface org.apache.wicket.request.cycle.IRequestCycleListener. In addition to the three methods already seen for RequestCycle, this interface offers further hooks into request processing:
 <ul class="star">
-<li>onBeginRequest(RequestCycle cycle): (see the description above)</li>
-<li>onEndRequest(RequestCycle cycle): (see the description above)</li>
-<li>onDetach(RequestCycle cycle): (see the description above)</li>
-<li>onRequestHandlerResolved(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been resolved.</li>
-<li>onRequestHandlerScheduled(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been scheduled for execution.</li>
-<li>onRequestHandlerExecuted(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been executed.</li>
-<li>onException(RequestCycle cycle, Exception ex): called when an exception has been thrown during request processing.</li>
-<li>onExceptionRequestHandlerResolved(RequestCycle rc, IRequestHandler rh, Exception ex): called when an IRequestHandler has been resolved and will be used to handle an exception.</li>
-<li>onUrlMapped(RequestCycle cycle, IRequestHandler handler, Url url): called when an URL has been generated for an IRequestHandler object.</li>
+<li><strong class="bold">onBeginRequest(RequestCycle cycle):</strong> (see the description above)</li>
+<li><strong class="bold">onEndRequest(RequestCycle cycle):</strong> (see the description above)</li>
+<li><strong class="bold">onDetach(RequestCycle cycle):</strong> (see the description above)</li>
+<li><strong class="bold">onRequestHandlerResolved(RequestCycle cycle, IRequestHandler handler):</strong> called when an IRequestHandler has been resolved.</li>
+<li><strong class="bold">onRequestHandlerScheduled(RequestCycle cycle, IRequestHandler handler):</strong> called when an IRequestHandler has been scheduled for execution.</li>
+<li><strong class="bold">onRequestHandlerExecuted(RequestCycle cycle, IRequestHandler handler):</strong> called when an IRequestHandler has been executed.</li>
+<li><strong class="bold">onException(RequestCycle cycle, Exception ex):</strong> called when an exception has been thrown during request processing.</li>
+<li><strong class="bold">onExceptionRequestHandlerResolved(RequestCycle rc, IRequestHandler rh, Exception ex):</strong> called when an IRequestHandler has been resolved and will be used to handle an exception.</li>
+<li><strong class="bold">onUrlMapped(RequestCycle cycle, IRequestHandler handler, Url url):</strong> called when an URL has been generated for an IRequestHandler object.</li>
 </ul><p class="paragraph"/>To use the request cycle listeners we must add them to our application which in turn will pass them to the new RequestCycle's instances created with createRequestCycle method:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;<p class="paragraph"/>	<span class="java&#45;keyword">super</span>.init();<p class="paragraph"/>	IRequestCycleListener myListener;
 	//listener initialization&#8230;
@@ -215,7 +215,17 @@ This paragraph will provide just the basic informations about what happens behin
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
+Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43124634-1', 'comsysto.com');
+  ga('send', 'pageview');
+
+</script>
 
     
 </div>

@@ -113,10 +113,10 @@ function addJsClass() {
 <div id="header">
     <div class="images clearfix">
         
-        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://comsysto.github.io/wicket-userguide/img/apache-wicket.png"/></a></span>
         
         
-        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://www.apache.org/images/asf_logo.gif"/></a></span>
+        <span id="sponsor"><a href="http://www.comsysto.com/" target="_blank"><img height="60px" src="http://comsysto.github.io/wicket-userguide/img/comsysto-logo.png"/></a></span>
         
     </div>
     <p>Free Online Guide for Apache Wicket framework</p>
@@ -202,20 +202,20 @@ This paragraph will provide just the basic informations about what happens behin
 	getRequestCycle().setResponsePage(page);
 &#125;</pre></div><p class="paragraph"/><h3>RequestCycle's hook methods and listeners</h3><p class="paragraph"/>The RequestCycle comes with some hook methods which can be overridden to perform custom actions when request handling reaches a specific stage. These methods are:
 <ul class="star">
-<li>onBeginRequest(): called when the RequestCycle is about to start handling the request.</li>
-<li>onEndRequest(): called when the RequestCycle has finished to handle the request</li>
-<li>onDetach(): called after the request handling has completed and the RequestCycle is about to be detached from its thread. The default implementation of this method invokes detach() on the current session (the Session class will be shortly discussed in paragraph 7.4).</li>
+<li><strong class="bold">onBeginRequest():</strong> called when the RequestCycle is about to start handling the request.</li>
+<li><strong class="bold">onEndRequest():</strong> called when the RequestCycle has finished to handle the request</li>
+<li><strong class="bold">onDetach():</strong> called after the request handling has completed and the RequestCycle is about to be detached from its thread. The default implementation of this method invokes detach() on the current session (the Session class will be shortly discussed in paragraph 7.4).</li>
 </ul><p class="paragraph"/>Methods onBeforeRequest and onEndRequest can be used if we need to execute custom actions before and after business code is executed, such as opening a Hibernate/JPA session and closing it when code has terminated.<p class="paragraph"/>A more flexible way to interact with the request processing is to use the listener interface org.apache.wicket.request.cycle.IRequestCycleListener. In addition to the three methods already seen for RequestCycle, this interface offers further hooks into request processing:
 <ul class="star">
-<li>onBeginRequest(RequestCycle cycle): (see the description above)</li>
-<li>onEndRequest(RequestCycle cycle): (see the description above)</li>
-<li>onDetach(RequestCycle cycle): (see the description above)</li>
-<li>onRequestHandlerResolved(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been resolved.</li>
-<li>onRequestHandlerScheduled(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been scheduled for execution.</li>
-<li>onRequestHandlerExecuted(RequestCycle cycle, IRequestHandler handler): called when an IRequestHandler has been executed.</li>
-<li>onException(RequestCycle cycle, Exception ex): called when an exception has been thrown during request processing.</li>
-<li>onExceptionRequestHandlerResolved(RequestCycle rc, IRequestHandler rh, Exception ex): called when an IRequestHandler has been resolved and will be used to handle an exception.</li>
-<li>onUrlMapped(RequestCycle cycle, IRequestHandler handler, Url url): called when an URL has been generated for an IRequestHandler object.</li>
+<li><strong class="bold">onBeginRequest(RequestCycle cycle):</strong> (see the description above)</li>
+<li><strong class="bold">onEndRequest(RequestCycle cycle):</strong> (see the description above)</li>
+<li><strong class="bold">onDetach(RequestCycle cycle):</strong> (see the description above)</li>
+<li><strong class="bold">onRequestHandlerResolved(RequestCycle cycle, IRequestHandler handler):</strong> called when an IRequestHandler has been resolved.</li>
+<li><strong class="bold">onRequestHandlerScheduled(RequestCycle cycle, IRequestHandler handler):</strong> called when an IRequestHandler has been scheduled for execution.</li>
+<li><strong class="bold">onRequestHandlerExecuted(RequestCycle cycle, IRequestHandler handler):</strong> called when an IRequestHandler has been executed.</li>
+<li><strong class="bold">onException(RequestCycle cycle, Exception ex):</strong> called when an exception has been thrown during request processing.</li>
+<li><strong class="bold">onExceptionRequestHandlerResolved(RequestCycle rc, IRequestHandler rh, Exception ex):</strong> called when an IRequestHandler has been resolved and will be used to handle an exception.</li>
+<li><strong class="bold">onUrlMapped(RequestCycle cycle, IRequestHandler handler, Url url):</strong> called when an URL has been generated for an IRequestHandler object.</li>
 </ul><p class="paragraph"/>To use the request cycle listeners we must add them to our application which in turn will pass them to the new RequestCycle's instances created with createRequestCycle method:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;<p class="paragraph"/>	<span class="java&#45;keyword">super</span>.init();<p class="paragraph"/>	IRequestCycleListener myListener;
 	//listener initialization&#8230;
@@ -230,9 +230,9 @@ This paragraph will provide just the basic informations about what happens behin
 	//add a custom session listener
 	getSessionListeners().add(myListener)<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/><h3>Handling session attributes</h3><p class="paragraph"/>The Session class handles session attributes in much the same way as the standard interface javax.servlet.http.HttpSession. The following methods are provided to create, read and remove session attributes:
 <ul class="star">
-<li>setAttribute(String name, Serializable value): creates an attribute identified by the given name. If the session already contains an attribute with the same name, the new value will replace the existing one. The value must be a serializable object.</li>
-<li>getAttribute(String name): returns the value of the attribute identified by the given name, or null if the name does not correspond to any attribute.</li>
-<li>removeAttribute(String name): removes the attribute identified by the given name.</li>
+<li><strong class="bold">setAttribute(String name, Serializable value):</strong> creates an attribute identified by the given name. If the session already contains an attribute with the same name, the new value will replace the existing one. The value must be a serializable object.</li>
+<li><strong class="bold">getAttribute(String name):</strong> returns the value of the attribute identified by the given name, or null if the name does not correspond to any attribute.</li>
+<li><strong class="bold">removeAttribute(String name):</strong> removes the attribute identified by the given name.</li>
 </ul><p class="paragraph"/>By default class WebSession will use the underlying http session to store attributes. Wicket will automatically add a prefix to the name of the attributes. This prefix is returned by the WebApplication's method getSessionAttributePrefix().<p class="paragraph"/><h3>Accessing to the HTTP session</h3><p class="paragraph"/>If for any reason we need to directly access to the underlying HttpSession object, we can retrieve it from the current request with the following code:<p class="paragraph"/><div class="code"><pre>HttpSession session = ((ServletWebRequest)RequestCycle.get()
 		.getRequest()).getContainerRequest().getSession();</pre></div><p class="paragraph"/>Using the raw session object might be necessary if we have to set a session attribute with a particular name without the prefix added by Wicket. Let's say for example that we are working with Tomcat as web server. One of the administrative tools provided by Tomcat is a page listing all the active user sessions of a given web application:<p class="paragraph"/><img border="0" class="center" src="../img/tomcat-admin-sessions.png"></img><p class="paragraph"/>Tomcat allows us to set the values that will be displayed in columns “Guessed locale” and “Guessed User name”. One possible way to do this is to use session attributes named “Locale” and “userName” but we can't create them via Wicket's Session class because they would not have exactly the name required by Tomcat. Instead, we must use the raw HttpSession and set our attributes on it:<p class="paragraph"/><div class="code"><pre>HttpSession session = ((ServletWebRequest)RequestCycle.get().
 		getRequest()).getContainerRequest().getSession();<p class="paragraph"/>session.setAttribute(<span class="java&#45;quote">"Locale"</span>, <span class="java&#45;quote">"ENGLISH"</span>);
@@ -250,10 +250,10 @@ session.setAttribute(<span class="java&#45;quote">"userName"</span>, <span class
 Remember that invalidateNow() will immediately remove any instance of components (and pages) from the session, meaning that once we have called this method we won't be able to work with them for the rest of the request process.
 </blockquote><p class="paragraph"/><h3>Storing arbitrary objects with metadata</h3><p class="paragraph"/>JavaServer Pages Specification1 defines 4 scopes in which a page can create and access a variable. These scopes are:
 <ul class="star">
-<li>request: variables declared in this scope can be seen only by pages processing the same request. The lifespan of these variables is (at most) equal to the one of the related request. They are discarded when the full response has been generated or when the request is forwarded somewhere else.</li>
-<li>page: variables declared in this scope can be seen only by the page that has created them.</li>
-<li>session: variables in session scope can be created and accessed by every page used in the same session where they are defined.</li>
-<li>application: this is the widest scope. Variables declared in this scope can be used by any page of a given web application.</li>
+<li><strong class="bold">request:</strong> variables declared in this scope can be seen only by pages processing the same request. The lifespan of these variables is (at most) equal to the one of the related request. They are discarded when the full response has been generated or when the request is forwarded somewhere else.</li>
+<li><strong class="bold">page:</strong> variables declared in this scope can be seen only by the page that has created them.</li>
+<li><strong class="bold">session:</strong> variables in session scope can be created and accessed by every page used in the same session where they are defined.</li>
+<li><strong class="bold">application:</strong> this is the widest scope. Variables declared in this scope can be used by any page of a given web application.</li>
 </ul><p class="paragraph"/>Although Wicket doesn't implement the JSP Specification (it is rather an alternative to it), it offers a feature called metadata which resembles scoped variables but is much more powerful. Metadata is quite similar to a Java Map in that it stores pairs of key-value objects where the key must be unique. In Wicket each of the following classes has its own metadata store: RequestCycle, Session, Application and Component.<p class="paragraph"/>The key used for metadata is an instance of class org.apache.wicket.MetaDataKey&#60;T&#62;. To put an arbitrary object into metadata we must use the setMetaData method which takes two parameters as input: the key used to store the value and the value itself. If we are using metadata with classes Session or Component, data object must be serializable because Wicket serializes both session and component instances. This constraint is not applied to metadata of classes Application and RequestCycle which can contain a generic object. In any case, the type of data object must be compatible with the type parameter T specified by the key.<p class="paragraph"/>To retrieve a previously inserted object we must use the getMetaData(MetaDataKey&#60;T&#62; key) method. In the following example we set a java.sql.Connection object in the application's metadata so it can be used by any page of the application:<p class="paragraph"/>Application class code:
 <div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> MetaDataApp <span class="java&#45;keyword">extends</span> WebApplication&#123;
 	//Do some stuff&#8230;
@@ -302,7 +302,17 @@ Remember that invalidateNow() will immediately remove any instance of components
 
 <div id="footer">
     
-Copyright &copy; 2013 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a>
+Copyright &copy; 2013 — <a href="http://www.comsysto.com" target="_blank">comSysto GmbH</a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43124634-1', 'comsysto.com');
+  ga('send', 'pageview');
+
+</script>
 
     
 </div>
