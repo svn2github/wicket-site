@@ -4,7 +4,7 @@
 
  body{
    font-family:helvetica,arial,sans-serif!important;
-   font-size: 11pt!important;
+   font-size: 10pt!important;
  } 
 
 .paragraph{
@@ -25,5 +25,11 @@ table {
 
 .paragraph{
  text-indent: 1em!important;
+}
+
+h1{
+  font-size:3em!important;
+  text-align:right;
+  padding-bottom: 30px;	
 }
 
