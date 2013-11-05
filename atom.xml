@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2013-10-01T10:06:36+02:00</updated>
+ <updated>2013-11-05T23:02:26+01:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -62,8 +62,7 @@
         &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
             &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
     &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 
 &lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
 
@@ -71,8 +70,7 @@
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException:
 WELD-000070 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
@@ -89,8 +87,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.11.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -196,8 +193,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
         &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
 &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 
 &lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
 
@@ -205,8 +201,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
@@ -221,8 +216,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.10.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -352,8 +346,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
         &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
 &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 
 &lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
 
@@ -361,8 +354,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
@@ -377,8 +369,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.9.1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -416,8 +407,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
         &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;DynamicJQueryResourceReference&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;INSTANCE&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
 &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Upgraded Atmoshpere (1.0.13) and Bootstrap (2.3.2) resources.&lt;/p&gt;
 
 &lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
@@ -428,8 +418,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.9.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -540,8 +529,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.8.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -670,8 +658,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.7.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -900,8 +887,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.10&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.10'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
@@ -929,8 +915,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
 &lt;p&gt;So you can use the following markup:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;label&lt;/span&gt; &lt;span class='na'&gt;wicket:for=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;someinput&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Some label&lt;span class='nt'&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;input&lt;/span&gt; &lt;span class='na'&gt;wicket:id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;someinput&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4 id='added_a_callback_for_an_invalidated_session'&gt;Added a callback for an invalidated session&lt;/h4&gt;
 
 &lt;p&gt;Session is extended with a life cycle event called &lt;code&gt;onInvalidate()&lt;/code&gt;. This method is executed when the user session is invalidated either by explicit call to &lt;code&gt;org.apache.wicket.Session#invalidate()&lt;/code&gt; or due to HttpSession expiration.&lt;/p&gt;
@@ -945,8 +930,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.6.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1065,8 +1049,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
 		&lt;span class='n'&gt;attributes&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setChannel&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='n'&gt;AjaxChannel&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;globalAjaxChannel&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='n'&gt;AjaxChannel&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;Type&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;ACTIVE&lt;/span&gt;&lt;span class='o'&gt;));&lt;/span&gt;
 	&lt;span class='o'&gt;}&lt;/span&gt;
 &lt;span class='o'&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Each Ajax behavior/component can override such global settings.&lt;/p&gt;
 
 &lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
@@ -1077,8 +1060,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
     &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
     &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.5.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;

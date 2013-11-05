@@ -84,7 +84,7 @@
 			<a href="/learn/books" title="Books">Books</a>
 		</li>
 		<li>
-			<a href="/learn/ides.html" title="IDEs">IDE plugins</a>
+			<a href="/learn/ides.html" title="IDEs">IDEs</a>
 		</li>
 	</ul>
 	<h5>
@@ -186,8 +186,7 @@
     <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
     <span class='nt'>&lt;version&gt;</span>1.5.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Please note that Wicket&#8217;s main artifact ID has been renamed to <code>wicket-core</code>.</p>
 
 <p>You will need to upgrade all modules (i.e. wicket, wicket-extensions, wicket-ioc, wicket-spring, etc) to 1.5.0. <strong>It is not possible to mix previous versions of Wicket with modules of this release.</strong></p>
@@ -237,8 +236,7 @@
 <span class='kd'>public</span> <span class='kd'>interface</span> <span class='nc'>IEventSource</span> <span class='o'>{</span>
     <span class='o'>&lt;</span><span class='n'>T</span><span class='o'>&gt;</span> <span class='kt'>void</span> <span class='n'>send</span><span class='o'>(</span><span class='n'>IEventSink</span> <span class='n'>sink</span><span class='o'>,</span> <span class='n'>Broadcast</span> <span class='n'>broadcast</span><span class='o'>,</span> <span class='n'>T</span> <span class='n'>payload</span><span class='o'>);</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>and</p>
 <div class='highlight'><pre><code class='java'><span class='cm'>/**</span>
 <span class='cm'> * Objects that can receive events</span>
@@ -250,8 +248,7 @@
 <span class='cm'>     */</span>
     <span class='kt'>void</span> <span class='nf'>onEvent</span><span class='o'>(</span><span class='n'>IEvent</span><span class='o'>&lt;?&gt;</span> <span class='n'>event</span><span class='o'>);</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>The classes that implement these interfaces, and can thus participate in the event mechanism are: <code>Component</code>, <code>RequestCycle</code>, <code>Session</code>, and <code>Application</code>.</p>
 
 <p>The mechanism allows for different event broadcast methods defined here:</p>
@@ -264,8 +261,7 @@
     <span class='n'>BUBBLE</span><span class='o'>,</span>
     <span class='n'>EXACT</span><span class='o'>;</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>There is an example in wicket-examples which demonstrates the usage of this.</p>
 
 <p>Applications can register custom event dispatchers in <code>FrameworkSettings</code>; the dispatchers can be used to build custom event delivery mechanisms. For example a custom <code>IEventDispatcher</code> mechanism can route events to annotated methods, for example:</p>
@@ -273,8 +269,7 @@
     <span class='nd'>@OnEvent</span>
     <span class='kd'>private</span> <span class='kt'>void</span> <span class='nf'>onUserAdded</span><span class='o'>(</span><span class='n'>UserAddedEvent</span> <span class='n'>event</span><span class='o'>)</span> <span class='o'>{...}</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>where <code>UserAddedEvent</code> is the event payload object.</p>
 
 <p>The default <code>Component#onEvent</code> method will be called even if custom dispatchers are registered.</p>
@@ -288,8 +283,7 @@
          <span class='o'>}</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>

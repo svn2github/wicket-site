@@ -84,7 +84,7 @@
 			<a href="/learn/books" title="Books">Books</a>
 		</li>
 		<li>
-			<a href="/learn/ides.html" title="IDEs">IDE plugins</a>
+			<a href="/learn/ides.html" title="IDEs">IDEs</a>
 		</li>
 	</ul>
 	<h5>
@@ -200,30 +200,26 @@
 
 <p>Follow the instructions available on the <a href='http://github.com/mojombo/jekyll'>Jekyll website</a>. Basically it boils down to:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>gem install jekyll</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>You also need to install the Pygments Python module.</p>
 
 <h2 id='checkout'>Check out from SVN</h2>
 
 <p>Before you can edit the site, you need to check it out from SVN:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>svn co https://svn.apache.org/repos/asf/wicket/common/site/trunk wicket-site</span>
-</code></pre>
-</div>
+</code></pre></div>
 <h2 id='generate'>Generating the site</h2>
 
 <p>You can regenerate the site in the checked out directory:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>./regenerate.sh</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Note that this script restores Subversion (<code>.svn</code>) subfolders inside <code>_site</code>, which are erased when Jekyll is generating the content.</p>
 
 <h2 id='run'>Run the site</h2>
 
 <p>You can run the website and edit it live:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>./liveedit.sh</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>This not only runs the server, but watches for modifications and regenerates any modified files.</p>
 
 <p>You can check out the website running at <a href='http://localhost:4000'>localhost, port 4000</a>.</p>
@@ -241,8 +237,7 @@
 <span class='l-Scalar-Plain'>layout</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>default</span>
 <span class='l-Scalar-Plain'>title</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Write documentation</span>
 <span class='nn'>---</span>
-</code></pre>
-</div>
+</code></pre></div>
 <h3 id='syntax_highlighting'>Syntax highlighting</h3>
 
 <p>If you have a need to render code in your templates and have it syntax highlighted, surround the code with {\% highlight java \%} (substitute java with the language you want highlighted.)</p>
@@ -260,8 +255,7 @@
 <span class='l-Scalar-Plain'>layout</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>post</span>
 <span class='l-Scalar-Plain'>title</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Wicket 1.4.7 released</span>
 <span class='nn'>---</span>
-</code></pre>
-</div>
+</code></pre></div>
 <h2 id='update'>Update the site</h2>
 
 <p>When you&#8217;re done with making your changes, please check the following:</p>
