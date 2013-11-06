@@ -174,7 +174,7 @@
 
 		<div id="contentbody">
 			<h1>IDE Support for Wicket development</h1>
-			<h2 id='plugins'>Plugins</h2>
+			<h2 id='wicket_plugins'>Wicket Plugins</h2>
 
 <p>For all leading IDE&#8217;s support is under development. Here&#8217;s a list of efforts for the major IDE&#8217;s.</p>
 
@@ -188,11 +188,30 @@
 
 <p>These projects are not maintained or supported by the core Wicket team, but by their respective development teams.</p>
 
-<h2 id='working_on_wickets_source'>Working on Wicket&#8217;s source</h2>
+<h2 id='setting_up_your_ide'>Setting up your IDE</h2>
 
-<p>When using Eclipse to work on Wicket&#8217;s source, it is recommended that you import our format settings <code>./wicke-core/EclipseCodeFormat.xml</code> into your workspace (Java-&gt;Code Style-&gt;Formatter). You should configure the editor to automatically format all edited lines and organize imports on save (Java-&gt;Editor-&gt;Save Actions).</p>
+<h3 id='eclipse'>Eclipse</h3>
 
-<p>With the <a href='http://plugins.jetbrains.com/plugin/6546'>Eclipse Code Formatter plugin</a> these format settings can be used in IntelliJ Idea too.</p>
+<p>Taking Maven, project configuration files for Eclipse can be generated with:</p>
+<div class='highlight'><pre><code class='console'><span class='go'>mvn eclipse:eclipse</span>
+</code></pre></div>
+<p>Maven will add all the necessary JAR files to the project&#8217;s classpath. Now the sources can be imported in Eclipse using the &#8220;Existing Projects into Workspace&#8221; wizard.</p>
+
+<p>If not already present the <code>M2_REPO</code> classpath variable has to point to your local Maven repository. The repository is typically found in <code>C:\Documents and Settings\&lt;username&gt;\.m2\repo</code> or (for unix buffs) <code>~/.m2/repo</code>. It can be set within Eclipse (Preferences-&gt;Java-&gt;Build Path-&gt;Classpath Variables) or with the help of Maven:</p>
+<div class='highlight'><pre><code class='console'><span class='go'>mvn -Declipse.workspace=&lt;path-to-eclipse-workspace&gt; eclipse:add-maven-repo</span>
+</code></pre></div>
+<p>If you want to go along with the Wicket way of code formatting you should import the Wicket code format profile into your workspace (Preferences-&gt;Java-&gt;Code Style-&gt;Formatter), found in:</p>
+<div class='highlight'><pre><code class='console'><span class='go'>&lt;path-to-eclipse-workspace&gt;/wicket-core/EclipseCodeFormat.xml</span>
+</code></pre></div>
+<p>Finally configure the editor to automatically format all edited lines and organize imports on save (Preferences-&gt;Java-&gt;Editor-&gt;Save Actions).</p>
+
+<h3 id='netbeans'>NetBeans</h3>
+
+<p>NetBeans comes with Maven integration. Further help can be found at their <a href='http://wiki.netbeans.org/MavenBestPractices' title='NetBeans Community Wiki'>Wiki</a></p>
+
+<h3 id='idea'>IDEA</h3>
+
+<p>IntelliJ IDEA comes with <a href='http://www.jetbrains.com/idea/webhelp/maven.html' title='IDEA Web Help'>Maven support</a> too. With the <a href='http://plugins.jetbrains.com/plugin/6546'>Eclipse Code Formatter plugin</a> the Wicket format profile can be used in IntelliJ IDEA too.</p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>

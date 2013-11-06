@@ -257,18 +257,7 @@
     <span class='nt'>&lt;scope&gt;</span>compile<span class='nt'>&lt;/scope&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
 </code></pre></div>
-<p>And adding this to your Eclipse, NetBeans or IntelliJ IDEA project classpath is then as simple as:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>mvn eclipse:eclipse</span>
-</code></pre></div>
-<p>or opening the project using Netbeans or IDEAs Maven integration.</p>
-
-<p>Maven will then add all the necessary JAR files to the project&#8217;s classpath.</p>
-
-<p>One thing you need to make sure is that you have set the <code>M2_REPO</code> classpath variable in Eclipse (or a similar construct in Netbeans), and point it to your local repository, typically found in <code>C:\Documents and Settings\username\.m2\repo</code> or (for unix buffs) <code>~/.m2/repo</code></p>
-
-<p>You can add this setting using maven:</p>
-<div class='highlight'><pre><code class='console'><span class='go'>mvn -Declipse.workspace=&lt;path-to-eclipse-workspace&gt; eclipse:add-maven-repo</span>
-</code></pre></div>
+<p>Read <a href='../learn/ides.html'>IDE support</a> to learn how to continue from here with an IDE.</p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
