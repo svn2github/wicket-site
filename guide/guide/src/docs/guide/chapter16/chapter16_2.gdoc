@@ -1,6 +1,6 @@
 
 
-With Wicket it's quite easy to build a callback URL that executes a specific method on server side. This method must be defined in a functional interface1 that inherits from built-in org.apache.wicket. IRequestListener and it must be a void method with no parameters in input:
+With Wicket it's quite easy to build a callback URL that executes a specific method on server side. This method must be defined in a functional interface (i.e. an an interface that defines just one method) that inherits from built-in org.apache.wicket.IRequestListener and it must be a void method with no parameters in input:
 
 {code}
 public interface IMyListener extends IRequestListener
@@ -12,7 +12,7 @@ public interface IMyListener extends IRequestListener
 }
 {code}
 
-To control how the method will be invoked we must use class org.apache.wicket.Request ListenerInterface. In Wicket is a common practice to instantiate this class as a public static field inside the relative callback interface:
+To control how the method will be invoked we must use class org.apache.wicket.RequestListenerInterface. In Wicket is a common practice to instantiate this class as a public static field inside the relative callback interface:
 
 {code}
 public interface IMyListener extends IRequestListener
@@ -90,7 +90,7 @@ public CharSequence getCallbackUrl(){
 }
 {code}
 
-Static field IBehaviorListener.INTERFACE is the implementation of RequestListener Interface defined inside callback interface IBehaviorListener.
+Static field IBehaviorListener.INTERFACE is the implementation of RequestListenerInterface defined inside callback interface IBehaviorListener.
 
 The home page of project CallbackURLExample contains a DropDownChoice and a RadioChoice which use our custom behavior. There are also two labels to display the content of the models of the two components:
 
