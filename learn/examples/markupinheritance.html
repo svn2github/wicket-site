@@ -92,7 +92,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.11.0">Wicket 6.11</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.12.0">Wicket 6.12</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.10">Wicket 1.5</a>
@@ -174,23 +174,24 @@
 
 		<div id="contentbody">
 			<h1>Creating layouts using markup inheritance</h1>
-			<p>This markup inheritance example show you how to create reusable page layouts and panel layouts.</p>
+			
+<p>This markup inheritance example show you how to create reusable page layouts and panel layouts.</p>
 
-<p><a href='http://wicket.apache.org/screencasts/ApacheWicket_MarkupInheritence.avi'>Watch the Screencast</a></p>
+<p><a href="http://wicket.apache.org/screencasts/ApacheWicket_MarkupInheritence.avi">Watch the Screencast</a></p>
 
 <p>In all the Wicket examples, you have to put all files in the same package directory. This means putting the markup files and the java files next to one another. It is possible to alter this behavior, but that is beyond the scope of this example. The only exception is the obligatory <code>web.xml</code> file which should reside in the <code>WEB-INF/</code> directory of your web application root folder.</p>
 
-<p>In this example we assume you already have read and understood the other examples which give you information on the structure and nature of Wicket applications. Specifically read and understand the <a href='helloworld.html'>Hello, World example</a>.</p>
+<p>In this example we assume you already have read and understood the other examples which give you information on the structure and nature of Wicket applications. Specifically read and understand the <a href="helloworld.html">Hello, World example</a>.</p>
 
-<h2 id='page_layout'>Page layout</h2>
+<h2 id="page_layout">Page layout</h2>
 
 <p>In the next figure we show a standard strategy for laying out a page. A standard header, the main content body and a standard footer.</p>
 
-<p><img alt='Markup inheritance diagram' src='markupinheritance1.png' /></p>
+<p><img src="markupinheritance1.png" alt="Markup inheritance diagram" /></p>
 
 <p>In Wicket you can achieve this using different strategies. This article focuses on one strategy: markup inheritance.</p>
 
-<h2 id='what_is_markup_inheritance'>What is markup inheritance?</h2>
+<h2 id="what_is_markup_inheritance">What is markup inheritance?</h2>
 
 <p>In Java you can extend classes. This same concept has been fitted into the markup parsing of Java. Markup containers that have files associated (page and panels) can inherit the markup of their super containers.</p>
 
@@ -228,11 +229,11 @@
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
 </code></pre></div>
-<p>Here you can see that the <code>&lt;wicket:child /&gt;</code> tag has been expanded, and its contents filled with exactly the markup between the <code>&lt;wicket:extend&gt;</code> tags. If you want to get rid of the special Wicket tags, you can disable that on the markup settings (<a href='http://wicketframework.org/api/wicket/settings/IMarkupSettings'>IMarkupSettings</a>).</p>
+<p>Here you can see that the <code>&lt;wicket:child /&gt;</code> tag has been expanded, and its contents filled with exactly the markup between the <code>&lt;wicket:extend&gt;</code> tags. If you want to get rid of the special Wicket tags, you can disable that on the markup settings (<a href="http://wicketframework.org/api/wicket/settings/IMarkupSettings">IMarkupSettings</a>).</p>
 
-<h2 id='implementing_the_basepage'>Implementing the BasePage</h2>
+<h2 id="implementing_the_basepage">Implementing the BasePage</h2>
 
-<p>Now that we have seen the basics for markup inheritance, we can take a look at the example at hand. Let&#8217;s first create the base page.</p>
+<p>Now that we have seen the basics for markup inheritance, we can take a look at the example at hand. Let’s first create the base page.</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>wicket</span><span class='o'>.</span><span class='na'>quickstart</span><span class='o'>;</span>
 
 <span class='kn'>import</span> <span class='nn'>wicket.markup.html.WebPage</span><span class='o'>;</span>
@@ -247,7 +248,7 @@
 	<span class='o'>}</span>
 <span class='o'>}</span>
 </code></pre></div>
-<p>The two links should go into the header, and the footer in the footer of the page. Note that the abstract keyword isn&#8217;t required, but considered a good practise. Now let&#8217;s take a look at the markup for the BasePage</p>
+<p>The two links should go into the header, and the footer in the footer of the page. Note that the abstract keyword isn’t required, but considered a good practise. Now let’s take a look at the markup for the BasePage</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
 <span class='nt'>&lt;head&gt;&lt;/head&gt;</span>
 <span class='nt'>&lt;body&gt;</span>
@@ -274,11 +275,11 @@
 <li><code>&lt;div id=&quot;footer&quot;&gt;...&lt;/div&gt;</code></li>
 </ol>
 
-<p>Note that these aren&#8217;t Wicket components, just plain markup. We could have made them components, such as a <code>Panel</code> but for brevity we keep it this way. Now that we have the <code>BasePage</code> finished, we can implement the two subclasses to finish this example.</p>
+<p>Note that these aren’t Wicket components, just plain markup. We could have made them components, such as a <code>Panel</code> but for brevity we keep it this way. Now that we have the <code>BasePage</code> finished, we can implement the two subclasses to finish this example.</p>
 
-<h2 id='implementing_the_sub_pages'>Implementing the sub pages</h2>
+<h2 id="implementing_the_sub_pages">Implementing the sub pages</h2>
 
-<p>We need to build two pages: <code>Page1</code> and <code>Page2</code>. Each page needs its own markup file and Java class. Let&#8217;s first implement <code>Page1</code>.</p>
+<p>We need to build two pages: <code>Page1</code> and <code>Page2</code>. Each page needs its own markup file and Java class. Let’s first implement <code>Page1</code>.</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>wicket</span><span class='o'>.</span><span class='na'>quickstart</span><span class='o'>;</span>
 
 <span class='kn'>import</span> <span class='nn'>wicket.markup.html.basic.Label</span><span class='o'>;</span>
@@ -289,7 +290,7 @@
 	<span class='o'>}</span>
 <span class='o'>}</span>
 </code></pre></div>
-<p>In this example you see that we add a new label component to the page: <code>label1</code>. This component is only available for <code>Page1</code>, as such <code>Page2</code> can define its own component hierarchy. Let&#8217;s take a look at the markup for <code>Page1</code>:</p>
+<p>In this example you see that we add a new label component to the page: <code>label1</code>. This component is only available for <code>Page1</code>, as such <code>Page2</code> can define its own component hierarchy. Let’s take a look at the markup for <code>Page1</code>:</p>
 <div class='highlight'><pre><code class='java'><span class='o'>&lt;</span><span class='n'>html</span><span class='o'>&gt;</span>
 <span class='o'>&lt;</span><span class='n'>head</span><span class='o'>&gt;&lt;/</span><span class='n'>head</span><span class='o'>&gt;</span>
 <span class='o'>&lt;</span><span class='n'>body</span><span class='o'>&gt;</span>
@@ -302,7 +303,7 @@
 </code></pre></div>
 <p>Here you see that we added the <code>Label</code> component in the markup between the <code>&lt;wicket:extend&gt;</code> tags. If we were to add the component outside those tags, Wicket will not be able to render the component in the final page.</p>
 
-<p>Now, let&#8217;s do the same for <code>Page2</code>.</p>
+<p>Now, let’s do the same for <code>Page2</code>.</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>wicket</span><span class='o'>.</span><span class='na'>quickstart</span><span class='o'>;</span>
 
 <span class='kn'>import</span> <span class='nn'>wicket.markup.html.basic.Label</span><span class='o'>;</span>
@@ -324,13 +325,13 @@
 </code></pre></div>
 <p>In <code>Page2</code> you see that we have a different component structure (<code>label2</code> instead of <code>label1</code>), and as such that the pages are quite different.</p>
 
-<p>If you paste this code into a Wicket quickstart application, you can see it immediately working (don&#8217;t forget to set the homepage to <code>Page1</code> or <code>Page2</code>).</p>
+<p>If you paste this code into a Wicket quickstart application, you can see it immediately working (don’t forget to set the homepage to <code>Page1</code> or <code>Page2</code>).</p>
 
-<h2 id='conclusion'>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>With markup inheritance you can get a standard layout for your application without too much hassle. It follows the natural inheritance strategy for Java code and makes encapsulation of your component hierarchy possible.</p>
 
-<p>In this example we haven&#8217;t touched on the other possible features of markup inheritance:</p>
+<p>In this example we haven’t touched on the other possible features of markup inheritance:</p>
 
 <ul>
 <li>contributing to the <code>&lt;head&gt;</code> section from your sub pages</li>
@@ -341,6 +342,7 @@
 </ul>
 
 <p>However, this example should get you up and running.</p>
+
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>

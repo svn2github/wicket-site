@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Apache Wicket - Apache Wicket 6.11.0 released</title>
+    <title>Apache Wicket - Apache Wicket 6.12.0 released</title>
 
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
 
@@ -173,52 +173,44 @@
 </div>
 
 		<div id="contentbody">
-			<h1>Apache Wicket 6.11.0 released</h1>
+			<h1>Apache Wicket 6.12.0 released</h1>
 			
-<p>The Apache Wicket PMC is proud to announce Apache Wicket 6.11.0!</p>
+<p>The Apache Wicket PMC is proud to announce Apache Wicket 6.12.0!</p>
 
-<p>This release marks the eleventh minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p>
+<p>This release marks the twelfth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p>
 
 <h3 id="new_and_noteworthy">New and noteworthy</h3>
 
-<h4 id="new_html5attributes_behavior">New HTML5Attributes behavior</h4>
-
-<p>HTML5 attribute support in Wicket continues to be improved upon. Add the new HTML5Attributes behavior to your text fields or buttons and Wicket will add the relevant HTML5 attributes based on the state of your components:</p>
+<p>This release fixes 16 bugs and adds the following improvements:</p>
 
 <ul>
-<li>adds “required” if your form component is required</li>
+<li>Support MultiFileUploadField in FormTester</li>
 
-<li>adds “placeholder” for the label of your form component</li>
+<li>Add support for parsing IE 11 user agent</li>
 
-<li>adds “pattern” if your form component has a PatternValidator attached</li>
+<li>Log the exception if the application cannot start properly</li>
 
-<li>adds “formnovalidate” if your button has default form processing set to false</li>
+<li>Add Wicket.Event.unsubscribe method</li>
+
+<li>Allow form components to trim the input themselves</li>
+
+<li>Allow DebugBar contributors to be removed</li>
+
+<li>Session management doesn’t work with Jetty’s JDBCSessionManager</li>
+
+<li>HeaderItem to be Serializable</li>
 </ul>
-
-<p>This behavior replaces the functionality from 6.10 where HTML5 attributes were added automatically (see <a href="https://issues.apache.org/jira/browse/WICKET-5289">WICKET-5289</a> and <a href="https://issues.apache.org/jira/browse/WICKET-5331">WICKET-5331</a>)</p>
-
-<h4 id="beanvalidation_receives_french_translation">BeanValidation receives french translation</h4>
-
-<p>The BeanValidation project now has a french translation for validation errors:</p>
-
-<ul>
-<li>Le champ ‘${label}’ ne doit pas être null</li>
-
-<li>Le champ ‘${label}’ pourrait contenir du contenu HTML dangereux</li>
-</ul>
-
-<p>Bonne chance!</p>
 
 <h3 id="jquery_update_in_690">JQuery update in 6.9.0</h3>
 
 <p>As of Wicket 6.9 we ship JQuery 1.10.1. The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from http://jquery.com/upgrade-guide/1.9/</p>
 
 <p>If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application’s init method:</p>
-<div class='highlight'><pre><code class='java'>    <span class='nd'>@Override</span>
-    <span class='kd'>protected</span> <span class='kt'>void</span> <span class='nf'>init</span><span class='o'>()</span> <span class='o'>{</span>
-        <span class='n'>getJavaScriptLibrarySettings</span><span class='o'>()</span>
-            <span class='o'>.</span><span class='na'>setJQueryReference</span><span class='o'>(</span><span class='n'>yourJquery183ResourceReference</span><span class='o'>);</span>
-    <span class='o'>}</span>
+<div class='highlight'><pre><code class='java'> <span class='nd'>@Override</span>
+ <span class='kd'>protected</span> <span class='kt'>void</span> <span class='nf'>init</span><span class='o'>()</span> <span class='o'>{</span>
+     <span class='n'>getJavaScriptLibrarySettings</span><span class='o'>()</span>
+         <span class='o'>.</span><span class='na'>setJQueryReference</span><span class='o'>(</span><span class='n'>yourJquery183ResourceReference</span><span class='o'>);</span>
+ <span class='o'>}</span>
 </code></pre></div>
 <h3 id="cdi_injection_issue">CDI injection issue</h3>
 
@@ -239,17 +231,17 @@ com.example.HomePage$AForm cannot be a non-static inner class
 
 <p>With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
-    <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
-    <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>6.11.0<span class='nt'>&lt;/version&gt;</span>
+ <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
+ <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
+ <span class='nt'>&lt;version&gt;</span>6.12.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
 </code></pre></div>
 <p>Or download and build the distribution yourself, or use our convenience binary package</p>
 
 <ul>
-<li>Source: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.11.0">http://www.apache.org/dyn/closer.cgi/wicket/6.11.0</a></li>
+<li>Source: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.12.0">http://www.apache.org/dyn/closer.cgi/wicket/6.12.0</a></li>
 
-<li>Binary: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries">http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries</a></li>
+<li>Binary: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries">http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries</a></li>
 </ul>
 
 <h3 id="upgrading_from_earlier_versions">Upgrading from earlier versions</h3>
@@ -264,52 +256,68 @@ com.example.HomePage$AForm cannot be a non-static inner class
 
 <p>— The Wicket team</p>
 
-<h3 id="release_notes__wicket__version_6110">Release Notes - Wicket - Version 6.11.0</h3>
+<h3 id="release_notes__wicket__version_6120">Release Notes - Wicket - Version 6.12.0</h3>
 
 <h4 id="bug">Bug</h4>
 
 <ul>
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5313">WICKET-5313</a> - Wrong HTML attribute used in SizeTagModifier (wicket-bean-validation)</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-4862">WICKET-4862</a> - AjaxPagingNavigationLink and AjaxPagingNavigationIncrementLink output inline onclick attributes in addition to Wicket.Ajax.ajax event registration</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5315">WICKET-5315</a> - PriorityHeaderItem+OnDomReadyHeaderItem has no priority in Ajax response</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5101">WICKET-5101</a> - Could not open second modal window after closing first</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5316">WICKET-5316</a> - Wicket Atmosphere CouldNotLockPageException</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5356">WICKET-5356</a> - AutoCompleteSettings.setShowListOnEmptyInput(true) is not working anymore</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5319">WICKET-5319</a> - CryptoMapper encrypts external URLs in ResourceReferences making the resources inaccessible</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5359">WICKET-5359</a> - org.apache.wicket.util.string.StringValue#equals broken</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5322">WICKET-5322</a> - “Source code” link doesn’t work at wicket-library.com</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5366">WICKET-5366</a> - ResourceAggregator looses information about priority/filtering/… when using a bundle</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5325">WICKET-5325</a> - ComponentRenderer.renderComponent does not render markup for ListView</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5369">WICKET-5369</a> - Can’t set a cookie using CookieUtils during an ajax request due to java.lang.ClassCastException: org.apache.wicket.ajax.AbstractAjaxResponse$AjaxResponse cannot be cast to org.apache.wicket.request.http.WebResponse</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5329">WICKET-5329</a> - “Required” flag initialized too early in PropertyValidator</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5374">WICKET-5374</a> - SourcesPage fails on resources with non-ASCII characters</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5332">WICKET-5332</a> - Autocomplete throws error when initialized in an AjaxLazyLoadPanel</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5375">WICKET-5375</a> - Improve ConcatBundleResource error handling when a resource is missing</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5334">WICKET-5334</a> - KittenCaptcha example is broken in IE10</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5378">WICKET-5378</a> - AutoCompleteTextField inside a ModalWindow shows auto complete dropdown in the wrong location</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5335">WICKET-5335</a> - After selecting a file MultiFileUploadField does not render properly input field</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5379">WICKET-5379</a> - IE7: AutoCompleteTextField inside a ModalWindow shows auto complete dropdown behind ModalWindow</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5339">WICKET-5339</a> - Broadcast.EXACT does not notify Behaviors of target Component</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5380">WICKET-5380</a> - Wicket rebinds the SessionEntry session attribute and this causes problems in Glassfish</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5343">WICKET-5343</a> - AutoCompleteTextField suggestions popup position is wrong when its container has scrollbar</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5382">WICKET-5382</a> - AutoComplete JavaScript errors</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5345">WICKET-5345</a> - Url.canonical() breaks when there are two consecutive “parent” segments followed by a normal segment</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5385">WICKET-5385</a> - wicket-bean-validation PropertyValidator_fr.properties.xml : org.xml.sax.SAXParseException</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5348">WICKET-5348</a> - JavaDoc for IColumn#getSortProperty() in misleading</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5386">WICKET-5386</a> - ChainingModel should not check if the modelObject given as argument is null</li>
+
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5397">WICKET-5397</a> - target.prependJavaScript and JQuery-Animation in IE8</li>
+
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5398">WICKET-5398</a> - XmlPullParser fails to properly parse from String with encoding declaration</li>
 </ul>
 
 <h4 id="improvement">Improvement</h4>
 
 <ul>
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5327">WICKET-5327</a> - CryptoMapper: insecure default encryption provider</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5346">WICKET-5346</a> - Support MultiFileUploadField in FormTester</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5331">WICKET-5331</a> - Make html5 form validation configurable</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5362">WICKET-5362</a> - Add support for parsing IE 11 user agent</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5333">WICKET-5333</a> - wicket-bean-validation french translation</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5376">WICKET-5376</a> - Log the exception if the application cannot start properly</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5341">WICKET-5341</a> - JavaDoc for IFormValidator</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5381">WICKET-5381</a> - Add Wicket.Event.unsubscribe method</li>
 
-<li><a href="https://issues.apache.org/jira/browse/WICKET-5354">WICKET-5354</a> - Make ResourceBundles and related classes easier for extension</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5384">WICKET-5384</a> - Allow form components to trim the input themselves</li>
+
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5388">WICKET-5388</a> - Allow DebugBar contributors to be removed</li>
+
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5390">WICKET-5390</a> - Session management doesn’t work with Jetty’s JDBCSessionManager</li>
+
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5395">WICKET-5395</a> - HeaderItem to be Serializable</li>
+</ul>
+
+<h4 id="wish">Wish</h4>
+
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5393">WICKET-5393</a> - Remove ‘final’ from InlineFrame#onComponentTag()</li>
 </ul>
 
 		</div>
