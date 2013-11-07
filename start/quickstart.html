@@ -63,7 +63,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="/guide" title="User Guide">User Guide</a>
+			<a href="/guide" title="User Guide">User Guide</a> | <a href="/guide/guide/single.pdf" title="User Guide in pdf">pdf</a>
 		</li>
 		<li>
 			<a href="/learn/examples" title="Examples">Examples</a>
@@ -216,11 +216,11 @@
 	}
 </script><div id='mvncmd'>
 	<div>
-		<label title='Base Package' for='groupId'>GroupId:</label>
-		<input type='text' id='groupId' onkeyup='changeIt();' value='com.mycompany' /><span title='Base Package'>&nbsp;(?)</span><br />
-		<label title='Project Name' for='artifactId'>ArtifactId:</label> 
-		<input type='text' id='artifactId' onkeyup='changeIt();' value='myproject' /><span title='Project Name'>&nbsp;(?)</span><br />
-		<label title='Wicket Version' for='version'>Version:</label>
+		<label for='groupId' title='Base Package'>GroupId:</label>
+		<input id='groupId' value='com.mycompany' type='text' onkeyup='changeIt();' /><span title='Base Package'>&nbsp;(?)</span><br />
+		<label for='artifactId' title='Project Name'>ArtifactId:</label> 
+		<input id='artifactId' value='myproject' type='text' onkeyup='changeIt();' /><span title='Project Name'>&nbsp;(?)</span><br />
+		<label for='version' title='Wicket Version'>Version:</label>
 		<select id='version' onchange='changeIt();'>
 
 		
@@ -244,13 +244,13 @@
 		
 
 		
-			<option value='6.11.0' selected='selected'>6.11.0</option>
+			<option selected='selected' value='6.11.0'>6.11.0</option>
 		
 
 		</select><span title='Wicket Version'>&nbsp;(?)</span>
 	</div>
 	<div>
-		<label for='cmdLine' id='cmdLabel'>Command Line:</label>
+		<label id='cmdLabel' for='cmdLine'>Command Line:</label>
 		<textarea id='cmdLine' onfocus='this.select();'>
 		</textarea>
 		<script>changeIt();</script>
