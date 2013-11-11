@@ -1,5 +1,7 @@
 chapter1:
   title: Introduction
+howToSource:
+  title: How to use the example code  
 chapter2:
   title: Why should I learn Wicket?
   chapter2_1: We all like spaghetti :-) ...
