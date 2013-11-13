@@ -174,14 +174,13 @@
 
 		<div id="contentbody">
 			<h1>Guestbook</h1>
-			
-<p>The GuestBook application allows users to enter comments that appear on a page like a weblog. Drawing the list of comments is very easy with the Wicket <code>ListView</code> component. This example also gives an impression of what form handling is like.</p>
+			<p>The GuestBook application allows users to enter comments that appear on a page like a weblog. Drawing the list of comments is very easy with the Wicket <code>ListView</code> component. This example also gives an impression of what form handling is like.</p>
 
-<p><img src="guestbook.png" alt="Guestbook screenshot" /></p>
+<p><img alt='Guestbook screenshot' src='guestbook.png' /></p>
 
 <p>As with all examples, you have to put all files in the same package directory. This means putting the markup files and the java files next to one another. It is possible to alter this behavior, but that is beyond the scope of this example.</p>
 
-<h2 id="commentjava">Comment.java</h2>
+<h2 id='commentjava'>Comment.java</h2>
 
 <p>The Comment POJO model is very straightforward:</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>org</span><span class='o'>.</span><span class='na'>apache</span><span class='o'>.</span><span class='na'>wicket</span><span class='o'>.</span><span class='na'>examples</span><span class='o'>.</span><span class='na'>guestbook</span><span class='o'>;</span>
@@ -221,8 +220,9 @@
         <span class='k'>return</span> <span class='s'>&quot;[Comment date = &quot;</span> <span class='o'>+</span> <span class='n'>date</span> <span class='o'>+</span> <span class='s'>&quot;, text = &quot;</span> <span class='o'>+</span> <span class='n'>text</span> <span class='o'>+</span> <span class='s'>&quot;]&quot;</span><span class='o'>;</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
-<h2 id="guestbookjava">GuestBook.java</h2>
+</code></pre>
+</div>
+<h2 id='guestbookjava'>GuestBook.java</h2>
 
 <p>In the file <code>GuestBook.java</code> we have put the Java component code for the guestbook page. This is the homepage for the guestbook application. The page consists of a form for entering new items to the guestbook and a list of repeating markup for showing the guestbook entries.</p>
 
@@ -322,14 +322,15 @@
         <span class='n'>commentList</span><span class='o'>.</span><span class='na'>clear</span><span class='o'>();</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>When the <code>CommentForm</code> is submitted, the <code>onSubmit()</code> method is called. Notice that nothing gets the value of the <code>TextArea</code> that was added in the <code>CommentForm</code> constructor. This is because the comment is the model and the third parameter to the <code>TextArea</code> constructor specified the property of the model to update. So all <code>onSubmit()</code> has to do is create a new comment from the model that was updated and add it to the comment list. When the page redraws, the new list will be rendered.</p>
 
 <p>We use a synchronized list as our shared static model used by <code>commentListView</code> (<code>commentList</code>) to ensure that it is only updated by one thread at a time. Remember, this is a multi-user application with a shared model!</p>
 
-<p>Finally, you may notice the call to <code>commentListView.modelChanged()</code>. This informs the list view that its model has been modified. In more advanced usage scenarios, this would allow Wicket to expire stale pages accessed with the browser’s back button.</p>
+<p>Finally, you may notice the call to <code>commentListView.modelChanged()</code>. This informs the list view that its model has been modified. In more advanced usage scenarios, this would allow Wicket to expire stale pages accessed with the browser&#8217;s back button.</p>
 
-<h2 id="guestbookhtml">GuestBook.html</h2>
+<h2 id='guestbookhtml'>GuestBook.html</h2>
 
 <p>In the HTML below, notice the way that the <code>TextArea</code> component is being nested inside the <code>CommentForm</code>. Wicket is able to keep everything straight because the Java <code>Component.add()</code> calls have to result in the same nesting structure as the HTML.</p>
 
@@ -365,10 +366,11 @@
   <span class='nt'>&lt;/wicket:remove&gt;</span>
 <span class='nt'>&lt;/body&gt;</span>
 <span class='nt'>&lt;/html&gt;</span>
-</code></pre></div>
-<h2 id="guestbookapplicationjava">GuestBookApplication.java</h2>
+</code></pre>
+</div>
+<h2 id='guestbookapplicationjava'>GuestBookApplication.java</h2>
 
-<p>For completeness, we’ve included the <code>GuestBookApplication</code> class, and as a final treat the modifications to the <code>web.xml</code> file.</p>
+<p>For completeness, we&#8217;ve included the <code>GuestBookApplication</code> class, and as a final treat the modifications to the <code>web.xml</code> file.</p>
 <div class='highlight'><pre><code class='java'><span class='kn'>package</span> <span class='n'>org</span><span class='o'>.</span><span class='na'>apache</span><span class='o'>.</span><span class='na'>wicket</span><span class='o'>.</span><span class='na'>examples</span><span class='o'>.</span><span class='na'>guestbook</span><span class='o'>;</span>
 
 <span class='kn'>import</span> <span class='nn'>org.apache.wicket.Page</span><span class='o'>;</span>
@@ -383,8 +385,9 @@
         <span class='k'>return</span> <span class='n'>GuestBook</span><span class='o'>.</span><span class='na'>class</span><span class='o'>;</span>
     <span class='o'>}</span>
 <span class='o'>}</span>
-</code></pre></div>
-<h2 id="webxml">web.xml</h2>
+</code></pre>
+</div>
+<h2 id='webxml'>web.xml</h2>
 
 <p>Add the following two sections (servlet and servlet-mapping) to your web.xml file for running this application.</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;filter&gt;</span>
@@ -395,7 +398,8 @@
       <span class='nt'>&lt;param-value&gt;</span>org.apache.wicket.examples.guestbook.GuestBookApplication<span class='nt'>&lt;/param-value&gt;</span>
     <span class='nt'>&lt;/init-param&gt;</span>
 <span class='nt'>&lt;/filter&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
