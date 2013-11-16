@@ -175,8 +175,14 @@ function addJsClass() {
 	<span class="java&#45;object">String</span> responseTxt = tester.getLastResponse().getDocument();<p class="paragraph"/>	TagTester tagTester = TagTester.createTagByAttribute(responseTxt, <span class="java&#45;quote">"class"</span>, <span class="java&#45;quote">"myClass"</span>);<p class="paragraph"/>	Assert.assertNotNull(tagTester);
 	Assert.assertEquals(<span class="java&#45;quote">"span"</span>, tagTester.getName());<p class="paragraph"/>	List&#60;TagTester&#62; tagTesterList = TagTester.createTagsByAttribute(responseTxt, 
 						<span class="java&#45;quote">"class"</span>, <span class="java&#45;quote">"myClass"</span>, <span class="java&#45;keyword">false</span>);<p class="paragraph"/>	Assert.assertEquals(2, tagTesterList.size());
-&#125;</pre></div><p class="paragraph"/>The name of the tag found by TagTester can be retrieved with its method getName. Method createTagsByAttribute returns all the tags that have the given value on the given attribute. In the code above we have used this method to test that our markup contains two tags having attribute class equal to myClass.
-
+&#125;</pre></div><p class="paragraph"/>The name of the tag found by TagTester can be retrieved with its method getName. Method createTagsByAttribute returns all the tags that have the given value on the class attribute. In the code above we have used this method to test that our markup contains two tags having attribute class equal to myClass.<p class="paragraph"/>Another utility class that comes in handy when we want to test components markup is ComponentRenderer in package org.apache.wicket.core.util.string. The purpose of this class is to render a page or a component in isolation with its static methods renderComponent and renderPage. Both methods return the generated markup as CharSequence:<p class="paragraph"/><div class="code"><pre>@Test
+<span class="java&#45;keyword">public</span> void customComponentMarkupTest()
+&#123;
+	//instantiate MyComponent
+	MyComponent myComponent = //...<p class="paragraph"/>	//render and save component markup
+	<span class="java&#45;object">String</span> componentMarkup = ComponentRenderer.renderComponent(myComponent);<p class="paragraph"/>	//perform test operations
+	//&#8230;
+&#125;</pre></div> 
 
 
                 <div style="clear:both;margin-top:15px;"></div>
