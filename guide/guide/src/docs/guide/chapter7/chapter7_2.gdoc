@@ -94,7 +94,7 @@ The following picture is an overview of these two caching levels:
 
 !wicket-cache.png!
 
-The session-scoped cache is faster then the other memory levels but it contains only the pages used to serve the last request. Wicket allows us to set the maximum amount of memory allowed for the application-scoped cache and for the page store file. Both parameters can be configured via setting interface org.apache .wicket.settings.IStoreSettings. 
+The session-scoped cache is faster then the other memory levels but it contains only the pages used to serve the last request. Wicket allows us to set the maximum amount of memory allowed for the application-scoped cache and for the page store file. Both parameters can be configured via setting interface org.apache.wicket.settings.IStoreSettings. 
 
 This interface provides the setMaxSizePerSession(Bytes bytes) method to set the size for page store file. The Bytes parameter is the maximum size allowed for this file:
 
