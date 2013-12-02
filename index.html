@@ -63,7 +63,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="/guide" title="User Guide">User Guide</a> | <a href="/guide/guide/single.pdf" title="User Guide in pdf">pdf</a>
+			<a href="/start/userguide.html" title="User Guide">User Guide</a>
 		</li>
 		<li>
 			<a href="/learn/examples" title="Examples">Examples</a>
@@ -217,19 +217,16 @@
      <span class='n'>getJavaScriptLibrarySettings</span><span class='o'>()</span>
          <span class='o'>.</span><span class='na'>setJQueryReference</span><span class='o'>(</span><span class='n'>yourJquery183ResourceReference</span><span class='o'>);</span>
  <span class='o'>}</span>
-</code></pre>
-</div></p></p>
+</code></pre></div></p></p>
 <h3 id='cdi_injection_issue'>CDI injection issue</h3><p>In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:</p><div class='highlight'><pre><code class='text'>Caused by: org.jboss.weld.exceptions.DefinitionException:
 WELD-000070 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-</code></pre>
-</div><p>This was reported as <a href='https://issues.apache.org/jira/browse/WICKET-5226'>WICKET-5226</a>, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.</p><p>Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see <a href='https://issues.jboss.org/browse/WELD-1441'>WELD-1441</a>)</p><p>Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read <a href='https://issues.apache.org/jira/browse/WICKET-5264'>WICKET-5264</a></p><p>Glassfish has fixed this in trunk according to <a href='https://java.net/jira/browse/GLASSFISH-20619'>GLASSFISH-20619</a> but the fix has yet to be integrated into a release.</p><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+</code></pre></div><p>This was reported as <a href='https://issues.apache.org/jira/browse/WICKET-5226'>WICKET-5226</a>, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.</p><p>Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see <a href='https://issues.jboss.org/browse/WELD-1441'>WELD-1441</a>)</p><p>Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read <a href='https://issues.apache.org/jira/browse/WICKET-5264'>WICKET-5264</a></p><p>Glassfish has fixed this in trunk according to <a href='https://java.net/jira/browse/GLASSFISH-20619'>GLASSFISH-20619</a> but the fix has yet to be integrated into a release.</p><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
  <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
  <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
  <span class='nt'>&lt;version&gt;</span>6.12.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
+</code></pre></div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
 <li>Source: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.12.0'>http://www.apache.org/dyn/closer.cgi/wicket/6.12.0</a></li>
 
 <li>Binary: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries</a></li>
@@ -305,19 +302,16 @@ com.example.HomePage$AForm cannot be a non-static inner class
         <span class='n'>getJavaScriptLibrarySettings</span><span class='o'>()</span>
             <span class='o'>.</span><span class='na'>setJQueryReference</span><span class='o'>(</span><span class='n'>yourJquery183ResourceReference</span><span class='o'>);</span>
     <span class='o'>}</span>
-</code></pre>
-</div></p></p>
+</code></pre></div></p></p>
 <h3 id='cdi_injection_issue'>CDI injection issue</h3><p>In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:</p><div class='highlight'><pre><code class='text'>Caused by: org.jboss.weld.exceptions.DefinitionException:
 WELD-000070 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-</code></pre>
-</div><p>This was reported as <a href='https://issues.apache.org/jira/browse/WICKET-5226'>WICKET-5226</a>, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.</p><p>Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see <a href='https://issues.jboss.org/browse/WELD-1441'>WELD-1441</a>)</p><p>Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read <a href='https://issues.apache.org/jira/browse/WICKET-5264'>WICKET-5264</a></p><p>Glassfish has fixed this in trunk according to <a href='https://java.net/jira/browse/GLASSFISH-20619'>GLASSFISH-20619</a> but the fix has yet to be integrated into a release.</p><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+</code></pre></div><p>This was reported as <a href='https://issues.apache.org/jira/browse/WICKET-5226'>WICKET-5226</a>, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.</p><p>Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see <a href='https://issues.jboss.org/browse/WELD-1441'>WELD-1441</a>)</p><p>Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read <a href='https://issues.apache.org/jira/browse/WICKET-5264'>WICKET-5264</a></p><p>Glassfish has fixed this in trunk according to <a href='https://java.net/jira/browse/GLASSFISH-20619'>GLASSFISH-20619</a> but the fix has yet to be integrated into a release.</p><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
     <span class='nt'>&lt;version&gt;</span>6.11.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
+</code></pre></div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
 <li>Source: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.11.0'>http://www.apache.org/dyn/closer.cgi/wicket/6.11.0</a></li>
 
 <li>Binary: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries</a></li>
@@ -427,7 +421,7 @@ com.example.HomePage$AForm cannot be a non-static inner class
 <h1 id='books_about_wicket'>Books about Wicket</h1>
 
 <p>The following books are published regarding Apache Wicket (click a cover to learn more about the book):</p>
-<a href='/learn/books/awc.html'><img height='200px' src='/learn/books/awc.png' /></a><a href='/learn/books/wia.html'><img height='200px' src='/learn/books/wia.png' /></a><a href='/learn/books/ewdww.html'><img height='200px' src='/learn/books/ewdww.png' /></a><a href='/learn/books/prowicket.html'><img height='200px' src='/learn/books/prowicket.png' /></a><a href='/learn/books/kwij.html'><img height='200px' src='/learn/books/kwij.png' /></a><a href='/learn/books/praxisbuchwicket.html'><img height='200px' src='/learn/books/praxisbuchwicket.png' /></a><a href='/learn/books/wicket-jp.html'><img height='200px' src='/learn/books/wicket-jp.png' /></a><a href='/learn/books/koda.html'><img height='200px' src='/learn/books/koda.jpg' /></a>
+<a href='/learn/books/awc.html'><img src='/learn/books/awc.png' height='200px' /></a><a href='/learn/books/wia.html'><img src='/learn/books/wia.png' height='200px' /></a><a href='/learn/books/ewdww.html'><img src='/learn/books/ewdww.png' height='200px' /></a><a href='/learn/books/prowicket.html'><img src='/learn/books/prowicket.png' height='200px' /></a><a href='/learn/books/kwij.html'><img src='/learn/books/kwij.png' height='200px' /></a><a href='/learn/books/praxisbuchwicket.html'><img src='/learn/books/praxisbuchwicket.png' height='200px' /></a><a href='/learn/books/wicket-jp.html'><img src='/learn/books/wicket-jp.png' height='200px' /></a><a href='/learn/books/koda.html'><img src='/learn/books/koda.jpg' height='200px' /></a>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
