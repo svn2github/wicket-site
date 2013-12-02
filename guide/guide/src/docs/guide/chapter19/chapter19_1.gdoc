@@ -4,7 +4,7 @@ The first step in implementing a security policy is assigning a trusted identity
 
 !wikipedia-login-form.png!
 
-Wicket supports form-based authentication with session class AuthenticatedWebSession and application class AuthenticatedWebApplication, both placed inside package org.apache. wicket.authroles.authentication.
+Wicket supports form-based authentication with session class AuthenticatedWebSession and application class AuthenticatedWebApplication, both placed inside package org.apache.wicket.authroles.authentication.
 
 h3. AuthenticatedWebSession
 

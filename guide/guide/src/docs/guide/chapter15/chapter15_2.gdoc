@@ -83,7 +83,7 @@ Next, JQueryDateField tries to retrieve the date format and the ISO language cod
 
 To generate the relative URL for calendar icon, we load it as package resource reference and then we use Component's method urlFor to get the URL value (we have seen this method in paragraph 7.3.2).
 
-The last configuration instruction executed inside onInitialize is the instantiation of the custom converter used by our component. This converter is an instance of the built-in class org.apache. wicket.datetime.PatternDateConvert and must use the previously retrieved date format to perform conversion operations. Now to tell our component to use this converter we must return it overriding FormComponent's method getConverter. 
+The last configuration instruction executed inside onInitialize is the instantiation of the custom converter used by our component. This converter is an instance of the built-in class org.apache.wicket.datetime.PatternDateConvert and must use the previously retrieved date format to perform conversion operations. Now to tell our component to use this converter we must return it overriding FormComponent's method getConverter. 
 
 h3. Header contributor code
 

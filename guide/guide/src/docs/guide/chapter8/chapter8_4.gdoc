@@ -8,7 +8,7 @@ By default if our custom application class is a subclass of WebApplication, meth
 
 h3. Session and listeners
 
-Similar to the RequestCycle, class org.apache.wicket.Session also offers support for listener entities. With Session these entities must implement the callback interface org.apache.wicket. ISessionListener which exposes only the onCreated(Session session) method. As you might guess from its name, this method is called when a new session is created. Session listeners must be added to our application using a typed collection, just like we have done before with request cycle listeners:
+Similar to the RequestCycle, class org.apache.wicket.Session also offers support for listener entities. With Session these entities must implement the callback interface org.apache.wicket.ISessionListener which exposes only the onCreated(Session session) method. As you might guess from its name, this method is called when a new session is created. Session listeners must be added to our application using a typed collection, just like we have done before with request cycle listeners:
 
 {code}
 @Override

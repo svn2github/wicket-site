@@ -14,7 +14,7 @@ To load package resources Wicket provides class org.apache.wicket.request.resour
 
 To identify a package resource we need to specify a class inside the target package and the name of the desired resource (most of the times this will be a file name). 
 
-In the following example taken from project ImageAsPackageRes, CustomPanel loads a picture file available as package resource and it displays it in a <img> tag using the built-in component org. apache.wicket.markup.html.image.Image: 
+In the following example taken from project ImageAsPackageRes, CustomPanel loads a picture file available as package resource and it displays it in a <img> tag using the built-in component org.apache.wicket.markup.html.image.Image: 
 
 *HTML:*
 {code:html}

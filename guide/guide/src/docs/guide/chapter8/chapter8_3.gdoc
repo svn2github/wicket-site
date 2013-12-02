@@ -46,7 +46,7 @@ The overloaded urlFor method from above also has a corresponding version that re
 
 h3. Method setResponsePage
 
-The RequestCycle class contains the implementation of the setResponsePage method we use to redirect a user to a specific page (see paragraph 2.4). The namesake method of class org.apache.wicket. Component is just a convenience method that internally invokes the actual implementation on current request cycle:
+The RequestCycle class contains the implementation of the setResponsePage method we use to redirect a user to a specific page (see paragraph 2.4). The namesake method of class org.apache.wicket.Component is just a convenience method that internally invokes the actual implementation on current request cycle:
 
 {code}
 public final void setResponsePage(final Page page) {
@@ -88,5 +88,5 @@ public void init() {
 }
 {code}
 
-The getRequestCycleListeners method returns an instance of class org.apache.wicket. request.cycle.RequestCycleListenerCollection. This class is a sort of typed collection for IRequestCycleListener and it also implements the "Composite pattern":http://en.wikipedia.org/wiki/Composite_pattern .
+The getRequestCycleListeners method returns an instance of class org.apache.wicket.request.cycle.RequestCycleListenerCollection. This class is a sort of typed collection for IRequestCycleListener and it also implements the "Composite pattern":http://en.wikipedia.org/wiki/Composite_pattern .
 

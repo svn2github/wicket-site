@@ -23,7 +23,7 @@ The path provided to mountPage will be used to generate the URL for any page of 
 RequestCycle.get().urlFor(MountedPage.class);
 {code}
 
-Under the hood the mountPage method mounts an instance of the request mapper org.apache. wicket.request.mapper.MountedMapper configured for the given path:
+Under the hood the mountPage method mounts an instance of the request mapper org.apache.wicket.request.mapper.MountedMapper configured for the given path:
 
 {code}
 public final <T extends Page> void mountPage(final String path,final Class<T> pageClass) {

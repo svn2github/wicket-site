@@ -87,7 +87,7 @@ Please note that the checkbox will be initially selected because we have set to 
 
 h3. Working with grouped checkboxes
 
-When we need to display a given number of options with checkboxes, we can use the org.apache. wicket.markup.html.form.CheckBoxMultipleChoice component. For example, If our options are a list of strings, we can display them in this way:
+When we need to display a given number of options with checkboxes, we can use the org.apache.wicket.markup.html.form.CheckBoxMultipleChoice component. For example, If our options are a list of strings, we can display them in this way:
 
 *HTML:*
 
@@ -109,7 +109,7 @@ form.add(new CheckBoxMultipleChoice("checkGroup", new ListModel<String>(new
 
 !grouped-checkbox.png!
 
-This component can be attached to a <div> tag or to a <span> tag. No specific content is required for this tag as it will be populated with the actual checkboxes. Since this component allows multiple selection, its model object is a list. In the example above we have used model class org.apache. wicket.model.util.ListModel which is specifically designed to wrap a List object.
+This component can be attached to a <div> tag or to a <span> tag. No specific content is required for this tag as it will be populated with the actual checkboxes. Since this component allows multiple selection, its model object is a list. In the example above we have used model class org.apache.wicket.model.util.ListModel which is specifically designed to wrap a List object.
 
 By default CheckBoxMultipleChoice inserts a <br/> tag as suffix after each option. We can configure both the suffix and the prefix used by the component with the setPrefix and setSuffix methods.
 
@@ -145,7 +145,7 @@ A nice feature we can offer to users when we have a group of checkboxes is a “
 
 !select-all-checkbox.png!
 
-Wicket comes with a couple of utility components that make it easy to implement such a feature. They are CheckboxMultipleChoiceSelector and CheckBoxSelector classes, both inside org. apache.wicket.markup.html.form package. The difference between these two components is that the first works with an instance of CheckBoxMultipleChoice while the second takes in input a list of CheckBox objects:
+Wicket comes with a couple of utility components that make it easy to implement such a feature. They are CheckboxMultipleChoiceSelector and CheckBoxSelector classes, both inside org.apache.wicket.markup.html.form package. The difference between these two components is that the first works with an instance of CheckBoxMultipleChoice while the second takes in input a list of CheckBox objects:
 
 {code}
 /* CheckboxMultipleChoiceSelector usage: */

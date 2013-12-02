@@ -54,7 +54,7 @@ As we have stated at the beginning of this chapter, page versions are stored usi
 
 h3. Using a specific page version with PageReference
 
-To retrieve a specific page version in our code we can use class org.apache.wicket. PageReference by providing its constructor with the corresponding page id:
+To retrieve a specific page version in our code we can use class org.apache.wicket.PageReference by providing its constructor with the corresponding page id:
 
 {code}
 //load page version with page id = 3

@@ -22,7 +22,7 @@ Class org.apache.wicket.ajax.markup.html.form.AjaxCheckBox is a checkbox compone
 
 h3. AJAX editable labels
 
-An editable label is a special label that can be edited by the user when she/he clicks on it. Wicket ships three different implementations for this component (all inside package org.apache.wicket. extensions.ajax.markup.html):
+An editable label is a special label that can be edited by the user when she/he clicks on it. Wicket ships three different implementations for this component (all inside package org.apache.wicket.extensions.ajax.markup.html):
 
 * *AjaxEditableLabel*: it's a basic version of editable label. User can edit the content of the label with a text field. This is also the base class for the other two editable labels.
 * *AjaxEditableMultiLineLabel*: this label supports multi-line values and uses a text area as editor component. 
