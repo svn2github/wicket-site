@@ -63,7 +63,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="/guide" title="User Guide">User Guide</a> | <a href="/guide/guide/single.pdf" title="User Guide in pdf">pdf</a>
+			<a href="/start/userguide.html" title="User Guide">User Guide</a>
 		</li>
 		<li>
 			<a href="/learn/examples" title="Examples">Examples</a>
@@ -194,27 +194,24 @@
 
 <p>Taking Maven, project configuration files for Eclipse can be generated with:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>mvn eclipse:eclipse</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Maven will add all the necessary JAR files to the project&#8217;s classpath. Now the sources can be imported in Eclipse using the &#8220;Existing Projects into Workspace&#8221; wizard.</p>
 
 <p>If not already present the <code>M2_REPO</code> classpath variable has to point to your local Maven repository. The repository is typically found in <code>C:\Documents and Settings\&lt;username&gt;\.m2\repo</code> or (for unix buffs) <code>~/.m2/repo</code>. It can be set within Eclipse (Preferences-&gt;Java-&gt;Build Path-&gt;Classpath Variables) or with the help of Maven:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>mvn -Declipse.workspace=&lt;path-to-eclipse-workspace&gt; eclipse:add-maven-repo</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>If you want to go along with the Wicket way of code formatting you should import the Wicket code format profile into your workspace (Preferences-&gt;Java-&gt;Code Style-&gt;Formatter), found in:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>&lt;path-to-eclipse-workspace&gt;/wicket-core/EclipseCodeFormat.xml</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Finally configure the editor to automatically format all edited lines and organize imports on save (Preferences-&gt;Java-&gt;Editor-&gt;Save Actions).</p>
 
 <h3 id='netbeans'>NetBeans</h3>
 
-<p>NetBeans comes with Maven integration. Further help can be found at their <a href='http://wiki.netbeans.org/MavenBestPractices' title='NetBeans Community Wiki'>Wiki</a></p>
+<p>NetBeans comes with Maven integration. Further help can be found at their <a title='NetBeans Community Wiki' href='http://wiki.netbeans.org/MavenBestPractices'>Wiki</a></p>
 
 <h3 id='idea'>IDEA</h3>
 
-<p>IntelliJ IDEA comes with <a href='http://www.jetbrains.com/idea/webhelp/maven.html' title='IDEA Web Help'>Maven support</a> too.</p>
+<p>IntelliJ IDEA comes with <a title='IDEA Web Help' href='http://www.jetbrains.com/idea/webhelp/maven.html'>Maven support</a> too.</p>
 
 <p>With the <a href='http://plugins.jetbrains.com/plugin/6546'>Eclipse Code Formatter plugin</a> the Wicket format profile can be used in IntelliJ IDEA too. Configure the IDE to prevent star imports (Settings-&gt;Code Style-&gt;Imports).</p>
 		</div>
