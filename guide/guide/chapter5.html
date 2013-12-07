@@ -252,22 +252,20 @@ replace(fragment);</pre></div>
 
 
 <h2 id="chapter5_6">6.6 Adding header contents to the final page</h2>
-Panel's markup can also contain HTML tags which must go inside header section of the final page, like tags <code>&#60;script&#62;</code> or <code>&#60;style&#62;</code>. To tell Wicket to put these tags inside page <code>&#60;head&#62;</code>, we must surround them with the <code>&#60;wicket:head&#62;</code> tag.<p class="paragraph"/>Considering the markup of a generic panel, we can use <code>&#60;wicket:head&#62;</code> tag in this way:<p class="paragraph"/><div class="code"><pre><div class="error">code: null</div>
-&#60;wicket:head&#62;
-	&#60;script type="text/javascript"&#62;
-	  	function myPanelFunction(){
-	  	}
+Panel's markup can also contain HTML tags which must go inside header section of the final page, like tags <code>&#60;script&#62;</code> or <code>&#60;style&#62;</code>. To tell Wicket to put these tags inside page <code>&#60;head&#62;</code>, we must surround them with the <code>&#60;wicket:head&#62;</code> tag.<p class="paragraph"/>Considering the markup of a generic panel, we can use <code>&#60;wicket:head&#62;</code> tag in this way:<p class="paragraph"/><div class="code"><pre>&#60;wicket:head&#62;
+	&#60;script type=<span class="java&#45;quote">"text/javascript"</span>&#62;
+	  	function myPanelFunction()&#123;
+	  	&#125;
 	  &#60;/script&#62;<p class="paragraph"/>	&#60;style&#62;
-        .myPanelClass{
-	  	font-weight: bold;
+        .myPanelClass&#123;
+	  	font&#45;weight: bold;
 	  	color: red;
-	  }	 
+	  &#125;	 
        &#60;/style&#62;
 &#60;/wicket:head&#62;
 &#60;body&#62;
 	&#60;wicket:panel&#62;<p class="paragraph"/>	&#60;/wicket:panel&#62;
-&#60;/body&#62;	
-<div class="code"><pre><div class="error">code: null</div><p class="paragraph"/>Wicket will take care of placing the content of <code>&#60;wicket:head&#62;</code> inside the <code>&#60;head&#62;</code> tag of the final page.<p class="paragraph"/><blockquote class="note">
+&#60;/body&#62;</pre></div><p class="paragraph"/>Wicket will take care of placing the content of <code>&#60;wicket:head&#62;</code> inside the <code>&#60;head&#62;</code> tag of the final page.<p class="paragraph"/><blockquote class="note">
 The <code>&#60;wicket:head&#62;</code> tag can also be used with children pages/panels which extend parent markup using tag <code>&#60;wicket:extend&#62;</code>.
 </blockquote><p class="paragraph"/><blockquote class="note">
 The content of the <code>&#60;wicket:head&#62;</code> tag is added to the header section once per component class. In other words, if we add multiple instances of the same panel to a page, the <code>&#60;head&#62;</code> tag will be populated just once with the content of <code>&#60;wicket:head&#62;</code>.

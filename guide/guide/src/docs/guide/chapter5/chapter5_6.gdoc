@@ -21,7 +21,7 @@ Considering the markup of a generic panel, we can use @<wicket:head>@ tag in thi
 
 	</wicket:panel>
 </body>	
-{code:html}
+{code}
 
 Wicket will take care of placing the content of @<wicket:head>@ inside the @<head>@ tag of the final page.
 
