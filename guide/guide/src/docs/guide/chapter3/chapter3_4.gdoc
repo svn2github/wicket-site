@@ -45,6 +45,8 @@ public void onClick() {
 
 The difference between using the first version of @setResponsePage@ rather than the second one will be illustrated in [chapter 7|guide:chapter7], when we will introduce the topic of stateful and stateless pages. For now, we can consider them as equivalent. 
 
-{note}
 Wicket comes with a rich set of link components suited for every need (links to static URL, Ajax-enhanced links, links to a file to download, links to external pages and so on). We will see them in [chapter 9|guide:chapter9].
+
+{note}
+We can specify the content of a link (i.e. the text of the picture inside it) with its method @setBody@. This method takes in input a generic Wicket model, which will be the topic of [chapter 11|guide:chapter10].
 {note}

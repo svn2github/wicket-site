@@ -624,9 +624,10 @@ Following the analogy with GUI frameworks, we can consider Wicket link as a “c
 	//we redirect browser to another page.
 	AnotherPage anotherPage = <span class="java&#45;keyword">new</span> AnotherPage();
 	setResponsePage(anotherPage);
-&#125;</pre></div><p class="paragraph"/>The difference between using the first version of <code>setResponsePage</code> rather than the second one will be illustrated in <a href="../guide/single.html#chapter7" class="guide">chapter 7</a>, when we will introduce the topic of stateful and stateless pages. For now, we can consider them as equivalent.<p class="paragraph"/><blockquote class="note">
-Wicket comes with a rich set of link components suited for every need (links to static URL, Ajax-enhanced links, links to a file to download, links to external pages and so on). We will see them in <a href="../guide/single.html#chapter9" class="guide">chapter 9</a>.
+&#125;</pre></div><p class="paragraph"/>The difference between using the first version of <code>setResponsePage</code> rather than the second one will be illustrated in <a href="../guide/single.html#chapter7" class="guide">chapter 7</a>, when we will introduce the topic of stateful and stateless pages. For now, we can consider them as equivalent.<p class="paragraph"/>Wicket comes with a rich set of link components suited for every need (links to static URL, Ajax-enhanced links, links to a file to download, links to external pages and so on). We will see them in <a href="../guide/single.html#chapter9" class="guide">chapter 9</a>.<p class="paragraph"/><blockquote class="note">
+We can specify the content of a link (i.e. the text of the picture inside it) with its method <code>setBody</code>. This method takes in input a generic Wicket model, which will be the topic of <a href="../guide/single.html#chapter10" class="guide">chapter 11</a>.
 </blockquote>
+
 
 
 <h2 id="chapter3_5">4.5 Summary</h2>
@@ -4407,7 +4408,7 @@ Quite a few teams have already got stuck into the following problem when working
 You can contribute to this guide by following these steps:
 <ul class="star">
 <li>The guide uses Grails GDoc to generate the final HTML/PDF so you should consult with its <a href="http://grails.org/WikiSyntax" target="blank">syntax</a>.</li>
-<li>Checkout Apache Wicket's <a href="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/" target="blank">site</a></li>
+<li>Checkout Apache Wicket's <a href="../ref/Httpssvnapacheorgreposasfwicketcommonsitetrunksite/site.html" class="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/">site</a></li>
 </ul><p class="paragraph"/><div class="code"><pre>svn checkout https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/</pre></div>
 <ul class="star">
 <li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">_site/guide/guide/src/docs/guide</em>  folder</li>
@@ -4425,7 +4426,7 @@ You can contribute to this guide by following these steps:
 <li>To preview your changes open  <em class="italic">_site/guide/index.html</em>  in a browser</li>
 <li>Create a patch with</li>
 </ul><p class="paragraph"/><div class="code"><pre>svn diff &#62; my.patch</pre></div>
-and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
+and attach it to a ticket in Apache Wicket's <a href="../ref/Httpsissuesapacheorgjirabrowse WICKET/JIRA.html" class="https://issues.apache.org/jira/browse/WICKET">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
 
                     </div>
                 </td>
