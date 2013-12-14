@@ -17,7 +17,7 @@ public void init() {
 }
 {code}
 
-With the configuration above (taken from project CustomResourceMounting) every request to /foo/bar will be served by the custom resource built in the previous paragraph. 
+With the configuration above (taken from project @CustomResourceMounting@) every request to /foo/bar will be served by the custom resource built in the previous paragraph. 
 
 Parameter placeholders are supported as well:
 

@@ -22,6 +22,6 @@ As we can see in the picture above, every MBean exposes a node containing its at
 
 With these two operations we can force Wicket to clear the internal caches used to load components markup and resource bundles. This can be particularly useful if we have our application running in DEPLOYMENT mode and we want to publish minor fixes for markup or bundle files (like spelling or typo corrections) without restarting the entire application. Without cleaning these two caches Wicket would continue to use cached values ignoring any change made to markup or bundle files.
 
-Some of the exposed properties are editable, hence we can tune their values while the application is running. For example if we look at the properties of ApplicationSettings we can set the maximum size allowed for an upload modifying the attribute DefaultMaximumUploadSize:
+Some of the exposed properties are editable, hence we can tune their values while the application is running. For example if we look at the properties of @ApplicationSettings@ we can set the maximum size allowed for an upload modifying the attribute DefaultMaximumUploadSize:
 
 !JMX-console4.png!

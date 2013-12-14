@@ -8,7 +8,7 @@ During application's bootstrap Wicket searches for any properties file named wic
 initializer=org.wicketTutorial.MyInitializer
 {code}
 
-The fully qualified class name corresponds to the initializer that must be executed. Interface IInitializer defines method init(Application) which should contain our initialization code, and method destroy(Application) which is invoked when application is terminated:
+The fully qualified class name corresponds to the initializer that must be executed. Interface @IInitializer@ defines method init(Application) which should contain our initialization code, and method @destroy(Application)@ which is invoked when application is terminated:
 
 {code}
 public class MyInitializer implements IInitializer{

@@ -157,7 +157,7 @@ function addJsClass() {
                 
 
 <h2 id="chapter14_5">15.5 Resource dependencies</h2>
-<p class="paragraph"/>Class ResourceReference allows to specify the resources it depends on overriding method getDependencies(). The method returns an iterator over the set of HeaderItems that must be rendered before the resource referenced by ResourceReference can be used. This can be really helpful when our resources are JavaScript or CSS libraries that in turn depend on other libraries.<p class="paragraph"/>For example we can use this method to ensure that a custom reference to JQueryUI library will find JQuery already loaded in the page:<p class="paragraph"/><div class="code"><pre>Url jqueyuiUrl = Url.parse(<span class="java&#45;quote">"https://ajax.googleapis.com/ajax/libs/jqueryui/"</span> + 
+<p class="paragraph"/>Class <code>ResourceReference</code> allows to specify the resources it depends on overriding method <code>getDependencies()</code>. The method returns an iterator over the set of <code>HeaderItems</code> that must be rendered before the resource referenced by <code>ResourceReference</code> can be used. This can be really helpful when our resources are JavaScript or CSS libraries that in turn depend on other libraries.<p class="paragraph"/>For example we can use this method to ensure that a custom reference to JQueryUI library will find JQuery already loaded in the page:<p class="paragraph"/><div class="code"><pre>Url jqueyuiUrl = Url.parse(<span class="java&#45;quote">"https://ajax.googleapis.com/ajax/libs/jqueryui/"</span> + 
                                                                  <span class="java&#45;quote">"1.10.2/jquery&#45;ui.min.js"</span>);<p class="paragraph"/>UrlResourceReference jqueryuiRef = <span class="java&#45;keyword">new</span> UrlResourceReference(jqueyuiUrl)&#123;
 	@Override
 	<span class="java&#45;keyword">public</span> Iterable&#60;? <span class="java&#45;keyword">extends</span> HeaderItem&#62; getDependencies() &#123;
@@ -165,7 +165,7 @@ function addJsClass() {
 		ResourceReference jqueryRef = application.getJavaScriptLibrarySettings(). 
                                              getJQueryReference();<p class="paragraph"/>		<span class="java&#45;keyword">return</span> Arrays.asList(JavaScriptHeaderItem.forReference(jqueryRef));
 	&#125;
-&#125;;</pre></div><p class="paragraph"/>Please note that in the code above we have built a resource reference using a URL to the desired library instead of a package resource holding the physical file.<p class="paragraph"/>The same method getDependencies() is defined also for class HeaderItem.
+&#125;;</pre></div><p class="paragraph"/>Please note that in the code above we have built a resource reference using a URL to the desired library instead of a package resource holding the physical file.<p class="paragraph"/>The same method <code>getDependencies()</code> is defined also for class <code>HeaderItem</code>.
 
 
                 <div style="clear:both;margin-top:15px;"></div>

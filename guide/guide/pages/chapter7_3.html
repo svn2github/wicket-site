@@ -170,7 +170,7 @@ function addJsClass() {
 		  			<span class="java&#45;object">System</span>.out.println(<span class="java&#45;quote">"Component "</span> + component.getId() + <span class="java&#45;quote">" is not stateless"</span>);
 			&#125;
 		&#125;);
-	&#125;</pre></div><p class="paragraph"/>Alternatively, we could use the StatelessComponent utility annotation along with the StatelessChecker class (they are both in package org.apache.wicket.devutils. stateless). StatelessChecker will throw an IllegalArgumentException if a component annotated with StatelessComponent doesn't respect the requirements for being stateless. To use StatelessComponent annotation we must first add the StatelessChecker to our application as a component render listener:<p class="paragraph"/><div class="code"><pre>@Override
+	&#125;</pre></div><p class="paragraph"/>Alternatively, we could use the <code>StatelessComponent</code> utility annotation along with the <code>StatelessChecker</code> class (they are both in package <code>org.apache.wicket.devutils.stateless</code>). <code>StatelessChecker</code> will throw an <code>IllegalArgumentException</code> if a component annotated with <code>StatelessComponent</code> doesn't respect the requirements for being stateless. To use <code>StatelessComponent</code> annotation we must first add the <code>StatelessChecker</code> to our application as a component render listener:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init()
 &#123;
 	<span class="java&#45;keyword">super</span>.init();

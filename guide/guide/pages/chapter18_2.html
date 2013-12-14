@@ -157,7 +157,7 @@ function addJsClass() {
                 
 
 <h2 id="chapter18_2">19.2 Integrating Wicket with Spring</h2>
-<p class="paragraph"/>If we need to inject dependencies with Spring we can use listener org.apache.wicket.spring. injection.annot.SpringComponentInjector provided by module wicket-spring.<p class="paragraph"/>For the sake of simplicity in the example project SpringInjectionExample we have used Spring class AnnotationConfigApplicationContext to avoid any XML file and create a Spring context directly from code:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> WebApplication
+<p class="paragraph"/>If we need to inject dependencies with Spring we can use listener <code>org.apache.wicket.spring.injection.annot.SpringComponentInjector</code> provided by module wicket-spring.<p class="paragraph"/>For the sake of simplicity in the example project <code>SpringInjectionExample</code> we have used Spring class <code>AnnotationConfigApplicationContext</code> to avoid any XML file and create a Spring context directly from code:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> WebApplication
 &#123;      
   //Constructor...<p class="paragraph"/>  @Override
   <span class="java&#45;keyword">public</span> void init()
@@ -167,7 +167,7 @@ function addJsClass() {
     ctx.scan(<span class="java&#45;quote">"org.wicketTutorial.ejbBean"</span>);
     ctx.refresh();<p class="paragraph"/>    getComponentInstantiationListeners().add(<span class="java&#45;keyword">new</span> SpringComponentInjector(<span class="java&#45;keyword">this</span>, ctx));
   &#125;	
-&#125;</pre></div><p class="paragraph"/>As we can see in the code above, the constructor of SpringComponentInjector takes in input also an instance of Spring context.<p class="paragraph"/>The injected object is the same used in the previous project EjbInjectionExample, it differs only for the greeting message:<p class="paragraph"/><div class="code"><pre>@ManagedBean
+&#125;</pre></div><p class="paragraph"/>As we can see in the code above, the constructor of <code>SpringComponentInjector</code> takes in input also an instance of Spring context.<p class="paragraph"/>The injected object is the same used in the previous project <code>EjbInjectionExample</code>, it differs only for the greeting message:<p class="paragraph"/><div class="code"><pre>@ManagedBean
 <span class="java&#45;keyword">public</span> class EnterpriseMessage &#123;
 	<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> message = <span class="java&#45;quote">"Welcome to the Spring world!"</span>;
 &#125;</pre></div><p class="paragraph"/>In the home page of the project the object is injected using Wicket annotation @SpringBean:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
@@ -176,7 +176,7 @@ function addJsClass() {
   //getter and setter <span class="java&#45;keyword">for</span> enterpriseMessage...<p class="paragraph"/>  <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
   	<span class="java&#45;keyword">super</span>(parameters);<p class="paragraph"/>	add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"message"</span>, enterpriseMessage.message));
   &#125;
-&#125;</pre></div><p class="paragraph"/>By default @SpringBean searches into Spring context for a bean having the same type of the annotated field. If we want we can specify also the name of the bean to use as injected object and we can declare if the dependency is required or not. By default dependencies are required and if they can not be resolved to a compatible bean, Wicket will throw an IllegalStateException:<p class="paragraph"/><div class="code"><pre>//set the dependency as not required, i.e the field can be left <span class="java&#45;keyword">null</span>
+&#125;</pre></div><p class="paragraph"/>By default <code>SpringBean searches into Spring context for a bean having the same type of the annotated field. If we want we can specify also the name of the bean to use as injected object and we can declare if the dependency is required or not. By default dependencies are required and if they can not be resolved to a compatible bean, Wicket will throw an </code>IllegalStateException@:<p class="paragraph"/><div class="code"><pre>//set the dependency as not required, i.e the field can be left <span class="java&#45;keyword">null</span>
   @SpringBean(name=<span class="java&#45;quote">"anotherName"</span>, required=<span class="java&#45;keyword">false</span>)
   <span class="java&#45;keyword">private</span> EnterpriseMessage enterpriseMessage;</pre></div>
 

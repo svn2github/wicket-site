@@ -15,7 +15,7 @@ new AjaxLink("ajaxLink"){
 };
 {code}
 
-Using AjaxRequestTarget we can specify the content that must be sent back to the client as response to the current AJAX request. The most commonly used method of this interface is probably add(Component... components). With this method we tell Wicket to render again the specified components and refresh their markup via AJAX:
+Using AjaxRequestTarget we can specify the content that must be sent back to the client as response to the current AJAX request. The most commonly used method of this interface is probably @add(Component... components)@. With this method we tell Wicket to render again the specified components and refresh their markup via AJAX:
 
 {code}
 new AjaxLink("ajaxLink"){
@@ -28,7 +28,7 @@ new AjaxLink("ajaxLink"){
 };
 {code}
 
-Components can be refreshed via Ajax only if they have rendered a markup id for their related tag. As a consequence, we must remember to set a valid id value on every component we want to add to AjaxRequestTarget. This can be done using one of the two methods seen in paragraph 4.3:
+Components can be refreshed via Ajax only if they have rendered a markup id for their related tag. As a consequence, we must remember to set a valid id value on every component we want to add to @AjaxRequestTarget@. This can be done using one of the two methods seen in paragraph 4.3:
 
 {code}
 final Label label = new Label("labelComponent", "Initial value.");

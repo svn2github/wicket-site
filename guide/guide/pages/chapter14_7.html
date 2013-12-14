@@ -157,7 +157,7 @@ function addJsClass() {
                 
 
 <h2 id="chapter14_7">15.7 Mounting resources</h2>
-<p class="paragraph"/>Just like pages also resources can be mounted to a specific path. Class WebApplication provides method mountResource which is almost identical to mountPage seen in paragraph 8.6.1:<p class="paragraph"/><div class="code"><pre>@Override
+<p class="paragraph"/>Just like pages also resources can be mounted to a specific path. Class <code>WebApplication</code> provides method <code>mountResource</code> which is almost identical to <code>mountPage</code> seen in paragraph 8.6.1:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;
   <span class="java&#45;keyword">super</span>.init();
   //resource mounted to path /foo/bar
@@ -168,7 +168,7 @@ function addJsClass() {
 	<span class="java&#45;keyword">return</span> rssResource;
   &#125;&#125;;
   mountResource(<span class="java&#45;quote">"/foo/bar"</span>, resourceReference);
-&#125;</pre></div><p class="paragraph"/>With the configuration above (taken from project CustomResourceMounting) every request to /foo/bar will be served by the custom resource built in the previous paragraph.<p class="paragraph"/>Parameter placeholders are supported as well:<p class="paragraph"/><div class="code"><pre>@Override
+&#125;</pre></div><p class="paragraph"/>With the configuration above (taken from project <code>CustomResourceMounting</code>) every request to /foo/bar will be served by the custom resource built in the previous paragraph.<p class="paragraph"/>Parameter placeholders are supported as well:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;
   <span class="java&#45;keyword">super</span>.init();
   //resource mounted to path /foo with a required indexed parameter
