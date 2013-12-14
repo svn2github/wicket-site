@@ -49,7 +49,7 @@ Please note that in the example above we can trigger the rendering stage pressin
 {warning}
 If we forget to call superclass version of methods @onInitialize()@ or @onBeforeRender()@, Wicket will throw an @IllegalStateException@ with the following message:
 
-@java.lang.IllegalStateException: org.apache.wicket.Component has not been properly initialized. Something in the hierarchy of <page class name> has not called super.onInitialize()/onBeforeRender() in the override of onInitialize()/ onBeforeRender() method@
+@java.lang.IllegalStateException: @org.apache.wicket.Component@ has not been properly initialized. Something in the hierarchy of <page class name> has not called super.onInitialize()/onBeforeRender() in the override of onInitialize()/ onBeforeRender() method@
 
 {warning}
 

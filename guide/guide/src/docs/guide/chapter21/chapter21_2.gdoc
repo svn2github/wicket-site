@@ -58,7 +58,7 @@ java.lang.IllegalStateException: No WebApplicationContext found: no ContextLoade
 	<init>(WicketTester.java:308)
 {code}
 
-As you can see above, the Exception gets raised during the initialization of the WicketTester instance even before the actual test method gets executed. Even though we have applied rather cool and simple annotation based test configuration already described and passed in perfectly well prepared ApplicationContext instance to the WicketTester instance in the constructor, somewhere down the rabbit hole someone complained that no WebApplicationContext instance could have been found which seems to be required in order to initialize the WicketTester properly.
+As you can see above, the Exception gets raised during the initialization of the @WicketTester@ instance even before the actual test method gets executed. Even though we have applied rather cool and simple annotation based test configuration already described and passed in perfectly well prepared ApplicationContext instance to the WicketTester instance in the constructor, somewhere down the rabbit hole someone complained that no WebApplicationContext instance could have been found which seems to be required in order to initialize the WicketTester properly.
 
 !description-of-illegalstate.jpg!
 

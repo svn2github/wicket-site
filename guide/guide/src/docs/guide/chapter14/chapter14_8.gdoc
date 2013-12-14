@@ -12,7 +12,7 @@ Resources can be added to a global registry in order to share them at applicatio
   }
 {code}
 
-Now to use an application-shared resource we can simply retrieve it using class SharedResource Reference and providing the key previously used to register the resource:
+Now to use an application-shared resource we can simply retrieve it using class SharedResourceReference and providing the key previously used to register the resource:
 
 {code}
 add(new ResourceLink("globalRssLink", new SharedResourceReference("globalRSSProducer")));
@@ -29,5 +29,5 @@ Package resources are also application-shared resources but they don't need to b
 {note}
 
 {note}
-Remember that we can get the URL of a resource reference using method urlFor(ResourceReference resourceRef, PageParameters params ) available with both class RequestCycle and class Component.
+Remember that we can get the URL of a resource reference using method @urlFor(ResourceReference resourceRef, PageParameters params )@ available with both class RequestCycle and class Component.
 {note}

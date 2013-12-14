@@ -54,7 +54,7 @@ As we have stated at the beginning of this chapter, page versions are stored usi
 
 h3. Using a specific page version with PageReference
 
-To retrieve a specific page version in our code we can use class org.apache.wicket.PageReference by providing its constructor with the corresponding page id:
+To retrieve a specific page version in our code we can use class @org.apache.wicket.PageReference@ by providing its constructor with the corresponding page id:
 
 {code}
 //load page version with page id = 3
@@ -71,7 +71,7 @@ If for any reason we need to switch off versioning for a given page, we can call
 
 h3. Pluggable serialization
 
-Starting from version 1.5 it is possible to choose which implementation of Java serialization will be used by Wicket to store page versions. Wicket serializes pages using an implementation of interface org.apache.wicket.serialize.ISerializer. The default implementation is org.apache.wicket.serialize.java.JavaSerializer and it uses the standard Java serialization mechanism based on classes ObjectOutputStream and ObjectInputStream. However on Internet we can find other interesting serialization libraries like Kryo1 which performs faster then the standard implementation.The serializer in use can be customized with the setSerializer(ISerializer) method defined by setting interface org.apache.wicket.settings.IFrameworkSettings. 
+Starting from version 1.5 it is possible to choose which implementation of Java serialization will be used by Wicket to store page versions. Wicket serializes pages using an implementation of interface @org.apache.wicket.serialize.ISerializer@. The default implementation is @org.apache.wicket.serialize.java.JavaSerializer@ and it uses the standard Java serialization mechanism based on classes ObjectOutputStream and ObjectInputStream. However on Internet we can find other interesting serialization libraries like Kryo1 which performs faster then the standard implementation.The serializer in use can be customized with the setSerializer(ISerializer) method defined by setting interface @org.apache.wicket.settings.IFrameworkSettings@. 
 
 We can access this interface inside the method init of the class Application using the getFrameworkSettings() method :
 
@@ -94,7 +94,7 @@ The following picture is an overview of these two caching levels:
 
 !wicket-cache.png!
 
-The session-scoped cache is faster then the other memory levels but it contains only the pages used to serve the last request. Wicket allows us to set the maximum amount of memory allowed for the application-scoped cache and for the page store file. Both parameters can be configured via setting interface org.apache.wicket.settings.IStoreSettings. 
+The session-scoped cache is faster then the other memory levels but it contains only the pages used to serve the last request. Wicket allows us to set the maximum amount of memory allowed for the application-scoped cache and for the page store file. Both parameters can be configured via setting interface @org.apache.wicket.settings.IStoreSettings@. 
 
 This interface provides the setMaxSizePerSession(Bytes bytes) method to set the size for page store file. The Bytes parameter is the maximum size allowed for this file:
 
@@ -107,7 +107,7 @@ public void init()
 }
 {code}
 
-Class org.apache.wicket.util.lang.Bytes is an utility class provided by Wicket to express size in bytes (for further details refer to the JavaDoc).
+Class @org.apache.wicket.util.lang.Bytes@ is an utility class provided by Wicket to express size in bytes (for further details refer to the JavaDoc).
 For the second level cache we can use the setInmemoryCacheSize(int inmemoryCacheSize) method. The integer parameter is the maximum number of page instances that will be saved into application-scoped cache:
 
 {code}
@@ -125,7 +125,7 @@ Page instances are not kept in the user session forever. They can be discarded w
 
 !page-expired.png!
 
-This error page can be customized with the setPageExpiredErrorPage method of the org.apache.wicket.settings.IApplicationSettings interface:
+This error page can be customized with the setPageExpiredErrorPage method of the @org.apache.wicket.settings.IApplicationSettings@ interface:
 
 {code}
 @Override

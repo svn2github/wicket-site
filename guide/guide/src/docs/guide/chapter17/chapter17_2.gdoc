@@ -10,7 +10,7 @@ h3. Links and buttons
 
 In the previous paragraph we have already introduced component AjaxLink. Wicket provides also the ajaxified versions of submitting components SubmitLink and Button which are simply called AjaxSubmitLink and AjaxButton. These components come with a version of methods onSubmit, onError and onAfterSubmit that takes in input also an instance of AjaxRequestTarget. 
 
-Both components are in package org.apache.wicket.ajax.markup.html.form.
+Both components are in package @org.apache.wicket.ajax.markup.html.form@.
 
 h3. Fallback components
 
@@ -18,11 +18,11 @@ Building an entire site using AJAX can be risky as some clients may not support 
 
 h3. AJAX Checkbox
 
-Class org.apache.wicket.ajax.markup.html.form.AjaxCheckBox is a checkbox component that updates its model via AJAX when user changes its value. Its AJAX callback method is onUpdate(AjaxRequestTarget target). The component extends standard checkbox component CheckBox adding an AjaxFormComponentUpdatingBehavior to itself (we will see this behavior later in paragraph 16.3.3).
+Class @org.apache.wicket.ajax.markup.html.form.AjaxCheckBox@ is a checkbox component that updates its model via AJAX when user changes its value. Its AJAX callback method is onUpdate(AjaxRequestTarget target). The component extends standard checkbox component CheckBox adding an AjaxFormComponentUpdatingBehavior to itself (we will see this behavior later in paragraph 16.3.3).
 
 h3. AJAX editable labels
 
-An editable label is a special label that can be edited by the user when she/he clicks on it. Wicket ships three different implementations for this component (all inside package org.apache.wicket.extensions.ajax.markup.html):
+An editable label is a special label that can be edited by the user when she/he clicks on it. Wicket ships three different implementations for this component (all inside package @org.apache.wicket.extensions.ajax.markup.html@):
 
 * *AjaxEditableLabel*: it's a basic version of editable label. User can edit the content of the label with a text field. This is also the base class for the other two editable labels.
 * *AjaxEditableMultiLineLabel*: this label supports multi-line values and uses a text area as editor component. 
@@ -43,7 +43,7 @@ h3. Autocomplete text field
 
 On Internet we can find many examples of text fields that display a list of suggestions (or options) while the user types a text inside them. This feature is known as autocomplete functionality. 
 
-Wicket offers an out-of-the-box implementation of an autocomplete text field with component org.apache.wicket.extensions.ajax.markup.html.autocomplete.AutoCompleteTextField. 
+Wicket offers an out-of-the-box implementation of an autocomplete text field with component @org.apache.wicket.extensions.ajax.markup.html.autocomplete.AutoCompleteTextField@. 
 
 When using AutoCompleteTextField we are required to implement its abstract method getChoices(String input) where the input parameter is the current input of the component. This method returns an iterator over the suggestions that will be displayed as a drop-down menu:
 
@@ -73,7 +73,7 @@ Wicket module wicket-examples contains page class AutoCompletePagePage.java whic
 
 h3. Modal window
 
-Class org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow is an implementation of a "modal window":http://en.wikipedia.org/wiki/Modal_window based on AJAX:
+Class @org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow@ is an implementation of a "modal window":http://en.wikipedia.org/wiki/Modal_window based on AJAX:
 
 !modal-window-example-screenshot.png!
 
@@ -143,7 +143,7 @@ modalWindow.setWindowClosedCallback(new ModalWindow.WindowClosedCallback() {
 
 h3. Tree repeaters
 
-Class org.apache.wicket.extensions.markup.html.repeater.tree.AbstractTree is the base class of another family of repeaters called tree repeaters and designed to display a data hierarchy as a tree, resembling the behavior and the look & feel of desktop tree components. A classic example of tree component on desktop is the tree used by nearly all file managers to navigate file system:
+Class @org.apache.wicket.extensions.markup.html.repeater.tree.AbstractTree@ is the base class of another family of repeaters called tree repeaters and designed to display a data hierarchy as a tree, resembling the behavior and the look & feel of desktop tree components. A classic example of tree component on desktop is the tree used by nearly all file managers to navigate file system:
 
 !file-system-trees.png!
 

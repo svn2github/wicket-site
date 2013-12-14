@@ -2,9 +2,9 @@
 
 Wicket support for AJAX is implemented in file wicket-ajax-jquery.js which makes complete transparent to Java code any detail about AJAX communication. 
 
-AJAX components and behaviors shipped with Wicket expose one or more callback methods which are executed when they receive an AJAX request. One of the arguments of these methods is an instance of interface org.apache.wicket.ajax.AjaxRequestTarget. 
+AJAX components and behaviors shipped with Wicket expose one or more callback methods which are executed when they receive an AJAX request. One of the arguments of these methods is an instance of interface @org.apache.wicket.ajax.AjaxRequestTarget@. 
 
-For example component AjaxLink (in package org.apache.wicket.ajax.markup.html) defines abstract method onClick(AjaxRequestTarget target) which is executed when user clicks on the component:
+For example component AjaxLink (in package @org.apache.wicket.ajax.markup.html@) defines abstract method @onClick(AjaxRequestTarget target)@ which is executed when user clicks on the component:
 
 {code}
 new AjaxLink("ajaxLink"){
@@ -58,7 +58,7 @@ new AjaxLink("ajaxLink"){
 {code}
 
 {warning}
-Repeaters component that have org.apache.wicket.markup.repeater AbstractRepeater as base class (like ListView, RepeatingView, etc...) can not be directly updated via AJAX.
+Repeaters component that have @org.apache.wicket.markup.repeater.AbstractRepeater@ as base class (like @ListView@, @RepeatingView@, etc...) can not be directly updated via AJAX.
 
-If we want to refresh their markup via AJAX we must add one of their parent containers to the AjaxRequestTarget.
+If we want to refresh their markup via AJAX we must add one of their parent containers to the @AjaxRequestTarget@.
 {warning}

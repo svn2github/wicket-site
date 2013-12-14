@@ -80,7 +80,7 @@ AbstractReadOnlyModel<String> model = new AbstractReadOnlyModel<String>() {
 add(new Label("greetingMessage", model));
 {code}
 
-Class org.apache.wicket.model.AbstractReadOnlyModel is a convenience class for implementing read-only models. In this project we have implemented a custom read-only model for illustrative purposes only because Wicket already provides built-in models for the same task. We will see them in paragraph 12.6.
+Class @org.apache.wicket.model.AbstractReadOnlyModel@ is a convenience class for implementing read-only models. In this project we have implemented a custom read-only model for illustrative purposes only because Wicket already provides built-in models for the same task. We will see them in paragraph 12.6.
 
 The rest of the code of the home page builds the stateless form and the drop-down menu used to change the locale.
 

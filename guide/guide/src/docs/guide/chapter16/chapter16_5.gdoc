@@ -2,7 +2,7 @@
 
 So far, as markup source for our pages/panels we have used a static markup file, no matter if it was inherited or directly associated to the component. Now we want to investigate a more complex use case where we want to dynamical generate the markup directly inside component code.
 
-To become a markup producer, a component must simply implement interface org.apache.wicket.markup.IMarkupResourceStreamProvider. The only method defined in this interface is getMarkupResourceStream(MarkupContainer, Class<?>) which returns an utility interface called IResourceStream representing the actual markup.
+To become a markup producer, a component must simply implement interface @org.apache.wicket.markup.IMarkupResourceStreamProvider@. The only method defined in this interface is getMarkupResourceStream(MarkupContainer, Class<?>) which returns an utility interface called IResourceStream representing the actual markup.
 
 In the following example we have a custom panel without a related markup file that generates a simple <div> tag as markup: 
 

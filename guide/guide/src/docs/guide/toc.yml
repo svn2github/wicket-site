@@ -92,10 +92,10 @@ chapter11:
   chapter11_12: Summary
 chapter12:
   title: Displaying multiple items with repeaters
-  chapter12_1: Component RepeatingView
-  chapter12_2: Component ListView
-  chapter12_3: Component RefreshingView
-  chapter12_4: Pageable repeaters
+  chapter12_1: The RepeatingView Component
+  chapter12_2: The ListView Component
+  chapter12_3: The RefreshingView Component
+  chapter12_4: Pageable repeaters 
   chapter12_5: Summary
 chapter13:
   title: Internationalization with Wicket

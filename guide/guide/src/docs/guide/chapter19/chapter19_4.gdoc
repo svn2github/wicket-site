@@ -1,6 +1,6 @@
 
 
-Wicket internally uses an entity called package resource guard to protect package resources from external access. This entity is an implementation of interface org.apache.wicket.markup.html. IPackageResourceGuard. 
+Wicket internally uses an entity called package resource guard to protect package resources from external access. This entity is an implementation of interface @org.apache.wicket.markup.html.IPackageResourceGuard@. 
 
 By default Wicket applications use as package resource guard class SecurePackageResource Guard, which allows to access only to the following file extensions (grouped by type):
 

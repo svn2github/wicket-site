@@ -4,7 +4,7 @@ In chapter 3.2.2 we have seen how to use class Panel to create custom components
 
 While it's perfectly legal to use Panel also to group form components, the resulting component won't be itself a form component and it won't participate in the form's submission workflow. 
 
-This could be a strong limitation if the custom component needs to coordinate its children during sub-tasks like input conversion or model updating. That's why in Wicket we have the org.apache.wicket.markup.html.form.FormComponentPanel component which combines the features of a Panel (it has its own markup file) and a FormComponent (it is a subclass of FormComponent). 
+This could be a strong limitation if the custom component needs to coordinate its children during sub-tasks like input conversion or model updating. That's why in Wicket we have the @org.apache.wicket.markup.html.form.FormComponentPanel@ component which combines the features of a Panel (it has its own markup file) and a FormComponent (it is a subclass of FormComponent). 
 
 A typical scenario in which we may need to implement a custom FormComponentPanel is when our web application and its users work with different units of measurement for the same data. 
 

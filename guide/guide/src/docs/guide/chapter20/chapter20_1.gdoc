@@ -24,13 +24,13 @@ public class TestHomePage{
 }
 {code}
 
-The central class in a Wicket testing is org.apache.wicket.util.tester.WicketTester. This utility class provides a set of methods to render a component, click links, check if page contains a given component or a feedback message, and so on.
+The central class in a Wicket testing is @org.apache.wicket.util.tester.WicketTester@. This utility class provides a set of methods to render a component, click links, check if page contains a given component or a feedback message, and so on.
 
-The basic test case shipped with TestHomePage illustrates how WicketTester is typically instantiated (inside method setUp()). In order to test our components, WicketTester needs to use an instance of WebApplication. Usually, we will use our application class as WebApplication, but we can also decide to build WicketTester invoking its no-argument constructor and letting it automatically build a mock web application (an instance of class org.apache.wicket.mock. MockApplication).
+The basic test case shipped with @TestHomePage@ illustrates how @WicketTester@ is typically instantiated (inside method @setUp()@). In order to test our components, WicketTester needs to use an instance of @WebApplication@. Usually, we will use our application class as @WebApplication@, but we can also decide to build WicketTester invoking its no-argument constructor and letting it automatically build a mock web application (an instance of class @org.apache.wicket.mock.MockApplication@).
 
-The code from TestHomePage introduces two basic methods to test our pages. The first is method startPage that renders a new instance of the given page class and sets it as current rendered page for WicketTester. The second method is assertRenderedPage which checks if the current rendered page is an instance of the given class. In this way if TestHomePage succeeds we are sure that page HomePage has been rendered without any problem. The last rendered page can be retrieved with method getLastRenderedPage.
+The code from @TestHomePage@ introduces two basic methods to test our pages. The first is method @startPage@ that renders a new instance of the given page class and sets it as current rendered page for WicketTester. The second method is assertRenderedPage which checks if the current rendered page is an instance of the given class. In this way if TestHomePage succeeds we are sure that page HomePage has been rendered without any problem. The last rendered page can be retrieved with method @getLastRenderedPage@.
 
-That's only a taste of what WicketTester can do. In the next paragraphs we will see how it can be used to test every element that composes a Wicket page (links, models, behaviors, etc...).
+That's only a taste of what @WicketTester@ can do. In the next paragraphs we will see how it can be used to test every element that composes a Wicket page (links, models, behaviors, etc...).
 
 h3. Testing links
 

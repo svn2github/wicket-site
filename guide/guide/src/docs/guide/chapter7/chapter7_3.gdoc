@@ -26,7 +26,7 @@ protected void onInitialize() {
 	}
 {code}
 
-Alternatively, we could use the StatelessComponent utility annotation along with the StatelessChecker class (they are both in package org.apache.wicket.devutils. stateless). StatelessChecker will throw an IllegalArgumentException if a component annotated with StatelessComponent doesn't respect the requirements for being stateless. To use StatelessComponent annotation we must first add the StatelessChecker to our application as a component render listener:
+Alternatively, we could use the @StatelessComponent@ utility annotation along with the @StatelessChecker@ class (they are both in package @org.apache.wicket.devutils.stateless@). @StatelessChecker@ will throw an @IllegalArgumentException@ if a component annotated with @StatelessComponent@ doesn't respect the requirements for being stateless. To use @StatelessComponent@ annotation we must first add the @StatelessChecker@ to our application as a component render listener:
 
 {code}
 @Override

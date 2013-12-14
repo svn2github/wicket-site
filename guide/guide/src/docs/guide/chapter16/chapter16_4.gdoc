@@ -10,7 +10,7 @@ After we have established a JMX connection, JConsole will show us the following 
 
 !JMX-console.png!
 
-JMX exposes application-specific informations using special objects called MBeans (Manageable Beans), hence if we want to control our application we must open the corresponding tab. The MBeans containing the application's informations is named org.apache.wicket.app.<filter/servlet name>.
+JMX exposes application-specific informations using special objects called MBeans (Manageable Beans), hence if we want to control our application we must open the corresponding tab. The MBeans containing the application's informations is named @org.apache.wicket.app.<filter/servlet name>@.
 
 In our example we have used wicket.test as filter name for our application:
 

@@ -1,6 +1,6 @@
 
 
-If we need to inject dependencies with Spring we can use listener org.apache.wicket.spring. injection.annot.SpringComponentInjector provided by module wicket-spring.
+If we need to inject dependencies with Spring we can use listener @org.apache.wicket.spring.injection.annot.SpringComponentInjector@ provided by module wicket-spring.
 
 For the sake of simplicity in the example project SpringInjectionExample we have used Spring class AnnotationConfigApplicationContext to avoid any XML file and create a Spring context directly from code:
 

@@ -4,7 +4,7 @@ Internationalization is another good chance to taste the power of models. Wicket
 
 h3. ResourceModel
 
-Model org.apache.wicket.model.ResourceModel acts just like the read-only model we have implemented in paragraph 12.3.4. It simply retrieves a string resource corresponding to a given key:
+Model @org.apache.wicket.model.ResourceModel@ acts just like the read-only model we have implemented in paragraph 12.3.4. It simply retrieves a string resource corresponding to a given key:
 
 {code}
 //build a ResourceModel for key 'greetingMessage'
@@ -20,7 +20,7 @@ new ResourceModel("notExistingResource", "Resource not found.");
 
 h3. StringResourceModel
 
-Model org.apache.wicket.model.StringResourceModel allows to work with complex and dynamic string resources containing parameters and property expressions. The basic constructor of this model takes in input a resource key and another model. This further model can be used by both the key and the related resource to specify dynamic values with property expressions. For example let's say that we are working on an e-commerce site which has a page where users can see an overview of their orders. To handle the state of user's orders we will use the following bean and enum (the code is from project StringResourceModelExample):
+Model @org.apache.wicket.model.StringResourceModel@ allows to work with complex and dynamic string resources containing parameters and property expressions. The basic constructor of this model takes in input a resource key and another model. This further model can be used by both the key and the related resource to specify dynamic values with property expressions. For example let's say that we are working on an e-commerce site which has a page where users can see an overview of their orders. To handle the state of user's orders we will use the following bean and enum (the code is from project StringResourceModelExample):
 
 Bean:
 

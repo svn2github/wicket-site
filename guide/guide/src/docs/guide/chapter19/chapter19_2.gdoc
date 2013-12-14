@@ -53,7 +53,7 @@ Most of the times we won't need to implement an IAuthorizationStrategy from scra
 
 h3. SimplePageAuthorizationStrategy
 
-Abstract class SimplePageAuthorizationStrategy (in package org.apache.wicket.authorization.strategies.page) is a strategy that checks user authorizations calling abstract method isAuthorized only for those pages that are subclasses of a given supertype. If isAuthorized returns false, the user is redirected to the sign in page specified as second constructor parameter:
+Abstract class SimplePageAuthorizationStrategy (in package @org.apache.wicket.authorization.strategies.page@) is a strategy that checks user authorizations calling abstract method isAuthorized only for those pages that are subclasses of a given supertype. If isAuthorized returns false, the user is redirected to the sign in page specified as second constructor parameter:
 
 {code}
 SimplePageAuthorizationStrategy authorizationStrategy = new SimplePageAuthorizationStrategy( 
@@ -72,7 +72,7 @@ h3. Role-based strategies
 
 At the end of paragraph 18.1.1 we have introduced AbstractAuthenticatedWebSession's method getRoles which is provided to support role-based authorization returning the set of roles granted to the current user.
 
-In Wicket roles are simple strings like “BASIC_USER” or “ADMIN” (they don't need to be capitalized) and they are handled with class org.apache.wicket.authroles.authorization.strategies. role.Roles. This class extends standard HashSet collection adding some functionalities to check whether the set contains one or more roles. Class Roles already defines roles Roles.USER and Roles.ADMIN.
+In Wicket roles are simple strings like “BASIC_USER” or “ADMIN” (they don't need to be capitalized) and they are handled with class @org.apache.wicket.authroles.authorization.strategies@. role.Roles. This class extends standard HashSet collection adding some functionalities to check whether the set contains one or more roles. Class Roles already defines roles Roles.USER and Roles.ADMIN.
 
 The session class in the following example returns a custom “SIGNED_IN” role for every authenticated user and it adds an Roles.ADMIN role if username is equal to superuser:
 
@@ -246,7 +246,7 @@ public class AdminOnlyPage extends WebPage {
 
 h3. Catching an unauthorized component instantiation
 
-Interface IUnauthorizedComponentInstantiationListener (in package org.apache.wicket.authorization) is provided to give the chance to handle the case in which a user tries to instantiate a component without having the permissions to do it. The method defined inside this interface is onUnauthorizedInstantiation(Component) and it is executed whenever a user attempts to execute an unauthorized instantiation.
+Interface IUnauthorizedComponentInstantiationListener (in package @org.apache.wicket.authorization@) is provided to give the chance to handle the case in which a user tries to instantiate a component without having the permissions to do it. The method defined inside this interface is onUnauthorizedInstantiation(Component) and it is executed whenever a user attempts to execute an unauthorized instantiation.
 
 This listener must be registered into application's security settings with method setUnauthorized ComponentInstantiationListener defined by setting interface ISecuritySettings. In the following code snippet we register a listener that redirect user to a warning page if he tries to do a not-allowed instantiation:
 

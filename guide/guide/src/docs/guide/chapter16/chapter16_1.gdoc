@@ -1,6 +1,6 @@
 
 
-With class org.apache.wicket.behavior.Behavior Wicket provides a very flexible mechanism to share common features across different components and to enrich existing components with further functionalities. As the class name suggests, Behavior adds a generic behavior to a component modifying its markup and/or contributing to the header section of the page (Behavior implements the interface IHeaderContributor).
+With class @org.apache.wicket.behavior.Behavior@ Wicket provides a very flexible mechanism to share common features across different components and to enrich existing components with further functionalities. As the class name suggests, Behavior adds a generic behavior to a component modifying its markup and/or contributing to the header section of the page (Behavior implements the interface IHeaderContributor).
 
 One or more behaviors can be added to a component with Component's method add(Behavior...), while to remove a behavior we must use method remove(Behavior).
 

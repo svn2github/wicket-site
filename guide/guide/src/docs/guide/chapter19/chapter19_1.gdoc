@@ -4,7 +4,7 @@ The first step in implementing a security policy is assigning a trusted identity
 
 !wikipedia-login-form.png!
 
-Wicket supports form-based authentication with session class AuthenticatedWebSession and application class AuthenticatedWebApplication, both placed inside package org.apache.wicket.authroles.authentication.
+Wicket supports form-based authentication with session class AuthenticatedWebSession and application class AuthenticatedWebApplication, both placed inside package @org.apache.wicket.authroles.authentication@.
 
 h3. AuthenticatedWebSession
 
@@ -158,7 +158,7 @@ The authentication logic inside authenticate has been kept quite trivial in orde
 
 h3. Redirecting user to an intermediate page
 
-Method restartResponseAtSignInPage is an example of redirecting user to an intermediate page before allowing him to access to the requested page. This method internally throws exception  org.apache.wicket.RestartResponseAtInterceptPageException which saves the URL of the requested page into session metadata and then redirects user to the page passed as constructor parameter (the sign in page).
+Method restartResponseAtSignInPage is an example of redirecting user to an intermediate page before allowing him to access to the requested page. This method internally throws exception @org.apache.wicket.RestartResponseAtInterceptPageException@ which saves the URL of the requested page into session metadata and then redirects user to the page passed as constructor parameter (the sign in page).
 
 Component's method redirectToInterceptPage(Page) works in much the same way as  restartResponseAtSignInPage but it allows us to specify which page to use as intermediate page:
 

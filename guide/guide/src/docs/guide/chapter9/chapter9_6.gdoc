@@ -23,7 +23,7 @@ The path provided to mountPage will be used to generate the URL for any page of 
 RequestCycle.get().urlFor(MountedPage.class);
 {code}
 
-Under the hood the mountPage method mounts an instance of the request mapper org.apache.wicket.request.mapper.MountedMapper configured for the given path:
+Under the hood the mountPage method mounts an instance of the request mapper @org.apache.wicket.request.mapper.MountedMapper@ configured for the given path:
 
 {code}
 public final <T extends Page> void mountPage(final String path,final Class<T> pageClass) {
@@ -103,18 +103,18 @@ StatefulPackageMount is one of the pages placed into the desired package and its
 <Application path>/mountPackage/StatefulPackageMount?1
 {code}
 
-Similarly to what is done by the mountPage method, the implementation of the mountPackage method mounts an instance of org.apache.wicket.request.mapper.PackageMapper to the given path.
+Similarly to what is done by the mountPage method, the implementation of the mountPackage method mounts an instance of @org.apache.wicket.request.mapper.PackageMapper@ to the given path.
 
 h3. Providing custom mapper context to request mappers
 
-Interface org.apache.wicket.request.mapper.IMapperContext is used by request mappers to create new page instances and to retrieve static URL segments used to build and parse page URLs. Here is the list of these segments:
+Interface @org.apache.wicket.request.mapper.IMapperContext@ is used by request mappers to create new page instances and to retrieve static URL segments used to build and parse page URLs. Here is the list of these segments:
 
 * Namespace: it's the first URL segment of non-mounted pages. By default its value is wicket.
 * Identifier for non-bookmarkable URLs: it's the segment that identifies non bookmarkable pages. By default its value is page.
 * Identifier for bookmarkable URLs: it's the segment that identifies bookmarkable pages. By default its value is bookmarkable (as we have seen before in paragraph 8.1.1).
 * Identifier for resources: it's the segment that identifies Wicket resources. Its default value is resources. The topic of resource management will be covered in chapter 13.
 
-IMapperContext provides a getter method for any segment listed above. By default Wicket uses class org.apache.wicket.DefaultMapperContext as mapper context.
+IMapperContext provides a getter method for any segment listed above. By default Wicket uses class @org.apache.wicket.DefaultMapperContext@ as mapper context.
 
 Project CustomMapperContext is an example of customization of mapper context where we use index as identifier for non-bookmarkable pages and staticURL as identifier for bookmarkable pages. In this project, instead of implementing our mapper context from scratch, we used DefaultMapperContext as base class overriding just the two methods we need to achieve the desired result (getBookmarkableIdentifier() and getPageIdentifier()).  The final implementation is the following:
 
@@ -144,11 +144,11 @@ protected IMapperContext newMapperContext() {
 
 h3. Controlling how page parameters are encoded with IPageParametersEncoder
 
-Some request mappers (like MountedMapper and PackageMapper) can delegate page parameters encoding/decoding to interface org.apache.wicket.request.mapper.parameter.IPage ParametersEncoder. This entity exposes two methods: encodePageParameters() and decodePageParameters(): the first  one is invoked to encode page parameters into an URL while the second one extracts parameters from the URL.
+Some request mappers (like MountedMapper and PackageMapper) can delegate page parameters encoding/decoding to interface @org.apache.wicket.request.mapper.parameter.IPage ParametersEncoder@. This entity exposes two methods: encodePageParameters() and decodePageParameters(): the first  one is invoked to encode page parameters into an URL while the second one extracts parameters from the URL.
 
 Wicket comes with a built-in implementation of this interface which encodes named page parameters as URL segments using the following patter: /paramName1/paramValue1/paramName2/param Value2...
 
-This built-in encoder is org.apache.wicket.request.mapper.parameter.UrlPathPage ParametersEncoder class. In the PageParametersEncoderExample project we have manually mounted a  MountedMapper that takes as input also an UrlPathPageParametersEncoder:
+This built-in encoder is @org.apache.wicket.request.mapper.parameter.UrlPathPageParametersEncoder@ class. In the @PageParametersEncoderExample@ project we have manually mounted a @MountedMapper@ that takes as input also an @UrlPathPageParametersEncoder@:
 
 {code}
 @Override

@@ -1,6 +1,6 @@
 
 
-With Wicket it's quite easy to build a callback URL that executes a specific method on server side. This method must be defined in a functional interface (i.e. an an interface that defines just one method) that inherits from built-in org.apache.wicket.IRequestListener and it must be a void method with no parameters in input:
+With Wicket it's quite easy to build a callback URL that executes a specific method on server side. This method must be defined in a functional interface (i.e. an an interface that defines just one method) that inherits from built-in @org.apache.wicket.IRequestListener@ and it must be a void method with no parameters in input:
 
 {code}
 public interface IMyListener extends IRequestListener
@@ -12,7 +12,7 @@ public interface IMyListener extends IRequestListener
 }
 {code}
 
-To control how the method will be invoked we must use class org.apache.wicket.RequestListenerInterface. In Wicket is a common practice to instantiate this class as a public static field inside the relative callback interface:
+To control how the method will be invoked we must use class @org.apache.wicket.RequestListenerInterface@. In Wicket is a common practice to instantiate this class as a public static field inside the relative callback interface:
 
 {code}
 public interface IMyListener extends IRequestListener
@@ -33,7 +33,7 @@ Now that our callback interface is complete we can generate a callback URL with 
 
 Project CallbackURLExample contains a behavior (class OnChangeSingleChoiceBehavior) that implements a callback interface to update the model of an AbstractSingleSelectChoice component when user changes the selected option (it provides the same functionality of method want OnSelectionChangedNotifications). 
 
-Instead of a custom callback interface, OnChangeSingleChoiceBehavior implements built-in interface org.apache.wicket.behavior.IBehaviorListener which is designed to generate a callback URL for behaviors. The callback method defined in this interface is onRequest() and the following is the implementation provided by OnSelectionChangedNotifications:
+Instead of a custom callback interface, OnChangeSingleChoiceBehavior implements built-in interface @org.apache.wicket.behavior.IBehaviorListener@ which is designed to generate a callback URL for behaviors. The callback method defined in this interface is onRequest() and the following is the implementation provided by OnSelectionChangedNotifications:
 
 {code}
 @Override
@@ -103,7 +103,7 @@ Implementing interface IBehaviorListener makes a behavior stateful because its c
 
 h3. Wicket events infrastructure
 
-Starting from version 1.5 Wicket offers an event-based infrastructure for inter-component communication. The infrastructure is based on two simple interfaces (both in package org.apache.wicket.event) : IEventSource and IEventSink. 
+Starting from version 1.5 Wicket offers an event-based infrastructure for inter-component communication. The infrastructure is based on two simple interfaces (both in package @org.apache.wicket.event@) : @IEventSource@ and @IEventSink@. 
 
 The first interface must be implemented by those entities that want to broadcast en event while the second interface must be implemented by those entities that want to receive a broadcast event.
 
