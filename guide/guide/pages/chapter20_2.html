@@ -157,24 +157,24 @@ function addJsClass() {
                 
 
 <h2 id="chapter20_2">21.2 Testing Wicket forms</h2>
-<p class="paragraph"/>Wicket provides utility class FormTester that is expressly designed to test Wicket forms. A new FormTester is returned by WicketTester's method newFormTester(String, boolean) which takes in input the page-relative path of the form we want to test and a boolean flag indicating if its form components must be filled with a blank string:<p class="paragraph"/><div class="code"><pre>//&#8230;
+<p class="paragraph"/>Wicket provides utility class FormTester that is expressly designed to test Wicket forms. A new FormTester is returned by <code>WicketTester</code>'s method <code>newFormTester(String, boolean)</code> which takes in input the page-relative path of the form we want to test and a boolean flag indicating if its form components must be filled with a blank string:<p class="paragraph"/><div class="code"><pre>//&#8230;
 //create a <span class="java&#45;keyword">new</span> form tester without filling its form components with a blank string
 FormTester formTester = tester.newFormTester(<span class="java&#45;quote">"form"</span>, <span class="java&#45;keyword">false</span>);
-//...</pre></div><p class="paragraph"/>FormTester can simulate form submission with method submit which takes in input as optional parameter the submitting component to use instead of the default one:<p class="paragraph"/><div class="code"><pre>//&#8230;
+//...</pre></div><p class="paragraph"/><code>FormTester</code> can simulate form submission with method submit which takes in input as optional parameter the submitting component to use instead of the default one:<p class="paragraph"/><div class="code"><pre>//&#8230;
 //create a <span class="java&#45;keyword">new</span> form tester without filling its form components with a blank string
 FormTester formTester = tester.newFormTester(<span class="java&#45;quote">"form"</span>, <span class="java&#45;keyword">false</span>);
 //submit form with <span class="java&#45;keyword">default</span> submitter
 formTester.submit();
 //&#8230;
 //submit form using <span class="java&#45;keyword">inner</span> component 'button' as alternate button
-formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p class="paragraph"/>If we want to submit a form with an external link component we can use method submitLink (String path, boolean pageRelative) specifying the path to the link.<p class="paragraph"/>In the next paragraphs we will see how to use WicketTester and FormTester to interact with a form and with its children components.<p class="paragraph"/><h3>Setting form components input</h3><p class="paragraph"/>The purpose of a HTML form is to collect user input. FormTester comes with the following set of methods that simulate input insertion into form's fields:
+formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p class="paragraph"/>If we want to submit a form with an external link component we can use method <code>submitLink(String path, boolean pageRelative)</code> specifying the path to the link.<p class="paragraph"/>In the next paragraphs we will see how to use <code>WicketTester</code> and <code>FormTester</code> to interact with a form and with its children components.<p class="paragraph"/><h3>Setting form components input</h3><p class="paragraph"/>The purpose of a HTML form is to collect user input. <code>FormTester</code> comes with the following set of methods that simulate input insertion into form's fields:
 <ul class="star">
-<li><strong class="bold">setValue(String path, String value)</strong>: inserts the given textual value into the specified component. It can be used with components TextField and TextArea. A version of this method that accepts a component instance instead of its path is also available.</li>
-<li><strong class="bold">setValue(String checkboxId, boolean value)</strong>: sets the value of a given CheckBox component.</li>
-<li><strong class="bold">setFile(String formComponentId, File file, String contentType)</strong>: sets a File object on a FileUploadField component.</li>
-<li><strong class="bold">select(String formComponentId, int index)</strong>: selects an option among a list of possible options owned by a component. It supports components that are subclasses of AbstractChoice along with RadioGroup and CheckGroup.</li>
-<li><strong class="bold">selectMultiple(String formComponentId, int indexes)</strong>: selects all the options corresponding to the given array of indexes. It can be used with multiple-choice components like CheckGroup or ListMultipleChoice.</li>
-</ul><p class="paragraph"/>setValue is used inside method insertUsernamePassword to set the username and password fields of the form used in project StatelessLoginForm:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">protected</span> void insertUsernamePassword(<span class="java&#45;object">String</span> username, <span class="java&#45;object">String</span> password) &#123;
+<li><strong class="bold">setValue(String path, String value)</strong>: inserts the given textual value into the specified component. It can be used with components <code>TextField</code> and <code>TextArea</code>. A version of this method that accepts a component instance instead of its path is also available.</li>
+<li><strong class="bold">setValue(String checkboxId, boolean value)</strong>: sets the value of a given <code>CheckBox</code> component.</li>
+<li><strong class="bold">setFile(String formComponentId, File file, String contentType)</strong>: sets a <code>File</code> object on a <code>FileUploadField</code> component.</li>
+<li><strong class="bold">select(String formComponentId, int index)</strong>: selects an option among a list of possible options owned by a component. It supports components that are subclasses of <code>AbstractChoice</code> along with <code>RadioGroup</code> and <code>CheckGroup</code>.</li>
+<li><strong class="bold">selectMultiple(String formComponentId, int indexes)</strong>: selects all the options corresponding to the given array of indexes. It can be used with multiple-choice components like <code>CheckGroup</code> or <code>ListMultipleChoice</code>.</li>
+</ul><p class="paragraph"/><code>setValue</code> is used inside method <code>insertUsernamePassword</code> to set the username and password fields of the form used in project <code>StatelessLoginForm</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">protected</span> void insertUsernamePassword(<span class="java&#45;object">String</span> username, <span class="java&#45;object">String</span> password) &#123;
 	//start and render the test page
 	tester.startPage(HomePage.class);
 	FormTester formTester = tester.newFormTester(<span class="java&#45;quote">"form"</span>);
@@ -183,12 +183,12 @@ formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p c
 	formTester.setValue(<span class="java&#45;quote">"password"</span>, password);		
 	//submit form
 	formTester.submit();
-&#125;</pre></div><p class="paragraph"/><h3>Testing feedback messages</h3><p class="paragraph"/>To check if a page contains one or more expected feedback messages we can use the following methods provided by WicketTester:
+&#125;</pre></div><p class="paragraph"/><h3>Testing feedback messages</h3><p class="paragraph"/>To check if a page contains one or more expected feedback messages we can use the following methods provided by <code>WicketTester</code>:
 <ul class="star">
 <li><strong class="bold">assertFeedback(String path, String&#8230; messages)</strong>: asserts that a given panel contains the specified messages</li>
 <li><strong class="bold">assertInfoMessages(String&#8230; expectedInfoMessages)</strong>: asserts that the expected info messages are rendered in the page.</li>
 <li><strong class="bold">assertErrorMessages(String&#8230; expectedErrorMessages)</strong>: asserts that the expected error messages are rendered in the page.</li>
-</ul><p class="paragraph"/>assertInfoMessages and assertErrorMessages are used in the test case from project  StatelessLoginForm to check that form generates a feedback message in accordance with the login result:<p class="paragraph"/>
+</ul><p class="paragraph"/><code>assertInfoMessages</code> and <code>assertErrorMessages</code> are used in the test case from project <code>StatelessLoginForm</code> to check that form generates a feedback message in accordance with the login result:<p class="paragraph"/>
 <div class="code"><pre>@Test
 <span class="java&#45;keyword">public</span> void testMessageForSuccessfulLogin()&#123;
 	inserUsernamePassword(<span class="java&#45;quote">"user"</span>, <span class="java&#45;quote">"user"</span>);	
@@ -197,7 +197,7 @@ formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p c
 <span class="java&#45;keyword">public</span> void testMessageForFailedLogin ()&#123;
 	inserUsernamePassword(<span class="java&#45;quote">"wrongCredential"</span>, <span class="java&#45;quote">"wrongCredential"</span>);		
 	tester.assertErrorMessages(<span class="java&#45;quote">"Wrong username or password"</span>);
-&#125;</pre></div><p class="paragraph"/><h3>Testing models</h3><p class="paragraph"/>Component model can be tested as well. With method assertModelValue we can test if a specific  component has the expected data object inside its model.<p class="paragraph"/>This method has been used in the test case of project ModelChainingExample to check if the form and the drop-down menu share the same data object:<p class="paragraph"/><div class="code"><pre>@Test
+&#125;</pre></div><p class="paragraph"/><h3>Testing models</h3><p class="paragraph"/>Component model can be tested as well. With method <code>assertModelValue</code> we can test if a specific component has the expected data object inside its model.<p class="paragraph"/>This method has been used in the test case of project <code>ModelChainingExample</code> to check if the form and the drop-down menu share the same data object:<p class="paragraph"/><div class="code"><pre>@Test
 <span class="java&#45;keyword">public</span> void testFormSelectSameModelObject()&#123;
 	PersonListDetails personListDetails = <span class="java&#45;keyword">new</span> PersonListDetails();
 	DropDownChoice dropDownChoice = (DropDownChoice) personListDetails.get(<span class="java&#45;quote">"persons"</span>);

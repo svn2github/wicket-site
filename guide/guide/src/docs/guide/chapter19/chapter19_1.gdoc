@@ -162,7 +162,9 @@ Method @restartResponseAtSignInPage@ is an example of redirecting user to an int
 
 Component's method @redirectToInterceptPage(Page)@ works in much the same way as @restartResponseAtSignInPage@ but it allows us to specify which page to use as intermediate page:
 
-@redirectToInterceptPage(intermediatePage);@
+{code}
+    redirectToInterceptPage(intermediatePage);
+{code}
 
 {note}
 Since both @restartResponseAtSignInPage@ and @redirectToInterceptPage@ internally throw an exception, the code placed after them will not be executed.
