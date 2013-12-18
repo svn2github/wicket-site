@@ -31,7 +31,7 @@ public final <T extends Page> void mountPage(final String path,final Class<T> pa
 }
 {code}
 
-Request mappers and the Application's method mount have been introduced in the previous chapter (paragraph 7.3.1).
+Request mappers and the Application's method mount have been introduced in the previous chapter (paragraph 9.3).
 
 h3. Using parameter placeholders with mounted pages
 
@@ -146,7 +146,7 @@ h3. Controlling how page parameters are encoded with IPageParametersEncoder
 
 Some request mappers (like MountedMapper and PackageMapper) can delegate page parameters encoding/decoding to interface @org.apache.wicket.request.mapper.parameter.IPage ParametersEncoder@. This entity exposes two methods: encodePageParameters() and decodePageParameters(): the first  one is invoked to encode page parameters into an URL while the second one extracts parameters from the URL.
 
-Wicket comes with a built-in implementation of this interface which encodes named page parameters as URL segments using the following patter: /paramName1/paramValue1/paramName2/param Value2...
+Wicket comes with a built-in implementation of this interface which encodes named page parameters as URL segments using the following pattern: /paramName1/paramValue1/paramName2/param Value2...
 
 This built-in encoder is @org.apache.wicket.request.mapper.parameter.UrlPathPageParametersEncoder@ class. In the @PageParametersEncoderExample@ project we have manually mounted a @MountedMapper@ that takes as input also an @UrlPathPageParametersEncoder@:
 

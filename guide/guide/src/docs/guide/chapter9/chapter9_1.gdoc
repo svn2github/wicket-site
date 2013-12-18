@@ -59,9 +59,9 @@ The code is quite straightforward and it’s more interesting to look at the URL
 
 At first glance the URL above could seem a little weird, except for the last part which contains the two named parameters used to build the target page.
 
-The reason for this “strange” URL is that, as we explained in paragraph 6.2.5, when a page is instantiated using a constructor with no argument or using a constructor that accepts only a PageParameters, Wicket will try to generate a static URL for it, with no session-relative informations. This kind of URL is called bookmarkable because it can be saved by the users as a bookmark and accessed at a later time.
+The reason for this “strange” URL is that, as we explained in paragraph 8.3, when a page is instantiated using a constructor with no argument or using a constructor that accepts only a PageParameters, Wicket will try to generate a static URL for it, with no session-relative informations. This kind of URL is called bookmarkable because it can be saved by the users as a bookmark and accessed at a later time.
 
-A bookmarkable URL is composed by a fixed prefix (which by default is bookmarkable) and the qualified name of the page class (org.wicketTutorial.PageWithParameters in our example). Segment wicket is another fixed prefix added by default during URL generation. In paragraph 8.6.4 we will see how to customize fixed prefixes with a custom implementation of IMapperContext interface.
+A bookmarkable URL is composed by a fixed prefix (which by default is bookmarkable) and the qualified name of the page class (org.wicketTutorial.PageWithParameters in our example). Segment wicket is another fixed prefix added by default during URL generation. In paragraph 10.6 we will see how to customize fixed prefixes with a custom implementation of IMapperContext interface.
 
 h3. Indexed parameters
 

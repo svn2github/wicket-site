@@ -185,7 +185,7 @@ add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote"
 Person person = <span class="java&#45;keyword">new</span> Person(<span class="java&#45;quote">"John"</span>, <span class="java&#45;quote">"Smith"</span>);
 CompoundPropertyModel compoundModel;
 setDefaultModel(compoundModel = <span class="java&#45;keyword">new</span> CompoundPropertyModel(person));<p class="paragraph"/>add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"xyz"</span>, compoundModel.bind(<span class="java&#45;quote">"spouse.name"</span>)));</pre></div><p class="paragraph"/>CompoundPropertyModel are particularly useful when used in combination with Wicket forms, as we will see in the next paragraph.<p class="paragraph"/><blockquote class="note">
-Model is referred to as static model because the result of its method getObject is fixed an it is not dynamically evaluated each time the method is called. In contrast, models like PropertyModel and CompoundProperty Model are called dynamic models.
+Model is referred to as static model because the result of its method getObject is fixed and it is not dynamically evaluated each time the method is called. In contrast, models like PropertyModel and CompoundProperty Model are called dynamic models.
 </blockquote>
 
 

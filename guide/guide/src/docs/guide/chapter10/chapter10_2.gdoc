@@ -112,5 +112,5 @@ add(new Label("xyz", compoundModel.bind("spouse.name")));
 CompoundPropertyModel are particularly useful when used in combination with Wicket forms, as we will see in the next paragraph.
 
 {note}
-Model is referred to as static model because the result of its method getObject is fixed an it is not dynamically evaluated each time the method is called. In contrast, models like PropertyModel and CompoundProperty Model are called dynamic models.
+Model is referred to as static model because the result of its method getObject is fixed and it is not dynamically evaluated each time the method is called. In contrast, models like PropertyModel and CompoundProperty Model are called dynamic models.
 {note}
