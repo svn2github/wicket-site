@@ -50,7 +50,7 @@ For more details about page storing you can visit the wiki page at https://cwiki
 On this page you can find which classes are involved into page storing mechanism and how they work together.
 {note}
 
-As we have stated at the beginning of this chapter, page versions are stored using Java serialization, therefore every object referenced inside a page must be serializable1. In paragraph 9.6 we will see how to overcome this limit and work with non-serializable objects in our components using detachable Wicket models.
+As we have stated at the beginning of this chapter, page versions are stored using Java serialization, therefore every object referenced inside a page must be serializable. In paragraph 9.6 we will see how to overcome this limit and work with non-serializable objects in our components using detachable Wicket models.
 
 h3. Using a specific page version with PageReference
 

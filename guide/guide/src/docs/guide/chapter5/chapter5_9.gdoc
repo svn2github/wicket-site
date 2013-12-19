@@ -12,7 +12,7 @@ Wicket comes with a nice utility tag called @<wicket:enclosure>@ that automatica
 </wicket:enclosure>
 {code}
 
-Now if component @totalAmount@ is not visible, its description (@Total amount:@) will be automatically hidden. If we have more then a Wicket component inside @<wicket:enclosure>@ we can use @child@ attribute to specify which component will control the overall visibility:
+Now if component @totalAmount@ is not visible, its description (@Total amount:@) will be automatically hidden. If we have more than a Wicket component inside @<wicket:enclosure>@ we can use @child@ attribute to specify which component will control the overall visibility:
 
 {code:html}
 <wicket:enclosure child="totalAmount"> 

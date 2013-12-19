@@ -162,7 +162,7 @@ function addJsClass() {
 <li>patterns start with either a "+" or a "-". In the first case the pattern will add one or more file to the set while starting a pattern with a “-” we exclude all the files matching the given pattern. For example pattern “-web.xml” excludes all web.xml files in all directories.</li>
 <li>wildcard character “&#42;” is supported as placeholder for zero or more characters. For example  pattern “+&#42;.mp4” adds all the mp4 files inside all directories.</li>
 <li>subdirectories are supported as well. For example pattern “+documents/&#42;.pdf” adds all pdf files under “documents” directory. Character “&#42;” can be used with directories to specify a nesting level. For example “+documents/&#42;/&#42;.pdf” adds all pdf files placed one level below “documents” directory.</li>
-<li>a double wildcard character “&#42;&#42;” indicates zero or more subdirectories. For example patter “+documents/&#42;&#42;/&#42;.pdf” adds all pdf files placed inside “documents” directory or inside any of its subdirectories.</li>
+<li>a double wildcard character “&#42;&#42;” indicates zero or more subdirectories. For example pattern “+documents/&#42;&#42;/&#42;.pdf” adds all pdf files placed inside “documents” directory or inside any of its subdirectories.</li>
 </ul><p class="paragraph"/>Patterns that allow to access to every file with a given extensions (such as “+&#42;.pdf”) should be always avoided in favour of more restrictive expressions that contain a directory structure:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
 @Override
 <span class="java&#45;keyword">public</span> void init()   
