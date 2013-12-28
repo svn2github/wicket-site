@@ -72,7 +72,7 @@ Now we can build a generic template page using our brand new panels. Its markup 
 <div id="header" wicket:id="headerPanel">header</div>
 <div id="body">
 	<div id="menu" wicket:id="menuPanel">menu</div>
-	<div id="content" wicket:id="content">content</div>
+	<div id="content" wicket:id="contentComponent">content</div>
 </div>
 <div id="footer" wicket:id="footerPanel">footer</div>
 </body>
@@ -86,6 +86,8 @@ The page class contains the code to physically assemble the page and panels:
 package helloWorld.layoutTenda;
 
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.basic.Label;
 
 public class JugTemplate extends WebPage {
 	public static final String CONTENT_ID = "contentComponent";
@@ -110,7 +112,7 @@ Done! Our template page is ready to be used. Now all the pages of our site will 
 
 h3. Final example
 
-As final example we will build the login page for our site. We will call it @SimpleLoginPage@. First, we need a panel containing the login form. This will be the content area of our page. We will call it @LoginFormPanel@ and the markup is the following:
+As final example we will build the login page for our site. We will call it @SimpleLoginPage@. First, we need a panel containing the login form. This will be the content area of our page. We will call it @LoginPanel@ and the markup is the following:
 
 {code:html}
 <html>
@@ -135,7 +137,7 @@ As final example we will build the login page for our site. We will call it @Sim
 </html>
 {code}
 
-The class for this panel just extends @Panel@ class so we won't see the relative code. The form of this panel is for illustrative purpose only. We will see how to work with Wicket forms in chapters [10|guide:chapter10] and [11|guide:chapter11]. Since this is a login page we don't want it to display the left menu area. That's not a big deal as @Component@ class exposes a method called @setVisible@ which sets whether the component and its children should be displayed. 
+The class for this panel just extends @Panel@ class so we won't see the relative code. The form of this panel is for illustrative purpose only. We will see how to work with Wicket forms in chapters [11|guide:chapter10] and [12|guide:chapter11]. Since this is a login page we don't want it to display the left menu area. That's not a big deal as @Component@ class exposes a method called @setVisible@ which sets whether the component and its children should be displayed. 
 
 The resulting Java code for the login page is the following:
 

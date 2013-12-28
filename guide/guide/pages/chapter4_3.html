@@ -197,12 +197,14 @@ Let's go back to our layout example. In <a href="../guide/single.html#chapter4_1
 &#60;div id=<span class="java&#45;quote">"header"</span> wicket:id=<span class="java&#45;quote">"headerPanel"</span>&#62;header&#60;/div&#62;
 &#60;div id=<span class="java&#45;quote">"body"</span>&#62;
 	&#60;div id=<span class="java&#45;quote">"menu"</span> wicket:id=<span class="java&#45;quote">"menuPanel"</span>&#62;menu&#60;/div&#62;
-	&#60;div id=<span class="java&#45;quote">"content"</span> wicket:id=<span class="java&#45;quote">"content"</span>&#62;content&#60;/div&#62;
+	&#60;div id=<span class="java&#45;quote">"content"</span> wicket:id=<span class="java&#45;quote">"contentComponent"</span>&#62;content&#60;/div&#62;
 &#60;/div&#62;
 &#60;div id=<span class="java&#45;quote">"footer"</span> wicket:id=<span class="java&#45;quote">"footerPanel"</span>&#62;footer&#60;/div&#62;
 &#60;/body&#62;
 &#60;/html&#62;</pre></div><p class="paragraph"/>The HTML code for this page implements the generic left-menu layout of our site. You can note the 4 <code>&#60;div&#62;</code> tags used as containers for the corresponding areas.
-The page class contains the code to physically assemble the page and panels:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> helloWorld.layoutTenda;<p class="paragraph"/><span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.WebPage;<p class="paragraph"/><span class="java&#45;keyword">public</span> class JugTemplate <span class="java&#45;keyword">extends</span> WebPage &#123;
+The page class contains the code to physically assemble the page and panels:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> helloWorld.layoutTenda;<p class="paragraph"/><span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.WebPage;
+<span class="java&#45;keyword">import</span> org.apache.wicket.Component;
+<span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.basic.Label;<p class="paragraph"/><span class="java&#45;keyword">public</span> class JugTemplate <span class="java&#45;keyword">extends</span> WebPage &#123;
 	<span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;keyword">final</span> <span class="java&#45;object">String</span> CONTENT_ID = <span class="java&#45;quote">"contentComponent"</span>;<p class="paragraph"/>	<span class="java&#45;keyword">private</span> Component headerPanel;
 	<span class="java&#45;keyword">private</span> Component menuPanel;
 	<span class="java&#45;keyword">private</span> Component footerPanel;<p class="paragraph"/>              <span class="java&#45;keyword">public</span> JugTemplate()&#123;
@@ -212,7 +214,7 @@ The page class contains the code to physically assemble the page and panels:<p c
 		add(<span class="java&#45;keyword">new</span> Label(CONTENT_ID, <span class="java&#45;quote">"Put your content here"</span>));
 	&#125;<p class="paragraph"/>             //getters <span class="java&#45;keyword">for</span> layout areas
        //&#8230; 
-&#125;</pre></div><p class="paragraph"/>Done! Our template page is ready to be used. Now all the pages of our site will be subclasses of this parent page and they will inherit the layout and the HTML markup. They will only substitute the <code>Label</code> inserted as content area with their custom content.<p class="paragraph"/><h3>Final example</h3><p class="paragraph"/>As final example we will build the login page for our site. We will call it <code>SimpleLoginPage</code>. First, we need a panel containing the login form. This will be the content area of our page. We will call it <code>LoginFormPanel</code> and the markup is the following:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#125;</pre></div><p class="paragraph"/>Done! Our template page is ready to be used. Now all the pages of our site will be subclasses of this parent page and they will inherit the layout and the HTML markup. They will only substitute the <code>Label</code> inserted as content area with their custom content.<p class="paragraph"/><h3>Final example</h3><p class="paragraph"/>As final example we will build the login page for our site. We will call it <code>SimpleLoginPage</code>. First, we need a panel containing the login form. This will be the content area of our page. We will call it <code>LoginPanel</code> and the markup is the following:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;
 &#60;head&#62;
 &#60;/head&#62;
 &#60;body&#62;
@@ -231,7 +233,7 @@ The page class contains the code to physically assemble the page and panels:<p c
     &#60;/div&#62;   
    &#60;/wicket:panel&#62;
 &#60;/body&#62;
-&#60;/html&#62;</pre></div><p class="paragraph"/>The class for this panel just extends <code>Panel</code> class so we won't see the relative code. The form of this panel is for illustrative purpose only. We will see how to work with Wicket forms in chapters <a href="../guide/single.html#chapter10" class="guide">10</a> and <a href="../guide/single.html#chapter11" class="guide">11</a>. Since this is a login page we don't want it to display the left menu area. That's not a big deal as <code>Component</code> class exposes a method called <code>setVisible</code> which sets whether the component and its children should be displayed.<p class="paragraph"/>The resulting Java code for the login page is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> helloWorld.layoutTenda;
+&#60;/html&#62;</pre></div><p class="paragraph"/>The class for this panel just extends <code>Panel</code> class so we won't see the relative code. The form of this panel is for illustrative purpose only. We will see how to work with Wicket forms in chapters <a href="../guide/single.html#chapter10" class="guide">11</a> and <a href="../guide/single.html#chapter11" class="guide">12</a>. Since this is a login page we don't want it to display the left menu area. That's not a big deal as <code>Component</code> class exposes a method called <code>setVisible</code> which sets whether the component and its children should be displayed.<p class="paragraph"/>The resulting Java code for the login page is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> helloWorld.layoutTenda;
 <span class="java&#45;keyword">import</span> helloWorld.LoginPanel;
 <span class="java&#45;keyword">import</span> org.apache.wicket.event.Broadcast;
 <span class="java&#45;keyword">import</span> org.apache.wicket.event.IEventSink;<p class="paragraph"/><span class="java&#45;keyword">public</span> class SimpleLoginPage <span class="java&#45;keyword">extends</span> JugTemplate &#123;
