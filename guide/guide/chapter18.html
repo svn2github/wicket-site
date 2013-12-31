@@ -217,9 +217,10 @@ Writing a web application is not just about producing a good layout and a bunch 
   //getter and setter <span class="java&#45;keyword">for</span> enterpriseMessage...<p class="paragraph"/>  <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
   	<span class="java&#45;keyword">super</span>(parameters);<p class="paragraph"/>	add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"message"</span>, enterpriseMessage.message));
   &#125;
-&#125;</pre></div><p class="paragraph"/>By default <code>SpringBean searches into Spring context for a bean having the same type of the annotated field. If we want we can specify also the name of the bean to use as injected object and we can declare if the dependency is required or not. By default dependencies are required and if they can not be resolved to a compatible bean, Wicket will throw an </code>IllegalStateException@:<p class="paragraph"/><div class="code"><pre>//set the dependency as not required, i.e the field can be left <span class="java&#45;keyword">null</span>
+&#125;</pre></div><p class="paragraph"/>By default <code>SpringBean</code> searches into Spring context for a bean having the same type of the annotated field. If we want we can specify also the name of the bean to use as injected object and we can declare if the dependency is required or not. By default dependencies are required and if they can not be resolved to a compatible bean, Wicket will throw an <code>IllegalStateException</code>:<p class="paragraph"/><div class="code"><pre>//set the dependency as not required, i.e the field can be left <span class="java&#45;keyword">null</span>
   @SpringBean(name=<span class="java&#45;quote">"anotherName"</span>, required=<span class="java&#45;keyword">false</span>)
   <span class="java&#45;keyword">private</span> EnterpriseMessage enterpriseMessage;</pre></div>
+
 
 
 <h2 id="chapter18_3">19.3 JSR-330 annotations</h2>

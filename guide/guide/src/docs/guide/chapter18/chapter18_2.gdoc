@@ -51,7 +51,7 @@ public class HomePage extends WebPage {
 }
 {code}
 
-By default @SpringBean searches into Spring context for a bean having the same type of the annotated field. If we want we can specify also the name of the bean to use as injected object and we can declare if the dependency is required or not. By default dependencies are required and if they can not be resolved to a compatible bean, Wicket will throw an @IllegalStateException@:
+By default @SpringBean@ searches into Spring context for a bean having the same type of the annotated field. If we want we can specify also the name of the bean to use as injected object and we can declare if the dependency is required or not. By default dependencies are required and if they can not be resolved to a compatible bean, Wicket will throw an @IllegalStateException@:
 
 {code}
   //set the dependency as not required, i.e the field can be left null
