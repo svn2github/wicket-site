@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>15.9 Customizing resource loading 6.x</title>
+    <title>15.9 Shared resources 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -143,7 +143,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>15.9 Customizing resource loading - Reference Documentation</h1>
+                    <h1>15.9 Shared resources - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -156,21 +156,17 @@ function addJsClass() {
 
                 
 
-<h2 id="chapter14_9">15.9 Customizing resource loading</h2>
-<p class="paragraph"/>Wicket loads application's resources delegating this task to a resource locator represented by interface <code>org.apache.wicket.core.util.resource.locator.IResourceStreamLocator</code>. To retrieve or modify the current resource locator we can use the getter and setter methods defined by setting interface <code>IResourceSettings</code>:<p class="paragraph"/><div class="code"><pre>//init application's method
+<h2 id="chapter14_9">15.9 Shared resources</h2>
+<p class="paragraph"/>Resources can be added to a global registry in order to share them at application-level. Shared resources are identified by an application-scoped key and they can be easily retrieved at a later time using reference class <code>SharedResourceReference</code>. The global registry can be accessed with <code>Application</code>'s method <code>getSharedResources</code>. In the following excerpt of code (taken again from project <code>CustomResourceMounting</code>) we register an instance of our custom RSS feeds producer as application-shared resource:<p class="paragraph"/><div class="code"><pre>//init application's method
   @Override
-  <span class="java&#45;keyword">public</span> void init()&#123;   
-    //get the resource locator 
-    getResourceSettings().getResourceStreamLocator();
-    //set the resource locator    
-    getResourceSettings().setResourceStreamLocator(myLocator);
-  &#125;</pre></div><p class="paragraph"/>The default locator used by Wicket is class <code>ResourceStreamLocator</code> which in turn tries to load a requested resource using a set of implementations of interface <code>IResourceFinder</code>. This interface defines method <code>find(Class class, String pathname)</code> which tries to resolve a resource corresponding to the given class and path.<p class="paragraph"/>The default implementation of <code>IResourceFinder</code> used by Wicket is <code>ClassPathResourceFinder</code> which searches for resources into the application class path. This is the implementation we have used so far in our examples. However some developers may prefer storing markup files and other resources in a separate folder rather than placing them side by side with Java classes.<p class="paragraph"/>To customize resource loading we can add further resource finders to our application in order to extend the resource-lookup algorithm to different locations. Wicket already comes with two other implementations of IResourceFinder designed to search for resources into a specific folder on the file system. The first is class <code>Path</code> and it's defined in package <code>org.apache.wicket.util.file</code>. The constructor of this class takes in input an arbitrary folder that can be expressed as a string path or as an instance of Wicket utility class <code>Folder</code> (in package <code>org.apache.wicket.util.file</code>). The second implementation of interface <code>IResourceFinder</code> is class <code>WebApplicationPath</code> which looks into a folder placed inside webapp's root path (but not inside folder WEB-INF).<p class="paragraph"/>Project CustomFolder4MarkupExample uses <code>WebApplicationPath</code> to load the markup file and the resource bundle for its home page from a custom folder. The folder is called markupFolder and it is placed in the root path of the webapp. The following picture illustrates the file structure of the project:<p class="paragraph"/><img border="0" class="center" src="../img/package-structure-custom-folder.png"></img><p class="paragraph"/>As we can see in the picture above, we must preserve the package structure also in the custom folder used as resource container. The code used inside application class to configure  WebApplicationPath is the following:<p class="paragraph"/><div class="code"><pre>@Override
-<span class="java&#45;keyword">public</span> void init()
-&#123;
-	getResourceSettings().getResourceFinders().add(
-			<span class="java&#45;keyword">new</span> WebApplicationPath(getServletContext(), <span class="java&#45;quote">"markupFolder"</span>));
-&#125;</pre></div><p class="paragraph"/>Method getResourceFinders() defined by setting interface IResourceSettings returns the list of  resource finders defined in our application. The constructor of WebApplicationPath takes in input also an instance of standard interface javax.servlet.ServletContext which can be retrieved with WebApplication's method getServletContext().<p class="paragraph"/><blockquote class="note">
-By default, if resource files can not be found inside application classpath, Wicket will search for them inside “resources” folder. You may have noted this folder in the previous picture. It is placed next to the folder “java” containing our source files:<p class="paragraph"/><img border="0" class="center" src="../img/package-structure-resource-folder.png"></img><p class="paragraph"/>This folder can be used to store resource files without writing any configuration code.
+  <span class="java&#45;keyword">public</span> void init()&#123;
+    RSSProducerResource rssResource = <span class="java&#45;keyword">new</span> RSSProducerResource();
+    // &#8230;
+    getSharedResources().add(<span class="java&#45;quote">"globalRSSProducer"</span>, rssResource);    
+  &#125;</pre></div><p class="paragraph"/>Now to use an application-shared resource we can simply retrieve it using class <code>SharedResourceReference</code> and providing the key previously used to register the resource:<p class="paragraph"/><div class="code"><pre>add(<span class="java&#45;keyword">new</span> ResourceLink(<span class="java&#45;quote">"globalRssLink"</span>, <span class="java&#45;keyword">new</span> SharedResourceReference(<span class="java&#45;quote">"globalRSSProducer"</span>)));</pre></div><p class="paragraph"/>The URL generated for application shared resources follows the same pattern seen for package resources:<p class="paragraph"/><code>./wicket/resource/org.apache.wicket.Application/globalRSSProducer</code><p class="paragraph"/>The last segment of the URL is the key of the resource while the previous segment contains the scope of the resource. For application-scoped resources the scope is always the fully qualified name of class <code>Application</code>. This should not be surprising since global resources are visible at application level (i.e. the scope is the application).<p class="paragraph"/><blockquote class="note">
+Package resources are also application-shared resources but they don't need to be explicitly registered.
+</blockquote><p class="paragraph"/><blockquote class="note">
+Remember that we can get the URL of a resource reference using method <code>urlFor(ResourceReference resourceRef, PageParameters params )</code> available with both class <code>RequestCycle</code> and class <code>Component</code>.
 </blockquote>
 
 

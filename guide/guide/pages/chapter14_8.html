@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>15.8 Shared resources 6.x</title>
+    <title>15.8 Mounting resources 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -143,7 +143,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>15.8 Shared resources - Reference Documentation</h1>
+                    <h1>15.8 Mounting resources - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -156,18 +156,30 @@ function addJsClass() {
 
                 
 
-<h2 id="chapter14_8">15.8 Shared resources</h2>
-<p class="paragraph"/>Resources can be added to a global registry in order to share them at application-level. Shared resources are identified by an application-scoped key and they can be easily retrieved at a later time using reference class <code>SharedResourceReference</code>. The global registry can be accessed with <code>Application</code>'s method <code>getSharedResources</code>. In the following excerpt of code (taken again from project <code>CustomResourceMounting</code>) we register an instance of our custom RSS feeds producer as application-shared resource:<p class="paragraph"/><div class="code"><pre>//init application's method
-  @Override
-  <span class="java&#45;keyword">public</span> void init()&#123;
-    RSSProducerResource rssResource = <span class="java&#45;keyword">new</span> RSSProducerResource();
-    // &#8230;
-    getSharedResources().add(<span class="java&#45;quote">"globalRSSProducer"</span>, rssResource);    
-  &#125;</pre></div><p class="paragraph"/>Now to use an application-shared resource we can simply retrieve it using class <code>SharedResourceReference</code> and providing the key previously used to register the resource:<p class="paragraph"/><div class="code"><pre>add(<span class="java&#45;keyword">new</span> ResourceLink(<span class="java&#45;quote">"globalRssLink"</span>, <span class="java&#45;keyword">new</span> SharedResourceReference(<span class="java&#45;quote">"globalRSSProducer"</span>)));</pre></div><p class="paragraph"/>The URL generated for application shared resources follows the same pattern seen for package resources:<p class="paragraph"/><code>./wicket/resource/org.apache.wicket.Application/globalRSSProducer</code><p class="paragraph"/>The last segment of the URL is the key of the resource while the previous segment contains the scope of the resource. For application-scoped resources the scope is always the fully qualified name of class <code>Application</code>. This should not be surprising since global resources are visible at application level (i.e. the scope is the application).<p class="paragraph"/><blockquote class="note">
-Package resources are also application-shared resources but they don't need to be explicitly registered.
-</blockquote><p class="paragraph"/><blockquote class="note">
-Remember that we can get the URL of a resource reference using method <code>urlFor(ResourceReference resourceRef, PageParameters params )</code> available with both class <code>RequestCycle</code> and class <code>Component</code>.
-</blockquote>
+<h2 id="chapter14_8">15.8 Mounting resources</h2>
+<p class="paragraph"/>Just like pages also resources can be mounted to a specific path. Class <code>WebApplication</code> provides method <code>mountResource</code> which is almost identical to <code>mountPage</code> seen in paragraph 8.6.1:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void init() &#123;
+  <span class="java&#45;keyword">super</span>.init();
+  //resource mounted to path /foo/bar
+  ResourceReference resourceReference = <span class="java&#45;keyword">new</span> ResourceReference(<span class="java&#45;quote">"rssProducer"</span>)&#123;
+     RSSReaderResource rssResource = <span class="java&#45;keyword">new</span> RSSReaderResource();
+     @Override
+     <span class="java&#45;keyword">public</span> IResource getResource() &#123;
+	<span class="java&#45;keyword">return</span> rssResource;
+  &#125;&#125;;
+  mountResource(<span class="java&#45;quote">"/foo/bar"</span>, resourceReference);
+&#125;</pre></div><p class="paragraph"/>With the configuration above (taken from project <code>CustomResourceMounting</code>) every request to /foo/bar will be served by the custom resource built in the previous paragraph.<p class="paragraph"/>Parameter placeholders are supported as well:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void init() &#123;
+  <span class="java&#45;keyword">super</span>.init();
+  //resource mounted to path /foo with a required indexed parameter
+  ResourceReference resourceReference = <span class="java&#45;keyword">new</span> ResourceReference(<span class="java&#45;quote">"rssProducer"</span>)&#123;
+     RSSReaderResource rssResource = <span class="java&#45;keyword">new</span> RSSReaderResource();
+     @Override
+     <span class="java&#45;keyword">public</span> IResource getResource() &#123;
+	<span class="java&#45;keyword">return</span> rssResource;
+  &#125;&#125;;
+  mountResource(<span class="java&#45;quote">"/bar/$&#123;baz&#125;"</span>, resourceReference);
+&#125;</pre></div>
 
 
                 <div style="clear:both;margin-top:15px;"></div>

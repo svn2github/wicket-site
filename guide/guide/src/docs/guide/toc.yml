@@ -112,11 +112,12 @@ chapter14:
   chapter14_3: Package resources
   chapter14_4: Adding resources to page header section
   chapter14_5: Resource dependencies
-  chapter14_6: Custom resources
-  chapter14_7: Mounting resources
-  chapter14_8: Shared resources
-  chapter14_9: Customizing resource loading
-  chapter14_10: Summary
+  chapter14_6: Aggregate multiple risources with resource bundles
+  chapter14_7: Custom resources
+  chapter14_8: Mounting resources
+  chapter14_9: Shared resources
+  chapter14_10: Customizing resource loading
+  chapter14_11: Summary
 chapter15:
   title: An example of integration with JavaScript
   chapter15_1: What we want to do...
