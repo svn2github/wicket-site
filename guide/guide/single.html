@@ -1475,7 +1475,7 @@ However is not unusual to have a Label that must display a dynamic value, like t
 		<span class="java&#45;keyword">return</span> <span class="java&#45;keyword">new</span> Date().toString();
 	&#125;
 &#125;;<p class="paragraph"/>add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"timeStamp"</span>, timeStampModel));</pre></div><p class="paragraph"/>Even if sometimes writing a custom model could be a good choice to solve a specific problem, Wicket already provides a set of IModel implementations which should fit most of our needs. In the next paragraph we will see a couple of models that allow us to easily integrate JavaBeans with our web applications and in particular with our forms.<p class="paragraph"/><blockquote class="note">
-By default class Component escapes HTML sensitive characters (like '&#60;', '&#62;' or '&#38;') from the textual representation of its model object. The term 'escape' means that these characters will be replaced with their corresponding HTML <a href="http://en.wikipedia.org/wiki/Character_entity_reference" target="blank">entity</a> (for example '&#60;' becomes '&#38;lt; '). This is done for security reasons as a malicious user could attempt to inject markup or JavaScript into our pages. If we want to display the raw content stored inside a model, we can tell the Component class not to escape characters by calling the setEscape ModelStrings(false) method.
+By default class Component escapes HTML sensitive characters (like '&#60;', '&#62;' or '&#38;') from the textual representation of its model object. The term 'escape' means that these characters will be replaced with their corresponding HTML <a href="http://en.wikipedia.org/wiki/Character_entity_reference" target="blank">entity</a> (for example '&#60;' becomes '&#38;lt; '). This is done for security reasons as a malicious user could attempt to inject markup or JavaScript into our pages. If we want to display the raw content stored inside a model, we can tell the Component class not to escape characters by calling the setEscapeModelStrings(false) method.
 </blockquote>
 
 
@@ -2549,7 +2549,7 @@ Package resources can be localized following the same rules seen for resource bu
 <h2 id="chapter14_6">15.6 Aggregate multiple risources with resource bundles</h2>
 One of the best practices to make our web application faster and reduce its latency is to reduce the number of requests to the server to load page resources like JavaScript or CSS files. To achieve this goal some JavaScript-based build tools (like Grunt) allow to merge multiple files used in a page into a single file that can be loaded in a single request. Wicket provides class <code>org.apache.wicket.ResourceBundles</code> to aggregate multiple resource references into a single one. A resource bundle can be declared during application initialization listing all the resources that compose it:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;
-  <span class="java&#45;keyword">super</span>.init();<p class="paragraph"/>  getResourceBundles().addJavaScriptBundle(.cla.class,
+  <span class="java&#45;keyword">super</span>.init();<p class="paragraph"/>  getResourceBundles().addJavaScriptBundle(WicketApplication.class,
                 <span class="java&#45;quote">"jqueryUiJs"</span>,
                 jqueryJsReference,
                 jqueryUiJsReference);<p class="paragraph"/>  getResourceBundles().addCssBundle(WicketApplication.class,
@@ -4429,7 +4429,7 @@ Quite a few teams have already got stuck into the following problem when working
 You can contribute to this guide by following these steps:
 <ul class="star">
 <li>The guide uses Grails GDoc to generate the final HTML/PDF so you should consult with its <a href="http://grails.org/WikiSyntax" target="blank">syntax</a>.</li>
-<li>Checkout Apache Wicket's <a href="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/" target="blank">site</a></li>
+<li>Checkout Apache Wicket's <a href="../ref/Httpssvnapacheorgreposasfwicketcommonsitetrunksite/site.html" class="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/">site</a></li>
 </ul><p class="paragraph"/><div class="code"><pre>svn checkout https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/</pre></div>
 <ul class="star">
 <li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">_site/guide/guide/src/docs/guide</em>  folder</li>
@@ -4447,7 +4447,7 @@ You can contribute to this guide by following these steps:
 <li>To preview your changes open  <em class="italic">_site/guide/index.html</em>  in a browser</li>
 <li>Create a patch with</li>
 </ul><p class="paragraph"/><div class="code"><pre>svn diff &#62; my.patch</pre></div>
-and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
+and attach it to a ticket in Apache Wicket's <a href="../ref/Httpsissuesapacheorgjirabrowse WICKET/JIRA.html" class="https://issues.apache.org/jira/browse/WICKET">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
 
                     </div>
                 </td>
@@ -4468,7 +4468,7 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
         <div id="footer">
             
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-05)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-10)</b>
 
             
         </div>

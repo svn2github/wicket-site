@@ -171,7 +171,7 @@ However is not unusual to have a Label that must display a dynamic value, like t
 		<span class="java&#45;keyword">return</span> <span class="java&#45;keyword">new</span> Date().toString();
 	&#125;
 &#125;;<p class="paragraph"/>add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"timeStamp"</span>, timeStampModel));</pre></div><p class="paragraph"/>Even if sometimes writing a custom model could be a good choice to solve a specific problem, Wicket already provides a set of IModel implementations which should fit most of our needs. In the next paragraph we will see a couple of models that allow us to easily integrate JavaBeans with our web applications and in particular with our forms.<p class="paragraph"/><blockquote class="note">
-By default class Component escapes HTML sensitive characters (like '&#60;', '&#62;' or '&#38;') from the textual representation of its model object. The term 'escape' means that these characters will be replaced with their corresponding HTML <a href="http://en.wikipedia.org/wiki/Character_entity_reference" target="blank">entity</a> (for example '&#60;' becomes '&#38;lt; '). This is done for security reasons as a malicious user could attempt to inject markup or JavaScript into our pages. If we want to display the raw content stored inside a model, we can tell the Component class not to escape characters by calling the setEscape ModelStrings(false) method.
+By default class Component escapes HTML sensitive characters (like '&#60;', '&#62;' or '&#38;') from the textual representation of its model object. The term 'escape' means that these characters will be replaced with their corresponding HTML <a href="http://en.wikipedia.org/wiki/Character_entity_reference" target="blank">entity</a> (for example '&#60;' becomes '&#38;lt; '). This is done for security reasons as a malicious user could attempt to inject markup or JavaScript into our pages. If we want to display the raw content stored inside a model, we can tell the Component class not to escape characters by calling the setEscapeModelStrings(false) method.
 </blockquote>
 
 
@@ -201,7 +201,7 @@ By default class Component escapes HTML sensitive characters (like '&#60;', '&#6
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-05)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-10)</b>
 
     
 </div>

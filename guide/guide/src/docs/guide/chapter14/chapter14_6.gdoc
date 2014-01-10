@@ -5,7 +5,7 @@ One of the best practices to make our web application faster and reduce its late
 public void init() {
   super.init();
 
-  getResourceBundles().addJavaScriptBundle(.cla.class,
+  getResourceBundles().addJavaScriptBundle(WicketApplication.class,
                 "jqueryUiJs",
                 jqueryJsReference,
                 jqueryUiJsReference);
