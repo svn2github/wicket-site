@@ -183,7 +183,7 @@
 <h2 id="creating_the_project__with_maven">Creating the project - with Maven</h2>
 
 <p>To create your project, copy and paste the command line generated after typing in the groupId, artifactId and version.</p>
-<style><![CDATA[	
+<style>	
 	#mvncmd {
 		padding-left: 25px;
 	}
@@ -196,7 +196,7 @@
 	#mvncmd textarea { width: 400px; height: 100px; }
 	#mvncmd br { clear: left; }	
 	#mvncmd div { clear:both; padding-left: 25px; vertical-align:top;}
-]]></style><script type='text/javascript'><![CDATA[
+</style><script type='text/javascript'>
 	function changeIt()
 	{
 		var groupId = document.getElementById("groupId").value;
@@ -215,7 +215,7 @@
 		cmd += ' -DinteractiveMode=false'; 
 		document.getElementById("cmdLine").value = cmd;
 	}
-]]></script><div id='mvncmd'>
+</script><div id='mvncmd'>
 	<div>
 		<label for='groupId' title='Base Package'>GroupId:</label>
 		<input id='groupId' onkeyup='changeIt();' type='text' value='com.mycompany' /><span title='Base Package'>&nbsp;(?)</span><br />
@@ -258,7 +258,7 @@
 		<label for='cmdLine' id='cmdLabel'>Command Line:</label>
 		<textarea id='cmdLine' onfocus='this.select();'>
 		</textarea>
-		<script><![CDATA[changeIt();]]></script>
+		<script>changeIt();></script>
 	</div>
 	<br />
 </div>
