@@ -63,7 +63,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="/guide" title="User Guide">User Guide</a> | <a href="/guide/guide/single.pdf" title="User Guide in pdf">pdf</a>
+			<a href="/start/userguide.html" title="User Guide">User Guide</a>
 		</li>
 		<li>
 			<a href="/learn/examples" title="Examples">Examples</a>
@@ -92,7 +92,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.12.0">Wicket 6.12</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.13.0">Wicket 6.13</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.10">Wicket 1.5</a>
@@ -178,25 +178,24 @@
 
 <p>This release marks the eighth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p>
 
-<h3 id='using_this_release'>Using this release</h3>
+<h3 id="using_this_release">Using this release</h3>
 
-<p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p>
+<p>With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
     <span class='nt'>&lt;version&gt;</span>6.8.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Or download and build the distribution yourself, or use our convenience binary package</p>
 
 <ul>
-<li>Source: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.8.0'>http://www.apache.org/dyn/closer.cgi/wicket/6.8.0</a></li>
+<li>Source: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.8.0">http://www.apache.org/dyn/closer.cgi/wicket/6.8.0</a></li>
 
-<li>Binary: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.8.0/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.8.0/binaries</a></li>
+<li>Binary: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.8.0/binaries">http://www.apache.org/dyn/closer.cgi/wicket/6.8.0/binaries</a></li>
 </ul>
 
-<h3 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h3>
+<h3 id="upgrading_from_earlier_versions">Upgrading from earlier versions</h3>
 
 <p>If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at</p>
 
@@ -208,82 +207,82 @@
 
 <p>— The Wicket team</p>
 
-<h3 id='release_notes__wicket__version_680'>Release Notes - Wicket - Version 6.8.0</h3>
+<h3 id="release_notes__wicket__version_680">Release Notes - Wicket - Version 6.8.0</h3>
 
-<h4 id='subtask'>Sub-task</h4>
+<h4 id="subtask">Sub-task</h4>
 
 <ul>
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5162'>WICKET-5162</a> - InlineEnclosure markup id could collide in the final page markup</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5162">WICKET-5162</a> - InlineEnclosure markup id could collide in the final page markup</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5185'>WICKET-5185</a> - JavaScript text is spread in several DOM text nodes</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5185">WICKET-5185</a> - JavaScript text is spread in several DOM text nodes</li>
 </ul>
 
-<h4 id='bug'>Bug</h4>
+<h4 id="bug">Bug</h4>
 
 <ul>
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5083'>WICKET-5083</a> - Page#isPageStateless() may return wrong value</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5083">WICKET-5083</a> - Page#isPageStateless() may return wrong value</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5103'>WICKET-5103</a> - Wicket session id not up to date when container changes session id</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5103">WICKET-5103</a> - Wicket session id not up to date when container changes session id</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5119'>WICKET-5119</a> - PopupSettings IE8 - dosen&#8217;t work second time a link is clicked.</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5119">WICKET-5119</a> - PopupSettings IE8 - dosen’t work second time a link is clicked.</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5140'>WICKET-5140</a> - InterceptData never gets cleared from session after continueToOriginalDestination is called and another page is requested afterwards</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5140">WICKET-5140</a> - InterceptData never gets cleared from session after continueToOriginalDestination is called and another page is requested afterwards</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5142'>WICKET-5142</a> - Generating invalid JavaScript for ajax update</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5142">WICKET-5142</a> - Generating invalid JavaScript for ajax update</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5145'>WICKET-5145</a> - do not post an Atmosphere event if the filtered subscription set is empty</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5145">WICKET-5145</a> - do not post an Atmosphere event if the filtered subscription set is empty</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5146'>WICKET-5146</a> - Application not destroyed if WicketFilter#init() fails</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5146">WICKET-5146</a> - Application not destroyed if WicketFilter#init() fails</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5147'>WICKET-5147</a> - WicketTester MockHttpRequest.getCookies very slow / OutOfMemory</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5147">WICKET-5147</a> - WicketTester MockHttpRequest.getCookies very slow / OutOfMemory</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5149'>WICKET-5149</a> - PageRequestHandlerTracker doesn&#8217;t track resolves of handlers caused by Exception</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5149">WICKET-5149</a> - PageRequestHandlerTracker doesn’t track resolves of handlers caused by Exception</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5154'>WICKET-5154</a> - Positioning of autocomplete popup does not take into account borders</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5154">WICKET-5154</a> - Positioning of autocomplete popup does not take into account borders</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5157'>WICKET-5157</a> - URL query parameter values containing equals sign get cut off</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5157">WICKET-5157</a> - URL query parameter values containing equals sign get cut off</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5163'>WICKET-5163</a> - Implementing markup loading by extending ResourceStreamLocator produces errors with inherited markup</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5163">WICKET-5163</a> - Implementing markup loading by extending ResourceStreamLocator produces errors with inherited markup</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5176'>WICKET-5176</a> - StringResourceModel doesn&#8217;t detach model in some cases</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5176">WICKET-5176</a> - StringResourceModel doesn’t detach model in some cases</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5178'>WICKET-5178</a> - StopPropagation functionality on link is broken</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5178">WICKET-5178</a> - StopPropagation functionality on link is broken</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5181'>WICKET-5181</a> - Problem with OnEventHeaderItem and Wicket.Event.add</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5181">WICKET-5181</a> - Problem with OnEventHeaderItem and Wicket.Event.add</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5187'>WICKET-5187</a> - Unknown tag name with Wicket namespace: &#8216;panel&#8217;</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5187">WICKET-5187</a> - Unknown tag name with Wicket namespace: ‘panel’</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5191'>WICKET-5191</a> - Session is created unnecessarily</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5191">WICKET-5191</a> - Session is created unnecessarily</li>
 </ul>
 
-<h4 id='improvement'>Improvement</h4>
+<h4 id="improvement">Improvement</h4>
 
 <ul>
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5143'>WICKET-5143</a> - Create an interface for the roles replacing the current Roles class</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5143">WICKET-5143</a> - Create an interface for the roles replacing the current Roles class</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5150'>WICKET-5150</a> - Log additional info when FormComponent fails in updateCollectionModel</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5150">WICKET-5150</a> - Log additional info when FormComponent fails in updateCollectionModel</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5158'>WICKET-5158</a> - Ignore missing Page in StatelessForm#process()</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5158">WICKET-5158</a> - Ignore missing Page in StatelessForm#process()</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5159'>WICKET-5159</a> - Replace usage of JavaScript eval() with plain JS in headed contribution decoding</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5159">WICKET-5159</a> - Replace usage of JavaScript eval() with plain JS in headed contribution decoding</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5160'>WICKET-5160</a> - Throttle the animation in DebugWindow when there are many errors</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5160">WICKET-5160</a> - Throttle the animation in DebugWindow when there are many errors</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5161'>WICKET-5161</a> - The url gets longer when using StatelessForm with GET method</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5161">WICKET-5161</a> - The url gets longer when using StatelessForm with GET method</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5166'>WICKET-5166</a> - Relax the requirements for using FilteringHeaderResponse</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5166">WICKET-5166</a> - Relax the requirements for using FilteringHeaderResponse</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5186'>WICKET-5186</a> - Use arrays instead of String concatenation in JavaScript for better performance</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5186">WICKET-5186</a> - Use arrays instead of String concatenation in JavaScript for better performance</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5188'>WICKET-5188</a> - Use a separate logger for the extra information logged in RequestCycle#onException()</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5188">WICKET-5188</a> - Use a separate logger for the extra information logged in RequestCycle#onException()</li>
 
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5189'>WICKET-5189</a> - preregister known wicket tag names</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5189">WICKET-5189</a> - preregister known wicket tag names</li>
 </ul>
 
-<h4 id='task'>Task</h4>
+<h4 id="task">Task</h4>
 
 <ul>
-<li><a href='https://issues.apache.org/jira/browse/WICKET-5169'>WICKET-5169</a> - Create BuildBot config for wicket-6.x branch</li>
+<li><a href="https://issues.apache.org/jira/browse/WICKET-5169">WICKET-5169</a> - Create BuildBot config for wicket-6.x branch</li>
 </ul>
 		</div>
         <div id="clearer"></div>

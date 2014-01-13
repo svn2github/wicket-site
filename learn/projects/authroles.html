@@ -92,7 +92,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.12.0">Wicket 6.12</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.13.0">Wicket 6.13</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.10">Wicket 1.5</a>
@@ -176,43 +176,43 @@
 			<h1>Wicket Auth/Roles</h1>
 			<p>This is mostly a technology demonstration implementing authorization and authentication for the Apache Wicket web framework. The project supplies roles based authorization and some simple authentication components.</p>
 
-<h2 id='contents'>Contents</h2>
+<h2 id="contents">Contents</h2>
 
 <ul>
-<li><a href='#introduction'>Introduction</a></li>
+<li><a href="#introduction">Introduction</a></li>
 
-<li><a href='#example'>Example</a></li>
+<li><a href="#example">Example</a></li>
 
-<li><a href='#installing'>Installing</a></li>
+<li><a href="#installing">Installing</a></li>
 </ul>
 
-<h2 id='introduction'>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 
-<p>Wicket Auth/Roles is a simplistic but useful security extension to the Wicket framework. It is intended to be simplistic and not to be confused with a framework. If you find this library useful, great. If you need more than is supplied by this library, either look at <a href='#alternatives'>alternative security integrations</a> or copy these classes and modify them at will (this project <strong>is</strong> <a href='http://www.apache.org/licenses/'>open source</a> after all.)</p>
+<p>Wicket Auth/Roles is a simplistic but useful security extension to the Wicket framework. It is intended to be simplistic and not to be confused with a framework. If you find this library useful, great. If you need more than is supplied by this library, either look at <a href="#alternatives">alternative security integrations</a> or copy these classes and modify them at will (this project <strong>is</strong> <a href="http://www.apache.org/licenses/">open source</a> after all.)</p>
 
-<p>Like most if not all security solutions for Wicket, this project provides an implementation for Wicket&#8217;s <code>IAuthorizationStrategy</code>. When an authorization strategy is installed in the security settings (<code>WebApplication#getSecuritySettings</code>), Wicket will check for each component (including pages) if instantiation is allowed and if rendering is allowed.</p>
+<p>Like most if not all security solutions for Wicket, this project provides an implementation for Wicket’s <code>IAuthorizationStrategy</code>. When an authorization strategy is installed in the security settings (<code>WebApplication#getSecuritySettings</code>), Wicket will check for each component (including pages) if instantiation is allowed and if rendering is allowed.</p>
 
 <p>For more documentation use the following links:</p>
 
 <ul>
-<li><a href='http://wicket.apache.org/apidocs/1.5/org/apache/wicket/authentication/package-summary.html'>Authentication API</a></li>
+<li><a href="http://wicket.apache.org/apidocs/1.5/org/apache/wicket/authentication/package-summary.html">Authentication API</a></li>
 
-<li><a href='http://wicket.apache.org/apidocs/1.5/org/apache/wicket/authorization/package-summary.html'>Authorization API</a></li>
+<li><a href="http://wicket.apache.org/apidocs/1.5/org/apache/wicket/authorization/package-summary.html">Authorization API</a></li>
 </ul>
 
 <p>Note that for the instantiation check Wicket will invoke the constructor hierarchy of your component, but will throw an exception if the authorization check fails.</p>
 
-<h3 id='authentication'>Authentication</h3>
+<h3 id="authentication">Authentication</h3>
 
-<p>As a basis, you should extend your web application class from <code>AuthenticatedWebApplication</code>. When you create your class you&#8217;ll be asked to override the following methods:</p>
+<p>As a basis, you should extend your web application class from <code>AuthenticatedWebApplication</code>. When you create your class you’ll be asked to override the following methods:</p>
 
 <ul>
 <li><code>newSession</code> - return a subclass of <code>AuthenticatedWebSession</code></li>
 
-<li><code>getSignInPageClass</code> - return the class for your login page (this one should not require authentication, otherwise you&#8217;ll create an infinite loop)</li>
+<li><code>getSignInPageClass</code> - return the class for your login page (this one should not require authentication, otherwise you’ll create an infinite loop)</li>
 </ul>
 
-<p>Next you&#8217;ll need to provide your custom session class-making it a subclass of <code>AuthenticatedWebSession</code>. This class requires you to override the following methods:</p>
+<p>Next you’ll need to provide your custom session class-making it a subclass of <code>AuthenticatedWebSession</code>. This class requires you to override the following methods:</p>
 
 <ul>
 <li><code>authenticate</code> - called when the user needs to be authenticated using a username and password</li>
@@ -220,9 +220,9 @@
 <li><code>getRoles</code> - called after the users was authenticated and should provide the roles associated with the authenticated user.</li>
 </ul>
 
-<p>You can use the provided <code>SignInPage</code>, which has been translated to a couple of languages (see the source code for the actual translations), or roll your own. When you roll your own, you can opt to use the provided <code>SignInPanel</code> (which has been translated as well) so you don&#8217;t have to create your own login form.</p>
+<p>You can use the provided <code>SignInPage</code>, which has been translated to a couple of languages (see the source code for the actual translations), or roll your own. When you roll your own, you can opt to use the provided <code>SignInPanel</code> (which has been translated as well) so you don’t have to create your own login form.</p>
 
-<h3 id='authorization'>Authorization</h3>
+<h3 id="authorization">Authorization</h3>
 
 <p>Annotation for configuring what roles are allowed for instantiation the annotated component or package. This annotation can be used for classes and packages, and can be used like this:</p>
 <div class='highlight'><pre><code class='java'><span class='c1'>// only users with role ADMIN are allowed to create instances of this page, whether it is</span>
@@ -230,42 +230,46 @@
 <span class='nd'>@AuthorizeInstantiation</span><span class='o'>(</span><span class='s'>&quot;ADMIN&quot;</span><span class='o'>)</span>
 <span class='kd'>public</span> <span class='kd'>class</span> <span class='nc'>AdminAnnotationsBookmarkablePage</span> <span class='kd'>extends</span> <span class='n'>WebPage</span>
 </code></pre></div>
-<p>When someone who doesn&#8217;t have the role ADMIN, Wicket will not allow the page to be fully constructed and throw an authorization exception during the construction of the page. This will result in an access denied page for the user.</p>
+<p>When someone who doesn’t have the role ADMIN, Wicket will not allow the page to be fully constructed and throw an authorization exception during the construction of the page. This will result in an access denied page for the user.</p>
 
 <p>Enablng the annotations for role based authorization is done by setting the <code>WebApplication#getSecuritySettings</code> value to <code>AnnotationsRoleAuthorizationStrategy</code>. Then you can use the auth/roles provided authorization annotations.</p>
 
-<h3 id='alternatives'>Alternatives</h3>
+<h3 id="alternatives">Alternatives</h3>
 
 <p>More elaborate security solutions exist in the following projects:</p>
 
 <ul>
-<li><a href='https://github.com/wicketstuff/core/tree/core-1.5.x/jdk-1.5-parent/shiro-security'>Wicket Shiro</a> - integration between Apache Shiro and Wicket</li>
+<li><a href="https://github.com/wicketstuff/core/tree/core-1.5.x/jdk-1.5-parent/shiro-security">Wicket Shiro</a> - integration between Apache Shiro and Wicket</li>
 
-<li><a href='https://github.com/wicketstuff/core/tree/core-1.5.x/jdk-1.5-parent/wicket-security-parent'>Wicket Security</a> - JAAS inspired, principal based security framework</li>
+<li><a href="https://github.com/wicketstuff/core/tree/core-1.5.x/jdk-1.5-parent/wicket-security-parent">Wicket Security</a>
+<ul>
+<li>JAAS inspired, principal based security framework</li>
+</ul>
+</li>
 </ul>
 
-<p>If other security solutions are available for Wicket, <a href='https://issues.apache.org/jira/browse/WICKET'>let us know</a>.</p>
+<p>If other security solutions are available for Wicket, <a href="https://issues.apache.org/jira/browse/WICKET">let us know</a>.</p>
 
-<h2 id='example'>Example</h2>
+<h2 id="example">Example</h2>
 
-<p>The Wicket Examples project contains a <a href='http://wicket-library.com/wicket-examples/authorization'>complete example</a> of limiting access to pages and components using roles based authorization. It also contains an <a href='http://wicket-library.com/wicket-examples/authentication'>authentication example</a>.</p>
+<p>The Wicket Examples project contains a <a href="http://wicket-library.com/wicket-examples/authorization">complete example</a> of limiting access to pages and components using roles based authorization. It also contains an <a href="http://wicket-library.com/wicket-examples/authentication">authentication example</a>.</p>
 
 <p>Click on the source links to see the related source code.</p>
 
-<h2 id='installing'>Installing</h2>
+<h2 id="installing">Installing</h2>
 
-<p>Installing Wicket Auth/Roles can be done through adding a dependency in your project&#8217;s Maven pom, or by putting the wicket-auth-roles.jar and the required dependencies in your projects classpath.</p>
+<p>Installing Wicket Auth/Roles can be done through adding a dependency in your project’s Maven pom, or by putting the wicket-auth-roles.jar and the required dependencies in your projects classpath.</p>
 
-<h3 id='using_maven'>Using Maven</h3>
+<h3 id="using_maven">Using Maven</h3>
 
 <p>Add the following dependency to your pom:</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>wicket-auth-roles<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>6.12.0<span class='nt'>&lt;/version&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.13.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
 </code></pre></div>
-<h3 id='required_dependencies'>Required dependencies</h3>
+<h3 id="required_dependencies">Required dependencies</h3>
 
 <p>Wicket Auth/Roles requires the following jar files to be on your classpath:</p>
 
