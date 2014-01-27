@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>7 Components lifecycle 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter8.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter9.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter10.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter11.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter12.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter13.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter14.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter15.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter16.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter17.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter18.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter19.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter20.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter21.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter22.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter23.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter24.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/chapter25.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/keepControl.html">&lt;&lt; <strong>6</strong><span>Keeping control over HTML</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>7 Components lifecycle - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#componentLifecycle_1"><strong>7.1</strong><span>Lifecycle stages of a component</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#componentLifecycle_2"><strong>7.2</strong><span>Hook methods for component lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#componentLifecycle_3"><strong>7.3</strong><span>Initialization stage</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#componentLifecycle_4"><strong>7.4</strong><span>Rendering stage</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#componentLifecycle_5"><strong>7.5</strong><span>Removing stage</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#componentLifecycle_6"><strong>7.6</strong><span>Summary</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="componentLifecycle">7 Components lifecycle</h1>
+Just like applets and servlets, also Wicket components follow a lifecycle during their existence. In this chapter we will analyze each stage of this cycle and we will learn how to make the most of the hook methods that are triggered when a component moves from one stage to another.
+
+
+<h2 id="componentLifecycle_1">7.1 Lifecycle stages of a component</h2>
+<p class="paragraph"/>During its life a Wicket component goes through three basic stages:
+<ol>
+<li><strong class="bold">Initialization:</strong> a component is instantiated by Wicket and prepared for the rendering phase.</li>
+<li><strong class="bold">Rendering:</strong> in this stage Wicket generates component markup. If a component contains children (i.e. is a subclass of <code>MarkupContainer</code>) it must first wait for them to be rendered before starting its own rendering.</li>
+<li><strong class="bold">Removing:</strong> this stage is triggered when a component is explicitly removed from its component hierarchy, i.e. when its parent invokes <code>remove(component)</code> on it. This stage is facultative and is never triggered for pages.</li>
+</ol><p class="paragraph"/>The following picture shows the state diagram of component lifecycle:<p class="paragraph"/><img border="0" class="center" src="../img/component-lifecycle.png"></img><p class="paragraph"/>Once a component has been removed it can be added again to a container, but the initialization stage won't be executed again.<p class="paragraph"/><blockquote class="note">
+If you read the JavaDoc of class <code>Component</code> you will find a more detailed description of component lifecycle.
+However this description introduces some advanced topics we didn't covered yet hence, to avoid confusion, in this chapter some details have been omitted and they will be covered later in the next chapters.<p class="paragraph"/>For now you can consider just the simplified version of the lifecycle described above.
+</blockquote>
+
+
+<h2 id="componentLifecycle_2">7.2 Hook methods for component lifecycle</h2>
+<p class="paragraph"/>Class <code>Component</code> comes with a number of hook methods that can be overridden in order to customize component behavior during its lifecycle.
+In the following table these methods are grouped according to the stage in which they are invoked (and they are sorted by execution order):<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Cycle stage</strong></th><th><strong class="bold">Involved methods</strong></th></tr><tr class="table-odd"><td>Initialization</td><td>onInitialize</td></tr><tr class="table-even"><td>Rendering</td><td>onConfigure, onBeforeRender, onRender, onComponentTag, onComponentTagBody, onAfterRenderChildren, onAfterRender</td></tr><tr class="table-odd"><td>Removing</td><td>onRemove</td></tr></table><p class="paragraph"/>Now let's take a closer look at each stage and to at hook methods.
+
+
+<h2 id="componentLifecycle_3">7.3 Initialization stage</h2>
+<p class="paragraph"/>This stage is performed at the beginning of the component lifecycle. During initialization, the component has already been inserted into its component hierarchy so we can safely access to its parent container or to its page with methods <code>getParent()</code> or <code>getPage()</code>. The only method triggered during this stage is <code>onInitialize()</code>. This method is a sort of “special” constructor where we can execute a custom initialization of our component.<p class="paragraph"/>Since <code>onInitialize</code> is similar to a regular constructor, when we override this method we have to call <code>super.onInitialize</code> inside its body, usually as first instruction.
+
+
+<h2 id="componentLifecycle_4">7.4 Rendering stage</h2>
+This stage is triggered each time a component is rendered by Wicket, typically when its page is requested or when it is refreshed via AJAX.<p class="paragraph"/><h3>Method onConfigure</h3><p class="paragraph"/>Method <code>onConfigure()</code> has been introduced in order to provide a good point to manage the component states such as its visibility or enabled state. This method is called before the render phase starts. As stated in <a href="../guide/single.html#keepControl_1" class="guide">chapter 6.1</a>, <code>isVisible</code> and <code>isEnabled</code> are called multiple times when a page or a component is rendered, so it's highly recommended not to directly override these method, but rather to use <code>onConfigure</code> to change component states. On the contrary method <code>onBeforeRender</code> (see the next paragraph) is not indicated for this task because it will not be invoked if component visibility is set to false.<p class="paragraph"/><h3>Method onBeforeRender</h3><p class="paragraph"/>The most important hook method of this stage is probably <code>onBeforeRender()</code>. This method is called before a component starts its rendering phase and it is our last chance to change its children hierarchy.<p class="paragraph"/>If we want add/remove children components this is the right place to do it. In the next example (project LifeCycleStages) we will create a page which alternately displays two different labels, swapping between them each time it is rendered:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage
+&#123;
+	<span class="java&#45;keyword">private</span> Label firstLabel;
+	<span class="java&#45;keyword">private</span> Label secondLabel;<p class="paragraph"/>	<span class="java&#45;keyword">public</span> HomePage()&#123;
+		firstLabel = <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"label"</span>, <span class="java&#45;quote">"First label"</span>);
+		secondLabel = <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"label"</span>, <span class="java&#45;quote">"Second label"</span>);<p class="paragraph"/>		add(firstLabel);
+		add(<span class="java&#45;keyword">new</span> Link(<span class="java&#45;quote">"reload"</span>)&#123;
+			@Override
+			<span class="java&#45;keyword">public</span> void onClick() &#123;
+			&#125;
+		&#125;);
+	&#125;<p class="paragraph"/>	@Override
+	<span class="java&#45;keyword">protected</span> void onBeforeRender() &#123;
+		<span class="java&#45;keyword">if</span>(contains(firstLabel, <span class="java&#45;keyword">true</span>))
+			replace(secondLabel);
+		<span class="java&#45;keyword">else</span>
+			replace(firstLabel);<p class="paragraph"/>		<span class="java&#45;keyword">super</span>.onBeforeRender();
+	&#125;
+&#125;</pre></div><p class="paragraph"/>The code inside <code>onBeforeRender()</code> is quite trivial as it just checks which label among <code>firstLabel</code> and <code>secondLabel</code> is currently inserted into the component hierarchy and it replaces the inserted label with the other one.<p class="paragraph"/>This method is also responsible for invoking children <code>onBeforeRender()</code> so if we decide to override it we have to call <code>super.onBeforeRender()</code>. However, unlike <code>onInitialize()</code>, the call to superclass method should be placed at the end of method's body in order to affect children's rendering with our custom code.<p class="paragraph"/>Please note that in the example above we can trigger the rendering stage pressing F5 key or clicking on link “reload”.<p class="paragraph"/><blockquote class="warning">
+If we forget to call superclass version of methods <code>onInitialize()</code> or <code>onBeforeRender()</code>, Wicket will throw an <code>IllegalStateException</code> with the following message:<p class="paragraph"/><code>java.lang.IllegalStateException: </code>org.apache.wicket.Component<code> has not been properly initialized. Something in the hierarchy of &#60;page class name&#62; has not called super.onInitialize()/onBeforeRender() in the override of onInitialize()/ onBeforeRender() method</code><p class="paragraph"/></blockquote><p class="paragraph"/><h3>Method onComponentTag</h3><p class="paragraph"/>Method <code>onComponentTag(ComponentTag)</code> is called to process component tag, which can be freely manipulated through its argument of type <code>org.apache.wicket.markup.ComponentTag</code>. For example we can add/remove tag attributes with methods <code>put(String key, String value)</code> and <code>remove(String key)</code>, or we can even decide to change the tag or rename it with method <code>setName(String)</code> (the following code is taken from project OnComponentTagExample):<p class="paragraph"/><strong class="bold">Markup code:</strong><p class="paragraph"/><div class="code"><pre>&#60;head&#62;
+  &#60;meta charset=<span class="java&#45;quote">"utf&#45;8"</span> /&#62;
+  &#60;title&#62;&#60;/title&#62;
+&#60;/head&#62;
+&#60;body&#62;		
+  &#60;h1 wicket:id=<span class="java&#45;quote">"helloMessage"</span>&#62;&#60;/h1&#62;		
+&#60;/body&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+   <span class="java&#45;keyword">public</span> HomePage() &#123;
+      add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"helloMessage"</span>, <span class="java&#45;quote">"Hello World"</span>)&#123;
+         @Override
+         <span class="java&#45;keyword">protected</span> void onComponentTag(ComponentTag tag) &#123;            
+            <span class="java&#45;keyword">super</span>.onComponentTag(tag);
+            //Turn the h1 tag to a span
+            tag.setName(<span class="java&#45;quote">"span"</span>);
+            //Add formatting style
+            tag.put(<span class="java&#45;quote">"style"</span>, <span class="java&#45;quote">"font&#45;weight:bold"</span>);
+         &#125;
+      &#125;);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Generated markup:</strong><p class="paragraph"/><div class="code"><pre>&#60;head&#62;
+  &#60;meta charset=<span class="java&#45;quote">"utf&#45;8"</span> /&#62;
+  &#60;title&#62;&#60;/title&#62;
+&#60;/head&#62;
+&#60;body&#62;		
+  &#60;span wicket:id=<span class="java&#45;quote">"helloMessage"</span> style=<span class="java&#45;quote">"font&#45;weight:bold"</span>&#62;Hello World&#60;/span&#62;		
+&#60;/body&#62;</pre></div><p class="paragraph"/>Just like we do with <code>onInitialize</code>, if we decide to override <code>onComponentTag</code> we must remember to call the same method of the super class because also this class may also customize the tag. Overriding <code>onComponentTag</code> is perfectly fine if we have to customize the tag of a specific component, but if we wanted to reuse the code across different components we should consider to use a behavior in place of this hook method.<p class="paragraph"/>We have already seen in <a href="../guide/single.html#keepControl_2" class="guide">chapter 6.2</a> how to use behavior <code>AttributeModifier</code> to manipulate the tag's attribute. In <a href="../guide/single.html#chapter16_1" class="guide">chapter 16.1</a> we will see that base class <code>Behavior</code> offers also a callback method named <code>onComponentTag(ComponentTag, Component)</code> that can be used in place of the hook method <code>onComponentTag(ComponentTag)</code>.<p class="paragraph"/><h3>Methods onComponentTagBody</h3><p class="paragraph"/>Method <code>onComponentTagBody(MarkupStream, ComponentTag)</code> is called to process the component tag's body. Just like <code>onComponentTag</code> it takes as input a <code>ComponentTag</code> parameter representing the component tag. In addition, we also find a <code>MarkupStream</code> parameter which represents the page markup stream that will be sent back to the client as response.<p class="paragraph"/><code>onComponentTagBody</code> can be used in combination with the <code>Component</code>'s method <code>replaceComponentTagBody</code> to render a custom body under specific conditions. For example (taken from project OnComponentTagExample) we can display a brief description instead of the body if the label component is disabled:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+   <span class="java&#45;keyword">public</span> HomePage() &#123;<p class="paragraph"/>      add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"helloMessage"</span>, <span class="java&#45;quote">"Hello World"</span>)&#123;
+         @Override
+         <span class="java&#45;keyword">protected</span> void onComponentTagBody(MarkupStream markupStream, ComponentTag tag) &#123;<p class="paragraph"/>           <span class="java&#45;keyword">if</span>(!isEnabled())
+               replaceComponentTagBody(markupStream, tag, <span class="java&#45;quote">"(the component is disabled)"</span>); 
+          <span class="java&#45;keyword">else</span>    
+               <span class="java&#45;keyword">super</span>.onComponentTagBody(markupStream, tag);
+         &#125;
+      &#125;);   
+    &#125;
+&#125;</pre></div><p class="paragraph"/>Note that the original version of <code>onComponentTagBody</code> is invoked only when we want to preserve the standard rendering mechanism for the tag's body (in our example this happens when the component is enabled).
+
+
+<h2 id="componentLifecycle_5">7.5 Removing stage</h2>
+<p class="paragraph"/>This stage is triggered when a component is removed from its component hierarchy. The only hook method for this phase is <code>onRemove()</code>. If our component still holds some resources needed during rendering phase, we can override this method to release them.<p class="paragraph"/>Once a component has been removed we are free to add it again to the same container or to a different one.
+
+
+<h2 id="componentLifecycle_6">7.6 Summary</h2>
+<p class="paragraph"/>In this chapter we have seen which stages compose the lifecycle of Wicket components and which hook methods they provide. Overriding these methods we can dynamically modify the component hierarchy and we can enrich the behavior of our custom components.
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/keepControl.html">&lt;&lt; <strong>6</strong><span>Keeping control over HTML</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-27)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

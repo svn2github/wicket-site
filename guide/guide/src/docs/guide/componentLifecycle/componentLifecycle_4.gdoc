@@ -2,7 +2,7 @@ This stage is triggered each time a component is rendered by Wicket, typically w
 
 h3. Method onConfigure
 
-Method @onConfigure()@ has been introduced in order to provide a good point to manage the component states such as its visibility or enabled state. This method is called before the render phase starts. As stated in [chapter 5.1|guide:chapter5_1], @isVisible@ and @isEnabled@ are called multiple times when a page or a component is rendered, so it's highly recommended not to directly override these method, but rather to use @onConfigure@ to change component states. On the contrary method @onBeforeRender@ (see the next paragraph) is not indicated for this task because it will not be invoked if component visibility is set to false.
+Method @onConfigure()@ has been introduced in order to provide a good point to manage the component states such as its visibility or enabled state. This method is called before the render phase starts. As stated in [chapter 6.1|guide:keepControl_1], @isVisible@ and @isEnabled@ are called multiple times when a page or a component is rendered, so it's highly recommended not to directly override these method, but rather to use @onConfigure@ to change component states. On the contrary method @onBeforeRender@ (see the next paragraph) is not indicated for this task because it will not be invoked if component visibility is set to false.
 
 h3. Method onBeforeRender
 
@@ -102,7 +102,7 @@ public class HomePage extends WebPage {
 
 Just like we do with @onInitialize@, if we decide to override @onComponentTag@ we must remember to call the same method of the super class because also this class may also customize the tag. Overriding @onComponentTag@ is perfectly fine if we have to customize the tag of a specific component, but if we wanted to reuse the code across different components we should consider to use a behavior in place of this hook method.
 
-We have already seen in [chapter 5.2|guide:chapter5_2] how to use behavior @AttributeModifier@ to manipulate the tag's attribute. In [chapter 16.1|guide:chapter16_1] we will see that base class @Behavior@ offers also a callback method named @onComponentTag(ComponentTag, Component)@ that can be used in place of the hook method @onComponentTag(ComponentTag)@.
+We have already seen in [chapter 6.2|guide:keepControl_2] how to use behavior @AttributeModifier@ to manipulate the tag's attribute. In [chapter 16.1|guide:chapter16_1] we will see that base class @Behavior@ offers also a callback method named @onComponentTag(ComponentTag, Component)@ that can be used in place of the hook method @onComponentTag(ComponentTag)@.
 
 h3. Methods onComponentTagBody
 

@@ -1,54 +1,54 @@
-chapter1:
+introduction:
   title: Introduction
 howToSource:
   title: How to use the example code  
-chapter2:
+whyLearn:
   title: Why should I learn Wicket?
-  chapter2_1: We all like spaghetti :-) ...
-  chapter2_2: Component oriented frameworks - an overview
-  chapter2_3: Benefits of component oriented frameworks for web development
-  chapter2_4: Wicket vs the other component oriented frameworks
-chapter3:
+  whyLearn_1: We all like spaghetti :-) ...
+  whyLearn_2: Component oriented frameworks - an overview
+  whyLearn_3: Benefits of component oriented frameworks for web development
+  whyLearn_4: Wicket vs the other component oriented frameworks
+helloWorld:
   title: Wicket says “Hello world!”
-  chapter3_1: Wicket distribution and modules
-  chapter3_2: Configuration of Wicket applications
-  chapter3_3: The HomePage class
-  chapter3_4: Wicket Links
-  chapter3_5: Summary
-chapter4:
+  helloWorld_1: Wicket distribution and modules
+  helloWorld_2: Configuration of Wicket applications
+  helloWorld_3: The HomePage class
+  helloWorld_4: Wicket Links
+  helloWorld_5: Summary
+layout:
   title: Wicket as page layout manager
-  chapter4_1: Header, footer, left menu, content, etc...
-  chapter4_2: Here comes the inheritance!
-  chapter4_3: Divide et impera!  
-  chapter4_4: Markup inheritance with the wicket:extend tag
-  chapter4_5: Summary
-chapter5:
+  layout_1: Header, footer, left menu, content, etc...
+  layout_2: Here comes the inheritance!
+  layout_3: Divide et impera!  
+  layout_4: Markup inheritance with the wicket:extend tag
+  layout_5: Summary
+keepControl:
   title: Keeping control over HTML
-  chapter5_1: Hiding or disabling a component
-  chapter5_2: Modifing tag attributes
-  chapter5_3: Generating tag attribute 'id'
-  chapter5_4: Creating in-line panels with WebMarkupContainer
-  chapter5_5: Working with markup fragments
-  chapter5_6: Adding header contents to the final page
-  chapter5_7: Using stub markup in our pages/panels
-  chapter5_8: How to render component body only
-  chapter5_9: Hiding decorating elements with the wicket:enclosure tag
-  chapter5_10: Surrounding existing markup with Border
-  chapter5_11: Summary
-chapter6:
+  keepControl_1: Hiding or disabling a component
+  keepControl_2: Modifing tag attributes
+  keepControl_3: Generating tag attribute 'id'
+  keepControl_4: Creating in-line panels with WebMarkupContainer
+  keepControl_5: Working with markup fragments
+  keepControl_6: Adding header contents to the final page
+  keepControl_7: Using stub markup in our pages/panels
+  keepControl_8: How to render component body only
+  keepControl_9: Hiding decorating elements with the wicket:enclosure tag
+  keepControl_10: Surrounding existing markup with Border
+  keepControl_11: Summary
+componentLifecycle:
   title: Components lifecycle
-  chapter6_1: Lifecycle stages of a component
-  chapter6_2: Hook methods for component lifecycle
-  chapter6_3: Initialization stage
-  chapter6_4: Rendering stage
-  chapter6_5: Removing stage
-  chapter6_6: Summary
-chapter7:
+  componentLifecycle_1: Lifecycle stages of a component
+  componentLifecycle_2: Hook methods for component lifecycle
+  componentLifecycle_3: Initialization stage
+  componentLifecycle_4: Rendering stage
+  componentLifecycle_5: Removing stage
+  componentLifecycle_6: Summary
+versioningCaching:
   title: Page versioning and caching
-  chapter7_1: Stateful pages vs stateless
-  chapter7_2: Stateful pages
-  chapter7_3: Stateless pages
-  chapter7_4: Summary
+  versioningCaching_1: Stateful pages vs stateless
+  versioningCaching_2: Stateful pages
+  versioningCaching_3: Stateless pages
+  versioningCaching_4: Summary
 chapter8:
   title: Under the hood of the request processing
   chapter8_1: Class Application and request processing
@@ -196,6 +196,6 @@ chapter24:
   chapter24_5: Module wicketstuff-inmethod-grid
 chapter25:
   title: Lost In Redirection With Apache Wicket (Appendix)
-chapter26:
+contributing:
   title: Contributing to this guide (Appendix)
   

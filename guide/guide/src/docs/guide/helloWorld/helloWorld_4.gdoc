@@ -43,7 +43,7 @@ public void onClick() {
 }
 {code}
 
-The difference between using the first version of @setResponsePage@ rather than the second one will be illustrated in [chapter 7|guide:chapter7], when we will introduce the topic of stateful and stateless pages. For now, we can consider them as equivalent. 
+The difference between using the first version of @setResponsePage@ rather than the second one will be illustrated in [chapter 8|guide:versioningCaching], when we will introduce the topic of stateful and stateless pages. For now, we can consider them as equivalent. 
 
 Wicket comes with a rich set of link components suited for every need (links to static URL, Ajax-enhanced links, links to a file to download, links to external pages and so on). We will see them in [chapter 9|guide:chapter9].
 

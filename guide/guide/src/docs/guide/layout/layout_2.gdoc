@@ -23,7 +23,7 @@ Class @org.apache.wicket.markup.html.panel.Panel@ is a special component which l
 
 _Illustration: Hierarchy of WebPage and Panel classes_
 
-Subclasses of @MarkupContainer@ can contain children components that can be added with method @add(Component...)@ (seen in [chapter 3.3|guide:chapter3_3]). @MarkupContainer@ implements a full set of methods to manage children components. The basic operations we can do on them are:
+Subclasses of @MarkupContainer@ can contain children components that can be added with method @add(Component...)@ (seen in [chapter 3.3|guide:whyLearn_3]). @MarkupContainer@ implements a full set of methods to manage children components. The basic operations we can do on them are:
 
 * add one or more children components (with method @add@).
 * remove a specific child component (with method @remove@).

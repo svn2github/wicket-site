@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>5.3 Divide et impera! 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter8.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter9.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter10.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter11.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter12.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter13.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter14.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter15.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter16.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter17.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter18.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter19.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter20.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter21.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter22.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter23.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter24.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter25.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/helloWorld.html">&lt;&lt; <strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>5.3 Divide et impera! - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="layout_3">5.3 Divide et impera!</h2>
+Let's go back to our layout example. In <a href="../guide/single.html#layout_1" class="guide">chapter 5.1</a> we have divided our layout in common areas that must be part of every page. Now we will build a reusable template page for our web application combining pages and panels. The code examples are from project MarkupInheritanceExample.<p class="paragraph"/><h3>Panels and layout areas</h3><p class="paragraph"/>First, let's build a custom panel for each layout area (except for 'content' area). For example given the  header area<p class="paragraph"/><img border="0" class="center" src="../img/header-area.png"></img><p class="paragraph"/>we can build a panel called <code>HeaderPanel</code> with a related markup file called HeaderPanel.html containing the HTML for this area:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#60;head&#62;
+&#60;meta http&#45;equiv=<span class="java&#45;quote">"Content&#45;Type"</span> content=<span class="java&#45;quote">"text/html; charset=UTF&#45;8"</span>&#62;
+&#8230;
+&#60;/head&#62;
+&#60;body&#62;
+   &#60;wicket:panel&#62;
+      &#60;table width=<span class="java&#45;quote">"100%"</span> style=<span class="java&#45;quote">"border: 0px none;"</span>&#62;
+      &#60;tbody&#62;
+    &#60;tr&#62;
+    &#60;td&#62;
+       &#60;img alt=<span class="java&#45;quote">"Jug4Tenda"</span> src=<span class="java&#45;quote">"wicketLayout_files/logo_jug4tenda.gif"</span>&#62;
+     &#60;/td&#62;
+      &#60;td&#62;
+    &#60;h1&#62;Gestione Anagrafica&#60;/h1&#62;
+   &#60;/td&#62;   
+      &#60;/tr&#62;
+      &#60;/tbody&#62;
+      &#60;/table&#62;   
+   &#60;/wicket:panel&#62;
+&#60;/body&#62;
+&#60;html&#62;</pre></div><p class="paragraph"/>The class for this panel simply extends base class <code>Panel</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> helloWorld.layoutTenda;<p class="paragraph"/><span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.panel.Panel;<p class="paragraph"/><span class="java&#45;keyword">public</span> class HeaderPanel <span class="java&#45;keyword">extends</span> Panel &#123;<p class="paragraph"/>	<span class="java&#45;keyword">public</span> HeaderPanel(<span class="java&#45;object">String</span> id) &#123;
+		<span class="java&#45;keyword">super</span>(id);		
+	&#125;
+&#125;</pre></div><p class="paragraph"/>For each layout area we will build a panel like the one above that holds the appropriate HTML markup. In the end we will have the following set of panels:
+<ul class="star">
+<li>HeaderPanel</li>
+<li>FooterPanel</li>
+<li>MenuPanel</li>
+</ul><p class="paragraph"/>Content area will change from page to page, so we don't need a reusable panel for it.<p class="paragraph"/><h3>Template page</h3><p class="paragraph"/>Now we can build a generic template page using our brand new panels. Its markup is quite straightforward :<p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#60;head&#62;
+&#60;meta http&#45;equiv=<span class="java&#45;quote">"Content&#45;Type"</span> content=<span class="java&#45;quote">"text/html; charset=UTF&#45;8"</span>&#62; 
+&#8230;
+&#60;!&#45;&#45;Include CSS&#45;&#45;&#62;
+&#8230;
+&#60;/head&#62;
+&#60;body&#62;
+&#60;div id=<span class="java&#45;quote">"header"</span> wicket:id=<span class="java&#45;quote">"headerPanel"</span>&#62;header&#60;/div&#62;
+&#60;div id=<span class="java&#45;quote">"body"</span>&#62;
+	&#60;div id=<span class="java&#45;quote">"menu"</span> wicket:id=<span class="java&#45;quote">"menuPanel"</span>&#62;menu&#60;/div&#62;
+	&#60;div id=<span class="java&#45;quote">"content"</span> wicket:id=<span class="java&#45;quote">"contentComponent"</span>&#62;content&#60;/div&#62;
+&#60;/div&#62;
+&#60;div id=<span class="java&#45;quote">"footer"</span> wicket:id=<span class="java&#45;quote">"footerPanel"</span>&#62;footer&#60;/div&#62;
+&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>The HTML code for this page implements the generic left-menu layout of our site. You can note the 4 <code>&#60;div&#62;</code> tags used as containers for the corresponding areas.
+The page class contains the code to physically assemble the page and panels:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> helloWorld.layoutTenda;<p class="paragraph"/><span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.WebPage;
+<span class="java&#45;keyword">import</span> org.apache.wicket.Component;
+<span class="java&#45;keyword">import</span> org.apache.wicket.markup.html.basic.Label;<p class="paragraph"/><span class="java&#45;keyword">public</span> class JugTemplate <span class="java&#45;keyword">extends</span> WebPage &#123;
+	<span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;keyword">final</span> <span class="java&#45;object">String</span> CONTENT_ID = <span class="java&#45;quote">"contentComponent"</span>;<p class="paragraph"/>	<span class="java&#45;keyword">private</span> Component headerPanel;
+	<span class="java&#45;keyword">private</span> Component menuPanel;
+	<span class="java&#45;keyword">private</span> Component footerPanel;<p class="paragraph"/>              <span class="java&#45;keyword">public</span> JugTemplate()&#123;
+		add(headerPanel = <span class="java&#45;keyword">new</span> HeaderPanel(<span class="java&#45;quote">"headerPanel"</span>));
+		add(menuPanel = <span class="java&#45;keyword">new</span> MenuPanel(<span class="java&#45;quote">"menuPanel"</span>));
+		add(footerPanel = <span class="java&#45;keyword">new</span> FooterPanel(<span class="java&#45;quote">"footerPanel"</span>));
+		add(<span class="java&#45;keyword">new</span> Label(CONTENT_ID, <span class="java&#45;quote">"Put your content here"</span>));
+	&#125;<p class="paragraph"/>             //getters <span class="java&#45;keyword">for</span> layout areas
+       //&#8230; 
+&#125;</pre></div><p class="paragraph"/>Done! Our template page is ready to be used. Now all the pages of our site will be subclasses of this parent page and they will inherit the layout and the HTML markup. They will only substitute the <code>Label</code> inserted as content area with their custom content.<p class="paragraph"/><h3>Final example</h3><p class="paragraph"/>As final example we will build the login page for our site. We will call it <code>SimpleLoginPage</code>. First, we need a panel containing the login form. This will be the content area of our page. We will call it <code>LoginPanel</code> and the markup is the following:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#60;head&#62;
+&#60;/head&#62;
+&#60;body&#62;
+   &#60;wicket:panel&#62;
+    &#60;div style=<span class="java&#45;quote">"margin: auto; width: 40%;"</span>&#62;
+       &#60;form  id=<span class="java&#45;quote">"loginForm"</span> method=<span class="java&#45;quote">"get"</span>&#62;
+         &#60;fieldset id=<span class="java&#45;quote">"login"</span> class=<span class="java&#45;quote">"center"</span>&#62;
+            &#60;legend &#62;Login&#60;/legend&#62;               
+            &#60;span &#62;Username: &#60;/span&#62;&#60;input type=<span class="java&#45;quote">"text"</span> id=<span class="java&#45;quote">"username"</span>/&#62;&#60;br/&#62;                                                                  
+            &#60;span &#62;Password: &#60;/span&#62;&#60;input type=<span class="java&#45;quote">"password"</span> id=<span class="java&#45;quote">"password"</span> /&#62;
+            &#60;p&#62;
+               &#60;input type=<span class="java&#45;quote">"submit"</span> name=<span class="java&#45;quote">"login"</span> value=<span class="java&#45;quote">"login"</span>/&#62;
+            &#60;/p&#62;
+         &#60;/fieldset&#62;
+      &#60;/form&#62;
+    &#60;/div&#62;   
+   &#60;/wicket:panel&#62;
+&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>The class for this panel just extends <code>Panel</code> class so we won't see the relative code. The form of this panel is for illustrative purpose only. We will see how to work with Wicket forms in chapters <a href="../guide/single.html#chapter10" class="guide">11</a> and <a href="../guide/single.html#chapter11" class="guide">12</a>. Since this is a login page we don't want it to display the left menu area. That's not a big deal as <code>Component</code> class exposes a method called <code>setVisible</code> which sets whether the component and its children should be displayed.<p class="paragraph"/>The resulting Java code for the login page is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> helloWorld.layoutTenda;
+<span class="java&#45;keyword">import</span> helloWorld.LoginPanel;
+<span class="java&#45;keyword">import</span> org.apache.wicket.event.Broadcast;
+<span class="java&#45;keyword">import</span> org.apache.wicket.event.IEventSink;<p class="paragraph"/><span class="java&#45;keyword">public</span> class SimpleLoginPage <span class="java&#45;keyword">extends</span> JugTemplate &#123;
+	<span class="java&#45;keyword">public</span> SimpleLoginPage()&#123;
+		<span class="java&#45;keyword">super</span>();		
+		replace(<span class="java&#45;keyword">new</span> LoginPanel(CONTENT_ID));
+		getMenuPanel().setVisible(<span class="java&#45;keyword">false</span>);
+	&#125;
+&#125;</pre></div><p class="paragraph"/>Obviously this page doesn't come with a related markup file. You can see the final page in the following picture:<p class="paragraph"/><img border="0" class="center" src="../img/final-login-page.png"></img><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/helloWorld.html">&lt;&lt; <strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-27)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

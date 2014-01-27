@@ -1,4 +1,4 @@
-Let's go back to our layout example. In [chapter 4.1|guide:chapter4_1] we have divided our layout in common areas that must be part of every page. Now we will build a reusable template page for our web application combining pages and panels. The code examples are from project MarkupInheritanceExample.
+Let's go back to our layout example. In [chapter 5.1|guide:layout_1] we have divided our layout in common areas that must be part of every page. Now we will build a reusable template page for our web application combining pages and panels. The code examples are from project MarkupInheritanceExample.
 
 h3. Panels and layout areas
 
