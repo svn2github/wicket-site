@@ -10,7 +10,7 @@ The various Wicket-related topics are gradually introduced using pragmatic examp
 
 However remember that Wicket is a vast and powerful tool, so you should feel confident with the topics exposed in this document before starting to code your real applications!
 
-For those who need further documentation on Wicket, there are "many good books":http://wicket.apache.org/learn/books available for this framework.
+For those who need further documentation on Wicket, there are "many good books":http://wicket.apache.org/learn/books/ available for this framework.
 
 Hope you'll find this guide helpful. Have fun with Wicket!
 

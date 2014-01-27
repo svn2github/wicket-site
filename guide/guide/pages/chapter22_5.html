@@ -173,7 +173,7 @@ add(loginBox);</pre></div><p class="paragraph"/>Listing 6 shows a poor implement
         <span class="java&#45;object">String</span> headline = getModelObject();
         <span class="java&#45;keyword">return</span> headline.startWith(<span class="java&#45;quote">"Berlusconi"</span>);
     &#125;
-&#125;</pre></div><p class="paragraph"/><strong class="bold">Note:</strong> Some people insist on overriding <code>isVisible()</code> being <a href="http://goo.gl/6aCUv" target="blank">a bad thing</a> . The method <code>isVisible()</code> gets called very often (more than once for each request!), so you have to ensure that the calls within <code>isVisible()</code> are cheap. The main point is that the visibility of a component should be controlled by its own and not be controlled by other components. This avoids a wide-spread logic over the whole application. Another way you can realize this is to override <code>onConfigure()</code> and set the visibility there. This method gets called once during each request.
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Note:</strong> Some people insist on overriding <code>isVisible()</code> being <a href="http://www.mail-archive.com/dev<code>wicket.apache.org/msg07123.html" target="blank">a bad thing</a> . The method </code>isVisible()<code> gets called very often (more than once for each request!), so you have to ensure that the calls within </code>isVisible()<code> are cheap. The main point is that the visibility of a component should be controlled by its own and not be controlled by other components. This avoids a wide-spread logic over the whole application. Another way you can realize this is to override </code>onConfigure()@ and set the visibility there. This method gets called once during each request.
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -202,7 +202,7 @@ add(loginBox);</pre></div><p class="paragraph"/>Listing 6 shows a poor implement
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-10)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-27)</b>
 
     
 </div>
