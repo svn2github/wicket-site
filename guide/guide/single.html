@@ -39,7 +39,7 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:0"><a href="#versioningCaching"><strong>8</strong><span>Page versioning and caching</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#chapter8"><strong>9</strong><span>Under the hood of the request processing</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#requestProcessing"><strong>9</strong><span>Under the hood of the request processing</span></a></div>
                             
                             <div class="toc-item" style="margin-left:0"><a href="#chapter9"><strong>10</strong><span>Wicket Links and URL generation</span></a></div>
                             
@@ -202,17 +202,17 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#versioningCaching_4"><strong>8.4</strong><span>Summary</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#chapter8"><strong>9</strong><span>Under the hood of the request processing</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#requestProcessing"><strong>9</strong><span>Under the hood of the request processing</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter8_1"><strong>9.1</strong><span>Class Application and request processing</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_1"><strong>9.1</strong><span>Class Application and request processing</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter8_2"><strong>9.2</strong><span>Request and Response classes</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_2"><strong>9.2</strong><span>Request and Response classes</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter8_3"><strong>9.3</strong><span>The &ldquo;director&rdquo; of request processing - RequestCycle</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_3"><strong>9.3</strong><span>The &ldquo;director&rdquo; of request processing - RequestCycle</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter8_4"><strong>9.4</strong><span>Session Class</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_4"><strong>9.4</strong><span>Session Class</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#chapter8_5"><strong>9.5</strong><span>Summary</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_5"><strong>9.5</strong><span>Summary</span></a></div>
                             
                             <div class="toc-item" style="margin-left:0px"><a href="#chapter9"><strong>10</strong><span>Wicket Links and URL generation</span></a></div>
                             
@@ -553,7 +553,7 @@ All the example projects presented in this document have been generated using Ma
 Wicket can be started in two modes named respectively DEVELOPMENT and DEPLOYMENT. The first mode activates some extra features which help application development, like resources monitoring and reloading, full stack trace rendering of exceptions, an AJAX debugger window, etc&#8230; The DEPLOYMENT mode turns off all these features optimizing performances and resource consumption. In our example projects we will use the default mode which is DEVELOPMENT. <a href="../guide/single.html#chapter23_1" class="guide">Chapter 23.1</a> contains the chapter “Switching Wicket to DEPLOYMENT mode“ where we can find further details about these two modes as well as the possible ways we have to set the desired one. In any case, DO NOT deploy your applications in a production environment without switching to DEPLOYMENT mode!
 </blockquote><p class="paragraph"/><h3>The application class</h3><p class="paragraph"/>If we look back at web.xml we can see that we have provided the Wicket filter with a parameter called  <code>applicationClassName</code>. This value must be the fully qualified class name of a subclass of <code>org.apache.wicket.Application</code>. This subclass represents our web application built upon Wicket and it's responsible for configuring it when the server is starting up. Most of the times our custom application class won't inherit directly from class <code>Application</code>, but rather from class <code>org.apache.wicket.protocol.http.WebApplication</code> which provides a closer integration with servlet infrastructure. 
 Class <code>Application</code> comes with a set of configuration methods that we can override to customize our application's settings. One of these methods is <code>getHomePage()</code> that must be overridden as it is declared abstract:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">abstract</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> Page&#62; getHomePage()</pre></div><p class="paragraph"/>As you may guess from its name, this method specifies which page to use as homepage for our application. 
-Another important method is <code>init()</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">protected</span> void init()</pre></div><p class="paragraph"/>This method is called when our application is loaded by the web server (Tomcat, Jetty, etc...) and is the ideal place to put our configuration code. The <code>Application</code> class exposes its settings grouping them into interfaces (you can find them in package <code>org.apache.wicket.settings</code>). We can access these interfaces through getter methods that will be gradually introduced in the next chapters when we will cover the related settings.<p class="paragraph"/>The current application's instance can be retrieved at any time calling static method <code>Application.get()</code> in our code. We will give more details about this method in <a href="../guide/single.html#chapter8_3" class="guide">chapter 8.3</a>. The content of the application class from project HelloWorldExample is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> WebApplication
+Another important method is <code>init()</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">protected</span> void init()</pre></div><p class="paragraph"/>This method is called when our application is loaded by the web server (Tomcat, Jetty, etc...) and is the ideal place to put our configuration code. The <code>Application</code> class exposes its settings grouping them into interfaces (you can find them in package <code>org.apache.wicket.settings</code>). We can access these interfaces through getter methods that will be gradually introduced in the next chapters when we will cover the related settings.<p class="paragraph"/>The current application's instance can be retrieved at any time calling static method <code>Application.get()</code> in our code. We will give more details about this method in <a href="../guide/single.html#requestProcessing_3" class="guide">chapter 8.3</a>. The content of the application class from project HelloWorldExample is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> WebApplication
 &#123;    	
 	@Override
 	<span class="java&#45;keyword">public</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> WebPage&#62; getHomePage()
@@ -1197,20 +1197,20 @@ Page '&#60;page class&#62;' is not stateless because of component with path '&#6
 <p class="paragraph"/>In this chapter we have seen how page instances are managed by Wicket. We have learnt that pages can be divided into two families: stateless and stateful pages. Knowing the difference between the two types of pages is important to build the right page for a given task.<p class="paragraph"/>However, to complete the discussion about stateless pages we still have to deal with two topics we have just outlined in this chapter: class PageParameters and bookmarkable pages. The first part of chapter 10 will cover these missing topics.
 
 
-<h1 id="chapter8">9 Under the hood of the request processing</h1>
+<h1 id="requestProcessing">9 Under the hood of the request processing</h1>
 Although Wicket was born to provide a reliable and comprehensive object oriented abstraction for web development, sometimes we might need to work directly with “raw” web entities such as user session, web request, query parameters, and so on. For example this is necessary if we want to store an arbitrary parameter in the user session.<p class="paragraph"/>Wicket provides wrapper classes that allow us to easily access to web entities without the burden of using the low-level APIs of Java Servlet Specification. However it will always be possible to access standard classes (like HttpSession, HttpServletRequest, etc...) that lay under our Wicket application.
 This chapter will introduce these wrapper classes and it will explain how Wicket uses them to handle the web requests initiated by the user's browser.
 
 
-<h2 id="chapter8_1">9.1 Class Application and request processing</h2>
+<h2 id="requestProcessing_1">9.1 Class Application and request processing</h2>
 <p class="paragraph"/>Beside configuring and initializing our application, the Application class is responsible for creating the internal entities used by Wicket to process a request. These entities are instances of the following classes: RequestCycle, Request, Response and Session.<p class="paragraph"/>The next paragraphs will illustrate each of these classes, explaining how they are involved into request processing.
 
 
-<h2 id="chapter8_2">9.2 Request and Response classes</h2>
+<h2 id="requestProcessing_2">9.2 Request and Response classes</h2>
 <p class="paragraph"/>The <code>Request</code> and <code>Response</code> classes are located in package <code>org.apache.wicket.request</code> and they provide an abstraction of the concrete request and response used by our web application.<p class="paragraph"/>Both classes are declared as abstract but if our application class inherits from <code>WebApplication</code> it will use their sub classes <code>ServletWebRequest</code> and <code>ServletWebResponse</code>, both of them located inside the package <code>org.apache.wicket.protocol.http.servlet.ServletWebRequest</code> and <code>ServletWebResponse</code> wrap respectively a <code>HttpServletRequest</code> and a <code>HttpServletResponse</code> object. If we need to access to these low-level objects we can call <code>Request</code>'s method <code>getContainerRequest()</code> and <code>Response</code>'s method <code>getContainerResponse()</code>.
 
 
-<h2 id="chapter8_3">9.3 The “director” of request processing - RequestCycle</h2>
+<h2 id="requestProcessing_3">9.3 The “director” of request processing - RequestCycle</h2>
 <p class="paragraph"/>Class <code>org.apache.wicket.request.cycle.RequestCycle</code> is the entity in charge of serving a web request. Our application class creates a new <code>RequestCycle</code> on every request with its method <code>createRequestCycle(request, response)</code>.<p class="paragraph"/>Method <code>createRequestCycle</code> is declared as final, so we can't override it to return a custom subclass of <code>RequestCycle</code>. Instead, we must build a request cycle provider implementing interface <code>org.apache.wicket.IRequestCycleProvider</code>, and then we must tell our application class to use it via the <code>setRequestCycleProvider</code> method.<p class="paragraph"/>The current running request cycle can be retrieved at any time by calling its static method <code>RequestCycle.get()</code>. Strictly speaking this method returns the request cycle associated with the current (or local) thread, which is the thread that is serving the current request. A similar <code>get()</code> method is also implemented in classes <code>org.apache.wicket.Application</code> (as we have seen in paragraph 2.2.2) and <code>org.apache.wicket.Session</code> in order to get the application and the session in use by the current thread.<p class="paragraph"/><blockquote class="note">
 The implementation of the get method takes advantage of the standard class <code>java.lang.ThreadLocal</code>. See its JavaDoc for an introduction to local-thread variables.
 </blockquote><p class="paragraph"/>Class <code>org.apache.wicket.Component</code> provides the <code>getRequestCycle()</code> method which is a convenience method that internally invokes <code>RequestCycle.get()</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">final</span> RequestCycle getRequestCycle() &#123;
@@ -1247,7 +1247,7 @@ This paragraph will provide just the basic informations about what happens behin
 &#125;</pre></div><p class="paragraph"/>The <code>getRequestCycleListeners</code> method returns an instance of class <code>org.apache.wicket.request.cycle.RequestCycleListenerCollection</code>. This class is a sort of typed collection for <code>IRequestCycleListener</code> and it also implements the <a href="http://en.wikipedia.org/wiki/Composite_pattern" target="blank">Composite pattern</a> .<p class="paragraph"/>
 
 
-<h2 id="chapter8_4">9.4 Session Class</h2>
+<h2 id="requestProcessing_4">9.4 Session Class</h2>
 <p class="paragraph"/>In Wicket we use class <code>org.apache.wicket.Session</code> to handle session-relative informations such as client informations, session attributes, session-level cache (seen in paragraph 8.2), etc...<p class="paragraph"/>In addition, we know from paragraph 8.1 that Wicket creates a user session to store versions of stateful pages. Similarly to what happens with RequestCycle, the new Session's instances are generated by the <code>Application</code> class with the <code>newSession(Request request, Response response)</code> method. This method is not declared as final, hence it can be overridden if we need to use a custom implementation of the Session class.<p class="paragraph"/>By default if our custom application class is a subclass of WebApplication, method newSession will return an instance of class <code>org.apache.wicket.protocol.http.WebSession</code>. As we have mentioned talking about <code>RequestCycle</code>, also class Session provides a static <code>get()</code> method which returns the session associated to the current thread.<p class="paragraph"/><h3>Session and listeners</h3><p class="paragraph"/>Similar to the <code>RequestCycle</code>, class <code>org.apache.wicket.Session</code> also offers support for listener entities. With Session these entities must implement the callback interface <code>org.apache.wicket.ISessionListener</code> which exposes only the <code>onCreated(Session session)</code> method. As you might guess from its name, this method is called when a new session is created. Session listeners must be added to our application using a typed collection, just like we have done before with request cycle listeners:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init()&#123;<p class="paragraph"/>	<span class="java&#45;keyword">super</span>.init();<p class="paragraph"/>	//listener initialization&#8230;
 	ISessionListener myListener;
@@ -1297,7 +1297,7 @@ Remember that invalidateNow() will immediately remove any instance of components
 
 
 
-<h2 id="chapter8_5">9.5 Summary</h2>
+<h2 id="requestProcessing_5">9.5 Summary</h2>
 <p class="paragraph"/>In this chapter we had a look at how Wicket internally handles a web request. Even if most of the time  we won't need to customize this internal process, knowing how it works is essential to use the framework at 100%.<p class="paragraph"/>Entities like Application and Session will come in handy again when we will tackle the topic of security in chapter 20.
 
 
@@ -4468,7 +4468,7 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
         <div id="footer">
             
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-27)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
 
             
         </div>

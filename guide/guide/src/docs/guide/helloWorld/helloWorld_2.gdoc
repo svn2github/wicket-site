@@ -69,7 +69,7 @@ protected void init()
 
 This method is called when our application is loaded by the web server (Tomcat, Jetty, etc...) and is the ideal place to put our configuration code. The @Application@ class exposes its settings grouping them into interfaces (you can find them in package @org.apache.wicket.settings@). We can access these interfaces through getter methods that will be gradually introduced in the next chapters when we will cover the related settings.
 
-The current application's instance can be retrieved at any time calling static method @Application.get()@ in our code. We will give more details about this method in [chapter 8.3|guide:chapter8_3]. The content of the application class from project HelloWorldExample is the following:
+The current application's instance can be retrieved at any time calling static method @Application.get()@ in our code. We will give more details about this method in [chapter 8.3|guide:requestProcessing_3]. The content of the application class from project HelloWorldExample is the following:
 
 {code}
 public class WicketApplication extends WebApplication

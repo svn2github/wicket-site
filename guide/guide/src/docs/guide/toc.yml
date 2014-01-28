@@ -49,13 +49,13 @@ versioningCaching:
   versioningCaching_2: Stateful pages
   versioningCaching_3: Stateless pages
   versioningCaching_4: Summary
-chapter8:
+requestProcessing:
   title: Under the hood of the request processing
-  chapter8_1: Class Application and request processing
-  chapter8_2: Request and Response classes
-  chapter8_3: The “director” of request processing - RequestCycle
-  chapter8_4: Session Class
-  chapter8_5: Summary
+  requestProcessing_1: Class Application and request processing
+  requestProcessing_2: Request and Response classes
+  requestProcessing_3: The “director” of request processing - RequestCycle
+  requestProcessing_4: Session Class
+  requestProcessing_5: Summary
 chapter9:
   title: Wicket Links and URL generation
   chapter9_1: PageParameters

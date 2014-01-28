@@ -48,7 +48,7 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter8.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
                     </div>
                     
                     <div class="toc-item" style="margin-left:0"><a href="../../guide/chapter9.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
@@ -156,7 +156,7 @@ function addJsClass() {
 
                 
 
-<h2 id="chapter8_3">9.3 The “director” of request processing - RequestCycle</h2>
+<h2 id="requestProcessing_3">9.3 The “director” of request processing - RequestCycle</h2>
 <p class="paragraph"/>Class <code>org.apache.wicket.request.cycle.RequestCycle</code> is the entity in charge of serving a web request. Our application class creates a new <code>RequestCycle</code> on every request with its method <code>createRequestCycle(request, response)</code>.<p class="paragraph"/>Method <code>createRequestCycle</code> is declared as final, so we can't override it to return a custom subclass of <code>RequestCycle</code>. Instead, we must build a request cycle provider implementing interface <code>org.apache.wicket.IRequestCycleProvider</code>, and then we must tell our application class to use it via the <code>setRequestCycleProvider</code> method.<p class="paragraph"/>The current running request cycle can be retrieved at any time by calling its static method <code>RequestCycle.get()</code>. Strictly speaking this method returns the request cycle associated with the current (or local) thread, which is the thread that is serving the current request. A similar <code>get()</code> method is also implemented in classes <code>org.apache.wicket.Application</code> (as we have seen in paragraph 2.2.2) and <code>org.apache.wicket.Session</code> in order to get the application and the session in use by the current thread.<p class="paragraph"/><blockquote class="note">
 The implementation of the get method takes advantage of the standard class <code>java.lang.ThreadLocal</code>. See its JavaDoc for an introduction to local-thread variables.
 </blockquote><p class="paragraph"/>Class <code>org.apache.wicket.Component</code> provides the <code>getRequestCycle()</code> method which is a convenience method that internally invokes <code>RequestCycle.get()</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">final</span> RequestCycle getRequestCycle() &#123;
@@ -219,7 +219,7 @@ This paragraph will provide just the basic informations about what happens behin
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-27)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
 
     
 </div>
