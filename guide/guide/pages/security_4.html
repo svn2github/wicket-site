@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>20.4 Package Resource Guard 6.x</title>
+    <title>21.4 Package Resource Guard 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -81,28 +81,31 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/nativewebsockets.html"><strong>20</strong><span>Native WebSockets</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>21</strong><span>Security with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
                     </div>
                     
                 </div>
@@ -132,18 +135,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/nativewebsockets.html">&lt;&lt; <strong>20</strong><span>Native WebSockets</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>20.4 Package Resource Guard - Reference Documentation</h1>
+                    <h1>21.4 Package Resource Guard - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -156,7 +159,7 @@ function addJsClass() {
 
                 
 
-<h2 id="security_4">20.4 Package Resource Guard</h2>
+<h2 id="security_4">21.4 Package Resource Guard</h2>
 <p class="paragraph"/>Wicket internally uses an entity called package resource guard to protect package resources from external access. This entity is an implementation of interface <code>org.apache.wicket.markup.html.IPackageResourceGuard</code>.<p class="paragraph"/>By default Wicket applications use as package resource guard class <code>SecurePackageResourceGuard</code>, which allows to access only to the following file extensions (grouped by type):<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>File</th><th>Extensions</th></tr><tr class="table-odd"><td><strong class="bold">JavaScript files</strong></td><td>.js</td></tr><tr class="table-even"><td><strong class="bold">CSS files</strong></td><td>.css</td></tr><tr class="table-odd"><td><strong class="bold">HTML pages</strong></td><td>.html</td></tr><tr class="table-even"><td><strong class="bold">Textual files</strong></td><td>.txt</td></tr><tr class="table-odd"><td><strong class="bold">Flash files</strong></td><td>.swf</td></tr><tr class="table-even"><td><strong class="bold">Picture files</strong></td><td>.png, .jpg, .jpeg, .gif, .ico, .cur, .bmp, .svg</td></tr><tr class="table-odd"><td><strong class="bold">Web font files</strong></td><td>.eot, .ttf, .woff</td></tr></table><p class="paragraph"/>To modify the set of allowed files formats we can add one or more patterns with method <code>addPattern(String)</code>. The rules to write a pattern are the following:
 <ul class="star">
 <li>patterns start with either a "+" or a "-". In the first case the pattern will add one or more file to the set while starting a pattern with a “-” we exclude all the files matching the given pattern. For example pattern “-web.xml” excludes all web.xml files in all directories.</li>
@@ -181,9 +184,9 @@ function addJsClass() {
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/nativewebsockets.html">&lt;&lt; <strong>20</strong><span>Native WebSockets</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>

@@ -148,8 +148,12 @@ jee:
   jee_4: Summary
 nativewebsockets:
   title: Native WebSockets
-  nativewebsockets_1: What is Native WebSockets
-  nativewebsockets_2: How to use ?
+  nativewebsockets_1: How does it work ?
+  nativewebsockets_2: How to use
+  nativewebsockets_3: Client-side APIs
+  nativewebsockets_4: Testing
+  nativewebsockets_5: Differences with Wicket-Atmosphere module.
+  nativewebsockets_6: FAQ
 security:
   title: Security with Wicket
   security_1: Authentication

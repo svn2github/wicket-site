@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>21.2 Testing Wicket forms 6.x</title>
+    <title>22.2 Testing Wicket forms 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -81,28 +81,31 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/nativewebsockets.html"><strong>20</strong><span>Native WebSockets</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>21</strong><span>Security with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
                     </div>
                     
                 </div>
@@ -132,18 +135,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>20</strong><span>Security with Wicket</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>21</strong><span>Security with Wicket</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>21.2 Testing Wicket forms - Reference Documentation</h1>
+                    <h1>22.2 Testing Wicket forms - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -156,7 +159,7 @@ function addJsClass() {
 
                 
 
-<h2 id="testing_2">21.2 Testing Wicket forms</h2>
+<h2 id="testing_2">22.2 Testing Wicket forms</h2>
 <p class="paragraph"/>Wicket provides utility class FormTester that is expressly designed to test Wicket forms. A new FormTester is returned by <code>WicketTester</code>'s method <code>newFormTester(String, boolean)</code> which takes in input the page-relative path of the form we want to test and a boolean flag indicating if its form components must be filled with a blank string:<p class="paragraph"/><div class="code"><pre>//&#8230;
 //create a <span class="java&#45;keyword">new</span> form tester without filling its form components with a blank string
 FormTester formTester = tester.newFormTester(<span class="java&#45;quote">"form"</span>, <span class="java&#45;keyword">false</span>);
@@ -212,9 +215,9 @@ formTester.submit(<span class="java&#45;quote">"button"</span>);</pre></div><p c
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>20</strong><span>Security with Wicket</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>21</strong><span>Security with Wicket</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>

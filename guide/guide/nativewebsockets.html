@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>20 Native WebSockets 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/nativewebsockets.html"><strong>20</strong><span>Native WebSockets</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/security.html"><strong>21</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/security.html"><strong>21</strong><span>Security with Wicket</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>20 Native WebSockets - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#nativewebsockets_1"><strong>20.1</strong><span>How does it work ?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#nativewebsockets_2"><strong>20.2</strong><span>How to use</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#nativewebsockets_3"><strong>20.3</strong><span>Client-side APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#nativewebsockets_4"><strong>20.4</strong><span>Testing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#nativewebsockets_5"><strong>20.5</strong><span>Differences with Wicket-Atmosphere module.</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#nativewebsockets_6"><strong>20.6</strong><span>FAQ</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="nativewebsockets">20 Native WebSockets</h1>
+<a href="http://en.wikipedia.org/wiki/WebSocket" target="blank">WebSockets</a> is a technology that provides full-duplex communications channels over a single TCP connection.
+This means that once the browser establish a web socket connection to the server the server can push data back to the browser without the browser explicitly asking again and again whether there is something new for it.<p class="paragraph"/>Wicket Native WebSockets modules provide functionality to integrate with the non-standard APIs provided by different web containers (like <a href="http://tomcat.apache.org/" target="blank">Apache Tomcat</a> and <a href="http://www.eclipse.org/jetty/" target="blank">Jetty</a>) and standard <a href="https://www.jcp.org/en/jsr/detail?id=356" target="blank">JSR356</a> implementations.<p class="paragraph"/><blockquote class="warning">
+Native WebSocket works only when both the browser and the web containers support WebSocket technology. There are no plans to add support to fallback to long-polling, streaming or any other technology that simulates two way communication. Use it only if you really know that you will run your application in an environment that supports WebSockets.
+Currently supported web containers are Jetty 7.5+ and Tomcat 7.0.27+.
+Supported browsers can be found at <a href="http://caniuse.com/#search=websocket" target="blank">caniuse.com</a>.
+</blockquote>
+
+
+
+<h2 id="nativewebsockets_1">20.1 How does it work ?</h2>
+Each of the modules provide a specialization of <code>org.apache.wicket.protocol.http.WicketFilter</code> that registers implementation specific endpoint when an HTTP request is <a href="http://en.wikipedia.org/wiki/WebSocket#WebSocket_protocol_handshake" target="blank">upgraded</a> to WebSocket one. Later Wicket uses this endpoint to write data back to the browser and read data sent by it.<p class="paragraph"/>WebSockets communication can be used in a Wicket page by using <code>org.apache.wicket.protocol.ws.api.WebSocketBehavior</code> or in a IResource by exteding <code>org.apache.wicket.protocol.ws.api.WebSocketResource</code>.
+When a client is connected it is being registered in a application scoped registry using as a key the application name, the client session id, and the id of the page or the resource name that registered it. Later when the server needs to push a message it can use this registry to filter out which clients need to receive the message.<p class="paragraph"/>When a message is received from the client Wicket wraps it in <code>IWebSocketMessage</code> and calls WebSocketBehavior#<strong class="bold">onMessage()</strong> or WebSocketResource#<strong class="bold">onMessage()</strong> where the application logic can react on it.
+The server can push plain text and binary data to the client, but it can also add components for re-render, prepend/append JavaScript as it can do with <a href="../guide/single.html#ajax" class="guide">Ajax</a>.
+
+
+
+<h2 id="nativewebsockets_2">20.2 How to use</h2>
+<ul class="star">
+<li><strong class="bold">Classpath dependency</strong></li>
+</ul><p class="paragraph"/>Depending on the web container that is used the application has to add a dependency to either:
+<ul class="minus">
+<li>for Jetty 9.0.x</li>
+</ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
+  &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
+  &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;jetty9&#60;/artifactId&#62;
+  &#60;version&#62;...&#60;/version&#62;
+&#60;/dependency&#62;</pre></div>
+<ul class="minus">
+<li>for Jetty 7.x and 8.x</li>
+</ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
+  &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
+  &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;jetty&#60;/artifactId&#62;
+  &#60;version&#62;...&#60;/version&#62;
+&#60;/dependency&#62;</pre></div>
+<ul class="minus">
+<li>for Tomcat 7.0.27+ (first, non-JSR356 implementation)</li>
+</ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
+  &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
+  &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;tomcat&#60;/artifactId&#62;
+  &#60;version&#62;...&#60;/version&#62;
+&#60;/dependency&#62;</pre></div>
+<ul class="minus">
+<li>for JSR356 complaint implementations (at the moment are supported: Tomcat 8.x, Tomcat 7.0.47+ and Jetty 9.1.x)</li>
+</ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
+  &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
+  &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;javax&#60;/artifactId&#62;
+  &#60;version&#62;...&#60;/version&#62;
+&#60;/dependency&#62;</pre></div><p class="paragraph"/><blockquote class="note">
+The examples above show snippets for Maven's pom.xml but the application can use any other dependency management tool like <a href="http://www.gradle.org/" target="blank">Gradle</a>, <a href="http://www.scala-sbt.org/" target="blank">SBT</a>, &#8230;
+</blockquote>
+<ul class="star">
+<li><strong class="bold">web.xml</strong></li>
+</ul><p class="paragraph"/>In <code>WEB-INF/web.xml</code> replace the usage of <strong class="bold">WicketFilter</strong> with any of the following depending on the web container that is used:<p class="paragraph"/>For Jetty 9.0.x:
+<div class="code"><pre>&#60;filter&#45;class&#62;org.apache.wicket.protocol.ws.jetty9.Jetty9WebSocketFilter&#60;/filter&#45;class&#62;</pre></div><p class="paragraph"/>For Jetty 7.5+ and 8.x:
+<div class="code"><pre>&#60;filter&#45;class&#62;org.apache.wicket.protocol.ws.jetty7.Jetty7WebSocketFilter&#60;/filter&#45;class&#62;</pre></div><p class="paragraph"/>For Tomcat 7.0.27+ (old implementation):
+<div class="code"><pre>&#60;filter&#45;class&#62;org.apache.wicket.protocol.ws.tomcat7.Tomcat7WebSocketFilter&#60;/filter&#45;class&#62;</pre></div><p class="paragraph"/>For JSR356 complaint web containers (at the moment: Tomcat 7.0.47+, Tomcat 8.x and Jetty 9.1.x):
+<div class="code"><pre>&#60;filter&#45;class&#62;org.apache.wicket.protocol.ws.javax.JavaxWebSocketFilter&#60;/filter&#45;class&#62;</pre></div>
+<ul class="star">
+<li><strong class="bold">WebSocketBehavior</strong></li>
+</ul><p class="paragraph"/><code>org.apache.wicket.protocol.ws.api.WebSocketBehavior</code> is similar to Wicket Ajax behaviors that you may have used.
+Add WebSocketBehavior to the page (or to any component in the page) that will use web socket communication:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class MyPage <span class="java&#45;keyword">extends</span> WebPage &#123;<p class="paragraph"/>  <span class="java&#45;keyword">public</span> MyPage()
+  &#123;
+    add(<span class="java&#45;keyword">new</span> WebSocketBehavior() &#123;
+      @Override
+      <span class="java&#45;keyword">protected</span> void onMessage(WebSocketRequestHandler handler, TextMessage message)
+      &#123;
+        <span class="java&#45;object">String</span> msg = message.getText();
+        // <span class="java&#45;keyword">do</span> something with msg
+      &#125;
+    &#125;);
+  &#125;
+&#125;</pre></div><p class="paragraph"/>Use <code>message.getText()</code> to read the message sent by the client and use <code>handler.push(String)</code> to push a text message to the connected client. Additionally you can use <code>handler.add(Component...)</code> to add Wicket components for re-render, <code>handler#prependJavaScript(CharSequence)</code> and <code>handler#appendJavaScript(CharSequence)</code> as you do with <code>AjaxRequestTarget</code>.
+<ul class="star">
+<li><strong class="bold">WebSocketResource</strong></li>
+</ul><p class="paragraph"/>Wicket allows one thread at a time to use a page instance to simplify the usage of the pages in multithreaded enviroment. When a WebSocket message is sent to a page Wicket needs to acquire the lock to that page to be able to pass the <code>IWebSocketMessage</code> to the <code>WebSocketBehavior</code>. This may be problematic when the application needs to send many messages from the client to the server.
+For this reason Wicket provides <code>WebSocketResource</code> - an IResource implemetation that provides the same APIs as <code>WebSocketBehavior</code>. The benefit is that there is no need of synchronization as with the pages and the drawback is that <code>WebSocketRequesthandler#add(Component...)</code> method cannot be used because there is no access to the components in an <code>IResource</code>.<p class="paragraph"/>To register such WebSocket resource add such line to <code>YourApplication#init()</code> method:
+<div class="code"><pre>getSharedResources().add(<span class="java&#45;quote">"someName"</span>, <span class="java&#45;keyword">new</span> MyWebSocketResource());</pre></div><p class="paragraph"/>and 
+<div class="code"><pre>page.add(<span class="java&#45;keyword">new</span> BaseWebSocketBehavior(<span class="java&#45;quote">"someName"</span>));</pre></div>
+to any page. This will prepare the JavaScript connection for you.
+<ul class="star">
+<li><strong class="bold">WebSocket connection registry</strong></li>
+</ul><p class="paragraph"/>To push data to one or more clients the application can use the <code>IWebSocketConnectionRegistry</code> to find all registered connections and send data to all/any of them:<p class="paragraph"/><div class="code"><pre>Application application = Application.get(applicationName);
+WebSocketSettings webSocketSettings = WebSocketSettings.Holder.get(application);
+IWebSocketConnectionRegistry webSocketConnectionRegistry = webSocketSettings.getConnectionRegistry();
+IWebSocketConnection connection = webSocketConnectionRegistry.getConnection(application, sessionId, key);</pre></div>
+
+
+<h2 id="nativewebsockets_3">20.3 Client-side APIs</h2>
+By adding a <code>(Base)WebSocketBehavior</code> to your component(s) Wicket will contribute <code>wicket-websocket-jquery.js</code> library which provides some helper functions to write your client side code. There is a default websocket connection per Wicket Page opened for you which you can use like:
+<div class="code"><pre>Wicket.WebSocket.send('&#123;msg: <span class="java&#45;quote">"my message"</span>&#125;').</pre></div><p class="paragraph"/>If you need more WebSocket connections then you can do: 
+<div class="code"><pre><span class="java&#45;keyword">var</span> ws = <span class="java&#45;keyword">new</span> Wicket.WebSocket(); 
+ws.send('message');</pre></div><p class="paragraph"/>To close a connection: 
+<div class="code"><pre>Wicket.WebSocket.close()</pre></div><p class="paragraph"/>or 
+<div class="code"><pre>ws.close()</pre></div><p class="paragraph"/>Wicket.WebSocket is a simple wrapper around the native window.WebSocket API which is used to intercept the calls and to fire special JavaScript events (Wicket.Event PubSub).
+Once a page that contributes <code>(Base)WebSocketBehavior</code> is rendered the client may react on messages pushed by the server by subscribing to the <code>'/websocket/message'</code> event:<p class="paragraph"/><div class="code"><pre>Wicket.Event.subscribe(<span class="java&#45;quote">"/websocket/message"</span>, function(jqEvent, message) &#123;
+  <span class="java&#45;keyword">var</span> data = JSON.parse(message);
+  processData(data); // does something with the pushed message
+&#125;);</pre></div><p class="paragraph"/>Here is a table of all events that the application can subscribe to:
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Event name</th><th>Arguments</th><th>Description</th></tr><tr class="table-odd"><td>/websocket/open</td><td>jqEvent</td><td>A WebSocket connection has been just opened</td></tr><tr class="table-even"><td>/websocket/message</td><td>jqEvent, message</td><td>A message has been received from the server</td></tr><tr class="table-odd"><td>/websocket/closed</td><td>jqEvent</td><td>A WebSocket connection has been closed</td></tr><tr class="table-even"><td>/websocket/error</td><td>jqEvent</td><td>An error occurred in the communication. The connection will be closed</td></tr></table><p class="paragraph"/>
+
+
+<h2 id="nativewebsockets_4">20.4 Testing</h2>
+The module provides <code>org.apache.wicket.protocol.ws.util.tester.WebSocketTester</code> which gives you the possibility to emulate sending and receiving messages without the need to run in a real web container, as WicketTester does this for HTTP requests.
+Check <a href="https://github.com/apache/wicket/blob/master/wicket-native-websocket/wicket-native-websocket-core/src/test/java/org/apache/wicket/protocol/ws/util/tester/WebSocketTesterBehaviorTest.java?source=c" target="blank">WebSocketTesterBehaviorTest</a>  and <a href="https://github.com/apache/wicket/blob/master/wicket-native-websocket/wicket-native-websocket-core/src/test/java/org/apache/wicket/protocol/ws/util/tester/WebSocketTesterResourceTest.java" target="blank">WebSocketTesterResourceTest</a> for an examples.
+
+
+
+<h2 id="nativewebsockets_5">20.5 Differences with Wicket-Atmosphere module.</h2>
+Wicket-Atmosphere experimental module provides integration with <a href="https://github.com/Atmosphere/atmosphere" target="blank">Atmosphere</a> and let it handle the inconsistencies in WebSocket protocol support in different browsers and web containers. If either the browser or the web container do not support WebSockets then Atmosphere will downgrade (depending on the configuration) to either long-polling, streaming, server-side events, jsonp, &#8230; to simulate the long running connection.
+
+
+
+<h2 id="nativewebsockets_6">20.6 FAQ</h2>
+<ol>
+<li>Request and session scoped beans do not work.</li>
+</ol><p class="paragraph"/>The Web Socket communication is not processed by Servlet Filters and Listeners and thus the Dependency Injection libraries have no chance to export the request and session beans.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/security.html"><strong>21</strong><span>Security with Wicket</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

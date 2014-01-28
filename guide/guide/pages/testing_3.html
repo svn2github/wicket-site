@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>21.3 Testing markup with TagTester 6.x</title>
+    <title>22.3 Testing markup with TagTester 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -81,28 +81,31 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/nativewebsockets.html"><strong>20</strong><span>Native WebSockets</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>21</strong><span>Security with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
                     </div>
                     
                 </div>
@@ -132,18 +135,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>20</strong><span>Security with Wicket</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>21</strong><span>Security with Wicket</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>21.3 Testing markup with TagTester - Reference Documentation</h1>
+                    <h1>22.3 Testing markup with TagTester - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -156,7 +159,7 @@ function addJsClass() {
 
                 
 
-<h2 id="testing_3">21.3 Testing markup with TagTester</h2>
+<h2 id="testing_3">22.3 Testing markup with TagTester</h2>
 <p class="paragraph"/>If we need to test component markup at a more fine-grained level, we can use class <code>TagTester</code> from package <code>org.apache.wicket.util.tester</code>.<p class="paragraph"/>This test class allows to check if the generated markup contains one or more tags having a given attribute with a given value. TagTester can not be directly instantiated but it comes with three factory methods that return one or more TagTester matching the searching criteria. In the following test case (from project <code>TagTesterExample</code>) we retrieve the first tag of the home page (a &#60;span&#62; tag) having attribute class equal to myClass:<p class="paragraph"/><strong class="bold">HomePage markup:</strong><p class="paragraph"/><div class="code"><pre>&#60;html xmlns:wicket=<span class="java&#45;quote">"http://wicket.apache.org"</span>&#62;
 	&#60;head&#62;
 		&#60;meta charset=<span class="java&#45;quote">"utf&#45;8"</span> /&#62;
@@ -187,9 +190,9 @@ function addJsClass() {
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>20</strong><span>Security with Wicket</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/security.html">&lt;&lt; <strong>21</strong><span>Security with Wicket</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>

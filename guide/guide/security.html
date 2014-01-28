@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>20 Security with Wicket 6.x</title>
+    <title>21 Security with Wicket 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -81,28 +81,31 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/nativewebsockets.html"><strong>20</strong><span>Native WebSockets</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/security.html"><strong>21</strong><span>Security with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testingspring.html"><strong>23</strong><span>Test Driven Development with Wicket and Spring</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
                     </div>
                     
                 </div>
@@ -132,18 +135,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                    <div class="toc-item prev-left"><a href="../guide/nativewebsockets.html">&lt;&lt; <strong>20</strong><span>Native WebSockets</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>20 Security with Wicket - Reference Documentation</h1>
+                    <h1>21 Security with Wicket - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -156,19 +159,19 @@ function addJsClass() {
                 <div id="table-of-content">
                     <h2>Table of Contents</h2>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#security_1"><strong>20.1</strong><span>Authentication</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#security_1"><strong>21.1</strong><span>Authentication</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#security_2"><strong>20.2</strong><span>Authorizations</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#security_2"><strong>21.2</strong><span>Authorizations</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#security_3"><strong>20.3</strong><span>Using HTTPS protocol</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#security_3"><strong>21.3</strong><span>Using HTTPS protocol</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#security_4"><strong>20.4</strong><span>Package Resource Guard</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#security_4"><strong>21.4</strong><span>Package Resource Guard</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#security_5"><strong>20.5</strong><span>Summary</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#security_5"><strong>21.5</strong><span>Summary</span></a>
                     </div>
                     
                 </div>
@@ -176,11 +179,11 @@ function addJsClass() {
 
                 
 
-<h1 id="security">20 Security with Wicket</h1>
+<h1 id="security">21 Security with Wicket</h1>
 Security is one of the most important non-functional requirements we must implement in our applications. This is particularly true for enterprise applications as they usually support multiple concurrent users, and therefore they need to have an access control policy.<p class="paragraph"/>In this chapter we will explore the security infrastructure provided by Wicket and we will learn how to use it to implement authentication and authorizations in our web applications.
 
 
-<h2 id="security_1">20.1 Authentication</h2>
+<h2 id="security_1">21.1 Authentication</h2>
 <p class="paragraph"/>The first step in implementing a security policy is assigning a trusted identity to our users, which means that we must authenticate them. Web applications usually adopt a form-based authentication with a login form that asks user for a unique username and the relative password:<p class="paragraph"/><img border="0" class="center" src="../img/wikipedia-login-form.png"></img><p class="paragraph"/>Wicket supports form-based authentication with session class <code>AuthenticatedWebSession</code> and application class <code>AuthenticatedWebApplication</code>, both placed inside package <code>org.apache.wicket.authroles.authentication</code>.<p class="paragraph"/><h3>AuthenticatedWebSession</h3><p class="paragraph"/>Class AuthenticatedWebSession comes with the following set of public methods to manage user authentication:
 <ul class="star">
 <li><strong class="bold">authenticate(String username, String password)</strong>: this is an abstract method that must be implemented by every subclass of <code>AuthenticatedWebSession</code>. It should contain the actual code that checks for user's identity. It returns a boolean value which is true if authentication has succeeded or false otherwise.</li>
@@ -259,7 +262,7 @@ Since both <code>restartResponseAtSignInPage</code> and <code>redirectToIntercep
 
 
 
-<h2 id="security_2">20.2 Authorizations</h2>
+<h2 id="security_2">21.2 Authorizations</h2>
 <p class="paragraph"/>The authorization support provided by Wicket is built around the concept of authorization strategy which is represented by interface <code>IAuthorizationStrategy</code> (in package <code>org.apache.wicket.authorization</code>):<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> IAuthorizationStrategy
 &#123;
   //<span class="java&#45;keyword">interface</span> methods 
@@ -374,7 +377,7 @@ Application class <code>AuthenticatedWebApplication</code> already sets <code>Me
 
 
 
-<h2 id="security_3">20.3 Using HTTPS protocol</h2>
+<h2 id="security_3">21.3 Using HTTPS protocol</h2>
 <p class="paragraph"/>HTTPS is the standard technology adopted on Internet to create a secure communication channel between web applications and their users.<p class="paragraph"/>In Wicket we can easily protect our pages with HTTPS mounting a special request mapper called <code>HttpsMapper</code> and using annotation RequireHttps with those pages we want to serve over this protocol. Both these two entities are in package <code>org.apache.wicket.protocol.https</code>.<p class="paragraph"/>HttpsMapper wraps an existing mapper and redirects incoming requests to HTTPS if the related response must render a page containing annotation <code>RequireHttps</code>. Most of the times the wrapped mapper will be the root one, just like we saw before for <code>CryptoManager</code> in paragraph 8.6.6.<p class="paragraph"/>Another parameter needed to build a <code>HttpsMapper</code> is an instance of class <code>HttpsConfi</code>g. This class allows us to specify which ports must be used for HTTPS and HTTP. By default the port numbers used by these two protocols are respectively 443 and 80.<p class="paragraph"/>The following code is taken from project <code>HttpsProtocolExample</code> and illustrates how to enable HTTPS  in our applications:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
 @Override
 <span class="java&#45;keyword">public</span> void init()&#123;   
@@ -401,7 +404,7 @@ Application class <code>AuthenticatedWebApplication</code> already sets <code>Me
 &#125;</pre></div>
 
 
-<h2 id="security_4">20.4 Package Resource Guard</h2>
+<h2 id="security_4">21.4 Package Resource Guard</h2>
 <p class="paragraph"/>Wicket internally uses an entity called package resource guard to protect package resources from external access. This entity is an implementation of interface <code>org.apache.wicket.markup.html.IPackageResourceGuard</code>.<p class="paragraph"/>By default Wicket applications use as package resource guard class <code>SecurePackageResourceGuard</code>, which allows to access only to the following file extensions (grouped by type):<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>File</th><th>Extensions</th></tr><tr class="table-odd"><td><strong class="bold">JavaScript files</strong></td><td>.js</td></tr><tr class="table-even"><td><strong class="bold">CSS files</strong></td><td>.css</td></tr><tr class="table-odd"><td><strong class="bold">HTML pages</strong></td><td>.html</td></tr><tr class="table-even"><td><strong class="bold">Textual files</strong></td><td>.txt</td></tr><tr class="table-odd"><td><strong class="bold">Flash files</strong></td><td>.swf</td></tr><tr class="table-even"><td><strong class="bold">Picture files</strong></td><td>.png, .jpg, .jpeg, .gif, .ico, .cur, .bmp, .svg</td></tr><tr class="table-odd"><td><strong class="bold">Web font files</strong></td><td>.eot, .ttf, .woff</td></tr></table><p class="paragraph"/>To modify the set of allowed files formats we can add one or more patterns with method <code>addPattern(String)</code>. The rules to write a pattern are the following:
 <ul class="star">
 <li>patterns start with either a "+" or a "-". In the first case the pattern will add one or more file to the set while starting a pattern with a “-” we exclude all the files matching the given pattern. For example pattern “-web.xml” excludes all web.xml files in all directories.</li>
@@ -424,15 +427,15 @@ Application class <code>AuthenticatedWebApplication</code> already sets <code>Me
 
 
 
-<h2 id="security_5">20.5 Summary</h2>
+<h2 id="security_5">21.5 Summary</h2>
 <p class="paragraph"/> In this chapter we have seen the components and the mechanisms that allow us to implement security policies in our Wicket-based applications. Wicket comes with an out of the box support for both authorization and authentication.<p class="paragraph"/>The central element of authorization mechanism is the interface <code>IAuthorizationStrategy</code> which decouples our components from any detail about security strategy. The implementations of this interface must decide if a user is allowed to instantiate a given page or component and if she/he can perform a given action on it.<p class="paragraph"/>Wicket natively supports role-based authorizations with strategies <code>MetaDataRoleAuthorizationStrategy</code> and <code>AnnotationsRoleAuthorizationStrategy</code>. The difference between these two strategies is that the first offers a programmatic approach for role handling while the second promotes a declarative approach using built-in annotations.<p class="paragraph"/>After having explored how Wicket internally implements authentication and authorization, in the last part of the chapter we have learnt how to configure our applications to support HTTPS and how to specify which pages must be served over this protocol.<p class="paragraph"/>In the last paragraph we have seen how Wicket protects package resources with a guard entity that allows us to decide which package resources can be accessed from users.<p class="paragraph"/><p class="paragraph"/>
 
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                    <div class="toc-item prev-left"><a href="../guide/nativewebsockets.html">&lt;&lt; <strong>20</strong><span>Native WebSockets</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../guide/testing.html"><strong>22</strong><span>Test Driven Development with Wicket</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>
