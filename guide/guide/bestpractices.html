@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>23 Wicket Best Practices 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/testingspring.html">&lt;&lt; <strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>23 Wicket Best Practices - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_1"><strong>23.1</strong><span>Encapsulate components correctly</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_2"><strong>23.2</strong><span>Put models and page data in fields</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_3"><strong>23.3</strong><span>Correct naming for Wicket IDs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_4"><strong>23.4</strong><span>Avoid changes at the component tree</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_5"><strong>23.5</strong><span>Implement visibilities of components correctly</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_6"><strong>23.6</strong><span>Always use models</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_7"><strong>23.7</strong><span>Do not unwrap models within the constructor hierarchy</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_8"><strong>23.8</strong><span>Pass models extended components</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_9"><strong>23.9</strong><span>Validators must not change any data or models</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_10"><strong>23.10</strong><span>Do not pass components to constructors</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_11"><strong>23.11</strong><span>Use the Wicket session only for global data</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_12"><strong>23.12</strong><span>Do not use factories for components</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_13"><strong>23.13</strong><span>Every page and component must be tested</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_14"><strong>23.14</strong><span>Avoid interactions with other servlet filters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_15"><strong>23.15</strong><span>Cut small classes and methods</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_16"><strong>23.16</strong><span>The argument &quot;Bad documentation&quot;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#bestpractices_17"><strong>23.17</strong><span>Summary</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="bestpractices">23 Wicket Best Practices</h1>
+This section is addressed to developers, who have already made their first experiences with Apache Wicket. Developers who get into Wicket often have difficulties with it because they apply the typical JSF and Struts patterns and approaches. These frameworks primarily use procedural programming methods. In contrast Wicket is strongly based on object oriented patterns. So forget all Struts and JSF patterns, otherwise you won't have fun with Wicket in the long run.
+
+
+<h2 id="bestpractices_1">23.1 Encapsulate components correctly</h2>
+<p class="paragraph"/>A component should be self-contained. The user of a component should neither have to know nor care about its internal structure. She should just be familiar with its external interfaces and its documentation in order to be able to use it. This means in detail: Every component that extends Wicket's own Panel type (thus is a Panel itself) must provide its own HTML template. In contrast, when a component extends the classes <code>WebMarkupContainer</code> or <code>Form</code>, there is no HTML template. This implies that you should add components through composition in <code>WebMarkupContainer</code> or <code>Form</code>.<p class="paragraph"/><strong class="bold">Listing 1:</strong><p class="paragraph"/><div class="code"><pre>// Poor component
+<span class="java&#45;keyword">public</span> class RegistrationForm <span class="java&#45;keyword">extends</span> Form&#60;Registration&#62; &#123;
+    <span class="java&#45;keyword">public</span> RegistrationForm(<span class="java&#45;object">String</span> id, IModel&#60;Registration&#62; regModel) &#123;
+        <span class="java&#45;keyword">super</span>(id, <span class="java&#45;keyword">new</span> CompoundPropertyModel&#60;Registration&#62;(regModel))
+        // Wrong: RegistrationForm provides its own components
+        add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"username"</span>));
+        add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"firstname"</span>));
+        add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"lastname"</span>));
+    &#125;
+&#125;</pre></div><p class="paragraph"/>This snippet is an example for a poor component. The user of the <code>RegistrationForm</code> must know the internal structure of the markup and component in order to use it.<p class="paragraph"/><strong class="bold">Listing 2:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RegistrationPage <span class="java&#45;keyword">extends</span> Page &#123;
+    <span class="java&#45;keyword">public</span> RegistrationPage(IModel&#60;Registration&#62; regModel) &#123;
+        Form&#60;?&#62; form = <span class="java&#45;keyword">new</span> RegistrationForm(<span class="java&#45;quote">"form"</span>);
+        form.add(<span class="java&#45;keyword">new</span> SubmitButton(<span class="java&#45;quote">"register"</span>) &#123;
+            <span class="java&#45;keyword">public</span> void onSubmit() &#123;
+                 // <span class="java&#45;keyword">do</span> something
+            &#125;
+        &#125;);
+        add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#60;body&#62;
+    &#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+        &#60;!&#45;&#45; These are internal structure information from RegistrationForm &#45;&#45;&#62;
+        Username &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span>/&#62;
+        First name &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"firstname"</span>/&#62;
+        Last name &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"lastname"</span>/&#62;
+        &#60;!&#45;&#45; Above <span class="java&#45;keyword">new</span> components from page which the user knows  &#45;&#45;&#62;
+        &#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"register"</span> value=<span class="java&#45;quote">"Register"</span>/&#62;
+    &#60;/form&#62;
+&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>The code above shows the usage of the poor component in the <code>RegistrationPage</code>. You can see that the input fields <code>firstname</code>, <code>lastname</code> and <code>username</code> get used, even though these components are not added explicitly to the <code>RegistrationPage</code>. Avoid this, because other developers cannot directly see that the components were added in <code>RegistrationPage</code> class.<p class="paragraph"/><strong class="bold">Listing 3:</strong><p class="paragraph"/><div class="code"><pre>// Good component
+<span class="java&#45;keyword">public</span> class RegistrationInputPanel <span class="java&#45;keyword">extends</span> Panel&#123;
+    <span class="java&#45;keyword">public</span> RegistrationInputPanel(<span class="java&#45;object">String</span> id, IModel&#60;Registration&#62; regModel) &#123;
+        <span class="java&#45;keyword">super</span>(id, regModel);
+        IModel&#60;Registration&#62; compound = <span class="java&#45;keyword">new</span> CompoundPropertyModel&#60;Registration(regmodel)
+        Form&#60;Registration&#62; form = <span class="java&#45;keyword">new</span> Form&#60;Registration&#62;(<span class="java&#45;quote">"form"</span>, compound);
+        // Correct: Add components to Form over the instance variable
+        form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"username"</span>));
+        form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"firstname"</span>));
+        form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"lastname"</span>));
+        add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#60;body&#62;
+    &#60;wicket:panel&#62;
+    &#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+        Username &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span>/&#62;
+        First name &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"firstname"</span>/&#62;
+        Last name &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"lastname"</span>/&#62;
+    &#60;/form&#62;
+    &#60;/wicket:panel&#62;
+&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>Now we have a properly encapsulated input component which provides its own markup. Furthermore you can see the correct usage of a Wicket <code>Form</code>. The components get added by calling <code>form.add(Component)</code> on the instance variable. On the other hand, it is allowed to add behaviours and validators over inheritance, because those do not have markup ids which must be bound.<p class="paragraph"/>With that, the usage of <code>RegistrationInputPanel</code> is much more intuitive. There is no markup of other embedded components present anymore, just markup of components which get directly added. The <code>RegistrationPage</code> provides its own form that delegates the submit to all Wicket nested forms which are contained in the component tree.<p class="paragraph"/><strong class="bold">Listing 4:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RegistrationPage <span class="java&#45;keyword">extends</span> Page &#123;
+    <span class="java&#45;keyword">public</span> RegistrationPage(IModel&#60;Registration&#62; regModel) &#123;
+        Form&#60;?&#62; form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);
+        form.add(<span class="java&#45;keyword">new</span> RegistrationInputPanel(<span class="java&#45;quote">"registration"</span>, regModel);
+        form.add(<span class="java&#45;keyword">new</span> SubmitButton(<span class="java&#45;quote">"register"</span>) &#123;
+            <span class="java&#45;keyword">public</span> void onSubmit() &#123;
+              // <span class="java&#45;keyword">do</span> something
+            &#125;
+        &#125;);
+        add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+&#60;body&#62;
+    &#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+        &#60;div wicket:id=<span class="java&#45;quote">"registration"</span>&#62;
+           Display the RegistrationInputPanel
+        &#60;/div&#62;
+        &#60;input type=&#38;rdquo;submit&#38;rdquo; wicket:id=<span class="java&#45;quote">"register"</span> value=<span class="java&#45;quote">"Register"</span>/&#62;
+    &#60;/form&#62;
+&#60;/body&#62;
+&#60;/html&#62;</pre></div>
+
+
+<h2 id="bestpractices_2">23.2 Put models and page data in fields</h2>
+<p class="paragraph"/>In contrast to Struts, Wicket pages and components are no singletons, they are stateful and session-scoped. This enables us to store user-specific information within pages and components. The information should be stored in fields. This way you can access the information within a class while avoiding long method signatures only for passing the same information around. Instances of components can exist for several requests. For example, a page with a form which gets submitted and produces validation errors uses the same page instance. Furthermore the same page instance gets used when the user presses the back button of the browser and resubmits this formular again. Information which gets passed by the constructor should be assigned to fields (normally this must be models). When storing information in fields you should consider that the information is serializable, because the pages are stored in Wicket's page map. By default the page map stores the pages on the hard disk. A non-serializable object leads to <code>NullPointerExceptions</code> and <code>NonSerializableExceptions</code>. Additionally, big data (like binary stuff) should not be stored directly in fields because this can cause performance losses and memory leaks during serialization and deserialization. In this case, you should use the <code>LoadableDetachableModel</code> which can be assigned to a field because this provides an efficient mechanism to load and detach data.
+
+
+<h2 id="bestpractices_3">23.3 Correct naming for Wicket IDs</h2>
+<p class="paragraph"/>For many developers, naming is a dispensable thing, but I think it is one of the major topics in software development. With the help of correct naming, you can easily identify the business aspects of a software component. Additionally good naming avoids unneccessary and bad comments.<p class="paragraph"/>Bad namings for Wicket-IDs are <code>birthdateTextField</code>, <code>firstnameField</code> and <code>addressPanel</code>. Why? The naming contains two aspects: A technical aspect ( <em class="italic">"TextField"</em> ) and the business aspect ( <em class="italic">"birthdate"</em> ). Only the the business aspect is relevant because both the HTML template as well as the Java code already contain the technical details ("<code>new TextField("birthdate")</code>)". Additionally, such names add a lot of effort when you do technical refactorings, e.g. if you have to replace a <code>TextField</code> by a <code>DatePicker</code> and the Wicket ID <code>birthdateTextField</code> becomes <code>birthdateDatePicker</code>. Another reason for avoiding technical aspects in Wicket IDs is the <code>CompoundPropertyModel</code>. This model delegates the properties to its child components named by Wicket IDs (see listing 3). For example the <code>TextField username</code> automatically calls <code>setUsername()</code> and <code>getUsername()</code> on the <code>Registration</code> object. A setter like <code>setUsernameTextfield()</code> would be very inconvenient here.
+
+
+<h2 id="bestpractices_4">23.4 Avoid changes at the component tree</h2>
+<p class="paragraph"/>You should consider Wicket's component tree a constant and fixed skeleton which gets revived when its model is filled with data like a robot without brain. Without brain the robot is not able to do anything and is just a dead and fixed skeleton. However, when you fill it with data, it becomes alive and can act. There is no need for changing hardware when filling him with data. In Wicket, you should manipulate the component tree as little as possible. Consequently, you should avoid calling methods like <code>Component.replace(Component)</code> and <code>Component.remove(Component)</code>. Calling these methods indicates missing usage or misusage of Wicket's models. Furthermore the component trees should not be constructed using conditions (see listing 5). This reduces the possibility of reusing the same instance significantly.<p class="paragraph"/><strong class="bold">Listing 5:</strong><p class="paragraph"/><div class="code"><pre>// typical <span class="java&#45;keyword">for</span> struts
+<span class="java&#45;keyword">if</span>(MySession.get().isNotLoggedIn()) &#123;
+    add(<span class="java&#45;keyword">new</span> LoginBoxPanel(<span class="java&#45;quote">"login"</span>))
+&#125;
+<span class="java&#45;keyword">else</span> &#123;
+    add(<span class="java&#45;keyword">new</span> EmptyPanel(<span class="java&#45;quote">"login"</span>))
+&#125;</pre></div><p class="paragraph"/>Instead of constructing <code>LoginBoxPanel</code> conditionally, it is recommended to always add the panel  and control the visibility by overriding <code>isVisible()</code>. So the component <code>LoginBoxPanel</code> is responsible for displaying itself. We move the responsibility into the same component which executes the login. Brilliant! Cleanly encapsulated business logic. There is no decision from outside, the component handles all the logic. You can see another example in "Implement visibilities of components correctly".
+
+
+<h2 id="bestpractices_5">23.5 Implement visibilities of components correctly</h2>
+<p class="paragraph"/>Visibility of components is an important topic. In Wicket you control any component's visibility via the methods <code>isVisible()</code> and <code>setVisible()</code>. These methods are within Wicket's base class <code>Component</code> and therefore it is applicable for every component and page. Let's have a look at a concrete example of <code>LoginBoxPanel</code>. The panel just gets displayed when the user is not logged in.<p class="paragraph"/><strong class="bold">Listing 6:</strong><p class="paragraph"/><div class="code"><pre>// Poor implementation
+LoginBoxPanel loginBox = <span class="java&#45;keyword">new</span> LoginBoxPanel(<span class="java&#45;quote">"login"</span>);
+loginBox.setVisible(MySession.get().isNotLoggedIn());
+add(loginBox);</pre></div><p class="paragraph"/>Listing 6 shows a poor implementation, because a decision about the visibility is made while instanciating the component. Again, in Wicket instances of components exist for several requests. To reuse the same instance you have to call <code>loginBox.setVisible(false)</code>. This is very unhandy, because we always have to call <code>setVisible()</code> and manage the visibility. Furthermore you are going to duplicate the states, because visible is equal to "not logged in". So we have two saved states, one for the business aspect "not logged in" and one for the technical aspect "visible". Both is always equal. This approach is error-prone and fragile, because we always have to pay attention to setting the correct information every time. But this is often forgotten because the logic is widely spread over the code. The solution is the Hollywood principle: "Don't call us, we'll call you.". Take a look at the following diagram illustrating an application flow with some calls. We avoid three calls through the <a href="http://en.wikipedia.org/wiki/Hollywood_Principle" target="blank">Hollywood-Principle</a> and we just have to instanciate the <code>LoginBoxPanel</code>.<p class="paragraph"/><img border="0" class="center" src="../img/login_calls_hollywood.png"></img><p class="paragraph"/><strong class="bold">Listing 7:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class LoginBoxPanel &#123;
+    // constructor etc.
+    @Override
+    <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isVisible() &#123;
+        <span class="java&#45;keyword">return</span> MySession.get().isNotLoggedIn();
+    &#125;
+&#125;;</pre></div><p class="paragraph"/>Now the control over visibility has been inverted, the <code>LoginBoxPanel</code> decides on its visibility autonomously. For each call of <code>isVisible()</code> there is a refreshed interpretion of the login state. Hence, there is no additional state that might be outdated. The logic is centralized in one line code and not spread throughout the application. Furthermore, you can easily identify that the technical aspect <code>isVisible()</code> correlates to the business aspect "logged in". The same rules can be applied to the method <code>isEnabled()</code>. If <code>isEnabled()</code> returns false the components get displayed in gray. Forms which are within an inactive or invisible component do not get executed.<p class="paragraph"/>Note that there are cases in which you cannot avoid to call the methods <code>setVisible()</code> and <code>setEnabled()</code>. An example: The user presses a button to display an inlined registration form. In general, you can apply the following rules: data driven components override these methods and delegates to the data model. User triggered events call the method <code>setVisible(boolean)</code>. You can also override these methods with inline implementations:<p class="paragraph"/><strong class="bold">Listing 8:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"headline"</span>, headlineModel) &#123;
+    @Override
+    <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isVisible() &#123;
+        // Hidden headline <span class="java&#45;keyword">if</span> text starts with <span class="java&#45;quote">"Berlusconi"</span>
+        <span class="java&#45;object">String</span> headline = getModelObject();
+        <span class="java&#45;keyword">return</span> headline.startWith(<span class="java&#45;quote">"Berlusconi"</span>);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Note:</strong> Some people insist on overriding <code>isVisible()</code> being <a href="http://www.mail-archive.com/dev@wicket.apache.org/msg07123.html" target="blank">a bad thing</a>. The method <code>isVisible()</code> gets called very often (more than once for each request!), so you have to ensure that the calls within <code>isVisible()</code> are cheap. The main point is that the visibility of a component should be controlled by its own and not be controlled by other components. This avoids a wide-spread logic over the whole application. Another way you can realize this is to override <code>onConfigure()</code> and set the visibility there. This method gets called once during each request.
+
+
+<h2 id="bestpractices_6">23.6 Always use models</h2>
+<p class="paragraph"/>Always use models - period! Do not pass raw objects directly to components. Instances of pages and components can exist for several requests. If you use raw objects, you cannot replace them later. An example is an entity which gets loaded at each request within a <code>LoadableDetachableModel</code>. The entity manager creates a new object reference, but the page would keep the obsolete instance. Always pass <code>IModel</code> in the constructor of your components:<p class="paragraph"/><strong class="bold">Listing 9:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RegistrationInputPanel <span class="java&#45;keyword">extends</span> Panel&#123;
+    // Correct: The class Registration gets wrapped by IModel
+    <span class="java&#45;keyword">public</span> RegistrationInputPanel(<span class="java&#45;object">String</span> id, IModel&#60;Registration&#62; regModel) &#123;
+        // add components
+    &#125;
+&#125;</pre></div><p class="paragraph"/>This code can use any implementation of <code>IModel</code>, e.g. the class <code>Model</code>, a <code>PropertyModel</code> or a custom implementation of <code>LoadableDetachableModel</code> which loads and persists the values automatically. The model implementations gets very easy to replace. You - as a developer - just need to know: if I call <code>IModel.getObject()</code>, I will get an object of type <code>Registration</code>. Where the object comes from is within the responsibility of the model implementation and the calling component. For example you can pass the model while instanciating the component. If you avoid using models, you will almost certainly have to modify the component tree sooner or later which forces you to duplicate states and thus produce unmaintainable code. Additionally, you should use models due to serialization issues. Objects which get stored in fields of pages and components get serialized and deserialized on each request. This can be inefficient in some cases.
+
+
+<h2 id="bestpractices_7">23.7 Do not unwrap models within the constructor hierarchy</h2>
+<p class="paragraph"/>Avoid unwrapping models within the constructor hierarchy, i.e. do not call <code>IModel.getObject()</code> within any constructor. As already mentioned, a page instance can exist for several page requests, so you might store obsolete and redundant infomation. It is reasonable to unpack Wicket Models at events (user actions), that are methods like <code>onUpdate()</code>, <code>onClick() or </code>onSubmit()@:<p class="paragraph"/><strong class="bold">Listing 10:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"register"</span>) &#123;
+    <span class="java&#45;keyword">public</span> void onSubmit() &#123;
+        // correct, unwrap model in an event call
+        Registration reg = registrationModel.getObject()
+        userService.register(reg);
+    &#125;
+&#125;</pre></div><p class="paragraph"/>An additional possibility to unwrap models is via overriding methods like <code>isVisible()</code>, <code>isEnabled()</code> or <code>onBeforeRender()</code>.
+
+
+<h2 id="bestpractices_8">23.8 Pass models extended components</h2>
+<p class="paragraph"/>Always try to pass models on to the parent component. By that, you ensure that at the end of every request the method <code>IModel.detach()</code> gets called. This method is responsible for a data cleanup. Another example: you have implemented your own model which persists the data in the <code>detach()</code> method. So the call of <code>detach()</code> is necessary for that your data gets persisted. You can see an exemplary passing to the super constructor here:<p class="paragraph"/><strong class="bold">Listing 11:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RegistrationInputPanel <span class="java&#45;keyword">extends</span> Panel&#123;
+    <span class="java&#45;keyword">public</span> RegistrationInputPanel(<span class="java&#45;object">String</span> id, IModel&#60;Registration&#62; regModel) &#123;
+        <span class="java&#45;keyword">super</span>(id, regModel)
+        // add components
+    &#125;
+&#125;</pre></div>
+
+
+<h2 id="bestpractices_9">23.9 Validators must not change any data or models</h2>
+<p class="paragraph"/>Validators should just validate. Consider a bank account form which has a <code>BankFormValidator</code>. This validator checks the bank data over a webservice and corrects the bank name. Nobody would expect that a validator modifies information. Such logic has to be located in <code>Form.onSubmit()</code> or in the event logic of a button.
+
+
+<h2 id="bestpractices_10">23.10 Do not pass components to constructors</h2>
+<p class="paragraph"/>Do not pass entire components or pages to constructors of other components.<p class="paragraph"/><strong class="bold">Listing 12:</strong><p class="paragraph"/><div class="code"><pre>// Bad solution
+<span class="java&#45;keyword">public</span> class SettingsPage <span class="java&#45;keyword">extends</span> Page &#123;
+    <span class="java&#45;keyword">public</span> SettingsPage (IModel&#60;Settings&#62; settingsModel, <span class="java&#45;keyword">final</span> Webpage backToPage) &#123;
+        Form&#60;?&#62; form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);
+        // add components
+        form.add(<span class="java&#45;keyword">new</span> SubmitButton(<span class="java&#45;quote">"changeSettings"</span>) &#123;
+            <span class="java&#45;keyword">public</span> void onSubmit() &#123;
+               // <span class="java&#45;keyword">do</span> something
+               setResponsePage(backToPage);
+            &#125;
+        &#125;);
+        add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/>The <code>SettingsPage</code> expects the page which should be displayed after a successful submit to be passed to its constructor. This solution works, but is very bad practice. You need to know during the instanciation of <code>SettingsPage</code> where you want to redirect the user. This requires a predetermined order of instanciation. It is better to order the instanciation based on business logic (e.g. the order in the HTML template). Furthermore, you need an unnecessary instance of the next success page which might never be displayed. The solution is once again the Hollywood principle. For this you create an abstract method or a hook:<p class="paragraph"/><strong class="bold">Listing 13:</strong><p class="paragraph"/><div class="code"><pre>// Good solution
+<span class="java&#45;keyword">public</span> class SettingsPage <span class="java&#45;keyword">extends</span> Page &#123;
+    <span class="java&#45;keyword">public</span> SettingsPage (IModel&#60;Settings&#62; settingsModel) &#123;
+        Form&#60;?&#62; form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);
+        // add components
+        form.add(<span class="java&#45;keyword">new</span> SubmitButton(<span class="java&#45;quote">"changeSettings"</span>) &#123;
+            <span class="java&#45;keyword">public</span> void onSubmit() &#123;
+               // <span class="java&#45;keyword">do</span> something
+               onSettingsChanged();
+            &#125;
+         &#125;);
+         add(form);
+    &#125;<p class="paragraph"/>    // hook
+    <span class="java&#45;keyword">protected</span> void onSettingsChanged() &#123;
+    &#125;<p class="paragraph"/>// The usage of the <span class="java&#45;keyword">new</span> component
+Link&#60;<span class="java&#45;object">Void</span>&#62; settings = <span class="java&#45;keyword">new</span> Link&#60;<span class="java&#45;object">Void</span>&#62;(<span class="java&#45;quote">"settings"</span>) &#123;
+    <span class="java&#45;keyword">public</span> void onClick() &#123;
+        setResponsePage(<span class="java&#45;keyword">new</span> SettingsPage(settingsModel) &#123;
+            @Override
+            <span class="java&#45;keyword">protected</span> void onSettingsChanged() &#123;
+               // reference to the current page
+               setResponsePage(<span class="java&#45;keyword">this</span>);
+            &#125;
+        &#125;);
+    &#125;
+&#125;
+add(settings);</pre></div><p class="paragraph"/>This solution has more code, but it is more flexible and reuseable. We can see there is an event <code>onSettingsChanged()</code> and this event is called after a successful change. Furthermore, there is the possibility to execute additional code besides setting the next page. For example, you can display messages or persist information.
+
+
+<h2 id="bestpractices_11">23.11 Use the Wicket session only for global data</h2>
+<p class="paragraph"/>The Wicket session is your own extension of Wicket's base session. It is fully typed. There is no map structure to store information unlike the servlet session. You just should use Wicket's session for global data. Authentication is a good example for global data. The login and user information is required on nearly each page. For a blog application it would be good to know whether the user is an author who is allowed to compose blog entries. So you are able to hide or or show links to edit a blog entry. In general you should store the whole authorization logic in Wicket's session, because it is a global thing and you would expect it there. Data of forms and flows which only span certain pages should not stored in the session. This data can be passed from one page to the next via the constructor (see listing 14). As a consequence of this, the models and data have a clearly defined lifecycle that reflects the corresponding the page flow.<p class="paragraph"/><strong class="bold">Listing 14:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class MyPage <span class="java&#45;keyword">extends</span> WebPage &#123;
+    IModel&#60;MyData&#62; myDataModel;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> MyPage(IModel&#60;MyData&#62; myDataModel) &#123;
+        <span class="java&#45;keyword">this</span>.myDataModel = myDataModel;
+        Link&#60;<span class="java&#45;object">Void</span>&#62; next = <span class="java&#45;keyword">new</span> Link&#60;<span class="java&#45;object">Void</span>&#62;(<span class="java&#45;quote">"next"</span>) &#123;
+             <span class="java&#45;keyword">public</span> void onClick() &#123;
+                  // <span class="java&#45;keyword">do</span> something
+                  setResponsePage(<span class="java&#45;keyword">new</span> NextPage(myDataModel));
+             &#125;
+        &#125;
+        add(next);
+    &#125;
+&#125;</pre></div><p class="paragraph"/>You should pass concrete information to the page. All models can simply be stored in fields because Wicket pages are user-specific instances and no singletons in contrast to Struts. The big advantage of this approach is that the data gets automatically cleaned up when a user completes or exits the page flow. No manual cleanup anymore! This is basically an automatic garbage collector for your session.
+
+
+<h2 id="bestpractices_12">23.12 Do not use factories for components</h2>
+<p class="paragraph"/>The factory pattern is useful, but nevertheless not suitable for Wicket components.<p class="paragraph"/><strong class="bold">Listing 15:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class CmsFactory &#123;
+   <span class="java&#45;keyword">public</span> Label getCmsLabel(<span class="java&#45;object">String</span> markupId, <span class="java&#45;keyword">final</span> <span class="java&#45;object">String</span> url) &#123;
+       IModel&#60;<span class="java&#45;object">String</span>&#62; fragment = <span class="java&#45;keyword">new</span> AbstractReadOnlyModel&#60;<span class="java&#45;object">String</span>&#62;() &#123;
+          @Override
+          <span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getObject() &#123;
+             <span class="java&#45;keyword">return</span> loadSomeContent(url);
+          &#125;
+       &#125;;
+       Label result = <span class="java&#45;keyword">new</span> Label(markupId, fragment);
+       result.setRenderBodyOnly(<span class="java&#45;keyword">true</span>);
+       result.setEscapeModelStrings(<span class="java&#45;keyword">false</span>);
+       <span class="java&#45;keyword">return</span> result;
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> loadContent(<span class="java&#45;object">String</span> url) &#123;
+      // load some content
+   &#125;
+&#125;<p class="paragraph"/>// create the component within the page:
+<span class="java&#45;keyword">public</span> class MyPage <span class="java&#45;keyword">extends</span> WebPage &#123;
+   @SpringBean
+   CmsFactory cmsFactory;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> MyPage() &#123;
+      add(cmsFactory.getCmsLabel(<span class="java&#45;quote">"id"</span>, <span class="java&#45;quote">"http://url.to.load.from"</span>));
+   &#125;
+&#125;</pre></div><p class="paragraph"/>This approach for adding a label from the <code>CmsFactory</code> to a page seems to be okay at first glance, but it comes with some disadvantages. There is no possibility to use inheritance anymore. Furthermore, there is no possibility to override <code>isVisible()</code> and <code>isEnabled()</code>. The factory could also be a Spring service which instanciates the component. A better solution is to create a <code>CmsLabel</code>.<p class="paragraph"/><strong class="bold">Listing 16:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class CmsLabel <span class="java&#45;keyword">extends</span> Label &#123;
+   @SpringBean
+   CmsResource cmsResource;
+   <span class="java&#45;keyword">public</span> CmsLabel(<span class="java&#45;object">String</span> id, IModel&#60;<span class="java&#45;object">String</span>&#62; urlModel) &#123;
+      <span class="java&#45;keyword">super</span>(id, urlModel);
+      IModel&#60;<span class="java&#45;object">String</span>&#62; fragment = <span class="java&#45;keyword">new</span> AbstractReadOnlyModel&#60;<span class="java&#45;object">String</span>&#62;()&#123;
+         @Override
+         <span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getObject() &#123;
+            <span class="java&#45;keyword">return</span> cmsResource.loadSomeContent(urlModel.getObject());
+         &#125;
+      &#125;;
+      setRenderBodyOnly(<span class="java&#45;keyword">true</span>);
+      setEscapeModelStrings(<span class="java&#45;keyword">false</span>);
+   &#125;
+&#125;<p class="paragraph"/>// create the component within a page
+<span class="java&#45;keyword">public</span> class MyPage <span class="java&#45;keyword">extends</span> WebPage &#123;
+   <span class="java&#45;keyword">public</span> MyPage() &#123;
+      add(<span class="java&#45;keyword">new</span> CmsLabel(<span class="java&#45;quote">"id"</span>, Model.of(<span class="java&#45;quote">"http://url.to.load.from"</span>)));
+   &#125;
+&#125;</pre></div><p class="paragraph"/>The label in listing 16 is clearly encapsulated in a component without using a factory. Now you can easily create inline implementations and override <code>isVisible()</code> or other stuff. Naturally, you might claim "I need a factory to initialize some values in the component, e.g. a Spring service.". For this you can create a implementation of <code>IComponentInstantiationListener</code>. This listener gets called on the super-constructor of every component. The most popular implementation of this interface is the <code>SpringComponentInjector</code> which injects Spring beans in components when the fields are annotated with <code>&#64;SpringBean</code>. You can easliy write and add your own implementation of <code>IComponentInstantiationListener</code>. So there is no reason for using a factory anymore. More information about the instanciation listener is located in Wicket's JavaDoc.
+
+
+<h2 id="bestpractices_13">23.13 Every page and component must be tested</h2>
+<p class="paragraph"/>Every page and component should have a test. The simplest test just renders the component and validates its technical correctness. For example, a child component should have a matching wicket id in the markup. If the wicket id is not correctly bound - through a typo or if it was just forgotten - the test will fail. An advanced test could test a form, where a backend call gets executed and validated over a mock. So you can validate your component's behaviour. This is a simple way to detect and fix technical and business logic bugs during the build process. Wicket is very suitable for a test driven development approach. For instance, if you run a unit test which fails and shows a message that the wicket id not bound, you will avoid an unneccessary server startup (a server startup takes longer than running a unit test). This reduces the development turnaround. A disadvantage is the difficult testing possibility of AJAX components. However, the testing features of Wicket are much more sophisticated than in other web frameworks.
+
+
+<h2 id="bestpractices_14">23.14 Avoid interactions with other servlet filters</h2>
+<p class="paragraph"/>Try to get within the Wicket world whenever possible. Avoid the usage of other servlet filters. For this you can use the <code>RequestCycle</code> and override the methods <code>onBeginRequest()</code> and <code>onEndRequest()</code>. You can apply the same to the <code>HttpSession</code>. The equivalent in Wicket is the <code>WebSession</code>. Just extend the <code>WebSession</code> and override the <code>newSession()</code>-method from the Application class. There are very few reasons to access the servlet interfaces. An example could be to read an external cookie to authenticate a user. Those parts should be properly encapsulated and avoided when possible. For this example, you could do the handling within the Wicket session because this is an authentication.
+
+
+
+<h2 id="bestpractices_15">23.15 Cut small classes and methods</h2>
+<p class="paragraph"/>Avoid monolithic classes. Often I have seen that developers put the whole stuff into constructors. These classes are getting very unclear and chaotic because you use inline implementations over serveral levels. It is recommended to group logical units and extract methods with a correct business naming. This enhances the clarity and the understandability of the business aspect. When a developer navigates to a component, he is not interested in the technical aspect at first, however he just need the business aspect. To retrieve technical information of a component you can navigate to the method implementation. In case of doubt you should consider to extract seperate components. Smaller components increase the chances of reuse and make testing easier. Listing 17 shows an example of a possible structuring.<p class="paragraph"/><strong class="bold">Listing 17:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class BlogEditPage <span class="java&#45;keyword">extends</span> WebPage &#123;
+    <span class="java&#45;keyword">private</span> IModel&#60;Blog&#62; blogModel;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> BlogEditPage(IModel&#60;Blog&#62; blogModel) &#123;
+        <span class="java&#45;keyword">super</span>(<span class="java&#45;keyword">new</span> PageParameters());
+        <span class="java&#45;keyword">this</span>.blogModel = blogModel;
+        add(createBlogEditForm());
+    &#125;<p class="paragraph"/>    <span class="java&#45;keyword">private</span> Form&#60;Blog&#62; createBlogEditForm() &#123;
+        Form&#60;Blog&#62; form = newBlogEditForm();
+        form.add(createHeadlineField());
+        form.add(createContentField());
+        form.add(createTagField());
+        form.add(createViewRightPanel());
+        form.add(createCommentRightPanel());
+        form.setOutputMarkupId(<span class="java&#45;keyword">true</span>);
+        <span class="java&#45;keyword">return</span> form;
+    &#125;<p class="paragraph"/>    // more methods here
+&#125;</pre></div>
+
+
+<h2 id="bestpractices_16">23.16 The argument "Bad documentation"</h2>
+<p class="paragraph"/>It is a widespread opinion that Wicket has a bad documentation. This argument is just partly correct. There are a lot of code samples and snippets which can be used as code templates. Furthermore, there is a big community that answers complex questions very quickly. In Wicket it is very hard to document everything, because nearly everything is extensible and replaceable. If a component is not completely suitable, you will extend or replace it. Working with Wicket means permanently navigating through code. For example, just consider validators. How can I find all navigators that exist? Open the interface <code>IValidator</code> (Eclipse: Ctrl + Shift + T) and then open the type hierachy (Crtl + T). Now we can see all the validators existing in Wicket and our project.<p class="paragraph"/><img border="0" class="center" src="../img/validator-type-hierachy.png"></img>
+
+
+<h2 id="bestpractices_17">23.17 Summary</h2>
+<p class="paragraph"/>The best practices presented in this chapter should help you to write better and more maintainable code in Wicket. All described methodologies were already proven in a few Wicket projects. If you follow these advices, your Wicket projects will get future-proof and hopefully successful.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/testingspring.html">&lt;&lt; <strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

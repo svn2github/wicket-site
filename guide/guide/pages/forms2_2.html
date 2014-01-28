@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>12.2 Form validation and feedback messages 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/modelsforms.html">&lt;&lt; <strong>11</strong><span>Wicket models and forms</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>12.2 Form validation and feedback messages - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="forms2_2">12.2 Form validation and feedback messages</h2>
+<p class="paragraph"/>A basic example of a validation rule is to make a field required. In paragraph 9.3.2 we have already seen how this can be done calling setRequired(true) on a field. However, to set a validation rule on a FormComponent we must add the corresponding validator to it.<p class="paragraph"/>A validator is an implementation of the <code>org.apache.wicket.validation.IValidator</code> interface and the <code>FormComponent</code> has a version of method add which takes as input a reference of this interface.<p class="paragraph"/>For example if we want to use a text field to insert an email address, we could use the built-in validator  EmailAddressValidator to ensure that the inserted input will respect the email format <a href="http://en.wikipedia.org/wiki/Email_address" target="blank">local-part@domain</a> :<p class="paragraph"/><div class="code"><pre>TextField email = <span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"email"</span>);
+email.add(<span class="java&#45;keyword">new</span> EmailAddressValidator());</pre></div><p class="paragraph"/>Wicket comes with a set of built-in validators that should suit most of our needs. We will see them in paragraph 10.2.3.<p class="paragraph"/><h3>Feedback messages and localization</h3><p class="paragraph"/>Wicket generates a feedback message for each field that doesn't satisfy one of its validation rules. For example the message generated when a required field is left empty is the following<p class="paragraph"/><code>Field '&#60;label&#62;' is required.</code><p class="paragraph"/>&#60;label&#62; is the value of the label model set on a FormComponent with method setLabel(IModel &#60;String&#62; model). If such model is not provided, component id will be used as the default value.<p class="paragraph"/>The entire infrastructure of feedback messages is built on top of the Java internationalization (I18N) support and it uses <a href="http://docs.oracle.com/javase/tutorial/i18n/resbundle/index.html" target="blank">resource bundles</a> to store messages.<p class="paragraph"/><blockquote class="note">
+The topics of internationalization will be covered in chapter 12. For now we will give just few notions needed to understand the examples from this chapter.
+</blockquote><p class="paragraph"/>By default resource bundles are stored into properties files but we can easily configure other sources as described later in paragraph 12.4.5.<p class="paragraph"/>Default feedback messages (like the one above for required fields) are stored in the file Application. properties placed inside Wicket the org.apache.wicket package. Opening this file we can find the key and the localized value of the message:<p class="paragraph"/><code>Required=Field '$&#123;label&#125;' is required.</code><p class="paragraph"/>We can note the key (Required in our case) and the label parameter written in the <a href="http://en.wikipedia.org/wiki/Expression_Language" target="blank">expression language</a> (${label}). Scrolling down this file we can also find the message used by the Email AddressValidator:<p class="paragraph"/><code>EmailAddressValidator=The value of '${label}' is not a valid email address.</code><p class="paragraph"/>By default FormComponent provides 3 parameters for feedback message: input (the value that failed validation), label and name (this later is the id of the component).<p class="paragraph"/><blockquote class="warning">
+Remember that component model is updated with the user input only if validation succeeds! As a consequence, we can't retrieve the wrong value inserted for a field from its model. Instead, we should use getValue() method of FormComponent class. (This method will be introduced in the example used in paragraph 10.2.5)
+</blockquote><p class="paragraph"/><h3>Displaying feedback messages and filtering them</h3><p class="paragraph"/>To display feedback messages we must use component <code>org.apache.wicket.markup.html.panel.FeedbackPanel</code>. This component automatically reads all the feedback messages generated during form validation and displays them with an unordered list:<p class="paragraph"/><div class="code"><pre>&#60;ul class=<span class="java&#45;quote">"feedbackPanel"</span>&#62; 
+	&#60;li class=<span class="java&#45;quote">"feedbackPanelERROR"</span>&#62; 
+		&#60;span class=<span class="java&#45;quote">"feedbackPanelERROR"</span>&#62;Field 'Username' is required.&#60;/span&#62; 
+	&#60;/li&#62; 
+&#60;/ul&#62;</pre></div><p class="paragraph"/>CSS classes "feedbackPanel" and "feedbackPanelERROR" can be used in order to customize the style of the message list:<p class="paragraph"/><img border="0" class="center" src="../img/feedback-panel-style.png"></img><p class="paragraph"/>The component can be freely placed inside the page and we can set the maximum amount of displayed messages with the setMaxMessages() method.<p class="paragraph"/>Error messages can be filtered using three built-in filters:
+<ul class="star">
+<li><strong class="bold">ComponentFeedbackMessageFilter</strong>: shows only messages coming from a specific component.</li>
+<li><strong class="bold">ContainerFeedbackMessageFilter</strong>: shows only messages coming from a specific container or from any of its children components.</li>
+<li><strong class="bold">ErrorLevelFeedbackMessageFilter</strong>: shows only messages with a level of severity equals or greater than a given lower bound. Class FeedbackMessage defines a set of static constants to express different levels of severity: DEBUG, ERROR, WARNING, INFO, SUCCESS, etc.... Levels of severity for feedback messages are discussed in paragraph 10.2.6.</li>
+</ul><p class="paragraph"/>These filters are intended to be used when there are more than one feedback panel (or more than one form) in the same page. We can pass a filter to a feedback panel via its constructor or using the setFilter method. Custom filters can be created implementing the IFeedbackMessageFilter interface. An example of custom filter is illustrated on page 89.<p class="paragraph"/><h3>Built-in validators</h3><p class="paragraph"/>Wicket already provides a number of built-in validators ready to be used. The following table is a short reference where validators are listed along with a brief description of what they do. The default feedback message used by each of them is reported as well:<p class="paragraph"/><h4>EmailAddressValidator</h4><p class="paragraph"/>Checks if input respects the format local-part&#64;domain.<p class="paragraph"/><strong class="bold">Message:</strong><p class="paragraph"/><code>The value of '${label}' is not a valid email address.</code><p class="paragraph"/><h4>UrlValidator</h4><p class="paragraph"/>Checks if input is a valid URL. We can specify in the constructor which protocols are allowed (http://, https://, and ftp://).<p class="paragraph"/><strong class="bold">Message:</strong><p class="paragraph"/><code>The value of '${label}' is not a valid URL.</code><p class="paragraph"/><h4>DateValidator</h4><p class="paragraph"/>Validator class that can be extended or used as a factory class to get date validators to check if a date is bigger than a lower bound (method minimum(Date min)), smaller than a upper bound (method maximum(Date max)) or inside a range (method range(Date min, Date max)).<p class="paragraph"/><strong class="bold">Messages:</strong><p class="paragraph"/><code>The value of '${label}' is less than the minimum of ${minimum}.</code><p class="paragraph"/><code>The value of '${label}' is larger than the maximum of ${maximum}.</code><p class="paragraph"/><code>The value of '${label}' is not between ${minimum} and ${maximum}.</code><p class="paragraph"/><h4>RangeValidator</h4><p class="paragraph"/>Validator class that can be extended or used as a factory class to get validators to check if a value is bigger than a given lower bound (method minimum(T min)), smaller than a upper bound (method maximum(T max)) or inside a range (method range(T min,T max)).<p class="paragraph"/>The type of the value is a generic subtype of java.lang.Comparable and must implement Serializable interface.<p class="paragraph"/><strong class="bold">Messages:</strong><p class="paragraph"/><code>The value of '${label}' must be at least ${minimum}.</code><p class="paragraph"/><code>The value of '${label}' must be at most ${maximum}.</code><p class="paragraph"/><code>The value of '${label}' must be between ${minimum} and ${maximum}.</code><p class="paragraph"/><h4>StringValidator</h4><p class="paragraph"/>Validator class that can be extended or used as a factory class to get validators to check if the length of a string value is bigger then a given lower bound (method minimumLength (int min)), smaller then a given upper bound (method maximumLength (int max)) or within a given range (method lengthBetween(int min, int max)).<p class="paragraph"/>To accept only string values consisting of exactly n characters, we must use method exactLength(int length).<p class="paragraph"/><strong class="bold">Messages:</strong><p class="paragraph"/><code>The value of '${label}' is shorter than the minimum of ${minimum} characters.</code><p class="paragraph"/><code>The value of '${label}' is longer than the maximum of ${maximum} characters.</code><p class="paragraph"/><code>The value of '${label}' is not between ${minimum} and ${maximum} characters long.</code><p class="paragraph"/><code>The value of '${label}' is not exactly ${exact} characters long.</code><p class="paragraph"/><h4>CreditCardValidator</h4><p class="paragraph"/>Checks if input is a valid credit card number. This validator supports some of the most popular credit cards (like “American Express", "MasterCard", “Visa” or “Diners Club”).<p class="paragraph"/><strong class="bold">Message:</strong><p class="paragraph"/><code>The credit card number is invalid.</code><p class="paragraph"/><h4>EqualPasswordInputValidator</h4><p class="paragraph"/>This validator checks if two password fields have the same value.<p class="paragraph"/><strong class="bold">Message:</strong><p class="paragraph"/><code>${label0} and ${label1} must be equal.</code><p class="paragraph"/><h3>Overriding standard feedback messages with custom bundles</h3><p class="paragraph"/>If we don't like the default validation feedback messages, we can override them providing custom properties files. In these files we can write our custom messages using the same keys of the messages we want to override. For example if we wanted to override the default message for invalid email addresses, our properties file would contain a line like this:<p class="paragraph"/><code>EmailAddressValidator=Man, your email address is not good!</code><p class="paragraph"/>As we will see in the next chapter, Wicket searches for custom properties files in various positions inside the application's class path, but for now we will consider just the properties file placed next to our application class. The name of this file must be equal to the name of our application class:<p class="paragraph"/><img border="0" class="center" src="../img/custom-properties-file.png"></img><p class="paragraph"/>The example project OverrideMailMessage overrides email validator's message with a new one which also reports the value that failed validation:<p class="paragraph"/><code>EmailAddressValidator=The value '${input}' inserted for field '${label}' is not a valid email address.</code><p class="paragraph"/><img border="0" class="center" src="../img/validation-error-message.png"></img><p class="paragraph"/><h3>Creating custom validators</h3><p class="paragraph"/>If our web application requires a complex validation logic and built-in validators are not enough, we can  implement our own custom validators. For example (project UsernameCustomValidator) suppose we are working on the registration page of our site where users can create their profile choosing their username. Our registration form should validate the new username checking if it was already chosen by another user. In a situation like this we may need to implement a custom validator that queries a specific data source to check if a username is already in use.<p class="paragraph"/>For the sake of simplicity, the validator of our example will check the given username against a fixed list of three existing usernames.<p class="paragraph"/>A custom validator must simply implement interface IValidator:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class UsernameValidator <span class="java&#45;keyword">implements</span> IValidator&#60;<span class="java&#45;object">String</span>&#62; &#123;
+	List&#60;<span class="java&#45;object">String</span>&#62; existingUsernames = Arrays.asList(<span class="java&#45;quote">"bigJack"</span>, <span class="java&#45;quote">"anonymous"</span>, <span class="java&#45;quote">"mrSmith"</span>);<p class="paragraph"/>	<span class="java&#45;keyword">public</span> void validate(IValidatable&#60;<span class="java&#45;object">String</span>&#62; validatable) &#123;
+		<span class="java&#45;object">String</span> chosenUserName = validatable.getValue();<p class="paragraph"/>		<span class="java&#45;keyword">if</span>(existingUsernames.contains(chosenUserName))&#123;
+			ValidationError error = <span class="java&#45;keyword">new</span> ValidationError(<span class="java&#45;keyword">this</span>);
+			Random random = <span class="java&#45;keyword">new</span> Random();<p class="paragraph"/>			error.setVariable(<span class="java&#45;quote">"suggestedUserName"</span>, 
+					validatable.getValue() + random.nextInt());
+			validatable.error(error);
+		&#125;
+	&#125;	
+&#125;</pre></div><p class="paragraph"/>The only method defined inside IValidator is validate(IValidatable&#60;T&#62; validatable) and is invoked during validation's step. Interface IValidatable represents the component being validated and it can be used to retrieve the component model (getModel()) or the value to validate (getValue()).<p class="paragraph"/>The custom validation logic is all inside IValidator's method validate. When validation fails a validator must use IValidatable's method error(IValidationError error) to generate the appropriate feedback message. In the code above we used the ValidationError class as convenience implementation of the IValidationError interface which represents the validation error that must be displayed to the user. This class provides a constructor that uses the class name of the validator in input as key for the resource to use as feedback message (i.e. 'UsernameValidator' in the example). If we want to specify more then one key to use to locate the error message, we can use method addKey(String key) of ValidationError class.<p class="paragraph"/>In our example when validation fails, we suggest a possible username concatenating the given input with a pseudo-random integer. This value is passed to the feedback message with a variable named suggestedUserName. The message is inside application's properties file:<p class="paragraph"/><code>UsernameValidator=The username '${input}' is already in use. Try with '${suggestedUserName}'</code><p class="paragraph"/>To provide further variables to our feedback message we can use method setVariable(String name, Object value) of class ValidationError as we did in our example.<p class="paragraph"/>The code of the home page of the project will be examined in the next paragraph after we have introduced the topic of flash messages.<p class="paragraph"/><h3>Using flash messages</h3><p class="paragraph"/>So far we have considered just the error messages generated during validation step. However Wicket's Component class provides a set of methods to explicitly generate feedback messages called flash messages. These methods are:
+<ul class="star">
+<li>debug(Serializable message)</li>
+<li>info(Serializable message)</li>
+<li>success(Serializable message)</li>
+<li>warn(Serializable message)</li>
+<li>error(Serializable message)</li>
+<li>fatal(Serializable message)</li>
+</ul><p class="paragraph"/>Each of these methods corresponds to a level of severity for the message. The list above is sorted by increasing level of severity.<p class="paragraph"/>In the example seen in the previous paragraph we have a form which uses success method to notify user when the inserted username is valid. Inside this form there are two FeedbackPanel components: one to display the error message produced by custom validator and the other one to display the success message. The code of the example page is the following:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;body&#62;
+	&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+		Username: &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span>/&#62;
+		&#60;br/&#62;
+		&#60;input type=<span class="java&#45;quote">"submit"</span>/&#62;
+	&#60;/form&#62;
+	&#60;div style=<span class="java&#45;quote">"color:green"</span> wicket:id=<span class="java&#45;quote">"succesMessage"</span>&#62;
+	&#60;/div&#62;
+	&#60;div style=<span class="java&#45;quote">"color:red"</span> wicket:id=<span class="java&#45;quote">"feedbackMessage"</span>&#62;
+	&#60;/div&#62;
+&#60;/body&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;	
+	Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>)&#123;
+		@Override
+		<span class="java&#45;keyword">protected</span> void onSubmit() &#123;
+			<span class="java&#45;keyword">super</span>.onSubmit();
+			success(<span class="java&#45;quote">"Username is good!"</span>);
+		&#125;
+	&#125;;<p class="paragraph"/>	TextField mail;<p class="paragraph"/>	form.add(mail = <span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"username"</span>, Model.of(<span class="java&#45;quote">""</span>)));
+	mail.add(<span class="java&#45;keyword">new</span> UsernameValidator());<p class="paragraph"/>	add(<span class="java&#45;keyword">new</span> FeedbackPanel(<span class="java&#45;quote">"feedbackMessage"</span>, 
+		<span class="java&#45;keyword">new</span> ExactErrorLevelFilter(FeedbackMessage.ERROR)));
+	add(<span class="java&#45;keyword">new</span> FeedbackPanel(<span class="java&#45;quote">"succesMessage"</span>, 
+		<span class="java&#45;keyword">new</span> ExactErrorLevelFilter(FeedbackMessage.SUCCESS)));<p class="paragraph"/>	add(form);
+    &#125;<p class="paragraph"/>    class ExactErrorLevelFilter <span class="java&#45;keyword">implements</span> IFeedbackMessageFilter&#123;
+    	<span class="java&#45;keyword">private</span> <span class="java&#45;object">int</span> errorLevel;<p class="paragraph"/>		<span class="java&#45;keyword">public</span> ExactErrorLevelFilter(<span class="java&#45;object">int</span> errorLevel)&#123;
+			<span class="java&#45;keyword">this</span>.errorLevel = errorLevel;
+		&#125;<p class="paragraph"/>		<span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> accept(FeedbackMessage message) &#123;
+			<span class="java&#45;keyword">return</span> message.getLevel() == errorLevel;
+		&#125;<p class="paragraph"/>    &#125;
+    //UsernameValidator definition
+    //&#8230;
+&#125;</pre></div><p class="paragraph"/>The two feedback panels must be filtered in order to display just the messages with a given level of severity (ERROR for validator message and SUCCESS for form's flash message). Unfortunately the built-in message filter ErrorLevelFeedbackMessageFilter is not suitable for this task because its filter condition does not check for an exact error level (the given level is used as lower bound value). As a consequence, we had to build a custom filter (inner class ExactErrorLevelFilter) to accept only the desired severity level (see method accept of interface IFeedbackMessageFilter). 
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/modelsforms.html">&lt;&lt; <strong>11</strong><span>Wicket models and forms</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

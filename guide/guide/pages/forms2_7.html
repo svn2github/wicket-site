@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>12.7 File upload 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/modelsforms.html">&lt;&lt; <strong>11</strong><span>Wicket models and forms</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>12.7 File upload - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="forms2_7">12.7 File upload</h2>
+<p class="paragraph"/>Wicket supports file uploading with the FileUploadField component which must be used with the &#60;input&#62; tag whose type attribute must be set to "file". In order to send a file on form submission we must enable multipart mode calling MultiPart(true)on our form.<p class="paragraph"/>In the next example (project UploadSingleFile) we will see a form which allows users to upload a file into the temporary directory of the server (path /tmp on Unix/Linux systems):<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+	&#60;head&#62;
+	&#60;/head&#62;
+	&#60;body&#62;
+	&#60;h1&#62;Upload your file here!&#60;/h1&#62;
+	&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+		&#60;input type=<span class="java&#45;quote">"file"</span> wicket:id=<span class="java&#45;quote">"fileUploadField"</span>/&#62; 
+		&#60;input type=<span class="java&#45;quote">"submit"</span> value=<span class="java&#45;quote">"Upload"</span>/&#62;
+	&#60;/form&#62;
+	&#60;div wicket:id=<span class="java&#45;quote">"feedbackPanel"</span>&#62;
+	&#60;/div&#62;
+	&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+   <span class="java&#45;keyword">private</span> FileUploadField fileUploadField;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+    	fileUploadField = <span class="java&#45;keyword">new</span> FileUploadField(<span class="java&#45;quote">"fileUploadField"</span>);<p class="paragraph"/>    	Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>)&#123;
+    		@Override
+    		<span class="java&#45;keyword">protected</span> void onSubmit() &#123;
+    		  <span class="java&#45;keyword">super</span>.onSubmit();<p class="paragraph"/>    		  FileUpload fileUpload = fileUploadField.getFileUpload();<p class="paragraph"/>    		    <span class="java&#45;keyword">try</span> &#123;
+			File file = <span class="java&#45;keyword">new</span> File(<span class="java&#45;object">System</span>.getProperty(<span class="java&#45;quote">"java.io.tmpdir"</span>) + <span class="java&#45;quote">"/"</span> +
+    						fileUpload.getClientFileName());<p class="paragraph"/>			    fileUpload.writeTo(file);
+		        &#125; <span class="java&#45;keyword">catch</span> (IOException e) &#123;
+			   e.printStackTrace();
+			 &#125;
+    		&#125;
+    	&#125;;<p class="paragraph"/>	form.setMultiPart(<span class="java&#45;keyword">true</span>);
+	//set a limit <span class="java&#45;keyword">for</span> uploaded file's size
+	form.setMaxSize(Bytes.kilobytes(100));
+	form.add(fileUploadField);
+	add(<span class="java&#45;keyword">new</span> FeedbackPanel(<span class="java&#45;quote">"feedbackPanel"</span>));
+	add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/>The code that copies the uploaded file to the temporary directory is inside the onSubmit method of the Form class. The uploaded file is handled with an instance of class FileUpload returned by the  getFileUpload() method of the FileUploadField class. This class provides a set of methods to perform some common tasks like getting the name of the uploaded file (getClientFileName()), coping the file into a directory (writeTo(destinationFile)), calculating file digest (getDigest (digestAlgorithm)) and so on.<p class="paragraph"/>Form component can limit the size for uploaded files using its setMaxSize(size) method. In the example we have set this limit to 100 kb to prevent users from uploading files bigger than this size.<p class="paragraph"/><blockquote class="note">
+The maximum size for uploaded files can also be set at application's level using the setDefaultMaximumUploadSize(Bytes maxSize) method of the IApplicationSettings interface:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void init()
+&#123;
+ getApplicationSettings().setDefaultMaximumUploadSize(Bytes.kilobytes(100));  
+&#125;</pre></div>
+</blockquote><p class="paragraph"/><h3>Upload multiple files</h3><p class="paragraph"/>If we need to upload multiple files at once, we can use the MultiFileUploadField component which allows the user to select an arbitrary number of files to send on form submission.<p class="paragraph"/>An example showing how to use this component can be found in Wicket module wicket-examples in file MultiUploadPage.java. The live example is hosted at <a href="http://www.wicket-library.com/wicket-examples-6.0.x/upload/multi" target="blank">http://www.wicket-library.com/wicket-examples-6.0.x/upload/multi</a> .
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/modelsforms.html">&lt;&lt; <strong>11</strong><span>Wicket models and forms</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

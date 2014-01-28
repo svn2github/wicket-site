@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>14.3 Bundles lookup algorithm 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/repeaters.html">&lt;&lt; <strong>13</strong><span>Displaying multiple items with repeaters</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>14.3 Bundles lookup algorithm - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="i18n_3">14.3 Bundles lookup algorithm</h2>
+<p class="paragraph"/>As we hinted at the beginning of this chapter, by default Wicket provides a very flexible algorithm to locate the resource bundles available for a given component. In this paragraph we will learn how this default lookup algorithm works and which options it offers to manage our bundle files.<p class="paragraph"/><h3>Localizing pages and panels</h3><p class="paragraph"/>Similarly to application class, also component classes can have their own bundle files having as base name the class name of the related component and placed in the same package. So for example if class CustomPanel is a custom panel we created, we can provide it with a default bundle file called  CustomPanel.properties containing the textual resources used by this panel. This rule applies to page classes as well:<p class="paragraph"/><img border="0" class="center" src="../img/page-and-panel-bundle.png"></img><p class="paragraph"/>One fundamental thing to keep in mind when we work with these kinds of bundles is that the lookup algorithm gives priority to the bundles of the containers of the component that is requesting a localized resource. The more a container is higher in the hierarchy, the bigger is its priority over the other components. This mechanism was made to allow containers to overwrite resources used by children components. As a consequence the values inside the resource bundle of a page will have the priority over the other values with the same key defined in the bundles of children components.<p class="paragraph"/>To better grasp this concept let's consider the component hierarchy depicted in the following picture:<p class="paragraph"/><img border="0" class="center" src="../img/custom-panel-bundle.png"></img><p class="paragraph"/>If CustomPanel tries to retrieve the string resource having 'message' as key, it will get the value 'Wellcome!' and not the one defined inside its own bundle file.<p class="paragraph"/>The default message-lookup algorithm is not limited to component hierarchy but it also includes the class hierarchy of every component visited in the search strategy described so far. This makes bundle files inheritable, just like markup files. When the hierarchy of a container component is explored, any ancestor has the priority over children components. Consider for example the hierarchy in the following picture:<p class="paragraph"/><img border="0" class="center" src="../img/custom-panel-bundle2.png"></img><p class="paragraph"/>Similarly to the previous example, the bundle owned by CustomPanel is overwritten by the bundle of   page class BasePage (which has been inherited by CustomPage).<p class="paragraph"/><h3>Component-specific resources</h3><p class="paragraph"/>In order to make a resource specific for a given child component, we can prefix the message key with the id of the desired component. Consider for example the following code and bundle of a generic page:<p class="paragraph"/>Page code:<p class="paragraph"/><div class="code"><pre>add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"label"</span>,<span class="java&#45;keyword">new</span> ResourceModel(<span class="java&#45;quote">"labelValue"</span>)));
+add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"anotherLabel"</span>,<span class="java&#45;keyword">new</span> ResourceModel(<span class="java&#45;quote">"labelValue"</span>)));</pre></div><p class="paragraph"/>Page bundle:<p class="paragraph"/><div class="code"><pre>labelValue=Default value
+anotherLabel.labelValue=Value <span class="java&#45;keyword">for</span> anotherLabel</pre></div><p class="paragraph"/>Label with id anotherLabel will display the value 'Value for anotherLabel' while label label will display 'Default value'. In a similar fashion, parent containers can specify a resource for a nested child component prepending also its relative path (the path is dot-separated):<p class="paragraph"/>Page code:<p class="paragraph"/><div class="code"><pre>Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);
+form.add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"anotherLabel"</span>,<span class="java&#45;keyword">new</span> ResourceModel(<span class="java&#45;quote">"labelValue"</span>)));
+add(form);</pre></div><p class="paragraph"/>Page bundle:<p class="paragraph"/><div class="code"><pre>labelValue=Default value
+anotherLabel.labelValue=Value <span class="java&#45;keyword">for</span> anotherLabel
+form.anotherLabel.labelValue=Value <span class="java&#45;keyword">for</span> anotherLabel inside form</pre></div><p class="paragraph"/>With the code and the bundle above, the label inside the form will display the value 'Value for anotherLabel inside form'.<p class="paragraph"/><h3>Package bundles</h3><p class="paragraph"/>If no one of the previous steps can find a resource for the given key, the algorithm will look for package bundles. These bundles have package as base name and they can be placed in one of the package of our application:<p class="paragraph"/><img border="0" class="center" src="../img/package-bundles.png"></img><p class="paragraph"/>Packages are traversed starting from the one containing the component requesting for a resource and going up to the root package.<p class="paragraph"/><h3>Bundles for feedback messages</h3><p class="paragraph"/>The algorithm described so far applies to feedback messages as well. In case of validation errors, the component that has caused the error will be considered as the component which the string resource is relative to. Furthermore, just like application class and components, validators can have their own bundles placed next to their class and having as base name their class name. This allows us to distribute validators along with the messages they use to report errors:<p class="paragraph"/><img border="0" class="center" src="../img/validator-with-bundle.png"></img><p class="paragraph"/>Validator's resource bundles have the lowest priority in the lookup algorithm. They can be overwritten by resource bundles of components, packages and application class.<p class="paragraph"/><h3>Extending the default lookup algorithm</h3><p class="paragraph"/>Wicket implements the default lookup algorithm using the strategy pattern1. The concrete strategies are abstracted with the interface <code>org.apache.wicket.resource.loader.IStringResourceLoader</code>. By default Wicket uses the following implementations of <code>IStringResourceLoader</code> (sorted by execution order):
+<ol>
+<li><strong class="bold">ComponentStringResourceLoader:</strong> implements most of the default algorithm. It searches for a given resource across bundles from the container hierarchy, from class hierarchy and from the given component.</li>
+<li><strong class="bold">PackageStringResourceLoader:</strong> searches into package bundles.</li>
+<li><strong class="bold">ClassStringResourceLoader:</strong> searches into bundles of a given class. By default the target class is the application class.</li>
+<li><strong class="bold">ValidatorStringResourceLoader:</strong> searches for resources into validator's bundles. A list of validators is provided by the form component that failed validation.</li>
+<li><strong class="bold">InitializerStringResourceLoader:</strong> this resource allows internationalization to interact with the initialization mechanism of the framework that will be illustrated in paragraph 15.4.</li>
+</ol><p class="paragraph"/>Developer can customize lookup algorithm removing default resource loaders or adding custom implementations to the list of the resource loaders in use. This task can be accomplished using method getStringResourceLoaders of setting interface <code>org.apache.wicket.settings.IResourceSettings</code>:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void init()
+&#123;
+  <span class="java&#45;keyword">super</span>.init();
+  //retrieve IResourceSettings and then the list of resource loaders
+  List&#60;IStringResourceLoader&#62; resourceLoaders = getResourceSettings(). 
+                                                getStringResourceLoaders();
+  //customize the list...</pre></div>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/repeaters.html">&lt;&lt; <strong>13</strong><span>Displaying multiple items with repeaters</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

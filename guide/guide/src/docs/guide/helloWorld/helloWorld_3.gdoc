@@ -9,7 +9,7 @@ By default this HTML file must have the same name of the related page class and 
 
 _Illustration :Page class and its related HTML file_
 
-If you don't like to put class and html side by side (let's say you want all your HTML files in a separated folder) you can use Wicket settings to specify where HTML files can be found. We will cover this topic later in [chapter 14.9|guide:chapter14_9].
+If you don't like to put class and html side by side (let's say you want all your HTML files in a separated folder) you can use Wicket settings to specify where HTML files can be found. We will cover this topic later in [chapter 15.9|guide:resources_9].
 
 The Java code for the @HomePage@ class is the following:
 
@@ -28,7 +28,7 @@ public class HomePage extends WebPage {
 {code}
 
 Apart from subclassing @WebPage@, @HomePage@ defines a constructor that adds a @Label@ component to  itself. 
-Method @add(Component component)@ is inherited from ancestor class @org.apache.wicket.MarkupContainer@ and is used to add children components to a web page. We'll see more about @MarkupContainer@ later in [chapter 4.2|guide:layout_2].
+Method @add(Component component)@ is inherited from ancestor class @org.apache.wicket.MarkupContainer@ and is used to add children components to a web page. We'll see more about @MarkupContainer@ later in [chapter 5.2|guide:layout_2].
 Class @org.apache.wicket.markup.html.basic.Label@ is the simplest component shipped with Wicket. It just inserts a string (the second argument of its constructor) inside the corresponding HTML tag.
 Just like any other Wicket component, @Label@ needs a textual id (@'helloMessage'@ in our example) to be instantiated. At runtime Wicket will use this value to find the HTML tag we want to bind to the component. This tag must have a special attribute called @wicket:id@ and its value must be identical to the component id (comparison is case-sensitive!).
 

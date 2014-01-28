@@ -56,145 +56,149 @@ requestProcessing:
   requestProcessing_3: The “director” of request processing - RequestCycle
   requestProcessing_4: Session Class
   requestProcessing_5: Summary
-chapter9:
+urls:
   title: Wicket Links and URL generation
-  chapter9_1: PageParameters
-  chapter9_2: Bookmarkable links
-  chapter9_3: Automatically creating bookmarkable links with tag wicket:link
-  chapter9_4: External links
-  chapter9_5: Stateless links
-  chapter9_6: Generating structured and clear URLs
-  chapter9_7: Summary
-chapter10:
+  urls_1: PageParameters
+  urls_2: Bookmarkable links
+  urls_3: Automatically creating bookmarkable links with tag wicket:link
+  urls_4: External links
+  urls_5: Stateless links
+  urls_6: Generating structured and clear URLs
+  urls_7: Summary
+modelsforms:
   title: Wicket models and forms
-  chapter10_1: What is a model?
-  chapter10_2: Models and JavaBeans
-  chapter10_3: Wicket forms
-  chapter10_4: Component DropDownChoice
-  chapter10_5: Model chaining
-  chapter10_6: Detachable models
-  chapter10_7: Using more than one model in a component
-  chapter10_8: Use models!
-  chapter10_9: Summary
-chapter11:
+  modelsforms_1: What is a model?
+  modelsforms_2: Models and JavaBeans
+  modelsforms_3: Wicket forms
+  modelsforms_4: Component DropDownChoice
+  modelsforms_5: Model chaining
+  modelsforms_6: Detachable models
+  modelsforms_7: Using more than one model in a component
+  modelsforms_8: Use models!
+  modelsforms_9: Summary
+forms2:
   title: Wicket forms in detail
-  chapter11_1: Default form processing
-  chapter11_2: Form validation and feedback messages
-  chapter11_3: Input value conversion
-  chapter11_4: Submit form with an IFormSubmittingComponent
-  chapter11_5: Nested forms
-  chapter11_6: Multi-line text input
-  chapter11_7: File upload
-  chapter11_8: Creating complex form components with FormComponentPanel
-  chapter11_9: Stateless form
-  chapter11_10: Working with radio buttons and checkboxes
-  chapter11_11: Selecting multiple values with ListMultipleChoices and Palette
-  chapter11_12: Summary
-chapter12:
+  forms2_1: Default form processing
+  forms2_2: Form validation and feedback messages
+  forms2_3: Input value conversion
+  forms2_4: Submit form with an IFormSubmittingComponent
+  forms2_5: Nested forms
+  forms2_6: Multi-line text input
+  forms2_7: File upload
+  forms2_8: Creating complex form components with FormComponentPanel
+  forms2_9: Stateless form
+  forms2_10: Working with radio buttons and checkboxes
+  forms2_11: Selecting multiple values with ListMultipleChoices and Palette
+  forms2_12: Summary
+repeaters:
   title: Displaying multiple items with repeaters
-  chapter12_1: The RepeatingView Component
-  chapter12_2: The ListView Component
-  chapter12_3: The RefreshingView Component
-  chapter12_4: Pageable repeaters 
-  chapter12_5: Summary
-chapter13:
+  repeaters_1: The RepeatingView Component
+  repeaters_2: The ListView Component
+  repeaters_3: The RefreshingView Component
+  repeaters_4: Pageable repeaters 
+  repeaters_5: Summary
+i18n:
   title: Internationalization with Wicket
-  chapter13_1: Localization
-  chapter13_2: Localization in Wicket
-  chapter13_3: Bundles lookup algorithm
-  chapter13_4: Localization of component's choices
-  chapter13_5: Internationalization and Models
-  chapter13_6: Summary
-chapter14:
+  i18n_1: Localization
+  i18n_2: Localization in Wicket
+  i18n_3: Bundles lookup algorithm
+  i18n_4: Localization of component's choices
+  i18n_5: Internationalization and Models
+  i18n_6: Summary
+resources:
   title: Resource management with Wicket
-  chapter14_1: Static vs dynamic resources
-  chapter14_2: Resource references
-  chapter14_3: Package resources
-  chapter14_4: Adding resources to page header section
-  chapter14_5: Resource dependencies
-  chapter14_6: Aggregate multiple risources with resource bundles
-  chapter14_7: Custom resources
-  chapter14_8: Mounting resources
-  chapter14_9: Shared resources
-  chapter14_10: Customizing resource loading
-  chapter14_11: Summary
-chapter15:
+  resources_1: Static vs dynamic resources
+  resources_2: Resource references
+  resources_3: Package resources
+  resources_4: Adding resources to page header section
+  resources_5: Resource dependencies
+  resources_6: Aggregate multiple risources with resource bundles
+  resources_7: Custom resources
+  resources_8: Mounting resources
+  resources_9: Shared resources
+  resources_10: Customizing resource loading
+  resources_11: Summary
+jsintegration:
   title: An example of integration with JavaScript
-  chapter15_1: What we want to do...
-  chapter15_2: ...and how we will do it
-  chapter15_3: Summary
-chapter16:
+  jsintegration_1: What we want to do...
+  jsintegration_2: ...and how we will do it
+  jsintegration_3: Summary
+advanced:
   title: Wicket advanced topics
-  chapter16_1: Enriching components with behaviors
-  chapter16_2: Generating callback URLs with IRequestListener
-  chapter16_3: Initializers
-  chapter16_4: Using JMX with Wicket
-  chapter16_5: Generating HTML markup from code
-  chapter16_6: Summary
-chapter17:
+  advanced_1: Enriching components with behaviors
+  advanced_2: Generating callback URLs with IRequestListener
+  advanced_3: Initializers
+  advanced_4: Using JMX with Wicket
+  advanced_5: Generating HTML markup from code
+  advanced_6: Summary
+ajax:
   title: Working with AJAX
-  chapter17_1: How to use AJAX components and behaviors
-  chapter17_2: Build-in AJAX components
-  chapter17_3: Built-in AJAX behaviors
-  chapter17_4: Using an activity indicator
-  chapter17_5: AJAX request attributes and call listeners
-  chapter17_6: Creating custom AJAX call listener
-  chapter17_7: Summary
-chapter18:
+  ajax_1: How to use AJAX components and behaviors
+  ajax_2: Build-in AJAX components
+  ajax_3: Built-in AJAX behaviors
+  ajax_4: Using an activity indicator
+  ajax_5: AJAX request attributes and call listeners
+  ajax_6: Creating custom AJAX call listener
+  ajax_7: Summary
+jee:
   title: Integration with enterprise containers
-  chapter18_1: Integrating Wicket with EJB
-  chapter18_2: Integrating Wicket with Spring
-  chapter18_3: JSR-330 annotations
-  chapter18_4: Summary
-chapter19:
+  jee_1: Integrating Wicket with EJB
+  jee_2: Integrating Wicket with Spring
+  jee_3: JSR-330 annotations
+  jee_4: Summary
+nativewebsockets:
+  title: Native WebSockets
+  nativewebsockets_1: What is Native WebSockets
+  nativewebsockets_2: How to use ?
+security:
   title: Security with Wicket
-  chapter19_1: Authentication
-  chapter19_2: Authorizations
-  chapter19_3: Using HTTPS protocol
-  chapter19_4: Package Resource Guard
-  chapter19_5: Summary
-chapter20:
+  security_1: Authentication
+  security_2: Authorizations
+  security_3: Using HTTPS protocol
+  security_4: Package Resource Guard
+  security_5: Summary
+testing:
   title: Test Driven Development with Wicket
-  chapter20_1: Utility class WicketTester
-  chapter20_2: Testing Wicket forms
-  chapter20_3: Testing markup with TagTester
-  chapter20_4: Summary
-chapter21:
+  testing_1: Utility class WicketTester
+  testing_2: Testing Wicket forms
+  testing_3: Testing markup with TagTester
+  testing_4: Summary
+testingspring:
   title: Test Driven Development with Wicket and Spring
-  chapter21_1: Configuration of the runtime environment
-  chapter21_2: Configuration of the JUnit based integration test environment
-  chapter21_3: Summary
-chapter22:
+  testingspring_1: Configuration of the runtime environment
+  testingspring_2: Configuration of the JUnit based integration test environment
+  testingspring_3: Summary
+bestpractices:
   title: Wicket Best Practices
-  chapter22_1: Encapsulate components correctly
-  chapter22_2: Put models and page data in fields
-  chapter22_3: Correct naming for Wicket IDs
-  chapter22_4: Avoid changes at the component tree
-  chapter22_5: Implement visibilities of components correctly
-  chapter22_6: Always use models
-  chapter22_7: Do not unwrap models within the constructor hierarchy
-  chapter22_8: Pass models extended components
-  chapter22_9: Validators must not change any data or models
-  chapter22_10: Do not pass components to constructors
-  chapter22_11: Use the Wicket session only for global data
-  chapter22_12: Do not use factories for components
-  chapter22_13: Every page and component must be tested
-  chapter22_14: Avoid interactions with other servlet filters
-  chapter22_15: Cut small classes and methods
-  chapter22_16: The argument "Bad documentation"
-  chapter22_17: Summary
-chapter23:
+  bestpractices_1: Encapsulate components correctly
+  bestpractices_2: Put models and page data in fields
+  bestpractices_3: Correct naming for Wicket IDs
+  bestpractices_4: Avoid changes at the component tree
+  bestpractices_5: Implement visibilities of components correctly
+  bestpractices_6: Always use models
+  bestpractices_7: Do not unwrap models within the constructor hierarchy
+  bestpractices_8: Pass models extended components
+  bestpractices_9: Validators must not change any data or models
+  bestpractices_10: Do not pass components to constructors
+  bestpractices_11: Use the Wicket session only for global data
+  bestpractices_12: Do not use factories for components
+  bestpractices_13: Every page and component must be tested
+  bestpractices_14: Avoid interactions with other servlet filters
+  bestpractices_15: Cut small classes and methods
+  bestpractices_16: The argument "Bad documentation"
+  bestpractices_17: Summary
+maven:
   title: Working with Maven (Appendix)
-  chapter23_1: Switching Wicket to DEPLOYMENT mode
-  chapter23_2: Creating a Wicket project from scratch and importing it into our favourite IDE
-chapter24:
+  maven_1: Switching Wicket to DEPLOYMENT mode
+  maven_2: Creating a Wicket project from scratch and importing it into our favourite IDE
+wicketstuff:
   title: Project WicketStuff (Appendix)
-  chapter24_1: What is project WicketStuff
-  chapter24_2: Module tinymce
-  chapter24_3: Module wicketstuff-gmap3
-  chapter24_4: Module wicketstuff-googlecharts
-  chapter24_5: Module wicketstuff-inmethod-grid
-chapter25:
+  wicketstuff_1: What is project WicketStuff
+  wicketstuff_2: Module tinymce
+  wicketstuff_3: Module wicketstuff-gmap3
+  wicketstuff_4: Module wicketstuff-googlecharts
+  wicketstuff_5: Module wicketstuff-inmethod-grid
+redirects:
   title: Lost In Redirection With Apache Wicket (Appendix)
 contributing:
   title: Contributing to this guide (Appendix)

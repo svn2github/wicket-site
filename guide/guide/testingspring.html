@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>22 Test Driven Development with Wicket and Spring 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/testing.html">&lt;&lt; <strong>21</strong><span>Test Driven Development with Wicket</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>22 Test Driven Development with Wicket and Spring - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#testingspring_1"><strong>22.1</strong><span>Configuration of the runtime environment</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#testingspring_2"><strong>22.2</strong><span>Configuration of the JUnit based integration test environment</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#testingspring_3"><strong>22.3</strong><span>Summary</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="testingspring">22 Test Driven Development with Wicket and Spring</h1>
+Since the development of many web applications is mostly based on the Spring framework for dependency injection and application configuration in general, it's especially important to get these two frameworks running together smoothly not only when deployed on a running server instance itself but rather during the execution of JUnit based integration tests as well. Thanks to the <code>WicketTester</code> API provided by the Wicket framework itself, one can easily build high-quality web applications while practicing test driven development and providing a decent set of unit and integration tests to be executed with each build. As already mentioned previously, integration and configuration of our web applications is based on a lightweight Spring container meaning that the integration of Spring's <code>ApplicationContext</code> and a WicketTester API is essential to get our integration tests running. In order to explain how to achieve that integration in an easy and elegant fashion in your integration test environment, we'll first take a look at a configuration of these 2 framework beauties in a runtime environment.
+
+
+
+<h2 id="testingspring_1">22.1 Configuration of the runtime environment</h2>
+<p class="paragraph"/>In order to get the Wicket framework up to speed when your server is up and running, you usually configure a <code>WicketFilter</code> instance in your web application deployment descriptor file (<code>web.xml</code>) while passing it a single init parameter called <code>applicationClassName</code> that points to your main implementation class extending <code>org.apache.wicket.protocol.http.WebApplication</code> where all of your application-wide settings and initialization requirements are dealt with:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;filter&#62;</span>
+    <span class="xml&#45;tag">&#60;filter&#45;name&#62;</span>wicketfilter<span class="xml&#45;tag">&#60;/filter&#45;name&#62;</span>
+    <span class="xml&#45;tag">&#60;filter&#45;class&#62;</span>org.apache.wicket.protocol.http.WicketFilter<span class="xml&#45;tag">&#60;/filter&#45;class&#62;</span>
+    <span class="xml&#45;tag">&#60;init&#45;param&#62;</span>
+        <span class="xml&#45;tag">&#60;param&#45;name&#62;</span>applicationClassName<span class="xml&#45;tag">&#60;/param&#45;name&#62;</span>
+        <span class="xml&#45;tag">&#60;param&#45;value&#62;</span>com.comsysto.webapp.MyWebApplication<span class="xml&#45;tag">&#60;/param&#45;value&#62;</span>
+    <span class="xml&#45;tag">&#60;/init&#45;param&#62;</span>
+<span class="xml&#45;tag">&#60;/filter&#62;</span></pre></div><p class="paragraph"/>In case you want to get Wicket application up and running while leaving the application configuration and dependency injection issues to the Spring container, the configuration to be provided within the deployment descriptor looks slightly different though:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;web&#45;app&#62;</span>
+    <span class="xml&#45;tag">&#60;filter&#62;</span>
+        <span class="xml&#45;tag">&#60;filter&#45;name&#62;</span>wicketfilter<span class="xml&#45;tag">&#60;/filter&#45;name&#62;</span>
+        <span class="xml&#45;tag">&#60;filter&#45;class&#62;</span>org.apache.wicket.protocol.http.WicketFilter<span class="xml&#45;tag">&#60;/filter&#45;class&#62;</span>
+        <span class="xml&#45;tag">&#60;init&#45;param&#62;</span>
+            <span class="xml&#45;tag">&#60;param&#45;name&#62;</span>applicationFactoryClassName<span class="xml&#45;tag">&#60;/param&#45;name&#62;</span>
+            <span class="xml&#45;tag">&#60;param&#45;value&#62;</span>org.apache.wicket.spring.SpringWebApplicationFactory<span class="xml&#45;tag">&#60;/param&#45;value&#62;</span>
+        <span class="xml&#45;tag">&#60;/init&#45;param&#62;</span>
+    <span class="xml&#45;tag">&#60;/filter&#62;</span>
+    <span class="xml&#45;tag">&#60;listener&#62;</span>
+        <span class="xml&#45;tag">&#60;listener&#45;class&#62;</span>org.springframework.web.context.ContextLoaderListener<span class="xml&#45;tag">&#60;/listener&#45;class&#62;</span>
+    <span class="xml&#45;tag">&#60;/listener&#62;</span>
+    <span class="xml&#45;tag">&#60;context&#45;param&#62;</span>
+        <span class="xml&#45;tag">&#60;param&#45;name&#62;</span>contextConfigLocation<span class="xml&#45;tag">&#60;param&#45;name&#62;</span>
+        <span class="xml&#45;tag">&#60;param&#45;value&#62;</span>/WEB&#45;INF/applicationContext.xml<span class="xml&#45;tag">&#60;param&#45;value&#62;</span>
+    <span class="xml&#45;tag">&#60;/context&#45;param&#62;</span>
+<span class="xml&#45;tag">&#60;/web&#45;app&#62;</span></pre></div><p class="paragraph"/>The additional configuration part containing listener and context parameter definition is a usual Spring container related configuration detail. ContextLoaderListener is an implementation of standard Servlet API ServletContextListener interface provided by the Spring framework itself and is responsible for looking up an according bean definition file(s) specified by the context param above and creating an ApplicationContext instance during servlet context initialization accordingly. When integrating an ApplicationContext instance with Wicket, one of the beans defined in the above mentioned Spring bean definition file has to be your own specific extension of <code>org.apache.wicket.protocol.http.WebApplication</code>. You can either define a suitable bean in the bean definition file itself:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;beans&#62;</span>
+    <span class="xml&#45;tag">&#60;bean id=<span class="xml&#45;quote">"myWebApp"</span> class=<span class="xml&#45;quote">"com.comsysto.webapp.MyWebApplication"</span>/&#62;</span>
+<span class="xml&#45;tag">&#60;/beans&#62;</span></pre></div><p class="paragraph"/>or use powerful classpath scanning feature of the Spring framework and annotate the MyWebApplication implementation with the appropriate <code>&#64;Component</code> annotation accordingly while enabling the Spring container to scan the according package(s) of your application for relevant bean definitions:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;beans&#62;</span>
+    <span class="xml&#45;tag">&#60;context:component&#45;scan base&#45;package=<span class="xml&#45;quote">"com.comsysto.webapp"</span> /&#62;</span>
+    <span class="xml&#45;tag">&#60;context:component&#45;scan base&#45;package=<span class="xml&#45;quote">"com.comsysto.webapp.service"</span> /&#62;</span>
+    <span class="xml&#45;tag">&#60;context:component&#45;scan base&#45;package=<span class="xml&#45;quote">"com.comsysto.webapp.repository"</span> /&#62;</span>
+<span class="xml&#45;tag">&#60;/beans&#62;</span></pre></div><p class="paragraph"/>Either way, if everything goes well, you'll get a pre-configured ApplicationContext all set up during the startup of your web container. One of the beans in the ApplicationContext will be your own extension of Wicket's WebApplication type. SpringWebApplicationFactory implementation provided by the Wicket framework itself that you have defined as the <code>applicationFactoryClassName</code> in the configuration of your WicketFilter will then be used in order to retrieve that very same WebApplication bean out of your Spring ApplicationContext. The Factory expects one and only one extension of Wicket's very own WebApplication type to be found within the ApplicationContext instance at runtime. If no such bean or more than one bean extending WebApplication is found in the given ApplicationContext an according IllegalStateException will be raised and initialization of your web application will fail:<p class="paragraph"/><div class="code"><pre>Map&#60;?,?&#62; beans = BeanFactoryUtils.beansOfTypeIncludingAncestors(ac,WebApplication.class, <span class="java&#45;keyword">false</span>, <span class="java&#45;keyword">false</span>);
+<span class="java&#45;keyword">if</span> (beans.size() == 0)
+&#123;
+	<span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> IllegalStateException(<span class="java&#45;quote">"bean of type &#91;"</span> + WebApplication.class.getName() +
+			<span class="java&#45;quote">"&#93; not found"</span>);
+&#125;
+<span class="java&#45;keyword">if</span> (beans.size() &#62; 1)
+&#123;
+	<span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> IllegalStateException(<span class="java&#45;quote">"more than one bean of type &#91;"</span> +
+			WebApplication.class.getName() + <span class="java&#45;quote">"&#93; found, must have only one"</span>);
+&#125;</pre></div><p class="paragraph"/>After the WebApplication bean has been successfully retrieved from the ApplicationContext via SpringWebApplicationFactory, WicketFilter will then, as part of its own initialization process, trigger both internalInit() and init() methods of the WebApplication bean. The latter one is the exact spot where the last piece of the runtime configuration puzzle between Wicket and Spring is to be placed :<p class="paragraph"/><div class="code"><pre>@Component
+<span class="java&#45;keyword">public</span> class MyWebApplication <span class="java&#45;keyword">extends</span> WebApplication &#123;
+    @Override
+    <span class="java&#45;keyword">protected</span> void init() &#123;
+        addComponentInstantiationListener(<span class="java&#45;keyword">new</span> SpringComponentInjector(<span class="java&#45;keyword">this</span>));
+    &#125;<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/>SpringComponentInjector provided by the Wicket framework enables you to get dependencies from the ApplicationContext directly injected into your Wicket components by simply annotating these with the according <code>&#64;SpringBean</code> annotation.
+
+
+<h2 id="testingspring_2">22.2 Configuration of the JUnit based integration test environment</h2>
+<p class="paragraph"/>One of the main features of Apache Wicket framework is the ability to easily write and run plain unit tests for your Pages and all other kinds of Components that even include the verification of the rendering process itself by using JUnit framework and the WicketTester API only. When using Spring framework for application configuration together with Wicket, as we do, you can even use the same tools to easily write and run full blown integration tests for your web application as well. All you have to do is use <a href="http://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/testing.html#testcontext-framework" target="blank">Spring's TestContext</a> framework additionally to configure and run your JUnit based integration tests. The Spring Framework provides a set of Spring specific annotations that you can use in your integration tests in conjunction with the TestContext framework itself in order to easily configure an according ApplicationContext instance for your tests as well as for appropriate transaction management before, during and after your test execution. Following code snippet represents a simple JUnit 4 based test case using Spring's specific annotations in order to initialize an ApplicationContext instance prior to executing the test itself:<p class="paragraph"/><div class="code"><pre>@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = &#123;<span class="java&#45;quote">"classpath:WEB&#45;INF/applicationContext.xml"</span>&#125;)
+@TransactionConfiguration(transactionManager = <span class="java&#45;quote">"txManager"</span>, defaultRollback = <span class="java&#45;keyword">false</span>)
+<span class="java&#45;keyword">public</span> class LoginPageTest &#123;<p class="paragraph"/>    <span class="java&#45;keyword">private</span> WicketTester tester;<p class="paragraph"/>    @Autowired
+    <span class="java&#45;keyword">private</span> ApplicationContext ctx;<p class="paragraph"/>    @Autowired
+    <span class="java&#45;keyword">private</span> MyWebApplication myWebApplication;<p class="paragraph"/>    @Before
+    <span class="java&#45;keyword">public</span> void setUp() &#123;
+        tester = <span class="java&#45;keyword">new</span> WicketTester(myWebApplication);
+    &#125;<p class="paragraph"/>    @Test
+    @Transactional
+    @Rollback(<span class="java&#45;keyword">true</span>)
+    <span class="java&#45;keyword">public</span> void testRenderMyPage() &#123;
+        tester.startPage(LoginPage.class);
+        tester.assertRenderedPage(LoginPage.class);
+        tester.assertComponent(<span class="java&#45;quote">"login"</span>, LoginComponent.class);
+    &#125;
+&#125;</pre></div><p class="paragraph"/>By defining three annotations on the class level (see code snippet above) in your test, Spring's TestContext framework takes care of preparing and initializing an ApplicationContext instance having all the beans defined in the according Spring context file as well as the transaction management in case your integration test includes some kind of database access. Fields marked with <code>&#64;Autowired</code> annotation will be automatically dependency injected as well so that you can easily access and use these for your testing purposes. Since MyWebApplication, which extends Wicket's WebApplication type and represents the main class of our web application, is also a bean within the ApplicationContext managed by Spring, it will also be provided to us by the test framework itself and can be easily used in order to initialize a WicketTester instance later on during the execution of the test's setUp() method. With this kind of simple, annotation based test configuration we are able to run an integration test that verifies whether a LoginPage gets started and initialized, whether the rendering of the page runs smoothly and whether the page itself contains a LoginComponent that we possibly need in order to process user's login successfully.<p class="paragraph"/>When you run this test though, you'll unfortunately get the following exception raised:<p class="paragraph"/><div class="code"><pre>java.lang.IllegalStateException: No WebApplicationContext found: no ContextLoaderListener registered?
+    at org.springframework.web.context.support.WebApplicationContextUtils.
+	getRequiredWebApplicationContext(WebApplicationContextUtils.java:84)
+    at org.apache.wicket.spring.injection.annot.
+	SpringComponentInjector.&#60;init&#62;(SpringComponentInjector.java:72)
+    at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.
+	initializeSpringComponentInjector(MyWebApplication.java:59)
+    at com.comsysto.serviceplatform.uiwebapp.MyWebApplication.
+	init(MyWebApplication.java:49)
+    at org.apache.wicket.protocol.http.WicketFilter.
+	init(WicketFilter.java:719)
+    at org.apache.wicket.protocol.http.MockWebApplication.
+	&#60;init&#62;(MockWebApplication.java:168)
+    at org.apache.wicket.util.tester.BaseWicketTester.
+	&#60;init&#62;(BaseWicketTester.java:219)
+    at org.apache.wicket.util.tester.WicketTester.
+	&#60;init&#62;(WicketTester.java:325)
+    at org.apache.wicket.util.tester.WicketTester.
+	&#60;init&#62;(WicketTester.java:308)</pre></div><p class="paragraph"/>As you can see above, the Exception gets raised during the initialization of the <code>WicketTester</code> instance even before the actual test method gets executed. Even though we have applied rather cool and simple annotation based test configuration already described and passed in perfectly well prepared ApplicationContext instance to the WicketTester instance in the constructor, somewhere down the rabbit hole someone complained that no WebApplicationContext instance could have been found which seems to be required in order to initialize the WicketTester properly.<p class="paragraph"/><img border="0" class="center" src="../img/description-of-illegalstate.jpg"></img><p class="paragraph"/>The problem that we run against here is due to the fact that SpringComponentInjector during its own initialization is trying to get hold of an according Spring's ApplicationContext instance that would normally be there in a runtime environment but does not find any since we are running in a test environment currently. SpringComponentInjector delegates to Spring's own WebApplicationContextUtils class to retrieve the instance of ApplicationContext out of the ServletContext which is perfectly fine for a runtime environment but is unfortunately failing in a test environment:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> WebApplicationContext getRequiredWebApplicationContext(ServletContext sc)
+		<span class="java&#45;keyword">throws</span> IllegalStateException &#123;<p class="paragraph"/>	WebApplicationContext wac = getWebApplicationContext(sc);
+	<span class="java&#45;keyword">if</span> (wac == <span class="java&#45;keyword">null</span>) &#123;
+		<span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> IllegalStateException(<span class="java&#45;quote">"No WebApplicationContext found: no ContextLoaderListener registered?"</span>);
+	&#125;
+	<span class="java&#45;keyword">return</span> wac;
+&#125;</pre></div><p class="paragraph"/>If you still remember we defined a ContextLoaderListener in our web.xml file as part of the configuration of our runtime environment that makes sure an according WebApplicationContext instance gets initialized and registered against the ServletContext properly. Luckily, this problem can easily be solved if we slightly change the way we initialize SpringComponentInjector in our main MyWebApplication class. Apart from the constructor that we have used so far, there is another constructor in the SpringComponentInjector class that expects the caller to provide it with an according ApplicationContext instance rather than trying to resolve one on its own:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> SpringComponentInjector(WebApplication webapp, ApplicationContext ctx,
+		<span class="java&#45;object">boolean</span> wrapInProxies)
+&#123;
+	<span class="java&#45;keyword">if</span> (webapp == <span class="java&#45;keyword">null</span>)
+	&#123;
+		<span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> IllegalArgumentException(<span class="java&#45;quote">"Argument &#91;&#91;webapp&#93;&#93; cannot be <span class="java&#45;keyword">null</span>"</span>);
+	&#125;<p class="paragraph"/>	<span class="java&#45;keyword">if</span> (ctx == <span class="java&#45;keyword">null</span>)
+	&#123;
+		<span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> IllegalArgumentException(<span class="java&#45;quote">"Argument &#91;&#91;ctx&#93;&#93; cannot be <span class="java&#45;keyword">null</span>"</span>);
+	&#125;<p class="paragraph"/>	// store context in application's metadata &#8230;
+	webapp.setMetaData(CONTEXT_KEY, <span class="java&#45;keyword">new</span> ApplicationContextHolder(ctx));<p class="paragraph"/>	// &#8230; and create and register the annotation aware injector
+	InjectorHolder.setInjector(<span class="java&#45;keyword">new</span> AnnotSpringInjector(<span class="java&#45;keyword">new</span> ContextLocator(), wrapInProxies));
+&#125;</pre></div><p class="paragraph"/>In order to use this constructor instead of the one we used previously, we now obviously need to get hold of the <code>ApplicationContext</code> instance on our own in our <code>MyWebApplication</code> implementation. The easiest way to do this is to use Spring's own concept of <a href="http://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/beans.html#beans-factory-aware" target="blank">lifecycle callbacks</a> provided to the beans managed by the Spring container. Since our <code>MyWebApplication</code> is also a bean managed by the Spring container at runtime (enabled by the classpath scanning and <code>&#64;Component</code> annotation on a type level), we can declare it to implement <code>ApplicationContextAware</code> interface which ensures that it gets provided with the <code>ApplicationContext</code> instance that it runs in by the Spring container itself during startup.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> ApplicationContextAware &#123;<p class="paragraph"/>	void setApplicationContext(ApplicationContext applicationContext) <span class="java&#45;keyword">throws</span> BeansException;<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/>So the relevant parts of <code>MyWebApplication</code> type will now look something like the following code snippet:<p class="paragraph"/><div class="code"><pre>@Component
+<span class="java&#45;keyword">public</span> class MyWebApplication <span class="java&#45;keyword">extends</span> WebApplication <span class="java&#45;keyword">implements</span> ApplicationContextAware &#123;
+    @Override
+    <span class="java&#45;keyword">protected</span> void init() &#123;
+        addComponentInstantiationListener(<span class="java&#45;keyword">new</span> SpringComponentInjector(<span class="java&#45;keyword">this</span>, ctx, <span class="java&#45;keyword">true</span>));
+    &#125;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> void setApplicationContext(ApplicationContext applicationContext) <span class="java&#45;keyword">throws</span> BeansException &#123;
+        <span class="java&#45;keyword">this</span>.ctx = applicationContext;
+    &#125;
+&#125;</pre></div><p class="paragraph"/>For additional clarification of how <code>MyWebApplication</code> now relates to both Wicket and Spring framework here is an according class diagram:<p class="paragraph"/><img border="0" class="center" src="../img/mywebapp-class-diagramm.jpg"></img>
+
+
+
+<h2 id="testingspring_3">22.3 Summary</h2>
+<p class="paragraph"/>With the configuration outlined above, no additional modifications are required to the test itself. It's going to turn green now. This way you can use exactly the same Spring context configuration that you'd use in your runtime environment for running your JUnit based integration tests as well.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/testing.html">&lt;&lt; <strong>21</strong><span>Test Driven Development with Wicket</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

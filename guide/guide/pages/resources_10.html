@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>15.10 Customizing resource loading 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/i18n.html">&lt;&lt; <strong>14</strong><span>Internationalization with Wicket</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>15.10 Customizing resource loading - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="resources_10">15.10 Customizing resource loading</h2>
+<p class="paragraph"/>Wicket loads application's resources delegating this task to a resource locator represented by interface <code>org.apache.wicket.core.util.resource.locator.IResourceStreamLocator</code>. To retrieve or modify the current resource locator we can use the getter and setter methods defined by setting interface <code>IResourceSettings</code>:<p class="paragraph"/><div class="code"><pre>//init application's method
+  @Override
+  <span class="java&#45;keyword">public</span> void init()&#123;   
+    //get the resource locator 
+    getResourceSettings().getResourceStreamLocator();
+    //set the resource locator    
+    getResourceSettings().setResourceStreamLocator(myLocator);
+  &#125;</pre></div><p class="paragraph"/>The default locator used by Wicket is class <code>ResourceStreamLocator</code> which in turn tries to load a requested resource using a set of implementations of interface <code>IResourceFinder</code>. This interface defines method <code>find(Class class, String pathname)</code> which tries to resolve a resource corresponding to the given class and path.<p class="paragraph"/>The default implementation of <code>IResourceFinder</code> used by Wicket is <code>ClassPathResourceFinder</code> which searches for resources into the application class path. This is the implementation we have used so far in our examples. However some developers may prefer storing markup files and other resources in a separate folder rather than placing them side by side with Java classes.<p class="paragraph"/>To customize resource loading we can add further resource finders to our application in order to extend the resource-lookup algorithm to different locations. Wicket already comes with two other implementations of IResourceFinder designed to search for resources into a specific folder on the file system. The first is class <code>Path</code> and it's defined in package <code>org.apache.wicket.util.file</code>. The constructor of this class takes in input an arbitrary folder that can be expressed as a string path or as an instance of Wicket utility class <code>Folder</code> (in package <code>org.apache.wicket.util.file</code>). The second implementation of interface <code>IResourceFinder</code> is class <code>WebApplicationPath</code> which looks into a folder placed inside webapp's root path (but not inside folder WEB-INF).<p class="paragraph"/>Project CustomFolder4MarkupExample uses <code>WebApplicationPath</code> to load the markup file and the resource bundle for its home page from a custom folder. The folder is called markupFolder and it is placed in the root path of the webapp. The following picture illustrates the file structure of the project:<p class="paragraph"/><img border="0" class="center" src="../img/package-structure-custom-folder.png"></img><p class="paragraph"/>As we can see in the picture above, we must preserve the package structure also in the custom folder used as resource container. The code used inside application class to configure  WebApplicationPath is the following:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void init()
+&#123;
+	getResourceSettings().getResourceFinders().add(
+			<span class="java&#45;keyword">new</span> WebApplicationPath(getServletContext(), <span class="java&#45;quote">"markupFolder"</span>));
+&#125;</pre></div><p class="paragraph"/>Method getResourceFinders() defined by setting interface IResourceSettings returns the list of  resource finders defined in our application. The constructor of WebApplicationPath takes in input also an instance of standard interface javax.servlet.ServletContext which can be retrieved with WebApplication's method getServletContext().<p class="paragraph"/><blockquote class="note">
+By default, if resource files can not be found inside application classpath, Wicket will search for them inside “resources” folder. You may have noted this folder in the previous picture. It is placed next to the folder “java” containing our source files:<p class="paragraph"/><img border="0" class="center" src="../img/package-structure-resource-folder.png"></img><p class="paragraph"/>This folder can be used to store resource files without writing any configuration code.
+</blockquote>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/i18n.html">&lt;&lt; <strong>14</strong><span>Internationalization with Wicket</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

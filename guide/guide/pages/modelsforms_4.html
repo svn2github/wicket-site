@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>11.4 Component DropDownChoice 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/urls.html">&lt;&lt; <strong>10</strong><span>Wicket Links and URL generation</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>11.4 Component DropDownChoice - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="modelsforms_4">11.4 Component DropDownChoice</h2>
+<p class="paragraph"/>Class <code>org.apache.wicket.markup.html.form.DropDownChoice</code> is the form component needed to display a list of possible options as a drop-down list where users can select one of the proposed options. This component must be used with &#60;select&#62; tag:<p class="paragraph"/>Html:<p class="paragraph"/><div class="code"><pre>&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+	Select a fruit: &#60;select wicket:id=<span class="java&#45;quote">"fruits"</span>&#62;&#60;/select&#62;
+&#60;div&#62;&#60;input type=<span class="java&#45;quote">"submit"</span> value=<span class="java&#45;quote">"submit"</span>/&#62;&#60;/div&#62;
+&#60;/form&#62;</pre></div><p class="paragraph"/>Java code:<p class="paragraph"/><div class="code"><pre>List&#60;<span class="java&#45;object">String</span>&#62; fruits = Arrays.asList(<span class="java&#45;quote">"apple"</span>, <span class="java&#45;quote">"strawberry"</span>, <span class="java&#45;quote">"watermelon"</span>); 
+form.add(<span class="java&#45;keyword">new</span> DropDownChoice&#60;<span class="java&#45;object">String</span>&#62;(<span class="java&#45;quote">"fruits"</span>, <span class="java&#45;keyword">new</span> Model(), fruits));</pre></div><p class="paragraph"/>Screenshot of generated page:<p class="paragraph"/><img border="0" class="center" src="../img/dropdown-choice.png"></img><p class="paragraph"/>In addition to the component id, in order to build a DropDownChoice we need to provide to its constructor two further parameters:
+<ul class="star">
+<li>a model containing the current selected item. This parameter is not required if we are going to inherit a CompoundPropertyModel for this component.</li>
+<li>a list of options to display which can be supplied as a model or as a regular java.util.List.</li>
+</ul><p class="paragraph"/>In the example above the possible options are provided as a list of String objects. Now let's take a look at the markup generated for them:<p class="paragraph"/><div class="code"><pre>&#60;select name=<span class="java&#45;quote">"fruits"</span> wicket:id=<span class="java&#45;quote">"fruits"</span>&#62;
+	&#60;option value=<span class="java&#45;quote">""</span> selected=<span class="java&#45;quote">"selected"</span>&#62;Choose One&#60;/option&#62;
+	&#60;option value=<span class="java&#45;quote">"0"</span>&#62;apple&#60;/option&#62;
+	&#60;option value=<span class="java&#45;quote">"1"</span>&#62;strawberry&#60;/option&#62;
+	&#60;option value=<span class="java&#45;quote">"2"</span>&#62;watermelon&#60;/option&#62;
+&#60;/select&#62;</pre></div><p class="paragraph"/>The first option is a placeholder item corresponding to a null model value. By default DropDownChoice cannot have a null value so users are forced to select a not-null option. If we want to change this behavior we can set the nullValid flag to true via the setNullValid method. Please note that the placeholder text (“Chose one”) can be localized, as we will see in chapter 14. The other options are identified by the attribute value. By default the value of this attribute is the index of the single option inside the provided list of choices, while the text displayed to the user is obtained by  calling toString()on the choice object. This default behavior works fine as long as our options are simple objects like strings, but when we move to more complex objects we may need to implement a more sophisticated algorithm to generate the value to use as the option id and the one to display to user. Wicket has solved this problem with <code>org.apache.wicket.markup.html.form.IChoiceRender</code> interface. This interface defines method getDisplayValue(T object) that is called to generate the value to display for the given choice object, and method getIdValue(T object, int index) that is called to generate the option id. The built-in implementation of this interface is class <code>org.apache.wicket.markup.html.form.ChoiceRenderer</code> which renders the two values using property expressions.<p class="paragraph"/>In the following code we want to show a list of Person objects using their full name as value to display and using their passport code as option id:<p class="paragraph"/>Java code:<p class="paragraph"/><div class="code"><pre>List&#60;Person&#62; persons; 
+//Initialize the list of persons here&#8230;
+ChoiceRenderer personRenderer = <span class="java&#45;keyword">new</span> ChoiceRenderer(<span class="java&#45;quote">"fullName"</span>, <span class="java&#45;quote">"passportCode"</span>);
+form.add(<span class="java&#45;keyword">new</span> DropDownChoice&#60;<span class="java&#45;object">String</span>&#62;(<span class="java&#45;quote">"persons"</span>, <span class="java&#45;keyword">new</span> Model&#60;Person&#62;(), persons, personRenderer));</pre></div><p class="paragraph"/>The choice renderer can be assigned to the DropDownChoice using one of its constructor that accepts this type of parameter (like we did in the example above) or after its creation invoking setChoiceRenderer method.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/urls.html">&lt;&lt; <strong>10</strong><span>Wicket Links and URL generation</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

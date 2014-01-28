@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>18 Working with AJAX 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/advanced.html">&lt;&lt; <strong>17</strong><span>Wicket advanced topics</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>18 Working with AJAX - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#ajax_1"><strong>18.1</strong><span>How to use AJAX components and behaviors</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#ajax_2"><strong>18.2</strong><span>Build-in AJAX components</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#ajax_3"><strong>18.3</strong><span>Built-in AJAX behaviors</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#ajax_4"><strong>18.4</strong><span>Using an activity indicator</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#ajax_5"><strong>18.5</strong><span>AJAX request attributes and call listeners</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#ajax_6"><strong>18.6</strong><span>Creating custom AJAX call listener</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#ajax_7"><strong>18.7</strong><span>Summary</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="ajax">18 Working with AJAX</h1>
+AJAX has become a must-have for nearly all kinds of web application. This technology does not only help to achieve a better user experience but it also allows to improve the bandwidth performance of web applications. Using AJAX usually means writing tons of JavaScript code to handle asynchronous requests and to update user interface, but with Wicket we can leave all this boilerplate code to the framework and we don't even need to write a single line of JavaScript to start using AJAX.<p class="paragraph"/>In this chapter we will learn how to leverage the AJAX support provided by Wicket to make our applications fully <a href="http://en.wikipedia.org/wiki/Web_2.0" target="blank">Web 2.0</a> compliant.
+
+
+<h2 id="ajax_1">18.1 How to use AJAX components and behaviors</h2>
+<p class="paragraph"/>Wicket support for AJAX is implemented in file wicket-ajax-jquery.js which makes complete transparent to Java code any detail about AJAX communication.<p class="paragraph"/>AJAX components and behaviors shipped with Wicket expose one or more callback methods which are executed when they receive an AJAX request. One of the arguments of these methods is an instance of interface <code>org.apache.wicket.ajax.AjaxRequestTarget</code>.<p class="paragraph"/>For example component AjaxLink (in package <code>org.apache.wicket.ajax.markup.html</code>) defines abstract method <code>onClick(AjaxRequestTarget target)</code> which is executed when user clicks on the component:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> AjaxLink(<span class="java&#45;quote">"ajaxLink"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">public</span> void onClick(AjaxRequestTarget target) &#123;
+	    //some server side code&#8230;
+	&#125;  	
+&#125;;</pre></div><p class="paragraph"/>Using AjaxRequestTarget we can specify the content that must be sent back to the client as response to the current AJAX request. The most commonly used method of this interface is probably <code>add(Component&#8230; components)</code>. With this method we tell Wicket to render again the specified components and refresh their markup via AJAX:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> AjaxLink(<span class="java&#45;quote">"ajaxLink"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">public</span> void onClick(AjaxRequestTarget target) &#123;
+	    //modify the model of a label and refresh it on browser
+	    label.setDefaultModelObject(<span class="java&#45;quote">"Another value 4 label."</span>);
+	    target.add(label);
+	&#125;  	
+&#125;;</pre></div><p class="paragraph"/>Components can be refreshed via Ajax only if they have rendered a markup id for their related tag. As a consequence, we must remember to set a valid id value on every component we want to add to <code>AjaxRequestTarget</code>. This can be done using one of the two methods seen in paragraph 4.3:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">final</span> Label label = <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"labelComponent"</span>, <span class="java&#45;quote">"Initial value."</span>);
+//autogenerate a markup id
+label.setOutputMarkupId(<span class="java&#45;keyword">true</span>);
+add(label);
+//&#8230;
+<span class="java&#45;keyword">new</span> AjaxLink(<span class="java&#45;quote">"ajaxLink"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">public</span> void onClick(AjaxRequestTarget target) &#123;
+	    //modify the model of a label and refresh it on client side
+	    label.setDefaultModelObject(<span class="java&#45;quote">"Another value 4 label."</span>);
+	    target.add(label);
+	&#125;  	
+&#125;;</pre></div><p class="paragraph"/>Another common use of AjaxRequestTarget is to prepend or append some JavaScript code to the generated response. For example the following AJAX link displays an alert box as response to user's click:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> AjaxLink(<span class="java&#45;quote">"ajaxLink"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">public</span> void onClick(AjaxRequestTarget target) &#123;
+	    target.appendJavaScript(<span class="java&#45;quote">";alert('Hello!!');"</span>);
+	&#125;  	
+&#125;;</pre></div><p class="paragraph"/><blockquote class="warning">
+Repeaters component that have <code>org.apache.wicket.markup.repeater.AbstractRepeater</code> as base class (like <code>ListView</code>, <code>RepeatingView</code>, etc...) can not be directly updated via AJAX.<p class="paragraph"/>If we want to refresh their markup via AJAX we must add one of their parent containers to the <code>AjaxRequestTarget</code>.
+</blockquote>
+
+
+<h2 id="ajax_2">18.2 Build-in AJAX components</h2>
+<p class="paragraph"/>Wicket distribution comes with a number of built-in AJAX components ready to be used. Some of them are the ajaxified version of common components like links and buttons, while others are AJAX-specific components.<p class="paragraph"/>AJAX components are not different from any other component seen so far and they don't require any additional configuration to be used. As we will shortly see, switching from a classic link or button to the ajaxified version is just a matter of appending “Ajax” to the component class name.<p class="paragraph"/>This paragraph provides an overview of what we can find in Wicket to start writing AJAX-enhanced web applications.<p class="paragraph"/><h3>Links and buttons</h3><p class="paragraph"/>In the previous paragraph we have already introduced component AjaxLink. Wicket provides also the ajaxified versions of submitting components SubmitLink and Button which are simply called AjaxSubmitLink and AjaxButton. These components come with a version of methods onSubmit, onError and onAfterSubmit that takes in input also an instance of <code>AjaxRequestTarget</code>.<p class="paragraph"/>Both components are in package <code>org.apache.wicket.ajax.markup.html.form</code>.<p class="paragraph"/><h3>Fallback components</h3><p class="paragraph"/>Building an entire site using AJAX can be risky as some clients may not support this technology. In order to provide an usable version of our site also to these clients, we can use components <code>AjaxFallbackLink</code> and <code>AjaxFallbackButton</code> which are able to automatically degrade to a standard link or to a standard button if client doesn't support AJAX.<p class="paragraph"/><h3>AJAX Checkbox</h3><p class="paragraph"/>Class <code>org.apache.wicket.ajax.markup.html.form.AjaxCheckBox</code> is a checkbox component that updates its model via AJAX when user changes its value. Its AJAX callback method is <code>onUpdate(AjaxRequestTarget target)</code>. The component extends standard checkbox component <code>CheckBox</code> adding an <code>AjaxFormComponentUpdatingBehavior</code> to itself (we will see this behavior later in paragraph 16.3.3).<p class="paragraph"/><h3>AJAX editable labels</h3><p class="paragraph"/>An editable label is a special label that can be edited by the user when she/he clicks on it. Wicket ships three different implementations for this component (all inside package <code>org.apache.wicket.extensions.ajax.markup.html</code>):
+<ul class="star">
+<li><strong class="bold">AjaxEditableLabel</strong>: it's a basic version of editable label. User can edit the content of the label with a text field. This is also the base class for the other two editable labels.</li>
+<li><strong class="bold">AjaxEditableMultiLineLabel</strong>: this label supports multi-line values and uses a text area as editor component.</li>
+<li><strong class="bold">AjaxEditableChoiceLabel</strong>: this label uses a drop-down menu to edit its value.</li>
+</ul><p class="paragraph"/>Base component AjaxEditableLabel exposes the following set of AJAX-aware methods that can be overriden:
+<ul class="star">
+<li><strong class="bold">onEdit(AjaxRequestTarget target)</strong>: called when user clicks on component. The default implementation shows the component used to edit the value of the label.</li>
+<li><strong class="bold">onSubmit(AjaxRequestTarget target)</strong>: called when the value has been successfully updated with the new input.</li>
+<li><strong class="bold">onError(AjaxRequestTarget target)</strong>: called when the new inserted input has failed validation.</li>
+<li><strong class="bold">onCancel(AjaxRequestTarget target)</strong>: called when user has exited from editing mode pressing escape key. The default implementation brings back the label to its initial state hiding the editor component.</li>
+</ul><p class="paragraph"/>Wicket module wicket-examples contains page class <code>EditableLabelPage.java</code> which shows all these three components together. You can see this page in action at <a href="http://www.wicket-library.com/wicket-examples-6.0.x/ajax/editable-label" target="blank">http://www.wicket-library.com/wicket-examples-6.0.x/ajax/editable-label</a> :<p class="paragraph"/><img border="0" class="center" src="../img/edit-label-example-screenshot.png"></img><p class="paragraph"/><h3>Autocomplete text field</h3><p class="paragraph"/>On Internet we can find many examples of text fields that display a list of suggestions (or options) while the user types a text inside them. This feature is known as autocomplete functionality.<p class="paragraph"/>Wicket offers an out-of-the-box implementation of an autocomplete text field with component <code>org.apache.wicket.extensions.ajax.markup.html.autocomplete.AutoCompleteTextField</code>.<p class="paragraph"/>When using AutoCompleteTextField we are required to implement its abstract method getChoices(String input) where the input parameter is the current input of the component. This method returns an iterator over the suggestions that will be displayed as a drop-down menu:<p class="paragraph"/><img border="0" class="center" src="../img/autocomplete-example-screenshot.png"></img><p class="paragraph"/>Suggestions are rendered using a render which implements interface <code>IAutoCompleteRenderer</code>. The default implementation simply calls toString() on each suggestion object. If we need to work with a custom render we can specify it via component constructor.<p class="paragraph"/>AutoCompleteTextField supports a wide range of settings that are passed to its constructor with class <code>AutoCompleteSettings</code>.<p class="paragraph"/>One of the most interesting parameter we can specify for <code>AutoCompleteTextField</code> is the throttle delay which is the amount of time (in milliseconds) that must elapse between a change of input value and the transmission of a new Ajax request to display suggestions. This parameter can be set with method <code>setThrottleDelay(int)</code>:<p class="paragraph"/><div class="code"><pre>AutoCompleteSettings settings = <span class="java&#45;keyword">new</span> AutoCompleteSettings();
+//set throttle to 400 ms: component will wait 400ms before displaying the options		
+settings.setThrottleDelay(400);
+//...		
+AutoCompleteTextField field = <span class="java&#45;keyword">new</span> AutoCompleteTextField&#60;T&#62;(<span class="java&#45;quote">"field"</span>, model) &#123;<p class="paragraph"/>	@Override
+	<span class="java&#45;keyword">protected</span> Iterator getChoices(<span class="java&#45;object">String</span> arg0) &#123;
+		//<span class="java&#45;keyword">return</span> an iterator over the options 
+	&#125;
+&#125;;</pre></div><p class="paragraph"/>Wicket module wicket-examples contains page class <code>AutoCompletePagePage.java</code> which shows an example of autocomplete text field. The running example is available at <a href="http://www.wicket-library.com/wicket-examples-6.0.x/ajax/autocomplete" target="blank">http://www.wicket-library.com/wicket-examples-6.0.x/ajax/autocomplete</a> .<p class="paragraph"/><h3>Modal window</h3><p class="paragraph"/>Class <code>org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow</code> is an implementation of a <a href="http://en.wikipedia.org/wiki/Modal_window" target="blank">modal window</a> based on AJAX:<p class="paragraph"/><img border="0" class="center" src="../img/modal-window-example-screenshot.png"></img><p class="paragraph"/>The content of a modal window can be either another component or a page. In the first case the id of the  component used as content must be retrieved with method getContentId().<p class="paragraph"/>If instead we want to use a page as window content, we must implement the inner interface <code>ModalWindow.PageCreator</code> and pass it to method <code>setPageCreator</code>. The page used as content will be embedded in a &#60;iframe&#62; tag.<p class="paragraph"/>To display a modal window we must call its method <code>show(AjaxRequestTarget target)</code>. This is  usually done inside the AJAX callback method of another component (like an <code>AjaxLink</code>). The following markup and code are taken from project <code>BasicModalWindowExample</code> and illustrate a basic usage of a modal window:<p class="paragraph"/><strong class="bold">HTML:</strong>
+<div class="code"><pre>&#60;body&#62;
+	&#60;h2&#62;Modal Windod example&#60;/h2&#62;
+	&#60;a wicket:id=<span class="java&#45;quote">"openWindow"</span>&#62;Open the window!&#60;/a&#62;
+	&#60;div wicket:id=<span class="java&#45;quote">"modalWindow"</span>&#62;&#60;/div&#62;
+&#60;/body&#62;</pre></div><p class="paragraph"/><strong class="bold">Java Code:</strong>
+<div class="code"><pre><span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+   	<span class="java&#45;keyword">super</span>(parameters);
+   	<span class="java&#45;keyword">final</span> ModalWindow modalWindow = <span class="java&#45;keyword">new</span> ModalWindow(<span class="java&#45;quote">"modalWindow"</span>);
+   	Label label = <span class="java&#45;keyword">new</span> Label(modalWindow.getContentId(), <span class="java&#45;quote">"I'm a modal window!"</span>);<p class="paragraph"/>   	modalWindow.setContent(label);
+   	modalWindow.setTitle(<span class="java&#45;quote">"Modal window"</span>);<p class="paragraph"/>   	add(modalWindow);
+   	add(<span class="java&#45;keyword">new</span> AjaxLink(<span class="java&#45;quote">"openWindow"</span>) &#123;
+	  @Override
+	  <span class="java&#45;keyword">public</span> void onClick(AjaxRequestTarget target) &#123;
+		modalWindow.show(target);				
+	  &#125;    		
+	&#125;);
+&#125;</pre></div><p class="paragraph"/>Just like any other component also <code>ModalWindow</code> must be added to a markup tag, like we did in our example using a &#60;div&#62; tag. Wicket will automatically hide this tag in the final markup appending the style value display:none. 
+The component provides different setter methods to customize the appearance of the window:
+<ul class="star">
+<li><strong class="bold">setTitle(String)</strong>: specifies the title of the window</li>
+<li><strong class="bold">setResizable(boolean)</strong>: by default the window is resizeable. If we need to make its size fixed we can use this method to turn off this feature.</li>
+<li><strong class="bold">setInitialWidth(int) and setInitialHeight(int)</strong>: set the initial dimensions of the window.</li>
+<li><strong class="bold">setMinimalWidth(int) and setMinimalHeight(int)</strong>: specify the minimal dimensions of the window.</li>
+<li><strong class="bold">setCookieName(String)</strong>: this method can be used to specify the name of the cookie used on  client side to store size and position of the window when it is closed. The component will use this cookie to restore these two parameters the next time the window will be opened. If no cookie name is provided, the component will not remember its last position and size.</li>
+<li><strong class="bold">setCssClassName(String)</strong>: specifies the CSS class used for the window.</li>
+<li><strong class="bold">setAutoSize(boolean)</strong>: when this flag is set to true the window will automatically adjust its size to fit content width and height. By default it is false.</li>
+</ul><p class="paragraph"/>The modal window can be closed from code using its method <code>close(AjaxRequestTarget target)</code>. The currently opened window can be closed also with the following JavaScript instruction:<p class="paragraph"/><div class="code"><pre>Wicket.Window.get().close();</pre></div><p class="paragraph"/><code>ModalWindow</code> gives the opportunity to perform custom actions when window is closing. Inner interface <code>ModalWindow.WindowClosedCallback</code> can be implemented and passed to window's method <code>setWindowClosedCallback</code> to specify the callback that must be executed after window has been closed:<p class="paragraph"/><div class="code"><pre>modalWindow.setWindowClosedCallback(<span class="java&#45;keyword">new</span> ModalWindow.WindowClosedCallback() &#123;<p class="paragraph"/>	@Override
+	<span class="java&#45;keyword">public</span> void onClose(AjaxRequestTarget target) &#123;
+	  //custom code&#8230;
+	&#125;			
+&#125;);</pre></div><p class="paragraph"/><h3>Tree repeaters</h3><p class="paragraph"/>Class <code>org.apache.wicket.extensions.markup.html.repeater.tree.AbstractTree</code> is the base class of another family of repeaters called tree repeaters and designed to display a data hierarchy as a tree, resembling the behavior and the look &#38; feel of desktop tree components. A classic example of tree component on desktop is the tree used by nearly all file managers to navigate file system:<p class="paragraph"/><img border="0" class="center" src="../img/file-system-trees.png"></img><p class="paragraph"/>Because of their highly interactive nature, tree repeaters are implemented as AJAX components,  meaning that they are updated via AJAX when we expand or collapse their nodes.<p class="paragraph"/>The basic implementation of a tree repeater shipped with Wicket is component <code>NestedTree</code>. In order to use a tree repeater we must provide an implementation of interface <code>ITreeProvider</code> which is in charge of returning the nodes that compose the tree.<p class="paragraph"/>Wicket comes with a built-in implementation of ITreeProvider called TreeModelProvider that works with the same tree model and nodes used by Swing component <code>javax.swing.JTree</code>. These Swing entities should be familiar to you if you have previously worked with the old tree repeaters (components <code>Tree</code> and <code>TreeTable</code>) that have been deprecated with Wicket 6 and that are strongly dependent on Swing-based model and nodes. <code>TreeModelProvider</code> can be used to migrate your code to the new tree repeaters.<p class="paragraph"/>In the next example (project <code>CheckBoxAjaxTree</code>) we will build a tree that displays some of the main cities of three European countries: Italy, Germany and France. The cities are sub-nodes of a main node representing the relative county. The nodes of the final tree will be also selectable with a checkbox control. The whole tree will have the classic look &#38; feel of Windows XP. This is how our tree will look like:<p class="paragraph"/><img border="0" class="center" src="../img/AJAX-tree-repeater.png"></img><p class="paragraph"/>We will start to explore the code of this example from the home page. The first portion of code we will see is where we build the nodes and the <code>TreeModelProvider</code> for the three. As tree node we will use Swing class <code>javax.swing.tree.DefaultMutableTreeNode</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+     <span class="java&#45;keyword">super</span>(parameters);
+     DefaultMutableTreeNode root = <span class="java&#45;keyword">new</span> DefaultMutableTreeNode(<span class="java&#45;quote">"Cities of Europe"</span>);<p class="paragraph"/>     addNodes(addNodes(root, <span class="java&#45;quote">"Italy"</span>), <span class="java&#45;quote">"Rome"</span>, <span class="java&#45;quote">"Venice"</span>, <span class="java&#45;quote">"Milan"</span>, <span class="java&#45;quote">"Florence"</span>);
+     addNodes(addNodes(root, <span class="java&#45;quote">"Germany"</span>),<span class="java&#45;quote">"Stuttgart"</span>,<span class="java&#45;quote">"Munich"</span>, <span class="java&#45;quote">"Berlin"</span>,<span class="java&#45;quote">"Dusseldorf"</span>, <span class="java&#45;quote">"Dresden"</span>);
+     addNodes(addNodes(root, <span class="java&#45;quote">"France"</span>), <span class="java&#45;quote">"Paris"</span>,<span class="java&#45;quote">"Toulouse"</span>, <span class="java&#45;quote">"Strasbourg"</span>,<span class="java&#45;quote">"Bordeaux"</span>, <span class="java&#45;quote">"Lyon"</span>);<p class="paragraph"/>     DefaultTreeModel treeModel = <span class="java&#45;keyword">new</span> DefaultTreeModel(root);
+     TreeModelProvider&#60;DefaultMutableTreeNode&#62; modelProvider = <span class="java&#45;keyword">new</span> 
+                            TreeModelProvider&#60;DefaultMutableTreeNode&#62;( treeModel )&#123;
+       @Override
+       <span class="java&#45;keyword">public</span> IModel&#60;DefaultMutableTreeNode&#62; model(DefaultMutableTreeNode object)&#123;
+          <span class="java&#45;keyword">return</span> Model.of(object);
+       &#125;
+     &#125;;
+     //To be continued...</pre></div><p class="paragraph"/>Nodes have been built using simple strings as data objects and invoking custom utility method addNodes which converts string parameters into children nodes for a given parent node. Once we have our tree of <code>DefaultMutableTreeNodes</code> we can build the Swing tree model (<code>DefaultTreeModel</code>) that will be the backing object for a <code>TreeModelProvider</code>. This provider wraps each node in a model invoking its abstract method model. In our example we have used a simple <code>Model</code> as wrapper model.<p class="paragraph"/>Scrolling down the code we can see how the tree component is instantiated and configured before being added to the home page:<p class="paragraph"/><div class="code"><pre>//Continued from previous snippet&#8230;
+ NestedTree&#60;DefaultMutableTreeNode&#62; tree = <span class="java&#45;keyword">new</span> NestedTree&#60;DefaultMutableTreeNode&#62;(<span class="java&#45;quote">"tree"</span>, 
+                                                      modelProvider)
+  &#123;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">protected</span> Component newContentComponent(<span class="java&#45;object">String</span> id, IModel&#60;DefaultMutableTreeNode&#62;model)
+   &#123;
+     <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">new</span> CheckedFolder&#60;DefaultMutableTreeNode&#62;(id, <span class="java&#45;keyword">this</span>, model);
+   &#125;
+  &#125;;
+  //select Windows theme
+  tree.add(<span class="java&#45;keyword">new</span> WindowsTheme());<p class="paragraph"/>  add(tree);
+  &#125;
+  //implementation of addNodes
+  //&#8230;
+&#125;</pre></div><p class="paragraph"/>To use tree repeaters we must implement their abstract method <code>newContentComponent</code> which is called internally by base class <code>AbstractTree</code> when a new node must be built. As content component we have used built-in class <code>CheckedFolder</code> which combines a <code>Folder</code> component with a <code>CheckBox</code> form control.<p class="paragraph"/>The final step before adding the tree to its page is to apply a theme to it. Wicket comes with two behaviors, WindowsTheme and HumanTheme, which correspond to the classic Windows XP theme and to the Human theme from Ubuntu.<p class="paragraph"/>Our checkable tree is finished but our work is not over yet because the component doesn't offer many functionalities as it is. Unfortunately neither NestedTree nor CheckedFolder provide a means for collecting checked nodes and returning them to client code. It's up to us to implement a way to keep track of checked nodes.<p class="paragraph"/>Another nice feature we would like to implement for our tree is the following user-friendly behavior that should occur when a user checks/unchecks a node:
+<ul class="star">
+<li>When a node is checked also all its children nodes (if any) must be checked. We must also ensure that all the ancestors of the checked node (root included) are checked, otherwise we would get an inconsistent selection.</li>
+<li>When a node is unchecked also all its children nodes (if any) must be unchecked and we must also ensure that ancestors get unchecked if they have no more checked children.</li>
+</ul><p class="paragraph"/>The first goal (keeping track of checked node) can be accomplished building a custom version of <code>CheckedFolder</code> that uses a shared Java Set to store checked node and to verify if its node has been  checked. This kind of solution requires a custom model for checkbox component in order to reflect its checked status when its container node is rendered. This model must implement typed interface <code>IModel&#60;Boolean&#62;</code> and must be returned by <code>CheckedFolder</code>'s method <code>newCheckBoxModel</code>.<p class="paragraph"/>For the second goal (auto select/unselect children and ancestor nodes) we can use <code>CheckedFolder</code>'s callback method onUpdate(AjaxRequestTarget) that is invoked after a checkbox is clicked and its value has been updated. Overriding this method we can handle user click adding/removing nodes to/from the Java Set.<p class="paragraph"/>Following this implementation plan we can start coding our custom <code>CheckedFolder</code> (named <code>AutocheckedFolder</code>):<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class AutocheckedFolder&#60;T&#62; <span class="java&#45;keyword">extends</span> CheckedFolder&#60;T&#62; &#123;<p class="paragraph"/>   <span class="java&#45;keyword">private</span> ITreeProvider&#60;T&#62; treeProvider;
+   <span class="java&#45;keyword">private</span> IModel&#60;Set&#60;T&#62;&#62; checkedNodes;
+   <span class="java&#45;keyword">private</span> IModel&#60;<span class="java&#45;object">Boolean</span>&#62; checkboxModel;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> AutocheckedFolder(<span class="java&#45;object">String</span> id, AbstractTree&#60;T&#62; tree, 
+                        IModel&#60;T&#62; model, IModel&#60;Set&#60;T&#62;&#62; checkedNodes) &#123;
+      <span class="java&#45;keyword">super</span>(id, tree, model);   
+      <span class="java&#45;keyword">this</span>.treeProvider = tree.getProvider();
+      <span class="java&#45;keyword">this</span>.checkedNodes = checkedNodes;            
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">protected</span> IModel&#60;<span class="java&#45;object">Boolean</span>&#62; newCheckBoxModel(IModel&#60;T&#62; model) &#123;
+      checkboxModel =  <span class="java&#45;keyword">new</span> CheckModel();
+      <span class="java&#45;keyword">return</span> checkboxModel;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">protected</span> void onUpdate(AjaxRequestTarget target) &#123;
+      <span class="java&#45;keyword">super</span>.onUpdate(target);
+      T node = getModelObject();
+      <span class="java&#45;object">boolean</span> nodeChecked = checkboxModel.getObject();<p class="paragraph"/>      addRemoveSubNodes(node, nodeChecked);            
+      addRemoveAncestorNodes(node, nodeChecked);            
+   &#125;<p class="paragraph"/>  class CheckModel <span class="java&#45;keyword">extends</span> AbstractCheckBoxModel&#123;
+      @Override
+      <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isSelected() &#123;
+         <span class="java&#45;keyword">return</span> checkedNodes.getObject().contains(getModelObject());
+      &#125;<p class="paragraph"/>      @Override
+      <span class="java&#45;keyword">public</span> void select() &#123;
+         checkedNodes.getObject().add(getModelObject());
+      &#125;<p class="paragraph"/>      @Override
+      <span class="java&#45;keyword">public</span> void unselect() &#123;
+         checkedNodes.getObject().remove(getModelObject());
+      &#125;				
+  &#125;
+&#125;</pre></div><p class="paragraph"/>The constructor of this new component takes in input a further parameter which is the set containing checked nodes.<p class="paragraph"/>Class CheckModel is the custom model we have implemented for checkbox control. As base class for this model we have used <code>AbstractCheckBoxModel</code> which is provided to implement custom models for checkbox controls.<p class="paragraph"/>Methods <code>addRemoveSubNodes</code> and <code>addRemoveAncestorNodes</code> are called to automatically add/remove children and ancestor nodes to/from the current Set. Their implementation is mainly focused on the navigation of tree nodes and it heavily depends on the internal implementation of the tree, so we won't dwell on their code.<p class="paragraph"/>Now we are just one step away from completing our tree as we still have to find a way to update the checked status of both children and ancestors nodes on client side. Although we could easily accomplish this task by simply refreshing the whole tree via AJAX, we would like to find a better and more performant solution for this task.<p class="paragraph"/>When we modify the checked status of a node we don't expand/collapse any node of the three so we can simply update the desired checkboxes rather than updating the entire tree component. This alternative approach could lead to a more responsive interface and to a strong reduction of bandwidth consumption.<p class="paragraph"/>With the help of JQuery we can code a couple of JavaScript functions that can be used to check/ uncheck all the children and ancestors of a given node. Then, we can append these functions to the current <code>AjaxRequest</code> at the end of method onUpdate:<p class="paragraph"/><div class="code"><pre>@Override
+   <span class="java&#45;keyword">protected</span> void onUpdate(AjaxRequestTarget target) &#123;
+      <span class="java&#45;keyword">super</span>.onUpdate(target);
+      T node = getModelObject();
+      <span class="java&#45;object">boolean</span> nodeChecked = checkboxModel.getObject();<p class="paragraph"/>      addRemoveSubNodes(node, nodeChecked);            
+      addRemoveAncestorNodes(node, nodeChecked);    
+      updateNodeOnClientSide(target, nodeChecked);		
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">protected</span> void updateNodeOnClientSide(AjaxRequestTarget target,
+			<span class="java&#45;object">boolean</span> nodeChecked) &#123;
+      target.appendJavaScript(<span class="java&#45;quote">";CheckAncestorsAndChildren.checkChildren('"</span> + getMarkupId() + 
+                              <span class="java&#45;quote">"',"</span> + nodeChecked + <span class="java&#45;quote">");"</span>);<p class="paragraph"/>      target.appendJavaScript(<span class="java&#45;quote">";CheckAncestorsAndChildren.checkAncestors('"</span> + getMarkupId() + 
+                              <span class="java&#45;quote">"',"</span> + nodeChecked + <span class="java&#45;quote">");"</span>);
+   &#125;</pre></div><p class="paragraph"/>The JavaScript code can be found inside file autocheckedFolder.js which is added to the header section as package resource:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void renderHead(IHeaderResponse response) &#123;
+	PackageResourceReference scriptFile = <span class="java&#45;keyword">new</span> PackageResourceReference(<span class="java&#45;keyword">this</span>.getClass(), 
+                                                      <span class="java&#45;quote">"autocheckedFolder.js"</span>);
+	response.render(JavaScriptHeaderItem.forReference(scriptFile));
+&#125;</pre></div><p class="paragraph"/><h3>Working with hidden components</h3><p class="paragraph"/>When a component is not visible its markup and the related id attribute are not rendered in the final page, hence it can not be updated via AJAX. To overcome this problem we must use Component's method <code>setOutputMarkupPlaceholderTag(true)</code> which has the effect of rendering a hidden &#60;span&#62; tag containing the markup id of the hidden component:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">final</span> Label label = <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"labelComponent"</span>, <span class="java&#45;quote">"Initial value."</span>);
+//make label invisible
+label.setVisible(<span class="java&#45;keyword">false</span>);
+//ensure that label will leave a placeholder <span class="java&#45;keyword">for</span> its markup id
+label.setOutputMarkupPlaceholderTag(<span class="java&#45;keyword">true</span>);
+add(label);
+//&#8230;
+<span class="java&#45;keyword">new</span> AjaxLink(<span class="java&#45;quote">"ajaxLink"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">public</span> void onClick(AjaxRequestTarget target) &#123;
+	    //turn label to visible
+	    label.setVisible(<span class="java&#45;keyword">true</span>);
+	    target.add(label);
+	&#125;  	
+&#125;;</pre></div><p class="paragraph"/>Please note that in the code above we didn't invoked method <code>setOutputMarkupId(true)</code> as <code>setOutputMarkupPlaceholderTag</code> already does it internally.
+
+
+
+<h2 id="ajax_3">18.3 Built-in AJAX behaviors</h2>
+<p class="paragraph"/>In addition to specific components, Wicket offers also a set of built in AJAX behaviors that can be used to easily add AJAX functionalities to existing components. As we will see in this paragraph AJAX behaviors can be used also to ajaxify components that weren't initially designed to work with this technology. All the following behaviors are inside package <code>org.apache.wicket.ajax</code>.<p class="paragraph"/><h3>AjaxEventBehavior</h3><p class="paragraph"/>AjaxEventBehavior allows to handle a JavaScript event (like click, change, etc...) on server side via AJAX. Its constructor takes in input the name of the event that must be handled. Every time this event is fired for a given component on client side, the callback method <code>onEvent(AjaxRequestTarget target)</code> is executed. onEvent is abstract, hence we must implement it to tell <code>AjaxEventBehavior</code> what to do when the specified event occurs.<p class="paragraph"/>In project <code>AjaxEventBehaviorExample</code> we used this behavior to build a “clickable” Label component that counts the number of clicks. Here is the code from the home page of the project:<p class="paragraph"/><strong class="bold">HTML:</strong>
+<div class="code"><pre>&#60;body&#62;
+  &#60;div wicket:id=<span class="java&#45;quote">"clickCounterLabel"</span>&#62;&#60;/div&#62;
+  User has clicked &#60;span wicket:id=<span class="java&#45;quote">"clickCounter"</span>&#62;&#60;/span&#62; time/s on the label above.
+&#60;/body&#62;</pre></div><p class="paragraph"/><strong class="bold">Java Code:</strong>
+<div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+   <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+      <span class="java&#45;keyword">super</span>(parameters);<p class="paragraph"/>      <span class="java&#45;keyword">final</span> ClickCounterLabel clickCounterLabel = 
+         <span class="java&#45;keyword">new</span> ClickCounterLabel(<span class="java&#45;quote">"clickCounterLabel"</span>, <span class="java&#45;quote">"Click on me!"</span>);
+      <span class="java&#45;keyword">final</span> Label clickCounter =
+         <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"clickCounter"</span>, <span class="java&#45;keyword">new</span> PropertyModel(clickCounterLabel, <span class="java&#45;quote">"clickCounter"</span>));<p class="paragraph"/>      
+      clickCounterLabel.setOutputMarkupId(<span class="java&#45;keyword">true</span>);
+      clickCounterLabel.add(<span class="java&#45;keyword">new</span> AjaxEventBehavior(<span class="java&#45;quote">"click"</span>)&#123;<p class="paragraph"/>         @Override
+         <span class="java&#45;keyword">protected</span> void onEvent(AjaxRequestTarget target) &#123;
+            clickCounterLabel.clickCounter++;
+            target.add(clickCounter);
+         &#125;         
+      &#125;);<p class="paragraph"/>      add(clickCounterLabel);
+      add(clickCounter.setOutputMarkupId(<span class="java&#45;keyword">true</span>));      
+    &#125;
+&#125;<p class="paragraph"/>class ClickCounterLabel <span class="java&#45;keyword">extends</span> Label&#123;
+   <span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> clickCounter;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> ClickCounterLabel(<span class="java&#45;object">String</span> id) &#123;
+      <span class="java&#45;keyword">super</span>(id);
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> ClickCounterLabel(<span class="java&#45;object">String</span> id, IModel&#60;?&#62; model) &#123;
+      <span class="java&#45;keyword">super</span>(id, model);
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> ClickCounterLabel(<span class="java&#45;object">String</span> id, <span class="java&#45;object">String</span> label) &#123;
+      <span class="java&#45;keyword">super</span>(id, label);      
+   &#125;
+&#125;</pre></div><p class="paragraph"/>In the code above we have declared a custom label class named <code>ClickCounterLabel</code> that exposes a public integer field called clickCounter. Then, in the home page we have attached a <code>AjaxEventBehavior</code> to our custom label to increment clickCounter every time it receives a click event.<p class="paragraph"/>The number of clicks is displayed with another standard label named <code>clickCounter</code>.<p class="paragraph"/><h3>AjaxFormSubmitBehavior</h3><p class="paragraph"/>This behavior allows to send a form via AJAX when the component it is attached to receives the specified event. The component doesn't need to be inside the form if we use the constructor version that, in addition to the name of the event, takes in input also the target form:<p class="paragraph"/><div class="code"><pre>Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);		
+Button submitButton = <span class="java&#45;keyword">new</span> Button(<span class="java&#45;quote">"submitButton"</span>);
+//submit form when button is clicked		
+submitButton.add(<span class="java&#45;keyword">new</span> AjaxFormSubmitBehavior(form, <span class="java&#45;quote">"click"</span>)&#123;&#125;);
+add(form);
+add(submitButton);</pre></div><p class="paragraph"/><h3>AjaxFormComponentUpdatingBehavior</h3><p class="paragraph"/>This behavior updates the model of the form component it is attached to when a given event occurs. The standard form submitting process is skipped and the behavior validates only its form component.<p class="paragraph"/>The behavior doesn't work with radio buttons and checkboxes. For these kinds of components we must use <code>AjaxFormChoiceComponentUpdatingBehavior</code>:<p class="paragraph"/><div class="code"><pre>Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);		
+TextField textField = <span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"textField"</span>, Model.of(<span class="java&#45;quote">""</span>));
+//update the model of the text field each time event <span class="java&#45;quote">"change"</span> occurs
+textField.add(<span class="java&#45;keyword">new</span> AjaxFormComponentUpdatingBehavior(<span class="java&#45;quote">"change"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">protected</span> void onUpdate(AjaxRequestTarget target) &#123;
+		//...				
+	&#125;
+&#125;);
+add(form.add(textField));</pre></div><p class="paragraph"/><h3>AbstractAjaxTimerBehavior</h3><p class="paragraph"/><code>AbstractAjaxTimerBehavior</code> executes callback method <code>onTimer(AjaxRequestTarget target)</code> at a specified interval. The behavior can be stopped and restarted at a later time with methods <code>stop(AjaxRequestTarget target)</code> and <code>restart(AjaxRequestTarget target)</code>:<p class="paragraph"/><div class="code"><pre>Label dynamicLabel = <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"dynamicLabel"</span>);
+//trigger an AJAX request every three seconds		
+dynamicLabel.add(<span class="java&#45;keyword">new</span> AbstractAjaxTimerBehavior(Duration.seconds(3)) &#123;			
+	@Override
+	<span class="java&#45;keyword">protected</span> void onTimer(AjaxRequestTarget target) &#123;
+		//...				
+	&#125;
+&#125;);
+add(dynamicLabel);</pre></div>
+
+
+<h2 id="ajax_4">18.4 Using an activity indicator</h2>
+<p class="paragraph"/>One of the things we must take care of when we use AJAX is to notify user when an AJAX request is already in progress. This is usually done displaying an animated picture as activity indicator while the AJAX request is running.<p class="paragraph"/>Wicket comes with a variant of components <code>AjaxButton</code>, <code>AjaxLink</code> and <code>AjaxFallbackLink</code> that display a default activity indicator during AJAX request processing. These components are respectively <code>IndicatingAjaxButton</code>, <code>IndicatingAjaxLink</code> and <code>IndicatingAjaxFallbackLink</code>.<p class="paragraph"/>The default activity indicator used in Wicket can be easily integrated in our components using behavior AjaxIndicatorAppender (available in package <code>org.apache.wicket.extensions.ajax.markup.html</code>) and implementing the interface <code>IAjaxIndicatorAware</code> (in package <code>org.apache.wicket.ajax</code>).<p class="paragraph"/><code>IAjaxIndicatorAware</code> declares method <code>getAjaxIndicatorMarkupId()</code> which returns the id of the markup element used to display the activity indicator. This id can be obtained from the AjaxIndicatorAppender behavior that has been added to the current component. The following code snippet summarizes the steps needed to integrate the default activity indicator with an ajaxified component:<p class="paragraph"/><div class="code"><pre>//1&#45;Implement <span class="java&#45;keyword">interface</span> IAjaxIndicatorAware
+<span class="java&#45;keyword">public</span> class MyComponent <span class="java&#45;keyword">extends</span> Component <span class="java&#45;keyword">implements</span> IAjaxIndicatorAware &#123;
+	//2&#45;Instantiate an AjaxIndicatorAppender
+	<span class="java&#45;keyword">private</span> AjaxIndicatorAppender indicatorAppender =
+			<span class="java&#45;keyword">new</span> AjaxIndicatorAppender();<p class="paragraph"/>	<span class="java&#45;keyword">public</span> MyComponent(<span class="java&#45;object">String</span> id, IModel&#60;?&#62; model) &#123;
+		<span class="java&#45;keyword">super</span>(id, model);
+		//3&#45;Add the AjaxIndicatorAppender to the component
+		add(indicatorAppender);
+	&#125;
+	//4&#45;Return the markup id obtained from AjaxIndicatorAppender
+	<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getAjaxIndicatorMarkupId() &#123;		
+		<span class="java&#45;keyword">return</span> indicatorAppender.getMarkupId();
+	&#125;
+//&#8230;
+&#125;</pre></div><p class="paragraph"/>If we need to change the default picture used as activity indicator, we can override method <code>getIndicatorUrl()</code> of <code>AjaxIndicatorAppender</code> and return the URL to the desired picture.
+
+
+<h2 id="ajax_5">18.5 AJAX request attributes and call listeners</h2>
+<p class="paragraph"/>Starting from version 6.0 Wicket has introduced two entities which allow us to control how an AJAX request is generated on client side and to specify the custom JavaScript code we want to execute during request handling. These entities are class <code>AjaxRequestAttributes</code> and interface <code>IAjaxCallListener</code>, both placed in package <code>org.apache.wicket.ajax.attributes</code>.<p class="paragraph"/>AjaxRequestAttributes exposes the attributes used to generate the JavaScript call invoked on client side to start an AJAX request. Each attribute will be passed as a <a href="http://en.wikipedia.org/wiki/JSON" target="blank">JSON</a> parameter to the JavaScript function <code>Wicket.Ajax.ajax</code> which is responsible for sending the concrete AJAX request. Every JSON parameter is identified by a short name. Here is a partial list of the available parameters:<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Short name</strong></th><th><strong class="bold">Description</strong></th><th><strong class="bold">Default value</strong></th></tr><tr class="table-odd"><td>u</td><td>The callback URL used to serve the AJAX request that will be sent.</td><td>&#160;</td></tr><tr class="table-even"><td>c</td><td>The id of the component that wants to start the AJAX call.</td><td>&#160;</td></tr><tr class="table-odd"><td>e</td><td>A list of event (click, change, etc...) that can trigger the AJAX call.</td><td>domready</td></tr><tr class="table-even"><td>m</td><td>The request method that must be used (GET or POST).</td><td>GET</td></tr><tr class="table-odd"><td>f</td><td>The id of the form that must be submitted with the AJAX call.</td><td>&#160;</td></tr><tr class="table-even"><td>mp</td><td>If the AJAX call involves the submission of a form, this flag indicates whether the data must be encoded using the encoding mode “multipart/form-data”.</td><td>false</td></tr><tr class="table-odd"><td>sc</td><td>The input name of the submitting component of the form</td><td>&#160;</td></tr><tr class="table-even"><td>async</td><td>A boolean parameter that indicates if the AJAX call is asynchronous (true) or not.</td><td>true</td></tr><tr class="table-odd"><td>wr</td><td>Specifies the type of data returned by the AJAX call (XML, HTML, JSON, etc...).</td><td>XML</td></tr><tr class="table-even"><td>bh, pre, bsh, ah, sh, fh, coh</td><td>This is a list of the listeners that are executed on client side (they are JavaScript scripts) during the lifecycle of an AJAX request. Each short name is the abbreviation of one of the methods defined in the interface IAjaxCallListener (see below).</td><td>An empty list</td></tr></table><p class="paragraph"/><blockquote class="note">
+A full list of the available request parameters as well as more details on the related JavaScript code can be found at <a href="https://cwiki.apache.org/confluence/" target="blank">https://cwiki.apache.org/confluence/ display/WICKET/Wicket+Ajax</a> display/WICKET/Wicket+Ajax .
+</blockquote><p class="paragraph"/>Parameters 'u' (callback URL) and 'c' (the id of the component) are generated by the AJAX behavior that will serve the AJAX call and they are not accessible through <code>AjaxRequestAttributes</code>.<p class="paragraph"/>Here is the final AJAX function generate for the behavior used in example project <code>AjaxEventBehavior</code> Example:<p class="paragraph"/><div class="code"><pre>Wicket.Ajax.ajax(&#123;<span class="java&#45;quote">"u"</span>:<span class="java&#45;quote">"./?0&#45;1.IBehaviorListener.0&#45;clickCounterLabel"</span>, <span class="java&#45;quote">"e"</span>:<span class="java&#45;quote">"click"</span>,               
+                  <span class="java&#45;quote">"c"</span>:<span class="java&#45;quote">"clickCounterLabel1"</span>&#125;);</pre></div><p class="paragraph"/>Even if most of the times we will let Wicket generate request attributes for us, both AJAX components and behaviors give us the chance to modify them overriding their method <code>updateAjaxAttributes (AjaxRequestAttributes attributes)</code>.<p class="paragraph"/>One of the attribute we may need to modify is the list of <code>IAjaxCallListeners</code> returned by method <code>getAjaxCallListeners()</code>.<p class="paragraph"/><code>IAjaxCallListener</code> defines a set of methods which return the JavaScript code (as a <code>CharSequence</code>) that must be executed on client side when the AJAX request handling reaches a given stage:
+<ul class="star">
+<li><strong class="bold">getBeforeHandler(Component)</strong>: returns the JavaScript code that will be executed before any other handlers returned by IAjaxCallListener. The code is executed in a scope where it can use variable attrs, which is an array containing the JSON parameters passed to Wicket.Ajax.ajax.</li>
+<li><strong class="bold">getPrecondition(Component)</strong>: returns the JavaScript code that will be used as precondition for the AJAX call. If the script returns false then neither the Ajax call nor the other handlers will be executed. The code is executed in a scope where it can use variable attrs, which is the same variable seen for getBeforeHandler.</li>
+<li><strong class="bold">getBeforeSendHandler(Component)</strong>: returns the JavaScript code that will be executed just before the AJAX call is performed. The code is executed in a scope where it can use variables attrs, jqXHR and settings:</li>
+<ul class="star">
+<li>attrs is the same variable seen for getBeforeHandler.</li>
+<li>jqXHR is the the jQuery XMLHttpRequest object used to make the AJAX call.</li>
+<li>settings contains the settings used for calling jQuery.ajax().</li>
+</ul>
+<li><strong class="bold">getAfterHandler(Component)</strong>: returns the JavaScript code that will be executed after the AJAX call. The code is executed in a scope where it can use variable attrs, which is the same variable seen before for getBeforeHandler.</li>
+<li><strong class="bold">getSuccessHandler(Component)</strong>: returns the JavaScript code that will be executed if the AJAX call has successfully returned. The code is executed in a scope where it can use variables attrs, jqXHR, data and textStatus:</li>
+<ul class="star">
+<li>attrs and jqXHR are same variables seen for getBeforeSendHandler:</li>
+<li>data is the data returned by the AJAX call. Its type depends on parameter wr (Wicket AJAX response).</li>
+<li>textStatus it's the status returned as text.</li>
+</ul>
+<li><strong class="bold">getFailureHandler(Component)</strong>: returns the JavaScript code that will be executed if the AJAX call has returned with a failure. The code is executed in a scope where it can use variable attrs, which is the same variable seen for getBeforeHandler.</li>
+<li><strong class="bold">getCompleteHandler(Component)</strong>: returns the JavaScript that will be invoked after success or failure handler has been executed. The code is executed in a scope where it can use variables attrs, jqXHR and textStatus which are the same variables seen for getSuccessHandler.</li>
+</ul><p class="paragraph"/>In the next paragraph we will see an example of custom <code>IAjaxCallListener</code> designed to disable a component during AJAX request processing.
+
+
+
+<h2 id="ajax_6">18.6 Creating custom AJAX call listener</h2>
+<p class="paragraph"/>Displaying an activity indicator is a nice way to notify user that an AJAX request is already running, but sometimes is not enough. In some situations we may need to completely disable a component during AJAX request processing, for example when we want to avoid that impatient users submit a form multiple times. In this paragraph we will see how to accomplish this goal building a custom and reusable <code>IAjaxCallListener</code>. The code used in this example is from project <code>CustomAjaxListenerExample</code>.<p class="paragraph"/><h3>What we want for our listener</h3><p class="paragraph"/>The listener should execute some JavaScript code to disable a given component when the component it is attached to is about to make an AJAX call. Then, when the AJAX request has been completed, the listener should bring back the disabled component to an active state.<p class="paragraph"/>When a component is disabled it must be clear to user that an AJAX request is running and that he/she must wait for it to complete. To achieve this result we want to disable a given component covering it with a semi-transparent overlay area with an activity indicator in the middle.<p class="paragraph"/>The final result will look like this:<p class="paragraph"/><img border="0" class="center" src="../img/custom-ajax-call-listener.png"></img><p class="paragraph"/><h3>How to implement the listener</h3><p class="paragraph"/>The listener will implement methods <code>getBeforeHandler</code> and <code>getAfterHandler</code>: the first will return the code needed to place an overlay &#60;div&#62; on the desired component while the second must remove this overlay when the AJAX call has completed.<p class="paragraph"/>To move and resize the overlay area we will use another module from <a href="http://jqueryui.com/position/" target="blank">JQueryUI library</a> that allows us to position DOM elements on our page relative to another element.<p class="paragraph"/>So our listener will depend on four static resources: the JQuery library, the position module of JQuery UI, the custom code used to move the overlay &#60;div&#62; and the picture used as activity indicator. Except for the activity indicator, all these resources must be added to page header section in order to be used.<p class="paragraph"/>Ajax call listeners can contribute to header section by simply implementing interface <code>IComponentAwareHeaderContributor</code>. Wicket provides adapter class <code>AjaxCallListener</code> that implements both <code>IAjaxCallListener</code> and <code>IComponentAwareHeaderContributor</code>. We will use this class as base class for our listener.<p class="paragraph"/><h3>JavaScript code</h3><p class="paragraph"/>Now that we know what to do on the Java side, let's have a look at the custom JavaScript code that must be returned by our listener (file moveHiderAndIndicator.js):<p class="paragraph"/><div class="code"><pre>DisableComponentListener = &#123;
+   disableElement: function(elementId, activeIconUrl)&#123;
+      <span class="java&#45;keyword">var</span> hiderId = elementId + <span class="java&#45;quote">"&#45;disable&#45;layer"</span>;
+      <span class="java&#45;keyword">var</span> indicatorId = elementId + <span class="java&#45;quote">"&#45;indicator&#45;picture"</span>;<p class="paragraph"/>      elementId = <span class="java&#45;quote">"&#35;"</span> + elementId;
+      //create the overlay &#60;div&#62;
+      $(elementId).after('&#60;div id=<span class="java&#45;quote">"' + hiderId 
+         + '"</span> style=<span class="java&#45;quote">"position:absolute;"</span>&#62;'
+         + '&#60;img id=<span class="java&#45;quote">"' + indicatorId +  '"</span> src=<span class="java&#45;quote">"' + activeIconUrl + '"</span>/&#62;'
+         + '&#60;/div&#62;');<p class="paragraph"/>      hiderId = <span class="java&#45;quote">"&#35;"</span> + hiderId;
+      //set the style properties of the overlay &#60;div&#62;
+      $(hiderId).css('opacity', '0.8');               
+      $(hiderId).css('text&#45;align', 'center');
+      $(hiderId).css('background&#45;color', 'WhiteSmoke');
+      $(hiderId).css('border', '1px solid DarkGray');
+      //set the dimention of the overlay &#60;div&#62;
+      $(hiderId).width($(elementId).outerWidth());
+      $(hiderId).height($(elementId).outerHeight());       	 
+      //positioning the overlay &#60;div&#62; on the component that must be disabled.     
+      $(hiderId).position(&#123;of: $(elementId),at: 'top left', my: 'top left'&#125;);<p class="paragraph"/>      //positioning the activity indicator in the middle of the overlay &#60;div&#62;
+      $(<span class="java&#45;quote">"&#35;"</span> + indicatorId).position(&#123;of: $(hiderId), at: 'center center',
+                                     my: 'center center'&#125;);
+   &#125;,
+   //function hideComponent</pre></div><p class="paragraph"/>Function DisableComponentListener.disableElement places the overlay &#60;div&#62; an the activity indicator on the desired component. The parameters in input are the markup id of the component we want to disable and the URL of the activity indicator picture. These two parameters must be provided by our custom listener.<p class="paragraph"/>The rest of custom JavaScript contains function DisableComponentListener.hideComponent which is just a wrapper around the JQuery function remove():<p class="paragraph"/><div class="code"><pre>hideComponent: function(elementId)&#123;
+	<span class="java&#45;keyword">var</span> hiderId = elementId + <span class="java&#45;quote">"&#45;disable&#45;layer"</span>;
+	$('&#35;' + hiderId).remove();
+	&#125;
+&#125;;</pre></div><p class="paragraph"/><h3>Java class code</h3><p class="paragraph"/>The code of our custom listener is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class DisableComponentListener <span class="java&#45;keyword">extends</span> AjaxCallListener &#123;
+   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference customScriptReference = <span class="java&#45;keyword">new</span>   
+   PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
+   PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"jquery&#45;ui&#45;position.min.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference indicatorReference = 
+         <span class="java&#45;keyword">new</span> PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"ajax&#45;loader.gif"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> Component targetComponent;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> DisableComponentListener(Component targetComponent)&#123;
+      <span class="java&#45;keyword">this</span>.targetComponent = targetComponent;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> CharSequence getBeforeHandler(Component component) &#123;   
+      CharSequence indicatorUrl = getIndicatorUrl(component);
+      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.disableElement('"</span> + targetComponent.getMarkupId() 
+              + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> CharSequence getCompleteHandler(Component component) &#123;
+      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> 
+		+ targetComponent.getMarkupId() + <span class="java&#45;quote">"');"</span>;
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">protected</span> CharSequence getIndicatorUrl(Component component) &#123;
+      <span class="java&#45;keyword">return</span> component.urlFor(indicatorReference, <span class="java&#45;keyword">null</span>);
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> void renderHead(Component component, IHeaderResponse response) &#123;   
+      ResourceReference jqueryReference = 
+      Application.get().getJavaScriptLibrarySettings().getJQueryReference();
+      response.render(JavaScriptHeaderItem.forReference(jqueryReference));      
+      response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
+      response.render(JavaScriptHeaderItem.forReference(customScriptReference) );
+   &#125;
+&#125;</pre></div><p class="paragraph"/>As you can see in the code above we have created a function (<code>getIndicatorUrl</code>) to retrieve the URL of the indicator picture. This was done in order to make the picture customizable by overriding this method.<p class="paragraph"/>Once we have our listener in place, we can finally use it in our example overwriting method <code>updateAjaxAttributes</code> of the AJAX button that submits the form:<p class="paragraph"/><div class="code"><pre>//&#8230;
+<span class="java&#45;keyword">new</span> AjaxButton(<span class="java&#45;quote">"ajaxButton"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">protected</span> void updateAjaxAttributes(AjaxRequestAttributes attributes) &#123;
+	  <span class="java&#45;keyword">super</span>.updateAjaxAttributes(attributes);
+	  attributes.getAjaxCallListeners().add(<span class="java&#45;keyword">new</span> DisableComponentListener(form));
+	&#125;
+&#125;
+//...</pre></div><p class="paragraph"/><h3>Global listeners</h3><p class="paragraph"/>So far we have seen how to use an AJAX call listener to track the AJAX activity of a single component. In addition to these kinds of listeners, Wicket provides also global listeners which are triggered for any AJAX request sent from a page.<p class="paragraph"/>Global AJAX call events are handled with JavaScript. We can register a callback function for a specific event of the AJAX call lifecycle with function <code>Wicket.Event.subscribe('&#60;eventName&#62;', &#60;callback Function&#62;)</code>. The first parameter of this function is the name of the event we want to handle. The possible names are:
+<ul class="star">
+<li>'/ajax/call/before': called before any other event handler.</li>
+<li>'/ajax/call/beforeSend': called just before the AJAX call.</li>
+<li>'/ajax/call/after': called after the AJAX request has been sent.</li>
+<li>'/ajax/call/success': called if the AJAX call has successfully returned.</li>
+<li>'/ajax/call/failure': called if the AJAX call has returned with a failure.</li>
+<li>'/ajax/call/complete': called when the AJAX call has completed.</li>
+<li>'/dom/node/removing': called when a component is about to be removed via AJAX. This  happens when component markup is updated via AJAX (i.e. the component itself or one of its containers has been added to <code>AjaxRequestTarget</code>)</li>
+<li>'/dom/node/added': called when a component has been added via AJAX. Just like '/dom/node/removing', this event is triggered when a component is added to <code>AjaxRequestTarget</code>.</li>
+</ul><p class="paragraph"/>The callback function takes in input the following parameters:  attrs, jqXHR, textStatus, jqEvent and errorThrown. The first three parameters are the same seen before with <code>IAjaxCallListener</code> while jqEvent is an event internally fired by Wicket. The last parameter errorThrown indicates if an error has occurred during the AJAX call.<p class="paragraph"/>To see a basic example of use of a global AJAX call listener, let's go back to our custom datepicker created in chapter 14. When we built it we didn't think about a possible use of the component with AJAX.  When a complex component like our datepicker is refreshed via AJAX, the following two side effects can occur: 
+<ul class="star">
+<li>After been refreshed, the component loses every JavaScript handler set on it. This is not a problem for our datepicker as it sets a new JQuery datepicker every time is rendered (inside method renderHead).</li>
+<li>The markup previously created with JavaScript is not removed. For our datepicker this means that the icon used to open the calendar won't be removed while a new one will be added each time the component is refreshed.</li>
+</ul><p class="paragraph"/>To solve the second unwanted side effect we can register a global AJAX call listener that completely removes the datepicker functionality from our component before it is removed due to an AJAX refresh (which fires event '/dom/node/removing').<p class="paragraph"/>Project <code>CustomDatepickerAjax</code> contains a new version of our datepicker which adds to its JavaScript file JQDatePicker.js the code needed to register a callback function that gets rid of the JQuery datepicker before the component is removed from the DOM:<p class="paragraph"/><div class="code"><pre>Wicket.Event.subscribe('/dom/node/removing', 
+    function(jqEvent, attributes, jqXHR, errorThrown, textStatus) &#123;
+	<span class="java&#45;keyword">var</span> componentId = '&#35;' + attributes&#91;'id'&#93;;
+	<span class="java&#45;keyword">if</span>($(componentId).datepicker !== undefined)
+	      $(componentId).datepicker('destroy');
+     &#125;
+);</pre></div><p class="paragraph"/>The code above retrieves the id of the component that is about to be removed using parameter attributes. Then it checks if a JQuery datepicker was defined for the given component and if so, it removes the widget calling function destroy.
+
+
+
+<h2 id="ajax_7">18.7 Summary</h2>
+<p class="paragraph"/>AJAX is another example of how Wicket can simplify web technologies providing a good component and object oriented abstraction of them.<p class="paragraph"/>In this chapter we have seen how to take advantage of the AJAX support provided by Wicket to write AJAX-enhanced applications. Most of the chapter has been dedicated to the built-in components and behaviors that let us adopt AJAX without almost any effort.<p class="paragraph"/>In the final part of the chapter we have seen how Wicket physically implements an AJAX call on client side using AJAX request attributes. Then, we have learnt how to use call listeners to execute custom JavaScript during AJAX request lifecycle.
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/advanced.html">&lt;&lt; <strong>17</strong><span>Wicket advanced topics</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>18.6 Creating custom AJAX call listener 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/advanced.html">&lt;&lt; <strong>17</strong><span>Wicket advanced topics</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>18.6 Creating custom AJAX call listener - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="ajax_6">18.6 Creating custom AJAX call listener</h2>
+<p class="paragraph"/>Displaying an activity indicator is a nice way to notify user that an AJAX request is already running, but sometimes is not enough. In some situations we may need to completely disable a component during AJAX request processing, for example when we want to avoid that impatient users submit a form multiple times. In this paragraph we will see how to accomplish this goal building a custom and reusable <code>IAjaxCallListener</code>. The code used in this example is from project <code>CustomAjaxListenerExample</code>.<p class="paragraph"/><h3>What we want for our listener</h3><p class="paragraph"/>The listener should execute some JavaScript code to disable a given component when the component it is attached to is about to make an AJAX call. Then, when the AJAX request has been completed, the listener should bring back the disabled component to an active state.<p class="paragraph"/>When a component is disabled it must be clear to user that an AJAX request is running and that he/she must wait for it to complete. To achieve this result we want to disable a given component covering it with a semi-transparent overlay area with an activity indicator in the middle.<p class="paragraph"/>The final result will look like this:<p class="paragraph"/><img border="0" class="center" src="../img/custom-ajax-call-listener.png"></img><p class="paragraph"/><h3>How to implement the listener</h3><p class="paragraph"/>The listener will implement methods <code>getBeforeHandler</code> and <code>getAfterHandler</code>: the first will return the code needed to place an overlay &#60;div&#62; on the desired component while the second must remove this overlay when the AJAX call has completed.<p class="paragraph"/>To move and resize the overlay area we will use another module from <a href="http://jqueryui.com/position/" target="blank">JQueryUI library</a> that allows us to position DOM elements on our page relative to another element.<p class="paragraph"/>So our listener will depend on four static resources: the JQuery library, the position module of JQuery UI, the custom code used to move the overlay &#60;div&#62; and the picture used as activity indicator. Except for the activity indicator, all these resources must be added to page header section in order to be used.<p class="paragraph"/>Ajax call listeners can contribute to header section by simply implementing interface <code>IComponentAwareHeaderContributor</code>. Wicket provides adapter class <code>AjaxCallListener</code> that implements both <code>IAjaxCallListener</code> and <code>IComponentAwareHeaderContributor</code>. We will use this class as base class for our listener.<p class="paragraph"/><h3>JavaScript code</h3><p class="paragraph"/>Now that we know what to do on the Java side, let's have a look at the custom JavaScript code that must be returned by our listener (file moveHiderAndIndicator.js):<p class="paragraph"/><div class="code"><pre>DisableComponentListener = &#123;
+   disableElement: function(elementId, activeIconUrl)&#123;
+      <span class="java&#45;keyword">var</span> hiderId = elementId + <span class="java&#45;quote">"&#45;disable&#45;layer"</span>;
+      <span class="java&#45;keyword">var</span> indicatorId = elementId + <span class="java&#45;quote">"&#45;indicator&#45;picture"</span>;<p class="paragraph"/>      elementId = <span class="java&#45;quote">"&#35;"</span> + elementId;
+      //create the overlay &#60;div&#62;
+      $(elementId).after('&#60;div id=<span class="java&#45;quote">"' + hiderId 
+         + '"</span> style=<span class="java&#45;quote">"position:absolute;"</span>&#62;'
+         + '&#60;img id=<span class="java&#45;quote">"' + indicatorId +  '"</span> src=<span class="java&#45;quote">"' + activeIconUrl + '"</span>/&#62;'
+         + '&#60;/div&#62;');<p class="paragraph"/>      hiderId = <span class="java&#45;quote">"&#35;"</span> + hiderId;
+      //set the style properties of the overlay &#60;div&#62;
+      $(hiderId).css('opacity', '0.8');               
+      $(hiderId).css('text&#45;align', 'center');
+      $(hiderId).css('background&#45;color', 'WhiteSmoke');
+      $(hiderId).css('border', '1px solid DarkGray');
+      //set the dimention of the overlay &#60;div&#62;
+      $(hiderId).width($(elementId).outerWidth());
+      $(hiderId).height($(elementId).outerHeight());       	 
+      //positioning the overlay &#60;div&#62; on the component that must be disabled.     
+      $(hiderId).position(&#123;of: $(elementId),at: 'top left', my: 'top left'&#125;);<p class="paragraph"/>      //positioning the activity indicator in the middle of the overlay &#60;div&#62;
+      $(<span class="java&#45;quote">"&#35;"</span> + indicatorId).position(&#123;of: $(hiderId), at: 'center center',
+                                     my: 'center center'&#125;);
+   &#125;,
+   //function hideComponent</pre></div><p class="paragraph"/>Function DisableComponentListener.disableElement places the overlay &#60;div&#62; an the activity indicator on the desired component. The parameters in input are the markup id of the component we want to disable and the URL of the activity indicator picture. These two parameters must be provided by our custom listener.<p class="paragraph"/>The rest of custom JavaScript contains function DisableComponentListener.hideComponent which is just a wrapper around the JQuery function remove():<p class="paragraph"/><div class="code"><pre>hideComponent: function(elementId)&#123;
+	<span class="java&#45;keyword">var</span> hiderId = elementId + <span class="java&#45;quote">"&#45;disable&#45;layer"</span>;
+	$('&#35;' + hiderId).remove();
+	&#125;
+&#125;;</pre></div><p class="paragraph"/><h3>Java class code</h3><p class="paragraph"/>The code of our custom listener is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class DisableComponentListener <span class="java&#45;keyword">extends</span> AjaxCallListener &#123;
+   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference customScriptReference = <span class="java&#45;keyword">new</span>   
+   PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"moveHiderAndIndicator.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference jqueryUiPositionRef = <span class="java&#45;keyword">new</span>    
+   PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"jquery&#45;ui&#45;position.min.js"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> PackageResourceReference indicatorReference = 
+         <span class="java&#45;keyword">new</span> PackageResourceReference(DisableComponentListener.class, <span class="java&#45;quote">"ajax&#45;loader.gif"</span>);<p class="paragraph"/>   <span class="java&#45;keyword">private</span> Component targetComponent;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> DisableComponentListener(Component targetComponent)&#123;
+      <span class="java&#45;keyword">this</span>.targetComponent = targetComponent;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> CharSequence getBeforeHandler(Component component) &#123;   
+      CharSequence indicatorUrl = getIndicatorUrl(component);
+      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.disableElement('"</span> + targetComponent.getMarkupId() 
+              + <span class="java&#45;quote">"',"</span> + <span class="java&#45;quote">"'"</span> + indicatorUrl + <span class="java&#45;quote">"');"</span>;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> CharSequence getCompleteHandler(Component component) &#123;
+      <span class="java&#45;keyword">return</span> <span class="java&#45;quote">";DisableComponentListener.hideComponent('"</span> 
+		+ targetComponent.getMarkupId() + <span class="java&#45;quote">"');"</span>;
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">protected</span> CharSequence getIndicatorUrl(Component component) &#123;
+      <span class="java&#45;keyword">return</span> component.urlFor(indicatorReference, <span class="java&#45;keyword">null</span>);
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> void renderHead(Component component, IHeaderResponse response) &#123;   
+      ResourceReference jqueryReference = 
+      Application.get().getJavaScriptLibrarySettings().getJQueryReference();
+      response.render(JavaScriptHeaderItem.forReference(jqueryReference));      
+      response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
+      response.render(JavaScriptHeaderItem.forReference(customScriptReference) );
+   &#125;
+&#125;</pre></div><p class="paragraph"/>As you can see in the code above we have created a function (<code>getIndicatorUrl</code>) to retrieve the URL of the indicator picture. This was done in order to make the picture customizable by overriding this method.<p class="paragraph"/>Once we have our listener in place, we can finally use it in our example overwriting method <code>updateAjaxAttributes</code> of the AJAX button that submits the form:<p class="paragraph"/><div class="code"><pre>//&#8230;
+<span class="java&#45;keyword">new</span> AjaxButton(<span class="java&#45;quote">"ajaxButton"</span>)&#123;
+	@Override
+	<span class="java&#45;keyword">protected</span> void updateAjaxAttributes(AjaxRequestAttributes attributes) &#123;
+	  <span class="java&#45;keyword">super</span>.updateAjaxAttributes(attributes);
+	  attributes.getAjaxCallListeners().add(<span class="java&#45;keyword">new</span> DisableComponentListener(form));
+	&#125;
+&#125;
+//...</pre></div><p class="paragraph"/><h3>Global listeners</h3><p class="paragraph"/>So far we have seen how to use an AJAX call listener to track the AJAX activity of a single component. In addition to these kinds of listeners, Wicket provides also global listeners which are triggered for any AJAX request sent from a page.<p class="paragraph"/>Global AJAX call events are handled with JavaScript. We can register a callback function for a specific event of the AJAX call lifecycle with function <code>Wicket.Event.subscribe('&#60;eventName&#62;', &#60;callback Function&#62;)</code>. The first parameter of this function is the name of the event we want to handle. The possible names are:
+<ul class="star">
+<li>'/ajax/call/before': called before any other event handler.</li>
+<li>'/ajax/call/beforeSend': called just before the AJAX call.</li>
+<li>'/ajax/call/after': called after the AJAX request has been sent.</li>
+<li>'/ajax/call/success': called if the AJAX call has successfully returned.</li>
+<li>'/ajax/call/failure': called if the AJAX call has returned with a failure.</li>
+<li>'/ajax/call/complete': called when the AJAX call has completed.</li>
+<li>'/dom/node/removing': called when a component is about to be removed via AJAX. This  happens when component markup is updated via AJAX (i.e. the component itself or one of its containers has been added to <code>AjaxRequestTarget</code>)</li>
+<li>'/dom/node/added': called when a component has been added via AJAX. Just like '/dom/node/removing', this event is triggered when a component is added to <code>AjaxRequestTarget</code>.</li>
+</ul><p class="paragraph"/>The callback function takes in input the following parameters:  attrs, jqXHR, textStatus, jqEvent and errorThrown. The first three parameters are the same seen before with <code>IAjaxCallListener</code> while jqEvent is an event internally fired by Wicket. The last parameter errorThrown indicates if an error has occurred during the AJAX call.<p class="paragraph"/>To see a basic example of use of a global AJAX call listener, let's go back to our custom datepicker created in chapter 14. When we built it we didn't think about a possible use of the component with AJAX.  When a complex component like our datepicker is refreshed via AJAX, the following two side effects can occur: 
+<ul class="star">
+<li>After been refreshed, the component loses every JavaScript handler set on it. This is not a problem for our datepicker as it sets a new JQuery datepicker every time is rendered (inside method renderHead).</li>
+<li>The markup previously created with JavaScript is not removed. For our datepicker this means that the icon used to open the calendar won't be removed while a new one will be added each time the component is refreshed.</li>
+</ul><p class="paragraph"/>To solve the second unwanted side effect we can register a global AJAX call listener that completely removes the datepicker functionality from our component before it is removed due to an AJAX refresh (which fires event '/dom/node/removing').<p class="paragraph"/>Project <code>CustomDatepickerAjax</code> contains a new version of our datepicker which adds to its JavaScript file JQDatePicker.js the code needed to register a callback function that gets rid of the JQuery datepicker before the component is removed from the DOM:<p class="paragraph"/><div class="code"><pre>Wicket.Event.subscribe('/dom/node/removing', 
+    function(jqEvent, attributes, jqXHR, errorThrown, textStatus) &#123;
+	<span class="java&#45;keyword">var</span> componentId = '&#35;' + attributes&#91;'id'&#93;;
+	<span class="java&#45;keyword">if</span>($(componentId).datepicker !== undefined)
+	      $(componentId).datepicker('destroy');
+     &#125;
+);</pre></div><p class="paragraph"/>The code above retrieves the id of the component that is about to be removed using parameter attributes. Then it checks if a JQuery datepicker was defined for the given component and if so, it removes the widget calling function destroy.
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/advanced.html">&lt;&lt; <strong>17</strong><span>Wicket advanced topics</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>20.2 Authorizations 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>20.2 Authorizations - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="security_2">20.2 Authorizations</h2>
+<p class="paragraph"/>The authorization support provided by Wicket is built around the concept of authorization strategy which is represented by interface <code>IAuthorizationStrategy</code> (in package <code>org.apache.wicket.authorization</code>):<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> IAuthorizationStrategy
+&#123;
+  //<span class="java&#45;keyword">interface</span> methods 
+ &#60;T <span class="java&#45;keyword">extends</span> IRequestableComponent&#62; <span class="java&#45;object">boolean</span> isInstantiationAuthorized(<span class="java&#45;object">Class</span>&#60;T&#62; componentClass);
+ <span class="java&#45;object">boolean</span> isActionAuthorized(Component component, Action action);<p class="paragraph"/> //<span class="java&#45;keyword">default</span> authorization strategy that allows everything
+ <span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;keyword">final</span> IAuthorizationStrategy ALLOW_ALL = <span class="java&#45;keyword">new</span> IAuthorizationStrategy()
+ &#123;
+  @Override
+  <span class="java&#45;keyword">public</span> &#60;T <span class="java&#45;keyword">extends</span> IRequestableComponent&#62; <span class="java&#45;object">boolean</span> isInstantiationAuthorized(<span class="java&#45;keyword">final</span> <span class="java&#45;object">Class</span>&#60;T&#62; c)
+  &#123;
+    <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">true</span>;
+  &#125;
+  @Override
+  <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isActionAuthorized(Component c, Action action)
+  &#123;
+    <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">true</span>;
+  &#125;
+ &#125;;
+&#125;</pre></div><p class="paragraph"/>This interface defines two methods:
+<ul class="star">
+<li>isInstantiationAuthorized checks if user is allowed to instantiate a given component.</li>
+<li>isActionAuthorized checks if user is authorized to perform a given action on a component's instance. The standard actions checked by this method are defined into class Action and are Action.ENABLE and Action.RENDER.</li>
+</ul><p class="paragraph"/>Inside <code>IAuthorizationStrategy</code> we can also find a default implementation of the interface (called ALLOW_ALL) that allows everyone to instantiate every component and perform every possible action on it. This is the default strategy adopted by class <code>Application</code>.<p class="paragraph"/>To change the authorization strategy in use we must register the desired implementation into security settings (interface <code>ISecuritySettings</code>) during initialization phase with method setAuthorization Strategy:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230; 
+  @Override
+  <span class="java&#45;keyword">public</span> void init()
+  &#123;
+    <span class="java&#45;keyword">super</span>.init();
+    getSecuritySettings().
+	setAuthorizationStrategy(myAuthorizationStrategy);
+  &#125;	
+//...</pre></div><p class="paragraph"/>If we want to combine the action of two or more authorization strategies we can chain them with strategy <code>CompoundAuthorizationStrategy</code> which implements composite pattern for authorization strategies.<p class="paragraph"/>Most of the times we won't need to implement an <code>IAuthorizationStrategy</code> from scratch as Wicket already comes with a set of built-in strategies. In the next paragraphs we will see some of these strategies that can be used to implement an effective and flexible security policy.<p class="paragraph"/><h3>SimplePageAuthorizationStrategy</h3><p class="paragraph"/>Abstract class SimplePageAuthorizationStrategy (in package <code>org.apache.wicket.authorization.strategies.page</code>) is a strategy that checks user authorizations calling abstract method <code>isAuthorized</code> only for those pages that are subclasses of a given supertype. If <code>isAuthorized</code> returns false, the user is redirected to the sign in page specified as second constructor parameter:<p class="paragraph"/><div class="code"><pre>SimplePageAuthorizationStrategy authorizationStrategy = <span class="java&#45;keyword">new</span> SimplePageAuthorizationStrategy( 
+                                                  PageClassToCheck.class, SignInPage.class)
+&#123;
+  <span class="java&#45;keyword">protected</span> <span class="java&#45;object">boolean</span> isAuthorized()
+  &#123;		                
+    //Authentication code&#8230;
+  &#125;
+&#125;;</pre></div><p class="paragraph"/>By default <code>SimplePageAuthorizationStrategy</code> checks for permissions only on pages. If we want to change this behavior and check also other kinds of components, we must override method <code>isActionAuthorized</code> and implement our custom logic inside it.<p class="paragraph"/><h3>Role-based strategies</h3><p class="paragraph"/>At the end of paragraph 20.1 we have introduced AbstractAuthenticatedWebSession's method getRoles which is provided to support role-based authorization returning the set of roles granted to the current user.<p class="paragraph"/>In Wicket roles are simple strings like “BASIC_USER” or “ADMIN” (they don't need to be capitalized) and they are handled with class <code>org.apache.wicket.authroles.authorization.strategies.role.Roles</code>. This class extends standard HashSet collection adding some functionalities to check whether the set contains one or more roles. Class <code>Roles</code> already defines roles Roles.USER and Roles.ADMIN.<p class="paragraph"/>The session class in the following example returns a custom “SIGNED_IN” role for every authenticated user and it adds an Roles.ADMIN role if username is equal to superuser:<p class="paragraph"/><div class="code"><pre>class BasicAuthenticationRolesSession <span class="java&#45;keyword">extends</span> AuthenticatedWebSession &#123;
+	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> userName;<p class="paragraph"/>	<span class="java&#45;keyword">public</span> BasicAuthenticationRolesSession(Request request) &#123;
+		<span class="java&#45;keyword">super</span>(request);		
+	&#125;<p class="paragraph"/>	@Override
+	<span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> authenticate(<span class="java&#45;object">String</span> username, <span class="java&#45;object">String</span> password) &#123;
+		<span class="java&#45;object">boolean</span> authResult= <span class="java&#45;keyword">false</span>;<p class="paragraph"/>		authResult = //some authentication logic...<p class="paragraph"/>		<span class="java&#45;keyword">if</span>(authResult)
+			userName = username;<p class="paragraph"/>		<span class="java&#45;keyword">return</span> authResult;
+	&#125;<p class="paragraph"/>	@Override
+	<span class="java&#45;keyword">public</span> Roles getRoles() &#123;
+		Roles resultRoles = <span class="java&#45;keyword">new</span> Roles();<p class="paragraph"/>		<span class="java&#45;keyword">if</span>(isSignedIn())
+			resultRoles.add(<span class="java&#45;quote">"SIGNED_IN"</span>);<p class="paragraph"/>		<span class="java&#45;keyword">if</span>(userName.equals(<span class="java&#45;quote">"superuser"</span>))
+			resultRoles.add(Roles.ADMIN);<p class="paragraph"/>		<span class="java&#45;keyword">return</span> resultRoles;
+	&#125;
+&#125;</pre></div><p class="paragraph"/>Roles can be adopted to apply security restrictions on our pages and components. This can be done  using one of the two built-in authorization strategies that extend super class <code>AbstractRoleAuthorizationStrategyWicket</code>: <code>MetaDataRoleAuthorizationStrategy</code> and <code>AnnotationsRoleAuthorizationStrategy</code><p class="paragraph"/>The difference between these two strategies is that <code>MetaDataRoleAuthorizationStrategy</code> handles role-based authorizations with Wicket metadata while <code>AnnotationsRoleAuthorizationStrategy</code> uses Java annotations.<p class="paragraph"/><blockquote class="note">
+Application class <code>AuthenticatedWebApplication</code> already sets <code>MetaDataRoleAuthorizationStrategy</code> and <code>AnnotationsRoleAuthorizationStrategy</code> as its own authorization strategies (it uses a compound strategy as we will see in paragraph 20.2).<p class="paragraph"/>The code that we will see in the next examples is for illustrative purpose only. If our application class inherits from <code>AuthenticatedWebApplication</code> we won't need to configure anything to use these two strategies.
+</blockquote><p class="paragraph"/><h4>Using roles with metadata</h4><p class="paragraph"/>Strategy <code>MetaDataRoleAuthorizationStrategy</code> uses application and components metadata to implement role-based authorizations. The class defines a set of static methods authorize that can be used to specify which roles are allowed to instantiate a component and which roles can perform a given action on a component.<p class="paragraph"/>The following code snippet reports both application and session classes from project <code>MetaDataRolesStrategyExample</code> and illustrates how to use <code>MetaDataRoleAuthorizationStrategy</code> to allow access to a given page (AdminOnlyPage) only to ADMIN role:<p class="paragraph"/><strong class="bold">Application class:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> AuthenticatedWebApplication&#123;    		
+   @Override
+   <span class="java&#45;keyword">public</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> WebPage&#62; getHomePage()&#123;
+      <span class="java&#45;keyword">return</span> HomePage.class;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">protected</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> AbstractAuthenticatedWebSession&#62; getWebSessionClass() &#123;
+      <span class="java&#45;keyword">return</span> BasicAuthenticationSession.class;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">protected</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> WebPage&#62; getSignInPageClass() &#123;
+      <span class="java&#45;keyword">return</span> SignInPage.class;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> void init()&#123;   
+      getSecuritySettings().setAuthorizationStrategy(<span class="java&#45;keyword">new</span> MetaDataRoleAuthorizationStrategy(<span class="java&#45;keyword">this</span>));
+      MetaDataRoleAuthorizationStrategy.authorize(AdminOnlyPage.class, Roles.ADMIN);
+   &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Session class:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class BasicAuthenticationSession <span class="java&#45;keyword">extends</span> AuthenticatedWebSession &#123;<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> username;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> BasicAuthenticationSession(Request request) &#123;
+      <span class="java&#45;keyword">super</span>(request);      
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> authenticate(<span class="java&#45;object">String</span> username, <span class="java&#45;object">String</span> password) &#123;
+      //user is authenticated <span class="java&#45;keyword">if</span> username and password are equal
+     <span class="java&#45;object">boolean</span> authResult = username.equals(password);<p class="paragraph"/>      <span class="java&#45;keyword">if</span>(authResult)
+         <span class="java&#45;keyword">this</span>.username = username;<p class="paragraph"/>      <span class="java&#45;keyword">return</span> authResult;
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">public</span> Roles getRoles() &#123;
+      Roles resultRoles = <span class="java&#45;keyword">new</span> Roles();
+      //<span class="java&#45;keyword">if</span> user is signed in add the relative role
+      <span class="java&#45;keyword">if</span>(isSignedIn())
+         resultRoles.add(<span class="java&#45;quote">"SIGNED_IN"</span>);
+      //<span class="java&#45;keyword">if</span> username is equal to 'superuser' add the ADMIN role
+      <span class="java&#45;keyword">if</span>(username!= <span class="java&#45;keyword">null</span> &#38;&#38; username.equals(<span class="java&#45;quote">"superuser"</span>))
+         resultRoles.add(Roles.ADMIN);<p class="paragraph"/>      <span class="java&#45;keyword">return</span> resultRoles;
+   &#125;<p class="paragraph"/>   @Override
+   <span class="java&#45;keyword">public</span> void signOut() &#123;
+      <span class="java&#45;keyword">super</span>.signOut();
+      username = <span class="java&#45;keyword">null</span>;
+   &#125;
+&#125;</pre></div><p class="paragraph"/>The code that instantiates <code>MetaDataRoleAuthorizationStrategy</code> and set it as application's strategy is inside application class method init.<p class="paragraph"/>Any subclass of <code>AbstractRoleAuthorizationStrategyWicket</code> needs an implementation of interface <code>IRoleCheckingStrategy</code> to be instantiated. For this purpose in the code above we used the application class itself because its base class <code>AuthenticatedWebApplication</code> already implements interface <code>IRoleCheckingStrategy</code>. By default <code>AuthenticatedWebApplication</code> checks for authorizations using the roles returned by the current <code>AbstractAuthenticatedWebSession</code>. As final step inside init we grant the access to page <code>AdminOnlyPage</code> to ADMIN role calling method authorize.<p class="paragraph"/>The code from session class has three interesting methods. The first is authenticate which considers as valid credentials every pair of username and password having the same value. The second notable method is getRoles which returns role SIGNED_IN if user is authenticated and it adds role ADMIN if username is equal to superuser. Finally, we have method signOut which has been overridden in order to clean the username field used internally to generate roles.<p class="paragraph"/>Now if we run the project and we try to access to <code>AdminOnlyPage</code> from the home page without having the ADMIN role, we will be redirected to the default access-denied page used by Wicket:<p class="paragraph"/><img border="0" class="center" src="../img/authorization-access-denied.png"></img><p class="paragraph"/>The access-denied page can be customized using method <code>setAccessDeniedPage(Class&#60;? extends Page&#62;)</code> of setting interface <code>IApplicationSettings</code>:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
+   @Override
+   <span class="java&#45;keyword">public</span> void init()&#123;   
+      getApplicationSettings().setAccessDeniedPage(
+			MyCustomAccessDeniedPage.class); 
+   &#125;</pre></div><p class="paragraph"/>Just like custom “Page expired” page (see chapter 6.2.5), also custom “Access denied” page must be bookmarkable.<p class="paragraph"/><h4>Using roles with annotations</h4><p class="paragraph"/>Strategy <code>AnnotationsRoleAuthorizationStrategy</code> relies on two built-in annotations to handle role-based authorizations. These annotations are <code>AuthorizeInstantiation</code> and <code>AuthorizeAction</code>. As their names suggest the first annotation specifies which roles are allowed to instantiate the annotated component while the second must be used to indicate which roles are allowed to perform a specific action on the annotated component.<p class="paragraph"/>In the following example we use annotations to make a page accessible only to signed-in users and to enable it only if user has the ADMIN role:<p class="paragraph"/><div class="code"><pre>@AuthorizeInstantiation(<span class="java&#45;quote">"SIGNED_IN"</span>)
+@AuthorizeAction(action = <span class="java&#45;quote">"ENABLE"</span>, roles = &#123;<span class="java&#45;quote">"ADMIN"</span>&#125;)
+<span class="java&#45;keyword">public</span> class MyPage <span class="java&#45;keyword">extends</span> WebPage &#123;
+   //Page class code&#8230;
+&#125;</pre></div><p class="paragraph"/>Remember that when a component is not enabled, user can render it but he can neither click on its links nor interact with its forms.<p class="paragraph"/>Example project <code>AnnotationsRolesStrategyExample</code> is a revisited version of <code>MetaDataRolesStrategyExample</code> where we use <code>AnnotationsRoleAuthorizationStrategy</code> as authorization strategy. To ensure that page <code>AdminOnlyPage</code> is accessible only to ADMIN role we have used the following annotation:<p class="paragraph"/><div class="code"><pre>@AuthorizeInstantiation(<span class="java&#45;quote">"ADMIN"</span>)
+<span class="java&#45;keyword">public</span> class AdminOnlyPage <span class="java&#45;keyword">extends</span> WebPage &#123;
+    //Page class code&#8230;
+&#125;</pre></div><p class="paragraph"/><h3>Catching an unauthorized component instantiation</h3><p class="paragraph"/>Interface IUnauthorizedComponentInstantiationListener (in package <code>org.apache.wicket.authorization</code>) is provided to give the chance to handle the case in which a user tries to instantiate a component without having the permissions to do it. The method defined inside this interface is <code>onUnauthorizedInstantiation(Component)</code> and it is executed whenever a user attempts to execute an unauthorized instantiation.<p class="paragraph"/>This listener must be registered into application's security settings with method setUnauthorized <code>ComponentInstantiationListener</code> defined by setting interface <code>ISecuritySettings</code>. In the following code snippet we register a listener that redirect user to a warning page if he tries to do a not-allowed instantiation:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> AuthenticatedWebApplication&#123;   
+     //Application code&#8230;
+     @Override
+     <span class="java&#45;keyword">public</span> void init()&#123;    
+        getSecuritySettings().setUnauthorizedComponentInstantiationListener(
+			<span class="java&#45;keyword">new</span> IUnauthorizedComponentInstantiationListener() &#123;<p class="paragraph"/>	    @Override
+	    <span class="java&#45;keyword">public</span> void onUnauthorizedInstantiation(Component component) &#123;
+	        component.setResponsePage(AuthWarningPage.class);
+	    &#125;
+        &#125;);
+     &#125;
+&#125;</pre></div><p class="paragraph"/>In addition to interface <code>IRoleCheckingStrategy</code>, class <code>AuthenticatedWebApplication</code> implements also <code>IUnauthorizedComponentInstantiationListener</code> and registers itself as listener for unauthorized instantiations.<p class="paragraph"/>By default <code>AuthenticatedWebApplication</code> redirects users to sign-in page if they are not signed-in and they try to instantiate a restricted component. Otherwise, if users are already signed in but they are not allowed to instantiate a given component, an <code>UnauthorizedInstantiationException</code> will be thrown.<p class="paragraph"/><h3>Strategy RoleAuthorizationStrategy</h3><p class="paragraph"/>Class <code>RoleAuthorizationStrategy</code> is a compound strategy that combines both <code>MetaDataRoleAuthorizationStrategy</code> and <code>AnnotationsRoleAuthorizationStrategy</code>.<p class="paragraph"/>This is the strategy used internally by <code>AuthenticatedWebApplication</code>.
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/jee.html">&lt;&lt; <strong>19</strong><span>Integration with enterprise containers</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

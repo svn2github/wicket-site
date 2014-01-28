@@ -137,7 +137,7 @@ As final example we will build the login page for our site. We will call it @Sim
 </html>
 {code}
 
-The class for this panel just extends @Panel@ class so we won't see the relative code. The form of this panel is for illustrative purpose only. We will see how to work with Wicket forms in chapters [11|guide:chapter10] and [12|guide:chapter11]. Since this is a login page we don't want it to display the left menu area. That's not a big deal as @Component@ class exposes a method called @setVisible@ which sets whether the component and its children should be displayed. 
+The class for this panel just extends @Panel@ class so we won't see the relative code. The form of this panel is for illustrative purpose only. We will see how to work with Wicket forms in chapters [11|guide:modelsforms] and [12|guide:forms2]. Since this is a login page we don't want it to display the left menu area. That's not a big deal as @Component@ class exposes a method called @setVisible@ which sets whether the component and its children should be displayed. 
 
 The resulting Java code for the login page is the following:
 

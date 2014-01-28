@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>13.3 The RefreshingView Component 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/forms2.html">&lt;&lt; <strong>12</strong><span>Wicket forms in detail</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>13.3 The RefreshingView Component - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="repeaters_3">13.3 The RefreshingView Component</h2>
+<p class="paragraph"/>Component <code>org.apache.wicket.markup.repeater.RefreshingView</code> is a subclass of  RepeatingView that comes with a customizable rendering strategy for its children components.<p class="paragraph"/>RefreshingView defines abstract methods populateItem(Item) and getItemModels(). The first method is similar to the namesake method seen for ListView, but it takes in input an instance of class <code>org.apache.wicket.markup.repeater.Item</code> which is a subclass of <code>ListItem</code>. RefreshingView is designed to display a collection of models containing the actual items. An iterator over these models is returned by the other abstract method getItemModels.<p class="paragraph"/>The following code is a version of the previous example that uses <code>RefreshingView</code> in place of <code>ListView</code>:<p class="paragraph"/><strong class="bold">HTML:</strong>
+<div class="code"><pre>&#8230;
+	&#60;body&#62;
+		&#60;div id=<span class="java&#45;quote">"bd"</span> style=<span class="java&#45;quote">"display: table;"</span>&#62;
+			&#60;div wicket:id=<span class="java&#45;quote">"persons"</span> style=<span class="java&#45;quote">"display: table&#45;row;"</span>&#62;
+				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;&#60;b&#62;Full name: &#60;/b&#62;&#60;/div&#62;
+				&#60;div wicket:id=<span class="java&#45;quote">"fullName"</span> style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;&#60;/div&#62;
+			&#60;/div&#62;
+		&#60;/div&#62;
+	&#60;/body&#62;
+...</pre></div><p class="paragraph"/><strong class="bold">Java Code (Page Constructor):</strong>
+<div class="code"><pre><span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+   //define the list of models to use
+   <span class="java&#45;keyword">final</span> List&#60;IModel&#60;Person&#62;&#62; persons = <span class="java&#45;keyword">new</span> ArrayList&#60;IModel&#60;Person&#62;&#62;();<p class="paragraph"/>   persons.add(Model.of(<span class="java&#45;keyword">new</span> Person(<span class="java&#45;quote">"John"</span>, <span class="java&#45;quote">"Smith"</span>)); 
+   persons.add(Model.of(<span class="java&#45;keyword">new</span> Person(<span class="java&#45;quote">"Dan"</span>, <span class="java&#45;quote">"Wong"</span>));<p class="paragraph"/>   add(<span class="java&#45;keyword">new</span> RefreshingView&#60;Person&#62;(<span class="java&#45;quote">"persons"</span>) &#123;
+	@Override
+	<span class="java&#45;keyword">protected</span> void populateItem(Item&#60;Person&#62; item) &#123;
+	   item.add(<span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"fullName"</span>, <span class="java&#45;keyword">new</span> PropertyModel(item.getModel(), <span class="java&#45;quote">"fullName"</span>)));
+	&#125;<p class="paragraph"/>@Override
+	<span class="java&#45;keyword">protected</span> Iterator&#60;IModel&#60;Person&#62;&#62; getItemModels() &#123;
+	   <span class="java&#45;keyword">return</span> persons.iterator();
+&#125;			
+   &#125;);
+&#125;</pre></div><p class="paragraph"/><h3>Item reuse strategy</h3><p class="paragraph"/>Similar to <code>ListView</code>, the default behavior of the <code>RefreshingView</code> is to replace its children with new instances every time is rendered. The strategy that decides if and how children components must be refreshed is returned by method <code>getItemReuseStrategy</code>. This strategy is an implementation of interface IItemReuseStrategy. The default implementation used by <code>RefreshingView</code> is class <code>DefaultItemReuseStrategy</code> but Wicket provides also strategy <code>ReuseIfModelsEqualStrategy</code> which reuses an item if its model has been returned by the iterator obtained with method <code>getItemModels</code>.<p class="paragraph"/>To set a custom strategy we must use method <code>setItemReuseStrategy</code>.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/forms2.html">&lt;&lt; <strong>12</strong><span>Wicket forms in detail</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

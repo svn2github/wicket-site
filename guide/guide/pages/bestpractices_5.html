@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>23.5 Implement visibilities of components correctly 6.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/howToSource.html"><strong>2</strong><span>How to use the example code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/whyLearn.html"><strong>3</strong><span>Why should I learn Wicket?</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/helloWorld.html"><strong>4</strong><span>Wicket says &ldquo;Hello world!&rdquo;</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/keepControl.html"><strong>6</strong><span>Keeping control over HTML</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/componentLifecycle.html"><strong>7</strong><span>Components lifecycle</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/versioningCaching.html"><strong>8</strong><span>Page versioning and caching</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/requestProcessing.html"><strong>9</strong><span>Under the hood of the request processing</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/urls.html"><strong>10</strong><span>Wicket Links and URL generation</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/modelsforms.html"><strong>11</strong><span>Wicket models and forms</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/forms2.html"><strong>12</strong><span>Wicket forms in detail</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/i18n.html"><strong>14</strong><span>Internationalization with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/resources.html"><strong>15</strong><span>Resource management with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/advanced.html"><strong>17</strong><span>Wicket advanced topics</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/ajax.html"><strong>18</strong><span>Working with AJAX</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/jee.html"><strong>19</strong><span>Integration with enterprise containers</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/security.html"><strong>20</strong><span>Security with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testing.html"><strong>21</strong><span>Test Driven Development with Wicket</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/testingspring.html"><strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>23</strong><span>Wicket Best Practices</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>25</strong><span>Project WicketStuff (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>26</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>27</strong><span>Contributing to this guide (Appendix)</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        <span id="logo"><a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a></span>
+        
+        
+        <span id="sponsor"><a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a></span>
+        
+    </div>
+    <p>Free Online Guide for Apache Wicket framework</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/testingspring.html">&lt;&lt; <strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>23.5 Implement visibilities of components correctly - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+
+                    <p><strong>Version:</strong> 6.x</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="bestpractices_5">23.5 Implement visibilities of components correctly</h2>
+<p class="paragraph"/>Visibility of components is an important topic. In Wicket you control any component's visibility via the methods <code>isVisible()</code> and <code>setVisible()</code>. These methods are within Wicket's base class <code>Component</code> and therefore it is applicable for every component and page. Let's have a look at a concrete example of <code>LoginBoxPanel</code>. The panel just gets displayed when the user is not logged in.<p class="paragraph"/><strong class="bold">Listing 6:</strong><p class="paragraph"/><div class="code"><pre>// Poor implementation
+LoginBoxPanel loginBox = <span class="java&#45;keyword">new</span> LoginBoxPanel(<span class="java&#45;quote">"login"</span>);
+loginBox.setVisible(MySession.get().isNotLoggedIn());
+add(loginBox);</pre></div><p class="paragraph"/>Listing 6 shows a poor implementation, because a decision about the visibility is made while instanciating the component. Again, in Wicket instances of components exist for several requests. To reuse the same instance you have to call <code>loginBox.setVisible(false)</code>. This is very unhandy, because we always have to call <code>setVisible()</code> and manage the visibility. Furthermore you are going to duplicate the states, because visible is equal to "not logged in". So we have two saved states, one for the business aspect "not logged in" and one for the technical aspect "visible". Both is always equal. This approach is error-prone and fragile, because we always have to pay attention to setting the correct information every time. But this is often forgotten because the logic is widely spread over the code. The solution is the Hollywood principle: "Don't call us, we'll call you.". Take a look at the following diagram illustrating an application flow with some calls. We avoid three calls through the <a href="http://en.wikipedia.org/wiki/Hollywood_Principle" target="blank">Hollywood-Principle</a> and we just have to instanciate the <code>LoginBoxPanel</code>.<p class="paragraph"/><img border="0" class="center" src="../img/login_calls_hollywood.png"></img><p class="paragraph"/><strong class="bold">Listing 7:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class LoginBoxPanel &#123;
+    // constructor etc.
+    @Override
+    <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isVisible() &#123;
+        <span class="java&#45;keyword">return</span> MySession.get().isNotLoggedIn();
+    &#125;
+&#125;;</pre></div><p class="paragraph"/>Now the control over visibility has been inverted, the <code>LoginBoxPanel</code> decides on its visibility autonomously. For each call of <code>isVisible()</code> there is a refreshed interpretion of the login state. Hence, there is no additional state that might be outdated. The logic is centralized in one line code and not spread throughout the application. Furthermore, you can easily identify that the technical aspect <code>isVisible()</code> correlates to the business aspect "logged in". The same rules can be applied to the method <code>isEnabled()</code>. If <code>isEnabled()</code> returns false the components get displayed in gray. Forms which are within an inactive or invisible component do not get executed.<p class="paragraph"/>Note that there are cases in which you cannot avoid to call the methods <code>setVisible()</code> and <code>setEnabled()</code>. An example: The user presses a button to display an inlined registration form. In general, you can apply the following rules: data driven components override these methods and delegates to the data model. User triggered events call the method <code>setVisible(boolean)</code>. You can also override these methods with inline implementations:<p class="paragraph"/><strong class="bold">Listing 8:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"headline"</span>, headlineModel) &#123;
+    @Override
+    <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isVisible() &#123;
+        // Hidden headline <span class="java&#45;keyword">if</span> text starts with <span class="java&#45;quote">"Berlusconi"</span>
+        <span class="java&#45;object">String</span> headline = getModelObject();
+        <span class="java&#45;keyword">return</span> headline.startWith(<span class="java&#45;quote">"Berlusconi"</span>);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Note:</strong> Some people insist on overriding <code>isVisible()</code> being <a href="http://www.mail-archive.com/dev@wicket.apache.org/msg07123.html" target="blank">a bad thing</a>. The method <code>isVisible()</code> gets called very often (more than once for each request!), so you have to ensure that the calls within <code>isVisible()</code> are cheap. The main point is that the visibility of a component should be controlled by its own and not be controlled by other components. This avoids a wide-spread logic over the whole application. Another way you can realize this is to override <code>onConfigure()</code> and set the visibility there. This method gets called once during each request.
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/testingspring.html">&lt;&lt; <strong>22</strong><span>Test Driven Development with Wicket and Spring</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/maven.html"><strong>24</strong><span>Working with Maven (Appendix)</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-01-28)</b>
+
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>
