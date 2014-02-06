@@ -62,7 +62,7 @@ With the code and the bundle above, the label inside the form will display the v
 
 h3. Package bundles
 
-If no one of the previous steps can find a resource for the given key, the algorithm will look for package bundles. These bundles have package as base name and they can be placed in one of the package of our application:
+If no one of the previous steps can find a resource for the given key, the algorithm will look for package bundles. These bundles have @wicket-package@ as base name and they can be placed in one of the package of our application:
 
 !package-bundles.png!
 
