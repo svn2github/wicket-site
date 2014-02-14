@@ -29,7 +29,7 @@ Depending on the web container that is used the application has to add a depende
 </dependency>
 {code}
 
-- for JSR356 complaint implementations (at the moment are supported: Tomcat 8.x, Tomcat 7.0.47+ and Jetty 9.1.x)
+- for JSR356 complaint implementations (at the moment are supported: Tomcat 8.x, Tomcat 7.0.47+, Jetty 9.1.x and JBoss Wildfly 8.0.Final)
 {code}
 <dependency>
   <groupId>org.apache.wicket</groupId>
