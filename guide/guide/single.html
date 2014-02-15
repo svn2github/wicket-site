@@ -318,15 +318,17 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#resources_6"><strong>15.6</strong><span>Aggregate multiple risources with resource bundles</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#resources_7"><strong>15.7</strong><span>Custom resources</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_7"><strong>15.7</strong><span>Put JavaScript inside page body</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#resources_8"><strong>15.8</strong><span>Mounting resources</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_8"><strong>15.8</strong><span>Custom resources</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#resources_9"><strong>15.9</strong><span>Shared resources</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_9"><strong>15.9</strong><span>Mounting resources</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#resources_10"><strong>15.10</strong><span>Customizing resource loading</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_10"><strong>15.10</strong><span>Shared resources</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#resources_11"><strong>15.11</strong><span>Summary</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_11"><strong>15.11</strong><span>Customizing resource loading</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_12"><strong>15.12</strong><span>Summary</span></a></div>
                             
                             <div class="toc-item" style="margin-left:0px"><a href="#jsintegration"><strong>16</strong><span>An example of integration with JavaScript</span></a></div>
                             
@@ -2577,7 +2579,49 @@ A specific resource reference can not be shared among different resource bundles
 
 
 
-<h2 id="resources_7">15.7 Custom resources</h2>
+<h2 id="resources_7">15.7 Put JavaScript inside page body</h2>
+Some web developers prefer to put their &#60;script&#62; tags at the end of page body instead of inside the &#60;header&#62; tags:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;<p class="paragraph"/>&#60;header&#62;
+//no &#60;script&#62; tag here&#8230;
+&#60;/header&#62;<p class="paragraph"/>&#60;body&#62;
+&#8230;
+&#60;script&#62;
+//one or more &#60;script&#62; tags at the end of the body
+&#60;/script&#62; 
+&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>
+In Wicket we can achieve this result providing a custom <code>IHeaderResponseDecorator</code> to a our application and using Wicket tag &#60;wicket:container/&#62; to indicate where we want to render our scripts inside the page. Interface <code>IHeaderResponseDecorator</code> defines method <code>IHeaderResponse decorate(IHeaderResponse response)</code> which allows to decorate or add funtionalities to Wicket <code>IHeaderResponse</code>. Our custom <code>IHeaderResponseDecorator</code> can be registered in the application with method <code>setHeaderResponseDecorator</code>. Anytime Wicket creates an instance of <code>IHeaderResponse</code>, it will call the registered <code>IHeaderResponseDecorator</code> to decorate the header response.<p class="paragraph"/>In the example project <code>ScriptInsideBody</code> we can find a custom <code>IHeaderResponseDecorator</code> that renders CSS into the usual &#60;head&#62; tag and put JavaScricpt header items into a specific container (tag &#60;wicket:container/&#62;)
+Wicket already comes with class <code>JavaScriptFilteredIntoFooterHeaderResponse</code> which wraps a <code>IHeaderResponse</code> and renders in a given container all the instances of <code>JavaScriptHeaderItem</code>.
+The following code is taken from the Application class of the project:<p class="paragraph"/><div class="code"><pre>//&#8230;
+    @Override
+    <span class="java&#45;keyword">public</span> void init()
+    &#123;
+       setHeaderResponseDecorator(<span class="java&#45;keyword">new</span> JavaScriptToBucketResponseDecorator(<span class="java&#45;quote">"footer&#45;container"</span>));
+    &#125;<p class="paragraph"/>     /&#42;&#42;
+     &#42; Decorates an original IHeaderResponse and renders all javascript items
+     &#42; (JavaScriptHeaderItem), to a specific container in the page.
+     &#42;/
+    <span class="java&#45;keyword">static</span> class JavaScriptToBucketResponseDecorator <span class="java&#45;keyword">implements</span> IHeaderResponseDecorator 
+    &#123;<p class="paragraph"/>        <span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> bucketName;<p class="paragraph"/>        <span class="java&#45;keyword">public</span> JavaScriptToBucketResponseDecorator(<span class="java&#45;object">String</span> bucketName) &#123;
+            <span class="java&#45;keyword">this</span>.bucketName = bucketName;
+        &#125;<p class="paragraph"/>        @Override
+        <span class="java&#45;keyword">public</span> IHeaderResponse decorate(IHeaderResponse response) &#123;
+            <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">new</span> JavaScriptFilteredIntoFooterHeaderResponse(response, bucketName);
+        &#125;<p class="paragraph"/>    &#125;</pre></div><p class="paragraph"/>As you can see in the code above the "bucket" that will contain JavaScript tags is called <code>"footer-container"</code>. To make a use of it the developer have to add a special component called <code>HeaderResponseContainer</code> in his page:<p class="paragraph"/><div class="code"><pre>add(<span class="java&#45;keyword">new</span> HeaderResponseContainer(<span class="java&#45;quote">"someId"</span>, <span class="java&#45;quote">"filterName"</span>));</pre></div><p class="paragraph"/>Please note that <code>HeaderResponseContainer</code>'s needs also a name for the corresponding header response's filter. The markup of our page will look like this:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;<p class="paragraph"/>&#60;header&#62;
+//no &#60;script&#62; tag here&#8230;
+&#60;/header&#62;<p class="paragraph"/>&#60;body&#62;
+&#60;!&#45;&#45; here we will have our JavaScript tags &#45;&#45;&#62;
+&#60;wicket:container wicket:id=<span class="java&#45;quote">"someId"</span>/&#62; 
+&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>The code of the home page is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+        <span class="java&#45;keyword">super</span>(parameters);<p class="paragraph"/>        add(<span class="java&#45;keyword">new</span> HeaderResponseContainer(<span class="java&#45;quote">"footer&#45;container"</span>, <span class="java&#45;quote">"footer&#45;container"</span>));
+    &#125;<p class="paragraph"/>    @Override
+    <span class="java&#45;keyword">public</span> void renderHead(IHeaderResponse response) &#123;
+        response.render(JavaScriptHeaderItem.forReference(<span class="java&#45;keyword">new</span> PackageResourceReference(getClass(),
+                <span class="java&#45;quote">"javasciptLibrary.js"</span>)));<p class="paragraph"/>        response.render(OnEventHeaderItem.forScript(<span class="java&#45;quote">"'logo'"</span>, <span class="java&#45;quote">"click"</span>, <span class="java&#45;quote">"alert('Clicked me!')"</span>));
+    &#125;</pre></div><p class="paragraph"/>Looking at the code above you can note that our page adds two script to the header section: the first is an instance of <code>JavaScriptHeaderItem</code> and will be rendered in the <code>HeaderResponseContainer</code> while the second will follow the usual behavior and will be rendered inside &#60;head&#62; tag.<p class="paragraph"/><p class="paragraph"/>
+
+
+<h2 id="resources_8">15.8 Custom resources</h2>
 <p class="paragraph"/>In Wicket the best way to add dynamic functionalities to our application (such as csv export, a pdf generated on the fly, etc...) is implementing a custom resource. In this paragraph as example of custom resource we will build a basic RSS feeds generator which can be used to publish feeds on our site (project CustomResourceMounting). Instead of generating a RSS feed by hand we will use Rome framework and its utility classes.<p class="paragraph"/>As hinted above in paragraph 13.1, class <code>AbstractResource</code> can be used as base class to implement new resources. This class defines abstract method <code>newResourceResponse</code> which is invoked when the resource is requested. The following is the code of our RSS feeds generator:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RSSProducerResource <span class="java&#45;keyword">extends</span> AbstractResource &#123;<p class="paragraph"/>  @Override
   <span class="java&#45;keyword">protected</span> ResourceResponse newResourceResponse(Attributes attributes) &#123;
     ResourceResponse resourceResponse = <span class="java&#45;keyword">new</span> ResourceResponse();
@@ -2602,7 +2646,7 @@ A specific resource reference can not be shared among different resource bundles
 &#125;</pre></div><p class="paragraph"/>Method <code>newResourceResponse</code> returns an instance of <code>ResourceResponse</code> representing the response generated by the custom resource. Since RSS feeds are based on XML, in the code above we have set the type of the response to text/xml and the text encoding to utf-8.<p class="paragraph"/>To specify the content that will be returned by our resource we must also provide an implementation of inner class <code>WriteCallback</code> which is responsible for writing content data to response's output stream. In our project we used class SyndFeedOutput from Rome framework to write our feed to response. Method <code>getFeed()</code> is just an utility method that generates a sample RSS feed (which is an instance of interface <code>com.sun.syndication.feed.synd.SyndFeed</code>).<p class="paragraph"/>Now that we have our custom resource in place, we can use it in the home page of the project. The easiest way to make a resource available to users is to expose it with link component <code>ResourceLink</code>:<p class="paragraph"/><div class="code"><pre>add(<span class="java&#45;keyword">new</span> ResourceLink(<span class="java&#45;quote">"rssLink"</span>, <span class="java&#45;keyword">new</span> RSSProducerResource()));</pre></div><p class="paragraph"/>In the next paragraphs we will see how to register a resource at application-level and how to mount it to an arbitrary URL.
 
 
-<h2 id="resources_8">15.8 Mounting resources</h2>
+<h2 id="resources_9">15.9 Mounting resources</h2>
 <p class="paragraph"/>Just like pages also resources can be mounted to a specific path. Class <code>WebApplication</code> provides method <code>mountResource</code> which is almost identical to <code>mountPage</code> seen in paragraph 8.6.1:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;
   <span class="java&#45;keyword">super</span>.init();
@@ -2628,7 +2672,7 @@ A specific resource reference can not be shared among different resource bundles
 &#125;</pre></div>
 
 
-<h2 id="resources_9">15.9 Shared resources</h2>
+<h2 id="resources_10">15.10 Shared resources</h2>
 <p class="paragraph"/>Resources can be added to a global registry in order to share them at application-level. Shared resources are identified by an application-scoped key and they can be easily retrieved at a later time using reference class <code>SharedResourceReference</code>. The global registry can be accessed with <code>Application</code>'s method <code>getSharedResources</code>. In the following excerpt of code (taken again from project <code>CustomResourceMounting</code>) we register an instance of our custom RSS feeds producer as application-shared resource:<p class="paragraph"/><div class="code"><pre>//init application's method
   @Override
   <span class="java&#45;keyword">public</span> void init()&#123;
@@ -2642,7 +2686,7 @@ Remember that we can get the URL of a resource reference using method <code>urlF
 </blockquote>
 
 
-<h2 id="resources_10">15.10 Customizing resource loading</h2>
+<h2 id="resources_11">15.11 Customizing resource loading</h2>
 <p class="paragraph"/>Wicket loads application's resources delegating this task to a resource locator represented by interface <code>org.apache.wicket.core.util.resource.locator.IResourceStreamLocator</code>. To retrieve or modify the current resource locator we can use the getter and setter methods defined by setting interface <code>IResourceSettings</code>:<p class="paragraph"/><div class="code"><pre>//init application's method
   @Override
   <span class="java&#45;keyword">public</span> void init()&#123;   
@@ -2660,7 +2704,7 @@ By default, if resource files can not be found inside application classpath, Wic
 </blockquote>
 
 
-<h2 id="resources_11">15.11 Summary</h2>
+<h2 id="resources_12">15.12 Summary</h2>
 In this chapter we have learnt how to manage resources with the built-in mechanism provided by Wicket. With this mechanism we handle resources from Java code and Wicket will automatically take care of generating a valid URL for them. We have also seen how resources can be bundled as package resources with a component that depends on them to make it self-contained.<p class="paragraph"/>Then, in the second part of the chapter, we have built a custom resource and we have learnt how to mount it to an arbitrary URL and how to make it globally available as shared resource.<p class="paragraph"/>Finally, in the last part of the paragraph we took a peek at the mechanism provided by the framework to customize the locations where the resource-lookup algorithm searches for resources. 
 
 
@@ -4603,7 +4647,7 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
         <div id="footer">
             
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-14)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-15)</b>
 
             
         </div>
