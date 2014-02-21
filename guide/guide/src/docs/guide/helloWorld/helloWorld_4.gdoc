@@ -32,7 +32,7 @@ public class HomePage extends WebPage {
 }
 {code}
 
-In the example above we used a version of @setResponsePage@ which takes as input the class of the target page. In this way a new instance of @AnotherPage@ will be create each time we click on the link. The other version of @setResponsePage@ takes in input a page instance instead of a page class:
+In the example above we used a version of @setResponsePage@ which takes as input the class of the target page. In this way a new instance of @AnotherPage@ will be created each time we click on the link. The other version of @setResponsePage@ takes in input a page instance instead of a page class:
 
 {code}
 @Override

@@ -3,7 +3,7 @@ One of the goals of Wicket is to overcome this kind of limit.
 
 h3. Markup inheritance
 
-As we have seen in the previous chapter, Wicket pages are pure Java classes, so we can easily write a page which is a subclass of another parent page. But in Wicket inheritance is not limited to the classic object-oriented code inheritance. When a class subclasses a @WebPage@ it also inherits the HTML file of to the parent class. This type of inheritance is called markup inheritance.
+As we have seen in the previous chapter, Wicket pages are pure Java classes, so we can easily write a page which is a subclass of another parent page. But in Wicket inheritance is not limited to the classic object-oriented code inheritance. When a class subclasses a @WebPage@ it also inherits the HTML file of the parent class. This type of inheritance is called markup inheritance.
 To better illustrate this concept let's consider the following example where we have a page class called @GenericSitePage@ with the corresponding HTML file GenericSitePage.html. Now let's create a specific page called @OrderCheckOutPage@ where users can check out their orders on our web site. This class extends @GenericSitePage@ but we don't provide it with any corresponding HTML file.
 In this scenario @OrderCheckOutPage@ will use GenericSitePage.html as markup file:
 

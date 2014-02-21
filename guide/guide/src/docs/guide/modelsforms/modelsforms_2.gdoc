@@ -67,7 +67,12 @@ If property is an array or a List, we can specify an index after its name. For e
 Label label = new Label("firstChildName", new PropertyModel(person, "children.0.name"));
 {code}
 
-Indexes and map keys can be also specified using squared brackets like “children[0].name” or “mapField[key].subfield”.
+Indexes and map keys can be also specified using squared brackets: 
+
+{code}
+children[0].name ...
+mapField[key].subfield ...
+{code}
 
 h3. CompoundPropertyModel and model inheritance
 

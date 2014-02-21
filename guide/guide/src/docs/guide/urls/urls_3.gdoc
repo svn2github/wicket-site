@@ -65,4 +65,4 @@ public void init()
 }
 {code}
 
-The purpose of <wicket:link> tag is not limited to just simplifying the usage of bookmarkable pages. As we we will see in chapter 13, this tag can also be adopted to manage web resources like pictures, CSS files, JavaScript files and so on.
+The purpose of <wicket:link> tag is not limited to just simplifying the usage of bookmarkable pages. As we will see in chapter 13, this tag can also be adopted to manage web resources like pictures, CSS files, JavaScript files and so on.

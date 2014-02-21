@@ -4,7 +4,7 @@ Stateful pages are versioned in order to support browser's back button: when thi
 
 A new page version is created when a stateful page is requested for the first time or when an existing instance is modified (for example changing its component hierarchy). To identify each page version Wicket uses a session-relative identifier called page id. This is a unique number and it is increased every time a new page version is created. 
 
-In the final example of the previous chapter (project LifeCycleStages), you may have noticed the number appended at the and of URL. This number is the page id we are talking about:
+In the final example of the previous chapter (project LifeCycleStages), you may have noticed the number appended at the end of URL. This number is the page id we are talking about:
 
 !page-id.png!
 
