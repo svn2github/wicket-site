@@ -161,7 +161,7 @@ function addJsClass() {
 
 <h2 id="layout_2">5.2 Here comes the inheritance!</h2>
 The need of ensuring a consistent layout across our pages unveiled a serious limit of the HTML: the inability to apply inheritance to web pages and their markup. Wouldn't be great if we could write our layout once in a page and then inherit it in the other pages of our application? 
-One of the goals of Wicket is to overcome this kind of limit.<p class="paragraph"/><h3>Markup inheritance</h3><p class="paragraph"/>As we have seen in the previous chapter, Wicket pages are pure Java classes, so we can easily write a page which is a subclass of another parent page. But in Wicket inheritance is not limited to the classic object-oriented code inheritance. When a class subclasses a <code>WebPage</code> it also inherits the HTML file of to the parent class. This type of inheritance is called markup inheritance.
+One of the goals of Wicket is to overcome this kind of limit.<p class="paragraph"/><h3>Markup inheritance</h3><p class="paragraph"/>As we have seen in the previous chapter, Wicket pages are pure Java classes, so we can easily write a page which is a subclass of another parent page. But in Wicket inheritance is not limited to the classic object-oriented code inheritance. When a class subclasses a <code>WebPage</code> it also inherits the HTML file of the parent class. This type of inheritance is called markup inheritance.
 To better illustrate this concept let's consider the following example where we have a page class called <code>GenericSitePage</code> with the corresponding HTML file GenericSitePage.html. Now let's create a specific page called <code>OrderCheckOutPage</code> where users can check out their orders on our web site. This class extends <code>GenericSitePage</code> but we don't provide it with any corresponding HTML file.
 In this scenario <code>OrderCheckOutPage</code> will use GenericSitePage.html as markup file:<p class="paragraph"/><img border="0" class="center" src="../img/markup-inheritance.png"></img><p class="paragraph"/>Markup inheritance comes in handy for page layout management as it helps us avoid the burden of checking that each page conforms to the site layout. However to fully take advantage of markup inheritance we must first learn how to use another important component of the framework that supports this feature: the panel.<p class="paragraph"/><blockquote class="warning">
 If no markup is found (nor directly assigned to the class, neither inherited from an ancestor) a <code>MarkupNotFoundException</code> is thrown.
@@ -215,7 +215,7 @@ add(myPanel);</pre></div><p class="paragraph"/>Component <code>MyPanel</code> is
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-15)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-22)</b>
 
     
 </div>

@@ -218,7 +218,7 @@ Person bob = <span class="java&#45;keyword">new</span> Person(<span class="java&
 Person jill = <span class="java&#45;keyword">new</span> Person(<span class="java&#45;quote">"Jill"</span>, <span class="java&#45;quote">"Smith"</span>);
 List&#60;Person&#62; theSmiths = Arrays.asList(john, bob, jill); 
 ChoiceRenderer render = <span class="java&#45;keyword">new</span> ChoiceRenderer(<span class="java&#45;quote">"name"</span>);
-     	form.add(<span class="java&#45;keyword">new</span> CheckBoxMultipleChoice(<span class="java&#45;quote">"checkGroup"</span>, <span class="java&#45;keyword">new</span> ListModel&#60;<span class="java&#45;object">String</span>&#62;(ArrayList&#60;<span class="java&#45;object">String</span>&#62;()),   
+     	form.add(<span class="java&#45;keyword">new</span> CheckBoxMultipleChoice(<span class="java&#45;quote">"checkGroup"</span>, <span class="java&#45;keyword">new</span> ListModel&#60;<span class="java&#45;object">String</span>&#62;(<span class="java&#45;keyword">new</span> ArrayList&#60;<span class="java&#45;object">String</span>&#62;()),   
                                     theSmiths, render));</pre></div><p class="paragraph"/><strong class="bold">Screenshot:</strong><p class="paragraph"/><img border="0" class="center" src="../img/grouped-checkbox2.png"></img><p class="paragraph"/><h3>How to implement a "Select all" checkbox</h3><p class="paragraph"/>A nice feature we can offer to users when we have a group of checkboxes is a “special” checkbox which selects/unselects all the other options of the group:<p class="paragraph"/><img border="0" class="center" src="../img/select-all-checkbox.png"></img><p class="paragraph"/>Wicket comes with a couple of utility components that make it easy to implement such a feature. They are CheckboxMultipleChoiceSelector and CheckBoxSelector classes, both inside package <code>org.apache.wicket.markup.html.form</code>. The difference between these two components is that the first works with an instance of CheckBoxMultipleChoice while the second takes in input a list of CheckBox objects:<p class="paragraph"/><div class="code"><pre>/&#42; CheckboxMultipleChoiceSelector usage: &#42;/<p class="paragraph"/>CheckBoxMultipleChoice checkGroup;
 //checkGroup initialization&#8230;
 CheckboxMultipleChoiceSelector cbmcs = <span class="java&#45;keyword">new</span> CheckboxMultipleChoiceSelector(<span class="java&#45;quote">"id"</span>, checkGroup);<p class="paragraph"/>/&#42; CheckBoxSelector usage: &#42;/<p class="paragraph"/>CheckBox checkBox1, checkBox2, checkBox3;
@@ -255,7 +255,7 @@ form.add(<span class="java&#45;keyword">new</span> RadioChoice(<span class="java
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-15)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-22)</b>
 
     
 </div>

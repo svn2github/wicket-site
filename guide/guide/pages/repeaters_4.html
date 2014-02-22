@@ -176,7 +176,7 @@ function addJsClass() {
 &#60;/table&#62;</pre></div><p class="paragraph"/><strong class="bold">Java Code:</strong>
 <div class="code"><pre>//method loadPersons is defined elsewhere
 List&#60;Person&#62; persons = loadPersons();
-ListDataProvider&#60;Person&#62; listDataProvider = <span class="java&#45;keyword">new</span> ListDataProvider&#60;Person&#62;(persons);<p class="paragraph"/>DataView&#60;Person&#62; dataView = <span class="java&#45;keyword">new</span> DataView&#60;Person&#62;(<span class="java&#45;quote">"row"</span>, listDataProvider) &#123;<p class="paragraph"/>  @Override
+ListDataProvider&#60;Person&#62; listDataProvider = <span class="java&#45;keyword">new</span> ListDataProvider&#60;Person&#62;(persons);<p class="paragraph"/>DataView&#60;Person&#62; dataView = <span class="java&#45;keyword">new</span> DataView&#60;Person&#62;(<span class="java&#45;quote">"rows"</span>, listDataProvider) &#123;<p class="paragraph"/>  @Override
   <span class="java&#45;keyword">protected</span> void populateItem(Item&#60;Person&#62; item) &#123;
     Person person = item.getModelObject();
     RepeatingView repeatingView = <span class="java&#45;keyword">new</span> RepeatingView(<span class="java&#45;quote">"dataRow"</span>);<p class="paragraph"/>    repeatingView.add(<span class="java&#45;keyword">new</span> Label(repeatingView.newChildId(), person.getName()));
@@ -186,7 +186,7 @@ ListDataProvider&#60;Person&#62; listDataProvider = <span class="java&#45;keywor
     item.add(repeatingView); 
   &#125;
 &#125;;
-add(dataView);</pre></div><p class="paragraph"/>Please note that in the code above we have used also a RepeatingView component to populate the rows of the table.<p class="paragraph"/>In the next paragraph we will see a similar example that adds support for data paging.<p class="paragraph"/><h3>Data paging</h3><p class="paragraph"/>To enable data paging on a pageable repeaters, we must first set the number of items to display per page with method setItemsPerPage(long items). Then, we must attach the repeater to panel PagingNavigator (placed in package <code>org.apache.wicket.markup.html.navigation.paging</code>) which is responsible for rendering a navigation bar containing the links illustrated in the following picture:<p class="paragraph"/><img border="0" class="center" src="../img/paging-navigator.png"></img><p class="paragraph"/>Project PageDataViewExample mixes a DataView component with a PagingNavigator to display the list of all countries of the world sorted by alphabetical order1. Here is the initialization code of the project home page:<p class="paragraph"/><strong class="bold">HTML:</strong>
+add(dataView);</pre></div><p class="paragraph"/>Please note that in the code above we have used also a RepeatingView component to populate the rows of the table.<p class="paragraph"/>In the next paragraph we will see a similar example that adds support for data paging.<p class="paragraph"/><h3>Data paging</h3><p class="paragraph"/>To enable data paging on a pageable repeater, we must first set the number of items to display per page with method setItemsPerPage(long items). Then, we must attach the repeater to panel PagingNavigator (placed in package <code>org.apache.wicket.markup.html.navigation.paging</code>) which is responsible for rendering a navigation bar containing the links illustrated in the following picture:<p class="paragraph"/><img border="0" class="center" src="../img/paging-navigator.png"></img><p class="paragraph"/>Project PageDataViewExample mixes a DataView component with a PagingNavigator to display the list of all countries of the world sorted by alphabetical order. Here is the initialization code of the project home page:<p class="paragraph"/><strong class="bold">HTML:</strong>
 <div class="code"><pre>&#60;table&#62;
   &#60;tr&#62;
     &#60;th&#62;ISO 3166&#45;1&#60;/th&#62;&#60;th&#62;Name&#60;/th&#62;&#60;th&#62;<span class="java&#45;object">Long</span> name&#60;/th&#62;&#60;th&#62;Capital&#60;/th&#62;&#60;th&#62;Population&#60;/th&#62;
@@ -242,7 +242,7 @@ Wicket provides also component PageableListView which is a sublcass of ListView 
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-15)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-22)</b>
 
     
 </div>
