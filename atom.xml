@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2014-02-24T11:04:22+02:00</updated>
+ <updated>2014-02-26T11:05:57+01:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>CVE-2014-0043 - Apache Wicket Information disclosure vulnerability</title>
    <link href="http://wicket.apache.org/2014/02/21/cve-2014-0043.html"/>
-   <updated>2014-02-21T00:00:00+02:00</updated>
+   <updated>2014-02-21T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2014/02/21/cve-2014-0043</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
@@ -28,9 +28,9 @@
 &lt;p&gt;The application developers are recommended to upgrade to:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='/2014/02/06/wicket-1.5.11-released.html'&gt;Apache Wicket 1.5.11&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/2014/02/06/wicket-1.5.11-released.html&quot;&gt;Apache Wicket 1.5.11&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='/2014/02/20/wicket-6.14.0-released.html'&gt;Apache Wicket 6.14.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/2014/02/20/wicket-6.14.0-released.html&quot;&gt;Apache Wicket 6.14.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Credit: This issue was reported by Christian Schneider!&lt;/p&gt;
@@ -41,61 +41,60 @@
  <entry>
    <title>Apache Wicket 6.14.0 released</title>
    <link href="http://wicket.apache.org/2014/02/20/wicket-6.14.0-released.html"/>
-   <updated>2014-02-20T00:00:00+02:00</updated>
+   <updated>2014-02-20T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2014/02/20/wicket-6.14.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.14.0!&lt;/p&gt;
 
 &lt;p&gt;This release marks the fourteenth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
 
-&lt;h3 id='new_and_noteworthy'&gt;New and noteworthy&lt;/h3&gt;
+&lt;h3 id=&quot;new_and_noteworthy&quot;&gt;New and noteworthy&lt;/h3&gt;
 
 &lt;p&gt;This release fixes 34 bugs and adds the following improvements:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;JQuery upgraded from 1.10.2 to 1.11.0&lt;/li&gt;
 
-&lt;li&gt;Fix for &lt;a href='/2014/02/21/cve-2014-0043.html'&gt;CVE-2014-0043&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix for &lt;a href=&quot;/2014/02/21/cve-2014-0043.html&quot;&gt;CVE-2014-0043&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;Wicket Session may not be saved in the SessionStore (Http Session) under some conditions and lead to lost state&lt;/li&gt;
 
 &lt;li&gt;Update classes copied from commons-fileupload to fix CVE-2014-0050&lt;/li&gt;
 
-&lt;li&gt;Allow &amp;#60;script&amp;#62; tags to have children components to be able to use client side templating&lt;/li&gt;
+&lt;li&gt;Allow &amp;lt;script&amp;gt; tags to have children components to be able to use client side templating&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+&lt;h3 id=&quot;using_this_release&quot;&gt;Using this release&lt;/h3&gt;
 
-&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.14.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.14.0&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.14.0'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.14.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.14.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.14.0&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.14.0/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.14.0/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.14.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.14.0/binaries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+&lt;h3 id=&quot;upgrading_from_earlier_versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
 
 &lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun!&lt;/p&gt;
 
 &lt;p&gt;— The Wicket team&lt;/p&gt;
 
-&lt;h3 id='release_notes__wicket__version_6140'&gt;Release Notes - Wicket - Version 6.14.0&lt;/h3&gt;
+&lt;h3 id=&quot;release_notes__wicket__version_6140&quot;&gt;Release Notes - Wicket - Version 6.14.0&lt;/h3&gt;
 
-&lt;h4 id='bug'&gt;Bug&lt;/h4&gt;
+&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;* [WICKET-4697] - Autolinking not working as soon as component gets a wicket:id
 * [WICKET-5043] - Page not mounted with WebApplication#mountPackage
@@ -123,7 +122,7 @@
 * [WICKET-5500] - Ignore the path parameters when reading the page class
 * [WICKET-5502] - Patch FileUploadBase to fix CVE-2014-0050&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id='improvement'&gt;Improvement&lt;/h4&gt;
+&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;* [WICKET-5288] - Allow &amp;amp;lt;script&amp;amp;gt;-Tags act as WebMarkUpContainer to add Child-Components
 * [WICKET-5439] - Allow restarting AbstractAjaxTimerBehavior without updating its hosting component
@@ -132,11 +131,11 @@
 * [WICKET-5471] - Store the page if it is known that it will be used in a following request
 * [WICKET-5493] - Disable jar indexing&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id='new_feature'&gt;New Feature&lt;/h4&gt;
+&lt;h4 id=&quot;new_feature&quot;&gt;New Feature&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;* [WICKET-3491] - Introduce IComponentOnConfigureListener&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id='task'&gt;Task&lt;/h4&gt;
+&lt;h4 id=&quot;task&quot;&gt;Task&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;* [WICKET-5488] - Promote experimental modules to become stable
 * [WICKET-5494] - Upgrade JQuery to latest stable - 1.11.0 and 2.1.0&lt;/code&gt;&lt;/pre&gt;</content>
@@ -145,80 +144,77 @@
  <entry>
    <title>Wicket 1.5.11 released</title>
    <link href="http://wicket.apache.org/2014/02/06/wicket-1.5.11-released.html"/>
-   <updated>2014-02-06T00:00:00+02:00</updated>
+   <updated>2014-02-06T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2014/02/06/wicket-1.5.11-released</id>
    <content type="html">&lt;p&gt;This is the eleventh maintenance release of the Wicket 1.5.x series. This release brings over 34 bug fixes and improvements.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.11'&gt;Git tag&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.11&quot;&gt;Git tag&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12324069'&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;version=12324069&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;To use in Maven:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.11&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.11&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.11'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;li&gt;Download the &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/1.5.11&quot;&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
  <entry>
    <title>Wicket 1.4.23 released</title>
    <link href="http://wicket.apache.org/2014/02/06/wicket-1.4.23-released.html"/>
-   <updated>2014-02-06T00:00:00+02:00</updated>
+   <updated>2014-02-06T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2014/02/06/wicket-1.4.23-released</id>
-   <content type="html">&lt;p&gt;This is twenty thirdth release of the Wicket 1.4.x series. This is a security bugfix release on the 1.4.x branch. Read &lt;a href='/2014/02/06/cve-2013-2055.html'&gt;CVE-2013-2055&lt;/a&gt; for more information.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This is twenty thirdth release of the Wicket 1.4.x series. This is a security bugfix release on the 1.4.x branch. Read &lt;a href=&quot;/2014/02/06/cve-2013-2055.html&quot;&gt;CVE-2013-2055&lt;/a&gt; for more information.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.4.23'&gt;Git tag&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.4.23&quot;&gt;Git tag&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;To use in Maven:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.23&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.23&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;Download the &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/1.4.23'&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
+&lt;li&gt;Download the &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/1.4.23&quot;&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
  <entry>
    <title>CVE-2013-2055 - Apache Wicket Information disclosure vulnerability</title>
    <link href="http://wicket.apache.org/2014/02/06/cve-2013-2055.html"/>
-   <updated>2014-02-06T00:00:00+02:00</updated>
+   <updated>2014-02-06T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2014/02/06/cve-2013-2055</id>
    <content type="html">&lt;p&gt;Vendor: The Apache Software Foundation&lt;/p&gt;
 
 &lt;p&gt;Versions Affected: Apache Wicket 1.4.22, 1.5.10 and 6.7.0&lt;/p&gt;
 
-&lt;p&gt;Description: It is possible to make Wicket deliver the HTML templates in their raw/non-processed form. An attacker could see any sensitive information in the part of the HTML template that is usually ignored during rendering. For example if there is sensitive information before or after the Wicket Panel/Border&amp;#8217;s markup:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;something sensitive here 1
-&lt;span class='nt'&gt;&amp;lt;wicket:panel&amp;gt;&lt;/span&gt;
+&lt;p&gt;Description: It is possible to make Wicket deliver the HTML templates in their raw/non-processed form. An attacker could see any sensitive information in the part of the HTML template that is usually ignored during rendering. For example if there is sensitive information before or after the Wicket Panel/Border’s markup:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;something sensitive here 1
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;wicket:panel&amp;gt;&lt;/span&gt;
    real application code
-&lt;span class='nt'&gt;&amp;lt;/wicket:panel&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/wicket:panel&amp;gt;&lt;/span&gt;
 something sensitive here 2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Usually Wicket will render only the &amp;#8220;real application code&amp;#8221; part but by exploiting this vulnerability an attacker can see also the code with the sensitive information.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Usually Wicket will render only the “real application code” part but by exploiting this vulnerability an attacker can see also the code with the sensitive information.&lt;/p&gt;
 
 &lt;p&gt;The application developers are recommended to upgrade to:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='/2014/02/06/wicket-1.4.23-released.html'&gt;Apache Wicket 1.4.23&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/2014/02/06/wicket-1.4.23-released.html&quot;&gt;Apache Wicket 1.4.23&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='/2014/02/06/wicket-1.5.11-released.html'&gt;Apache Wicket 1.5.11&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/2014/02/06/wicket-1.5.11-released.html&quot;&gt;Apache Wicket 1.5.11&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='/2013/05/17/wicket-6.8.0-released.html'&gt;Apache Wicket 6.8.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/2013/05/17/wicket-6.8.0-released.html&quot;&gt;Apache Wicket 6.8.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;and/or to remove any sensitive information in the HTML templates.&lt;/p&gt;
@@ -229,13 +225,13 @@ something sensitive here 2
  <entry>
    <title>Apache Wicket 6.13.0 released</title>
    <link href="http://wicket.apache.org/2014/01/05/wicket-6.13.0-released.html"/>
-   <updated>2014-01-05T00:00:00+02:00</updated>
+   <updated>2014-01-05T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2014/01/05/wicket-6.13.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.13.0!&lt;/p&gt;
 
 &lt;p&gt;This release marks the thirteenth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
 
-&lt;h3 id='new_and_noteworthy'&gt;New and noteworthy&lt;/h3&gt;
+&lt;h3 id=&quot;new_and_noteworthy&quot;&gt;New and noteworthy&lt;/h3&gt;
 
 &lt;p&gt;This release fixes 25 bugs and adds the following improvements:&lt;/p&gt;
 
@@ -251,7 +247,7 @@ something sensitive here 2
 &lt;li&gt;Migrate Wicket-Atmosphere to Atmosphere 2&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='online_wicket_reference_guide'&gt;Online Wicket reference guide&lt;/h3&gt;
+&lt;h3 id=&quot;online_wicket_reference_guide&quot;&gt;Online Wicket reference guide&lt;/h3&gt;
 
 &lt;p&gt;After many years of people asking for a reference guide for Apache Wicket we finally were able to add one to our site thanks to Andrea del Bene and comSysto for writing the guide and providing the hours of converting it to our site.&lt;/p&gt;
 
@@ -266,7 +262,7 @@ something sensitive here 2
 
 &lt;li&gt;Why should I learn Wicket?&lt;/li&gt;
 
-&lt;li&gt;Wicket says &amp;#8220;Hello, World!&amp;#8221;&lt;/li&gt;
+&lt;li&gt;Wicket says “Hello, World!”&lt;/li&gt;
 
 &lt;li&gt;Wicket as page layout manager&lt;/li&gt;
 
@@ -315,203 +311,197 @@ something sensitive here 2
 &lt;li&gt;Contributing to this guide (Appendix)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Read more in the &lt;a href='http://wicket.apache.org/start/userguide.html'&gt;&amp;#8220;User guide&amp;#8221;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Read more in the &lt;a href=&quot;http://wicket.apache.org/start/userguide.html&quot;&gt;“User guide”&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id='new_cdi11_integration_project'&gt;New CDI-1.1 integration project&lt;/h3&gt;
+&lt;h3 id=&quot;new_cdi11_integration_project&quot;&gt;New CDI-1.1 integration project&lt;/h3&gt;
 
 &lt;p&gt;A new (experimental) module for CDI integration was added to support CDI 1.1 with Wicket. As CDI 1.0 and 1.1 are different beasts and not compatible, we had to craft a new module with specific support for the new CDI standard. The module is still experimental, but we expect to make it a default module in a couple of releases.&lt;/p&gt;
 
 &lt;p&gt;You can use the new Wicket CDI module by including the following dependency in your POM:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-	&lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-cdi-1.1&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-	&lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-cdi-1.1&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+	&lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.2&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note that you have to remove the old wicket-cdi module and the Seam conversation dependency: &lt;code&gt;org.jboss.seam.conversation:seam-conversation-weld&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;For more information about what is new in CDI 1.1 read &lt;a href='http://s.apache.org/newincdi11'&gt;this blog post by Pete Muir&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more information about what is new in CDI 1.1 read &lt;a href=&quot;http://s.apache.org/newincdi11&quot;&gt;this blog post by Pete Muir&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id='jquery_update_in_690'&gt;JQuery update in 6.9.0&lt;/h3&gt;
+&lt;h3 id=&quot;jquery_update_in_690&quot;&gt;JQuery update in 6.9.0&lt;/h3&gt;
 
-&lt;p&gt;As of Wicket 6.9 we ship JQuery 1.10.1 (since 6.13.0 we ship 1.10.2). The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from &lt;a href='http://jquery.com/upgrade-guide/1.9/'&gt;the JQuery web site&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As of Wicket 6.9 we ship JQuery 1.10.1 (since 6.13.0 we ship 1.10.2). The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from &lt;a href=&quot;http://jquery.com/upgrade-guide/1.9/&quot;&gt;the JQuery web site&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application&amp;#8217;s init method:&lt;/p&gt;
-
-&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt; &lt;span class='nd'&gt;@Override&lt;/span&gt;
- &lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;init&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-     &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
-         &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
- &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
+&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application’s init method:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;java&#39;&gt; &lt;span class=&#39;nd&#39;&gt;@Override&lt;/span&gt;
+ &lt;span class=&#39;kd&#39;&gt;protected&lt;/span&gt; &lt;span class=&#39;kt&#39;&gt;void&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;init&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;{&lt;/span&gt;
+     &lt;span class=&#39;n&#39;&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt;
+         &lt;span class=&#39;o&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;na&#39;&gt;setJQueryReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;n&#39;&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;);&lt;/span&gt;
+ &lt;span class=&#39;o&#39;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;cdi_injection_issue&quot;&gt;CDI injection issue&lt;/h3&gt;
 
 &lt;p&gt;In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException:
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;text&#39;&gt;Caused by: org.jboss.weld.exceptions.DefinitionException:
 WELD-000070 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This was reported as &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5226&quot;&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href=&quot;https://issues.jboss.org/browse/WELD-1441&quot;&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href='https://issues.apache.org/jira/browse/WICKET-5264'&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5264&quot;&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Glassfish has fixed this in trunk according to &lt;a href='https://java.net/jira/browse/GLASSFISH-20619'&gt;GLASSFISH-20619&lt;/a&gt; but the fix has yet to be integrated into a release.&lt;/p&gt;
+&lt;p&gt;Glassfish has fixed this in trunk according to &lt;a href=&quot;https://java.net/jira/browse/GLASSFISH-20619&quot;&gt;GLASSFISH-20619&lt;/a&gt; but the fix has yet to be integrated into a release.&lt;/p&gt;
 
-&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+&lt;h3 id=&quot;using_this_release&quot;&gt;Using this release&lt;/h3&gt;
 
-&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.13.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.13.0&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.13.0'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.13.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.13.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.13.0&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.13.0/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.13.0/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.13.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.13.0/binaries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+&lt;h3 id=&quot;upgrading_from_earlier_versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
 
 &lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun!&lt;/p&gt;
 
 &lt;p&gt;— The Wicket team&lt;/p&gt;
 
-&lt;h3 id='release_notes__wicket__version_6130'&gt;Release Notes - Wicket - Version 6.13.0&lt;/h3&gt;
+&lt;h3 id=&quot;release_notes__wicket__version_6130&quot;&gt;Release Notes - Wicket - Version 6.13.0&lt;/h3&gt;
 
-&lt;h4 id='bug'&gt;Bug&lt;/h4&gt;
+&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4294'&gt;WICKET-4294&lt;/a&gt; - AutoCompleteTextField does not show suggestions when it is used on ModalWindow in InternetExplorer&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4294&quot;&gt;WICKET-4294&lt;/a&gt; - AutoCompleteTextField does not show suggestions when it is used on ModalWindow in InternetExplorer&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4997'&gt;WICKET-4997&lt;/a&gt; - Mounted bookmarkable Page not recreated on Session Expiry&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4997&quot;&gt;WICKET-4997&lt;/a&gt; - Mounted bookmarkable Page not recreated on Session Expiry&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5084'&gt;WICKET-5084&lt;/a&gt; - ClassNotFoundException with Atmosphere on Bookmarkable pages&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5084&quot;&gt;WICKET-5084&lt;/a&gt; - ClassNotFoundException with Atmosphere on Bookmarkable pages&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5224'&gt;WICKET-5224&lt;/a&gt; - ModalWindow is not visible in Safari when opened from a link at the bottom of a large page&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5224&quot;&gt;WICKET-5224&lt;/a&gt; - ModalWindow is not visible in Safari when opened from a link at the bottom of a large page&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5321'&gt;WICKET-5321&lt;/a&gt; - Incorporate Wicket Guide into website&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5321&quot;&gt;WICKET-5321&lt;/a&gt; - Incorporate Wicket Guide into website&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5379'&gt;WICKET-5379&lt;/a&gt; - IE7: AutoCompleteTextField inside a ModalWindow shows auto complete dropdown behind ModalWindow&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5379&quot;&gt;WICKET-5379&lt;/a&gt; - IE7: AutoCompleteTextField inside a ModalWindow shows auto complete dropdown behind ModalWindow&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5387'&gt;WICKET-5387&lt;/a&gt; - Page#onInitialize called after an exception in the constructor of Page&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5387&quot;&gt;WICKET-5387&lt;/a&gt; - Page#onInitialize called after an exception in the constructor of Page&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5400'&gt;WICKET-5400&lt;/a&gt; - Behaviors#internalAdd(Behavior) erroneously gets id for stateless behaviors&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5400&quot;&gt;WICKET-5400&lt;/a&gt; - Behaviors#internalAdd(Behavior) erroneously gets id for stateless behaviors&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5402'&gt;WICKET-5402&lt;/a&gt; - NullPointerException when logging out with wicket-atmosphere&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5402&quot;&gt;WICKET-5402&lt;/a&gt; - NullPointerException when logging out with wicket-atmosphere&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5404'&gt;WICKET-5404&lt;/a&gt; - JQuery 1.10.1 does not work well with IE11, upgrade to 1.10.2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5404&quot;&gt;WICKET-5404&lt;/a&gt; - JQuery 1.10.1 does not work well with IE11, upgrade to 1.10.2&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5409'&gt;WICKET-5409&lt;/a&gt; - wicket-native-websocket does not work with Safari/Safari iOS&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5409&quot;&gt;WICKET-5409&lt;/a&gt; - wicket-native-websocket does not work with Safari/Safari iOS&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5413'&gt;WICKET-5413&lt;/a&gt; - Positioning AutoCompleteTextField not correct on resized window&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5413&quot;&gt;WICKET-5413&lt;/a&gt; - Positioning AutoCompleteTextField not correct on resized window&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5416'&gt;WICKET-5416&lt;/a&gt; - BOM in UTF markup file breaks encoding detection&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5416&quot;&gt;WICKET-5416&lt;/a&gt; - BOM in UTF markup file breaks encoding detection&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5418'&gt;WICKET-5418&lt;/a&gt; - PropertyValidator ignoring groups with the @NotNull annotation only&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5418&quot;&gt;WICKET-5418&lt;/a&gt; - PropertyValidator ignoring groups with the @NotNull annotation only&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5422'&gt;WICKET-5422&lt;/a&gt; - ComponentRenderer.renderComponent() adds a page to DataStore&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5422&quot;&gt;WICKET-5422&lt;/a&gt; - ComponentRenderer.renderComponent() adds a page to DataStore&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5424'&gt;WICKET-5424&lt;/a&gt; - Page.isPageStateless() returning true in regular run but false in WicketTester&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5424&quot;&gt;WICKET-5424&lt;/a&gt; - Page.isPageStateless() returning true in regular run but false in WicketTester&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5425'&gt;WICKET-5425&lt;/a&gt; - WicketTester doesn&amp;#8217;t preserve the request cookies when #executeListener() is used&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5425&quot;&gt;WICKET-5425&lt;/a&gt; - WicketTester doesn’t preserve the request cookies when #executeListener() is used&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5426'&gt;WICKET-5426&lt;/a&gt; - Page not recognized as stateless although stateful component is hidden in #onConfigure()&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5426&quot;&gt;WICKET-5426&lt;/a&gt; - Page not recognized as stateless although stateful component is hidden in #onConfigure()&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5429'&gt;WICKET-5429&lt;/a&gt; - ResourceReference&amp;#8217;s properties are not preserved when using reference replacement&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5429&quot;&gt;WICKET-5429&lt;/a&gt; - ResourceReference’s properties are not preserved when using reference replacement&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5437'&gt;WICKET-5437&lt;/a&gt; - When a ConversionException is thrown, its message is not used in the ValidationError&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5437&quot;&gt;WICKET-5437&lt;/a&gt; - When a ConversionException is thrown, its message is not used in the ValidationError&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5441'&gt;WICKET-5441&lt;/a&gt; - IResourceCachingStrategy implementations should only set caching if version matches&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5441&quot;&gt;WICKET-5441&lt;/a&gt; - IResourceCachingStrategy implementations should only set caching if version matches&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5442'&gt;WICKET-5442&lt;/a&gt; - TimeOfDay.valueOf(Calendar, Time) and TimeOfDay.valueOf(Time) incorrectly use 12-hour clock&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5442&quot;&gt;WICKET-5442&lt;/a&gt; - TimeOfDay.valueOf(Calendar, Time) and TimeOfDay.valueOf(Time) incorrectly use 12-hour clock&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5444'&gt;WICKET-5444&lt;/a&gt; - Make org.apache.wicket.pageStore.memory.PageTable public so custom impls of IDataStoreEvictionStrategy can be made&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5444&quot;&gt;WICKET-5444&lt;/a&gt; - Make org.apache.wicket.pageStore.memory.PageTable public so custom impls of IDataStoreEvictionStrategy can be made&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5447'&gt;WICKET-5447&lt;/a&gt; - TableTree&amp;#8217;s NodeBorder does not properly close divs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5447&quot;&gt;WICKET-5447&lt;/a&gt; - TableTree’s NodeBorder does not properly close divs&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5450'&gt;WICKET-5450&lt;/a&gt; - Double escaping when using EnumChoiceRenderer and DropDownChoice&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5450&quot;&gt;WICKET-5450&lt;/a&gt; - Double escaping when using EnumChoiceRenderer and DropDownChoice&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='improvement'&gt;Improvement&lt;/h4&gt;
+&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4268'&gt;WICKET-4268&lt;/a&gt; - Quality of ThumbnailImageResource&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4268&quot;&gt;WICKET-4268&lt;/a&gt; - Quality of ThumbnailImageResource&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4762'&gt;WICKET-4762&lt;/a&gt; - IResourceVersion should be based on final result&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4762&quot;&gt;WICKET-4762&lt;/a&gt; - IResourceVersion should be based on final result&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4905'&gt;WICKET-4905&lt;/a&gt; - PagingNavigation: possible to call setStartIndex() earlier than onBeforeRender?&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4905&quot;&gt;WICKET-4905&lt;/a&gt; - PagingNavigation: possible to call setStartIndex() earlier than onBeforeRender?&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4909'&gt;WICKET-4909&lt;/a&gt; - ModalWindow overwrites window.onbeforeunload&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4909&quot;&gt;WICKET-4909&lt;/a&gt; - ModalWindow overwrites window.onbeforeunload&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5364'&gt;WICKET-5364&lt;/a&gt; - Reduce logging for wicket-atmosphere&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5364&quot;&gt;WICKET-5364&lt;/a&gt; - Reduce logging for wicket-atmosphere&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5367'&gt;WICKET-5367&lt;/a&gt; - migrate Wicket-Atmosphere to Atmosphere 2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5367&quot;&gt;WICKET-5367&lt;/a&gt; - migrate Wicket-Atmosphere to Atmosphere 2&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5401'&gt;WICKET-5401&lt;/a&gt; - provide no-argument constructor in string based header items&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5401&quot;&gt;WICKET-5401&lt;/a&gt; - provide no-argument constructor in string based header items&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5411'&gt;WICKET-5411&lt;/a&gt; - Improve AutoLabels by updating their CSS classes automatically during Ajax requests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5411&quot;&gt;WICKET-5411&lt;/a&gt; - Improve AutoLabels by updating their CSS classes automatically during Ajax requests&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5415'&gt;WICKET-5415&lt;/a&gt; - Do not initialize pages which were not rendered&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5415&quot;&gt;WICKET-5415&lt;/a&gt; - Do not initialize pages which were not rendered&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5420'&gt;WICKET-5420&lt;/a&gt; - Make UploadProgressBar easier to extend&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5420&quot;&gt;WICKET-5420&lt;/a&gt; - Make UploadProgressBar easier to extend&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5423'&gt;WICKET-5423&lt;/a&gt; - Create IResource based implementation of Native Web Sockets&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5423&quot;&gt;WICKET-5423&lt;/a&gt; - Create IResource based implementation of Native Web Sockets&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5435'&gt;WICKET-5435&lt;/a&gt; - Ajaxified version of WebSession#getClientInfo should be added&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5435&quot;&gt;WICKET-5435&lt;/a&gt; - Ajaxified version of WebSession#getClientInfo should be added&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5436'&gt;WICKET-5436&lt;/a&gt; - Implement BigIntegerConverter&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5436&quot;&gt;WICKET-5436&lt;/a&gt; - Implement BigIntegerConverter&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5443'&gt;WICKET-5443&lt;/a&gt; - Increase randomness and reduce predictability of CaptchaImageResource rendered images&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5443&quot;&gt;WICKET-5443&lt;/a&gt; - Increase randomness and reduce predictability of CaptchaImageResource rendered images&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5445'&gt;WICKET-5445&lt;/a&gt; - Make CaptchaImageResource easier to extend and reuse&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5445&quot;&gt;WICKET-5445&lt;/a&gt; - Make CaptchaImageResource easier to extend and reuse&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5455'&gt;WICKET-5455&lt;/a&gt; - Allow access to the JS ResourceReference of AbstractAutoCompleteBehavior&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5455&quot;&gt;WICKET-5455&lt;/a&gt; - Allow access to the JS ResourceReference of AbstractAutoCompleteBehavior&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5456'&gt;WICKET-5456&lt;/a&gt; - Make RawMarkup extendable&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5456&quot;&gt;WICKET-5456&lt;/a&gt; - Make RawMarkup extendable&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='task'&gt;Task&lt;/h4&gt;
+&lt;h4 id=&quot;task&quot;&gt;Task&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5431'&gt;WICKET-5431&lt;/a&gt; - Download pages must use ASF mirror system for current releases&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5431&quot;&gt;WICKET-5431&lt;/a&gt; - Download pages must use ASF mirror system for current releases&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='wish'&gt;Wish&lt;/h4&gt;
+&lt;h4 id=&quot;wish&quot;&gt;Wish&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-1197'&gt;WICKET-1197&lt;/a&gt; - add/remove all buttons in Palette component&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-1197&quot;&gt;WICKET-1197&lt;/a&gt; - add/remove all buttons in Palette component&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4951'&gt;WICKET-4951&lt;/a&gt; - Wicket-cdi and OpenWebBeans 1.1.x incompatibility&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4951&quot;&gt;WICKET-4951&lt;/a&gt; - Wicket-cdi and OpenWebBeans 1.1.x incompatibility&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
  <entry>
    <title>Apache Wicket 6.12.0 released</title>
    <link href="http://wicket.apache.org/2013/11/01/wicket-6.12.0-released.html"/>
-   <updated>2013-11-01T00:00:00+02:00</updated>
+   <updated>2013-11-01T00:00:00+01:00</updated>
    <id>http://wicket.apache.org/2013/11/01/wicket-6.12.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.12.0!&lt;/p&gt;
 
 &lt;p&gt;This release marks the twelfth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
 
-&lt;h3 id='new_and_noteworthy'&gt;New and noteworthy&lt;/h3&gt;
+&lt;h3 id=&quot;new_and_noteworthy&quot;&gt;New and noteworthy&lt;/h3&gt;
 
 &lt;p&gt;This release fixes 16 bugs and adds the following improvements:&lt;/p&gt;
 
@@ -528,294 +518,284 @@ com.example.HomePage$AForm cannot be a non-static inner class
 
 &lt;li&gt;Allow DebugBar contributors to be removed&lt;/li&gt;
 
-&lt;li&gt;Session management doesn&amp;#8217;t work with Jetty&amp;#8217;s JDBCSessionManager&lt;/li&gt;
+&lt;li&gt;Session management doesn’t work with Jetty’s JDBCSessionManager&lt;/li&gt;
 
 &lt;li&gt;HeaderItem to be Serializable&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='jquery_update_in_690'&gt;JQuery update in 6.9.0&lt;/h3&gt;
+&lt;h3 id=&quot;jquery_update_in_690&quot;&gt;JQuery update in 6.9.0&lt;/h3&gt;
 
 &lt;p&gt;As of Wicket 6.9 we ship JQuery 1.10.1. The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from http://jquery.com/upgrade-guide/1.9/&lt;/p&gt;
 
-&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application&amp;#8217;s init method:&lt;/p&gt;
-
-&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt; &lt;span class='nd'&gt;@Override&lt;/span&gt;
- &lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;init&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-     &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
-         &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
- &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
+&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application’s init method:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;java&#39;&gt; &lt;span class=&#39;nd&#39;&gt;@Override&lt;/span&gt;
+ &lt;span class=&#39;kd&#39;&gt;protected&lt;/span&gt; &lt;span class=&#39;kt&#39;&gt;void&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;init&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;{&lt;/span&gt;
+     &lt;span class=&#39;n&#39;&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt;
+         &lt;span class=&#39;o&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;na&#39;&gt;setJQueryReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;n&#39;&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;);&lt;/span&gt;
+ &lt;span class=&#39;o&#39;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;cdi_injection_issue&quot;&gt;CDI injection issue&lt;/h3&gt;
 
 &lt;p&gt;In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException:
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;text&#39;&gt;Caused by: org.jboss.weld.exceptions.DefinitionException:
 WELD-000070 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This was reported as &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5226&quot;&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href=&quot;https://issues.jboss.org/browse/WELD-1441&quot;&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href='https://issues.apache.org/jira/browse/WICKET-5264'&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5264&quot;&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Glassfish has fixed this in trunk according to &lt;a href='https://java.net/jira/browse/GLASSFISH-20619'&gt;GLASSFISH-20619&lt;/a&gt; but the fix has yet to be integrated into a release.&lt;/p&gt;
+&lt;p&gt;Glassfish has fixed this in trunk according to &lt;a href=&quot;https://java.net/jira/browse/GLASSFISH-20619&quot;&gt;GLASSFISH-20619&lt;/a&gt; but the fix has yet to be integrated into a release.&lt;/p&gt;
 
-&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+&lt;h3 id=&quot;using_this_release&quot;&gt;Using this release&lt;/h3&gt;
 
-&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
- &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.12.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+ &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.12.0&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.12.0'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.12.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.12.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.12.0&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.12.0/binaries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+&lt;h3 id=&quot;upgrading_from_earlier_versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
 
 &lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun!&lt;/p&gt;
 
 &lt;p&gt;— The Wicket team&lt;/p&gt;
 
-&lt;h3 id='release_notes__wicket__version_6120'&gt;Release Notes - Wicket - Version 6.12.0&lt;/h3&gt;
+&lt;h3 id=&quot;release_notes__wicket__version_6120&quot;&gt;Release Notes - Wicket - Version 6.12.0&lt;/h3&gt;
 
-&lt;h4 id='bug'&gt;Bug&lt;/h4&gt;
+&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4862'&gt;WICKET-4862&lt;/a&gt; - AjaxPagingNavigationLink and AjaxPagingNavigationIncrementLink output inline onclick attributes in addition to Wicket.Ajax.ajax event registration&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4862&quot;&gt;WICKET-4862&lt;/a&gt; - AjaxPagingNavigationLink and AjaxPagingNavigationIncrementLink output inline onclick attributes in addition to Wicket.Ajax.ajax event registration&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5101'&gt;WICKET-5101&lt;/a&gt; - Could not open second modal window after closing first&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5101&quot;&gt;WICKET-5101&lt;/a&gt; - Could not open second modal window after closing first&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5356'&gt;WICKET-5356&lt;/a&gt; - AutoCompleteSettings.setShowListOnEmptyInput(true) is not working anymore&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5356&quot;&gt;WICKET-5356&lt;/a&gt; - AutoCompleteSettings.setShowListOnEmptyInput(true) is not working anymore&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5359'&gt;WICKET-5359&lt;/a&gt; - org.apache.wicket.util.string.StringValue#equals broken&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5359&quot;&gt;WICKET-5359&lt;/a&gt; - org.apache.wicket.util.string.StringValue#equals broken&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5366'&gt;WICKET-5366&lt;/a&gt; - ResourceAggregator looses information about priority/filtering/&amp;#8230; when using a bundle&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5366&quot;&gt;WICKET-5366&lt;/a&gt; - ResourceAggregator looses information about priority/filtering/… when using a bundle&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5369'&gt;WICKET-5369&lt;/a&gt; - Can&amp;#8217;t set a cookie using CookieUtils during an ajax request due to java.lang.ClassCastException: org.apache.wicket.ajax.AbstractAjaxResponse$AjaxResponse cannot be cast to org.apache.wicket.request.http.WebResponse&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5369&quot;&gt;WICKET-5369&lt;/a&gt; - Can’t set a cookie using CookieUtils during an ajax request due to java.lang.ClassCastException: org.apache.wicket.ajax.AbstractAjaxResponse$AjaxResponse cannot be cast to org.apache.wicket.request.http.WebResponse&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5374'&gt;WICKET-5374&lt;/a&gt; - SourcesPage fails on resources with non-ASCII characters&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5374&quot;&gt;WICKET-5374&lt;/a&gt; - SourcesPage fails on resources with non-ASCII characters&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5375'&gt;WICKET-5375&lt;/a&gt; - Improve ConcatBundleResource error handling when a resource is missing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5375&quot;&gt;WICKET-5375&lt;/a&gt; - Improve ConcatBundleResource error handling when a resource is missing&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5378'&gt;WICKET-5378&lt;/a&gt; - AutoCompleteTextField inside a ModalWindow shows auto complete dropdown in the wrong location&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5378&quot;&gt;WICKET-5378&lt;/a&gt; - AutoCompleteTextField inside a ModalWindow shows auto complete dropdown in the wrong location&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5379'&gt;WICKET-5379&lt;/a&gt; - IE7: AutoCompleteTextField inside a ModalWindow shows auto complete dropdown behind ModalWindow&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5379&quot;&gt;WICKET-5379&lt;/a&gt; - IE7: AutoCompleteTextField inside a ModalWindow shows auto complete dropdown behind ModalWindow&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5380'&gt;WICKET-5380&lt;/a&gt; - Wicket rebinds the SessionEntry session attribute and this causes problems in Glassfish&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5380&quot;&gt;WICKET-5380&lt;/a&gt; - Wicket rebinds the SessionEntry session attribute and this causes problems in Glassfish&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5382'&gt;WICKET-5382&lt;/a&gt; - AutoComplete JavaScript errors&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5382&quot;&gt;WICKET-5382&lt;/a&gt; - AutoComplete JavaScript errors&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5385'&gt;WICKET-5385&lt;/a&gt; - wicket-bean-validation PropertyValidator_fr.properties.xml : org.xml.sax.SAXParseException&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5385&quot;&gt;WICKET-5385&lt;/a&gt; - wicket-bean-validation PropertyValidator_fr.properties.xml : org.xml.sax.SAXParseException&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5386'&gt;WICKET-5386&lt;/a&gt; - ChainingModel should not check if the modelObject given as argument is null&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5386&quot;&gt;WICKET-5386&lt;/a&gt; - ChainingModel should not check if the modelObject given as argument is null&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5397'&gt;WICKET-5397&lt;/a&gt; - target.prependJavaScript and JQuery-Animation in IE8&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5397&quot;&gt;WICKET-5397&lt;/a&gt; - target.prependJavaScript and JQuery-Animation in IE8&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5398'&gt;WICKET-5398&lt;/a&gt; - XmlPullParser fails to properly parse from String with encoding declaration&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5398&quot;&gt;WICKET-5398&lt;/a&gt; - XmlPullParser fails to properly parse from String with encoding declaration&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='improvement'&gt;Improvement&lt;/h4&gt;
+&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5346'&gt;WICKET-5346&lt;/a&gt; - Support MultiFileUploadField in FormTester&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5346&quot;&gt;WICKET-5346&lt;/a&gt; - Support MultiFileUploadField in FormTester&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5362'&gt;WICKET-5362&lt;/a&gt; - Add support for parsing IE 11 user agent&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5362&quot;&gt;WICKET-5362&lt;/a&gt; - Add support for parsing IE 11 user agent&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5376'&gt;WICKET-5376&lt;/a&gt; - Log the exception if the application cannot start properly&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5376&quot;&gt;WICKET-5376&lt;/a&gt; - Log the exception if the application cannot start properly&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5381'&gt;WICKET-5381&lt;/a&gt; - Add Wicket.Event.unsubscribe method&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5381&quot;&gt;WICKET-5381&lt;/a&gt; - Add Wicket.Event.unsubscribe method&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5384'&gt;WICKET-5384&lt;/a&gt; - Allow form components to trim the input themselves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5384&quot;&gt;WICKET-5384&lt;/a&gt; - Allow form components to trim the input themselves&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5388'&gt;WICKET-5388&lt;/a&gt; - Allow DebugBar contributors to be removed&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5388&quot;&gt;WICKET-5388&lt;/a&gt; - Allow DebugBar contributors to be removed&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5390'&gt;WICKET-5390&lt;/a&gt; - Session management doesn&amp;#8217;t work with Jetty&amp;#8217;s JDBCSessionManager&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5390&quot;&gt;WICKET-5390&lt;/a&gt; - Session management doesn’t work with Jetty’s JDBCSessionManager&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5395'&gt;WICKET-5395&lt;/a&gt; - HeaderItem to be Serializable&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5395&quot;&gt;WICKET-5395&lt;/a&gt; - HeaderItem to be Serializable&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='wish'&gt;Wish&lt;/h4&gt;
+&lt;h4 id=&quot;wish&quot;&gt;Wish&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5393'&gt;WICKET-5393&lt;/a&gt; - Remove &amp;#8216;final&amp;#8217; from InlineFrame#onComponentTag()&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5393&quot;&gt;WICKET-5393&lt;/a&gt; - Remove ‘final’ from InlineFrame#onComponentTag()&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
  <entry>
    <title>Apache Wicket 6.11.0 released</title>
    <link href="http://wicket.apache.org/2013/09/20/wicket-6.11.0-released.html"/>
-   <updated>2013-09-20T00:00:00+03:00</updated>
+   <updated>2013-09-20T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2013/09/20/wicket-6.11.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.11.0!&lt;/p&gt;
 
 &lt;p&gt;This release marks the eleventh minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
 
-&lt;h3 id='new_and_noteworthy'&gt;New and noteworthy&lt;/h3&gt;
+&lt;h3 id=&quot;new_and_noteworthy&quot;&gt;New and noteworthy&lt;/h3&gt;
 
-&lt;h4 id='new_html5attributes_behavior'&gt;New HTML5Attributes behavior&lt;/h4&gt;
+&lt;h4 id=&quot;new_html5attributes_behavior&quot;&gt;New HTML5Attributes behavior&lt;/h4&gt;
 
 &lt;p&gt;HTML5 attribute support in Wicket continues to be improved upon. Add the new HTML5Attributes behavior to your text fields or buttons and Wicket will add the relevant HTML5 attributes based on the state of your components:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;adds &amp;#8220;required&amp;#8221; if your form component is required&lt;/li&gt;
+&lt;li&gt;adds “required” if your form component is required&lt;/li&gt;
 
-&lt;li&gt;adds &amp;#8220;placeholder&amp;#8221; for the label of your form component&lt;/li&gt;
+&lt;li&gt;adds “placeholder” for the label of your form component&lt;/li&gt;
 
-&lt;li&gt;adds &amp;#8220;pattern&amp;#8221; if your form component has a PatternValidator attached&lt;/li&gt;
+&lt;li&gt;adds “pattern” if your form component has a PatternValidator attached&lt;/li&gt;
 
-&lt;li&gt;adds &amp;#8220;formnovalidate&amp;#8221; if your button has default form processing set to false&lt;/li&gt;
+&lt;li&gt;adds “formnovalidate” if your button has default form processing set to false&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;This behavior replaces the functionality from 6.10 where HTML5 attributes were added automatically (see &lt;a href='https://issues.apache.org/jira/browse/WICKET-5289'&gt;WICKET-5289&lt;/a&gt; and &lt;a href='https://issues.apache.org/jira/browse/WICKET-5331'&gt;WICKET-5331&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;This behavior replaces the functionality from 6.10 where HTML5 attributes were added automatically (see &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5289&quot;&gt;WICKET-5289&lt;/a&gt; and &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5331&quot;&gt;WICKET-5331&lt;/a&gt;)&lt;/p&gt;
 
-&lt;h4 id='beanvalidation_receives_french_translation'&gt;BeanValidation receives french translation&lt;/h4&gt;
+&lt;h4 id=&quot;beanvalidation_receives_french_translation&quot;&gt;BeanValidation receives french translation&lt;/h4&gt;
 
 &lt;p&gt;The BeanValidation project now has a french translation for validation errors:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Le champ &amp;#8216;${label}&amp;#8217; ne doit pas être null&lt;/li&gt;
+&lt;li&gt;Le champ ‘${label}’ ne doit pas être null&lt;/li&gt;
 
-&lt;li&gt;Le champ &amp;#8216;${label}&amp;#8217; pourrait contenir du contenu HTML dangereux&lt;/li&gt;
+&lt;li&gt;Le champ ‘${label}’ pourrait contenir du contenu HTML dangereux&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Bonne chance!&lt;/p&gt;
 
-&lt;h3 id='jquery_update_in_690'&gt;JQuery update in 6.9.0&lt;/h3&gt;
+&lt;h3 id=&quot;jquery_update_in_690&quot;&gt;JQuery update in 6.9.0&lt;/h3&gt;
 
 &lt;p&gt;As of Wicket 6.9 we ship JQuery 1.10.1. The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from http://jquery.com/upgrade-guide/1.9/&lt;/p&gt;
 
-&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application&amp;#8217;s init method:&lt;/p&gt;
-
-&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;    &lt;span class='nd'&gt;@Override&lt;/span&gt;
-    &lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;init&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-        &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
-            &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
-    &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
+&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application’s init method:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;java&#39;&gt;    &lt;span class=&#39;nd&#39;&gt;@Override&lt;/span&gt;
+    &lt;span class=&#39;kd&#39;&gt;protected&lt;/span&gt; &lt;span class=&#39;kt&#39;&gt;void&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;init&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;{&lt;/span&gt;
+        &lt;span class=&#39;n&#39;&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt;
+            &lt;span class=&#39;o&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;na&#39;&gt;setJQueryReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;n&#39;&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;);&lt;/span&gt;
+    &lt;span class=&#39;o&#39;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;cdi_injection_issue&quot;&gt;CDI injection issue&lt;/h3&gt;
 
 &lt;p&gt;In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException:
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;text&#39;&gt;Caused by: org.jboss.weld.exceptions.DefinitionException:
 WELD-000070 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This was reported as &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5226&quot;&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href=&quot;https://issues.jboss.org/browse/WELD-1441&quot;&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href='https://issues.apache.org/jira/browse/WICKET-5264'&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5264&quot;&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Glassfish has fixed this in trunk according to &lt;a href='https://java.net/jira/browse/GLASSFISH-20619'&gt;GLASSFISH-20619&lt;/a&gt; but the fix has yet to be integrated into a release.&lt;/p&gt;
+&lt;p&gt;Glassfish has fixed this in trunk according to &lt;a href=&quot;https://java.net/jira/browse/GLASSFISH-20619&quot;&gt;GLASSFISH-20619&lt;/a&gt; but the fix has yet to be integrated into a release.&lt;/p&gt;
 
-&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+&lt;h3 id=&quot;using_this_release&quot;&gt;Using this release&lt;/h3&gt;
 
-&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.11.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.11.0&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.11.0'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.11.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.11.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.11.0&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.11.0/binaries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+&lt;h3 id=&quot;upgrading_from_earlier_versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
 
 &lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun!&lt;/p&gt;
 
 &lt;p&gt;— The Wicket team&lt;/p&gt;
 
-&lt;h3 id='release_notes__wicket__version_6110'&gt;Release Notes - Wicket - Version 6.11.0&lt;/h3&gt;
+&lt;h3 id=&quot;release_notes__wicket__version_6110&quot;&gt;Release Notes - Wicket - Version 6.11.0&lt;/h3&gt;
 
-&lt;h4 id='bug'&gt;Bug&lt;/h4&gt;
+&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5313'&gt;WICKET-5313&lt;/a&gt; - Wrong HTML attribute used in SizeTagModifier (wicket-bean-validation)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5313&quot;&gt;WICKET-5313&lt;/a&gt; - Wrong HTML attribute used in SizeTagModifier (wicket-bean-validation)&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5315'&gt;WICKET-5315&lt;/a&gt; - PriorityHeaderItem+OnDomReadyHeaderItem has no priority in Ajax response&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5315&quot;&gt;WICKET-5315&lt;/a&gt; - PriorityHeaderItem+OnDomReadyHeaderItem has no priority in Ajax response&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5316'&gt;WICKET-5316&lt;/a&gt; - Wicket Atmosphere CouldNotLockPageException&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5316&quot;&gt;WICKET-5316&lt;/a&gt; - Wicket Atmosphere CouldNotLockPageException&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5319'&gt;WICKET-5319&lt;/a&gt; - CryptoMapper encrypts external URLs in ResourceReferences making the resources inaccessible&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5319&quot;&gt;WICKET-5319&lt;/a&gt; - CryptoMapper encrypts external URLs in ResourceReferences making the resources inaccessible&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5322'&gt;WICKET-5322&lt;/a&gt; - &amp;#8220;Source code&amp;#8221; link doesn&amp;#8217;t work at wicket-library.com&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5322&quot;&gt;WICKET-5322&lt;/a&gt; - “Source code” link doesn’t work at wicket-library.com&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5325'&gt;WICKET-5325&lt;/a&gt; - ComponentRenderer.renderComponent does not render markup for ListView&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5325&quot;&gt;WICKET-5325&lt;/a&gt; - ComponentRenderer.renderComponent does not render markup for ListView&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5329'&gt;WICKET-5329&lt;/a&gt; - &amp;#8220;Required&amp;#8221; flag initialized too early in PropertyValidator&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5329&quot;&gt;WICKET-5329&lt;/a&gt; - “Required” flag initialized too early in PropertyValidator&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5332'&gt;WICKET-5332&lt;/a&gt; - Autocomplete throws error when initialized in an AjaxLazyLoadPanel&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5332&quot;&gt;WICKET-5332&lt;/a&gt; - Autocomplete throws error when initialized in an AjaxLazyLoadPanel&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5334'&gt;WICKET-5334&lt;/a&gt; - KittenCaptcha example is broken in IE10&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5334&quot;&gt;WICKET-5334&lt;/a&gt; - KittenCaptcha example is broken in IE10&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5335'&gt;WICKET-5335&lt;/a&gt; - After selecting a file MultiFileUploadField does not render properly input field&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5335&quot;&gt;WICKET-5335&lt;/a&gt; - After selecting a file MultiFileUploadField does not render properly input field&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5339'&gt;WICKET-5339&lt;/a&gt; - Broadcast.EXACT does not notify Behaviors of target Component&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5339&quot;&gt;WICKET-5339&lt;/a&gt; - Broadcast.EXACT does not notify Behaviors of target Component&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5343'&gt;WICKET-5343&lt;/a&gt; - AutoCompleteTextField suggestions popup position is wrong when its container has scrollbar&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5343&quot;&gt;WICKET-5343&lt;/a&gt; - AutoCompleteTextField suggestions popup position is wrong when its container has scrollbar&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5345'&gt;WICKET-5345&lt;/a&gt; - Url.canonical() breaks when there are two consecutive &amp;#8220;parent&amp;#8221; segments followed by a normal segment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5345&quot;&gt;WICKET-5345&lt;/a&gt; - Url.canonical() breaks when there are two consecutive “parent” segments followed by a normal segment&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5348'&gt;WICKET-5348&lt;/a&gt; - JavaDoc for IColumn#getSortProperty() in misleading&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5348&quot;&gt;WICKET-5348&lt;/a&gt; - JavaDoc for IColumn#getSortProperty() in misleading&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='improvement'&gt;Improvement&lt;/h4&gt;
+&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5327'&gt;WICKET-5327&lt;/a&gt; - CryptoMapper: insecure default encryption provider&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5327&quot;&gt;WICKET-5327&lt;/a&gt; - CryptoMapper: insecure default encryption provider&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5331'&gt;WICKET-5331&lt;/a&gt; - Make html5 form validation configurable&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5331&quot;&gt;WICKET-5331&lt;/a&gt; - Make html5 form validation configurable&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5333'&gt;WICKET-5333&lt;/a&gt; - wicket-bean-validation french translation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5333&quot;&gt;WICKET-5333&lt;/a&gt; - wicket-bean-validation french translation&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5341'&gt;WICKET-5341&lt;/a&gt; - JavaDoc for IFormValidator&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5341&quot;&gt;WICKET-5341&lt;/a&gt; - JavaDoc for IFormValidator&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5354'&gt;WICKET-5354&lt;/a&gt; - Make ResourceBundles and related classes easier for extension&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5354&quot;&gt;WICKET-5354&lt;/a&gt; - Make ResourceBundles and related classes easier for extension&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
  <entry>
    <title>Apache Wicket 6.10.0 released</title>
    <link href="http://wicket.apache.org/2013/08/18/wicket-6.10.0-released.html"/>
-   <updated>2013-08-18T00:00:00+03:00</updated>
+   <updated>2013-08-18T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2013/08/18/wicket-6.10.0-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.10.0!&lt;/p&gt;
 
 &lt;p&gt;This release marks the tenth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
 
-&lt;h3 id='new_and_noteworthy'&gt;New and noteworthy&lt;/h3&gt;
+&lt;h3 id=&quot;new_and_noteworthy&quot;&gt;New and noteworthy&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
@@ -827,157 +807,152 @@ com.example.HomePage$AForm cannot be a non-static inner class
 &lt;/li&gt;
 
 &lt;li&gt;
-&lt;p&gt;OnEventHeaderItem uses JavaScript event registration, instead of inline DOM attributes, so it should remove &amp;#8216;on&amp;#8217; prefixes when it is provided by the user application. For example: onclick =&amp;gt; click.&lt;/p&gt;
+&lt;p&gt;OnEventHeaderItem uses JavaScript event registration, instead of inline DOM attributes, so it should remove ‘on’ prefixes when it is provided by the user application. For example: onclick =&amp;gt; click.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='jquery_update_in_690'&gt;JQuery update in 6.9.0&lt;/h3&gt;
+&lt;h3 id=&quot;jquery_update_in_690&quot;&gt;JQuery update in 6.9.0&lt;/h3&gt;
 
 &lt;p&gt;As of Wicket 6.9 we ship JQuery 1.10.1. The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from http://jquery.com/upgrade-guide/1.9/&lt;/p&gt;
 
-&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application&amp;#8217;s init method:&lt;/p&gt;
-
-&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='nd'&gt;@Override&lt;/span&gt; 
-&lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;init&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
-        &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
+&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application’s init method:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;java&#39;&gt;&lt;span class=&#39;nd&#39;&gt;@Override&lt;/span&gt; 
+&lt;span class=&#39;kd&#39;&gt;protected&lt;/span&gt; &lt;span class=&#39;kt&#39;&gt;void&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;init&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;{&lt;/span&gt;
+    &lt;span class=&#39;n&#39;&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt;
+        &lt;span class=&#39;o&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;na&#39;&gt;setJQueryReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;n&#39;&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;);&lt;/span&gt;
+&lt;span class=&#39;o&#39;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;cdi_injection_issue&quot;&gt;CDI injection issue&lt;/h3&gt;
 
 &lt;p&gt;In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;text&#39;&gt;Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This was reported as &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5226&quot;&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href=&quot;https://issues.jboss.org/browse/WELD-1441&quot;&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href='https://issues.apache.org/jira/browse/WICKET-5264'&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5264&quot;&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+&lt;h3 id=&quot;using_this_release&quot;&gt;Using this release&lt;/h3&gt;
 
-&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.10.0&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.10.0&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.10.0'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.10.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.10.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.10.0&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.10.0/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.10.0/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.10.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.10.0/binaries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+&lt;h3 id=&quot;upgrading_from_earlier_versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
 
 &lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun!&lt;/p&gt;
 
 &lt;p&gt;— The Wicket team&lt;/p&gt;
 
-&lt;h3 id='release_notes__wicket__version_6100'&gt;Release Notes - Wicket - Version 6.10.0&lt;/h3&gt;
+&lt;h3 id=&quot;release_notes__wicket__version_6100&quot;&gt;Release Notes - Wicket - Version 6.10.0&lt;/h3&gt;
 
-&lt;h4 id='subtask'&gt;Sub-task&lt;/h4&gt;
+&lt;h4 id=&quot;subtask&quot;&gt;Sub-task&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5248'&gt;WICKET-5248&lt;/a&gt; - OnEventHeaderItem is still broken in 6.9.0&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5248&quot;&gt;WICKET-5248&lt;/a&gt; - OnEventHeaderItem is still broken in 6.9.0&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='bug'&gt;Bug&lt;/h4&gt;
+&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5135'&gt;WICKET-5135&lt;/a&gt; - wicket-atmosphere EventBus constructor throws NullPointerException under invalid state&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5135&quot;&gt;WICKET-5135&lt;/a&gt; - wicket-atmosphere EventBus constructor throws NullPointerException under invalid state&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5164'&gt;WICKET-5164&lt;/a&gt; - PageStoreManager.SessionEntry keeps outdated sessionId when container changes sessionId&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5164&quot;&gt;WICKET-5164&lt;/a&gt; - PageStoreManager.SessionEntry keeps outdated sessionId when container changes sessionId&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5224'&gt;WICKET-5224&lt;/a&gt; - ModalWindow is not visible in Safari when opened from a link at the bottom of a large page&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5224&quot;&gt;WICKET-5224&lt;/a&gt; - ModalWindow is not visible in Safari when opened from a link at the bottom of a large page&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5250'&gt;WICKET-5250&lt;/a&gt; - Minified css/js gets compressed&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5250&quot;&gt;WICKET-5250&lt;/a&gt; - Minified css/js gets compressed&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5251'&gt;WICKET-5251&lt;/a&gt; - Minified name resolves incorrectly if default resource reference is used&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5251&quot;&gt;WICKET-5251&lt;/a&gt; - Minified name resolves incorrectly if default resource reference is used&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5256'&gt;WICKET-5256&lt;/a&gt; - Allow configuring the resource used by ResourceStreamRequestHandler&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5256&quot;&gt;WICKET-5256&lt;/a&gt; - Allow configuring the resource used by ResourceStreamRequestHandler&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5259'&gt;WICKET-5259&lt;/a&gt; - Url can&amp;#39;t parse urls with username and password&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5259&quot;&gt;WICKET-5259&lt;/a&gt; - Url can&amp;#39;t parse urls with username and password&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5260'&gt;WICKET-5260&lt;/a&gt; - UrlRenderer#renderUrl() doesn&amp;#39;t preserve the host&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5260&quot;&gt;WICKET-5260&lt;/a&gt; - UrlRenderer#renderUrl() doesn&amp;#39;t preserve the host&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5263'&gt;WICKET-5263&lt;/a&gt; - FilenameWithVersionResourceCachingStrategy breaks silently when the versionPrefix is contained in the original filename&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5263&quot;&gt;WICKET-5263&lt;/a&gt; - FilenameWithVersionResourceCachingStrategy breaks silently when the versionPrefix is contained in the original filename&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5266'&gt;WICKET-5266&lt;/a&gt; - Issue with TomcatWebSocketFilter and Spring Security&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5266&quot;&gt;WICKET-5266&lt;/a&gt; - Issue with TomcatWebSocketFilter and Spring Security&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5268'&gt;WICKET-5268&lt;/a&gt; - ComponentRenderer.renderComponent fails to render two components with different component IDs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5268&quot;&gt;WICKET-5268&lt;/a&gt; - ComponentRenderer.renderComponent fails to render two components with different component IDs&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5269'&gt;WICKET-5269&lt;/a&gt; - XmlAjaxResponse restores wrong response&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5269&quot;&gt;WICKET-5269&lt;/a&gt; - XmlAjaxResponse restores wrong response&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5272'&gt;WICKET-5272&lt;/a&gt; - NPE on unmount in BookmarkableMapper.java:189&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5272&quot;&gt;WICKET-5272&lt;/a&gt; - NPE on unmount in BookmarkableMapper.java:189&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5273'&gt;WICKET-5273&lt;/a&gt; - Tabindex overwritten in modal window for IE - Works in FF, Chrome&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5273&quot;&gt;WICKET-5273&lt;/a&gt; - Tabindex overwritten in modal window for IE - Works in FF, Chrome&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5279'&gt;WICKET-5279&lt;/a&gt; - o.a.w.a.AtmosphereBehavior onBroadcast should log DEBUG, not INFO&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5279&quot;&gt;WICKET-5279&lt;/a&gt; - o.a.w.a.AtmosphereBehavior onBroadcast should log DEBUG, not INFO&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5287'&gt;WICKET-5287&lt;/a&gt; - NumberFormatException when parsing the port from Requests with invalid URIs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5287&quot;&gt;WICKET-5287&lt;/a&gt; - NumberFormatException when parsing the port from Requests with invalid URIs&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5291'&gt;WICKET-5291&lt;/a&gt; - Dependencies of Resource Bundle References are ignored&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5291&quot;&gt;WICKET-5291&lt;/a&gt; - Dependencies of Resource Bundle References are ignored&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5294'&gt;WICKET-5294&lt;/a&gt; - MarkupCache ignores enforceReload flag&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5294&quot;&gt;WICKET-5294&lt;/a&gt; - MarkupCache ignores enforceReload flag&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5298'&gt;WICKET-5298&lt;/a&gt; - Wicket Example for effects with Prototype is broken&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5298&quot;&gt;WICKET-5298&lt;/a&gt; - Wicket Example for effects with Prototype is broken&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5300'&gt;WICKET-5300&lt;/a&gt; - ComponentRenderingRequestHandler does not clear renderedComponents (PrototypeApplication)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5300&quot;&gt;WICKET-5300&lt;/a&gt; - ComponentRenderingRequestHandler does not clear renderedComponents (PrototypeApplication)&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5302'&gt;WICKET-5302&lt;/a&gt; - Using InlineEnclosure leads to two re-renderings of the controlling child component&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5302&quot;&gt;WICKET-5302&lt;/a&gt; - Using InlineEnclosure leads to two re-renderings of the controlling child component&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5306'&gt;WICKET-5306&lt;/a&gt; - Dynamic and static extra paramaters not evaluated in ajax submitting behavior in a multipart form&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5306&quot;&gt;WICKET-5306&lt;/a&gt; - Dynamic and static extra paramaters not evaluated in ajax submitting behavior in a multipart form&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5309'&gt;WICKET-5309&lt;/a&gt; - No page id appended to some stateful pages using repeaters&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5309&quot;&gt;WICKET-5309&lt;/a&gt; - No page id appended to some stateful pages using repeaters&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5310'&gt;WICKET-5310&lt;/a&gt; - if wicket is an external lib, BundleStringResourceLoader doesn&amp;#39;t work&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5310&quot;&gt;WICKET-5310&lt;/a&gt; - if wicket is an external lib, BundleStringResourceLoader doesn&amp;#39;t work&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='improvement'&gt;Improvement&lt;/h4&gt;
+&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-4993'&gt;WICKET-4993&lt;/a&gt; - Add a minInputLength parameter to AutoCompleteTextField&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4993&quot;&gt;WICKET-4993&lt;/a&gt; - Add a minInputLength parameter to AutoCompleteTextField&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5270'&gt;WICKET-5270&lt;/a&gt; - Do not set the location.hash when clicking on a link&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5270&quot;&gt;WICKET-5270&lt;/a&gt; - Do not set the location.hash when clicking on a link&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5276'&gt;WICKET-5276&lt;/a&gt; - JavaDoc &amp;#38; API for IConverter&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5276&quot;&gt;WICKET-5276&lt;/a&gt; - JavaDoc &amp;amp; API for IConverter&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5277'&gt;WICKET-5277&lt;/a&gt; - PropertiesFactory - customizable properties loading&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5277&quot;&gt;WICKET-5277&lt;/a&gt; - PropertiesFactory - customizable properties loading&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5289'&gt;WICKET-5289&lt;/a&gt; - setRequired(true) should add the HTML5 &amp;#34;required&amp;#34; attribute on &amp;#60;input&amp;#62; and &amp;#60;textarea&amp;#62; elements&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5289&quot;&gt;WICKET-5289&lt;/a&gt; - setRequired(true) should add the HTML5 &amp;quot;required&amp;quot; attribute on &amp;lt;input&amp;gt; and &amp;lt;textarea&amp;gt; elements&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5295'&gt;WICKET-5295&lt;/a&gt; - UrlResourceStream#getData content-type detection relies on flawed logic in URLConnection#getContentType&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5295&quot;&gt;WICKET-5295&lt;/a&gt; - UrlResourceStream#getData content-type detection relies on flawed logic in URLConnection#getContentType&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5296'&gt;WICKET-5296&lt;/a&gt; - OnEventHeaderItem should remove &amp;#39;on&amp;#39; prefix for the event name&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5296&quot;&gt;WICKET-5296&lt;/a&gt; - OnEventHeaderItem should remove &amp;#39;on&amp;#39; prefix for the event name&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5303'&gt;WICKET-5303&lt;/a&gt; - Static id counter AbstractToolbar prevents stable component paths for testing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5303&quot;&gt;WICKET-5303&lt;/a&gt; - Static id counter AbstractToolbar prevents stable component paths for testing&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5304'&gt;WICKET-5304&lt;/a&gt; - AbstractResource should check for error code first before for modifications&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5304&quot;&gt;WICKET-5304&lt;/a&gt; - AbstractResource should check for error code first before for modifications&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://issues.apache.org/jira/browse/WICKET-5307'&gt;WICKET-5307&lt;/a&gt; - Export resources&amp;#39; version cache attribute as request cycle metadata&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5307&quot;&gt;WICKET-5307&lt;/a&gt; - Export resources&amp;#39; version cache attribute as request cycle metadata&lt;/li&gt;
 &lt;/ul&gt;</content>
  </entry>
  
  <entry>
    <title>Apache Wicket 6.9.1 released</title>
    <link href="http://wicket.apache.org/2013/07/10/wicket-6.9.1-released.html"/>
-   <updated>2013-07-10T00:00:00+03:00</updated>
+   <updated>2013-07-10T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2013/07/10/wicket-6.9.1-released</id>
    <content type="html">&lt;p&gt;The Apache Wicket PMC announces Apache Wicket 6.9.1!&lt;/p&gt;
 
@@ -987,58 +962,53 @@ com.example.HomePage$AForm cannot be a non-static inner class
 
 &lt;p&gt;Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.&lt;/p&gt;
 
-&lt;h3 id='jquery_update_in_690'&gt;JQuery update in 6.9.0&lt;/h3&gt;
+&lt;h3 id=&quot;jquery_update_in_690&quot;&gt;JQuery update in 6.9.0&lt;/h3&gt;
 
 &lt;p&gt;As of Wicket 6.9 we ship JQuery 1.10.1. The JQuery project has decided to remove deprecated APIs from their codebase from JQuery 1.9 and up. This means that JQuery plugins using these deprecated APIs no longer work. See the JQuery migration guide for more information, available from http://jquery.com/upgrade-guide/1.9/&lt;/p&gt;
 
-&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application&amp;#8217;s init method:&lt;/p&gt;
-
-&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='nd'&gt;@Override&lt;/span&gt; 
-&lt;span class='kd'&gt;protected&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;init&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-    &lt;span class='n'&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;
-        &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='na'&gt;setJQueryReference&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class='o'&gt;);&lt;/span&gt;
-&lt;span class='o'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;h3 id='cdi_injection_issue'&gt;CDI injection issue&lt;/h3&gt;
+&lt;p&gt;If your application depends on these deprecated APIs you can easily downgrade to JQuery 1.8.3-the previously provided JQuery that still contains these APIs. Download the 1.8.3 release of jquery and add it to your project in its application’s init method:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;java&#39;&gt;&lt;span class=&#39;nd&#39;&gt;@Override&lt;/span&gt; 
+&lt;span class=&#39;kd&#39;&gt;protected&lt;/span&gt; &lt;span class=&#39;kt&#39;&gt;void&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;init&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;{&lt;/span&gt;
+    &lt;span class=&#39;n&#39;&gt;getJavaScriptLibrarySettings&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;()&lt;/span&gt;
+        &lt;span class=&#39;o&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;na&#39;&gt;setJQueryReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;n&#39;&gt;yourJquery183ResourceReference&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;);&lt;/span&gt;
+&lt;span class=&#39;o&#39;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;cdi_injection_issue&quot;&gt;CDI injection issue&lt;/h3&gt;
 
 &lt;p&gt;In the CDI releases of Weld 2.0.1 and prior, it was assumed that injection in anonymous inner classes was not legal and when attempted, it resulted in an exception:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;text&#39;&gt;Caused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
 Simple bean [EnhancedAnnotatedTypeImpl] private class
 com.example.HomePage$AForm cannot be a non-static inner class
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This was reported as &lt;a href='https://issues.apache.org/jira/browse/WICKET-5226'&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This was reported as &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5226&quot;&gt;WICKET-5226&lt;/a&gt;, as it became an issue in Glassfish 4, which ships with Weld 2.0.1 (or earlier). We implemented a fix for this particular issue by not injecting into anonymous inner classes.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href='https://issues.jboss.org/browse/WELD-1441'&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Unfortunately this was not a bug that needed fixing on our part, but rather in the Weld framework (see &lt;a href=&quot;https://issues.jboss.org/browse/WELD-1441&quot;&gt;WELD-1441&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href='https://issues.apache.org/jira/browse/WICKET-5264'&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Therefore we reverted the commits done for WICKET-5226 and hope that Glassfish will upgrade their Weld implementation soon. For the whole story read &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5264&quot;&gt;WICKET-5264&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id='using_this_release'&gt;Using this release&lt;/h3&gt;
+&lt;h3 id=&quot;using_this_release&quot;&gt;Using this release&lt;/h3&gt;
 
-&lt;p&gt;With Apache Maven update your dependency to (and don&amp;#8217;t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='xml'&gt;&lt;span class='nt'&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class='nt'&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class='nt'&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class='nt'&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.9.1&lt;span class='nt'&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class='nt'&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;xml&#39;&gt;&lt;span class=&#39;nt&#39;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&#39;nt&#39;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&#39;nt&#39;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&#39;nt&#39;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.9.1&lt;span class=&#39;nt&#39;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&#39;nt&#39;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or download and build the distribution yourself, or use our convenience binary package&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Source: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.9.1'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;Binary: &lt;a href='http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries'&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.9.1/binaries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id='upgrading_from_earlier_versions'&gt;Upgrading from earlier versions&lt;/h3&gt;
+&lt;h3 id=&quot;upgrading_from_earlier_versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
 
 &lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0'&gt;migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun!&lt;/p&gt;

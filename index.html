@@ -92,7 +92,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.14.0">Wicket 6.13</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.14.0">Wicket 6.14</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.11">Wicket 1.5</a>
@@ -177,30 +177,30 @@
 			<p>With proper mark-up/logic separation, a POJO data model, and a refreshing lack of XML, Apache Wicket makes developing web-apps simple and enjoyable again. Swap the boilerplate, complex debugging and brittle code for powerful, reusable components written with plain Java and HTML.</p>
 
 <ul>
-<li>Check the <a href='meet/features.html'>feature list</a></li>
+<li>Check the <a href="meet/features.html">feature list</a></li>
 
-<li>Read some <a href='meet/buzz.html'>Wicket buzz</a>, some <a href='meet/blogs.html'>Wicket blogs</a></li>
+<li>Read some <a href="meet/buzz.html">Wicket buzz</a>, some <a href="meet/blogs.html">Wicket blogs</a></li>
 
-<li>Find out why you should <a href='meet/introduction.html'>use Wicket</a></li>
+<li>Find out why you should <a href="meet/introduction.html">use Wicket</a></li>
 
-<li>Check out some selected <a href='learn/examples'>examples in detail</a> or see them and many more in <a href='http://www.wicket-library.com/wicket-examples/'>live action</a></li>
+<li>Check out some selected <a href="learn/examples">examples in detail</a> or see them and many more in <a href="http://www.wicket-library.com/wicket-examples/">live action</a></li>
 
-<li>Take a look at our live <a href='http://www.wicket-library.com/wicket-examples/compref/'>component reference</a></li>
+<li>Take a look at our live <a href="http://www.wicket-library.com/wicket-examples/compref/">component reference</a></li>
 
-<li>Go and <a href='start/download.html'>download Wicket</a></li>
+<li>Go and <a href="start/download.html">download Wicket</a></li>
 
-<li>See what <a href='learn/projects'>extras are available</a></li>
+<li>See what <a href="learn/projects">extras are available</a></li>
 </ul>
 
-<p>Wicket is released under the <a href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache License, Version 2.0</a>.</p>
+<p>Wicket is released under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>.</p>
 
-<h1 id='cve20140043__apache_wicket_information_disclosure_vulnerability'><a href='/2014/02/21/cve-2014-0043.html'>CVE-2014-0043 - Apache Wicket Information disclosure vulnerability</a></h1>
+<h1 id="cve20140043__apache_wicket_information_disclosure_vulnerability"><a href="/2014/02/21/cve-2014-0043.html">CVE-2014-0043 - Apache Wicket Information disclosure vulnerability</a></h1>
 <p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache Wicket 1.5.10 and 6.13.0</p><p>Description:</p><p>By issuing requests to special urls handled by Wicket it is possible to check for the existence of particular classes in the classpath and thus check whether a third party library with a known security vulnerability is in use.</p><p>The application developers are recommended to upgrade to:</p><ul>
 <li><a href='/2014/02/06/wicket-1.5.11-released.html'>Apache Wicket 1.5.11</a></li>
 
 <li><a href='/2014/02/20/wicket-6.14.0-released.html'>Apache Wicket 6.14.0</a></li>
 </ul><p>Credit: This issue was reported by Christian Schneider!</p><p>Apache Wicket Team</p>
-<h1 id='apache_wicket_6140_released'><a href='/2014/02/20/wicket-6.14.0-released.html'>Apache Wicket 6.14.0 released</a></h1>
+<h1 id="apache_wicket_6140_released"><a href="/2014/02/20/wicket-6.14.0-released.html">Apache Wicket 6.14.0 released</a></h1>
 <p>The Apache Wicket PMC is proud to announce Apache Wicket 6.14.0!</p><p>This release marks the fourteenth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p><h3 id='new_and_noteworthy'>New and noteworthy</h3><p>This release fixes 34 bugs and adds the following improvements:</p><ul>
 <li>JQuery upgraded from 1.10.2 to 1.11.0</li>
 
@@ -210,14 +210,13 @@
 
 <li>Update classes copied from commons-fileupload to fix CVE-2014-0050</li>
 
-<li>Allow &#60;script&#62; tags to have children components to be able to use client side templating</li>
-</ul><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
+<li>Allow &lt;script&gt; tags to have children components to be able to use client side templating</li>
+</ul><h3 id='using_this_release'>Using this release</h3><p>With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):</p><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
  <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
  <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
  <span class='nt'>&lt;version&gt;</span>6.14.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre>
-</div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
+</code></pre></div><p>Or download and build the distribution yourself, or use our convenience binary package</p><ul>
 <li>Source: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.14.0'>http://www.apache.org/dyn/closer.cgi/wicket/6.14.0</a></li>
 
 <li>Binary: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.14.0/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.14.0/binaries</a></li>
@@ -316,10 +315,25 @@
         <a href='/2013/05/17/wicket-6.8.0-released.html'>more</a></li>
 
 </ul>
-<h1 id='books_about_wicket'>Books about Wicket</h1>
+<h1 id="books_about_wicket">Books about Wicket</h1>
 
 <p>The following books are published regarding Apache Wicket (click a cover to learn more about the book):</p>
-<a href='/learn/books/awc.html'><img height='200px' src='/learn/books/awc.png' /></a><a href='/learn/books/wia.html'><img height='200px' src='/learn/books/wia.png' /></a><a href='/learn/books/ewdww.html'><img height='200px' src='/learn/books/ewdww.png' /></a><a href='/learn/books/prowicket.html'><img height='200px' src='/learn/books/prowicket.png' /></a><a href='/learn/books/kwij.html'><img height='200px' src='/learn/books/kwij.png' /></a><a href='/learn/books/praxisbuchwicket.html'><img height='200px' src='/learn/books/praxisbuchwicket.png' /></a><a href='/learn/books/wicket-jp.html'><img height='200px' src='/learn/books/wicket-jp.png' /></a><a href='/learn/books/koda.html'><img height='200px' src='/learn/books/koda.jpg' /></a>
+
+<p><a href='/learn/books/awc.html'><img height='200px' src='/learn/books/awc.png' /></a></p>
+
+<p><a href='/learn/books/wia.html'><img height='200px' src='/learn/books/wia.png' /></a></p>
+
+<p><a href='/learn/books/ewdww.html'><img height='200px' src='/learn/books/ewdww.png' /></a></p>
+
+<p><a href='/learn/books/prowicket.html'><img height='200px' src='/learn/books/prowicket.png' /></a></p>
+
+<p><a href='/learn/books/kwij.html'><img height='200px' src='/learn/books/kwij.png' /></a></p>
+
+<p><a href='/learn/books/praxisbuchwicket.html'><img height='200px' src='/learn/books/praxisbuchwicket.png' /></a></p>
+
+<p><a href='/learn/books/wicket-jp.html'><img height='200px' src='/learn/books/wicket-jp.png' /></a></p>
+
+<p><a href='/learn/books/koda.html'><img height='200px' src='/learn/books/koda.jpg' /></a></p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
