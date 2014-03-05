@@ -174,6 +174,9 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0px"><a href="#wicketstuff_5"><strong>26.5</strong><span>Module wicketstuff-inmethod-grid</span></a>
                     </div>
                     
+                    <div class="toc-item" style="margin-left:0px"><a href="#wicketstuff_6"><strong>26.6</strong><span>Module wicketstuff-rest-annotations</span></a>
+                    </div>
+                    
                 </div>
                 
 
@@ -264,6 +267,34 @@ List&#60;IGridColumn&#62; cols = (List) Arrays.asList(
 add(grid);</pre></div><p class="paragraph"/>In the code above we have used convenience class DefaultDataGrid that is a subclass of DataGrid and it already comes with a navigation toolbar.<p class="paragraph"/>The example pages are under package com.inmethod.grid.examples.pages in the example project which is hosted at <a href="http://www.wicket-library.com/inmethod-grid/data-grid/simple" target="blank">http://www.wicket-library.com/inmethod-grid/data-grid/simple</a> .<p class="paragraph"/>
 
 
+<h2 id="wicketstuff_6">26.6 Module wicketstuff-rest-annotations</h2>
+REST-based API are becoming more and more popular around the web and the number of services based on this architecture is constantly increasing.<p class="paragraph"/>Wicket is well-known for its capability of transparently handling the state of web applications on server side, but it can be also easily adopted to create RESTful services.
+WicketStuff module for REST provides a special resource class and a set of annotations to implement REST APIs/services in much the same way as we do it with Spring MVC or with the standard JAX-RS.<p class="paragraph"/>The module provides class <code>AbstractRestResource</code> as generic abstract class to implement a Wicket resource that handles the request and the response using a particular data format (XML, JSON, etc...).
+Subclassing <code>AbstractRestResource</code> we can create custom resources and map their pubblic methods to a given subpath with annotation <code>MethodMapping</code>. The following snippet is taken from resource <code>PersonsRestResource</code> inside module <code>'restannotations-examples'</code>:<p class="paragraph"/><div class="code"><pre>@MethodMapping(<span class="java&#45;quote">"/persons"</span>)
+    <span class="java&#45;keyword">public</span> List&#60;PersonPojo&#62; getAllPersons() &#123;
+        //method mapped at subpath <span class="java&#45;quote">"/persons"</span> and HTTP method GET
+    &#125;<p class="paragraph"/>    @MethodMapping(value = <span class="java&#45;quote">"/persons/&#123;personIndex&#125;"</span>, httpMethod = HttpMethod.DELETE)
+    <span class="java&#45;keyword">public</span> void deletePerson(<span class="java&#45;object">int</span> personIndex) &#123;
+        //method mapped at subpath <span class="java&#45;quote">"/persons/&#123;personIndex&#125;"</span> and HTTP method DELETE. 
+        //Segment &#123;personIndex&#125; will contain an integer value as index.
+    &#125;<p class="paragraph"/>    @MethodMapping(value = <span class="java&#45;quote">"/persons"</span>, httpMethod = HttpMethod.POST)
+    <span class="java&#45;keyword">public</span> void createPerson(@RequestBody PersonPojo personPojo) &#123;
+        //creates a <span class="java&#45;keyword">new</span> instance of PersonPojo reading it from request body
+    &#125;</pre></div><p class="paragraph"/><code>MethodMapping</code> requires to specify the subpath we want to map the method to. In addition we can specify also the HTTP method that must be used to invoke the method via REST (GET, POST, DELETE, PATCH, etc...). This value can be specified with enum class <code>HttpMethod</code> and is GET by default. 
+In the code above we can see annotation <code>RequestBody</code> which is used to extract the value of a method parameter from the request body (method createPerson).
+To write/read objects to response/from request, <code>AbstractRestResource</code> uses an implementation of interface <code>IWebSerialDeserial</code> which defines the following methods:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> IWebSerialDeserial &#123;<p class="paragraph"/>       <span class="java&#45;keyword">public</span> void objectToResponse(<span class="java&#45;object">Object</span> targetObject, WebResponse response, <span class="java&#45;object">String</span> mimeType) <span class="java&#45;keyword">throws</span> Exception;<p class="paragraph"/>       <span class="java&#45;keyword">public</span> &#60;T&#62; T requestToObject(WebRequest request, <span class="java&#45;object">Class</span>&#60;T&#62; argClass, <span class="java&#45;object">String</span> mimeType) <span class="java&#45;keyword">throws</span> Exception;<p class="paragraph"/>       <span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isMimeTypeSupported(<span class="java&#45;object">String</span> mimeType);
+    &#125;</pre></div><p class="paragraph"/>To convert segments value (which are strings) to parameters type, <code>AbstractRestResource</code> uses the standard Wicket mechanism based on the application converter locator:<p class="paragraph"/><div class="code"><pre>//<span class="java&#45;keyword">return</span> the converter <span class="java&#45;keyword">for</span> type clazz
+    IConverter converter = Application.get().getConverterLocator().getConverter(clazz);
+    //convert string to object
+    <span class="java&#45;keyword">return</span> converter.convertToObject(value, Session.get().getLocale());</pre></div><p class="paragraph"/>In order to promote the principle of convention over configuration, we don't need to use any annotation to map method parameters to path parameters if they are declared in the same order. If we need to manually bind method parameters to path parameters we can use annotation <code>PathParam</code>.<p class="paragraph"/><div class="code"><pre>@MethodMapping(value = <span class="java&#45;quote">"/variable/&#123;p1&#125;/order/&#123;p2&#125;"</span>, produces = RestMimeTypes.PLAIN_TEXT)
+    <span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> testParamOutOfOrder(<code>PathParam(<span class="java&#45;quote">"p2"</span>) <span class="java&#45;object">String</span> textParam, </code>PathParam(<span class="java&#45;quote">"p1"</span>) <span class="java&#45;object">int</span> intParam) &#123;
+        //method parameter textParam is taken from path param 'p2', <span class="java&#45;keyword">while</span> intParam uses 'p1'
+    &#125;</pre></div><p class="paragraph"/>As JSON is de-facto standard format for REST API, the project comes also with a ready-to-use resource (<code>GsonRestResource</code>) and a serial/deserial (<code>GsonSerialDeserial</code>) that work with JSON format (both inside module <code>'restannotations-json'</code>). These classes use Gson as JSON library.<p class="paragraph"/><code>AbstractRestResource</code> supports role-based authorizations for mapped method with annotation <code>AuthorizeInvocation</code>:<p class="paragraph"/><div class="code"><pre>@MethodMapping(value = <span class="java&#45;quote">"/admin"</span>, httpMethod = HttpMethod.GET)
+    @AuthorizeInvocation(<span class="java&#45;quote">"ROLE_ADMIN"</span>)
+    <span class="java&#45;keyword">public</span> void testMethodAdminAuth() &#123;<p class="paragraph"/>    &#125;</pre></div><p class="paragraph"/>To use annotation <code>AuthorizeInvocation</code> we must specify in the resource construcor an instance of Wicket interface <code>IRoleCheckingStrategy</code>.<p class="paragraph"/>To read the complete documentation of the module and to discover more advanced feature please refer to the <a href="https://github.com/wicketstuff/core/blob/master/jdk-1.6-parent/wicketstuff-restannotations-parent" target="blank">project homepage</a>
+
+
+
                 <div style="clear:both;margin-top:15px;"></div>
                 
                     <div class="toc-item prev-left"><a href="../guide/maven.html">&lt;&lt; <strong>25</strong><span>Working with Maven (Appendix)</span></a></div>
@@ -290,7 +321,7 @@ add(grid);</pre></div><p class="paragraph"/>In the code above we have used conve
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-02-22)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-03-05)</b>
 
     
 </div>

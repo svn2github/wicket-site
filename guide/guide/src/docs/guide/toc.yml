@@ -203,6 +203,7 @@ wicketstuff:
   wicketstuff_3: Module wicketstuff-gmap3
   wicketstuff_4: Module wicketstuff-googlecharts
   wicketstuff_5: Module wicketstuff-inmethod-grid
+  wicketstuff_6: Module wicketstuff-rest-annotations
 redirects:
   title: Lost In Redirection With Apache Wicket (Appendix)
 contributing:
