@@ -114,11 +114,12 @@ resources:
   resources_5: Resource dependencies
   resources_6: Aggregate multiple risources with resource bundles
   resources_7: Put JavaScript inside page body
-  resources_8: Custom resources
-  resources_9: Mounting resources
-  resources_10: Shared resources
-  resources_11: Customizing resource loading
-  resources_12: Summary
+  resources_8: Header contributors positioning
+  resources_9: Custom resources
+  resources_10: Mounting resources
+  resources_11: Shared resources
+  resources_12: Customizing resource loading
+  resources_13: Summary
 jsintegration:
   title: An example of integration with JavaScript
   jsintegration_1: What we want to do...

@@ -1,12 +1,12 @@
-Some web developers prefer to put their <script> tags at the end of page body instead of inside the <header> tags:
+Some web developers prefer to put their <script> tags at the end of page body instead of inside the <head> tags:
 
 {code:html}
 
 <html>
 
-<header>
+<head>
 //no <script> tag here...
-</header>
+</head>
 
 <body>
 ...

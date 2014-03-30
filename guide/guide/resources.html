@@ -180,19 +180,22 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0px"><a href="#resources_7"><strong>15.7</strong><span>Put JavaScript inside page body</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#resources_8"><strong>15.8</strong><span>Custom resources</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#resources_8"><strong>15.8</strong><span>Header contributors positioning</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#resources_9"><strong>15.9</strong><span>Mounting resources</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#resources_9"><strong>15.9</strong><span>Custom resources</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#resources_10"><strong>15.10</strong><span>Shared resources</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#resources_10"><strong>15.10</strong><span>Mounting resources</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#resources_11"><strong>15.11</strong><span>Customizing resource loading</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#resources_11"><strong>15.11</strong><span>Shared resources</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#resources_12"><strong>15.12</strong><span>Summary</span></a>
+                    <div class="toc-item" style="margin-left:0px"><a href="#resources_12"><strong>15.12</strong><span>Customizing resource loading</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#resources_13"><strong>15.13</strong><span>Summary</span></a>
                     </div>
                     
                 </div>
@@ -285,9 +288,9 @@ A specific resource reference can not be shared among different resource bundles
 
 
 <h2 id="resources_7">15.7 Put JavaScript inside page body</h2>
-Some web developers prefer to put their &#60;script&#62; tags at the end of page body instead of inside the &#60;header&#62; tags:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;<p class="paragraph"/>&#60;header&#62;
+Some web developers prefer to put their &#60;script&#62; tags at the end of page body instead of inside the &#60;head&#62; tags:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;<p class="paragraph"/>&#60;head&#62;
 //no &#60;script&#62; tag here&#8230;
-&#60;/header&#62;<p class="paragraph"/>&#60;body&#62;
+&#60;/head&#62;<p class="paragraph"/>&#60;body&#62;
 &#8230;
 &#60;script&#62;
 //one or more &#60;script&#62; tags at the end of the body
@@ -326,32 +329,24 @@ The following code is taken from the Application class of the project:<p class="
     &#125;</pre></div><p class="paragraph"/>Looking at the code above you can note that our page adds two script to the header section: the first is an instance of <code>JavaScriptHeaderItem</code> and will be rendered in the <code>HeaderResponseContainer</code> while the second will follow the usual behavior and will be rendered inside &#60;head&#62; tag.<p class="paragraph"/><p class="paragraph"/>
 
 
-<h2 id="resources_8">15.8 Custom resources</h2>
-<p class="paragraph"/>In Wicket the best way to add dynamic functionalities to our application (such as csv export, a pdf generated on the fly, etc...) is implementing a custom resource. In this paragraph as example of custom resource we will build a basic RSS feeds generator which can be used to publish feeds on our site (project CustomResourceMounting). Instead of generating a RSS feed by hand we will use Rome framework and its utility classes.<p class="paragraph"/>As hinted above in paragraph 13.1, class <code>AbstractResource</code> can be used as base class to implement new resources. This class defines abstract method <code>newResourceResponse</code> which is invoked when the resource is requested. The following is the code of our RSS feeds generator:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RSSProducerResource <span class="java&#45;keyword">extends</span> AbstractResource &#123;<p class="paragraph"/>  @Override
-  <span class="java&#45;keyword">protected</span> ResourceResponse newResourceResponse(Attributes attributes) &#123;
-    ResourceResponse resourceResponse = <span class="java&#45;keyword">new</span> ResourceResponse();
-    resourceResponse.setContentType(<span class="java&#45;quote">"text/xml"</span>);
-    resourceResponse.setTextEncoding(<span class="java&#45;quote">"utf&#45;8"</span>);<p class="paragraph"/>    resourceResponse.setWriteCallback(<span class="java&#45;keyword">new</span> WriteCallback()
-    &#123;
-      @Override
-      <span class="java&#45;keyword">public</span> void writeData(Attributes attributes) <span class="java&#45;keyword">throws</span> IOException
-      &#123;
-        OutputStream outputStream = attributes.getResponse().getOutputStream();
-        Writer writer = <span class="java&#45;keyword">new</span> OutputStreamWriter(outputStream);
-        SyndFeedOutput output = <span class="java&#45;keyword">new</span> SyndFeedOutput();
-            <span class="java&#45;keyword">try</span> &#123;
-          output.output(getFeed(), writer);
-        &#125; <span class="java&#45;keyword">catch</span> (FeedException e) &#123;
-          <span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> WicketRuntimeException(<span class="java&#45;quote">"Problems writing feed to response..."</span>);
-        &#125;
-      &#125;      
-    &#125;);<p class="paragraph"/>    <span class="java&#45;keyword">return</span> resourceResponse;
-  &#125;
-  // method getFeed()&#8230;
-&#125;</pre></div><p class="paragraph"/>Method <code>newResourceResponse</code> returns an instance of <code>ResourceResponse</code> representing the response generated by the custom resource. Since RSS feeds are based on XML, in the code above we have set the type of the response to text/xml and the text encoding to utf-8.<p class="paragraph"/>To specify the content that will be returned by our resource we must also provide an implementation of inner class <code>WriteCallback</code> which is responsible for writing content data to response's output stream. In our project we used class SyndFeedOutput from Rome framework to write our feed to response. Method <code>getFeed()</code> is just an utility method that generates a sample RSS feed (which is an instance of interface <code>com.sun.syndication.feed.synd.SyndFeed</code>).<p class="paragraph"/>Now that we have our custom resource in place, we can use it in the home page of the project. The easiest way to make a resource available to users is to expose it with link component <code>ResourceLink</code>:<p class="paragraph"/><div class="code"><pre>add(<span class="java&#45;keyword">new</span> ResourceLink(<span class="java&#45;quote">"rssLink"</span>, <span class="java&#45;keyword">new</span> RSSProducerResource()));</pre></div><p class="paragraph"/>In the next paragraphs we will see how to register a resource at application-level and how to mount it to an arbitrary URL.
+<h2 id="resources_8">15.8 Header contributors positioning</h2>
+Starting from version 6.15.0 we can specify where header contributors must be rendered inside &#60;head&#62; tag using the placeholder tag <code>&#60;wicket:header-items/&#62;</code>:<p class="paragraph"/><div class="code"><pre>&#60;head&#62;
+  &#60;meta chartset=<span class="java&#45;quote">"UTF&#45;8"</span>/&#62;
+  &#60;wicket:header&#45;items/&#62;
+  &#60;script src=<span class="java&#45;quote">"my&#45;monkey&#45;patch&#45;of&#45;wicket&#45;ajax.js"</span>&#62;&#60;/script&#62;
+&#60;/head&#62;</pre></div><p class="paragraph"/>With the code above all header contributions done by using IHeaderResponse in your Java code or the special <code>&#60;wicket:head&#62;</code> tag will be put between the &#60;meta&#62; and &#60;script&#62; elements, i.e. in the place of <code>&#60;wicket:header-items/&#62;</code>.<p class="paragraph"/>This way you can make sure that some header item is always before or after the header items managed by Wicket.<p class="paragraph"/><code>&#60;wicket:header-items/&#62;</code> can be used only in the page's &#60;head&#62; element and there could be at most one instance of it.
 
 
-<h2 id="resources_9">15.9 Mounting resources</h2>
+
+<h2 id="resources_9">15.9 Custom resources</h2>
+<p class="paragraph"/>Starting from version 6.15.0 we can specify where header contributors must be rendered inside &#60;head&#62; tag using the placeholder tag <code>&#60;wicket:header-items/&#62;</code>:<p class="paragraph"/><div class="code"><pre>&#60;head&#62;
+  &#60;meta chartset=<span class="java&#45;quote">"UTF&#45;8"</span>/&#62;
+  &#60;wicket:header&#45;items/&#62;
+  &#60;script src=<span class="java&#45;quote">"my&#45;monkey&#45;patch&#45;of&#45;wicket&#45;ajax.js"</span>&#62;&#60;/script&#62;
+&#60;/head&#62;</pre></div><p class="paragraph"/>With the code above all header contributions done by using IHeaderResponse in your Java code or the special <code>&#60;wicket:head&#62;</code> tag will be put between the &#60;meta&#62; and &#60;script&#62; elements, i.e. in the place of <code>&#60;wicket:header-items/&#62;</code>.<p class="paragraph"/>This way you can make sure that some header item is always before or after the header items managed by Wicket.<p class="paragraph"/><code>&#60;wicket:header-items/&#62;</code> can be used only in the page's &#60;head&#62; element and there could be at most one instance of it.
+
+
+<h2 id="resources_10">15.10 Mounting resources</h2>
 <p class="paragraph"/>Just like pages also resources can be mounted to a specific path. Class <code>WebApplication</code> provides method <code>mountResource</code> which is almost identical to <code>mountPage</code> seen in paragraph 8.6.1:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;
   <span class="java&#45;keyword">super</span>.init();
@@ -377,7 +372,7 @@ The following code is taken from the Application class of the project:<p class="
 &#125;</pre></div>
 
 
-<h2 id="resources_10">15.10 Shared resources</h2>
+<h2 id="resources_11">15.11 Shared resources</h2>
 <p class="paragraph"/>Resources can be added to a global registry in order to share them at application-level. Shared resources are identified by an application-scoped key and they can be easily retrieved at a later time using reference class <code>SharedResourceReference</code>. The global registry can be accessed with <code>Application</code>'s method <code>getSharedResources</code>. In the following excerpt of code (taken again from project <code>CustomResourceMounting</code>) we register an instance of our custom RSS feeds producer as application-shared resource:<p class="paragraph"/><div class="code"><pre>//init application's method
   @Override
   <span class="java&#45;keyword">public</span> void init()&#123;
@@ -391,7 +386,7 @@ Remember that we can get the URL of a resource reference using method <code>urlF
 </blockquote>
 
 
-<h2 id="resources_11">15.11 Customizing resource loading</h2>
+<h2 id="resources_12">15.12 Customizing resource loading</h2>
 <p class="paragraph"/>Wicket loads application's resources delegating this task to a resource locator represented by interface <code>org.apache.wicket.core.util.resource.locator.IResourceStreamLocator</code>. To retrieve or modify the current resource locator we can use the getter and setter methods defined by setting interface <code>IResourceSettings</code>:<p class="paragraph"/><div class="code"><pre>//init application's method
   @Override
   <span class="java&#45;keyword">public</span> void init()&#123;   
@@ -409,7 +404,7 @@ By default, if resource files can not be found inside application classpath, Wic
 </blockquote>
 
 
-<h2 id="resources_12">15.12 Summary</h2>
+<h2 id="resources_13">15.13 Summary</h2>
 In this chapter we have learnt how to manage resources with the built-in mechanism provided by Wicket. With this mechanism we handle resources from Java code and Wicket will automatically take care of generating a valid URL for them. We have also seen how resources can be bundled as package resources with a component that depends on them to make it self-contained.<p class="paragraph"/>Then, in the second part of the chapter, we have built a custom resource and we have learnt how to mount it to an arbitrary URL and how to make it globally available as shared resource.<p class="paragraph"/>Finally, in the last part of the paragraph we took a peek at the mechanism provided by the framework to customize the locations where the resource-lookup algorithm searches for resources. 
 
 
@@ -440,7 +435,7 @@ In this chapter we have learnt how to manage resources with the built-in mechani
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-03-05)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-03-30)</b>
 
     
 </div>

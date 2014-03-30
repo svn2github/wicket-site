@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>15.9 Mounting resources 6.x</title>
+    <title>15.9 Custom resources 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -146,7 +146,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>15.9 Mounting resources - Reference Documentation</h1>
+                    <h1>15.9 Custom resources - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -159,30 +159,12 @@ function addJsClass() {
 
                 
 
-<h2 id="resources_9">15.9 Mounting resources</h2>
-<p class="paragraph"/>Just like pages also resources can be mounted to a specific path. Class <code>WebApplication</code> provides method <code>mountResource</code> which is almost identical to <code>mountPage</code> seen in paragraph 8.6.1:<p class="paragraph"/><div class="code"><pre>@Override
-<span class="java&#45;keyword">public</span> void init() &#123;
-  <span class="java&#45;keyword">super</span>.init();
-  //resource mounted to path /foo/bar
-  ResourceReference resourceReference = <span class="java&#45;keyword">new</span> ResourceReference(<span class="java&#45;quote">"rssProducer"</span>)&#123;
-     RSSReaderResource rssResource = <span class="java&#45;keyword">new</span> RSSReaderResource();
-     @Override
-     <span class="java&#45;keyword">public</span> IResource getResource() &#123;
-	<span class="java&#45;keyword">return</span> rssResource;
-  &#125;&#125;;
-  mountResource(<span class="java&#45;quote">"/foo/bar"</span>, resourceReference);
-&#125;</pre></div><p class="paragraph"/>With the configuration above (taken from project <code>CustomResourceMounting</code>) every request to /foo/bar will be served by the custom resource built in the previous paragraph.<p class="paragraph"/>Parameter placeholders are supported as well:<p class="paragraph"/><div class="code"><pre>@Override
-<span class="java&#45;keyword">public</span> void init() &#123;
-  <span class="java&#45;keyword">super</span>.init();
-  //resource mounted to path /foo with a required indexed parameter
-  ResourceReference resourceReference = <span class="java&#45;keyword">new</span> ResourceReference(<span class="java&#45;quote">"rssProducer"</span>)&#123;
-     RSSReaderResource rssResource = <span class="java&#45;keyword">new</span> RSSReaderResource();
-     @Override
-     <span class="java&#45;keyword">public</span> IResource getResource() &#123;
-	<span class="java&#45;keyword">return</span> rssResource;
-  &#125;&#125;;
-  mountResource(<span class="java&#45;quote">"/bar/$&#123;baz&#125;"</span>, resourceReference);
-&#125;</pre></div>
+<h2 id="resources_9">15.9 Custom resources</h2>
+<p class="paragraph"/>Starting from version 6.15.0 we can specify where header contributors must be rendered inside &#60;head&#62; tag using the placeholder tag <code>&#60;wicket:header-items/&#62;</code>:<p class="paragraph"/><div class="code"><pre>&#60;head&#62;
+  &#60;meta chartset=<span class="java&#45;quote">"UTF&#45;8"</span>/&#62;
+  &#60;wicket:header&#45;items/&#62;
+  &#60;script src=<span class="java&#45;quote">"my&#45;monkey&#45;patch&#45;of&#45;wicket&#45;ajax.js"</span>&#62;&#60;/script&#62;
+&#60;/head&#62;</pre></div><p class="paragraph"/>With the code above all header contributions done by using IHeaderResponse in your Java code or the special <code>&#60;wicket:head&#62;</code> tag will be put between the &#60;meta&#62; and &#60;script&#62; elements, i.e. in the place of <code>&#60;wicket:header-items/&#62;</code>.<p class="paragraph"/>This way you can make sure that some header item is always before or after the header items managed by Wicket.<p class="paragraph"/><code>&#60;wicket:header-items/&#62;</code> can be used only in the page's &#60;head&#62; element and there could be at most one instance of it.
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -211,7 +193,7 @@ function addJsClass() {
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-03-05)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-03-30)</b>
 
     
 </div>
