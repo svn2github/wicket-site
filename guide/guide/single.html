@@ -4603,7 +4603,7 @@ To write/read objects to response/from request, <code>AbstractRestResource</code
         //method parameter textParam is taken from path param 'p2', <span class="java&#45;keyword">while</span> intParam uses 'p1'
     &#125;</pre></div><p class="paragraph"/>As JSON is de-facto standard format for REST API, the project comes also with a ready-to-use resource (<code>GsonRestResource</code>) and a serial/deserial (<code>GsonSerialDeserial</code>) that work with JSON format (both inside module <code>'restannotations-json'</code>). These classes use Gson as JSON library.<p class="paragraph"/><code>AbstractRestResource</code> supports role-based authorizations for mapped method with annotation <code>AuthorizeInvocation</code>:<p class="paragraph"/><div class="code"><pre>@MethodMapping(value = <span class="java&#45;quote">"/admin"</span>, httpMethod = HttpMethod.GET)
     @AuthorizeInvocation(<span class="java&#45;quote">"ROLE_ADMIN"</span>)
-    <span class="java&#45;keyword">public</span> void testMethodAdminAuth() &#123;<p class="paragraph"/>    &#125;</pre></div><p class="paragraph"/>To use annotation <code>AuthorizeInvocation</code> we must specify in the resource construcor an instance of Wicket interface <code>IRoleCheckingStrategy</code>.<p class="paragraph"/>To read the complete documentation of the module and to discover more advanced feature please refer to the <a href="https://github.com/wicketstuff/core/blob/master/jdk-1.6-parent/wicketstuff-restannotations-parent" target="blank">project homepage</a>
+    <span class="java&#45;keyword">public</span> void testMethodAdminAuth() &#123;<p class="paragraph"/>    &#125;</pre></div><p class="paragraph"/>To use annotation <code>AuthorizeInvocation</code> we must specify in the resource construcor an instance of Wicket interface <code>IRoleCheckingStrategy</code>.<p class="paragraph"/>To read the complete documentation of the module and to discover more advanced feature please refer to the <a href="https://github.com/wicketstuff/core/blob/master/jdk-1.7-parent/wicketstuff-restannotations-parent" target="blank">project homepage</a>
 
 
 
@@ -4689,7 +4689,7 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
         <div id="footer">
             
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-03-30)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-04-10)</b>
 
             
         </div>
