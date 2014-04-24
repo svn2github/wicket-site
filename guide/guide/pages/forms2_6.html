@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>12.6 Multi-line text input 6.x</title>
+    <title>12.6 Nested forms 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -146,7 +146,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>12.6 Multi-line text input - Reference Documentation</h1>
+                    <h1>12.6 Nested forms - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -159,8 +159,17 @@ function addJsClass() {
 
                 
 
-<h2 id="forms2_6">12.6 Multi-line text input</h2>
-<p class="paragraph"/>HTML provides a multi-line text input control with &#60;textarea&#62; tag. The Wicket counterpart for this kind of control is <code>org.apache.wicket.markup.html.form.TextArea</code> component:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;textarea wicket:id=<span class="java&#45;quote">"description"</span> rows=<span class="java&#45;quote">"5"</span> cols=<span class="java&#45;quote">"40"</span>&#62;&#60;/textarea&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre>form.add(<span class="java&#45;keyword">new</span> TextArea(<span class="java&#45;quote">"description"</span>, Model.of(<span class="java&#45;quote">""</span>)));</pre></div><p class="paragraph"/>Component TextArea is used just like any other single-line text field. To specify the size of the text area we can write attributes rows and cols directly in the markup file or we can create new attribute modifiers and add them to our TextArea component.
+<h2 id="forms2_6">12.6 Nested forms</h2>
+<p class="paragraph"/>As you might already known, HTLM doesn't allow to have nested forms. However with Wicket we can overcome this limitation by adding one or more form components to a parent form.<p class="paragraph"/>This can be useful if we want to split a big form into smaller ones in order to reuse them and to better distribute responsibilities among different components.
+Forms can be nested to an arbitrary level:<p class="paragraph"/><div class="code"><pre>&#60;form wicket:id=<span class="java&#45;quote">"outerForm"</span>&#62; 
+	&#8230;
+	&#60;form wicket:id=<span class="java&#45;quote">"innerForm"</span>&#62; 
+		&#8230;
+		&#60;form wicket:id=<span class="java&#45;quote">"veryInnerForm"</span>&#62;
+			&#8230;
+		&#60;/form&#62; 
+	&#60;/form&#62; 
+&#60;/form&#62;</pre></div><p class="paragraph"/>When a form is submitted also its nested forms are submitted and they participate in the validation step. This means that if a nested form contains invalid input values, the outer form won't be submitted. On the contrary, nested forms can be singularly submitted without depending on the status of their outer form.<p class="paragraph"/>To submit a parent form when one of its children forms is submitted, we must override its method wantSubmitOnNestedFormSubmit and make it return true. 
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -189,7 +198,7 @@ function addJsClass() {
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-04-10)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-04-24)</b>
 
     
 </div>

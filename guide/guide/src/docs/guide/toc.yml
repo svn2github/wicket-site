@@ -81,15 +81,16 @@ forms2:
   forms2_1: Default form processing
   forms2_2: Form validation and feedback messages
   forms2_3: Input value conversion
-  forms2_4: Submit form with an IFormSubmittingComponent
-  forms2_5: Nested forms
-  forms2_6: Multi-line text input
-  forms2_7: File upload
-  forms2_8: Creating complex form components with FormComponentPanel
-  forms2_9: Stateless form
-  forms2_10: Working with radio buttons and checkboxes
-  forms2_11: Selecting multiple values with ListMultipleChoices and Palette
-  forms2_12: Summary
+  forms2_4: Validation with JSR 303
+  forms2_5: Submit form with an IFormSubmittingComponent
+  forms2_6: Nested forms
+  forms2_7: Multi-line text input
+  forms2_8: File upload
+  forms2_9: Creating complex form components with FormComponentPanel
+  forms2_10: Stateless form
+  forms2_11: Working with radio buttons and checkboxes
+  forms2_12: Selecting multiple values with ListMultipleChoices and Palette
+  forms2_13: Summary
 repeaters:
   title: Displaying multiple items with repeaters
   repeaters_1: The RepeatingView Component

@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>12.10 Working with radio buttons and checkboxes 6.x</title>
+    <title>12.10 Stateless form 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -146,7 +146,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>12.10 Working with radio buttons and checkboxes - Reference Documentation</h1>
+                    <h1>12.10 Stateless form - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -159,74 +159,49 @@ function addJsClass() {
 
                 
 
-<h2 id="forms2_10">12.10 Working with radio buttons and checkboxes</h2>
-<p class="paragraph"/>In this paragraph we will see which components can be used to handle HTML radio buttons and checkboxes. Both these input elements are usually grouped together to display a list of possible choices:<p class="paragraph"/><img border="0" class="center" src="../img/choice-form-screenshot.png"></img><p class="paragraph"/>A check box can be used as single component to set a boolean property. For this purpose Wicket provides the <code>org.apache.wicket.markup.html.form.CheckBox</code> component which must be attached to &#60;input type="checkbox".../&#62; tag. In the next example (project SingleCheckBox) we will consider a form similar to the one used in paragraph 9.5 to edit a Person object, but with an additional checkbox to let the user decide if she wants to subscribe to our mailing list or not. The form uses the following bean as backing object:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class RegistrationInfo <span class="java&#45;keyword">implements</span> Serializable &#123;<p class="paragraph"/>	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> name;
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> surname;
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> address;
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> email;
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">boolean</span> subscribeList;<p class="paragraph"/>	/&#42;Getters and setters&#42;/
-&#125;</pre></div><p class="paragraph"/>The markup and the code for this example are the following:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;		
-		&#60;div style=<span class="java&#45;quote">"display: table;"</span>&#62;
-			&#60;div style=<span class="java&#45;quote">"display: table&#45;row;"</span>&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;Name: &#60;/div&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;
-					&#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"name"</span>/&#62; 
-				&#60;/div&#62;	
-			&#60;/div&#62;
-			&#60;div style=<span class="java&#45;quote">"display: table&#45;row;"</span>&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;Surname: &#60;/div&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;
-					&#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"surname"</span>/&#62;
-				&#60;/div&#62;	
-			&#60;/div&#62;
-			&#60;div style=<span class="java&#45;quote">"display: table&#45;row;"</span>&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;Address: &#60;/div&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;
-					&#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"address"</span>/&#62;
-				&#60;/div&#62;	
-			&#60;/div&#62;
-			&#60;div style=<span class="java&#45;quote">"display: table&#45;row;"</span>&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;Email: &#60;/div&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;
-					&#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"email"</span>/&#62;
-				&#60;/div&#62;
-			&#60;/div&#62;
-			&#60;div style=<span class="java&#45;quote">"display: table&#45;row;"</span>&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;Subscribe list:&#60;/div&#62;
-				&#60;div style=<span class="java&#45;quote">"display: table&#45;cell;"</span>&#62;
-					&#60;input type=<span class="java&#45;quote">"checkbox"</span> wicket:id=<span class="java&#45;quote">"subscribeList"</span>/&#62;
-				&#60;/div&#62;
-			&#60;/div&#62;
-		&#60;/div&#62;	
-	&#60;input type=<span class="java&#45;quote">"submit"</span> value=<span class="java&#45;quote">"Save"</span>/&#62;
-&#60;/form&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
-    	RegistrationInfo registrtionInfo = <span class="java&#45;keyword">new</span> RegistrationInfo();
-    	registrtionInfo.setSubscribeList(<span class="java&#45;keyword">true</span>);<p class="paragraph"/>    	Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>, 
-    			<span class="java&#45;keyword">new</span> CompoundPropertyModel&#60;RegistrationInfo&#62;(registrtionInfo));<p class="paragraph"/>    	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"name"</span>));
-	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"surname"</span>));
-	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"address"</span>));
-	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"email"</span>));
-	form.add(<span class="java&#45;keyword">new</span> CheckBox(<span class="java&#45;quote">"subscribeList"</span>));<p class="paragraph"/>	add(form);
-&#125;</pre></div><p class="paragraph"/>Please note that the checkbox will be initially selected because we have set to true the subscribe flag during the model object creation (with instruction registrtionInfo.setSubscribeList(true)):<p class="paragraph"/><img border="0" class="center" src="../img/subscribe-checkbox-set.png"></img><p class="paragraph"/><h3>Working with grouped checkboxes</h3><p class="paragraph"/>When we need to display a given number of options with checkboxes, we can use the <code>org.apache.wicket.markup.html.form.CheckBoxMultipleChoice</code> component. For example, If our options are a list of strings, we can display them in this way:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;div wicket:id=<span class="java&#45;quote">"checkGroup"</span>&#62;
-		&#60;input type=<span class="java&#45;quote">"checkbox"</span>/&#62;It will be replaced by the actual checkboxes&#8230;
-&#60;/div&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre>List&#60;<span class="java&#45;object">String</span>&#62; fruits = Arrays.asList(<span class="java&#45;quote">"apple"</span>, <span class="java&#45;quote">"strawberry"</span>, <span class="java&#45;quote">"watermelon"</span>); 
-form.add(<span class="java&#45;keyword">new</span> CheckBoxMultipleChoice(<span class="java&#45;quote">"checkGroup"</span>, <span class="java&#45;keyword">new</span> ListModel&#60;<span class="java&#45;object">String</span>&#62;(<span class="java&#45;keyword">new</span>  
-								 ArrayList&#60;<span class="java&#45;object">String</span>&#62;()), fruits));</pre></div><p class="paragraph"/><strong class="bold">Screenshot:</strong><p class="paragraph"/><img border="0" class="center" src="../img/grouped-checkbox.png"></img><p class="paragraph"/>This component can be attached to a &#60;div&#62; tag or to a &#60;span&#62; tag. No specific content is required for this tag as it will be populated with the actual checkboxes. Since this component allows multiple selection, its model object is a list. In the example above we have used model class <code>org.apache.wicket.model.util.ListModel</code> which is specifically designed to wrap a List object.<p class="paragraph"/>By default CheckBoxMultipleChoice inserts a &#60;br/&#62; tag as suffix after each option. We can configure both the suffix and the prefix used by the component with the setPrefix and setSuffix methods.<p class="paragraph"/>When our options are more complex objects than simple strings, we can render them using an IChoiceRender, as we did for DropDownChoice in paragraph 9.4:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;div wicket:id=<span class="java&#45;quote">"checkGroup"</span>&#62;
-		&#60;input type=<span class="java&#45;quote">"checkbox"</span>/&#62;It will be replaced by actual checkboxes&#8230;
-&#60;/div&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre>Person john = <span class="java&#45;keyword">new</span> Person(<span class="java&#45;quote">"John"</span>, <span class="java&#45;quote">"Smith"</span>);
-Person bob = <span class="java&#45;keyword">new</span> Person(<span class="java&#45;quote">"Bob"</span>, <span class="java&#45;quote">"Smith"</span>);
-Person jill = <span class="java&#45;keyword">new</span> Person(<span class="java&#45;quote">"Jill"</span>, <span class="java&#45;quote">"Smith"</span>);
-List&#60;Person&#62; theSmiths = Arrays.asList(john, bob, jill); 
-ChoiceRenderer render = <span class="java&#45;keyword">new</span> ChoiceRenderer(<span class="java&#45;quote">"name"</span>);
-     	form.add(<span class="java&#45;keyword">new</span> CheckBoxMultipleChoice(<span class="java&#45;quote">"checkGroup"</span>, <span class="java&#45;keyword">new</span> ListModel&#60;<span class="java&#45;object">String</span>&#62;(<span class="java&#45;keyword">new</span> ArrayList&#60;<span class="java&#45;object">String</span>&#62;()),   
-                                    theSmiths, render));</pre></div><p class="paragraph"/><strong class="bold">Screenshot:</strong><p class="paragraph"/><img border="0" class="center" src="../img/grouped-checkbox2.png"></img><p class="paragraph"/><h3>How to implement a "Select all" checkbox</h3><p class="paragraph"/>A nice feature we can offer to users when we have a group of checkboxes is a “special” checkbox which selects/unselects all the other options of the group:<p class="paragraph"/><img border="0" class="center" src="../img/select-all-checkbox.png"></img><p class="paragraph"/>Wicket comes with a couple of utility components that make it easy to implement such a feature. They are CheckboxMultipleChoiceSelector and CheckBoxSelector classes, both inside package <code>org.apache.wicket.markup.html.form</code>. The difference between these two components is that the first works with an instance of CheckBoxMultipleChoice while the second takes in input a list of CheckBox objects:<p class="paragraph"/><div class="code"><pre>/&#42; CheckboxMultipleChoiceSelector usage: &#42;/<p class="paragraph"/>CheckBoxMultipleChoice checkGroup;
-//checkGroup initialization&#8230;
-CheckboxMultipleChoiceSelector cbmcs = <span class="java&#45;keyword">new</span> CheckboxMultipleChoiceSelector(<span class="java&#45;quote">"id"</span>, checkGroup);<p class="paragraph"/>/&#42; CheckBoxSelector usage: &#42;/<p class="paragraph"/>CheckBox checkBox1, checkBox2, checkBox3;
-//checks initialization&#8230;
-CheckBoxSelector cbmcs = <span class="java&#45;keyword">new</span> CheckBoxSelector(<span class="java&#45;quote">"id"</span>, checkBox1, checkBox2, checkBox3);</pre></div><p class="paragraph"/><h3>Working with grouped radio buttons</h3><p class="paragraph"/>For groups of radio buttons we can use the <code>org.apache.wicket.markup.html.form.RadioChoice</code> component which works in much the same way as CheckBoxMultipleChoice:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;div wicket:id=<span class="java&#45;quote">"radioGroup"</span>&#62;
-	&#60;input type=<span class="java&#45;quote">"radio"</span>/&#62;It will be replaced by actual radio buttons&#8230;
-&#60;/div&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre>List&#60;<span class="java&#45;object">String</span>&#62; fruits = Arrays.asList(<span class="java&#45;quote">"apple"</span>, <span class="java&#45;quote">"strawberry"</span>, <span class="java&#45;quote">"watermelon"</span>); 
-form.add(<span class="java&#45;keyword">new</span> RadioChoice(<span class="java&#45;quote">"radioGroup"</span>, Model.of(<span class="java&#45;quote">""</span>), fruits));</pre></div><p class="paragraph"/><strong class="bold">Screenshot:</strong><p class="paragraph"/><img border="0" class="center" src="../img/grouped-radiobutton.png"></img><p class="paragraph"/>Just like CheckBoxMultipleChoice, this component provides the setPrefix and setSuffix methods to configure the prefix and suffix for our options and it supports IChoiceRender as well. In addition, RadioChoice provides the wantOnSelectionChangedNotifications() method to notify the web server when the selected option changes (this is the same method seen for DropDownChoice in paragraph 9.4).
+<h2 id="forms2_10">12.10 Stateless form</h2>
+<p class="paragraph"/>In chapter 6 we have seen how Wicket pages can be divided into two categories: stateful and stateless. Pages that are stateless don't need to be stored in the user session and they should be used  when we don't need to save any user data in the user session (for example in the public area of a site).<p class="paragraph"/>Besides saving resources on server-side, stateless pages can be adopted to improve user experience and to avoid security weaknesses. A typical situation where a stateless page can bring these benefits is when we have to implement a login page.<p class="paragraph"/>For this kind of page we might encounter two potential problems if we chose to use a stateful page. The first problem occurs when the user tries to login without a valid session assigned to him. This could happen if the user leaves the login page opened for a period of time bigger than the session's timeout and then he decides to log in. Under these conditions the user will be redirected to a 'Page expired' error page, which is not exactly a nice thing for user experience.<p class="paragraph"/>The second problem occurs when a malicious user or a web crawler program attempts to login into our web application, generating a huge number of page versions and consequently increasing the size of the user session.<p class="paragraph"/>To avoid these kinds of problems we should build a stateless login page which does not depend on a user session. Wicket provides a special version of the Form component called StatelessForm which is stateless by default (i.e its method getStatelessHint() returns true), hence it's an ideal solution when we want to build a stateless page with a form. A possible implementation of our login form is the following (example project StatelessLoginForm):<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;html&#62;
+   &#60;head&#62;
+      &#60;meta charset=<span class="java&#45;quote">"utf&#45;8"</span> /&#62;
+   &#60;/head&#62;
+   &#60;body&#62;
+      &#60;div&#62;Session is &#60;b wicket:id=<span class="java&#45;quote">"sessionType"</span>&#62;&#60;/b&#62;&#60;/div&#62;
+      &#60;br/&#62;
+      &#60;div&#62;Type 'user' as correct credentials&#60;/div&#62;
+      &#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+         &#60;fieldset&#62;
+            Username: &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span>/&#62; &#60;br/&#62;
+            Password: &#60;input type=<span class="java&#45;quote">"password"</span> wicket:id=<span class="java&#45;quote">"password"</span>/&#62;&#60;br/&#62;
+            &#60;input type=<span class="java&#45;quote">"submit"</span>/&#62;
+         &#60;/fieldset&#62;
+      &#60;/form&#62;
+      &#60;br/&#62;
+      &#60;div wicket:id=<span class="java&#45;quote">"feedbackPanel"</span>&#62;&#60;/div&#62;
+   &#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;
+    <span class="java&#45;keyword">private</span> Label sessionType;
+    <span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> password;
+    <span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> username;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
+       StatelessForm form = <span class="java&#45;keyword">new</span> StatelessForm(<span class="java&#45;quote">"form"</span>)&#123;
+         @Override
+         <span class="java&#45;keyword">protected</span> void onSubmit() &#123;
+            //sign in <span class="java&#45;keyword">if</span> username and password are “user”
+            <span class="java&#45;keyword">if</span>(<span class="java&#45;quote">"user"</span>.equals(username) &#38;&#38; username.equals(password))
+               info(<span class="java&#45;quote">"Username and password are correct!"</span>);
+            <span class="java&#45;keyword">else</span>
+               error(<span class="java&#45;quote">"Wrong username or password"</span>);
+         &#125;
+      &#125;;<p class="paragraph"/>      form.add(<span class="java&#45;keyword">new</span> PasswordTextField(<span class="java&#45;quote">"password"</span>));
+      form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"username"</span>));<p class="paragraph"/>      add(form.setDefaultModel(<span class="java&#45;keyword">new</span> CompoundPropertyModel(<span class="java&#45;keyword">this</span>)));<p class="paragraph"/>      add(sessionType = <span class="java&#45;keyword">new</span> Label(<span class="java&#45;quote">"sessionType"</span>, Model.of(<span class="java&#45;quote">""</span>)));
+      add(<span class="java&#45;keyword">new</span> FeedbackPanel(<span class="java&#45;quote">"feedbackPanel"</span>));
+    &#125;<p class="paragraph"/>    @Override
+    <span class="java&#45;keyword">protected</span> void onBeforeRender() &#123;
+       <span class="java&#45;keyword">super</span>.onBeforeRender();<p class="paragraph"/>       <span class="java&#45;keyword">if</span>(getSession().isTemporary())
+          sessionType.setDefaultModelObject(<span class="java&#45;quote">"temporary"</span>);
+       <span class="java&#45;keyword">else</span>
+          sessionType.setDefaultModelObject(<span class="java&#45;quote">"permanent"</span>);
+    &#125;
+&#125;</pre></div><p class="paragraph"/>Label sessionType shows if current session is temporary or not and is set inside onBeforeRender(): if our page is really stateless the session will be always temporary. We have also inserted a feedback panel in the home page that shows if the credentials are correct. This was done to make the example form more interactive.
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -255,7 +230,7 @@ form.add(<span class="java&#45;keyword">new</span> RadioChoice(<span class="java
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-04-10)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-04-24)</b>
 
     
 </div>

@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>12.5 Nested forms 6.x</title>
+    <title>12.5 Submit form with an IFormSubmittingComponent 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -146,7 +146,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>12.5 Nested forms - Reference Documentation</h1>
+                    <h1>12.5 Submit form with an IFormSubmittingComponent - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -159,17 +159,55 @@ function addJsClass() {
 
                 
 
-<h2 id="forms2_5">12.5 Nested forms</h2>
-<p class="paragraph"/>As you might already known, HTLM doesn't allow to have nested forms. However with Wicket we can overcome this limitation by adding one or more form components to a parent form.<p class="paragraph"/>This can be useful if we want to split a big form into smaller ones in order to reuse them and to better distribute responsibilities among different components.
-Forms can be nested to an arbitrary level:<p class="paragraph"/><div class="code"><pre>&#60;form wicket:id=<span class="java&#45;quote">"outerForm"</span>&#62; 
-	&#8230;
-	&#60;form wicket:id=<span class="java&#45;quote">"innerForm"</span>&#62; 
-		&#8230;
-		&#60;form wicket:id=<span class="java&#45;quote">"veryInnerForm"</span>&#62;
-			&#8230;
-		&#60;/form&#62; 
-	&#60;/form&#62; 
-&#60;/form&#62;</pre></div><p class="paragraph"/>When a form is submitted also its nested forms are submitted and they participate in the validation step. This means that if a nested form contains invalid input values, the outer form won't be submitted. On the contrary, nested forms can be singularly submitted without depending on the status of their outer form.<p class="paragraph"/>To submit a parent form when one of its children forms is submitted, we must override its method wantSubmitOnNestedFormSubmit and make it return true. 
+<h2 id="forms2_5">12.5 Submit form with an IFormSubmittingComponent</h2>
+<p class="paragraph"/>Besides submitting forms with a standard HTML submit button, Wicket allows us to use special components which implement interface IFormSubmittingComponent. This entity is a subinterface of  IFormSubmitter:<p class="paragraph"/><img border="0" class="center" src="../img/class-diag-IFormSubmittingComponent.png"></img><p class="paragraph"/>At the beginning of this chapter we have seen that form processing is started by process method which takes as input an instance of IFormSubmitter. This parameter corresponds to the IFormSubmittingComponent clicked by a user to submit the form and it is null if we have used a standard HTML submit button (like we have done so far).<p class="paragraph"/>A submitting component is added to a form just like any other child component using method add(Component...).<p class="paragraph"/>A form can have any number of submitting components and we can specify which one among them is the default one by calling the Form's method setDefaultButton(IFormSubmittingComponent  component). The default submitter is the one that will be used when user presses 'Enter' key in a field of the form. In order to make the default button work, Wicket will add to our form a hidden &#60;div&#62; tag containing a text field and a submit button with some JavaScript code to trigger it:<p class="paragraph"/><div class="code"><pre>&#60;div style=<span class="java&#45;quote">"width:0px;height:0px;position:absolute;left:&#45;100px;top:&#45;100px;overflow:hidden"</span>&#62;
+	&#60;input type=<span class="java&#45;quote">"text"</span> autocomplete=<span class="java&#45;quote">"off"</span>/&#62;
+	&#60;input type=<span class="java&#45;quote">"submit"</span> name=<span class="java&#45;quote">"submit2"</span> onclick=<span class="java&#45;quote">" <span class="java&#45;keyword">var</span> b=document...."</span>/&#62;
+&#60;/div&#62;</pre></div><p class="paragraph"/>Just like Wicket forms, interface IFormSubmitter defines methods onSubmit and onError. These two methods have the priority over the namesake methods of the form, meaning that when a form is submitted with an IFormSubmitter, the onSubmit of the submitter is called before the one of the form. Similarly, if validation errors occurs during the first step of form processing, submitter's method onError is called before the form's one.<p class="paragraph"/><blockquote class="note">
+Starting with Wicket version 6.0 interface IFormSubmitter defines a further callback method called onAfterSubmit(). This method is called after form's method onSubmit() has been executed.
+</blockquote><p class="paragraph"/><h3>Components Button and SubmitLink</h3><p class="paragraph"/>Component <code>org.apache.wicket.markup.html.form.Button</code> is a basic implementation of a form submitter. It can be used with either the &#60;input&#62; or &#60;button&#62; tags. The string model received as input by its constructor is used as button label and it will be the value of the markup attribute value.<p class="paragraph"/>In the following snippet we have a form with two submit buttons bound to an &#60;input&#62; tag. One of them is set as default button and both have a string model for the label:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;body&#62;
+		&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+			Username: &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span>/&#62;
+			&#60;br/&#62;
+			&#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit1"</span>/&#62;
+			&#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit2"</span>/&#62;
+		&#60;/form&#62;
+&#60;/body&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;		
+		Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);<p class="paragraph"/>     	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"username"</span>, Model.of(<span class="java&#45;quote">""</span>)));
+    	form.add(<span class="java&#45;keyword">new</span> Button(<span class="java&#45;quote">"submit1"</span>, Model.of(<span class="java&#45;quote">"First submitter"</span>)));
+		Button secondSubmitter;
+		form.add(secondSubmitter = <span class="java&#45;keyword">new</span> Button(<span class="java&#45;quote">"submit2"</span>, Model.of(<span class="java&#45;quote">"Second submitter"</span>)));<p class="paragraph"/>    	form.setDefaultButton(secondSubmitter);
+		add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Generated markup:</strong><p class="paragraph"/><div class="code"><pre>&#60;form wicket:id=<span class="java&#45;quote">"form"</span> id=<span class="java&#45;quote">"form1"</span> method=<span class="java&#45;quote">"post"</span> action=<span class="java&#45;quote">"?0&#45;1.IFormSubmitListener&#45;form"</span>&#62;
+   &#60;div&#62;
+      &#8230;
+      &#60;!&#45;&#45; Code generated by Wicket to handle the <span class="java&#45;keyword">default</span> button &#45;&#45;&#62;
+      &#8230;
+   &#60;/div&#62;			
+   Username: &#60;input type=<span class="java&#45;quote">"text"</span> wicket:id=<span class="java&#45;quote">"username"</span> value=<span class="java&#45;quote">""</span> name=<span class="java&#45;quote">"username"</span>/&#62;
+   &#60;br/&#62;
+   &#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit1"</span> name=<span class="java&#45;quote">"submit1"</span> id=<span class="java&#45;quote">"submit13"</span> value=<span class="java&#45;quote">"First submitter"</span>/&#62;
+   &#60;input type=<span class="java&#45;quote">"submit"</span> wicket:id=<span class="java&#45;quote">"submit2"</span> name=<span class="java&#45;quote">"submit2"</span> id=<span class="java&#45;quote">"submit22"</span> value=<span class="java&#45;quote">"Second submitter"</span>/&#62;
+&#60;/form&#62;</pre></div><p class="paragraph"/>Another component that can be used to submit a form is <code>org.apache.wicket.markup.html.form.SubmitLink</code>. This component uses JavaScript to submit the form. Like the name suggests, the component can be used with the &#60;a&#62; tag but it can be also bound to any other tag that supports the event handler onclick. When used with the &#60;a&#62; tag, the JavaScript code needed to submit the form will be placed inside href attribute while with other tags the script will go inside the event handler onclick.<p class="paragraph"/>A notable difference between this component and Button is that SubmitLink can be placed outside the form it must submit. In this case we must specify the form to submit in its constructor:<p class="paragraph"/><strong class="bold">HTML:</strong><p class="paragraph"/><div class="code"><pre>&#60;html xmlns:wicket=<span class="java&#45;quote">"http://wicket.apache.org"</span>&#62;
+&#60;head&#62;
+	&#60;/head&#62;
+	&#60;body&#62;
+	&#60;form wicket:id=<span class="java&#45;quote">"form"</span>&#62;
+			Password: &#60;input type=<span class="java&#45;quote">"password"</span> wicket:id=<span class="java&#45;quote">"password"</span>/&#62;
+			&#60;br/&#62;					
+		&#60;/form&#62;
+		&#60;button wicket:id=<span class="java&#45;quote">"externalSubmitter"</span>&#62;
+			Submit
+		&#60;/button&#62;
+	&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/><strong class="bold">Java code:</strong><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class HomePage <span class="java&#45;keyword">extends</span> WebPage &#123;<p class="paragraph"/>    <span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;		
+		Form form = <span class="java&#45;keyword">new</span> Form(<span class="java&#45;quote">"form"</span>);<p class="paragraph"/>		form.add(<span class="java&#45;keyword">new</span> PasswordTextField(<span class="java&#45;quote">"password"</span>, Model.of(<span class="java&#45;quote">""</span>)));
+		//specify the form to submit
+		add(<span class="java&#45;keyword">new</span> SubmitLink(<span class="java&#45;quote">"externalSubmitter"</span>, form));
+		add(form);
+    &#125;
+&#125;</pre></div><p class="paragraph"/><h3>Disabling default form processing</h3><p class="paragraph"/>With an IFormSubmittingComponent we can choose to skip the default form submission process  by setting the appropriate flag to false with the setDefaultFormProcessing method. When the default form processing is disabled only the submitter's onSubmit is called while form's validation and models updating are skipped.<p class="paragraph"/>This can be useful if we want to implement a “Cancel” button on our form which redirects user to another page without validating his/her input.<p class="paragraph"/>When we set this flag to false we can decide to manually invoke the form processing by calling the process(IFormSubmittingComponent) method.
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -198,7 +236,7 @@ Forms can be nested to an arbitrary level:<p class="paragraph"/><div class="code
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-04-10)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-04-24)</b>
 
     
 </div>

@@ -1,187 +1,78 @@
 
 
-In this paragraph we will see which components can be used to handle HTML radio buttons and checkboxes. Both these input elements are usually grouped together to display a list of possible choices:
+In chapter 6 we have seen how Wicket pages can be divided into two categories: stateful and stateless. Pages that are stateless don't need to be stored in the user session and they should be used  when we don't need to save any user data in the user session (for example in the public area of a site).
 
-!choice-form-screenshot.png!
+Besides saving resources on server-side, stateless pages can be adopted to improve user experience and to avoid security weaknesses. A typical situation where a stateless page can bring these benefits is when we have to implement a login page. 
 
-A check box can be used as single component to set a boolean property. For this purpose Wicket provides the @org.apache.wicket.markup.html.form.CheckBox@ component which must be attached to <input type="checkbox".../> tag. In the next example (project SingleCheckBox) we will consider a form similar to the one used in paragraph 9.5 to edit a Person object, but with an additional checkbox to let the user decide if she wants to subscribe to our mailing list or not. The form uses the following bean as backing object:
+For this kind of page we might encounter two potential problems if we chose to use a stateful page. The first problem occurs when the user tries to login without a valid session assigned to him. This could happen if the user leaves the login page opened for a period of time bigger than the session's timeout and then he decides to log in. Under these conditions the user will be redirected to a 'Page expired' error page, which is not exactly a nice thing for user experience.
+
+The second problem occurs when a malicious user or a web crawler program attempts to login into our web application, generating a huge number of page versions and consequently increasing the size of the user session.
+
+To avoid these kinds of problems we should build a stateless login page which does not depend on a user session. Wicket provides a special version of the Form component called StatelessForm which is stateless by default (i.e its method getStatelessHint() returns true), hence it's an ideal solution when we want to build a stateless page with a form. A possible implementation of our login form is the following (example project StatelessLoginForm):
+
+*HTML:*
+
+{code:html}
+<html>
+   <head>
+      <meta charset="utf-8" />
+   </head>
+   <body>
+      <div>Session is <b wicket:id="sessionType"></b></div>
+      <br/>
+      <div>Type 'user' as correct credentials</div>
+      <form wicket:id="form">
+         <fieldset>
+            Username: <input type="text" wicket:id="username"/> <br/>
+            Password: <input type="password" wicket:id="password"/><br/>
+            <input type="submit"/>
+         </fieldset>
+      </form>
+      <br/>
+      <div wicket:id="feedbackPanel"></div>
+   </body>
+</html>
+{code}
+
+*Java code:*
 
 {code}
-public class RegistrationInfo implements Serializable {
-	
-	private String name;
-	private String surname;
-	private String address;
-	private String email;
-	private boolean subscribeList;
-	
-	/*Getters and setters*/
+public class HomePage extends WebPage {
+    private Label sessionType;
+    private String password;
+    private String username;
+    
+    public HomePage(final PageParameters parameters) {
+       StatelessForm form = new StatelessForm("form"){
+         @Override
+         protected void onSubmit() {
+            //sign in if username and password are “user”
+            if("user".equals(username) && username.equals(password))
+               info("Username and password are correct!");
+            else
+               error("Wrong username or password");
+         }
+      };
+      
+      form.add(new PasswordTextField("password"));
+      form.add(new TextField("username"));      
+      
+      add(form.setDefaultModel(new CompoundPropertyModel(this)));
+      
+      add(sessionType = new Label("sessionType", Model.of("")));
+      add(new FeedbackPanel("feedbackPanel"));
+    }
+    
+    @Override
+    protected void onBeforeRender() {
+       super.onBeforeRender();
+       
+       if(getSession().isTemporary())
+          sessionType.setDefaultModelObject("temporary");
+       else
+          sessionType.setDefaultModelObject("permanent");
+    }
 }
 {code}
 
-The markup and the code for this example are the following:
-
-*HTML:*
-
-{code:html}
-<form wicket:id="form">		
-		<div style="display: table;">
-			<div style="display: table-row;">
-				<div style="display: table-cell;">Name: </div>
-				<div style="display: table-cell;">
-					<input type="text" wicket:id="name"/> 
-				</div>	
-			</div>
-			<div style="display: table-row;">
-				<div style="display: table-cell;">Surname: </div>
-				<div style="display: table-cell;">
-					<input type="text" wicket:id="surname"/>
-				</div>	
-			</div>
-			<div style="display: table-row;">
-				<div style="display: table-cell;">Address: </div>
-				<div style="display: table-cell;">
-					<input type="text" wicket:id="address"/>
-				</div>	
-			</div>
-			<div style="display: table-row;">
-				<div style="display: table-cell;">Email: </div>
-				<div style="display: table-cell;">
-					<input type="text" wicket:id="email"/>
-				</div>
-			</div>
-			<div style="display: table-row;">
-				<div style="display: table-cell;">Subscribe list:</div>
-				<div style="display: table-cell;">
-					<input type="checkbox" wicket:id="subscribeList"/>
-				</div>
-			</div>
-		</div>	
-	<input type="submit" value="Save"/>
-</form>
-{code}
-
-*Java code:*
-
-{code}
-public HomePage(final PageParameters parameters) {
-    	RegistrationInfo registrtionInfo = new RegistrationInfo();
-    	registrtionInfo.setSubscribeList(true);
-    	
-    	Form form = new Form("form", 
-    			new CompoundPropertyModel<RegistrationInfo>(registrtionInfo));		
-		
-    	form.add(new TextField("name"));
-	form.add(new TextField("surname"));
-	form.add(new TextField("address"));
-	form.add(new TextField("email"));
-	form.add(new CheckBox("subscribeList"));
-		
-	add(form);
-}
-{code}
-
-Please note that the checkbox will be initially selected because we have set to true the subscribe flag during the model object creation (with instruction registrtionInfo.setSubscribeList(true)):
-
-!subscribe-checkbox-set.png!
-
-h3. Working with grouped checkboxes
-
-When we need to display a given number of options with checkboxes, we can use the @org.apache.wicket.markup.html.form.CheckBoxMultipleChoice@ component. For example, If our options are a list of strings, we can display them in this way:
-
-*HTML:*
-
-{code:html}
-<div wicket:id="checkGroup">
-		<input type="checkbox"/>It will be replaced by the actual checkboxes...
-</div>
-{code}
-
-*Java code:*
-
-{code}
-List<String> fruits = Arrays.asList("apple", "strawberry", "watermelon"); 
-form.add(new CheckBoxMultipleChoice("checkGroup", new ListModel<String>(new  
-								 ArrayList<String>()), fruits));
-{code}
-
-*Screenshot:*
-
-!grouped-checkbox.png!
-
-This component can be attached to a <div> tag or to a <span> tag. No specific content is required for this tag as it will be populated with the actual checkboxes. Since this component allows multiple selection, its model object is a list. In the example above we have used model class @org.apache.wicket.model.util.ListModel@ which is specifically designed to wrap a List object.
-
-By default CheckBoxMultipleChoice inserts a <br/> tag as suffix after each option. We can configure both the suffix and the prefix used by the component with the setPrefix and setSuffix methods.
-
-When our options are more complex objects than simple strings, we can render them using an IChoiceRender, as we did for DropDownChoice in paragraph 9.4:
-
-*HTML:*
-
-{code:html}
-<div wicket:id="checkGroup">
-		<input type="checkbox"/>It will be replaced by actual checkboxes...
-</div>
-{code}
-
-*Java code:*
-
-{code}
-Person john = new Person("John", "Smith");
-Person bob = new Person("Bob", "Smith");
-Person jill = new Person("Jill", "Smith");
-List<Person> theSmiths = Arrays.asList(john, bob, jill); 
-ChoiceRenderer render = new ChoiceRenderer("name");
-     	form.add(new CheckBoxMultipleChoice("checkGroup", new ListModel<String>(new ArrayList<String>()),   
-                                    theSmiths, render));
-{code}
-
-*Screenshot:*
-
-!grouped-checkbox2.png!
-
-h3. How to implement a "Select all" checkbox
-
-A nice feature we can offer to users when we have a group of checkboxes is a “special” checkbox which selects/unselects all the other options of the group:
-
-!select-all-checkbox.png!
-
-Wicket comes with a couple of utility components that make it easy to implement such a feature. They are CheckboxMultipleChoiceSelector and CheckBoxSelector classes, both inside package @org.apache.wicket.markup.html.form@. The difference between these two components is that the first works with an instance of CheckBoxMultipleChoice while the second takes in input a list of CheckBox objects:
-
-{code}
-/* CheckboxMultipleChoiceSelector usage: */
-
-CheckBoxMultipleChoice checkGroup;
-//checkGroup initialization...
-CheckboxMultipleChoiceSelector cbmcs = new CheckboxMultipleChoiceSelector("id", checkGroup);
-
-/* CheckBoxSelector usage: */
-
-CheckBox checkBox1, checkBox2, checkBox3;
-//checks initialization...
-CheckBoxSelector cbmcs = new CheckBoxSelector("id", checkBox1, checkBox2, checkBox3);
-{code}
-
-h3. Working with grouped radio buttons
-
-For groups of radio buttons we can use the @org.apache.wicket.markup.html.form.RadioChoice@ component which works in much the same way as CheckBoxMultipleChoice:
-
-*HTML:*
-
-{code:html}
-<div wicket:id="radioGroup">
-	<input type="radio"/>It will be replaced by actual radio buttons...
-</div>
-{code}
-
-*Java code:*
-
-{code}
-List<String> fruits = Arrays.asList("apple", "strawberry", "watermelon"); 
-form.add(new RadioChoice("radioGroup", Model.of(""), fruits));
-{code}
-
-*Screenshot:*
-
-!grouped-radiobutton.png!
-
-Just like CheckBoxMultipleChoice, this component provides the setPrefix and setSuffix methods to configure the prefix and suffix for our options and it supports IChoiceRender as well. In addition, RadioChoice provides the wantOnSelectionChangedNotifications() method to notify the web server when the selected option changes (this is the same method seen for DropDownChoice in paragraph 9.4).
+Label sessionType shows if current session is temporary or not and is set inside onBeforeRender(): if our page is really stateless the session will be always temporary. We have also inserted a feedback panel in the home page that shows if the credentials are correct. This was done to make the example form more interactive.
