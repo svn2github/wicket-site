@@ -117,11 +117,8 @@
 		<a name="Navigation-Docs" id="Navigation-Docs"></a>API Docs
 	</h5>
 	<ul>
-		<!--li>
-			<a href="http://ci.apache.org/projects/wicket/apidocs/7.x/" title="JavaDocs of Apache Wicket 7.x">Wicket 7</a>
-		</li-->
 		<li>
-			<a href="http://ci.apache.org/projects/wicket/apidocs/6.x/" title="JavaDocs of Apache Wicket 6.x">Wicket 6</a>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/6.x/" title="JavaDocs of Apache Wicket 6.x">Wicket 6.x</a>
 		</li>
 		<li>
 			<a href="http://ci.apache.org/projects/wicket/apidocs/1.5.x/" title="JavaDocs of Apache Wicket 1.5.x">Wicket 1.5</a>
@@ -131,6 +128,18 @@
 		</li>
 		<li>
 			<a href="http://ci.apache.org/projects/wicket/apidocs/1.3.x" title="JavaDocs of Apache Wicket 1.3.x">Wicket 1.3</a>
+		</li>
+	</ul>
+	<h5>Wicket 7.x</h5>
+	<ul>
+		<li>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1">Download M1</a>
+		</li>
+		<li>
+			<a href="https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+7.0">Migration guide</a>
+		</li>
+		<li>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/7.x/" title="JavaDocs of Apache Wicket 7.x">API Docs 7.x</a>
 		</li>
 	</ul>
 	<h5>
@@ -180,23 +189,23 @@
 
 <p>Any feedback about the new features, their implementation and their documentation is very welcome!</p>
 
-<h1 id='new_and_noteworthy_in_600beta3'>New and Noteworthy in 6.0.0-beta3</h1>
+<h1 id="new_and_noteworthy_in_600beta3">New and Noteworthy in 6.0.0-beta3</h1>
 
-<p><strong>NOTA BENE:</strong> the use of modules that are marked experimental, by being part of the sub module &#8216;wicket-experimental&#8217;, are really that: experimental. These modules can change, disappear or blow up your computer without notice and you really use/depend on them at your own risk.</p>
+<p><strong>NOTA BENE:</strong> the use of modules that are marked experimental, by being part of the sub module ‘wicket-experimental’, are really that: experimental. These modules can change, disappear or blow up your computer without notice and you really use/depend on them at your own risk.</p>
 
-<h2 id='wicket_native_websockets'>Wicket Native Websockets</h2>
+<h2 id="wicket_native_websockets">Wicket Native Websockets</h2>
 
 <p>A new <strong>experimental</strong> module has been added to Wicket 6 - Wicket Native WebSocket. This module adds support for using HTML5 WebSockets as you may use Ajax in your Wicket applications.</p>
 
 <p>All you have to do is to add a WebSocketBehavior to your page and from there on you can receive messages from the clients and push messages back to them.</p>
 
-<p>At <a href='https://cwiki.apache.org/confluence/x/0vSoAQ'>our wiki</a> you may find the documentation and a link to a demo application.</p>
+<p>At <a href="https://cwiki.apache.org/confluence/x/0vSoAQ">our wiki</a> you may find the documentation and a link to a demo application.</p>
 
 <p>If something is not clear feel free to ask your question in the mailing lists and we will improve the documentation.</p>
 
-<h2 id='wicket_bootstrap'>Wicket Bootstrap</h2>
+<h2 id="wicket_bootstrap">Wicket Bootstrap</h2>
 
-<p>The <strong>experimental</strong> modules now contain a new module for integration with Twitter&#8217;s Bootstrap. Currently this module only provides a central way of using the Bootstrap resources. In the future we will provide proper components and behaviors for the Bootstrap concepts.</p>
+<p>The <strong>experimental</strong> modules now contain a new module for integration with Twitter’s Bootstrap. Currently this module only provides a central way of using the Bootstrap resources. In the future we will provide proper components and behaviors for the Bootstrap concepts.</p>
 
 <p>To use this new <strong>experimental</strong> module, add this to your pom:</p>
 
@@ -217,11 +226,11 @@ public void renderHead(IHeaderResponse response) {
 
 <p>This will render a dependency to the Twitter bootstrap CSS and JS files, including the required dependency to JQuery.</p>
 
-<h2 id='new_wicket_examples'>New Wicket Examples</h2>
+<h2 id="new_wicket_examples">New Wicket Examples</h2>
 
 <p>We have started an effort to revamp the tried and tested Wicket Examples and bring them into 2012. The new examples are located in the <strong>experimental</strong> module.</p>
 
-<p>It is currently a copy of Twitter Bootstrap&#8217;s design but with Wicket specific filling.</p>
+<p>It is currently a copy of Twitter Bootstrap’s design but with Wicket specific filling.</p>
 
 <p>You can test the examples by running the</p>
 
@@ -231,7 +240,7 @@ public void renderHead(IHeaderResponse response) {
 
 <p>The examples will feature a component reference with typical use cases, full examples such as Hello, World, and descriptions of the code in play.</p>
 
-<h2 id='wicket_atmosphere'>Wicket Atmosphere</h2>
+<h2 id="wicket_atmosphere">Wicket Atmosphere</h2>
 
 <p>Wicket Atmosphere in the experimental modules has seen an upgrade of the Atmosphere dependency to 1.0.0-beta3. This has caused an incompatibility with Jetty 7.6.3 (used with Wicket and the examples). To mitigate this, you need to override either:</p>
 
@@ -241,16 +250,16 @@ public void renderHead(IHeaderResponse response) {
 <li>the dependency on Atmosphere to 0.9.5 (0.9.6 and 0.9.7 are broken as well)</li>
 </ul>
 
-<p>See <a href='https://issues.apache.org/jira/browse/WICKET-4656'>WICKET-4656</a> for more information regarding this issue.</p>
+<p>See <a href="https://issues.apache.org/jira/browse/WICKET-4656">WICKET-4656</a> for more information regarding this issue.</p>
 
-<h1 id='this_release'>This release</h1>
+<h1 id="this_release">This release</h1>
 
 <ul>
-<li>Check the roadmap with a list of the major goals: <a href='https://cwiki.apache.org/confluence/display/WICKET/Wicket+6.0+Roadmap'>6.0 roadmap</a></li>
+<li>Check the roadmap with a list of the major goals: <a href="https://cwiki.apache.org/confluence/display/WICKET/Wicket+6.0+Roadmap">6.0 roadmap</a></li>
 
-<li>And the migration guide with all major and some minor changes between 1.5.x and 6.x series: <a href='http://s.apache.org/wicket-6.0-migration'>migration guide</a></li>
+<li>And the migration guide with all major and some minor changes between 1.5.x and 6.x series: <a href="http://s.apache.org/wicket-6.0-migration">migration guide</a></li>
 
-<li>The Jira changelog of all closed ticket at Jira: <a href='http://s.apache.org/wicket-6.0.0-beta3-changelog'>changelog</a></li>
+<li>The Jira changelog of all closed ticket at Jira: <a href="http://s.apache.org/wicket-6.0.0-beta3-changelog">changelog</a></li>
 </ul>
 
 <p>To use it in Maven:</p>

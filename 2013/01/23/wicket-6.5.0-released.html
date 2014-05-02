@@ -117,11 +117,8 @@
 		<a name="Navigation-Docs" id="Navigation-Docs"></a>API Docs
 	</h5>
 	<ul>
-		<!--li>
-			<a href="http://ci.apache.org/projects/wicket/apidocs/7.x/" title="JavaDocs of Apache Wicket 7.x">Wicket 7</a>
-		</li-->
 		<li>
-			<a href="http://ci.apache.org/projects/wicket/apidocs/6.x/" title="JavaDocs of Apache Wicket 6.x">Wicket 6</a>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/6.x/" title="JavaDocs of Apache Wicket 6.x">Wicket 6.x</a>
 		</li>
 		<li>
 			<a href="http://ci.apache.org/projects/wicket/apidocs/1.5.x/" title="JavaDocs of Apache Wicket 1.5.x">Wicket 1.5</a>
@@ -131,6 +128,18 @@
 		</li>
 		<li>
 			<a href="http://ci.apache.org/projects/wicket/apidocs/1.3.x" title="JavaDocs of Apache Wicket 1.3.x">Wicket 1.3</a>
+		</li>
+	</ul>
+	<h5>Wicket 7.x</h5>
+	<ul>
+		<li>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1">Download M1</a>
+		</li>
+		<li>
+			<a href="https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+7.0">Migration guide</a>
+		</li>
+		<li>
+			<a href="http://ci.apache.org/projects/wicket/apidocs/7.x/" title="JavaDocs of Apache Wicket 7.x">API Docs 7.x</a>
 		</li>
 	</ul>
 	<h5>
@@ -178,13 +187,13 @@
 
 <p>This release marks the fifth minor release of Wicket 6. Starting with Wicket 6 we use semantic versioning for the future development of Wicket, and as such no API breaks are present in this release compared to 6.0.0.</p>
 
-<h3 id='new_and_noteworthy'>New and noteworthy</h3>
+<h3 id="new_and_noteworthy">New and noteworthy</h3>
 
-<h4 id='behavioronremovecomponent'>Behavior.onRemove(Component)</h4>
+<h4 id="behavioronremovecomponent">Behavior.onRemove(Component)</h4>
 
 <p>org.apache.wicket.Behavior has a new method - #onRemove(Component). This callback method is called when a host component of this behavior is removed from its parent.</p>
 
-<h4 id='global_updaters_for_ajax_request_attributes'>Global updaters for Ajax request attributes</h4>
+<h4 id="global_updaters_for_ajax_request_attributes">Global updaters for Ajax request attributes</h4>
 
 <p>By registering a custom AjaxRequestTarget.AbstractListener the application can manipulate all the attributes for all Ajax requests.</p>
 
@@ -201,9 +210,9 @@
 </code></pre></div>
 <p>Each Ajax behavior/component can override such global settings.</p>
 
-<h3 id='using_this_release'>Using this release</h3>
+<h3 id="using_this_release">Using this release</h3>
 
-<p>With Apache Maven update your dependency to (and don&#8217;t forget to update any other dependencies on Wicket projects to the same version):</p>
+<p>With Apache Maven update your dependency to (and don’t forget to update any other dependencies on Wicket projects to the same version):</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
@@ -213,12 +222,12 @@
 <p>Or download and build the distribution yourself, or use our convenience binary package</p>
 
 <ul>
-<li>Source: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.5.0'>http://www.apache.org/dyn/closer.cgi/wicket/6.5.0</a></li>
+<li>Source: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.5.0">http://www.apache.org/dyn/closer.cgi/wicket/6.5.0</a></li>
 
-<li>Binary: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.5.0/binaries'>http://www.apache.org/dyn/closer.cgi/wicket/6.5.0/binaries</a></li>
+<li>Binary: <a href="http://www.apache.org/dyn/closer.cgi/wicket/6.5.0/binaries">http://www.apache.org/dyn/closer.cgi/wicket/6.5.0/binaries</a></li>
 </ul>
 
-<h3 id='upgrading_from_earlier_versions'>Upgrading from earlier versions</h3>
+<h3 id="upgrading_from_earlier_versions">Upgrading from earlier versions</h3>
 
 <p>If you upgrade from 6.y.z this release is a drop in replacement. If you come from a version prior to 6.0.0, please read our Wicket 6 migration guide found at</p>
 
@@ -228,13 +237,13 @@
 
 <p>— The Wicket team</p>
 
-<h3 id='release_notes__wicket__version_650'>Release Notes - Wicket - Version 6.5.0</h3>
+<h3 id="release_notes__wicket__version_650">Release Notes - Wicket - Version 6.5.0</h3>
 
-<h4 id='subtask'>Sub-task</h4>
+<h4 id="subtask">Sub-task</h4>
 
 <pre><code>* [WICKET-4976](https://issues.apache.org/jira/browse/WICKET-4976) - WicketTester#startComponent(Component) doesn&#39;t detach the component and request cycle</code></pre>
 
-<h4 id='bug'>Bug</h4>
+<h4 id="bug">Bug</h4>
 
 <pre><code>* [WICKET-4906](https://issues.apache.org/jira/browse/WICKET-4906) - Form#visitFormComponents can cause ClassCastException
 * [WICKET-4925](https://issues.apache.org/jira/browse/WICKET-4925) - AbstractAjaxBehavior should clean stored reference to a component on unbind
@@ -258,7 +267,7 @@
 * [WICKET-4975](https://issues.apache.org/jira/browse/WICKET-4975) - client side memory leak on  date picker
 * [WICKET-4986](https://issues.apache.org/jira/browse/WICKET-4986) - wicket-ajax-jquery.js fails with &#39;member not found&#39; on IE for delayed ajax requests</code></pre>
 
-<h4 id='improvement'>Improvement</h4>
+<h4 id="improvement">Improvement</h4>
 
 <pre><code>* [WICKET-4919](https://issues.apache.org/jira/browse/WICKET-4919) - AjaxLazyLoadPanel needs a method to add components to the AjaxRequestTarget when the component is rendered
 * [WICKET-4933](https://issues.apache.org/jira/browse/WICKET-4933) - Palette does not handle disabled choices correctly
