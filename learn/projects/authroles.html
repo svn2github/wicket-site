@@ -4,6 +4,7 @@
     <title>Apache Wicket - Wicket Auth/Roles</title>
 
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/gh-fork-ribbon.css" type="text/css" />
 
     <!--[if lt ie 7]>
 	<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen" />
@@ -92,7 +93,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.15.0">Wicket 6.15</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.16.0">Wicket 6.16</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.11">Wicket 1.5</a>
@@ -133,7 +134,7 @@
 	<h5>Wicket 7.x</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1">Download M1</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M2">Download M2</a>
 		</li>
 		<li>
 			<a href="https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+7.0">Migration guide</a>
@@ -238,7 +239,8 @@
 <span class='c1'>// either bookmarkable or not</span>
 <span class='nd'>@AuthorizeInstantiation</span><span class='o'>(</span><span class='s'>&quot;ADMIN&quot;</span><span class='o'>)</span>
 <span class='kd'>public</span> <span class='kd'>class</span> <span class='nc'>AdminAnnotationsBookmarkablePage</span> <span class='kd'>extends</span> <span class='n'>WebPage</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>When someone who doesn&#8217;t have the role ADMIN, Wicket will not allow the page to be fully constructed and throw an authorization exception during the construction of the page. This will result in an access denied page for the user.</p>
 
 <p>Enablng the annotations for role based authorization is done by setting the <code>WebApplication#getSecuritySettings</code> value to <code>AnnotationsRoleAuthorizationStrategy</code>. Then you can use the auth/roles provided authorization annotations.</p>
@@ -271,9 +273,10 @@
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>wicket-auth-roles<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>6.15.0<span class='nt'>&lt;/version&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.16.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <h3 id='required_dependencies'>Required dependencies</h3>
 
 <p>Wicket Auth/Roles requires the following jar files to be on your classpath:</p>
@@ -292,6 +295,11 @@ are trademarks of The Apache Software Foundation. All other marks mentioned
 may be trademarks or registered trademarks of their respective owners.
 </span></div>
 
+    </div>
+    <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/apache/wicket">Fork me on GitHub</a>
+        </div>
     </div>
 </div>
 </body>

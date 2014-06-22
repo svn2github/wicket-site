@@ -4,6 +4,7 @@
     <title>Apache Wicket - Download Wicket releases</title>
 
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/gh-fork-ribbon.css" type="text/css" />
 
     <!--[if lt ie 7]>
 	<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen" />
@@ -92,7 +93,7 @@
 	</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.15.0">Wicket 6.15</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/6.16.0">Wicket 6.16</a>
 		</li>
 		<li>
 			<a href="http://www.apache.org/dyn/closer.cgi/wicket/1.5.11">Wicket 1.5</a>
@@ -133,7 +134,7 @@
 	<h5>Wicket 7.x</h5>
 	<ul>
 		<li>
-			<a href="http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1">Download M1</a>
+			<a href="http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M2">Download M2</a>
 		</li>
 		<li>
 			<a href="https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+7.0">Migration guide</a>
@@ -183,16 +184,16 @@
 
 		<div id="contentbody">
 			<h1>Download Wicket releases</h1>
-			<p>Apache Wicket 6.15.0 is the current stable release. Most users get Apache Wicket using <a href='#maven'>Apache Maven&#8217;s dependency management</a>, which incidentally is the most convenient way of obtaining the latest and greatest Wicket.</p>
+			<p>Apache Wicket 6.16.0 is the current stable release. Most users get Apache Wicket using <a href='#maven'>Apache Maven&#8217;s dependency management</a>, which incidentally is the most convenient way of obtaining the latest and greatest Wicket.</p>
 
 <h2 id='download'>Download</h2>
 
-<p>New projects should use <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.15.0'>Wicket 6.15.0</a> as their base.</p>
+<p>New projects should use <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.16.0'>Wicket 6.16.0</a> as their base.</p>
 
 <ul>
-<li><strong>Latest stable release</strong>: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.15.0'>6.15.0</a></li>
+<li><strong>Latest stable release</strong>: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.16.0'>6.16.0</a></li>
 
-<li><strong>Latest 6.x release</strong>: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.15.0'>6.15.0</a></li>
+<li><strong>Latest 6.x release</strong>: <a href='http://www.apache.org/dyn/closer.cgi/wicket/6.16.0'>6.16.0</a></li>
 
 <li><strong>Latest 1.5.x release</strong>: <a href='http://www.apache.org/dyn/closer.cgi/wicket/1.5.11'>1.5.11</a></li>
 
@@ -208,7 +209,7 @@
 <p>If you like to live on the cutting edge and help development of Wicket further along, you can try out the development milestone releases:</p>
 
 <ul>
-<li>Latest <strong>development milestone</strong> release for 7.x: <a href='http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1'>7.0.0-M1</a></li>
+<li>Latest <strong>development milestone</strong> release for 7.x: <a href='http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M2'>7.0.0-M2</a></li>
 </ul>
 
 <p>This release is not fit for production use yet: it is only intended for developers of Wicket, or for people trying out our development versions. API changes will occur between releases.</p>
@@ -261,16 +262,18 @@
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.apache.wicket<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>wicket-core<span class='nt'>&lt;/artifactId&gt;</span>
-    <span class='nt'>&lt;version&gt;</span>6.15.0<span class='nt'>&lt;/version&gt;</span>
+    <span class='nt'>&lt;version&gt;</span>6.16.0<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <p>For the SLF4J log4j binding:</p>
 <div class='highlight'><pre><code class='xml'><span class='nt'>&lt;dependency&gt;</span>
     <span class='nt'>&lt;groupId&gt;</span>org.slf4j<span class='nt'>&lt;/groupId&gt;</span>
     <span class='nt'>&lt;artifactId&gt;</span>slf4j-log4j12<span class='nt'>&lt;/artifactId&gt;</span>
     <span class='nt'>&lt;version&gt;</span>1.6.4<span class='nt'>&lt;/version&gt;</span>
 <span class='nt'>&lt;/dependency&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 <h2 id='snapshots_and_latest_bleedingedge_code'>SNAPSHOTs and latest bleeding-edge code</h2>
 
 <p>If you wish to build the latest code from scratch, master and branches live in the Git repository: https://git-wip-us.apache.org/repos/asf/wicket.git</p>
@@ -306,7 +309,8 @@
         <span class='nt'>&lt;layout&gt;</span>default<span class='nt'>&lt;/layout&gt;</span>
     <span class='nt'>&lt;/repository&gt;</span>
 <span class='nt'>&lt;/repositories&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
@@ -316,6 +320,11 @@ are trademarks of The Apache Software Foundation. All other marks mentioned
 may be trademarks or registered trademarks of their respective owners.
 </span></div>
 
+    </div>
+    <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/apache/wicket">Fork me on GitHub</a>
+        </div>
     </div>
 </div>
 </body>
