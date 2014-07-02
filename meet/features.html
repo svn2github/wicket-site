@@ -179,92 +179,95 @@
 		<li>
 			<a href="http://apache.org/foundation/thanks.html" class="external-link" rel="nofollow">Thanks</a>
 		</li>
+		<li>
+			<a href="/apache/friends.html" title="Apache projects using Wicket">Friends</a>
+		</li>
 	</ul>
 </div>
 
 		<div id="contentbody">
 			<h1>Features</h1>
-			<h2 id='pojo_component_model'>POJO Component Model</h2>
+			<h2 id="pojo_component_model">POJO Component Model</h2>
 
 <p>Pages and Components in Wicket are real Java objects that support encapsulation, inheritance and events.</p>
 
-<h2 id='ease_of_development'>Ease of Development</h2>
+<h2 id="ease_of_development">Ease of Development</h2>
 
 <p>Because Wicket is Java and HTML, you can leverage what you know about Java or your favorite HTML editor to write Wicket applications.</p>
 
-<h2 id='separation_of_concerns'>Separation of Concerns</h2>
+<h2 id="separation_of_concerns">Separation of Concerns</h2>
 
 <p>Wicket does not mix markup with Java code and adds no special syntax to your markup files. The worlds of HTML and Java are parallel and associated only by Wicket ids, which are attributes in HTML and Component properties in Java. Since Wicket HTML is just HTML and Wicket Java is just Java, coders and designers can work independently to a large degree and without relying on any special tools.</p>
 
-<h2 id='secure'>Secure</h2>
+<h2 id="secure">Secure</h2>
 
 <p>Wicket is secure by default. URLs do not expose sensitive information and all component paths are session-relative. Explicit steps must be taken to share information between sessions. Furthermore URL encryption allows highly secure web sites.</p>
 
-<h2 id='transparent_scalable_clustering_support'>Transparent, Scalable Clustering Support</h2>
+<h2 id="transparent_scalable_clustering_support">Transparent, Scalable Clustering Support</h2>
 
 <p>All Wicket applications will work on a cluster automatically and without additional work. Once bottlenecks are understood, Wicket enables tuning of page state replication. The next version of Wicket will support client-side models for zero-state scalability.</p>
 
-<h2 id='transparent_back_button_support'>Transparent Back Button Support</h2>
+<h2 id="transparent_back_button_support">Transparent Back Button Support</h2>
 
 <p>Wicket supports configurable page version management. When users submit a form or follow a link from a page they accessed with the back button in their browser, Wicket is able to revert the page object to the state it was in when the page was originally rendered. This means you can write web applications that support the back button with very little work.</p>
 
-<h2 id='multitab_and_multiwindow_support'>Multi-tab and multi-window support</h2>
+<h2 id="multitab_and_multiwindow_support">Multi-tab and multi-window support</h2>
 
 <p>Wicket provides an easy way to write application that supports multi-window and multi-tab usage allowing developer to react properly when users open new browser window or tab</p>
 
-<h2 id='reusable_components'>Reusable Components</h2>
+<h2 id="reusable_components">Reusable Components</h2>
 
 <p>Reusable components in Wicket are particularly easy to create. Not only can you extend existing components with the Java extends keyword, but you can also create Panel components which associate a group of components as a reusable unit.</p>
 
-<h2 id='simple_flexible_localizable_form_validation'>Simple, Flexible, Localizable Form Validation</h2>
+<h2 id="simple_flexible_localizable_form_validation">Simple, Flexible, Localizable Form Validation</h2>
 
 <p>It is trivial to write and use validators in Wicket. It is also quite easy to customize and localize the display and content of validation error messages.</p>
 
-<h2 id='typesafe_sessions'>Typesafe Sessions</h2>
+<h2 id="typesafe_sessions">Typesafe Sessions</h2>
 
 <p>Wicket eliminates the need to manage HttpSession attributes by hand. Page and component objects are transparently stored in the session and your application can create a custom session subclass with typesafe properties as well. All objects stored in the session can automatically participate in clustering replication.</p>
 
-<h2 id='factory_customizable'>Factory Customizable</h2>
+<h2 id="factory_customizable">Factory Customizable</h2>
 
 <p>Wicket is very extensible. Most operations are customizable through factories or factory methods.</p>
 
-<h2 id='detachable_models'>Detachable Models</h2>
+<h2 id="detachable_models">Detachable Models</h2>
 
-<p>Model objects in Wicket can be very lightweight in terms of memory and network use in a cluster. When a model is used, it can &#8220;attach&#8221;, populating itself with information from persistent storage. When the model is no longer in use, transient information can be reset, reducing the size of the object.</p>
+<p>Model objects in Wicket can be very lightweight in terms of memory and network use in a cluster. When a model is used, it can “attach”, populating itself with information from persistent storage. When the model is no longer in use, transient information can be reset, reducing the size of the object.</p>
 
-<h2 id='border_components'>Border Components</h2>
+<h2 id="border_components">Border Components</h2>
 
 <p>Wicket Border components enable the decoration of pages in a reusable fashion. This is especially useful for inheritance of common navigational structures or layout.</p>
 
-<h2 id='support_for_all_basic_html_features'>Support for All Basic HTML Features</h2>
+<h2 id="support_for_all_basic_html_features">Support for All Basic HTML Features</h2>
 
-<p>Wicket supports image tags, links, forms and everything else that you&#8217;re used to using in your web application development.</p>
+<p>Wicket supports image tags, links, forms and everything else that you’re used to using in your web application development.</p>
 
-<h2 id='programmatic_manipulation_of_attributes'>Programmatic Manipulation of Attributes</h2>
+<h2 id="programmatic_manipulation_of_attributes">Programmatic Manipulation of Attributes</h2>
 
 <p>Wicket Components can programmatically change any HTML tag attribute.</p>
 
-<h2 id='automatic_conversions'>Automatic Conversions</h2>
+<h2 id="automatic_conversions">Automatic Conversions</h2>
 
 <p>Once a Form validates, the model can be updated using Wicket converters. Most ordinary conversions are built-in and it is easy to write new converters.</p>
 
-<h2 id='dynamic_images'>Dynamic Images</h2>
+<h2 id="dynamic_images">Dynamic Images</h2>
 
 <p>Wicket makes image use, sharing and generation very easy. Dynamic images can be created by simply implementing a paint method.</p>
 
-<h2 id='pageable_listview'>Pageable ListView</h2>
+<h2 id="pageable_listview">Pageable ListView</h2>
 
 <p>ListViews in Wicket are extremely powerful. You can nest any kind of component in a ListView row, even other ListViews. PageableListView supports navigation links for large lists.</p>
 
-<h2 id='tree_component'>Tree Component</h2>
+<h2 id="tree_component">Tree Component</h2>
 
 <p>Out of the box tree component for navigating and selecting nodes.</p>
 
-<h2 id='localization'>Localization</h2>
+<h2 id="localization">Localization</h2>
 
 <p>HTML pages, images and resource strings can all be localized.</p>
 
-<h2 id='examples'>Examples</h2>
+<h2 id="examples">Examples</h2>
 
 <p>Wicket has numerous examples showcasing all of the above features.</p>
 		</div>
