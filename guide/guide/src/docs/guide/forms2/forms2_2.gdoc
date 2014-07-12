@@ -8,7 +8,7 @@ For example if we want to use a text field to insert an email address, we could 
 
 {code}
 TextField email = new TextField("email");
-email.add(new EmailAddressValidator());
+email.add(EmailAddressValidator.getInstance());
 {code}
 
 Wicket comes with a set of built-in validators that should suit most of our needs. We will see them in paragraph 10.2.3.

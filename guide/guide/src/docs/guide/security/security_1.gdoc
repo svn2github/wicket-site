@@ -42,6 +42,7 @@ The homepage of the project contains only a link to page @AuthenticatedPage@ whi
 public class AuthenticatedPage extends WebPage {
    @Override
    protected void onConfigure() {
+      super.onConfigure();
       AuthenticatedWebApplication app = (AuthenticatedWebApplication)Application.get();
       //if user is not signed in, redirect him to sign in page
       if(!AuthenticatedWebSession.get().isSignedIn())
