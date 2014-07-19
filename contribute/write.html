@@ -187,84 +187,79 @@
 
 		<div id="contentbody">
 			<h1>Write documentation</h1>
-			<p>We use <a href='http://github.com/mojombo/jekyll'>Jekyll</a> for writing our documentation on our main website. Publishing new content is as simple as regenerating the site and committing the changed files.</p>
+			<p>We use <a href="http://github.com/mojombo/jekyll">Jekyll</a> for writing our documentation on our main website. Publishing new content is as simple as regenerating the site and committing the changed files.</p>
 
-<h2 id='contents'>Contents</h2>
+<h2 id="contents">Contents</h2>
 
 <ul>
-<li><a href='#introduction'>Introduction</a></li>
+<li><a href="#introduction">Introduction</a></li>
 
-<li><a href='#install'>Install Jekyll</a></li>
+<li><a href="#install">Install Jekyll</a></li>
 
-<li><a href='#checkout'>Check out from SVN</a></li>
+<li><a href="#checkout">Check out from SVN</a></li>
 
-<li><a href='#run'>Run the site</a></li>
+<li><a href="#run">Run the site</a></li>
 
-<li><a href='#write'>Write some documentation</a></li>
+<li><a href="#write">Write some documentation</a></li>
 
-<li><a href='#update'>Update the site</a></li>
+<li><a href="#update">Update the site</a></li>
 </ul>
 
-<h2 id='introduction'>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 
 <p>The site is split into two parts: static content and the official Apache Wicket blog. The static content contains all the documentation that is more static (such as mailing lists, downloads, examples). The blog includes release announcements, adding new committers and other important Wicket related news.</p>
 
-<h2 id='install'>Install Jekyll</h2>
+<h2 id="install">Install Jekyll</h2>
 
-<p>Follow the instructions available on the <a href='http://github.com/mojombo/jekyll'>Jekyll website</a>. Basically it boils down to:</p>
+<p>Follow the instructions available on the <a href="http://github.com/mojombo/jekyll">Jekyll website</a>. Basically it boils down to:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>gem install jekyll</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>You also need to install the Pygments Python module.</p>
 
-<h2 id='checkout'>Check out from SVN</h2>
+<h2 id="checkout">Check out from SVN</h2>
 
 <p>Before you can edit the site, you need to check it out from SVN:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>svn co https://svn.apache.org/repos/asf/wicket/common/site/trunk wicket-site</span>
-</code></pre>
-</div>
-<h2 id='generate'>Generating the site</h2>
+</code></pre></div>
+<h2 id="generate">Generating the site</h2>
 
 <p>You can regenerate the site in the checked out directory:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>./regenerate.sh</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Note that this script restores Subversion (<code>.svn</code>) subfolders inside <code>_site</code>, which are erased when Jekyll is generating the content.</p>
 
-<h2 id='run'>Run the site</h2>
+<h2 id="run">Run the site</h2>
 
 <p>You can run the website and edit it live:</p>
 <div class='highlight'><pre><code class='console'><span class='go'>./liveedit.sh</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>This not only runs the server, but watches for modifications and regenerates any modified files.</p>
 
-<p>You can check out the website running at <a href='http://localhost:4000'>localhost, port 4000</a>.</p>
+<p>You can check out the website running at <a href="http://localhost:4000">localhost, port 4000</a>.</p>
 
-<h2 id='write'>Write some documentation</h2>
+<h2 id="write">Write some documentation</h2>
 
 <p>Jekyll can render HTML from markdown syntax and textile syntax. <strong>For our site we use markdown</strong>.</p>
 
-<h3 id='page_template'>Page template</h3>
+<h3 id="page_template">Page template</h3>
 
-<p>Each page needs to have a YAML preamble that specifies the rendered template and other variables. If it doesn&#8217;t include the YAML preamble, it won&#8217;t be rendered correctly.</p>
+<p>Each page needs to have a YAML preamble that specifies the rendered template and other variables. If it doesn’t include the YAML preamble, it won’t be rendered correctly.</p>
 
 <p>Example preamble (includes the <code>---</code>):</p>
 <div class='highlight'><pre><code class='yaml'><span class='nn'>---</span>
 <span class='l-Scalar-Plain'>layout</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>default</span>
 <span class='l-Scalar-Plain'>title</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Write documentation</span>
 <span class='nn'>---</span>
-</code></pre>
-</div>
-<h3 id='syntax_highlighting'>Syntax highlighting</h3>
+</code></pre></div>
+<h3 id="syntax_highlighting">Syntax highlighting</h3>
 
 <p>If you have a need to render code in your templates and have it syntax highlighted, surround the code with {\% highlight java \%} (substitute java with the language you want highlighted.)</p>
 
-<h3 id='menu'>Menu</h3>
+<h3 id="menu">Menu</h3>
 
 <p>If you want your page linked from every page, include the link in <code>_includes/navigation.html</code>.</p>
 
-<h3 id='blog_posts'>Blog posts</h3>
+<h3 id="blog_posts">Blog posts</h3>
 
 <p>For news items such as release announcements, new committers and other happenings, it is appriorate to create a blog post. The blog post is automatically added to the front page and the RSS feed.</p>
 
@@ -273,11 +268,10 @@
 <span class='l-Scalar-Plain'>layout</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>post</span>
 <span class='l-Scalar-Plain'>title</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Wicket 1.4.7 released</span>
 <span class='nn'>---</span>
-</code></pre>
-</div>
-<h2 id='update'>Update the site</h2>
+</code></pre></div>
+<h2 id="update">Update the site</h2>
 
-<p>When you&#8217;re done with making your changes, please check the following:</p>
+<p>When you’re done with making your changes, please check the following:</p>
 
 <ul>
 <li>Do the modified files contain only those changes that you actually want to publish? (Use <code>svn diff</code> to check)</li>
@@ -285,7 +279,7 @@
 <li>Did you restart Jekyll to generate the site?</li>
 </ul>
 
-<p>If these things are OK, you can either <a href='patch.html'>generate a patch</a> when you&#8217;re not a committer, or just commit the changes. In the latter case, the modifications are pushed immediately to the site and are live within a minute.</p>
+<p>If these things are OK, you can either <a href="patch.html">generate a patch</a> when you’re not a committer, or just commit the changes. In the latter case, the modifications are pushed immediately to the site and are live within a minute.</p>
 		</div>
         <div id="clearer"></div>
 		<div id="footer"><span>
