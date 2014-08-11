@@ -232,6 +232,7 @@ typing in the groupId, artifactId and version.</p>
 		var groupId = document.getElementById("groupId").value;
 		var artifactId = document.getElementById("artifactId").value;
 		var version = document.getElementById("version").value;
+		var appserver = document.getElementById("appserver").value;
 		var cmd;
 		if(version.match(/^1\.[34]/))
 			cmd = 'mvn archetype:create -DarchetypeGroupId=org.apache.wicket -DarchetypeArtifactId=wicket-archetype-quickstart -DarchetypeVersion=' + version + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId;						
@@ -242,6 +243,10 @@ typing in the groupId, artifactId and version.</p>
 			cmd += ' -DarchetypeRepository=https://repository.apache.org/content/repositories/snapshots/';
 		else
 			cmd += ' -DarchetypeRepository=https://repository.apache.org/';
+
+		if (appserver === 'wildfly')
+			cmd += ' -Dlog4j.properties=wildfly-doesnt-need-log4j.properties';
+
 		cmd += ' -DinteractiveMode=false'; 
 		document.getElementById("cmdLine").value = cmd;
 	}
@@ -289,6 +294,13 @@ typing in the groupId, artifactId and version.</p>
 		
 
 		</select><span title="Wicket Version">&nbsp;(?)</span>
+	</div>
+	<div>
+		<label for="appserver" title="Server to deploy on">Server:</label>
+		<select id="appserver" onchange="changeIt();">
+			<option value="any" selected="selected">Any but Wild Fly</option>
+			<option value="wildfly">Wild Fly (JBoss 8.x)</option>
+		</select><span title="Web/App Server">&nbsp;(?)</span>
 	</div>
 	<div>
 		<label for="cmdLine" id="cmdLabel">Command Line:</label>
