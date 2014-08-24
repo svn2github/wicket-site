@@ -113,7 +113,7 @@ resources:
   resources_3: Package resources
   resources_4: Adding resources to page header section
   resources_5: Resource dependencies
-  resources_6: Aggregate multiple risources with resource bundles
+  resources_6: Aggregate multiple resources with resource bundles
   resources_7: Put JavaScript inside page body
   resources_8: Header contributors positioning
   resources_9: Custom resources
