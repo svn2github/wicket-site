@@ -120,11 +120,11 @@ public void renderHead(IHeaderResponse response) {
 }
 {code}
 
-If component is disabled the calendar icon must be hidden and no datepicker must be displayed. That's why renderHeader is skipped if component is not enabled.
+If component is disabled the calendar icon must be hidden and no datepicker must be displayed. That's why @renderHeader@ is skipped if component is not enabled.
 
 To get a reference to the bundled JQuery library we used the JavaScript setting interface @IJavaScriptLibrarySettings@ and its method @getJQueryReference@.
 
-In the last part of renderHeader we build the string to invoke function initJQDatepicker using the values obtained inside onInitialize. Unfortunately the date format used by JQuery UI is different from the one adopted in Java so we have to convert it before building the JavaScript code. This init script is rendered into header section using a @OnLoadHeaderItem@ to ensure that it will be executed after all the other scripts have been loaded.
+In the last part of @renderHeader@ we build the string to invoke function @initJQDatepicker@ using the values obtained inside onInitialize. Unfortunately the date format used by JQuery UI is different from the one adopted in Java so we have to convert it before building the JavaScript code. This init script is rendered into header section using a @OnLoadHeaderItem@ to ensure that it will be executed after all the other scripts have been loaded.
 
 {note}
 If we add more than one instance of our custom component to a single page, static resources are rendered to the header section just once. Wicket automatically checks if a static resource is already referenced by a page and if so, it will not render it again.
