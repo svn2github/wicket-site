@@ -197,7 +197,8 @@ The maximum size for uploaded files can also be set at application's level using
 &#123;
  getApplicationSettings().setDefaultMaximumUploadSize(Bytes.kilobytes(100));  
 &#125;</pre></div>
-</blockquote><p class="paragraph"/><h3>Upload multiple files</h3><p class="paragraph"/>If we need to upload multiple files at once, we can use the MultiFileUploadField component which allows the user to select an arbitrary number of files to send on form submission.<p class="paragraph"/>An example showing how to use this component can be found in Wicket module wicket-examples in file MultiUploadPage.java. The live example is hosted at <a href="http://www.wicket-library.com/wicket-examples-6.0.x/upload/multi" target="blank">http://www.wicket-library.com/wicket-examples-6.0.x/upload/multi</a> .
+</blockquote><p class="paragraph"/><h3>Upload multiple files</h3><p class="paragraph"/>If we need to upload multiple files at once and our clients support HTML5, we can still use FileUploadField adding attribute "multiple" to its tag. If we can not rely on HTML5, we can use the MultiFileUploadField component which allows the user to upload an arbitrary number of files using a JavaScript-based solution.
+An example showing how to use this component can be found in Wicket module wicket-examples in file MultiUploadPage.java. The live example is hosted at <a href="http://www.wicket-library.com/wicket-examples-6.0.x/upload/multi" target="blank">http://www.wicket-library.com/wicket-examples-6.0.x/upload/multi</a> .
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -226,7 +227,7 @@ The maximum size for uploaded files can also be set at application's level using
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-07-12)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-06)</b>
 
     
 </div>

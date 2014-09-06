@@ -247,7 +247,7 @@ On Internet you can find different libraries that already offer a strong integra
 	<span class="java&#45;object">String</span> initScript = <span class="java&#45;quote">";initJQDatepicker('"</span> + getMarkupId() + <span class="java&#45;quote">"', '"</span> + countryIsoCode +
                             <span class="java&#45;quote">"', '"</span> + jqueryDateFormat + <span class="java&#45;quote">"', "</span> + <span class="java&#45;quote">"'"</span> + urlForIcon +<span class="java&#45;quote">"');"</span>;
 	response.render(OnLoadHeaderItem.forScript(initScript));
-&#125;</pre></div><p class="paragraph"/>If component is disabled the calendar icon must be hidden and no datepicker must be displayed. That's why renderHeader is skipped if component is not enabled.<p class="paragraph"/>To get a reference to the bundled JQuery library we used the JavaScript setting interface <code>IJavaScriptLibrarySettings</code> and its method <code>getJQueryReference</code>.<p class="paragraph"/>In the last part of renderHeader we build the string to invoke function initJQDatepicker using the values obtained inside onInitialize. Unfortunately the date format used by JQuery UI is different from the one adopted in Java so we have to convert it before building the JavaScript code. This init script is rendered into header section using a <code>OnLoadHeaderItem</code> to ensure that it will be executed after all the other scripts have been loaded.<p class="paragraph"/><blockquote class="note">
+&#125;</pre></div><p class="paragraph"/>If component is disabled the calendar icon must be hidden and no datepicker must be displayed. That's why <code>renderHeader</code> is skipped if component is not enabled.<p class="paragraph"/>To get a reference to the bundled JQuery library we used the JavaScript setting interface <code>IJavaScriptLibrarySettings</code> and its method <code>getJQueryReference</code>.<p class="paragraph"/>In the last part of <code>renderHeader</code> we build the string to invoke function <code>initJQDatepicker</code> using the values obtained inside onInitialize. Unfortunately the date format used by JQuery UI is different from the one adopted in Java so we have to convert it before building the JavaScript code. This init script is rendered into header section using a <code>OnLoadHeaderItem</code> to ensure that it will be executed after all the other scripts have been loaded.<p class="paragraph"/><blockquote class="note">
 If we add more than one instance of our custom component to a single page, static resources are rendered to the header section just once. Wicket automatically checks if a static resource is already referenced by a page and if so, it will not render it again.<p class="paragraph"/>This does not apply to the init script which is dynamically generated and is rendered for every instance of the component.
 </blockquote><p class="paragraph"/><blockquote class="warning">
 Our datepicker is not ready yet to be used with AJAX. In chapter 16 we will see how to modify it to make it AJAX-compatible.
@@ -284,7 +284,7 @@ Our datepicker is not ready yet to be used with AJAX. In chapter 16 we will see 
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-07-12)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-06)</b>
 
     
 </div>
