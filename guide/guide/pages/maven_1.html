@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>25.1 Switching Wicket to DEPLOYMENT mode 6.x</title>
+    <title>26.1 Switching Wicket to DEPLOYMENT mode 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -96,16 +96,19 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/internals.html"><strong>25</strong><span>Wicket Internals</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>26</strong><span>Working with Maven (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>27</strong><span>Project WicketStuff (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>28</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>29</strong><span>Contributing to this guide (Appendix)</span></a>
                     </div>
                     
                 </div>
@@ -135,18 +138,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../../guide/bestpractices.html">&lt;&lt; <strong>24</strong><span>Wicket Best Practices</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/internals.html">&lt;&lt; <strong>25</strong><span>Wicket Internals</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/wicketstuff.html"><strong>27</strong><span>Project WicketStuff (Appendix)</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>25.1 Switching Wicket to DEPLOYMENT mode - Reference Documentation</h1>
+                    <h1>26.1 Switching Wicket to DEPLOYMENT mode - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -159,7 +162,7 @@ function addJsClass() {
 
                 
 
-<h2 id="maven_1">25.1 Switching Wicket to DEPLOYMENT mode</h2>
+<h2 id="maven_1">26.1 Switching Wicket to DEPLOYMENT mode</h2>
 <p class="paragraph"/>As pointed out in the note at page 9, Wicket can be started in two modes, DEVELOPMENT and DEPLOYMENT. When we are in DEVELOPMENT mode Wicket warns us at application startup with the following message:<p class="paragraph"/><div class="code"><pre>&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;
 &#42;&#42;&#42; WARNING: Wicket is running in DEVELOPMENT mode.              &#42;&#42;&#42;
 &#42;&#42;&#42;                               ^^^^^^^^^^^                    &#42;&#42;&#42;
@@ -184,9 +187,9 @@ function addJsClass() {
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../../guide/bestpractices.html">&lt;&lt; <strong>24</strong><span>Wicket Best Practices</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/internals.html">&lt;&lt; <strong>25</strong><span>Wicket Internals</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/wicketstuff.html"><strong>27</strong><span>Project WicketStuff (Appendix)</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>
@@ -208,7 +211,7 @@ function addJsClass() {
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-06)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-09)</b>
 
     
 </div>

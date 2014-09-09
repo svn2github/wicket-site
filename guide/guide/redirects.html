@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>27 Lost In Redirection With Apache Wicket (Appendix) 6.x</title>
+    <title>28 Lost In Redirection With Apache Wicket (Appendix) 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -96,16 +96,19 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/internals.html"><strong>25</strong><span>Wicket Internals</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/maven.html"><strong>26</strong><span>Working with Maven (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/wicketstuff.html"><strong>27</strong><span>Project WicketStuff (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/redirects.html"><strong>28</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/contributing.html"><strong>29</strong><span>Contributing to this guide (Appendix)</span></a>
                     </div>
                     
                 </div>
@@ -135,18 +138,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../guide/wicketstuff.html">&lt;&lt; <strong>26</strong><span>Project WicketStuff (Appendix)</span></a></div>
+                    <div class="toc-item prev-left"><a href="../guide/wicketstuff.html">&lt;&lt; <strong>27</strong><span>Project WicketStuff (Appendix)</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../guide/contributing.html"><strong>29</strong><span>Contributing to this guide (Appendix)</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>27 Lost In Redirection With Apache Wicket (Appendix) - Reference Documentation</h1>
+                    <h1>28 Lost In Redirection With Apache Wicket (Appendix) - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -159,7 +162,7 @@ function addJsClass() {
 
                 
 
-<h1 id="redirects">27 Lost In Redirection With Apache Wicket (Appendix)</h1>
+<h1 id="redirects">28 Lost In Redirection With Apache Wicket (Appendix)</h1>
 Quite a few teams have already got stuck into the following problem when working with wicket forms in a clustered environment while having 2 (or more) tomcat server with enabled session replication running.<p class="paragraph"/>In case of invalid data being submitted with a form instance for example, it seemed like according error messages wouldn’t be presented when the same form page gets displayed again. Sometimes! And sometimes they would! One of those nightmares of rather deterministic programmer’s life. This so called Lost In Redirection problem, even if it looks like a wicket bug at first, is rather a result of a default setting in wicket regarding the processing of form submissions in general. In order to prevent another wide known problem of double form submissions, Wicket uses a so called REDIRECT_TO_BUFFER strategy for dealing with rendering a page after web form’s processing (@see IRequestCycleSettings#RenderStrategy).<p class="paragraph"/>What does the default RenderStrategy actually do?<p class="paragraph"/>Both logical parts of a single HTTP request, an action and a render part get processed within the same request, but instead of streaming the render result to the browser directly, the result is cached on the server first.<p class="paragraph"/><img border="0" class="center" src="../img/lost-in-redirection-mockup.png"></img><p class="paragraph"/>Wicket will create an according BufferedHttpServletResponse instance that will be used to cache the resulting HttpServletResponse within the WebApplication.<p class="paragraph"/><img border="0" class="center" src="../img/lost-in-redirection-mockup2.png"></img><p class="paragraph"/>After the buffered response is cached the HTTP status code of 302 get’s provided back to the browser resulting in an additional GET request to the redirect URL (which Wicket sets to the URL of the Form itself). There is a special handling code for this case in the WicketFilter instance that then looks up a Map of buffered responses within the WebApplication accordingly. If an appropriate already cached response for the current request is found, it get’s streamed back to the browser immediately. No additional form processing happens now. The following is a code snippet taken from WicketFilter:<p class="paragraph"/><div class="code"><pre>// Are we using REDIRECT_TO_BUFFER?
 <span class="java&#45;keyword">if</span> (webApplication.getRequestCycleSettings().getRenderStrategy() == IRequestCycleSettings.REDIRECT_TO_BUFFER)
 &#123;
@@ -200,9 +203,9 @@ Quite a few teams have already got stuck into the following problem when working
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../guide/wicketstuff.html">&lt;&lt; <strong>26</strong><span>Project WicketStuff (Appendix)</span></a></div>
+                    <div class="toc-item prev-left"><a href="../guide/wicketstuff.html">&lt;&lt; <strong>27</strong><span>Project WicketStuff (Appendix)</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../guide/contributing.html"><strong>29</strong><span>Contributing to this guide (Appendix)</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>
@@ -224,7 +227,7 @@ Quite a few teams have already got stuck into the following problem when working
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-06)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-09)</b>
 
     
 </div>

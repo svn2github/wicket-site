@@ -194,6 +194,9 @@ bestpractices:
   bestpractices_15: Cut small classes and methods
   bestpractices_16: The argument "Bad documentation"
   bestpractices_17: Summary
+internals:
+  title: Wicket Internals
+  pagestoring: Page storing
 maven:
   title: Working with Maven (Appendix)
   maven_1: Switching Wicket to DEPLOYMENT mode

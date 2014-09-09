@@ -96,16 +96,19 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0"><a href="../../guide/bestpractices.html"><strong>24</strong><span>Wicket Best Practices</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>25</strong><span>Working with Maven (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/internals.html"><strong>25</strong><span>Wicket Internals</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>26</strong><span>Project WicketStuff (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/maven.html"><strong>26</strong><span>Working with Maven (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>27</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/wicketstuff.html"><strong>27</strong><span>Project WicketStuff (Appendix)</span></a>
                     </div>
                     
-                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>28</strong><span>Contributing to this guide (Appendix)</span></a>
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/redirects.html"><strong>28</strong><span>Lost In Redirection With Apache Wicket (Appendix)</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/contributing.html"><strong>29</strong><span>Contributing to this guide (Appendix)</span></a>
                     </div>
                     
                 </div>
@@ -176,8 +179,7 @@ function addJsClass() {
 			&#125;
 		&#125;);<p class="paragraph"/>	&#125;	
 &#125;</pre></div><p class="paragraph"/>Now if we run the new example (project LifeCycleStagesRevisited) and we click on the “Reload” button, a new page version is created and the page id is increased by one:<p class="paragraph"/><img border="0" class="center" src="../img/reload-page.png"></img><p class="paragraph"/>If we press the back button the page version previously rendered (and serialized) will be retrieved (i.e. deserialized) and it will be used again to respond to our request (and page id is decremented):<p class="paragraph"/><img border="0" class="center" src="../img/browser-back.png"></img><p class="paragraph"/><blockquote class="note">
-For more details about page storing you can visit the wiki page at https://cwiki.apache.org/confluence/display/WICKET/Page+Storage . 
-On this page you can find which classes are involved into page storing mechanism and how they work together.
+For more details about page storing you can take a look at paragraph "Page storing" from chapter "Wicket Internals". The content of this paragraph is from wiki page https://cwiki.apache.org/confluence/display/WICKET/Page+Storage. 
 </blockquote><p class="paragraph"/>As we have stated at the beginning of this chapter, page versions are stored using Java serialization, therefore every object referenced inside a page must be serializable. In paragraph 9.6 we will see how to overcome this limit and work with non-serializable objects in our components using detachable Wicket models.<p class="paragraph"/><h3>Using a specific page version with PageReference</h3><p class="paragraph"/>To retrieve a specific page version in our code we can use class <code>org.apache.wicket.PageReference</code> by providing its constructor with the corresponding page id:<p class="paragraph"/><div class="code"><pre>//load page version with page id = 3
 PageReference pageReference = <span class="java&#45;keyword">new</span> PageReference(3);
 //load the related page instance
@@ -233,7 +235,7 @@ For the second level cache we can use the setInmemoryCacheSize(int inmemoryCache
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-06)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-09)</b>
 
     
 </div>
