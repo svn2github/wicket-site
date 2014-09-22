@@ -4,13 +4,69 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2014-09-05T17:12:16+02:00</updated>
+ <updated>2014-09-22T09:26:18+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>CVE-2014-3526 - Apache Wicket Information disclosure vulnerability</title>
+   <link href="http://wicket.apache.org/2014/09/22/cve-2014-3526.html"/>
+   <updated>2014-09-22T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2014/09/22/cve-2014-3526</id>
+   <content type="html">&lt;p&gt;Severity: Important&lt;/p&gt;
+
+&lt;p&gt;Vendor:
+The Apache Software Foundation&lt;/p&gt;
+
+&lt;p&gt;Versions Affected:
+Apache Wicket 1.5.11, 6.16.0 and 7.0.0-M2&lt;/p&gt;
+
+&lt;p&gt;Description:&lt;/p&gt;
+
+&lt;p&gt;When rendering a web page Wicket checks the request url against the one at the render time. It is possible the application to change the page parameters (this includes both the query parameters and parameters encoded into the request path). When the requested url differs with the one at the rendering time Wicket stores the response (i.e. the page markup) at the server side and issues an HTTP redirect to the new url. When the second request comes Wicket just flushes the stored response from the first request into the http output stream. This way the browser address bar shows the updated page parameters.
+When storing the page markup at the server side Wicket uses as an identifier a pair of the current session id plus the new url. However, Wicket does not check if user session is temporary (i.e. sessionId is null).
+This could lead to a security issue if two or more users with a temporary session are redirected to the same url at the same time. Then user1 might see the markup for user2 which has overridden the markup for user1 while user1 was following the HTTP redirect. In this way user-sensitive informations can be seen by other users.&lt;/p&gt;
+
+&lt;p&gt;The application developers are recommended to upgrade to: 
+- &lt;a href=&quot;/2014/09/15/wicket-1.5.12-released.html&quot;&gt;Apache Wicket 1.5.12&lt;/a&gt;
+- &lt;a href=&quot;/2014/08/24/wicket-6.17.0-released.html&quot;&gt;Apache Wicket 6.17.0&lt;/a&gt;
+- &lt;a href=&quot;/2014/08/23/wicket-7.0.0-M3-released.html&quot;&gt;Apache Wicket 7.0.0-M3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Credit:
+This issue was reported by Andrea Del Bene and Martin Grigorov!&lt;/p&gt;
+
+&lt;p&gt;Apache Wicket Team&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Wicket 1.5.12 released</title>
+   <link href="http://wicket.apache.org/2014/09/15/wicket-1.5.12-released.html"/>
+   <updated>2014-09-15T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2014/09/15/wicket-1.5.12-released</id>
+   <content type="html">&lt;p&gt;This is the twelfth maintenance release of the Wicket 1.5.x series. This release brings over 5 bug fixes and improvements.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.12&quot;&gt;Git tag&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12326154&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;To use in Maven:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.12&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Download the &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/1.5.12&quot;&gt;full distribution&lt;/a&gt; (including sources)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Apache Wicket 6.17.0 released</title>
@@ -700,56 +756,6 @@ migration guide found at&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;* [WICKET-5488] - Promote experimental modules to become stable
 * [WICKET-5494] - Upgrade JQuery to latest stable - 1.11.0 and 2.1.0
 &lt;/code&gt;&lt;/pre&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.5.11 released</title>
-   <link href="http://wicket.apache.org/2014/02/06/wicket-1.5.11-released.html"/>
-   <updated>2014-02-06T00:00:00+01:00</updated>
-   <id>http://wicket.apache.org/2014/02/06/wicket-1.5.11-released</id>
-   <content type="html">&lt;p&gt;This is the eleventh maintenance release of the Wicket 1.5.x series. This release brings over 34 bug fixes and improvements.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.11&quot;&gt;Git tag&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310561&amp;amp;version=12324069&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.11&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Download the &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/1.5.11&quot;&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Wicket 1.4.23 released</title>
-   <link href="http://wicket.apache.org/2014/02/06/wicket-1.4.23-released.html"/>
-   <updated>2014-02-06T00:00:00+01:00</updated>
-   <id>http://wicket.apache.org/2014/02/06/wicket-1.4.23-released</id>
-   <content type="html">&lt;p&gt;This is twenty thirdth release of the Wicket 1.4.x series. This is a security bugfix release on the 1.4.x branch.
-Read &lt;a href=&quot;/2014/02/06/cve-2013-2055.html&quot;&gt;CVE-2013-2055&lt;/a&gt; for more information.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.4.23&quot;&gt;Git tag&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;To use in Maven:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4.23&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Download the &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/1.4.23&quot;&gt;full distribution&lt;/a&gt; (including source)&lt;/li&gt;
-&lt;/ul&gt;
 </content>
  </entry>
  
