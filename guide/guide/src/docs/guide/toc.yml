@@ -55,7 +55,8 @@ requestProcessing:
   requestProcessing_2: Request and Response classes
   requestProcessing_3: The “director” of request processing - RequestCycle
   requestProcessing_4: Session Class
-  requestProcessing_5: Summary
+  requestProcessing_5: Exception handling
+  requestProcessing_6: Summary
 urls:
   title: Wicket Links and URL generation
   urls_1: PageParameters
