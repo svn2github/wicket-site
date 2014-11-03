@@ -269,7 +269,9 @@ If we forget to call superclass version of methods <code>onInitialize()</code> o
 
 
 <h2 id="componentLifecycle_5">7.5 Removing stage</h2>
-<p class="paragraph"/>This stage is triggered when a component is removed from its component hierarchy. The only hook method for this phase is <code>onRemove()</code>. If our component still holds some resources needed during rendering phase, we can override this method to release them.<p class="paragraph"/>Once a component has been removed we are free to add it again to the same container or to a different one.
+<p class="paragraph"/>This stage is triggered when a component is removed from its container hierarchy. The only hook method for this phase is <code>onRemove()</code>. If our component still holds some resources needed during rendering phase, we can override this method to release them.<p class="paragraph"/>Once a component has been removed we are free to add it again to the same container or to a different one. Starting from version 6.18.0 Wicket added a further hook method called <code>onReAdd()</code> which is triggered every time a previously removed component is re-added to a cointainer.
+Please note that while <code>onInitialize</code> is called only the very first time a component is added, <code>onReAdd</code> is called every time it is re-added after having been removed.
+
 
 
 <h2 id="componentLifecycle_6">7.6 Summary</h2>
@@ -303,7 +305,7 @@ If we forget to call superclass version of methods <code>onInitialize()</code> o
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-09)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-03)</b>
 
     
 </div>

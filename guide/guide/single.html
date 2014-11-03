@@ -216,7 +216,9 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_4"><strong>9.4</strong><span>Session Class</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_5"><strong>9.5</strong><span>Summary</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_5"><strong>9.5</strong><span>Exception handling</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#requestProcessing_6"><strong>9.6</strong><span>Summary</span></a></div>
                             
                             <div class="toc-item" style="margin-left:0px"><a href="#urls"><strong>10</strong><span>Wicket Links and URL generation</span></a></div>
                             
@@ -1131,7 +1133,9 @@ If we forget to call superclass version of methods <code>onInitialize()</code> o
 
 
 <h2 id="componentLifecycle_5">7.5 Removing stage</h2>
-<p class="paragraph"/>This stage is triggered when a component is removed from its component hierarchy. The only hook method for this phase is <code>onRemove()</code>. If our component still holds some resources needed during rendering phase, we can override this method to release them.<p class="paragraph"/>Once a component has been removed we are free to add it again to the same container or to a different one.
+<p class="paragraph"/>This stage is triggered when a component is removed from its container hierarchy. The only hook method for this phase is <code>onRemove()</code>. If our component still holds some resources needed during rendering phase, we can override this method to release them.<p class="paragraph"/>Once a component has been removed we are free to add it again to the same container or to a different one. Starting from version 6.18.0 Wicket added a further hook method called <code>onReAdd()</code> which is triggered every time a previously removed component is re-added to a cointainer.
+Please note that while <code>onInitialize</code> is called only the very first time a component is added, <code>onReAdd</code> is called every time it is re-added after having been removed.
+
 
 
 <h2 id="componentLifecycle_6">7.6 Summary</h2>
@@ -1327,7 +1331,23 @@ Remember that invalidateNow() will immediately remove any instance of components
 
 
 
-<h2 id="requestProcessing_5">9.5 Summary</h2>
+<h2 id="requestProcessing_5">9.5 Exception handling</h2>
+Wicket uses a number of custom exceptions during the regular running of an application. We have already seen <code>PageExpiredException</code> raised when a page version is expired. Other examples of such exceptions are <code>AuthorizationException</code> and <code>RestartResponseException</code>. We will see them later in the next chapters.
+All the other exceptions raised during rendering phase are handled by an implementation of <code>org.apache.wicket.request.IExceptionMapper</code> which by default is class <code>org.apache.wicket.DefaultExceptionMapper</code>. If we are working in DEVELOPMENT mode this mapper will redirect us to a page that shows the exception stacktrace (page <code>ExceptionErrorPage</code>). On the contrary, if application is running in DEPLOYMENT mode <code>DefaultExceptionMapper</code> will display an internal error page which by default is <code>org.apache.wicket.markup.html.pages.InternalErrorPage</code>.
+To use a custom internal error page we can change application settings like this:<p class="paragraph"/><div class="code"><pre>getApplicationSettings().setInternalErrorPage(MyInternalErrorPage.class);</pre></div><p class="paragraph"/>We can also manually set if Wicket should display the exception with <code>ExceptionErrorPage</code> or if we want to use the internal error page or if we don't want to display anything at all when an unexpected exception is thrown:<p class="paragraph"/><div class="code"><pre>//show <span class="java&#45;keyword">default</span> developer page
+getExceptionSettings().setUnexpectedExceptionDisplay(IExceptionSettings.SHOW_EXCEPTION_PAGE);
+//show internal error page
+getExceptionSettings().setUnexpectedExceptionDisplay(IExceptionSettings.SHOW_INTERNAL_ERROR_PAGE);
+//show no exception page when an unexpected exception is thrown
+getExceptionSettings().setUnexpectedExceptionDisplay(IExceptionSettings.SHOW_NO_EXCEPTION_PAGE);</pre></div><p class="paragraph"/>Developers can also decide to use a custom exception mapper instead of <code>DefaultExceptionMapper</code>. To do this we must override <code>Application</code>'s method <code>getExceptionMapperProvider</code>:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> IProvider&#60;IExceptionMapper&#62; getExceptionMapperProvider()
+&#123;
+    //&#8230;
+&#125;</pre></div><p class="paragraph"/>The method returns an instance of <code>org.apache.wicket.util.IProvider</code> that should return our custom exception mapper.<p class="paragraph"/><h3>Ajax requests</h3><p class="paragraph"/>To control the behavior in Ajax requests the application may use <code>org.apache.wicket.settings.IExceptionSettings#setAjaxErrorHandlingStrategy(IExceptionSettings.AjaxErrorStrategy)</code>. By default if an error occurs during the 
+processing of an Ajax request Wicket will render the configured error page. By configuring <code>org.apache.wicket.settings.IExceptionSettings.AjaxErrorStrategy#INVOKE_FAILURE_HANDLER</code> as the default strategy the application will call the JavaScript <code>onFailure</code> callback(s) instead.
+
+
+<h2 id="requestProcessing_6">9.6 Summary</h2>
 <p class="paragraph"/>In this chapter we had a look at how Wicket internally handles a web request. Even if most of the time  we won't need to customize this internal process, knowing how it works is essential to use the framework at 100%.<p class="paragraph"/>Entities like Application and Session will come in handy again when we will tackle the topic of security in chapter 20.
 
 
@@ -4767,7 +4787,7 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
         <div id="footer">
             
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-09-09)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-03)</b>
 
             
         </div>

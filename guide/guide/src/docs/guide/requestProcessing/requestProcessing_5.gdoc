@@ -1,5 +1,5 @@
 Wicket uses a number of custom exceptions during the regular running of an application. We have already seen @PageExpiredException@ raised when a page version is expired. Other examples of such exceptions are @AuthorizationException@ and @RestartResponseException@. We will see them later in the next chapters.
-All the other exceptions raised during rendering phase are handled by an implementation of @org.apache.wicket.request.IExceptionMapper@ which by default is class @org.wicket.DefaultExceptionMapper@. If we are working in DEVELOPMENT mode this mapper will redirect us to a page that shows the exception stacktrace (page @ExceptionErrorPage@). On the contrary, if application is running in DEPLOYMENT mode @DefaultExceptionMapper@ will display an internal error page which by default is @InternalErrorPage@.
+All the other exceptions raised during rendering phase are handled by an implementation of @org.apache.wicket.request.IExceptionMapper@ which by default is class @org.apache.wicket.DefaultExceptionMapper@. If we are working in DEVELOPMENT mode this mapper will redirect us to a page that shows the exception stacktrace (page @ExceptionErrorPage@). On the contrary, if application is running in DEPLOYMENT mode @DefaultExceptionMapper@ will display an internal error page which by default is @org.apache.wicket.markup.html.pages.InternalErrorPage@.
 To use a custom internal error page we can change application settings like this:
 
 {code}
@@ -28,3 +28,8 @@ public IProvider<IExceptionMapper> getExceptionMapperProvider()
 {code}
 
 The method returns an instance of @org.apache.wicket.util.IProvider@ that should return our custom exception mapper.
+
+h3. Ajax requests
+
+To control the behavior in Ajax requests the application may use @org.apache.wicket.settings.IExceptionSettings#setAjaxErrorHandlingStrategy(IExceptionSettings.AjaxErrorStrategy)@. By default if an error occurs during the 
+processing of an Ajax request Wicket will render the configured error page. By configuring @org.apache.wicket.settings.IExceptionSettings.AjaxErrorStrategy#INVOKE_FAILURE_HANDLER@ as the default strategy the application will call the JavaScript @onFailure@ callback(s) instead.
