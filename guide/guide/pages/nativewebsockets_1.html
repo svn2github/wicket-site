@@ -164,7 +164,7 @@ function addJsClass() {
 
 <h2 id="nativewebsockets_1">20.1 How does it work ?</h2>
 Each of the modules provide a specialization of <code>org.apache.wicket.protocol.http.WicketFilter</code> that registers implementation specific endpoint when an HTTP request is <a href="http://en.wikipedia.org/wiki/WebSocket#WebSocket_protocol_handshake" target="blank">upgraded</a> to WebSocket one. Later Wicket uses this endpoint to write data back to the browser and read data sent by it.<p class="paragraph"/>WebSockets communication can be used in a Wicket page by using <code>org.apache.wicket.protocol.ws.api.WebSocketBehavior</code> or in a IResource by exteding <code>org.apache.wicket.protocol.ws.api.WebSocketResource</code>.
-When a client is connected it is being registered in a application scoped registry using as a key the application name, the client session id, and the id of the page or the resource name that registered it. Later when the server needs to push a message it can use this registry to filter out which clients need to receive the message.<p class="paragraph"/>When a message is received from the client Wicket wraps it in <code>IWebSocketMessage</code> and calls WebSocketBehavior#<strong class="bold">onMessage()</strong> or WebSocketResource#<strong class="bold">onMessage()</strong> where the application logic can react on it.
+When a client is connected it is being registered in a application scoped registry using as a key the application name, the client http session id, and the id of the page or the resource name that registered it. Later when the server needs to push a message it can use this registry to filter out which clients need to receive the message.<p class="paragraph"/>When a message is received from the client Wicket wraps it in <code>IWebSocketMessage</code> and calls WebSocketBehavior#<strong class="bold">onMessage()</strong> or WebSocketResource#<strong class="bold">onMessage()</strong> where the application logic can react on it.
 The server can push plain text and binary data to the client, but it can also add components for re-render, prepend/append JavaScript as it can do with <a href="../guide/single.html#ajax" class="guide">Ajax</a>.
 
 
@@ -195,7 +195,7 @@ The server can push plain text and binary data to the client, but it can also ad
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-03)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
 
     
 </div>

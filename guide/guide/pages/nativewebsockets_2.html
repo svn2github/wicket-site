@@ -181,19 +181,22 @@ function addJsClass() {
   &#60;version&#62;...&#60;/version&#62;
 &#60;/dependency&#62;</pre></div>
 <ul class="minus">
-<li>for Tomcat 7.0.27+ (first, non-JSR356 implementation)</li>
+<li>for Tomcat 7.0.27+ (the old, non-JSR356 implementation)</li>
 </ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
   &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
   &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;tomcat&#60;/artifactId&#62;
   &#60;version&#62;...&#60;/version&#62;
 &#60;/dependency&#62;</pre></div>
 <ul class="minus">
-<li>for JSR356 complaint implementations (at the moment are supported: Tomcat 8.x, Tomcat 7.0.47+, Jetty 9.1.x and JBoss Wildfly 8.0.Final)</li>
+<li>for JSR356 complaint implementations (at the moment are supported: Tomcat 8.0+, Tomcat 7.0.47+, Jetty 9.1.0+ and JBoss Wildfly 8.0.0+)</li>
 </ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
   &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
   &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;javax&#60;/artifactId&#62;
   &#60;version&#62;...&#60;/version&#62;
 &#60;/dependency&#62;</pre></div><p class="paragraph"/><blockquote class="note">
+All web containers providing JSR356 implementation are built with Java 7. This is the reason why <code>wicket-native-websocket-javax</code> module is available only with Wicket 7.x. If your application runs with JRE 7.x then you can
+use <code>wicket-native-websocket-javax</code> together with the latest version of Wicket 6.x. Beware that the API/implementation of <code>wicket-native-websocket-javax</code> may change before Wicket 7.0.0 is released!
+</blockquote><p class="paragraph"/><blockquote class="note">
 The examples above show snippets for Maven's pom.xml but the application can use any other dependency management tool like <a href="http://www.gradle.org/" target="blank">Gradle</a>, <a href="http://www.scala-sbt.org/" target="blank">SBT</a>, &#8230;
 </blockquote>
 <ul class="star">
@@ -259,7 +262,7 @@ IWebSocketConnection connection = webSocketConnectionRegistry.getConnection(appl
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-03)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
 
     
 </div>

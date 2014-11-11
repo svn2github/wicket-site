@@ -20,7 +20,7 @@ Depending on the web container that is used the application has to add a depende
 </dependency>
 {code}
 
-- for Tomcat 7.0.27+ (first, non-JSR356 implementation)
+- for Tomcat 7.0.27+ (the old, non-JSR356 implementation)
 {code}
 <dependency>
   <groupId>org.apache.wicket</groupId>
@@ -29,7 +29,7 @@ Depending on the web container that is used the application has to add a depende
 </dependency>
 {code}
 
-- for JSR356 complaint implementations (at the moment are supported: Tomcat 8.x, Tomcat 7.0.47+, Jetty 9.1.x and JBoss Wildfly 8.0.Final)
+- for JSR356 complaint implementations (at the moment are supported: Tomcat 8.0+, Tomcat 7.0.47+, Jetty 9.1.0+ and JBoss Wildfly 8.0.0+)
 {code}
 <dependency>
   <groupId>org.apache.wicket</groupId>
@@ -37,6 +37,11 @@ Depending on the web container that is used the application has to add a depende
   <version>...</version>
 </dependency>
 {code}
+
+{note}
+All web containers providing JSR356 implementation are built with Java 7. This is the reason why @wicket-native-websocket-javax@ module is available only with Wicket 7.x. If your application runs with JRE 7.x then you can
+use @wicket-native-websocket-javax@ together with the latest version of Wicket 6.x. Beware that the API/implementation of @wicket-native-websocket-javax@ may change before Wicket 7.0.0 is released!
+{note}
 
 {note}
 The examples above show snippets for Maven's pom.xml but the application can use any other dependency management tool like [Gradle|http://www.gradle.org/], [SBT|http://www.scala-sbt.org/], ...

@@ -3459,7 +3459,7 @@ Writing a web application is not just about producing a good layout and a bunch 
 <a href="http://en.wikipedia.org/wiki/WebSocket" target="blank">WebSockets</a> is a technology that provides full-duplex communications channels over a single TCP connection.
 This means that once the browser establish a web socket connection to the server the server can push data back to the browser without the browser explicitly asking again and again whether there is something new for it.<p class="paragraph"/>Wicket Native WebSockets modules provide functionality to integrate with the non-standard APIs provided by different web containers (like <a href="http://tomcat.apache.org/" target="blank">Apache Tomcat</a> and <a href="http://www.eclipse.org/jetty/" target="blank">Jetty</a>) and standard <a href="https://www.jcp.org/en/jsr/detail?id=356" target="blank">JSR356</a> implementations.<p class="paragraph"/><blockquote class="warning">
 Native WebSocket works only when both the browser and the web containers support WebSocket technology. There are no plans to add support to fallback to long-polling, streaming or any other technology that simulates two way communication. Use it only if you really know that you will run your application in an environment that supports WebSockets.
-Currently supported web containers are Jetty 7.5+ and Tomcat 7.0.27+.
+Currently supported web containers are Jetty 7.5+ , Tomcat 7.0.27+ and JBoss WildFly 8.0.0+.
 Supported browsers can be found at <a href="http://caniuse.com/#search=websocket" target="blank">caniuse.com</a>.
 </blockquote>
 
@@ -3467,7 +3467,7 @@ Supported browsers can be found at <a href="http://caniuse.com/#search=websocket
 
 <h2 id="nativewebsockets_1">20.1 How does it work ?</h2>
 Each of the modules provide a specialization of <code>org.apache.wicket.protocol.http.WicketFilter</code> that registers implementation specific endpoint when an HTTP request is <a href="http://en.wikipedia.org/wiki/WebSocket#WebSocket_protocol_handshake" target="blank">upgraded</a> to WebSocket one. Later Wicket uses this endpoint to write data back to the browser and read data sent by it.<p class="paragraph"/>WebSockets communication can be used in a Wicket page by using <code>org.apache.wicket.protocol.ws.api.WebSocketBehavior</code> or in a IResource by exteding <code>org.apache.wicket.protocol.ws.api.WebSocketResource</code>.
-When a client is connected it is being registered in a application scoped registry using as a key the application name, the client session id, and the id of the page or the resource name that registered it. Later when the server needs to push a message it can use this registry to filter out which clients need to receive the message.<p class="paragraph"/>When a message is received from the client Wicket wraps it in <code>IWebSocketMessage</code> and calls WebSocketBehavior#<strong class="bold">onMessage()</strong> or WebSocketResource#<strong class="bold">onMessage()</strong> where the application logic can react on it.
+When a client is connected it is being registered in a application scoped registry using as a key the application name, the client http session id, and the id of the page or the resource name that registered it. Later when the server needs to push a message it can use this registry to filter out which clients need to receive the message.<p class="paragraph"/>When a message is received from the client Wicket wraps it in <code>IWebSocketMessage</code> and calls WebSocketBehavior#<strong class="bold">onMessage()</strong> or WebSocketResource#<strong class="bold">onMessage()</strong> where the application logic can react on it.
 The server can push plain text and binary data to the client, but it can also add components for re-render, prepend/append JavaScript as it can do with <a href="../guide/single.html#ajax" class="guide">Ajax</a>.
 
 
@@ -3491,19 +3491,22 @@ The server can push plain text and binary data to the client, but it can also ad
   &#60;version&#62;...&#60;/version&#62;
 &#60;/dependency&#62;</pre></div>
 <ul class="minus">
-<li>for Tomcat 7.0.27+ (first, non-JSR356 implementation)</li>
+<li>for Tomcat 7.0.27+ (the old, non-JSR356 implementation)</li>
 </ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
   &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
   &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;tomcat&#60;/artifactId&#62;
   &#60;version&#62;...&#60;/version&#62;
 &#60;/dependency&#62;</pre></div>
 <ul class="minus">
-<li>for JSR356 complaint implementations (at the moment are supported: Tomcat 8.x, Tomcat 7.0.47+, Jetty 9.1.x and JBoss Wildfly 8.0.Final)</li>
+<li>for JSR356 complaint implementations (at the moment are supported: Tomcat 8.0+, Tomcat 7.0.47+, Jetty 9.1.0+ and JBoss Wildfly 8.0.0+)</li>
 </ul><p class="paragraph"/><div class="code"><pre>&#60;dependency&#62;
   &#60;groupId&#62;org.apache.wicket&#60;/groupId&#62;
   &#60;artifactId&#62;wicket&#45;<span class="java&#45;keyword">native</span>&#45;websocket&#45;javax&#60;/artifactId&#62;
   &#60;version&#62;...&#60;/version&#62;
 &#60;/dependency&#62;</pre></div><p class="paragraph"/><blockquote class="note">
+All web containers providing JSR356 implementation are built with Java 7. This is the reason why <code>wicket-native-websocket-javax</code> module is available only with Wicket 7.x. If your application runs with JRE 7.x then you can
+use <code>wicket-native-websocket-javax</code> together with the latest version of Wicket 6.x. Beware that the API/implementation of <code>wicket-native-websocket-javax</code> may change before Wicket 7.0.0 is released!
+</blockquote><p class="paragraph"/><blockquote class="note">
 The examples above show snippets for Maven's pom.xml but the application can use any other dependency management tool like <a href="http://www.gradle.org/" target="blank">Gradle</a>, <a href="http://www.scala-sbt.org/" target="blank">SBT</a>, &#8230;
 </blockquote>
 <ul class="star">
@@ -3559,7 +3562,7 @@ Once a page that contributes <code>(Base)WebSocketBehavior</code> is rendered th
 
 <h2 id="nativewebsockets_4">20.4 Testing</h2>
 The module provides <code>org.apache.wicket.protocol.ws.util.tester.WebSocketTester</code> which gives you the possibility to emulate sending and receiving messages without the need to run in a real web container, as WicketTester does this for HTTP requests.
-Check <a href="https://github.com/apache/wicket/blob/master/wicket-native-websocket/wicket-native-websocket-core/src/test/java/org/apache/wicket/protocol/ws/util/tester/WebSocketTesterBehaviorTest.java?source=c" target="blank">WebSocketTesterBehaviorTest</a>  and <a href="https://github.com/apache/wicket/blob/master/wicket-native-websocket/wicket-native-websocket-core/src/test/java/org/apache/wicket/protocol/ws/util/tester/WebSocketTesterResourceTest.java" target="blank">WebSocketTesterResourceTest</a> for an examples.
+Check <a href="https://github.com/apache/wicket/blob/master/wicket-native-websocket/wicket-native-websocket-core/src/test/java/org/apache/wicket/protocol/ws/util/tester/WebSocketTesterBehaviorTest.java?source=c" target="blank">WebSocketTesterBehaviorTest</a>  and <a href="https://github.com/apache/wicket/blob/master/wicket-native-websocket/wicket-native-websocket-core/src/test/java/org/apache/wicket/protocol/ws/util/tester/WebSocketTesterResourceTest.java" target="blank">WebSocketTesterResourceTest</a> for examples.
 
 
 
@@ -3571,7 +3574,7 @@ Wicket-Atmosphere experimental module provides integration with <a href="https:/
 <h2 id="nativewebsockets_6">20.6 FAQ</h2>
 <ol>
 <li>Request and session scoped beans do not work.</li>
-</ol><p class="paragraph"/>The Web Socket communication is not processed by Servlet Filters and Listeners and thus the Dependency Injection libraries have no chance to export the request and session beans.
+</ol><p class="paragraph"/>The Web Socket communication is not processed by Servlet Filters and Listeners and thus the Dependency Injection libraries have no chance to export the request and session bean proxies.
 
 
 <h1 id="security">21 Security with Wicket</h1>
@@ -4787,7 +4790,7 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
         <div id="footer">
             
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-03)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
 
             
         </div>
