@@ -1,41 +1,40 @@
-
-
-Wicket internally uses an entity called package resource guard to protect package resources from external access. This entity is an implementation of interface @org.apache.wicket.markup.html.IPackageResourceGuard@. 
-
-By default Wicket applications use as package resource guard class @SecurePackageResourceGuard@, which allows to access only to the following file extensions (grouped by type):
-
-{table}
-File | Extensions
-*JavaScript files* |.js
-*CSS files* |.css
-*HTML pages* |.html
-*Textual files* |.txt
-*Flash files* |.swf
-*Picture files* |.png, .jpg, .jpeg, .gif, .ico, .cur, .bmp, .svg
-*Web font files* |.eot, .ttf, .woff
-{table}
-
-To modify the set of allowed files formats we can add one or more patterns with method @addPattern(String)@. The rules to write a pattern are the following:
-
-* patterns start with either a "+" or a "-". In the first case the pattern will add one or more file to the set while starting a pattern with a “-” we exclude all the files matching the given pattern. For example pattern “-web.xml” excludes all web.xml files in all directories.
-* wildcard character “\*” is supported as placeholder for zero or more characters. For example  pattern “+\*.mp4” adds all the mp4 files inside all directories.
-* subdirectories are supported as well. For example pattern “+documents/\*.pdf” adds all pdf files under “documents” directory. Character “\*” can be used with directories to specify a nesting level. For example “+documents/\*/\*.pdf” adds all pdf files placed one level below “documents” directory.
-* a double wildcard character “\*\*” indicates zero or more subdirectories. For example pattern “+documents/\*\*/\*.pdf” adds all pdf files placed inside “documents” directory or inside any of its subdirectories.
-
-Patterns that allow to access to every file with a given extensions (such as “+\*.pdf”) should be always avoided in favour of more restrictive expressions that contain a directory structure:
+In chapter 10.6 we have seen how to use encryted URLs using mapper @CryotoMapper@. To encrypt/decryp page URLs @CryotoMapper@ uses an instance of interface @org.apache.wicket.util.crypt.ICrypt@:
 
 {code}
-//Application class code...
-@Override
-public void init()   
+public interface ICrypt
 {
-      IPackageResourceGuard packageResourceGuard = application.getResourceSettings() 
-                                                   .getPackageResourceGuard();
-      if (packageResourceGuard instanceof SecurePackageResourceGuard)
-      {
-         SecurePackageResourceGuard guard = (SecurePackageResourceGuard) packageResourceGuard;
-         //Allow to access only to pdf files placed in the “public” directory.
-         guard.addPattern("+public/*.pdf");
-      }
+	String encryptUrlSafe(final String plainText);
+
+	String decryptUrlSafe(final String encryptedText);
 }
 {code}
+
+The default implementation for this interface is class @org.apache.wicket.util.crypt.SunJceCrypt@ which provides password-based cryptography and is adopted by @CryotoMapper@ when we use its constructor @CryptoMapper(IRequestMapper wrappedMapper, Application application)@. As we hinted at the end of chapter 10.6, this constructor alone might not provide enough security for our application. To strengthen the cryptography mechanism used by @CryotoMapper@ we have two possible options.
+The first (and more obvious) is to use constructor @CryptoMapper(IRequestMapper wrappedMapper, IProvider<ICrypt> cryptProvider)@ and give it an implementation of @org.apache.wicket.util.IProvider@ that returns a custom @org.apache.wicket.util.crypt.ICrypt@. 
+
+{note}
+@org.apache.wicket.util.IProvider@ is a single-method interface that acts as object supplier:
+
+{code}
+public interface IProvider<T>
+{
+	T get();
+}
+{code}
+
+{note}
+
+The second option we have to strengthen URLs encryption is to register a cipher factory at application level with method @setCryptFactory(ICryptFactory cryptFactory)@ of interface @ISecuritySettings@:
+
+{code}
+@Override
+public void init() {
+	super.init();
+	getSecuritySettings().setCryptFactory(new KeyInSessionSunJceCryptFactory());
+        setRootRequestMapper(new CryptoMapper(getRootRequestMapper(), this));
+}
+{code}
+
+
+This cipher factory is used by @CryotoMapper@ when we instantiate it with the first contructor we have seen. Chiper factories are implementations of interface @org.apache.wicket.util.crypt.ICryptFactory@.
+Class @org.apache.wicket.core.util.crypt.KeyInSessionSunJceCryptFactory@ is a built-in cipher factory that generates a separate key for each user and stores it in the HTTP session. This factory offers a stronger URLs encryption and can help to protect our application against CSRF attacks   
