@@ -185,13 +185,13 @@ Generated URL:
 
 h3. Encrypting page URLs
 
-Sometimes URLs are a double–edged sword for our site because they can expose too many details about the internal structure of our web application and malicious users could exploit them to perform a "cross-site request forgery":http://en.wikipedia.org/wiki/Cross-site_request_forgery .
+Sometimes URLs are a double–edged sword for our site because they can expose too many details about the internal structure of our web application making it more vulnerable to malicious users.
 
-To avoid this kind of security threat we can use the CryptoMapper request mapper which wraps an existing mapper and encrypts the original URL producing a single encrypted segment:
+To avoid this kind of security threat we can use the @CryptoMapper@ request mapper which wraps an existing mapper and encrypts the original URL producing a single encrypted segment:
 
 !url-encrypted.png!
 
-Typically, CryptoMapper is registered into a Wicket application as the root request mapper wrapping the default one:
+Typically, @CryptoMapper@ is registered into a Wicket application as the root request mapper wrapping the default one:
 
 {code}
 @Override
@@ -202,4 +202,8 @@ public void init() {
 	mountPage("/foo/", HomePage.class);
 {code}
 
-As pointed out in the code above, pages and resources must be mounted after having set CryptoMapper as root mapper, otherwise the mounted paths will not work.
+As pointed out in the code above, pages and resources must be mounted after having set @CryptoMapper@ as root mapper, otherwise the mounted paths will not work.
+
+{warning}
+By default @CryptoMapper@ encrypts page URLs with a cipher that might not be strong enough for production environment. Paragraph 21.4 will provide a more detailed description of how Wicket encrypts page URLs and we will see how to use stronger ciphers.
+{warning}
