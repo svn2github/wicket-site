@@ -1,4 +1,4 @@
-In chapter 10.6 we have seen how to use encryted URLs using mapper @CryotoMapper@. To encrypt/decryp page URLs @CryotoMapper@ uses an instance of interface @org.apache.wicket.util.crypt.ICrypt@:
+In chapter [10.6|guide:urls_6] we have seen how to use encryted URLs using mapper @CryptoMapper@. To encrypt/decrypt page URLs @CryptoMapper@ uses an instance of interface @org.apache.wicket.util.crypt.ICrypt@:
 
 {code}
 public interface ICrypt
@@ -9,7 +9,7 @@ public interface ICrypt
 }
 {code}
 
-The default implementation for this interface is class @org.apache.wicket.util.crypt.SunJceCrypt@ which provides password-based cryptography and is adopted by @CryotoMapper@ when we use its constructor @CryptoMapper(IRequestMapper wrappedMapper, Application application)@. As we hinted at the end of chapter 10.6, this constructor alone might not provide enough security for our application. To strengthen the cryptography mechanism used by @CryotoMapper@ we have two possible options.
+The default implementation for this interface is class @org.apache.wicket.util.crypt.SunJceCrypt@ which provides password-based cryptography and is adopted by @CryptoMapper@ when we use its constructor @CryptoMapper(IRequestMapper wrappedMapper, Application application)@. As we hinted at the end of chapter [10.6|guide:urls_6], this constructor alone might not provide enough security for our application. To strengthen the cryptography mechanism used by @CryptoMapper@ we have two possible options.
 The first (and more obvious) is to use constructor @CryptoMapper(IRequestMapper wrappedMapper, IProvider<ICrypt> cryptProvider)@ and give it an implementation of @org.apache.wicket.util.IProvider@ that returns a custom @org.apache.wicket.util.crypt.ICrypt@. 
 
 {note}
@@ -31,10 +31,10 @@ The second option we have to strengthen URLs encryption is to register a cipher 
 public void init() {
 	super.init();
 	getSecuritySettings().setCryptFactory(new KeyInSessionSunJceCryptFactory());
-        setRootRequestMapper(new CryptoMapper(getRootRequestMapper(), this));
+	setRootRequestMapper(new CryptoMapper(getRootRequestMapper(), this));
 }
 {code}
 
 
-This cipher factory is used by @CryotoMapper@ when we instantiate it with the first contructor we have seen. Chiper factories are implementations of interface @org.apache.wicket.util.crypt.ICryptFactory@.
-Class @org.apache.wicket.core.util.crypt.KeyInSessionSunJceCryptFactory@ is a built-in cipher factory that generates a separate key for each user and stores it in the HTTP session. This factory offers a stronger URLs encryption and can help to protect our application against CSRF attacks   
+This cipher factory is used by @CryptoMapper@ when we instantiate it with the first contructor we have seen. Cipher factories are implementations of interface @org.apache.wicket.util.crypt.ICryptFactory@.
+Class @org.apache.wicket.core.util.crypt.KeyInSessionSunJceCryptFactory@ is a built-in cipher factory that generates a separate key for each user and stores it in the HTTP session. This factory offers a stronger URLs encryption and can help to protect our application against [CSRF|https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)] attacks.  
