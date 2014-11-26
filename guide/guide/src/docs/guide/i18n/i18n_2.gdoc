@@ -128,13 +128,20 @@ String resources can be also retrieved directly from markup code using tag <wick
 <wicket:message key="greetingMessage">message goes here</wicket:message>
 {code}
 
-wicket:message can be adopted also to localize the attributes of a tag. The name of the attribute and the resource key are expressed as a colon-separated value. In the following markup the content of attribute value will be replaced with the localized resource having 'key4value' as key:
+By default the resource value is not escaped for HTML entities. To do that use the @escape@ attribute:
+
+{code:xml}
+<wicket:message key="greetingMessage" escape="true">message goes here</wicket:message>
+{code}
+
+
+@wicket:message@ can be adopted also to localize the attributes of a tag. The name of the attribute and the resource key are expressed as a colon-separated value. In the following markup the content of attribute @value@ will be replaced with the localized resource having 'key4value' as key:
 
 {code:html}
 <input type="submit" value="Preview value" wicket:message="value:key4value"/>
 {code}
 
-If we want to specify multiple attributes at once, we can separate them with a coma:
+If we want to specify multiple attributes at once, we can separate them with a comma:
 
 {code:html}
 <input type="submit" value="Preview value" wicket:message="value:key4value, title:key4title"/>
