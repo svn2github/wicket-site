@@ -67,7 +67,7 @@ Error messages can be filtered using three built-in filters:
 * *ContainerFeedbackMessageFilter*: shows only messages coming from a specific container or from any of its children components.
 * *ErrorLevelFeedbackMessageFilter*: shows only messages with a level of severity equals or greater than a given lower bound. Class FeedbackMessage defines a set of static constants to express different levels of severity: DEBUG, ERROR, WARNING, INFO, SUCCESS, etc.... Levels of severity for feedback messages are discussed in paragraph 10.2.6.
 
-These filters are intended to be used when there are more than one feedback panel (or more than one form) in the same page. We can pass a filter to a feedback panel via its constructor or using the setFilter method. Custom filters can be created implementing the IFeedbackMessageFilter interface. An example of custom filter is illustrated on page 89.
+These filters are intended to be used when there are more than one feedback panel (or more than one form) in the same page. We can pass a filter to a feedback panel via its constructor or using the setFilter method. Custom filters can be created implementing the IFeedbackMessageFilter interface. An example of custom filter is illustrated later in this paragraph.
 
 h3. Built-in validators
 
@@ -277,4 +277,9 @@ public class HomePage extends WebPage {
 }
 {code}
 
-The two feedback panels must be filtered in order to display just the messages with a given level of severity (ERROR for validator message and SUCCESS for form's flash message). Unfortunately the built-in message filter ErrorLevelFeedbackMessageFilter is not suitable for this task because its filter condition does not check for an exact error level (the given level is used as lower bound value). As a consequence, we had to build a custom filter (inner class ExactErrorLevelFilter) to accept only the desired severity level (see method accept of interface IFeedbackMessageFilter). 
+The two feedback panels must be filtered in order to display just the messages with a given level of severity (ERROR for validator message and SUCCESS for form's flash message). Unfortunately the built-in message filter ErrorLevelFeedbackMessageFilter is not suitable for this task because its filter condition does not check for an exact error level (the given level is used as lower bound value). As a consequence, we had to build a custom filter (inner class ExactErrorLevelFilter) to accept only the desired severity level (see method accept of interface IFeedbackMessageFilter).
+
+{note}
+Since version 6.13.0 Wicket provides the additional filter class org.apache.wicket.feedback.ExactLevelFeedbackMessageFilter to accept only feedback messages of a certain error level.
+{note}
+ 
