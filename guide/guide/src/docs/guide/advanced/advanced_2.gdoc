@@ -100,6 +100,32 @@ The home page of project @CallbackURLExample@ contains a @DropDownChoice@ and a 
 Implementing interface @IBehaviorListener@ makes a behavior stateful because its callback URL is specific for a given instance of component.
 {note}
 
+As final note it's interesting to see how Wicket internally uses callback URLs for its standard link component. Class @org.apache.wicket.markup.html.link.Link@ implements interface @org.apache.wicket.markup.html.link.ILinkListener@ which in turn extends @IRequestListener@:
+
+{code}
+public interface ILinkListener extends IRequestListener
+{
+	/** Listener interface */
+	public static final RequestListenerInterface INTERFACE = new RequestListenerInterface(
+		ILinkListener.class);
+
+	/**
+	 * Called when a link is clicked.
+	 */
+	void onLinkClicked();
+}
+{code}
+
+The implementation of method @onLinkClicked@ simply delegates event handling to our custom version of @onClick@:
+
+{code}
+@Override
+public final void onLinkClicked()
+{
+	// Invoke subclass handler
+	onClick();
+}
+{code}
 
 h3. Wicket events infrastructure
 
