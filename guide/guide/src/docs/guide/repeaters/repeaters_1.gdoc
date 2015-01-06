@@ -13,9 +13,9 @@ Component @org.apache.wicket.markup.repeater.RepeatingView@ is a container which
 {code}
 RepeatingView listItems = new RepeatingView("listItems");
 
-listItems.add(new Label(listItems.newChildId(), "green");
-listItems.add(new Label(listItems.newChildId(), "blue");
-listItems.add(new Label(listItems.newChildId(), "red");
+listItems.add(new Label(listItems.newChildId(), "green"));
+listItems.add(new Label(listItems.newChildId(), "blue"));
+listItems.add(new Label(listItems.newChildId(), "red"));
 {code}
 
 *Generated markup:*
