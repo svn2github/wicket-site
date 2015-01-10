@@ -70,7 +70,7 @@ If for any reason we need to switch off versioning for a given page, we can call
 
 h3. Pluggable serialization
 
-Starting from version 1.5 it is possible to choose which implementation of Java serialization will be used by Wicket to store page versions. Wicket serializes pages using an implementation of interface @org.apache.wicket.serialize.ISerializer@. The default implementation is @org.apache.wicket.serialize.java.JavaSerializer@ and it uses the standard Java serialization mechanism based on classes ObjectOutputStream and ObjectInputStream. However on Internet we can find other interesting serialization libraries like Kryo1 which performs faster then the standard implementation.The serializer in use can be customized with the setSerializer(ISerializer) method defined by setting interface @org.apache.wicket.settings.IFrameworkSettings@. 
+Starting from version 1.5 it is possible to choose which implementation of Java serialization will be used by Wicket to store page versions. Wicket serializes pages using an implementation of interface @org.apache.wicket.serialize.ISerializer@. The default implementation is @org.apache.wicket.serialize.java.JavaSerializer@ and it uses the standard Java serialization mechanism based on classes ObjectOutputStream and ObjectInputStream. However on Internet we can find other interesting serialization libraries like [Kryo|https://github.com/EsotericSoftware/kryo] or [Fast|http://ruedigermoeller.github.io/fast-serialization/] which perform faster then the standard implementation. The serializer in use can be customized with the setSerializer(ISerializer) method defined by setting interface @org.apache.wicket.settings.IFrameworkSettings@. 
 
 We can access this interface inside the method init of the class Application using the getFrameworkSettings() method :
 
@@ -83,7 +83,7 @@ public void init()
 }
 {code}
 
-A serializer based on Kryo library is provided by the WicketStuff project. You can find more information on this project, as well as the instructions to use its modules, in Appendix B.
+A serializer based on Kryo library and another one based on Fast are provided by the WicketStuff project. You can find more information on this project, as well as the instructions to use its modules, in Appendix B.
 
 h3. Page caching
 
