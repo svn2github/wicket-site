@@ -211,6 +211,7 @@ wicketstuff:
   wicketstuff_4: Module wicketstuff-googlecharts
   wicketstuff_5: Module wicketstuff-inmethod-grid
   wicketstuff_6: Module wicketstuff-rest-annotations
+  wicketstuff_7: Module stateless
 redirects:
   title: Lost In Redirection With Apache Wicket (Appendix)
 contributing:
