@@ -167,14 +167,15 @@ function addJsClass() {
 <div class="code"><pre>&#60;ul&#62;
     &#60;li wicket:id=<span class="java&#45;quote">"listItems"</span>&#62;&#60;/li&#62;
 &#60;/ul&#62;</pre></div><p class="paragraph"/><strong class="bold">Java Code:</strong>
-<div class="code"><pre>RepeatingView listItems = <span class="java&#45;keyword">new</span> RepeatingView(<span class="java&#45;quote">"listItems"</span>);<p class="paragraph"/>listItems.add(<span class="java&#45;keyword">new</span> Label(listItems.newChildId(), <span class="java&#45;quote">"green"</span>);
-listItems.add(<span class="java&#45;keyword">new</span> Label(listItems.newChildId(), <span class="java&#45;quote">"blue"</span>);
-listItems.add(<span class="java&#45;keyword">new</span> Label(listItems.newChildId(), <span class="java&#45;quote">"red"</span>);</pre></div><p class="paragraph"/><strong class="bold">Generated markup:</strong>
+<div class="code"><pre>RepeatingView listItems = <span class="java&#45;keyword">new</span> RepeatingView(<span class="java&#45;quote">"listItems"</span>);<p class="paragraph"/>listItems.add(<span class="java&#45;keyword">new</span> Label(listItems.newChildId(), <span class="java&#45;quote">"green"</span>));
+listItems.add(<span class="java&#45;keyword">new</span> Label(listItems.newChildId(), <span class="java&#45;quote">"blue"</span>));
+listItems.add(<span class="java&#45;keyword">new</span> Label(listItems.newChildId(), <span class="java&#45;quote">"red"</span>));</pre></div><p class="paragraph"/><strong class="bold">Generated markup:</strong>
 <div class="code"><pre>&#60;ul&#62;
     &#60;li&#62;green&#60;/li&#62;
     &#60;li&#62;blue&#60;/li&#62;
     &#60;li&#62;red&#60;/li&#62;
 &#60;/ul&#62;</pre></div><p class="paragraph"/>As we can see in this example, each child component has been rendered using the parent markup as if it was its own.
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -203,7 +204,7 @@ listItems.add(<span class="java&#45;keyword">new</span> Label(listItems.newChild
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
 
     
 </div>

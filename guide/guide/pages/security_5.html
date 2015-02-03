@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>21.5 Summary 6.x</title>
+    <title>21.5 Package Resource Guard 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -149,7 +149,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>21.5 Summary - Reference Documentation</h1>
+                    <h1>21.5 Package Resource Guard - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -162,8 +162,27 @@ function addJsClass() {
 
                 
 
-<h2 id="security_5">21.5 Summary</h2>
-<p class="paragraph"/> In this chapter we have seen the components and the mechanisms that allow us to implement security policies in our Wicket-based applications. Wicket comes with an out of the box support for both authorization and authentication.<p class="paragraph"/>The central element of authorization mechanism is the interface <code>IAuthorizationStrategy</code> which decouples our components from any detail about security strategy. The implementations of this interface must decide if a user is allowed to instantiate a given page or component and if she/he can perform a given action on it.<p class="paragraph"/>Wicket natively supports role-based authorizations with strategies <code>MetaDataRoleAuthorizationStrategy</code> and <code>AnnotationsRoleAuthorizationStrategy</code>. The difference between these two strategies is that the first offers a programmatic approach for role handling while the second promotes a declarative approach using built-in annotations.<p class="paragraph"/>After having explored how Wicket internally implements authentication and authorization, in the last part of the chapter we have learnt how to configure our applications to support HTTPS and how to specify which pages must be served over this protocol.<p class="paragraph"/>In the last paragraph we have seen how Wicket protects package resources with a guard entity that allows us to decide which package resources can be accessed from users.<p class="paragraph"/><p class="paragraph"/>
+<h2 id="security_5">21.5 Package Resource Guard</h2>
+<p class="paragraph"/>Wicket internally uses an entity called package resource guard to protect package resources from external access. This entity is an implementation of interface <code>org.apache.wicket.markup.html.IPackageResourceGuard</code>.<p class="paragraph"/>By default Wicket applications use as package resource guard class <code>SecurePackageResourceGuard</code>, which allows to access only to the following file extensions (grouped by type):<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>File</th><th>Extensions</th></tr><tr class="table-odd"><td><strong class="bold">JavaScript files</strong></td><td>.js</td></tr><tr class="table-even"><td><strong class="bold">CSS files</strong></td><td>.css</td></tr><tr class="table-odd"><td><strong class="bold">HTML pages</strong></td><td>.html</td></tr><tr class="table-even"><td><strong class="bold">Textual files</strong></td><td>.txt</td></tr><tr class="table-odd"><td><strong class="bold">Flash files</strong></td><td>.swf</td></tr><tr class="table-even"><td><strong class="bold">Picture files</strong></td><td>.png, .jpg, .jpeg, .gif, .ico, .cur, .bmp, .svg</td></tr><tr class="table-odd"><td><strong class="bold">Web font files</strong></td><td>.eot, .ttf, .woff</td></tr></table><p class="paragraph"/>To modify the set of allowed files formats we can add one or more patterns with method <code>addPattern(String)</code>. The rules to write a pattern are the following:
+<ul class="star">
+<li>patterns start with either a "+" or a "-". In the first case the pattern will add one or more file to the set while starting a pattern with a “-” we exclude all the files matching the given pattern. For example pattern “-web.xml” excludes all web.xml files in all directories.</li>
+<li>wildcard character “&#42;” is supported as placeholder for zero or more characters. For example  pattern “+&#42;.mp4” adds all the mp4 files inside all directories.</li>
+<li>subdirectories are supported as well. For example pattern “+documents/&#42;.pdf” adds all pdf files under “documents” directory. Character “&#42;” can be used with directories to specify a nesting level. For example “+documents/&#42;/&#42;.pdf” adds all pdf files placed one level below “documents” directory.</li>
+<li>a double wildcard character “&#42;&#42;” indicates zero or more subdirectories. For example pattern “+documents/&#42;&#42;/&#42;.pdf” adds all pdf files placed inside “documents” directory or inside any of its subdirectories.</li>
+</ul><p class="paragraph"/>Patterns that allow to access to every file with a given extensions (such as “+&#42;.pdf”) should be always avoided in favour of more restrictive expressions that contain a directory structure:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
+@Override
+<span class="java&#45;keyword">public</span> void init()   
+&#123;
+      IPackageResourceGuard packageResourceGuard = application.getResourceSettings() 
+                                                   .getPackageResourceGuard();
+      <span class="java&#45;keyword">if</span> (packageResourceGuard <span class="java&#45;keyword">instanceof</span> SecurePackageResourceGuard)
+      &#123;
+         SecurePackageResourceGuard guard = (SecurePackageResourceGuard) packageResourceGuard;
+         //Allow to access only to pdf files placed in the “<span class="java&#45;keyword">public</span>” directory.
+         guard.addPattern(<span class="java&#45;quote">"+<span class="java&#45;keyword">public</span>/&#42;.pdf"</span>);
+      &#125;
+&#125;</pre></div>
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -192,7 +211,7 @@ function addJsClass() {
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
 
     
 </div>

@@ -331,12 +331,15 @@ setResponsePage(MountedPageWithPlaceholder.class, pageParameters);</pre></div><p
 		pageParameters.add(<span class="java&#45;quote">"foo"</span>, <span class="java&#45;quote">"foo"</span>);
 		pageParameters.add(<span class="java&#45;quote">"bar"</span>, <span class="java&#45;quote">"bar"</span>);<p class="paragraph"/>		setResponsePage(MountedPage.class, pageParameters);
 	&#125;
-&#125;);</pre></div><p class="paragraph"/>Generated URL:<p class="paragraph"/><div class="code"><pre>&#60;Application path&#62;/mountedPath/foo/foo/bar/bar?1</pre></div><p class="paragraph"/><h3>Encrypting page URLs</h3><p class="paragraph"/>Sometimes URLs are a double–edged sword for our site because they can expose too many details about the internal structure of our web application and malicious users could exploit them to perform a <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" target="blank">cross-site request forgery</a> .<p class="paragraph"/>To avoid this kind of security threat we can use the CryptoMapper request mapper which wraps an existing mapper and encrypts the original URL producing a single encrypted segment:<p class="paragraph"/><img border="0" class="center" src="../img/url-encrypted.png"></img><p class="paragraph"/>Typically, CryptoMapper is registered into a Wicket application as the root request mapper wrapping the default one:<p class="paragraph"/><div class="code"><pre>@Override
+&#125;);</pre></div><p class="paragraph"/>Generated URL:<p class="paragraph"/><div class="code"><pre>&#60;Application path&#62;/mountedPath/foo/foo/bar/bar?1</pre></div><p class="paragraph"/><h3>Encrypting page URLs</h3><p class="paragraph"/>Sometimes URLs are a double–edged sword for our site because they can expose too many details about the internal structure of our web application making it more vulnerable to malicious users.<p class="paragraph"/>To avoid this kind of security threat we can use the <code>CryptoMapper</code> request mapper which wraps an existing mapper and encrypts the original URL producing a single encrypted segment:<p class="paragraph"/><img border="0" class="center" src="../img/url-encrypted.png"></img><p class="paragraph"/>Typically, <code>CryptoMapper</code> is registered into a Wicket application as the root request mapper wrapping the default one:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> void init() &#123;
 	<span class="java&#45;keyword">super</span>.init();
 	setRootRequestMapper(<span class="java&#45;keyword">new</span> CryptoMapper(getRootRequestMapper(), <span class="java&#45;keyword">this</span>)); 
 	//pages and resources must be mounted after we have set CryptoMapper
-	mountPage(<span class="java&#45;quote">"/foo/"</span>, HomePage.class);</pre></div><p class="paragraph"/>As pointed out in the code above, pages and resources must be mounted after having set CryptoMapper as root mapper, otherwise the mounted paths will not work.
+	mountPage(<span class="java&#45;quote">"/foo/"</span>, HomePage.class);</pre></div><p class="paragraph"/>As pointed out in the code above, pages and resources must be mounted after having set <code>CryptoMapper</code> as root mapper, otherwise the mounted paths will not work.<p class="paragraph"/><blockquote class="warning">
+By default <code>CryptoMapper</code> encrypts page URLs with a cipher that might not be strong enough for production environment. Paragraph 21.4 will provide a more detailed description of how Wicket encrypts page URLs and we will see how to use stronger ciphers.
+</blockquote>
+
 
 
 <h2 id="urls_7">10.7 Summary</h2>
@@ -369,7 +372,7 @@ setResponsePage(MountedPageWithPlaceholder.class, pageParameters);</pre></div><p
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
 
     
 </div>

@@ -163,7 +163,7 @@ function addJsClass() {
                 
 
 <h2 id="security_3">21.3 Using HTTPS protocol</h2>
-<p class="paragraph"/>HTTPS is the standard technology adopted on Internet to create a secure communication channel between web applications and their users.<p class="paragraph"/>In Wicket we can easily protect our pages with HTTPS mounting a special request mapper called <code>HttpsMapper</code> and using annotation RequireHttps with those pages we want to serve over this protocol. Both these two entities are in package <code>org.apache.wicket.protocol.https</code>.<p class="paragraph"/>HttpsMapper wraps an existing mapper and redirects incoming requests to HTTPS if the related response must render a page containing annotation <code>RequireHttps</code>. Most of the times the wrapped mapper will be the root one, just like we saw before for <code>CryptoManager</code> in paragraph 8.6.6.<p class="paragraph"/>Another parameter needed to build a <code>HttpsMapper</code> is an instance of class <code>HttpsConfi</code>g. This class allows us to specify which ports must be used for HTTPS and HTTP. By default the port numbers used by these two protocols are respectively 443 and 80.<p class="paragraph"/>The following code is taken from project <code>HttpsProtocolExample</code> and illustrates how to enable HTTPS  in our applications:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
+<p class="paragraph"/>HTTPS is the standard technology adopted on Internet to create a secure communication channel between web applications and their users.<p class="paragraph"/>In Wicket we can easily protect our pages with HTTPS mounting a special request mapper called <code>HttpsMapper</code> and using annotation RequireHttps with those pages we want to serve over this protocol. Both these two entities are in package <code>org.apache.wicket.protocol.https</code>.<p class="paragraph"/>HttpsMapper wraps an existing mapper and redirects incoming requests to HTTPS if the related response must render a page containing annotation <code>RequireHttps</code>. Most of the times the wrapped mapper will be the root one, just like we saw before for <code>CryptoMapper</code> in paragraph 10.6.<p class="paragraph"/>Another parameter needed to build a <code>HttpsMapper</code> is an instance of class <code>HttpsConfi</code>g. This class allows us to specify which ports must be used for HTTPS and HTTP. By default the port numbers used by these two protocols are respectively 443 and 80.<p class="paragraph"/>The following code is taken from project <code>HttpsProtocolExample</code> and illustrates how to enable HTTPS  in our applications:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
 @Override
 <span class="java&#45;keyword">public</span> void init()&#123;   
    setRootRequestMapper(<span class="java&#45;keyword">new</span> HttpsMapper(getRootRequestMapper(), 
@@ -187,6 +187,7 @@ function addJsClass() {
 <span class="java&#45;keyword">public</span> class HttpsPage <span class="java&#45;keyword">implements</span> IMarker&#123;
 //Page code&#8230;
 &#125;</pre></div>
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -215,7 +216,7 @@ function addJsClass() {
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
 
     
 </div>

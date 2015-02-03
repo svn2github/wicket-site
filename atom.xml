@@ -4,13 +4,331 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2014-12-06T18:04:29+01:00</updated>
+ <updated>2015-02-03T12:11:32+01:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
    <email>dev@wicket.apache.org</email>
  </author>
  
+ 
+ <entry>
+   <title>Apache Wicket 7.0.0-M5 released</title>
+   <link href="http://wicket.apache.org/2015/02/02/wicket-7.0.0-M5-released.html"/>
+   <updated>2015-02-02T00:00:00+01:00</updated>
+   <id>http://wicket.apache.org/2015/02/02/wicket-7.0.0-M5-released</id>
+   <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 7.0.0-M5!&lt;/p&gt;
+
+&lt;p&gt;We have released another milestone release for Apache Wicket 7. We aim
+to finalise Wicket 7 over the coming months and request your help in
+testing the new major version.&lt;/p&gt;
+
+&lt;h3 id=&quot;caveats&quot;&gt;Caveats&lt;/h3&gt;
+
+&lt;p&gt;It is still a development version so expect API breaks to happen over
+the course of the coming milestone releases.&lt;/p&gt;
+
+&lt;h3 id=&quot;semantic-versioning&quot;&gt;Semantic versioning&lt;/h3&gt;
+
+&lt;p&gt;As we adopted semver Wicket 7 will be the first release since 6.0 where
+we are able to refactor the API. We will continue to use semver when we
+have made Wicket 7 final and maintain api compatibility between minor
+versions of Wicket 7.&lt;/p&gt;
+
+&lt;h3 id=&quot;requirements&quot;&gt;Requirements&lt;/h3&gt;
+
+&lt;p&gt;Wicket 7 requires the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java 7&lt;/li&gt;
+  &lt;li&gt;Servlet 3 compatible container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can’t mix wicket libraries from prior Wicket versions with Wicket 7.&lt;/p&gt;
+
+&lt;h3 id=&quot;migration-guide&quot;&gt;Migration guide&lt;/h3&gt;
+
+&lt;p&gt;As usual we have a migration guide available online for people
+migrating their applications to Wicket 7. We will continue to update
+the guide as development progresses. If you find something that is not
+in the guide, please update the guide, or let us know so we can update
+the guide.&lt;/p&gt;
+
+&lt;p&gt;You can find the guide here: &lt;a href=&quot;http://s.apache.org/wicket7migrate&quot;&gt;http://s.apache.org/wicket7migrate&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;using-this-release&quot;&gt;Using this release&lt;/h3&gt;
+
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to
+update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;7.0.0-M5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or download and build the distribution yourself, or use our
+convenience binary package&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M5&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M5/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M5/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;about-this-release&quot;&gt;About this release&lt;/h3&gt;
+
+&lt;p&gt;Below you can find the cryptographic signatures for the distributions
+and the release notes.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-signatures-for-the-source-release-artefacts&quot;&gt;The signatures for the source release artefacts:&lt;/h4&gt;
+
+&lt;p&gt;The signatures for the source release artefacts:&lt;/p&gt;
+
+&lt;p&gt;Signature for apache-wicket-7.0.0-M5.zip:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+iEYEABECAAYFAlRTjfQACgkQJBX8W/xy/UW+TQCfZn81bkbmcrVEGjWY4rUA2sfy
+rJMAn2Ah/6X2M9Cf02hEMyb8JV+ZPaBa
+=xlUP
+-----END PGP SIGNATURE-----
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Signature for apache-wicket-7.0.0-M5.tar.gz:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+iEYEABECAAYFAlRTjfQACgkQJBX8W/xy/UVGggCdFyCZATMis/829BmasZKgx28m
+uDEAn2eZhOrh8//AIYnkRYFLtWJnyx0F
+=kWVF
+-----END PGP SIGNATURE-----
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;changelog-for-700-m5&quot;&gt;CHANGELOG for 7.0.0-M5:&lt;/h4&gt;
+
+&lt;p&gt;Release Notes - Wicket - Version 7.0.0-M5&lt;/p&gt;
+
+&lt;h4 id=&quot;bugs&quot;&gt;Bugs&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5584&quot;&gt;WICKET-5584&lt;/a&gt; - DiskDataStore error&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5747&quot;&gt;WICKET-5747&lt;/a&gt; - Wicket Ajax Click handling gets requeued in OnDomReady so fire out of order&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5748&quot;&gt;WICKET-5748&lt;/a&gt; - StackOverflowError while trying to get the Markup of WicketHeadContainer&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5751&quot;&gt;WICKET-5751&lt;/a&gt; - NullPointerException in IntHashMap&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5752&quot;&gt;WICKET-5752&lt;/a&gt; - ReplacementResourceBundleReference should return the dependencies for the replacing resource ref&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5759&quot;&gt;WICKET-5759&lt;/a&gt; - AjaxRequestAttributes extra parameters aren't properly handled in getCallbackFunction()&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5770&quot;&gt;WICKET-5770&lt;/a&gt; - PageParametersEncoder should not decode parameters with no name&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5772&quot;&gt;WICKET-5772&lt;/a&gt; - LoadableDetachableModel caches null value if load() fails, bug in getObject() {attached = true;}&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5777&quot;&gt;WICKET-5777&lt;/a&gt; - Reload of page leads to WicketRuntimeException&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5782&quot;&gt;WICKET-5782&lt;/a&gt; - Missing escaping in MultiFileUploadField.js - sort of XSS&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5783&quot;&gt;WICKET-5783&lt;/a&gt; - Multiple events in AjaxEventBehavior with prefix 'on'&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5784&quot;&gt;WICKET-5784&lt;/a&gt; - arraycopy with bad length in AbstractRequestLogger:172&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5793&quot;&gt;WICKET-5793&lt;/a&gt; - Request for static resource creating a session in 6.13.0+&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5800&quot;&gt;WICKET-5800&lt;/a&gt; - wicket:enclosure within FormComponentPanel causes exception related to dequeueing&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5809&quot;&gt;WICKET-5809&lt;/a&gt; - URL IPv6 parsing&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5811&quot;&gt;WICKET-5811&lt;/a&gt; - Infinite loop issue in PropertyValidator#createUnresolvablePropertyMessage(FormComponent&amp;lt;&amp;gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5812&quot;&gt;WICKET-5812&lt;/a&gt; - AtmosphereBehavior wrongly sets Ajax base url to '.'&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5817&quot;&gt;WICKET-5817&lt;/a&gt; - Wicket-JMX should depend on asm-util&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;improvements&quot;&gt;Improvements&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4703&quot;&gt;WICKET-4703&lt;/a&gt; - StringResourceModel should provide an overridable getString(Component) method&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5746&quot;&gt;WICKET-5746&lt;/a&gt; - Fire an event once all JS event listeners are registered&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5753&quot;&gt;WICKET-5753&lt;/a&gt; - It is impossible to determine the form submitting component's inputName when AjaxFormSubmitBehavior is used&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5754&quot;&gt;WICKET-5754&lt;/a&gt; - (String)ResourceModel's defaultValue could be an IModel&amp;lt;String&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5756&quot;&gt;WICKET-5756&lt;/a&gt; - Allow to use custom ciphers when using SunJceCrypt class&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5758&quot;&gt;WICKET-5758&lt;/a&gt; - Portuguese translation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5760&quot;&gt;WICKET-5760&lt;/a&gt; - Add constructor (String, Serializable, String) to AttributeAppender&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5774&quot;&gt;WICKET-5774&lt;/a&gt; - UrlRenderer should render full and absolute urls in their canonical form&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5775&quot;&gt;WICKET-5775&lt;/a&gt; - Replace the session upon successful signin for better support for Session Fixation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5776&quot;&gt;WICKET-5776&lt;/a&gt; - Add information about the component when it fail in detach phase&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5778&quot;&gt;WICKET-5778&lt;/a&gt; - Pass the IModifiable to the IChangeListener in ModificationWatcher&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5780&quot;&gt;WICKET-5780&lt;/a&gt; - Add a resource reference for ContextRelativeResource&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5789&quot;&gt;WICKET-5789&lt;/a&gt; - Make org.apache.wicket.protocol.ws.javax.WicketServerEndpointConfig publicly visible&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5794&quot;&gt;WICKET-5794&lt;/a&gt; - Make DefaultExceptionMapper extensible&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5797&quot;&gt;WICKET-5797&lt;/a&gt; - Convenience method to call setResponsePage with forward option&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5799&quot;&gt;WICKET-5799&lt;/a&gt; - Add rel=prev/next in PagingNavigator.html&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5802&quot;&gt;WICKET-5802&lt;/a&gt; - HTML Import&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5803&quot;&gt;WICKET-5803&lt;/a&gt; - Reduce log for &quot;o.a.w.r.PropertiesFactory&lt;/td&gt;
+          &lt;td&gt;Loading properties files from …&quot;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5806&quot;&gt;WICKET-5806&lt;/a&gt; - Wicket.Log should log (at least errors) in the browser console even when Wicket Ajax Debug window is disabled&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5808&quot;&gt;WICKET-5808&lt;/a&gt; - SpringBean, support generic beans&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5818&quot;&gt;WICKET-5818&lt;/a&gt; - Add support for httpOnly cookies to CookieDefaults&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5820&quot;&gt;WICKET-5820&lt;/a&gt; - improve StringResourceModel's resource key interpolation for null&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;new-features&quot;&gt;New Features&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5771&quot;&gt;WICKET-5771&lt;/a&gt; - Ability to escape resource bundle messages added with wicket:message&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;tasks&quot;&gt;Tasks&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5732&quot;&gt;WICKET-5732&lt;/a&gt; - Improve component queuing and auto component&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5791&quot;&gt;WICKET-5791&lt;/a&gt; - Update JQuery to 1.11.2 and 2.1.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;
+
+&lt;p&gt;— The Wicket team&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Apache Wicket 6.19.0 released</title>
+   <link href="http://wicket.apache.org/2015/02/02/wicket-6.19.0-released.html"/>
+   <updated>2015-02-02T00:00:00+01:00</updated>
+   <id>http://wicket.apache.org/2015/02/02/wicket-6.19.0-released</id>
+   <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.19.0!&lt;/p&gt;
+
+&lt;p&gt;This release marks another minor release of Wicket 6. Starting
+with Wicket 6 we use semantic versioning for the future development
+of Wicket, and as such no API breaks are present in this release
+compared to 6.0.0.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-this-release&quot;&gt;Using this release&lt;/h3&gt;
+
+&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to
+update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.19.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or download and build the distribution yourself, or use our
+convenience binary package&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.19.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.19.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.19.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.19.0/binaries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;upgrading-from-earlier-versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
+
+&lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If
+you come from a version prior to 6.0.0, please read our Wicket 6
+migration guide found at&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;migration to Wicket 6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;
+
+&lt;p&gt;— The Wicket team&lt;/p&gt;
+
+&lt;h3 id=&quot;this-release&quot;&gt;This release&lt;/h3&gt;
+
+&lt;p&gt;Below you can find the cryptographic signatures for the distributions
+and the release notes.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-signatures-for-the-source-release-artefacts&quot;&gt;The signatures for the source release artefacts:&lt;/h4&gt;
+
+&lt;p&gt;Signature for apache-wicket-6.19.0.zip:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+iEYEABECAAYFAlRTb2UACgkQJBX8W/xy/UW1egCg1LOkWMrnD+FJoHKjp7Gulyvm
+s+UAoMNN/mgMKo+p33h3vt4fnLTemLGT
+=RpfO
+-----END PGP SIGNATURE-----
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Signature for apache-wicket-6.19.0.tar.gz:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+iEYEABECAAYFAlRTb2UACgkQJBX8W/xy/UVZcACguyKdrM0byfMp5IWqzwFMx5Lo
+i6UAn25gHcC0w8QWiNJXV7u99iTHssaP
+=+QQW
+-----END PGP SIGNATURE-----
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;changelog-for-6190&quot;&gt;CHANGELOG for 6.19.0:&lt;/h4&gt;
+
+&lt;p&gt;The following changes were made in Wicket for this release.&lt;/p&gt;
+
+&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5747&quot;&gt;WICKET-5747&lt;/a&gt; - Wicket Ajax Click handling gets requeued in OnDomReady so fire out of order&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5752&quot;&gt;WICKET-5752&lt;/a&gt; - ReplacementResourceBundleReference should return the dependencies for the replacing resource ref&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5755&quot;&gt;WICKET-5755&lt;/a&gt; - Restoring focus after Ajax replace no longer works in IE8&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5759&quot;&gt;WICKET-5759&lt;/a&gt; - AjaxRequestAttributes extra parameters aren't properly handled in getCallbackFunction()&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5770&quot;&gt;WICKET-5770&lt;/a&gt; - PageParametersEncoder should not decode parameters with no name&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5782&quot;&gt;WICKET-5782&lt;/a&gt; - Missing escaping in MultiFileUploadField.js - sort of XSS&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5783&quot;&gt;WICKET-5783&lt;/a&gt; - Multiple events in AjaxEventBehavior with prefix 'on'&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5784&quot;&gt;WICKET-5784&lt;/a&gt; - arraycopy with bad length in AbstractRequestLogger:172&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5793&quot;&gt;WICKET-5793&lt;/a&gt; - Request for static resource creating a session in 6.13.0+&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5809&quot;&gt;WICKET-5809&lt;/a&gt; - URL IPv6 parsing&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5811&quot;&gt;WICKET-5811&lt;/a&gt; - Infinite loop issue in PropertyValidator#createUnresolvablePropertyMessage(FormComponent&amp;lt;&amp;gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5812&quot;&gt;WICKET-5812&lt;/a&gt; - AtmosphereBehavior wrongly sets Ajax base url to '.'&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-4703&quot;&gt;WICKET-4703&lt;/a&gt; - StringResourceModel should provide an overridable getString(Component) method&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5746&quot;&gt;WICKET-5746&lt;/a&gt; - Fire an event once all JS event listeners are registered&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5753&quot;&gt;WICKET-5753&lt;/a&gt; - It is impossible to determine the form submitting component's inputName when AjaxFormSubmitBehavior is used&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5754&quot;&gt;WICKET-5754&lt;/a&gt; - (String)ResourceModel's defaultValue could be an IModel&amp;lt;String&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5756&quot;&gt;WICKET-5756&lt;/a&gt; - Allow to use custom ciphers when using SunJceCrypt class&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5758&quot;&gt;WICKET-5758&lt;/a&gt; - Portuguese translation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5760&quot;&gt;WICKET-5760&lt;/a&gt; - Add constructor (String, Serializable, String) to AttributeAppender&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5775&quot;&gt;WICKET-5775&lt;/a&gt; - Replace the session upon successful signin for better support for Session Fixation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5776&quot;&gt;WICKET-5776&lt;/a&gt; - Add information about the component when it fail in detach phase&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5778&quot;&gt;WICKET-5778&lt;/a&gt; - Pass the IModifiable to the IChangeListener in ModificationWatcher&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5780&quot;&gt;WICKET-5780&lt;/a&gt; - Add a resource reference for ContextRelativeResource&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5794&quot;&gt;WICKET-5794&lt;/a&gt; - Make DefaultExceptionMapper extensible&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5797&quot;&gt;WICKET-5797&lt;/a&gt; - Convenience method to call setResponsePage with forward option&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5799&quot;&gt;WICKET-5799&lt;/a&gt; - Add rel=prev/next in PagingNavigator.html&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5802&quot;&gt;WICKET-5802&lt;/a&gt; - HTML Import&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5806&quot;&gt;WICKET-5806&lt;/a&gt; - Wicket.Log should log (at least errors) in the browser console even when Wicket Ajax Debug window is disabled&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;new-feature&quot;&gt;New Feature&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5771&quot;&gt;WICKET-5771&lt;/a&gt; - Ability to escape resource bundle messages added with wicket:message&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;task&quot;&gt;Task&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5791&quot;&gt;WICKET-5791&lt;/a&gt; - Update JQuery to 1.11.2 and 2.1.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;
+
+&lt;p&gt;— The Wicket team&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Apache Wicket 7.0.0-M4 released</title>
@@ -439,7 +757,7 @@ migration guide found at&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5371] - IllegalArgumentException: Argument &#39;page&#39; may not be null. - when sending event from asynchronous process
+&lt;pre&gt;&lt;code&gt;* [WICKET-5371] - IllegalArgumentException: Argument 'page' may not be null. - when sending event from asynchronous process
 * [WICKET-5539] - Allow preserving of the parsed PageParameters when re-creating an expired page
 * [WICKET-5564] - AjaxRequestTarget.focusComponent() does not work when two Ajax responses arrive next to each other
 * [WICKET-5603] - OnChangeAjaxBehavior attached to DropDownChoice produces two Ajax requests in Chrome v35
@@ -449,10 +767,10 @@ migration guide found at&lt;/p&gt;
 * [WICKET-5616] - CLONE - ModalWindow is not visible in Safari when opened from a link at the bottom of a large page
 * [WICKET-5619] - ConcurrentModificationException may occur when calling EventBus.post()
 * [WICKET-5624] - Do not throw when WebSocket is not supported
-* [WICKET-5626] - ConcatBundleResource#reportError() doesn&#39;t print the resource attributes
-* [WICKET-5630] - Fix last button translation germany of wizard to &#39;Letzter&#39;
+* [WICKET-5626] - ConcatBundleResource#reportError() doesn't print the resource attributes
+* [WICKET-5630] - Fix last button translation germany of wizard to 'Letzter'
 * [WICKET-5631] - Allow submitting with POST method for PhantomJS
-* [WICKET-5636] - Update StatelessForm&#39;s and AbstractRepeater&#39;s javadoc that FormComponents should be repeated only with RepeatingView
+* [WICKET-5636] - Update StatelessForm's and AbstractRepeater's javadoc that FormComponents should be repeated only with RepeatingView
 * [WICKET-5637] - Fix the encoding of the Chinese translations for Wizard component
 * [WICKET-5639] - ResourceResponse does not write headers when status code is set
 * [WICKET-5643] - WebPageRenderer should bind a Session if redirect is required and the session is temporary.
@@ -460,7 +778,7 @@ migration guide found at&lt;/p&gt;
 * [WICKET-5655] - Problem with setting of IComponentInheritedModel and FLAG_INHERITABLE_MODEL
 * [WICKET-5656] - PropertyResolver does not scan for NotNull in annotation tree
 * [WICKET-5657] - wicket-autocomplete may fail after preceeding Ajax request
-* [WICKET-5662] - @SpringBean(name=&quot;something&quot;, required=false) still throws org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named &#39;something&#39; is defined
+* [WICKET-5662] - @SpringBean(name=&quot;something&quot;, required=false) still throws org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'something' is defined
 * [WICKET-5670] - org.apache.wicket.protocol.ws.api.registry.IKey should be Serializable (IClusterable)
 * [WICKET-5679] - RenderStrategy REDIRECT_TO_RENDER lets fail test with BaseWicketTester#startComponentInPage
 * [WICKET-5680] - AjaxEditableLabel keeps raw input after cancel following a validation failure 
@@ -488,7 +806,7 @@ migration guide found at&lt;/p&gt;
 * [WICKET-5653] - Add a setter for IViolationTranslator to BeanValidationConfiguration
 * [WICKET-5654] - DefaultViolationTranslator should maybe use getMessage()
 * [WICKET-5658] - AjaxFormComponentUpdatingBehavior should not clear the rawInput when updateModel is false
-* [WICKET-5659] - Add a setting to MultiFileUploadField to not close the file uploads&#39; streams
+* [WICKET-5659] - Add a setting to MultiFileUploadField to not close the file uploads' streams
 * [WICKET-5660] - Throw more specific exception when a component cannot be found by ListenerInterfaceRequestHandler
 * [WICKET-5667] - Preserve the NotSerializableException if an error occur while using the IObjectCheckers
 * [WICKET-5668] - StringResourceModel with custom locale 
@@ -739,193 +1057,6 @@ convenience binary package&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun and let us know what you think!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Apache Wicket 7.0.0-M1 released</title>
-   <link href="http://wicket.apache.org/2014/04/30/wicket-7.0.0-M1-released.html"/>
-   <updated>2014-04-30T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2014/04/30/wicket-7.0.0-M1-released</id>
-   <content type="html">&lt;p&gt;We have released the first of a series of milestone releases for Apache
-Wicket 7. We aim to finalise Wicket 7 over the coming months and
-request your help in testing the new major version.&lt;/p&gt;
-
-&lt;h3 id=&quot;caveats&quot;&gt;Caveats&lt;/h3&gt;
-
-&lt;p&gt;It is still a development version so expect API breaks to happen over
-the course of the coming milestone releases.&lt;/p&gt;
-
-&lt;h3 id=&quot;semantic-versioning&quot;&gt;Semantic versioning&lt;/h3&gt;
-
-&lt;p&gt;As we adopted semver Wicket 7 will be the first release since 6.0 where
-we are able to refactor the API. We will continue to use semver when we
-have made Wicket 7 final and maintain api compatibility between minor
-versions of Wicket 7.&lt;/p&gt;
-
-&lt;h3 id=&quot;requirements&quot;&gt;Requirements&lt;/h3&gt;
-
-&lt;p&gt;Wicket 7 requires the following:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Java 7&lt;/li&gt;
-  &lt;li&gt;Servlet 3 compatible container&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can’t mix wicket libraries from prior Wicket versions with Wicket 7.&lt;/p&gt;
-
-&lt;h3 id=&quot;migration-guide&quot;&gt;Migration guide&lt;/h3&gt;
-
-&lt;p&gt;As usual we have a migration guide available online for people
-migrating their applications to Wicket 7. We will continue to update
-the guide as development progresses. If you find something that is not
-in the guide, please update the guide, or let us know so we can update
-the guide.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://s.apache.org/wicket7migrate&quot;&gt;Migration to Wicket 7.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;using-this-release&quot;&gt;Using this release&lt;/h3&gt;
-
-&lt;p&gt;This is pre-release software: use at your own peril!&lt;/p&gt;
-
-&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to
-update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;7.0.0-M1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Or download and build the distribution yourself, or use our
-convenience binary package&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/7.0.0-M1/binaries&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Have fun and let us know what you think!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Apache Wicket 6.15.0 released</title>
-   <link href="http://wicket.apache.org/2014/04/23/wicket-6.15.0-released.html"/>
-   <updated>2014-04-23T00:00:00+02:00</updated>
-   <id>http://wicket.apache.org/2014/04/23/wicket-6.15.0-released</id>
-   <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.15.0!&lt;/p&gt;
-
-&lt;p&gt;This release marks the fifteenth minor release of Wicket 6. Starting
-with Wicket 6 we use semantic versioning for the future development of
-Wicket, and as such no API breaks are present in this release compared
-to 6.0.0.&lt;/p&gt;
-
-&lt;h3 id=&quot;new-and-noteworthy&quot;&gt;New and noteworthy&lt;/h3&gt;
-
-&lt;p&gt;This release fixes 25 bugs and adds the following improvements:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The second level page store has been disabled by default (see issue &lt;a href=&quot;https://issues.apache.org/jira/browse/WICKET-5554&quot;&gt;WICKET-5554&lt;/a&gt; for more details).&lt;/li&gt;
-  &lt;li&gt;Created new placeholder tag to indicate where header contributions should appear. See this &lt;a href=&quot;http://wicketinaction.com/2014/03/header-contributions-positioning/&quot;&gt;blog post entry&lt;/a&gt; or paragraph 15.8 of the official guide. &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This release also celebrates the 10th birthday of Wicket!&lt;/p&gt;
-
-&lt;h3 id=&quot;using-this-release&quot;&gt;Using this release&lt;/h3&gt;
-
-&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to
-update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.15.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Or download and build the distribution yourself, or use our
-convenience binary package&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.15.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.15.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.15.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.15.0/binaries&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;upgrading-from-earlier-versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
-
-&lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If
-you come from a version prior to 6.0.0, please read our Wicket 6
-migration guide found at&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Have fun!&lt;/p&gt;
-
-&lt;p&gt;— The Wicket team&lt;/p&gt;
-
-&lt;h3 id=&quot;release-notes---wicket---version-6150&quot;&gt;Release Notes - Wicket - Version 6.15.0&lt;/h3&gt;
-
-&lt;h4 id=&quot;sub-task&quot;&gt;Sub-task&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5510] - Avoid using jQuery.text() when possible. It is very slow in IE
-* [WICKET-5554] - Disable second level pages store because it is efficient only when manually configured
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5243] - JS: High stack size in Function Executor causes &quot;too much recursion&quot;
-* [WICKET-5284] - Too deep recursion in AbstractHierarchyIterator
-* [WICKET-5504] - AjaxRequestTarget.append/prependJavaScript cannot handle scripts with new-lines anymore
-* [WICKET-5505] - DefaultPropertyResolver does not respect JavaBean conventions
-* [WICKET-5506] - DefaultPropertyResolver should resolve the Property according to the getter first
-* [WICKET-5509] - Wicket examples&#39; MailTemplate from Page is broken
-* [WICKET-5517] - IE11 returns false for Wicket.Browser.isIE()
-* [WICKET-5518] - FormComponent.updateCollectionModel  does not handle unmodifiableList
-* [WICKET-5521] - Stateless forms does not work when RecreateMountedPagesAfterExpiry turned off
-* [WICKET-5522] - Failing HTTPS redirect to RequireHttps annotated pages with ONE_PASS_RENDER strategy
-* [WICKET-5523] - Ajax indicator not working when display is set to none in css
-* [WICKET-5532] - NPE calling PackageResource.getResourceStream() if there is no RequestCycle defined
-* [WICKET-5534] - DataTable component must throw an exception when attached to non-&amp;amp;lt;table&amp;amp;gt; element
-* [WICKET-5536] - Error message without parmeters filled.
-* [WICKET-5537] - Wicket.DOM.toggleClass is called with additional &quot;#&quot; inside AutoLabelResolver
-* [WICKET-5541] - NullPointerException in SubscribeAnnotationEventSubscriptionInvoker on remove of component from page
-* [WICKET-5545] - Cannot use redirect in ModalWindow&#39;s page#onInitialize()
-* [WICKET-5546] - Adding behavior in component instantiation listener causes Page.onInitialize() being called even if constructor throws an exception
-* [WICKET-5547] - Javadoc for ReuseIfModelsEqualStrategy should mention that models must implement hashCode() method
-* [WICKET-5548] - Websocket initialization URL is not valid when filter is not mapped to root.
-* [WICKET-5555] - AbstractAutoCompleteBehavior.WrappedHeaderItem should depend on wicket-ajax.js
-* [WICKET-5556] - Error in wicket-autocomplete.js bad reference of $
-* [WICKET-5557] - Don&#39;t cache the result of AuthenticatedWebApplication#getWebSessionClass()
-* [WICKET-5558] - Autolinking does not always work in inheritted markup
-* [WICKET-5561] - Derived page without own markup leads to MarkupNotFoundException when BasePage has &amp;amp;lt;wicket:head&amp;amp;gt; in its markup
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5508] - Memory model improvements for Session fields
-* [WICKET-5512] - Allow using child selector for JS event bindings
-* [WICKET-5520] - improve reusability of DataTable and AbstractPageableView
-* [WICKET-5528] - Allow models of subtypes of Select type parameter in SelectOption constructor
-* [WICKET-5529] - Add WebSocketBehavior/Resource#onPush() callback method
-* [WICKET-5531] - Create new placeholder tag to indicate where header contributions should appear
-* [WICKET-5538] - When using Component.setDefaultModel, only detach the previous model if the new one is different
-* [WICKET-5549] - continueToOriginalDestination() fails after redirectToInterceptPage() on AjaxRequest* [WICKET-5288] - Allow &amp;amp;amp;lt;script&amp;amp;amp;gt;-Tags act as WebMarkUpContainer to add Child-Components
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;new-feature&quot;&gt;New Feature&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-831] - Return response status 404 when a mapper cannot decode a request url
-* [WICKET-2542] - Provide ajax buttons for wizard
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;task&quot;&gt;Task&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5514] - Update Wicket fragment example
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;wish&quot;&gt;Wish&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5516] - RadioChoice / add a getAdditionalAttributes() also for &amp;lt;label&amp;gt;-tag
-* [WICKET-5542] - Remove final from TextArea.onComponentTagBody()
-&lt;/code&gt;&lt;/pre&gt;
 </content>
  </entry>
  

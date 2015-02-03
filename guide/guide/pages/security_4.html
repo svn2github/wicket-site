@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>21.4 Package Resource Guard 6.x</title>
+    <title>21.4 URLs encryption in detail 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -149,7 +149,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>21.4 Package Resource Guard - Reference Documentation</h1>
+                    <h1>21.4 URLs encryption in detail - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -162,26 +162,35 @@ function addJsClass() {
 
                 
 
-<h2 id="security_4">21.4 Package Resource Guard</h2>
-<p class="paragraph"/>Wicket internally uses an entity called package resource guard to protect package resources from external access. This entity is an implementation of interface <code>org.apache.wicket.markup.html.IPackageResourceGuard</code>.<p class="paragraph"/>By default Wicket applications use as package resource guard class <code>SecurePackageResourceGuard</code>, which allows to access only to the following file extensions (grouped by type):<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>File</th><th>Extensions</th></tr><tr class="table-odd"><td><strong class="bold">JavaScript files</strong></td><td>.js</td></tr><tr class="table-even"><td><strong class="bold">CSS files</strong></td><td>.css</td></tr><tr class="table-odd"><td><strong class="bold">HTML pages</strong></td><td>.html</td></tr><tr class="table-even"><td><strong class="bold">Textual files</strong></td><td>.txt</td></tr><tr class="table-odd"><td><strong class="bold">Flash files</strong></td><td>.swf</td></tr><tr class="table-even"><td><strong class="bold">Picture files</strong></td><td>.png, .jpg, .jpeg, .gif, .ico, .cur, .bmp, .svg</td></tr><tr class="table-odd"><td><strong class="bold">Web font files</strong></td><td>.eot, .ttf, .woff</td></tr></table><p class="paragraph"/>To modify the set of allowed files formats we can add one or more patterns with method <code>addPattern(String)</code>. The rules to write a pattern are the following:
-<ul class="star">
-<li>patterns start with either a "+" or a "-". In the first case the pattern will add one or more file to the set while starting a pattern with a “-” we exclude all the files matching the given pattern. For example pattern “-web.xml” excludes all web.xml files in all directories.</li>
-<li>wildcard character “&#42;” is supported as placeholder for zero or more characters. For example  pattern “+&#42;.mp4” adds all the mp4 files inside all directories.</li>
-<li>subdirectories are supported as well. For example pattern “+documents/&#42;.pdf” adds all pdf files under “documents” directory. Character “&#42;” can be used with directories to specify a nesting level. For example “+documents/&#42;/&#42;.pdf” adds all pdf files placed one level below “documents” directory.</li>
-<li>a double wildcard character “&#42;&#42;” indicates zero or more subdirectories. For example pattern “+documents/&#42;&#42;/&#42;.pdf” adds all pdf files placed inside “documents” directory or inside any of its subdirectories.</li>
-</ul><p class="paragraph"/>Patterns that allow to access to every file with a given extensions (such as “+&#42;.pdf”) should be always avoided in favour of more restrictive expressions that contain a directory structure:<p class="paragraph"/><div class="code"><pre>//Application class code&#8230;
-@Override
-<span class="java&#45;keyword">public</span> void init()   
+<h2 id="security_4">21.4 URLs encryption in detail</h2>
+In chapter <a href="../guide/single.html#urls_6" class="guide">10.6</a> we have seen how to encrypt URLs using <code>CryptoMapper</code> request mapper. To encrypt/decrypt page URLs <code>CryptoMapper</code> uses an instance of <code>org.apache.wicket.util.crypt.ICrypt</code> interface:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> ICrypt
 &#123;
-      IPackageResourceGuard packageResourceGuard = application.getResourceSettings() 
-                                                   .getPackageResourceGuard();
-      <span class="java&#45;keyword">if</span> (packageResourceGuard <span class="java&#45;keyword">instanceof</span> SecurePackageResourceGuard)
-      &#123;
-         SecurePackageResourceGuard guard = (SecurePackageResourceGuard) packageResourceGuard;
-         //Allow to access only to pdf files placed in the “<span class="java&#45;keyword">public</span>” directory.
-         guard.addPattern(<span class="java&#45;quote">"+<span class="java&#45;keyword">public</span>/&#42;.pdf"</span>);
-      &#125;
+	<span class="java&#45;object">String</span> encryptUrlSafe(<span class="java&#45;keyword">final</span> <span class="java&#45;object">String</span> plainText);<p class="paragraph"/>	<span class="java&#45;object">String</span> decryptUrlSafe(<span class="java&#45;keyword">final</span> <span class="java&#45;object">String</span> encryptedText);<p class="paragraph"/>	&#8230;
+&#125;</pre></div><p class="paragraph"/>The default implementation for this interface is class <code>org.apache.wicket.util.crypt.SunJceCrypt</code>. It provides password-based cryptography using <code>PBEWithMD5AndDES</code> algorithm coming with the standard security providers in the Java Runtime Environment.<p class="paragraph"/><blockquote class="note">
+For better security it is recommended to install Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html" target="blank">Policy Files</a> for your version of JDK/JRE and use stronger algorithms. See this <a href="https://github.com/apache/wicket/blob/42ce1faa57d3617ccaa443045537306fabf4d71a/wicket-util/src/test/java/org/apache/wicket/util/crypt/UnlimitedStrengthJurisdictionPolicyTest.java#L67" target="blank">example</a> of a custom <code>ICrypt</code> implementation for inspiration.
+</blockquote><p class="paragraph"/>By using <code>CryptoMapper(IRequestMapper wrappedMapper, Application application)</code> constructor the mapper will use the configured <code>org.apache.wicket.util.crypt.ICryptFactory</code> from <code>org.apache.wicket.settings.ISecuritySettings#getCryptFactory()</code>. To use a stronger cryptography mechanism there are the following options:
+<ul class="star">
+<li>The first option is to use constructor <code>CryptoMapper(IRequestMapper wrappedMapper, IProvider&#60;ICrypt&#62; cryptProvider)</code> and give it an implementation of <code>org.apache.wicket.util.IProvider</code> that returns a custom <code>org.apache.wicket.util.crypt.ICrypt</code>.</li>
+</ul><p class="paragraph"/><blockquote class="note">
+<code>org.apache.wicket.util.IProvider</code> is a single-method interface that acts as object supplier:
+</blockquote><p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> IProvider&#60;T&#62;
+&#123;
+	T get();
 &#125;</pre></div>
+<ul class="star">
+<li>The second option is to register a cipher factory at application level with method <code>setCryptFactory(ICryptFactory cryptFactory)</code> of interface <code>ISecuritySettings</code>:</li>
+</ul><p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void init() &#123;
+	<span class="java&#45;keyword">super</span>.init();
+	getSecuritySettings().setCryptFactory(<span class="java&#45;keyword">new</span> SomeCryptFactory());
+	setRootRequestMapper(<span class="java&#45;keyword">new</span> CryptoMapper(getRootRequestMapper(), <span class="java&#45;keyword">this</span>));
+&#125;</pre></div><p class="paragraph"/>
+Since version 6.19.0 Wicket uses <code>org.apache.wicket.core.util.crypt.KeyInSessionSunJceCryptFactory</code> as a default factory for <code>ICrypt</code> objects. This factory generates a unique key for each user that is stored in her HTTP 
+session. This way it helps to protect the application against <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)" target="blank">CSRF</a> attacks - the &#60;form&#62; action url will be encrypted in such way that it will be unique
+for each user of the application. The url itself serves as <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Encrypted_Token_Pattern" target="blank">encrypted token</a>.<p class="paragraph"/><blockquote class="warning">
+<code>org.apache.wicket.core.util.crypt.KeyInSessionSunJceCryptFactory</code> binds the http session if it is not already bound! If the application needs to run in stateless mode then the application will have to provide a custom 
+implementation of <code>ICryptFactory</code> that stores the user specific keys by other means.
+</blockquote>
 
 
 
@@ -211,7 +220,7 @@ function addJsClass() {
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
 
     
 </div>

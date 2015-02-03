@@ -203,8 +203,20 @@ function addJsClass() {
 	&#125;<p class="paragraph"/>	<span class="java&#45;keyword">final</span> RequestListenerInterface rli;<p class="paragraph"/>	rli = IBehaviorListener.INTERFACE;<p class="paragraph"/>	<span class="java&#45;keyword">return</span> boundComponent.urlFor(<span class="java&#45;keyword">this</span>, rli, <span class="java&#45;keyword">new</span> PageParameters());
 &#125;</pre></div><p class="paragraph"/>Static field <code>IBehaviorListener.INTERFACE</code> is the implementation of <code>RequestListenerInterface</code> defined inside callback interface <code>IBehaviorListener</code>.<p class="paragraph"/>The home page of project <code>CallbackURLExample</code> contains a <code>DropDownChoice</code> and a <code>RadioChoice</code> which use our custom behavior. There are also two labels to display the content of the models of the two components:<p class="paragraph"/><img border="0" class="center" src="../img/CallbackURLExample-screenshot.png"></img><p class="paragraph"/><blockquote class="note">
 Implementing interface <code>IBehaviorListener</code> makes a behavior stateful because its callback URL is specific for a given instance of component.
-</blockquote><p class="paragraph"/>
-<h3>Wicket events infrastructure</h3><p class="paragraph"/>Starting from version 1.5 Wicket offers an event-based infrastructure for inter-component communication. The infrastructure is based on two simple interfaces (both in package <code>org.apache.wicket.event</code>) : <code>IEventSource</code> and <code>IEventSink</code>.<p class="paragraph"/>The first interface must be implemented by those entities that want to broadcast en event while the second interface must be implemented by those entities that want to receive a broadcast event.<p class="paragraph"/>The following entities already implement both these two interfaces (i.e. they can be either sender or receiver): <code>Component</code>, <code>Session</code>, <code>RequestCycle</code> and <code>Application</code>.
+</blockquote><p class="paragraph"/>As final note it's interesting to see how Wicket internally uses callback URLs for its standard link component. Class <code>org.apache.wicket.markup.html.link.Link</code> implements interface <code>org.apache.wicket.markup.html.link.ILinkListener</code> which in turn extends <code>IRequestListener</code>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;keyword">interface</span> ILinkListener <span class="java&#45;keyword">extends</span> IRequestListener
+&#123;
+	/&#42;&#42; Listener <span class="java&#45;keyword">interface</span> &#42;/
+	<span class="java&#45;keyword">public</span> <span class="java&#45;keyword">static</span> <span class="java&#45;keyword">final</span> RequestListenerInterface INTERFACE = <span class="java&#45;keyword">new</span> RequestListenerInterface(
+		ILinkListener.class);<p class="paragraph"/>	/&#42;&#42;
+	 &#42; Called when a link is clicked.
+	 &#42;/
+	void onLinkClicked();
+&#125;</pre></div><p class="paragraph"/>The implementation of method <code>onLinkClicked</code> simply delegates event handling to our custom version of <code>onClick</code>:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> <span class="java&#45;keyword">final</span> void onLinkClicked()
+&#123;
+	// Invoke subclass handler
+	onClick();
+&#125;</pre></div><p class="paragraph"/><h3>Wicket events infrastructure</h3><p class="paragraph"/>Starting from version 1.5 Wicket offers an event-based infrastructure for inter-component communication. The infrastructure is based on two simple interfaces (both in package <code>org.apache.wicket.event</code>) : <code>IEventSource</code> and <code>IEventSink</code>.<p class="paragraph"/>The first interface must be implemented by those entities that want to broadcast en event while the second interface must be implemented by those entities that want to receive a broadcast event.<p class="paragraph"/>The following entities already implement both these two interfaces (i.e. they can be either sender or receiver): <code>Component</code>, <code>Session</code>, <code>RequestCycle</code> and <code>Application</code>.
 <code>IEventSource</code> exposes a single method named send which takes in input three parameters:
 <ul class="star">
 <li><strong class="bold">sink</strong>: an implementation of <code>IEventSink</code> that will be the receiver of the event.</li>
@@ -250,7 +262,7 @@ Implementing interface <code>IBehaviorListener</code> makes a behavior stateful 
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2014-11-11)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
 
     
 </div>
