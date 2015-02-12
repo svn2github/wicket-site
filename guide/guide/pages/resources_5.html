@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>15.5 Resource dependencies 6.x</title>
+    <title>15.5 Context-relative resources 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -149,7 +149,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>15.5 Resource dependencies - Reference Documentation</h1>
+                    <h1>15.5 Context-relative resources - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -162,16 +162,13 @@ function addJsClass() {
 
                 
 
-<h2 id="resources_5">15.5 Resource dependencies</h2>
-<p class="paragraph"/>Class <code>ResourceReference</code> allows to specify the resources it depends on overriding method <code>getDependencies()</code>. The method returns an iterator over the set of <code>HeaderItems</code> that must be rendered before the resource referenced by <code>ResourceReference</code> can be used. This can be really helpful when our resources are JavaScript or CSS libraries that in turn depend on other libraries.<p class="paragraph"/>For example we can use this method to ensure that a custom reference to JQueryUI library will find JQuery already loaded in the page:<p class="paragraph"/><div class="code"><pre>Url jqueyuiUrl = Url.parse(<span class="java&#45;quote">"https://ajax.googleapis.com/ajax/libs/jqueryui/"</span> + 
-                                                                 <span class="java&#45;quote">"1.10.2/jquery&#45;ui.min.js"</span>);<p class="paragraph"/>UrlResourceReference jqueryuiRef = <span class="java&#45;keyword">new</span> UrlResourceReference(jqueyuiUrl)&#123;
-	@Override
-	<span class="java&#45;keyword">public</span> Iterable&#60;? <span class="java&#45;keyword">extends</span> HeaderItem&#62; getDependencies() &#123;
-		Application application = Application.get();
-		ResourceReference jqueryRef = application.getJavaScriptLibrarySettings(). 
-                                             getJQueryReference();<p class="paragraph"/>		<span class="java&#45;keyword">return</span> Arrays.asList(JavaScriptHeaderItem.forReference(jqueryRef));
-	&#125;
-&#125;;</pre></div><p class="paragraph"/>Please note that in the code above we have built a resource reference using a URL to the desired library instead of a package resource holding the physical file.<p class="paragraph"/>The same method <code>getDependencies()</code> is defined also for class <code>HeaderItem</code>.
+<h2 id="resources_5">15.5 Context-relative resources</h2>
+In web applications, it's quite common to have one or more root context folders containing css/js files. These resources are normally referenced with an absolute path inside link/script tags:<p class="paragraph"/><div class="code"><pre>&#60;script src=<span class="java&#45;quote">"/misc/js/jscript.js"</span>&#62;&#60;/script&#62;
+&#60;link type=<span class="java&#45;quote">"text/css"</span> rel=<span class="java&#45;quote">"stylesheet"</span> href=<span class="java&#45;quote">"/misc/css/themes/style.css"</span> /&#62;</pre></div><p class="paragraph"/>To handle this kind of resources from code we can use resource reference class <code>org.apache.wicket.request.resource.ContextRelativeResourceReference</code>. To build a new instance of this class we must specify the root context path of the resource we want to use:<p class="paragraph"/><div class="code"><pre>ContextRelativeResourceReference resource = <span class="java&#45;keyword">new</span> ContextRelativeResourceReference(<span class="java&#45;quote">"/misc/js/jscript.js"</span>);</pre></div><p class="paragraph"/>By default when our application runs in DEPLOYMENT mode <code>ContextRelativeResourceReference</code> will automatically load the minified version of the specified resource using 'min' as postfix. In the example above it will load '/misc/js/jscript.min.js'. We can force  <code>ContextRelativeResourceReference</code> to always use the not-minified resource passing an additional flag to class constructor:<p class="paragraph"/><div class="code"><pre>//it will always use '/misc/js/jscript.js'
+ContextRelativeResourceReference resource = <span class="java&#45;keyword">new</span> ContextRelativeResourceReference(<span class="java&#45;quote">"/misc/js/jscript.js"</span>, <span class="java&#45;keyword">false</span>);</pre></div><p class="paragraph"/>The minified postfix can be customized with an optional string parameter:<p class="paragraph"/><div class="code"><pre>//it will use '/misc/js/jscript.minified.js' in DEPLOYMENT mode
+ContextRelativeResourceReference resource = <span class="java&#45;keyword">new</span> ContextRelativeResourceReference(<span class="java&#45;quote">"/misc/js/jscript.js"</span>, <span class="java&#45;quote">"minified"</span>);</pre></div><p class="paragraph"/><code>ContextRelativeResourceReference</code> is usually used with the header item classes we have seen before in this chapter to create entries for the page header section.<p class="paragraph"/><h3>Picture files</h3><p class="paragraph"/>For picture files Wicket provides a specific component with class <code>org.apache.wicket.markup.html.image.ContextImage</code> which is meant to be used with tag &#60;img&#62;<p class="paragraph"/><div class="code"><pre>//build the component specifying its id and picture's context path
+ContextImage image = <span class="java&#45;keyword">new</span> ContextImage(<span class="java&#45;quote">"myPicture"</span>, <span class="java&#45;quote">"/misc/imgs/mypic.png"</span>);</pre></div>
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -200,7 +197,7 @@ function addJsClass() {
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-12)</b>
 
     
 </div>

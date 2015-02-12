@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>15.7 Put JavaScript inside page body 6.x</title>
+    <title>15.7 Aggregate multiple resources with resource bundles 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -149,7 +149,7 @@ function addJsClass() {
 
 
                 <div class="project">
-                    <h1>15.7 Put JavaScript inside page body - Reference Documentation</h1>
+                    <h1>15.7 Aggregate multiple resources with resource bundles - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -162,46 +162,19 @@ function addJsClass() {
 
                 
 
-<h2 id="resources_7">15.7 Put JavaScript inside page body</h2>
-Some web developers prefer to put their &#60;script&#62; tags at the end of page body instead of inside the &#60;head&#62; tags:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;<p class="paragraph"/>&#60;head&#62;
-//no &#60;script&#62; tag here&#8230;
-&#60;/head&#62;<p class="paragraph"/>&#60;body&#62;
-&#8230;
-&#60;script&#62;
-//one or more &#60;script&#62; tags at the end of the body
-&#60;/script&#62; 
-&#60;/body&#62;
-&#60;/html&#62;</pre></div><p class="paragraph"/>
-In Wicket we can achieve this result providing a custom <code>IHeaderResponseDecorator</code> to a our application and using Wicket tag &#60;wicket:container/&#62; to indicate where we want to render our scripts inside the page. Interface <code>IHeaderResponseDecorator</code> defines method <code>IHeaderResponse decorate(IHeaderResponse response)</code> which allows to decorate or add funtionalities to Wicket <code>IHeaderResponse</code>. Our custom <code>IHeaderResponseDecorator</code> can be registered in the application with method <code>setHeaderResponseDecorator</code>. Anytime Wicket creates an instance of <code>IHeaderResponse</code>, it will call the registered <code>IHeaderResponseDecorator</code> to decorate the header response.<p class="paragraph"/>In the example project <code>ScriptInsideBody</code> we can find a custom <code>IHeaderResponseDecorator</code> that renders CSS into the usual &#60;head&#62; tag and put JavaScricpt header items into a specific container (tag &#60;wicket:container/&#62;)
-Wicket already comes with class <code>JavaScriptFilteredIntoFooterHeaderResponse</code> which wraps a <code>IHeaderResponse</code> and renders in a given container all the instances of <code>JavaScriptHeaderItem</code>.
-The following code is taken from the Application class of the project:<p class="paragraph"/><div class="code"><pre>//&#8230;
-    @Override
-    <span class="java&#45;keyword">public</span> void init()
-    &#123;
-       setHeaderResponseDecorator(<span class="java&#45;keyword">new</span> JavaScriptToBucketResponseDecorator(<span class="java&#45;quote">"footer&#45;container"</span>));
-    &#125;<p class="paragraph"/>     /&#42;&#42;
-     &#42; Decorates an original IHeaderResponse and renders all javascript items
-     &#42; (JavaScriptHeaderItem), to a specific container in the page.
-     &#42;/
-    <span class="java&#45;keyword">static</span> class JavaScriptToBucketResponseDecorator <span class="java&#45;keyword">implements</span> IHeaderResponseDecorator 
-    &#123;<p class="paragraph"/>        <span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> bucketName;<p class="paragraph"/>        <span class="java&#45;keyword">public</span> JavaScriptToBucketResponseDecorator(<span class="java&#45;object">String</span> bucketName) &#123;
-            <span class="java&#45;keyword">this</span>.bucketName = bucketName;
-        &#125;<p class="paragraph"/>        @Override
-        <span class="java&#45;keyword">public</span> IHeaderResponse decorate(IHeaderResponse response) &#123;
-            <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">new</span> JavaScriptFilteredIntoFooterHeaderResponse(response, bucketName);
-        &#125;<p class="paragraph"/>    &#125;</pre></div><p class="paragraph"/>As you can see in the code above the "bucket" that will contain JavaScript tags is called <code>"footer-container"</code>. To make a use of it the developer have to add a special component called <code>HeaderResponseContainer</code> in his page:<p class="paragraph"/><div class="code"><pre>add(<span class="java&#45;keyword">new</span> HeaderResponseContainer(<span class="java&#45;quote">"someId"</span>, <span class="java&#45;quote">"filterName"</span>));</pre></div><p class="paragraph"/>Please note that <code>HeaderResponseContainer</code>'s needs also a name for the corresponding header response's filter. The markup of our page will look like this:<p class="paragraph"/><div class="code"><pre>&#60;html&#62;<p class="paragraph"/>&#60;header&#62;
-//no &#60;script&#62; tag here&#8230;
-&#60;/header&#62;<p class="paragraph"/>&#60;body&#62;
-&#60;!&#45;&#45; here we will have our JavaScript tags &#45;&#45;&#62;
-&#60;wicket:container wicket:id=<span class="java&#45;quote">"someId"</span>/&#62; 
-&#60;/body&#62;
-&#60;/html&#62;</pre></div><p class="paragraph"/>The code of the home page is the following:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
-        <span class="java&#45;keyword">super</span>(parameters);<p class="paragraph"/>        add(<span class="java&#45;keyword">new</span> HeaderResponseContainer(<span class="java&#45;quote">"footer&#45;container"</span>, <span class="java&#45;quote">"footer&#45;container"</span>));
-    &#125;<p class="paragraph"/>    @Override
-    <span class="java&#45;keyword">public</span> void renderHead(IHeaderResponse response) &#123;
-        response.render(JavaScriptHeaderItem.forReference(<span class="java&#45;keyword">new</span> PackageResourceReference(getClass(),
-                <span class="java&#45;quote">"javasciptLibrary.js"</span>)));<p class="paragraph"/>        response.render(OnEventHeaderItem.forScript(<span class="java&#45;quote">"'logo'"</span>, <span class="java&#45;quote">"click"</span>, <span class="java&#45;quote">"alert('Clicked me!')"</span>));
-    &#125;</pre></div><p class="paragraph"/>Looking at the code above you can note that our page adds two script to the header section: the first is an instance of <code>JavaScriptHeaderItem</code> and will be rendered in the <code>HeaderResponseContainer</code> while the second will follow the usual behavior and will be rendered inside &#60;head&#62; tag.<p class="paragraph"/><p class="paragraph"/>
+<h2 id="resources_7">15.7 Aggregate multiple resources with resource bundles</h2>
+One of the best practices to make our web application faster and reduce its latency is to reduce the number of requests to the server to load page resources like JavaScript or CSS files. To achieve this goal some JavaScript-based build tools (like Grunt) allow to merge multiple files used in a page into a single file that can be loaded in a single request. Wicket provides class <code>org.apache.wicket.ResourceBundles</code> to aggregate multiple resource references into a single one. A resource bundle can be declared during application initialization listing all the resources that compose it:<p class="paragraph"/><div class="code"><pre>@Override
+<span class="java&#45;keyword">public</span> void init() &#123;
+  <span class="java&#45;keyword">super</span>.init();<p class="paragraph"/>  getResourceBundles().addJavaScriptBundle(WicketApplication.class,
+                <span class="java&#45;quote">"jqueryUiJs"</span>,
+                jqueryJsReference,
+                jqueryUiJsReference);<p class="paragraph"/>  getResourceBundles().addCssBundle(WicketApplication.class,
+                 <span class="java&#45;quote">"jqueryUiCss"</span>,
+                jqueryCssReference,
+                jqueryUiCssReference);<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/>To declare a new resource bundle we need to provide a  <em class="italic">scope</em>  class (<code>WicketApplication.class</code> in our example) and an unique name. Now, when one of the resources included in the bundle is requested, the entire bundle is rendered instead.<p class="paragraph"/><blockquote class="note">
+A specific resource reference can not be shared among different resource bundles (i.e. it can be part of only one bundle).
+</blockquote>
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -230,7 +203,7 @@ The following code is taken from the Application class of the project:<p class="
 <div id="footer">
     
 Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-03)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-12)</b>
 
     
 </div>

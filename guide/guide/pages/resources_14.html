@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>12.4 Validation with JSR 303 6.x</title>
+    <title>15.14 Summary 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -138,18 +138,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../../guide/modelsforms.html">&lt;&lt; <strong>11</strong><span>Wicket models and forms</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/i18n.html">&lt;&lt; <strong>14</strong><span>Internationalization with Wicket</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>12.4 Validation with JSR 303 - Reference Documentation</h1>
+                    <h1>15.14 Summary - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
 
@@ -162,37 +162,16 @@ function addJsClass() {
 
                 
 
-<h2 id="forms2_4">12.4 Validation with JSR 303</h2>
-Standard JSR 303 defines a set of annotations and APIs to validate our domain objects at field-level. Wicket has introduced an experimental support for this standard since version 6.4.0 and with version 6.14.0 it has became an official Wicket model (named <code>wicket-bean-validation</code>).
-In this paragraph we will see the basic steps needed to use JSR 303 validation in our Wicket application. Code snippets are from example project <code>JSR303validation</code>.<p class="paragraph"/>In the example application we have a form to insert the data for a new <code>Person</code> bean and its relative <code>Address</code>. The code for class <code>Person</code> is the following<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class Person <span class="java&#45;keyword">implements</span> Serializable&#123;<p class="paragraph"/>	@NotNull
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> name;<p class="paragraph"/>	//regular expression to validate an email address     
-	@Pattern(regexp = <span class="java&#45;quote">"^&#91;_A&#45;Za&#45;z0&#45;9&#45;&#93;+(.&#91;_A&#45;Za&#45;z0&#45;9&#45;&#93;+)&#42;&#91;A&#45;Za&#45;z0&#45;9&#45;&#93;+(.&#91;A&#45;Za&#45;z0&#45;9&#45;&#93;+)&#42;((.&#91;A&#45;Za&#45;z&#93;&#123;2,&#125;)&#123;1&#125;$)"</span>)
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> email;<p class="paragraph"/>	@Range(min = 18, max = 150)
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">int</span> age;<p class="paragraph"/>	<code>Past </code>NotNull 
-	<span class="java&#45;keyword">private</span> Date birthDay;<p class="paragraph"/>	@NotNull
-	<span class="java&#45;keyword">private</span> Address address; 
-&#125;</pre></div><p class="paragraph"/>You can note the JSR 303 annotations used in the code above to declare validation constraints on class fields. Class <code>Address</code> has the following code:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class Address <span class="java&#45;keyword">implements</span> Serializable &#123;<p class="paragraph"/>	@NotNull
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> city;<p class="paragraph"/>	@NotNull
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> street;<p class="paragraph"/>	@Pattern(regexp = "&#92;&#92;d+<span class="java&#45;quote">", message = "</span>&#123;address.invalidZipCode&#125;")
-	<span class="java&#45;keyword">private</span> <span class="java&#45;object">String</span> zipCode;
-&#125;</pre></div><p class="paragraph"/>You might have noted that in class <code>Address</code> we have used annotation <code>Pattern using also attribute </code>message<code> which contains the key of the bundle to use for validation message. Our custom bundle is contained inside </code>HomePage.properties@:<p class="paragraph"/><div class="code"><pre>address.invalidZipCode=The inserted zip code is not valid.</pre></div><p class="paragraph"/>To tell Wicket to use JSR 303, we must register bean validator on Application's startup:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> WebApplication &#123;
-	@Override
-	<span class="java&#45;keyword">public</span> void init()&#123;
-		<span class="java&#45;keyword">super</span>.init();<p class="paragraph"/>		<span class="java&#45;keyword">new</span> BeanValidationConfiguration().configure(<span class="java&#45;keyword">this</span>);
-	&#125;
-&#125;</pre></div><p class="paragraph"/>The last step to harness JSR 303 annotations is to add validator <code>org.apache.wicket.bean.validation.PropertyValidator</code> to our corresponding form components:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> HomePage(<span class="java&#45;keyword">final</span> PageParameters parameters) &#123;
-	<span class="java&#45;keyword">super</span>(parameters);<p class="paragraph"/>	setDefaultModel(<span class="java&#45;keyword">new</span> CompoundPropertyModel&#60;Person&#62;(<span class="java&#45;keyword">new</span> Person()));<p class="paragraph"/>	Form&#60;<span class="java&#45;object">Void</span>&#62; form = <span class="java&#45;keyword">new</span> Form&#60;<span class="java&#45;object">Void</span>&#62;(<span class="java&#45;quote">"form"</span>);<p class="paragraph"/>	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"name"</span>).add(<span class="java&#45;keyword">new</span> PropertyValidator()));
-	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"email"</span>).add(<span class="java&#45;keyword">new</span> PropertyValidator()));
-	form.add(<span class="java&#45;keyword">new</span> TextField(<span class="java&#45;quote">"age"</span>).add(<span class="java&#45;keyword">new</span> PropertyValidator()));
-        //&#8230;
-&#125;</pre></div><p class="paragraph"/>Now we can run our application an see that JSR 303 annotations are fully effective:<p class="paragraph"/><img border="0" class="center" src="../img/jsr303-form-validation.png"></img><p class="paragraph"/>
+<h2 id="resources_14">15.14 Summary</h2>
+In this chapter we have learnt how to manage resources with the built-in mechanism provided by Wicket. With this mechanism we handle resources from Java code and Wicket will automatically take care of generating a valid URL for them. We have also seen how resources can be bundled as package resources with a component that depends on them to make it self-contained.<p class="paragraph"/>Then, in the second part of the chapter, we have built a custom resource and we have learnt how to mount it to an arbitrary URL and how to make it globally available as shared resource.<p class="paragraph"/>Finally, in the last part of the paragraph we took a peek at the mechanism provided by the framework to customize the locations where the resource-lookup algorithm searches for resources. 
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../../guide/modelsforms.html">&lt;&lt; <strong>11</strong><span>Wicket models and forms</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/i18n.html">&lt;&lt; <strong>14</strong><span>Internationalization with Wicket</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../../guide/repeaters.html"><strong>13</strong><span>Displaying multiple items with repeaters</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>
