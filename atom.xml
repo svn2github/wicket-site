@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2015-02-13T22:36:29+02:00</updated>
+ <updated>2015-02-13T22:40:30+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -17,7 +17,7 @@
    <link href="http://wicket.apache.org/2015/02/13/wicket-1.5.13-released.html"/>
    <updated>2015-02-13T00:00:00+02:00</updated>
    <id>http://wicket.apache.org/2015/02/13/wicket-1.5.13-released</id>
-   <content type="html">&lt;p&gt;This is the thirdteenth maintenance release of the Wicket 1.5.x series. This release brings over 1 bug fix and 1 improvement.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This is the thirteenth maintenance release of the Wicket 1.5.x series. This release brings over 1 bug fix and 1 improvement.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=shortlog;h=refs/tags/wicket-1.5.13&quot;&gt;Git tag&lt;/a&gt;&lt;/li&gt;
