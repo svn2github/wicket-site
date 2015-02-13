@@ -4,7 +4,7 @@
  <title>Apache Wicket</title>
  <link href="http://wicket.apache.org/atom.xml" rel="self"/>
  <link href="http://wicket.apache.org/"/>
- <updated>2015-02-13T22:40:30+02:00</updated>
+ <updated>2015-02-13T23:07:58+02:00</updated>
  <id>http://wicket.apache.org/</id>
  <author>
    <name>Apache Wicket</name>
@@ -34,6 +34,25 @@
 &lt;ul&gt;
   &lt;li&gt;Download the &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/1.5.13&quot;&gt;full distribution&lt;/a&gt; (including sources)&lt;/li&gt;
 &lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New committer - Sebastien Briquet</title>
+   <link href="http://wicket.apache.org/2015/02/13/new-committer-Sebastien-Briquet.html"/>
+   <updated>2015-02-13T00:00:00+02:00</updated>
+   <id>http://wicket.apache.org/2015/02/13/new-committer-Sebastien-Briquet</id>
+   <content type="html">&lt;p&gt;The Project Management Committee (PMC) for Apache Wicket 
+has asked Sebastien Briquet to become a committer and we are pleased 
+to announce that he has accepted. &lt;/p&gt;
+
+&lt;p&gt;Sebastien has been involved with Wicket for several years now by developing one of the most successful integrations with JavaScript libraries, namely Wicket jQuery UI, reporting bugs, contributing fixes and participating in discussions.&lt;/p&gt;
+
+&lt;p&gt;Being a committer will enable him to help us even easier in the future.&lt;/p&gt;
+
+&lt;p&gt;Please welcome Sebastien Briquet to our team! &lt;/p&gt;
+
+&lt;p&gt;Bienvenue Sebastien! &lt;/p&gt;
 </content>
  </entry>
  
@@ -915,104 +934,6 @@ convenience binary package&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have fun and let us know what you think!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Apache Wicket 6.16.0 released</title>
-   <link href="http://wicket.apache.org/2014/06/21/wicket-6.16.0-released.html"/>
-   <updated>2014-06-21T00:00:00+03:00</updated>
-   <id>http://wicket.apache.org/2014/06/21/wicket-6.16.0-released</id>
-   <content type="html">&lt;p&gt;The Apache Wicket PMC is proud to announce Apache Wicket 6.16.0!&lt;/p&gt;
-
-&lt;p&gt;This release marks the sixteenth minor release of Wicket 6. Starting
-with Wicket 6 we use semantic versioning for the future development of
-Wicket, and as such no API breaks are present in this release compared
-to 6.0.0.&lt;/p&gt;
-
-&lt;h3 id=&quot;new-and-noteworthy&quot;&gt;New and noteworthy&lt;/h3&gt;
-
-&lt;p&gt;This release fixes 15 bugs and adds the following improvements:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Upgrade JQuery to latest releases - 1.11.1 &amp;amp; 2.1.1&lt;/li&gt;
-  &lt;li&gt;Upgrade Atmosphere to latest version&lt;/li&gt;
-  &lt;li&gt;Generation of wicket ids with prefix / suffix&lt;/li&gt;
-  &lt;li&gt;Introduce CharSequenceResource similar to ByteArrayResource&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The full list of improvements and fixes can be found at the end of this
-announcement.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-this-release&quot;&gt;Using this release&lt;/h3&gt;
-
-&lt;p&gt;With Apache Maven update your dependency to (and don’t forget to
-update any other dependencies on Wicket projects to the same version):&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.wicket&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;wicket-core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;6.16.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Or download and build the distribution yourself, or use our
-convenience binary package&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Source: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.16.0&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.16.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Binary: &lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/wicket/6.16.0/binaries&quot;&gt;http://www.apache.org/dyn/closer.cgi/wicket/6.16.0/binaries&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;upgrading-from-earlier-versions&quot;&gt;Upgrading from earlier versions&lt;/h3&gt;
-
-&lt;p&gt;If you upgrade from 6.y.z this release is a drop in replacement. If
-you come from a version prior to 6.0.0, please read our Wicket 6
-migration guide found at&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/WICKET/Migration+to+Wicket+6.0&quot;&gt;Migration to Wicket 6.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Have fun!&lt;/p&gt;
-
-&lt;p&gt;— The Wicket team&lt;/p&gt;
-
-&lt;h3 id=&quot;release-notes---wicket---version-6160&quot;&gt;Release Notes - Wicket - Version 6.16.0&lt;/h3&gt;
-
-&lt;h4 id=&quot;bug&quot;&gt;Bug&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-4545] - MarkupNotFoundException for Fragment and TransparentWebMarkupContainer
-* [WICKET-5553] - When using an Ajax request to display initially hidden components inside inline enclosures, only the first one appears.
-* [WICKET-5560] - A 404 error occurs when using a CryptoMapper
-* [WICKET-5569] - Unable to find markup for children of deeply nested IComponentResolvers during Ajax response
-* [WICKET-5570] - Rescheduling the same ajax timer behavior causes memory leak in the browser
-* [WICKET-5573] - FilterToolbar generics broken
-* [WICKET-5581] - CachingRes​ourceStrea​mLocator is not extension-​aware
-* [WICKET-5582] - ServletWebResponse#encodeUrl() makes absolute Urls relative
-* [WICKET-5589] - Upgrade wicket-atmosphere to the latest version of atmosphere
-* [WICKET-5591] - Missing translation for HoursValidator.range (in DateTimeField)
-* [WICKET-5592] - Add a method to clear the cache of CachingResourceStreamLocator
-* [WICKET-5593] - AjaxFormValidatingBehavior attempts to update non-visible feedback panels
-* [WICKET-5595] - Atmosphere: updates infinitly with long polling transport
-* [WICKET-5596] - DropDownChoice#wantsOnSelectionChangedNotifications(T) not being called on unmounted page
-* [WICKET-5601] - AbstractSingleSelectChoice fails with NullPointerException when its choice renderer returns null from #getIdValue() 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;improvement&quot;&gt;Improvement&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5563] - RestartResponseAtInterceptPageException - add public function to retrieve originalUrl
-* [WICKET-5574] - ComponentRenderer should use Application#createRequestCycle
-* [WICKET-5575] - Add support in FormTester#submit(String|Component) for Ajax submitters
-* [WICKET-5577] - Generation of wicket ids with prefix / suffix
-* [WICKET-5580] - Allow markup to find child fragments when wicket:child is inside a component tag
-* [WICKET-5585] - Wicket Extension Automplete does not work well with JavaScriptFilteredIntoFooterHeaderResponse
-* [WICKET-5586] - NextButton isEnabled() should bo logical conjunction of getWizardModel().isNextAvailable() and super.isEnabled()
-* [WICKET-5600] - Introduce CharSequenceResource similar to ByteArrayResource
-* [WICKET-5606] - SelectOptions with #setRecreateChoices(true) loses selection on form errors
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;task&quot;&gt;Task&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;* [WICKET-5587] - Upgrade JQuery to latest releases - 1.11.1 &amp;amp; 2.1.1
-&lt;/code&gt;&lt;/pre&gt;
-
 </content>
  </entry>
  
