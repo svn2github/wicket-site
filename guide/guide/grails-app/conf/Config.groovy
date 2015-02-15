@@ -100,6 +100,6 @@ grails.doc.css = new File("src/docs/css")
 grails.doc.logo = """<a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a>"""
 grails.doc.sponsorLogo = """<a href="http://www.apache.org/" target="_blank"><img height="60px" src="http://wicket.apache.org/guide/img/asf_logo.gif"/></a>"""
 grails.doc.copyright="""
-Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+Copyright &copy; 2013-2015 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
                       — <b style="color:#E8590A !important;">(Generated on: """ + (new Date()).format('yyyy-MM-dd') + """)</b>
 """
