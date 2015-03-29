@@ -65,6 +65,83 @@ Package resources can be localized following the same rules seen for resource bu
 In the example illustrated in the picture above, if we try to retrieve package resource calendar.jpg when the current locale is set to French, the actual file returned will be calendar_fr.jpg.
 {note}
 
+h3. Responsive images - multiple resource references use in one component
+
+Since Wicket 7.0.0 the build-in component @org.apache.wicket.markup.html.image.Image@ allows you to add several ResourceReferences via varargs and to provide sizes for each image so that the browser is able to pick the best image source.
+
+*HTML:*
+{code:html}
+...
+	Package resource image: <img wicket:id="packageResPicture"/>
+...
+{code}
+
+*Java Code:*
+{code}
+...
+		Image image = new Image("packageResPicture", 
+			new PackageResourceReference(getClass(),"small.jpg"), 
+			new PackageResourceReference(getClass(), "large.jpg"),
+			new PackageResourceReference(getClass(), "medium.jpg"),
+			new PackageResourceReference(getClass(), "small.jpg"));
+		image.setXValues("1024w", "640w", "320w");
+		image.setSizes("(min-width: 36em) 33.3vw", "100vw");
+
+		this.add(image);
+...
+{code}
+
+The component @org.apache.wicket.markup.html.image.Picture@ is used to provide a fallback image @org.apache.wicket.markup.html.image.Image@ and several source components @org.apache.wicket.markup.html.image.Source@ which gives a developer the control as to when and if those images are presented to the user.
+
+*HTML:*
+{code:html}
+...
+	<picture wicket:id="picture">
+  		<source wicket:id="big" />
+  		<source wicket:id="small" />
+  		<img wicket:id="fallback" />
+	</picture>
+...
+{code}
+
+*Java Code:*
+{code}
+...
+		Picture picture = new Picture("picture");
+
+		Source big = new Source("big", new PackageResourceReference(getClass(), "big.jpg"), new PackageResourceReference(getClass(), "big-hd.jpg");
+		big.setXValues("1x","2x");
+		big.setMedia("(min-width: 40em)");
+		picture.add(big);	
+
+		Source small = new Source("small", new PackageResourceReference(getClass(), "small.jpg"), new PackageResourceReference(getClass(), "small-hd.jpg");
+		small.setXValues("1x","2x");
+		picture.add(small);
+
+		Image image = new Image("fallback", new PackageResourceReference(getClass(), "fallback.jpg"));
+		picture.add(image);
+
+		this.add(picture);
+...
+{code}
+
+h3. Media tags - resource references with content range support
+
+Since Wicket 7.0.0 the PackageResource and the PackageResourceReference support "Range" HTTP header for the request and "Content-Range" / "Accept-Range" HTTP headers for the response, which are used for videos / audio tags. The "Range" header allows the client to only request a specific byte range of the resource. The server provides the "Content-Range" and tells the client which bytes are going to be send.
+
+*HTML:*
+{code:html}
+...
+     <video wicket:id="video" />
+...
+{code}
+
+*Java Code:*
+{code}
+...
+    Video video = new Video("video", new PackageResourceReference(getClass(),"video.mp4"));
+...
+{code} 
 
 h3. Using package resources with tag <wicket:link>
 

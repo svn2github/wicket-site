@@ -94,7 +94,7 @@ log4j = {
 
 grails.doc.title = "Apache Wicket User Guide"
 grails.doc.subtitle = "Free Online Guide for Apache Wicket framework"
-grails.doc.authors = "Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș"
+grails.doc.authors = "Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș, Tobias Soloschenko"
 grails.doc.images = new File("src/docs/img")
 grails.doc.css = new File("src/docs/css")
 grails.doc.logo = """<a href="/" target="_blank"><img height="80px" src="http://wicket.apache.org/guide/img/apache-wicket.png"/></a>"""

@@ -1,5 +1,69 @@
-In this chapter we have learnt how to manage resources with the built-in mechanism provided by Wicket. With this mechanism we handle resources from Java code and Wicket will automatically take care of generating a valid URL for them. We have also seen how resources can be bundled as package resources with a component that depends on them to make it self-contained.
 
-Then, in the second part of the chapter, we have built a custom resource and we have learnt how to mount it to an arbitrary URL and how to make it globally available as shared resource.
 
-Finally, in the last part of the paragraph we took a peek at the mechanism provided by the framework to customize the locations where the resource-lookup algorithm searches for resources. 
+Introduced in Wicket 6.20.0 / Wicket 7.0.0 there is a default way to be used in which the output of all CssHeaderItems / JavaScriptHeaderItems is modified before they are cached and delivered to the client. You can add a so called Compressor by receiving the resource settings and invoke #setJavaScriptCompressor(...) / #setJavaScriptCompressor(...). If you want to add several Compressors use @org.apache.wicket.resource.CompositeCssCompressor@ or @org.apache.wicket.resource.CompositeJavaScriptCompressor@
+
+*Java Code:*
+{code}
+...
+    public class WicketApplication extends WebApplication
+    {
+        @Override
+        public Class<? extends WebPage> getHomePage()
+        {
+            return HomePage.class;
+        }
+    
+        @Override
+        public void init()
+        {
+            super.init();
+            getResourceSettings().setCssCompressor(new CssUrlReplacer());
+        }
+    }
+...
+{code}
+
+In the previous example you see that a @org.apache.wicket.resource.CssUrlReplacer@ is added which does not compress the content, but replaces all urls in CSS files and applies a Wicket representation for them by automatically wrapping them into PackageResourceReferences. Here is an example where you can see what Wicket does with the url representation.
+
+HomePage (in package my/company/):
+*Java Code:*
+{code}
+...
+response.render(CssReferenceHeaderItem.forReference(new PackageResourceReference(HomePage.class, "res/css/mycss.css")));
+...
+{code}
+
+mycss.css (in package my/company/res/css/):
+*CSS:*
+{code}
+...
+body{
+    background-image:url('../images/some.png');
+}
+...
+{code}
+
+some.png (in package my/company/res/images/):
+<blob>
+
+Output of mycss.css:
+*CSS:*
+{code}
+...
+body{
+    background-image:url('../images/some-ver-1425904170000.png');
+}
+...
+{code}
+
+If you add a url which looks like this background-image:url('../images/some.png?embedBase64'); Wicket is going to embed the complete image as base64 string with its corresponding mime type into the css file. It looks like the following code block demonstrates.
+
+Output of mycss.css:
+*CSS:*
+{code}
+...
+body{
+    background-image: url(data:image/png;base64,R0lGODlh1wATAX....);
+}
+...
+{code}
