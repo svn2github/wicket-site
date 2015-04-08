@@ -151,7 +151,7 @@ function addJsClass() {
                 <div class="project">
                     <h1>15.4 Adding resources to page header section - Reference Documentation</h1>
 
-                    <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+                    <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș, Tobias Soloschenko</p>
 
                     <p><strong>Version:</strong> 6.x</p>
 
@@ -173,6 +173,7 @@ function addJsClass() {
 <li><strong class="bold">PriorityHeaderItem:</strong> it wraps another header item and ensures that it will have the priority over the other items during rendering phase.</li>
 <li><strong class="bold">StringHeaderItem:</strong> with this class we can add an arbitrary text to the header section. Factory method is <code>forString(CharSequence string)</code>.</li>
 <li><strong class="bold">MetaDataHeaderItem:</strong> starting from version 6.17.0, Wicket provides this class to handle meta informations such as &#60;meta&#62; tags or <a href="http://en.wikipedia.org/wiki/Canonical_link_element" target="blank">canonical link element</a>. The available factory methods are <code>forLinkTag</code> and <code>forMetaTag</code> which can be used to create respectively a &#60;link&#62; tag or a &#60;meta&#62; one. We can add tag attribute to an existing instance of <code>MetaDataHeaderItem</code> with method <code>addTagAttribute(String attributeName, Object attributeValue)</code>. See JavaDoc for further details on this class.</li>
+<li><strong class="bold">HtmlImportHeaderItem:</strong> introduced in Wicket 6.19.0, provides a HTML5 functionality to include other wicket pages (other html files) into the current generated. Factory methods provided by this class are <code>forImportLinkTag</code> which takes the page class or the url of the page / html to be included.</li>
 </ul><p class="paragraph"/>In the following example our custom component loads a CSS file as a package resource (placed in the same package) and it adds it to header section.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class MyComponent <span class="java&#45;keyword">extends</span> Component&#123;<p class="paragraph"/>  @Override
   <span class="java&#45;keyword">public</span> void renderHead(IHeaderResponse response) &#123;
       PackageResourceReference cssFile = 
@@ -208,8 +209,8 @@ function addJsClass() {
 
 <div id="footer">
     
-Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-12)</b>
+Copyright &copy; 2013-2015 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-04-08)</b>
 
     
 </div>

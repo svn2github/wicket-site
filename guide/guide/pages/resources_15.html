@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>4.1 Wicket distribution and modules 6.x</title>
+    <title>15.15 Summary 6.x</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -138,18 +138,18 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../../guide/whyLearn.html">&lt;&lt; <strong>3</strong><span>Why should I learn Wicket?</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/i18n.html">&lt;&lt; <strong>14</strong><span>Internationalization with Wicket</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span> >></a></div>
                 
 
 
                 <div class="project">
-                    <h1>4.1 Wicket distribution and modules - Reference Documentation</h1>
+                    <h1>15.15 Summary - Reference Documentation</h1>
 
                     <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș, Tobias Soloschenko</p>
 
@@ -162,16 +162,15 @@ function addJsClass() {
 
                 
 
-<h2 id="helloWorld_1">4.1 Wicket distribution and modules</h2>
-Wicket is available as a binary package on the main site <a href="http://wicket.apache.org" target="blank">http://wicket.apache.org</a> . Inside this archive we can find the distribution jars of the framework. Each jar corresponds to a sub-module of the framework. The following table reports these modules along with a short description of their purpose and with the related dependencies:<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Module'sname</strong></th><th><strong class="bold">Description</strong></th><th><strong class="bold">Dependencies</strong></th></tr><tr class="table-odd"><td>wicket-core</td><td>Contains the main classes of the framework, like class <code>Component</code> and <code>Application</code>.</td><td>wicket-request, wicket-util</td></tr><tr class="table-even"><td>wicket-request</td><td>This module contains the classes involved into web request processing.</td><td>wicket-util</td></tr><tr class="table-odd"><td>wicket-util</td><td>Contains general-purpose utility classes for functional areas such as I/O, lang, string manipulation, security, etc...</td><td>None</td></tr><tr class="table-even"><td>wicket-datetime</td><td>Contains special purpose components designed to work with date and time.</td><td>wicket-core</td></tr><tr class="table-odd"><td>wicket-bean-validation</td><td>Provides support for JSR 303 standard validation.</td><td>wicket-core</td></tr><tr class="table-even"><td>wicket-devutils</td><td>Contains utility classes and components to help developers with tasks such as debugging, class inspection and so on.</td><td>wicket-core, wicket-extensions</td></tr><tr class="table-odd"><td>wicket-extensions</td><td>Contains a vast set of built-in components to build a rich UI for our web application (Ajax support is part of this module).</td><td>wicket-core</td></tr><tr class="table-even"><td>wicket-auth-roles</td><td>Provides support for role-based authorization.</td><td>wicket-core</td></tr><tr class="table-odd"><td>wicket-ioc</td><td>This module provides common classes to support Inversion Of Control. It's used by both Spring and Guice integration module.</td><td>wicket-core</td></tr><tr class="table-even"><td>wicket-guice</td><td>This module provides integration with the dependency injection framework developed by Google.</td><td>wicket-core, wicket-ioc</td></tr><tr class="table-odd"><td>wicket-spring</td><td>This module provides integration with Spring framework.</td><td>wicket-core, wicket-ioc</td></tr><tr class="table-even"><td>wicket-velocity</td><td>This module provides panels and utility class to integrate Wicket with Velocity template engine.</td><td>wicket-core</td></tr><tr class="table-odd"><td>wicket-jmx</td><td>This module provides panels and utility class to integrate Wicket with Java Management Extensions.</td><td>wicket-core</td></tr><tr class="table-even"><td>wicket-objectsizeof-agent</td><td>Provides integration with Java agent libraries and instrumentation tools.</td><td>wicket-core</td></tr></table><p class="paragraph"/>Please note that the core module depends on the utility and request modules, hence it cannot be used without them.
-
+<h2 id="resources_15">15.15 Summary</h2>
+<p class="paragraph"/>In this chapter we have learnt how to manage resources with the built-in mechanism provided by Wicket. With this mechanism we handle resources from Java code and Wicket will automatically take care of generating a valid URL for them. We have also seen how resources can be bundled as package resources with a component that depends on them to make it self-contained.<p class="paragraph"/>Then, in the second part of the chapter, we have built a custom resource and we have learnt how to mount it to an arbitrary URL and how to make it globally available as shared resource.<p class="paragraph"/>Finally, in the last part of the paragraph we took a peek at the mechanism provided by the framework to customize the locations where the resource-lookup algorithm searches for resources. 
 
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../../guide/whyLearn.html">&lt;&lt; <strong>3</strong><span>Why should I learn Wicket?</span></a></div>
+                    <div class="toc-item prev-left"><a href="../../guide/i18n.html">&lt;&lt; <strong>14</strong><span>Internationalization with Wicket</span></a></div>
                 
-                    <div class="toc-item next-right"><a href="../../guide/layout.html"><strong>5</strong><span>Wicket as page layout manager</span> >></a></div>
+                    <div class="toc-item next-right"><a href="../../guide/jsintegration.html"><strong>16</strong><span>An example of integration with JavaScript</span> >></a></div>
                 
                 <div style="clear:both"></div>
             </div>

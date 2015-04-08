@@ -111,7 +111,7 @@ function addJsClass(el) {
 
                         <div class="project">
                             <h1>Apache Wicket User Guide - Reference Documentation</h1>
-                            <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș</p>
+                            <p><strong>Authors:</strong> Andrea Del Bene, Martin Grigorov, Carsten Hufe, Christian Kroemer, Daniel Bartl, Paul Borș, Tobias Soloschenko</p>
                             <p><strong>Version:</strong> 6.x</p>
                             
                         </div>
@@ -338,7 +338,9 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:10px"><a href="#resources_13"><strong>15.13</strong><span>Customizing resource loading</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#resources_14"><strong>15.14</strong><span>Summary</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_14"><strong>15.14</strong><span>CssHeaderItem and JavaScriptHeaderItem compression</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#resources_15"><strong>15.15</strong><span>Summary</span></a></div>
                             
                             <div class="toc-item" style="margin-left:0px"><a href="#jsintegration"><strong>16</strong><span>An example of integration with JavaScript</span></a></div>
                             
@@ -512,7 +514,10 @@ The various Wicket-related topics are gradually introduced using pragmatic examp
 
 
 <h1 id="howToSource">2 How to use the example code</h1>
-Most of the code you will find in this document is available as a <a href="https://github.com/bitstorm/Wicket-tutorial-examples" target="blank">Git repository</a> and is licensed under the ASF 2.0. To get a local copy of the repository you can run the clone command from shell:<p class="paragraph"/><div class="code"><pre>git clone https://github.com/bitstorm/Wicket&#45;tutorial&#45;examples.git</pre></div><p class="paragraph"/>If you aren't used to Git, you can simply download the whole source as a zip archive:<p class="paragraph"/><img border="0" class="center" src="../img/gitRepo.png"></img><p class="paragraph"/>The repository contains a multi-module Maven project. Every subproject is contained in the relative folder of the repository:<p class="paragraph"/><img border="0" class="center" src="../img/gitMavenPrj.png"></img><p class="paragraph"/>When the example code is used in the document, you will find the name of the subproject it belongs to. If you don't have any experience with Maven, you can read Appendix A where you can learn the basic commands needed to work with the example projects and to import them into your favourite IDE (NetBeans, IDEA or Eclipse).
+Most of the code you will find in this document is available as a <a href="https://github.com/bitstorm/Wicket-tutorial-examples" target="blank">Git repository</a> and is licensed under the ASF 2.0. To get a local copy of the repository you can run the clone command from shell:<p class="paragraph"/><div class="code"><pre>git clone https://github.com/bitstorm/Wicket&#45;tutorial&#45;examples.git</pre></div><p class="paragraph"/><blockquote class="note">
+If you are using Wicket 6.x remeber to switch to branch <code>wicket-6.x</code>
+</blockquote><p class="paragraph"/>If you aren't used to Git, you can simply download the whole source as a zip archive:<p class="paragraph"/><img border="0" class="center" src="../img/gitRepo.png"></img><p class="paragraph"/>The repository contains a multi-module Maven project. Every subproject is contained in the relative folder of the repository:<p class="paragraph"/><img border="0" class="center" src="../img/gitMavenPrj.png"></img><p class="paragraph"/>When the example code is used in the document, you will find the name of the subproject it belongs to. If you don't have any experience with Maven, you can read Appendix A where you can learn the basic commands needed to work with the example projects and to import them into your favourite IDE (NetBeans, IDEA or Eclipse).
+
 
 
 <h1 id="whyLearn">3 Why should I learn Wicket?</h1>
@@ -1341,16 +1346,17 @@ Remember that invalidateNow() will immediately remove any instance of components
 Wicket uses a number of custom exceptions during the regular running of an application. We have already seen <code>PageExpiredException</code> raised when a page version is expired. Other examples of such exceptions are <code>AuthorizationException</code> and <code>RestartResponseException</code>. We will see them later in the next chapters.
 All the other exceptions raised during rendering phase are handled by an implementation of <code>org.apache.wicket.request.IExceptionMapper</code> which by default is class <code>org.apache.wicket.DefaultExceptionMapper</code>. If we are working in DEVELOPMENT mode this mapper will redirect us to a page that shows the exception stacktrace (page <code>ExceptionErrorPage</code>). On the contrary, if application is running in DEPLOYMENT mode <code>DefaultExceptionMapper</code> will display an internal error page which by default is <code>org.apache.wicket.markup.html.pages.InternalErrorPage</code>.
 To use a custom internal error page we can change application settings like this:<p class="paragraph"/><div class="code"><pre>getApplicationSettings().setInternalErrorPage(MyInternalErrorPage.class);</pre></div><p class="paragraph"/>We can also manually set if Wicket should display the exception with <code>ExceptionErrorPage</code> or if we want to use the internal error page or if we don't want to display anything at all when an unexpected exception is thrown:<p class="paragraph"/><div class="code"><pre>//show <span class="java&#45;keyword">default</span> developer page
-getExceptionSettings().setUnexpectedExceptionDisplay(IExceptionSettings.SHOW_EXCEPTION_PAGE);
+getExceptionSettings().setUnexpectedExceptionDisplay( IExceptionSettings.SHOW_EXCEPTION_PAGE );
 //show internal error page
-getExceptionSettings().setUnexpectedExceptionDisplay(IExceptionSettings.SHOW_INTERNAL_ERROR_PAGE);
+getExceptionSettings().setUnexpectedExceptionDisplay( IExceptionSettings.SHOW_INTERNAL_ERROR_PAGE );
 //show no exception page when an unexpected exception is thrown
-getExceptionSettings().setUnexpectedExceptionDisplay(IExceptionSettings.SHOW_NO_EXCEPTION_PAGE);</pre></div><p class="paragraph"/>Developers can also decide to use a custom exception mapper instead of <code>DefaultExceptionMapper</code>. To do this we must override <code>Application</code>'s method <code>getExceptionMapperProvider</code>:<p class="paragraph"/><div class="code"><pre>@Override
+getExceptionSettings().setUnexpectedExceptionDisplay( IExceptionSettings.SHOW_NO_EXCEPTION_PAGE );</pre></div><p class="paragraph"/>Developers can also decide to use a custom exception mapper instead of <code>DefaultExceptionMapper</code>. To do this we must override <code>Application</code>'s method <code>getExceptionMapperProvider</code>:<p class="paragraph"/><div class="code"><pre>@Override
 <span class="java&#45;keyword">public</span> IProvider&#60;IExceptionMapper&#62; getExceptionMapperProvider()
 &#123;
     //&#8230;
-&#125;</pre></div><p class="paragraph"/>The method returns an instance of <code>org.apache.wicket.util.IProvider</code> that should return our custom exception mapper.<p class="paragraph"/><h3>Ajax requests</h3><p class="paragraph"/>To control the behavior in Ajax requests the application may use <code>org.apache.wicket.settings.IExceptionSettings#setAjaxErrorHandlingStrategy(IExceptionSettings.AjaxErrorStrategy)</code>. By default if an error occurs during the 
-processing of an Ajax request Wicket will render the configured error page. By configuring <code>org.apache.wicket.settings.IExceptionSettings.AjaxErrorStrategy#INVOKE_FAILURE_HANDLER</code> as the default strategy the application will call the JavaScript <code>onFailure</code> callback(s) instead.
+&#125;</pre></div><p class="paragraph"/>The method returns an instance of <code>org.apache.wicket.util.IProvider</code> that should return our custom exception mapper.<p class="paragraph"/><h3>Ajax requests</h3><p class="paragraph"/>To control the behavior in Ajax requests the application may use <code>org.apache.wicket.settings.IExceptionSettings#  setAjaxErrorHandlingStrategy(IExceptionSettings.AjaxErrorStrategy)</code>. By default if an error occurs during the 
+processing of an Ajax request Wicket will render the configured error page. By configuring <code>org.apache.wicket.settings.IExceptionSettings.  AjaxErrorStrategy#INVOKE_FAILURE_HANDLER</code> as the default strategy the application will call the JavaScript <code>onFailure</code> callback(s) instead.
+
 
 
 <h2 id="requestProcessing_6">9.6 Summary</h2>
@@ -2622,6 +2628,7 @@ Package resources can be localized following the same rules seen for resource bu
 <li><strong class="bold">PriorityHeaderItem:</strong> it wraps another header item and ensures that it will have the priority over the other items during rendering phase.</li>
 <li><strong class="bold">StringHeaderItem:</strong> with this class we can add an arbitrary text to the header section. Factory method is <code>forString(CharSequence string)</code>.</li>
 <li><strong class="bold">MetaDataHeaderItem:</strong> starting from version 6.17.0, Wicket provides this class to handle meta informations such as &#60;meta&#62; tags or <a href="http://en.wikipedia.org/wiki/Canonical_link_element" target="blank">canonical link element</a>. The available factory methods are <code>forLinkTag</code> and <code>forMetaTag</code> which can be used to create respectively a &#60;link&#62; tag or a &#60;meta&#62; one. We can add tag attribute to an existing instance of <code>MetaDataHeaderItem</code> with method <code>addTagAttribute(String attributeName, Object attributeValue)</code>. See JavaDoc for further details on this class.</li>
+<li><strong class="bold">HtmlImportHeaderItem:</strong> introduced in Wicket 6.19.0, provides a HTML5 functionality to include other wicket pages (other html files) into the current generated. Factory methods provided by this class are <code>forImportLinkTag</code> which takes the page class or the url of the page / html to be included.</li>
 </ul><p class="paragraph"/>In the following example our custom component loads a CSS file as a package resource (placed in the same package) and it adds it to header section.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">public</span> class MyComponent <span class="java&#45;keyword">extends</span> Component&#123;<p class="paragraph"/>  @Override
   <span class="java&#45;keyword">public</span> void renderHead(IHeaderResponse response) &#123;
       PackageResourceReference cssFile = 
@@ -2802,9 +2809,53 @@ By default, if resource files can not be found inside application classpath, Wic
 </blockquote>
 
 
-<h2 id="resources_14">15.14 Summary</h2>
-In this chapter we have learnt how to manage resources with the built-in mechanism provided by Wicket. With this mechanism we handle resources from Java code and Wicket will automatically take care of generating a valid URL for them. We have also seen how resources can be bundled as package resources with a component that depends on them to make it self-contained.<p class="paragraph"/>Then, in the second part of the chapter, we have built a custom resource and we have learnt how to mount it to an arbitrary URL and how to make it globally available as shared resource.<p class="paragraph"/>Finally, in the last part of the paragraph we took a peek at the mechanism provided by the framework to customize the locations where the resource-lookup algorithm searches for resources. 
+<h2 id="resources_14">15.14 CssHeaderItem and JavaScriptHeaderItem compression</h2>
+<p class="paragraph"/>Introduced in Wicket 6.20.0 / Wicket 7.0.0 there is a default way to be used in which the output of all CssHeaderItems / JavaScriptHeaderItems is modified before they are cached and delivered to the client. You can add a so called Compressor by receiving the resource settings and invoke #setJavaScriptCompressor(...) / #setJavaScriptCompressor(...). If you want to add several Compressors use <code>org.apache.wicket.resource.CompositeCssCompressor</code> or <code>org.apache.wicket.resource.CompositeJavaScriptCompressor</code><p class="paragraph"/><strong class="bold">Java Code:</strong>
+<div class="code"><pre>&#8230;
+    <span class="java&#45;keyword">public</span> class WicketApplication <span class="java&#45;keyword">extends</span> WebApplication
+    &#123;
+        @Override
+        <span class="java&#45;keyword">public</span> <span class="java&#45;object">Class</span>&#60;? <span class="java&#45;keyword">extends</span> WebPage&#62; getHomePage()
+        &#123;
+            <span class="java&#45;keyword">return</span> HomePage.class;
+        &#125;
+    
+        @Override
+        <span class="java&#45;keyword">public</span> void init()
+        &#123;
+            <span class="java&#45;keyword">super</span>.init();
+            getResourceSettings().setCssCompressor(<span class="java&#45;keyword">new</span> CssUrlReplacer());
+        &#125;
+    &#125;
+...</pre></div><p class="paragraph"/>In the previous example you see that a <code>org.apache.wicket.resource.CssUrlReplacer</code> is added which does not compress the content, but replaces all urls in CSS files and applies a Wicket representation for them by automatically wrapping them into PackageResourceReferences. Here is an example where you can see what Wicket does with the url representation.<p class="paragraph"/>HomePage (in package my/company/):
+<strong class="bold">Java Code:</strong>
+<div class="code"><pre>&#8230;
+response.render(CssReferenceHeaderItem.forReference(<span class="java&#45;keyword">new</span> PackageResourceReference(HomePage.class, <span class="java&#45;quote">"res/css/mycss.css"</span>)));
+...</pre></div><p class="paragraph"/>mycss.css (in package my/company/res/css/):
+<strong class="bold">CSS:</strong>
+<div class="code"><pre>&#8230;
+body&#123;
+    background&#45;image:url('../images/some.png');
+&#125;
+...</pre></div><p class="paragraph"/>some.png (in package my/company/res/images/):
+&#60;blob&#62;<p class="paragraph"/>Output of mycss.css:
+<strong class="bold">CSS:</strong>
+<div class="code"><pre>&#8230;
+body&#123;
+    background&#45;image:url('../images/some&#45;ver&#45;1425904170000.png');
+&#125;
+...</pre></div><p class="paragraph"/>If you add a url which looks like this background-image:url('../images/some.png?embedBase64'); Wicket is going to embed the complete image as base64 string with its corresponding mime type into the css file. It looks like the following code block demonstrates.<p class="paragraph"/>Output of mycss.css:
+<strong class="bold">CSS:</strong>
+<div class="code"><pre>&#8230;
+body&#123;
+    background&#45;image: url(data:image/png;base64,R0lGODlh1wATAX....);
+&#125;
+...</pre></div>
 
+
+
+<h2 id="resources_15">15.15 Summary</h2>
+<p class="paragraph"/>In this chapter we have learnt how to manage resources with the built-in mechanism provided by Wicket. With this mechanism we handle resources from Java code and Wicket will automatically take care of generating a valid URL for them. We have also seen how resources can be bundled as package resources with a component that depends on them to make it self-contained.<p class="paragraph"/>Then, in the second part of the chapter, we have built a custom resource and we have learnt how to mount it to an arbitrary URL and how to make it globally available as shared resource.<p class="paragraph"/>Finally, in the last part of the paragraph we took a peek at the mechanism provided by the framework to customize the locations where the resource-lookup algorithm searches for resources. 
 
 
 <h1 id="jsintegration">16 An example of integration with JavaScript</h1>
@@ -4827,25 +4878,20 @@ Quite a few teams have already got stuck into the following problem when working
 You can contribute to this guide by following these steps:
 <ul class="star">
 <li>The guide uses Grails GDoc to generate the final HTML/PDF so you should consult with its <a href="http://grails.org/WikiSyntax" target="blank">syntax</a>.</li>
-<li>Checkout Apache Wicket's <a href="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/" target="blank">site</a></li>
-</ul><p class="paragraph"/><div class="code"><pre>svn checkout https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/</pre></div>
+<li>Clone Apache Wicket's GIT repository <a href="https://github.com/apache/wicket.git" target="blank">site</a></li>
+</ul><p class="paragraph"/><div class="code"><pre>git clone https://github.com/apache/wicket.git</pre></div>
 <ul class="star">
-<li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">_site/guide/guide/src/docs/guide</em>  folder</li>
-<li>To preview your changes you should have <a href="http://grails.org/" target="blank">Grails</a> installed.</li>
+<li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">wicket/wicket-user-guide/src/docs/guide</em>  folder</li>
+<li>To preview your changes run "mvn clean package -P guide" in the  <em class="italic">wicket/wicket-user-guide</em>  folder (in eclipse use a run configuration)</li>
+<li>Navigate to  <em class="italic">wicket/wicket-user-guide/target/doc</em>  and open one of the following files a browser / pdf viewer:</li>
 <ul class="star">
-<li>Download it from <a href="http://grails.org/download" target="blank">here</a>.</li>
-</ul></ul><p class="paragraph"/><strong class="bold">Note</strong>: Download version <strong class="bold">2.2.4</strong>. Newer versions are not supported at the moment.
-<ul class="star">
-<ul class="star">
-<li>Install it by following these <a href="http://grails.org/doc/latest/guide/gettingStarted.html#requirements" target="blank">instructions</a></li>
+<li> <em class="italic">index.html</em>  (multi page version)</li>
+<li> <em class="italic">guide/single.html</em>  (single page version)</li>
+<li> <em class="italic">guide/single.pdf</em>  (single page pdf version)</li>
 </ul>
-<li>Navigate to  <em class="italic">_site/guide/guide</em>  folder and execute</li>
-</ul><p class="paragraph"/><div class="code"><pre>grails doc</pre></div>
-<ul class="star">
-<li>To preview your changes open  <em class="italic">_site/guide/index.html</em>  in a browser</li>
-<li>Create a patch with</li>
-</ul><p class="paragraph"/><div class="code"><pre>svn diff &#62; my.patch</pre></div>
-and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
+<li>Create a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a></li>
+<li><strong class="bold">Commit and push the changes</strong> to your forked Apacke Wicket's GIT repository and <strong class="bold">create a pull request</strong> on github</li>
+</ul><p class="paragraph"/><strong class="bold">Thank you!</strong>
 
                     </div>
                 </td>
@@ -4865,8 +4911,8 @@ and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/
 
         <div id="footer">
             
-Copyright &copy; 2013-2014 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2015-02-12)</b>
+Copyright &copy; 2013-2015 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-04-08)</b>
 
             
         </div>
