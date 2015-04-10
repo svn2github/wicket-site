@@ -164,20 +164,25 @@ function addJsClass() {
 You can contribute to this guide by following these steps:
 <ul class="star">
 <li>The guide uses Grails GDoc to generate the final HTML/PDF so you should consult with its <a href="http://grails.org/WikiSyntax" target="blank">syntax</a>.</li>
-<li>Clone Apache Wicket's GIT repository <a href="https://github.com/apache/wicket.git" target="blank">site</a></li>
-</ul><p class="paragraph"/><div class="code"><pre>git clone https://github.com/apache/wicket.git</pre></div>
+<li>Checkout Apache Wicket's <a href="https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/" target="blank">site</a></li>
+</ul><p class="paragraph"/><div class="code"><pre>svn checkout https://svn.apache.org/repos/asf/wicket/common/site/trunk/_site/</pre></div>
 <ul class="star">
-<li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">wicket/wicket-user-guide/src/docs/guide</em>  folder</li>
-<li>To preview your changes run "mvn clean package -P guide" in the  <em class="italic">wicket/wicket-user-guide</em>  folder (in eclipse use a run configuration)</li>
-<li>Navigate to  <em class="italic">wicket/wicket-user-guide/target/doc</em>  and open one of the following files a browser / pdf viewer:</li>
+<li>Edit the  <em class="italic">.gdoc</em>  files in  <em class="italic">_site/guide/guide/src/docs/guide</em>  folder</li>
+<li>To preview your changes you should have <a href="http://grails.org/" target="blank">Grails</a> installed.</li>
 <ul class="star">
-<li> <em class="italic">index.html</em>  (multi page version)</li>
-<li> <em class="italic">guide/single.html</em>  (single page version)</li>
-<li> <em class="italic">guide/single.pdf</em>  (single page pdf version)</li>
+<li>Download it from <a href="http://grails.org/download" target="blank">here</a>.</li>
+</ul></ul><p class="paragraph"/><strong class="bold">Note</strong>: Download version <strong class="bold">2.2.4</strong>. Newer versions are not supported at the moment.
+<ul class="star">
+<ul class="star">
+<li>Install it by following these <a href="http://grails.org/doc/latest/guide/gettingStarted.html#requirements" target="blank">instructions</a></li>
 </ul>
-<li>Create a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a></li>
-<li><strong class="bold">Commit and push the changes</strong> to your forked Apacke Wicket's GIT repository and <strong class="bold">create a pull request</strong> on github</li>
-</ul><p class="paragraph"/><strong class="bold">Thank you!</strong>
+<li>Navigate to  <em class="italic">_site/guide/guide</em>  folder and execute</li>
+</ul><p class="paragraph"/><div class="code"><pre>grails doc</pre></div>
+<ul class="star">
+<li>To preview your changes open  <em class="italic">_site/guide/index.html</em>  in a browser</li>
+<li>Create a patch with</li>
+</ul><p class="paragraph"/><div class="code"><pre>svn diff &#62; my.patch</pre></div>
+and attach it to a ticket in Apache Wicket's <a href="https://issues.apache.org/jira/browse/WICKET" target="blank">JIRA</a><p class="paragraph"/><strong class="bold">Thank you!</strong>
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -204,7 +209,7 @@ You can contribute to this guide by following these steps:
 <div id="footer">
     
 Copyright &copy; 2013-2015 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2015-04-08)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-04-10)</b>
 
     
 </div>

@@ -180,8 +180,41 @@ function addJsClass() {
 	&#125;
 &#125;</pre></div><p class="paragraph"/>Wicket will take care of generating a valid URL for file calendar.jpg. URLs for package resources have the following structure:<p class="paragraph"/><code>&#60;path to application root&#62;/wicket/resource/&#60;fully qualified classname&#62;/&#60;resource file name&#62;-&#60;ver-&#60;id&#62;&#62;(.file extension)</code><p class="paragraph"/>In our example the URL for our picture file calendar.jpg is the following:<p class="paragraph"/><code>./wicket/resource/org.wicketTutorial.CustomPanel/calendar-ver-1297887542000.jpg</code><p class="paragraph"/>The first part of the URL is the relative path to the application root. In our example our page is already at the application's root so we have only a single-dotted segment. The next two segments, wicket and resource, are respectively the namespace and the identifier for resources seen in paragraph 8.6.4.<p class="paragraph"/>The fourth segment is the fully qualified name of the class used to locate the resource and it is the scope of the package resource. In the last segment of the URL we can find the name of the resource (the file name).<p class="paragraph"/>As you can see Wicket has automatically appended to the file name a version identifier (ver-1297887542000). When Wicket runs in DEVELOPMENT mode this identifier contains the timestamp in millisecond indicating the last time the resource file was modified. This can be useful when we are developing our application and resource files are frequently modified. Appending the timestamp to the original name we are sure that our browser will use always the last version of the file and not an old, out of date, cached version.<p class="paragraph"/>When instead Wicket is running in DEPLOYMENT mode, the version identifier will contain the MD5 digest of the file instead of the timestamp. The digest is computed only the first time the resource is requested. This perfectly makes sense as static resources don't change so often when our application runs into production environment and when this appends the application is redeployed.<p class="paragraph"/><blockquote class="note">
 Package resources can be localized following the same rules seen for resource bundles and markup files:<p class="paragraph"/><img border="0" class="center" src="../img/package-resource-localization.png"></img><p class="paragraph"/>In the example illustrated in the picture above, if we try to retrieve package resource calendar.jpg when the current locale is set to French, the actual file returned will be calendar_fr.jpg.
-</blockquote><p class="paragraph"/>
-<h3>Using package resources with tag &#60;wicket:link&#62;</h3><p class="paragraph"/>In paragraph 8.3 we have used tag &#60;wicket:link&#62; to automatically create links to bookmarkable pages. The same technique can be used also for package resources in order to use them directly from markup file. Let's assume for example that we have a picture file called icon.png placed in the same package of the current page. Under these conditions we can display the picture file using the following markup fragment:<p class="paragraph"/><div class="code"><pre>&#60;wicket:link&#62;
+</blockquote><p class="paragraph"/><h3>Responsive images - multiple resource references use in one component</h3><p class="paragraph"/>Since Wicket 7.0.0 the build-in component <code>org.apache.wicket.markup.html.image.Image</code> allows you to add several ResourceReferences via varargs and to provide sizes for each image so that the browser is able to pick the best image source.<p class="paragraph"/><strong class="bold">HTML:</strong>
+<div class="code"><pre>&#8230;
+	Package resource image: &#60;img wicket:id=<span class="java&#45;quote">"packageResPicture"</span>/&#62;
+...</pre></div><p class="paragraph"/><strong class="bold">Java Code:</strong>
+<div class="code"><pre>&#8230;
+		Image image = <span class="java&#45;keyword">new</span> Image(<span class="java&#45;quote">"packageResPicture"</span>, 
+			<span class="java&#45;keyword">new</span> PackageResourceReference(getClass(),<span class="java&#45;quote">"small.jpg"</span>), 
+			<span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"large.jpg"</span>),
+			<span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"medium.jpg"</span>),
+			<span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"small.jpg"</span>));
+		image.setXValues(<span class="java&#45;quote">"1024w"</span>, <span class="java&#45;quote">"640w"</span>, <span class="java&#45;quote">"320w"</span>);
+		image.setSizes(<span class="java&#45;quote">"(min&#45;width: 36em) 33.3vw"</span>, <span class="java&#45;quote">"100vw"</span>);<p class="paragraph"/>		<span class="java&#45;keyword">this</span>.add(image);
+...</pre></div><p class="paragraph"/>The component <code>org.apache.wicket.markup.html.image.Picture</code> is used to provide a fallback image <code>org.apache.wicket.markup.html.image.Image</code> and several source components <code>org.apache.wicket.markup.html.image.Source</code> which gives a developer the control as to when and if those images are presented to the user.<p class="paragraph"/><strong class="bold">HTML:</strong>
+<div class="code"><pre>&#8230;
+	&#60;picture wicket:id=<span class="java&#45;quote">"picture"</span>&#62;
+  		&#60;source wicket:id=<span class="java&#45;quote">"big"</span> /&#62;
+  		&#60;source wicket:id=<span class="java&#45;quote">"small"</span> /&#62;
+  		&#60;img wicket:id=<span class="java&#45;quote">"fallback"</span> /&#62;
+	&#60;/picture&#62;
+...</pre></div><p class="paragraph"/><strong class="bold">Java Code:</strong>
+<div class="code"><pre>&#8230;
+		Picture picture = <span class="java&#45;keyword">new</span> Picture(<span class="java&#45;quote">"picture"</span>);<p class="paragraph"/>		Source big = <span class="java&#45;keyword">new</span> Source(<span class="java&#45;quote">"big"</span>, <span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"big.jpg"</span>), <span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"big&#45;hd.jpg"</span>);
+		big.setXValues(<span class="java&#45;quote">"1x"</span>,<span class="java&#45;quote">"2x"</span>);
+		big.setMedia(<span class="java&#45;quote">"(min&#45;width: 40em)"</span>);
+		picture.add(big);<p class="paragraph"/>		Source small = <span class="java&#45;keyword">new</span> Source(<span class="java&#45;quote">"small"</span>, <span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"small.jpg"</span>), <span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"small&#45;hd.jpg"</span>);
+		small.setXValues(<span class="java&#45;quote">"1x"</span>,<span class="java&#45;quote">"2x"</span>);
+		picture.add(small);<p class="paragraph"/>		Image image = <span class="java&#45;keyword">new</span> Image(<span class="java&#45;quote">"fallback"</span>, <span class="java&#45;keyword">new</span> PackageResourceReference(getClass(), <span class="java&#45;quote">"fallback.jpg"</span>));
+		picture.add(image);<p class="paragraph"/>		<span class="java&#45;keyword">this</span>.add(picture);
+...</pre></div><p class="paragraph"/><h3>Media tags - resource references with content range support</h3><p class="paragraph"/>Since Wicket 7.0.0 the PackageResource and the PackageResourceReference support "Range" HTTP header for the request and "Content-Range" / "Accept-Range" HTTP headers for the response, which are used for videos / audio tags. The "Range" header allows the client to only request a specific byte range of the resource. The server provides the "Content-Range" and tells the client which bytes are going to be send.<p class="paragraph"/><strong class="bold">HTML:</strong>
+<div class="code"><pre>&#8230;
+     &#60;video wicket:id=<span class="java&#45;quote">"video"</span> /&#62;
+...</pre></div><p class="paragraph"/><strong class="bold">Java Code:</strong>
+<div class="code"><pre>&#8230;
+    Video video = <span class="java&#45;keyword">new</span> Video(<span class="java&#45;quote">"video"</span>, <span class="java&#45;keyword">new</span> PackageResourceReference(getClass(),<span class="java&#45;quote">"video.mp4"</span>));
+...</pre></div><p class="paragraph"/><h3>Using package resources with tag &#60;wicket:link&#62;</h3><p class="paragraph"/>In paragraph 8.3 we have used tag &#60;wicket:link&#62; to automatically create links to bookmarkable pages. The same technique can be used also for package resources in order to use them directly from markup file. Let's assume for example that we have a picture file called icon.png placed in the same package of the current page. Under these conditions we can display the picture file using the following markup fragment:<p class="paragraph"/><div class="code"><pre>&#60;wicket:link&#62;
    &#60;img src=<span class="java&#45;quote">"icon.png"</span>/&#62;
 &#60;/wicket:link&#62;</pre></div><p class="paragraph"/>In the example above Wicket will populate the attribute src with the URL corresponding to the package resource icon.png. &#60;wicket:link&#62; supports also tag &#60;link&#62; for CSS files and tag &#60;script&#62; for JavaScript files.
 
@@ -213,7 +246,7 @@ Package resources can be localized following the same rules seen for resource bu
 <div id="footer">
     
 Copyright &copy; 2013-2015 — <a href="http://www.apache.org/" target="_blank">The Apache Software Foundation</a> 
-                      — <b style="color:#E8590A !important;">(Generated on: 2015-04-08)</b>
+                      — <b style="color:#E8590A !important;">(Generated on: 2015-04-10)</b>
 
     
 </div>
